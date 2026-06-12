@@ -1,0 +1,45 @@
+{
+  "user_id": "otomarukanta",
+  "slug": "otomarukanta",
+  "n_sessions_total": 8,
+  "n_sessions_train": 7,
+  "n_sessions_test": 1,
+  "agents": {
+    "Claude Code": 1.0
+  },
+  "repos": {
+    "otomarukanta/slk": 1.0
+  },
+  "date_range": [
+    "2026-02-11",
+    "2026-02-11"
+  ],
+  "n_prompts_train": 24,
+  "prompt_words": {
+    "median": 11.5,
+    "p90": 559.3999999999999,
+    "max": 2420.0
+  },
+  "languages": {
+    "ENGLISH": 0.667,
+    "JAPANESE": 0.333
+  },
+  "intent_distribution": {
+    "create new code": 0.417,
+    "git": 0.25,
+    "other": 0.208,
+    "debug": 0.125
+  },
+  "pushback_distribution": {
+    "non_pushback": 0.684,
+    "correction": 0.158,
+    "failure_report": 0.158
+  },
+  "session_turns_median": 5.0,
+  "session_duration_median_s": 1526.634,
+  "agent_code_percentage_median": 64.03012399101273,
+  "annotated_personas": {
+    "Expert Nitpicker": 0.875,
+    "Mind Changer": 0.125
+  }
+}

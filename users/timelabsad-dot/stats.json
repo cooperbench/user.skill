@@ -1,0 +1,54 @@
+{
+ "user_id": "timelabsad-dot",
+ "slug": "timelabsad-dot",
+ "n_sessions_total": 8,
+ "n_sessions_train": 7,
+ "n_sessions_test": 1,
+ "agents": {
+  "Claude Code": 1.0
+ },
+ "repos": {
+  "serg-alexv/rhea-project": 0.5,
+  "timelabs-npo/rhea-project": 0.5
+ },
+ "date_range": [
+  "2026-02-13",
+  "2026-02-26"
+ ],
+ "n_prompts_train": 229,
+ "prompt_words": {
+  "median": 13.0,
+  "p90": 63.20000000000002,
+  "max": 798.0
+ },
+ "languages": {
+  "ENGLISH": 0.943,
+  "RUSSIAN": 0.057
+ },
+ "intent_distribution": {
+  "other": 0.555,
+  "understand": 0.157,
+  "create new code": 0.135,
+  "debug": 0.052,
+  "git": 0.035,
+  "connect": 0.026,
+  "refactor": 0.026,
+  "test": 0.013
+ },
+ "pushback_distribution": {
+  "correction": 0.479,
+  "non_pushback": 0.456,
+  "failure_report": 0.032,
+  "rejection": 0.018,
+  "takeover": 0.014
+ },
+ "session_turns_median": 23.0,
+ "session_duration_median_s": 3415.1295,
+ "agent_code_percentage_median": 0.0,
+ "annotated_personas": {
+  "Other": 0.25,
+  "Vague Requester": 0.25,
+  "Mind Changer": 0.25,
+  "Expert Nitpicker": 0.25
+ }
+}

@@ -1,0 +1,47 @@
+{
+  "user_id": "hutusi",
+  "slug": "hutusi",
+  "n_sessions_total": 31,
+  "n_sessions_train": 25,
+  "n_sessions_test": 6,
+  "agents": {
+   "Claude Code": 1.0
+  },
+  "repos": {
+   "hutusi/amytis": 1.0
+  },
+  "date_range": [
+   "2026-03-02",
+   "2026-03-11"
+  ],
+  "n_prompts_train": 518,
+  "prompt_words": {
+   "median": 9.0,
+   "p90": 206.0,
+   "max": 618.0
+  },
+  "languages": {},
+  "intent_distribution": {
+   "git": 0.33,
+   "other": 0.22,
+   "understand": 0.17,
+   "debug": 0.108,
+   "refactor": 0.081,
+   "create new code": 0.054,
+   "test": 0.035,
+   "connect": 0.002
+  },
+  "pushback_distribution": {
+   "non_pushback": 0.678,
+   "correction": 0.247,
+   "failure_report": 0.076
+  },
+  "session_turns_median": 38.0,
+  "session_duration_median_s": 7792.701,
+  "agent_code_percentage_median": 100.0,
+  "annotated_personas": {
+   "Vague Requester": 0.677,
+   "Expert Nitpicker": 0.161,
+   "Mind Changer": 0.161
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "user_id": "robouden",
+  "slug": "robouden",
+  "n_sessions_total": 42,
+  "n_sessions_train": 34,
+  "n_sessions_test": 8,
+  "agents": {
+   "Claude Code": 1.0
+  },
+  "repos": {
+   "Safecast/safecast-map-MCP": 0.524,
+   "Safecast/safecast-new-map": 0.476
+  },
+  "date_range": [
+   "2026-02-11",
+   "2026-03-29"
+  ],
+  "n_prompts_train": 438,
+  "prompt_words": {
+   "median": 10.5,
+   "p90": 33.60000000000002,
+   "max": 857.0
+  },
+  "languages": {
+   "ENGLISH": 1.0
+  },
+  "intent_distribution": {
+   "other": 0.384,
+   "debug": 0.253,
+   "understand": 0.148,
+   "git": 0.066,
+   "create new code": 0.059,
+   "refactor": 0.057,
+   "connect": 0.023,
+   "test": 0.009
+  },
+  "pushback_distribution": {
+   "non_pushback": 0.459,
+   "correction": 0.298,
+   "failure_report": 0.222,
+   "takeover": 0.013,
+   "rejection": 0.008
+  },
+  "session_turns_median": 10.0,
+  "session_duration_median_s": 1850.366,
+  "agent_code_percentage_median": 27.115384615384617,
+  "annotated_personas": {
+   "Vague Requester": 0.69,
+   "Expert Nitpicker": 0.167,
+   "Mind Changer": 0.095,
+   "Other": 0.048
+  }
+}

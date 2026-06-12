@@ -1,0 +1,46 @@
+{
+ "user_id": "eneakllomollari",
+ "slug": "eneakllomollari",
+ "n_sessions_total": 8,
+ "n_sessions_train": 7,
+ "n_sessions_test": 1,
+ "agents": {
+  "Claude Code": 0.875,
+  "Codex": 0.125
+ },
+ "repos": {
+  "eneakllomollari/mpad": 1.0
+ },
+ "date_range": [
+  "2026-04-12",
+  "2026-04-12"
+ ],
+ "n_prompts_train": 36,
+ "prompt_words": {
+  "median": 11.5,
+  "p90": 432.5,
+  "max": 762.0
+ },
+ "languages": {},
+ "intent_distribution": {
+  "test": 0.25,
+  "other": 0.222,
+  "debug": 0.222,
+  "understand": 0.194,
+  "git": 0.111
+ },
+ "pushback_distribution": {
+  "non_pushback": 0.611,
+  "failure_report": 0.25,
+  "correction": 0.083,
+  "rejection": 0.056
+ },
+ "session_turns_median": 2.0,
+ "session_duration_median_s": 528.37,
+ "agent_code_percentage_median": 0.0,
+ "annotated_personas": {
+  "Other": 0.625,
+  "Expert Nitpicker": 0.25,
+  "Vague Requester": 0.125
+ }
+}

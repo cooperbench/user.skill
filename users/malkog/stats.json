@@ -1,0 +1,45 @@
+{
+ "user_id": "malkoG",
+ "slug": "malkog",
+ "n_sessions_total": 10,
+ "n_sessions_train": 8,
+ "n_sessions_test": 2,
+ "agents": {
+  "Claude Code": 1.0
+ },
+ "repos": {
+  "hackers-pub/android": 1.0
+ },
+ "date_range": [
+  "2026-02-16",
+  "2026-04-15"
+ ],
+ "n_prompts_train": 158,
+ "prompt_words": {
+  "median": 9.5,
+  "p90": 213.0,
+  "max": 1568.0
+ },
+ "languages": {},
+ "intent_distribution": {
+  "git": 0.342,
+  "create new code": 0.272,
+  "other": 0.215,
+  "debug": 0.076,
+  "understand": 0.051,
+  "refactor": 0.038,
+  "connect": 0.006
+ },
+ "pushback_distribution": {
+  "non_pushback": 0.68,
+  "correction": 0.273,
+  "failure_report": 0.047
+ },
+ "session_turns_median": 8.0,
+ "session_duration_median_s": 127.9735,
+ "agent_code_percentage_median": 16.666666666666664,
+ "annotated_personas": {
+  "Vague Requester": 0.8,
+  "Expert Nitpicker": 0.2
+ }
+}

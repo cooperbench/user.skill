@@ -1,0 +1,49 @@
+{
+  "user_id": "tominaga-h",
+  "slug": "tominaga-h",
+  "n_sessions_total": 13,
+  "n_sessions_train": 11,
+  "n_sessions_test": 2,
+  "agents": {
+    "Cursor": 0.615,
+    "Claude Code": 0.385
+  },
+  "repos": {
+    "tominaga-h/jarvis-shell": 1.0
+  },
+  "date_range": [
+    "2026-03-09",
+    "2026-04-01"
+  ],
+  "n_prompts_train": 113,
+  "prompt_words": {
+    "median": 7.0,
+    "p90": 67.99999999999999,
+    "max": 17378.0
+  },
+  "languages": {
+    "ENGLISH": 0.627,
+    "JAPANESE": 0.373
+  },
+  "intent_distribution": {
+    "other": 0.389,
+    "create new code": 0.248,
+    "debug": 0.124,
+    "git": 0.097,
+    "refactor": 0.088,
+    "understand": 0.053
+  },
+  "pushback_distribution": {
+    "non_pushback": 0.611,
+    "correction": 0.301,
+    "failure_report": 0.08,
+    "rejection": 0.009
+  },
+  "session_turns_median": 14.0,
+  "session_duration_median_s": 1426.395,
+  "agent_code_percentage_median": 93.10344827586206,
+  "annotated_personas": {
+    "Other": 0.615,
+    "Expert Nitpicker": 0.385
+  }
+}

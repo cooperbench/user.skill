@@ -1,0 +1,51 @@
+{
+  "user_id": "thomasdavis",
+  "slug": "thomasdavis",
+  "n_sessions_total": 27,
+  "n_sessions_train": 22,
+  "n_sessions_test": 5,
+  "agents": {
+    "Claude Code": 1.0
+  },
+  "repos": {
+    "tpmjs/tpmjs": 1.0
+  },
+  "date_range": [
+    "2026-02-10",
+    "2026-02-27"
+  ],
+  "n_prompts_train": 361,
+  "prompt_words": {
+    "median": 25.0,
+    "p90": 401.0,
+    "max": 4166.0
+  },
+  "languages": {
+    "ENGLISH": 1.0
+  },
+  "intent_distribution": {
+    "create new code": 0.266,
+    "understand": 0.224,
+    "other": 0.186,
+    "git": 0.122,
+    "debug": 0.089,
+    "test": 0.044,
+    "connect": 0.044,
+    "refactor": 0.025
+  },
+  "pushback_distribution": {
+    "non_pushback": 0.644,
+    "correction": 0.279,
+    "failure_report": 0.068,
+    "takeover": 0.006,
+    "rejection": 0.003
+  },
+  "session_turns_median": 21.0,
+  "session_duration_median_s": 8042.057,
+  "agent_code_percentage_median": 4.778761061946903,
+  "annotated_personas": {
+    "Mind Changer": 0.444,
+    "Vague Requester": 0.296,
+    "Expert Nitpicker": 0.259
+  }
+}

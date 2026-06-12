@@ -1,0 +1,44 @@
+{
+  "user_id": "yonyon-web",
+  "slug": "yonyon-web",
+  "n_sessions_total": 8,
+  "n_sessions_train": 7,
+  "n_sessions_test": 1,
+  "agents": {
+    "Claude Code": 1.0
+  },
+  "repos": {
+    "yonyon-web/sodateru-wiki": 1.0
+  },
+  "date_range": [
+    "2026-04-09",
+    "2026-04-10"
+  ],
+  "n_prompts_train": 16,
+  "prompt_words": {
+    "median": 21.0,
+    "p90": 22.0,
+    "max": 23.0
+  },
+  "languages": {},
+  "intent_distribution": {
+    "create new code": 0.375,
+    "refactor": 0.25,
+    "other": 0.188,
+    "understand": 0.062,
+    "debug": 0.062,
+    "git": 0.062
+  },
+  "pushback_distribution": {
+    "correction": 0.733,
+    "non_pushback": 0.267
+  },
+  "session_turns_median": 2.5,
+  "session_duration_median_s": 375.7355,
+  "agent_code_percentage_median": 5.5331541218638,
+  "annotated_personas": {
+    "Vague Requester": 0.625,
+    "Other": 0.25,
+    "Expert Nitpicker": 0.125
+  }
+}

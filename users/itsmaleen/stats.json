@@ -1,0 +1,50 @@
+{
+ "user_id": "itsmaleen",
+ "slug": "itsmaleen",
+ "n_sessions_total": 11,
+ "n_sessions_train": 9,
+ "n_sessions_test": 2,
+ "agents": {
+  "Claude Code": 1.0
+ },
+ "repos": {
+  "itsmaleen/dispatch": 0.545,
+  "itsmaleen/merry": 0.455
+ },
+ "date_range": [
+  "2026-03-14",
+  "2026-03-27"
+ ],
+ "n_prompts_train": 53,
+ "prompt_words": {
+  "median": 12.0,
+  "p90": 86.00000000000004,
+  "max": 133.0
+ },
+ "languages": {
+  "ENGLISH": 1.0
+ },
+ "intent_distribution": {
+  "debug": 0.34,
+  "other": 0.245,
+  "git": 0.113,
+  "understand": 0.113,
+  "refactor": 0.075,
+  "create new code": 0.057,
+  "test": 0.038,
+  "connect": 0.019
+ },
+ "pushback_distribution": {
+  "non_pushback": 0.404,
+  "correction": 0.385,
+  "failure_report": 0.212
+ },
+ "session_turns_median": 6.0,
+ "session_duration_median_s": 580.975,
+ "agent_code_percentage_median": 87.27959697732997,
+ "annotated_personas": {
+  "Vague Requester": 0.727,
+  "Expert Nitpicker": 0.182,
+  "Other": 0.091
+ }
+}

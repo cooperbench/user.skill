@@ -1,0 +1,46 @@
+{
+ "user_id": "petercr",
+ "slug": "petercr",
+ "n_sessions_total": 7,
+ "n_sessions_train": 6,
+ "n_sessions_test": 1,
+ "agents": {
+  "Claude Code": 1.0
+ },
+ "repos": {
+  "petercr/ccw": 1.0
+ },
+ "date_range": [
+  "2026-03-26",
+  "2026-04-14"
+ ],
+ "n_prompts_train": 54,
+ "prompt_words": {
+  "median": 14.0,
+  "p90": 40.200000000000045,
+  "max": 999.0
+ },
+ "languages": {},
+ "intent_distribution": {
+  "git": 0.259,
+  "other": 0.204,
+  "debug": 0.185,
+  "create new code": 0.167,
+  "refactor": 0.13,
+  "understand": 0.056
+ },
+ "pushback_distribution": {
+  "non_pushback": 0.558,
+  "correction": 0.269,
+  "failure_report": 0.115,
+  "rejection": 0.058
+ },
+ "session_turns_median": 18.0,
+ "session_duration_median_s": 5048.357,
+ "agent_code_percentage_median": 76.92307692307693,
+ "annotated_personas": {
+  "Vague Requester": 0.714,
+  "Expert Nitpicker": 0.143,
+  "Other": 0.143
+ }
+}

@@ -1,0 +1,46 @@
+{
+ "user_id": "ChetanReddyC",
+ "slug": "chetanreddyc",
+ "n_sessions_total": 10,
+ "n_sessions_train": 8,
+ "n_sessions_test": 2,
+ "agents": {
+  "Claude Code": 1.0
+ },
+ "repos": {
+  "ChetanReddyC/Shila-Murti": 1.0
+ },
+ "date_range": [
+  "2026-04-04",
+  "2026-04-08"
+ ],
+ "n_prompts_train": 81,
+ "prompt_words": {
+  "median": 17.0,
+  "p90": 93.0,
+  "max": 442.0
+ },
+ "languages": {},
+ "intent_distribution": {
+  "debug": 0.407,
+  "other": 0.284,
+  "understand": 0.173,
+  "git": 0.062,
+  "create new code": 0.049,
+  "refactor": 0.012,
+  "connect": 0.012
+ },
+ "pushback_distribution": {
+  "correction": 0.366,
+  "failure_report": 0.352,
+  "non_pushback": 0.282
+ },
+ "session_turns_median": 4.0,
+ "session_duration_median_s": 6755.2005,
+ "agent_code_percentage_median": 0.0,
+ "annotated_personas": {
+  "Vague Requester": 0.8,
+  "Other": 0.1,
+  "Mind Changer": 0.1
+ }
+}

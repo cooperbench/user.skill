@@ -1,0 +1,51 @@
+{
+  "user_id": "kurtn718",
+  "slug": "kurtn718",
+  "n_sessions_total": 27,
+  "n_sessions_train": 22,
+  "n_sessions_test": 5,
+  "agents": {
+    "Claude Code": 1.0
+  },
+  "repos": {
+    "pablo-health/pablo-companion": 1.0
+  },
+  "date_range": [
+    "2026-02-24",
+    "2026-03-11"
+  ],
+  "n_prompts_train": 316,
+  "prompt_words": {
+    "median": 14.5,
+    "p90": 242.5,
+    "max": 5598.0
+  },
+  "languages": {
+    "ENGLISH": 1.0
+  },
+  "intent_distribution": {
+    "other": 0.288,
+    "understand": 0.161,
+    "debug": 0.152,
+    "create new code": 0.133,
+    "git": 0.117,
+    "refactor": 0.085,
+    "test": 0.06,
+    "connect": 0.003
+  },
+  "pushback_distribution": {
+    "non_pushback": 0.557,
+    "correction": 0.35,
+    "failure_report": 0.083,
+    "takeover": 0.01
+  },
+  "session_turns_median": 20.0,
+  "session_duration_median_s": 4590.028,
+  "agent_code_percentage_median": 4.856115107913669,
+  "annotated_personas": {
+    "Vague Requester": 0.593,
+    "Expert Nitpicker": 0.333,
+    "Other": 0.037,
+    "Mind Changer": 0.037
+  }
+}

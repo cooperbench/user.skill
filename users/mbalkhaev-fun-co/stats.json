@@ -1,0 +1,49 @@
+{
+ "user_id": "mbalkhaev@fun.co",
+ "slug": "mbalkhaev-fun-co",
+ "n_sessions_total": 8,
+ "n_sessions_train": 7,
+ "n_sessions_test": 1,
+ "agents": {
+  "Claude Code": 1.0
+ },
+ "repos": {
+  "balkhaev/yep": 1.0
+ },
+ "date_range": [
+  "2026-02-24",
+  "2026-02-26"
+ ],
+ "n_prompts_train": 50,
+ "prompt_words": {
+  "median": 9.0,
+  "p90": 36.50000000000001,
+  "max": 650.0
+ },
+ "languages": {
+  "ENGLISH": 0.521,
+  "RUSSIAN": 0.479
+ },
+ "intent_distribution": {
+  "other": 0.34,
+  "debug": 0.28,
+  "understand": 0.26,
+  "refactor": 0.06,
+  "test": 0.02,
+  "git": 0.02,
+  "create new code": 0.02
+ },
+ "pushback_distribution": {
+  "non_pushback": 0.562,
+  "failure_report": 0.229,
+  "correction": 0.208
+ },
+ "session_turns_median": 6.5,
+ "session_duration_median_s": 866.198,
+ "agent_code_percentage_median": 2.749416131729536,
+ "annotated_personas": {
+  "Vague Requester": 0.75,
+  "Expert Nitpicker": 0.125,
+  "Other": 0.125
+ }
+}

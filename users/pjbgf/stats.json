@@ -1,0 +1,46 @@
+{
+ "user_id": "pjbgf",
+ "slug": "pjbgf",
+ "n_sessions_total": 6,
+ "n_sessions_train": 5,
+ "n_sessions_test": 1,
+ "agents": {
+  "Claude Code": 1.0
+ },
+ "repos": {
+  "entireio/cli": 0.833,
+  "go-git/x": 0.167
+ },
+ "date_range": [
+  "2026-03-06",
+  "2026-03-30"
+ ],
+ "n_prompts_train": 16,
+ "prompt_words": {
+  "median": 6.0,
+  "p90": 38.0,
+  "max": 152.0
+ },
+ "languages": {
+  "ENGLISH": 1.0
+ },
+ "intent_distribution": {
+  "git": 0.438,
+  "refactor": 0.25,
+  "debug": 0.188,
+  "other": 0.125
+ },
+ "pushback_distribution": {
+  "non_pushback": 0.6,
+  "correction": 0.267,
+  "failure_report": 0.133
+ },
+ "session_turns_median": 6.0,
+ "session_duration_median_s": 2360.227,
+ "agent_code_percentage_median": 31.085034823591503,
+ "annotated_personas": {
+  "Expert Nitpicker": 0.5,
+  "Vague Requester": 0.333,
+  "Other": 0.167
+ }
+}

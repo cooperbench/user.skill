@@ -1,0 +1,53 @@
+{
+  "user_id": "jeevanpillay",
+  "slug": "jeevanpillay",
+  "n_sessions_total": 77,
+  "n_sessions_train": 69,
+  "n_sessions_test": 8,
+  "agents": {
+    "Claude Code": 1.0
+  },
+  "repos": {
+    "lightfastai/lightfast": 0.818,
+    "lightfastai/climode": 0.169,
+    "jeevanpillay/dual": 0.013
+  },
+  "date_range": [
+    "2026-02-15",
+    "2026-04-08"
+  ],
+  "n_prompts_train": 399,
+  "prompt_words": {
+    "median": 5.0,
+    "p90": 44.19999999999999,
+    "max": 713.0
+  },
+  "languages": {
+    "ENGLISH": 1.0
+  },
+  "intent_distribution": {
+    "other": 0.346,
+    "create new code": 0.216,
+    "understand": 0.128,
+    "git": 0.115,
+    "refactor": 0.103,
+    "debug": 0.058,
+    "test": 0.028,
+    "connect": 0.008
+  },
+  "pushback_distribution": {
+    "non_pushback": 0.655,
+    "correction": 0.283,
+    "failure_report": 0.035,
+    "rejection": 0.027
+  },
+  "session_turns_median": 8.0,
+  "session_duration_median_s": 1271.681,
+  "agent_code_percentage_median": 61.80555555555556,
+  "annotated_personas": {
+    "Vague Requester": 0.61,
+    "Expert Nitpicker": 0.312,
+    "Other": 0.065,
+    "Mind Changer": 0.013
+  }
+}

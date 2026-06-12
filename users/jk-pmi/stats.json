@@ -1,0 +1,48 @@
+{
+  "user_id": "jk-pmi",
+  "slug": "jk-pmi",
+  "n_sessions_total": 9,
+  "n_sessions_train": 8,
+  "n_sessions_test": 1,
+  "agents": {
+    "Claude Code": 1.0
+  },
+  "repos": {
+    "BIDEquity/outbid-dirigent": 1.0
+  },
+  "date_range": [
+    "2026-03-26",
+    "2026-04-08"
+  ],
+  "n_prompts_train": 207,
+  "prompt_words": {
+    "median": 8.0,
+    "p90": 55.400000000000006,
+    "max": 990.0
+  },
+  "languages": {},
+  "intent_distribution": {
+    "other": 0.3,
+    "understand": 0.193,
+    "git": 0.145,
+    "create new code": 0.126,
+    "debug": 0.097,
+    "test": 0.077,
+    "refactor": 0.043,
+    "connect": 0.019
+  },
+  "pushback_distribution": {
+    "non_pushback": 0.524,
+    "correction": 0.386,
+    "failure_report": 0.053,
+    "rejection": 0.037
+  },
+  "session_turns_median": 35.0,
+  "session_duration_median_s": 16144.182,
+  "agent_code_percentage_median": 27.977813076450094,
+  "annotated_personas": {
+    "Expert Nitpicker": 0.556,
+    "Vague Requester": 0.333,
+    "Mind Changer": 0.111
+  }
+}

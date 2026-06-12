@@ -1,0 +1,50 @@
+{
+  "user_id": "penso",
+  "slug": "penso",
+  "n_sessions_total": 14,
+  "n_sessions_train": 12,
+  "n_sessions_test": 2,
+  "agents": {
+    "Claude Code": 1.0
+  },
+  "repos": {
+    "moltis-org/moltis": 1.0
+  },
+  "date_range": [
+    "2026-03-09",
+    "2026-03-14"
+  ],
+  "n_prompts_train": 92,
+  "prompt_words": {
+    "median": 10.5,
+    "p90": 468.7000000000005,
+    "max": 1173.0
+  },
+  "languages": {
+    "ENGLISH": 1.0
+  },
+  "intent_distribution": {
+    "debug": 0.348,
+    "git": 0.272,
+    "other": 0.109,
+    "create new code": 0.098,
+    "understand": 0.076,
+    "refactor": 0.076,
+    "test": 0.022
+  },
+  "pushback_distribution": {
+    "non_pushback": 0.533,
+    "failure_report": 0.222,
+    "correction": 0.2,
+    "takeover": 0.033,
+    "rejection": 0.011
+  },
+  "session_turns_median": 7.5,
+  "session_duration_median_s": 13455.1375,
+  "agent_code_percentage_median": 100.0,
+  "annotated_personas": {
+    "Vague Requester": 0.714,
+    "Expert Nitpicker": 0.214,
+    "Mind Changer": 0.071
+  }
+}

@@ -1,0 +1,46 @@
+{
+ "user_id": "yarikoptic",
+ "slug": "yarikoptic",
+ "n_sessions_total": 13,
+ "n_sessions_train": 11,
+ "n_sessions_test": 2,
+ "agents": {
+  "Claude Code": 1.0
+ },
+ "repos": {
+  "bids-standard/bids-utils": 1.0
+ },
+ "date_range": [
+  "2026-04-03",
+  "2026-04-10"
+ ],
+ "n_prompts_train": 54,
+ "prompt_words": {
+  "median": 47.0,
+  "p90": 303.4000000000002,
+  "max": 1703.0
+ },
+ "languages": {},
+ "intent_distribution": {
+  "understand": 0.426,
+  "other": 0.241,
+  "create new code": 0.222,
+  "test": 0.037,
+  "refactor": 0.037,
+  "git": 0.019,
+  "debug": 0.019
+ },
+ "pushback_distribution": {
+  "non_pushback": 0.833,
+  "correction": 0.148,
+  "failure_report": 0.019
+ },
+ "session_turns_median": 4.0,
+ "session_duration_median_s": 508.46,
+ "agent_code_percentage_median": 100.0,
+ "annotated_personas": {
+  "Vague Requester": 0.462,
+  "Expert Nitpicker": 0.308,
+  "Other": 0.231
+ }
+}

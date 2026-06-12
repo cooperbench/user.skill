@@ -1,0 +1,51 @@
+{
+  "user_id": "ujuc",
+  "slug": "ujuc",
+  "n_sessions_total": 16,
+  "n_sessions_train": 13,
+  "n_sessions_test": 3,
+  "agents": {
+    "Claude Code": 1.0
+  },
+  "repos": {
+    "ujuc/agent-stuff": 0.5,
+    "ujuc/dotrc": 0.5
+  },
+  "date_range": [
+    "2026-02-11",
+    "2026-02-18"
+  ],
+  "n_prompts_train": 120,
+  "prompt_words": {
+    "median": 119.0,
+    "p90": 1024.8000000000006,
+    "max": 2351.0
+  },
+  "languages": {
+    "ENGLISH": 0.708,
+    "KOREAN": 0.292
+  },
+  "intent_distribution": {
+    "refactor": 0.292,
+    "understand": 0.217,
+    "create new code": 0.192,
+    "other": 0.192,
+    "git": 0.075,
+    "debug": 0.017,
+    "test": 0.017
+  },
+  "pushback_distribution": {
+    "non_pushback": 0.609,
+    "correction": 0.374,
+    "takeover": 0.009,
+    "rejection": 0.009
+  },
+  "session_turns_median": 4.0,
+  "session_duration_median_s": 734.477,
+  "agent_code_percentage_median": 4.058882378162069,
+  "annotated_personas": {
+    "Expert Nitpicker": 0.875,
+    "Other": 0.062,
+    "Vague Requester": 0.062
+  }
+}

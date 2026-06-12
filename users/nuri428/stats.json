@@ -1,0 +1,51 @@
+{
+ "user_id": "nuri428",
+ "slug": "nuri428",
+ "n_sessions_total": 12,
+ "n_sessions_train": 10,
+ "n_sessions_test": 2,
+ "agents": {
+  "Claude Code": 1.0
+ },
+ "repos": {
+  "nuri428/patent_board_full": 1.0
+ },
+ "date_range": [
+  "2026-02-26",
+  "2026-03-05"
+ ],
+ "n_prompts_train": 81,
+ "prompt_words": {
+  "median": 7.0,
+  "p90": 1946.0,
+  "max": 1985.0
+ },
+ "languages": {
+  "ENGLISH": 0.593,
+  "KOREAN": 0.407
+ },
+ "intent_distribution": {
+  "other": 0.395,
+  "create new code": 0.247,
+  "understand": 0.185,
+  "test": 0.049,
+  "debug": 0.049,
+  "refactor": 0.037,
+  "git": 0.025,
+  "connect": 0.012
+ },
+ "pushback_distribution": {
+  "non_pushback": 0.55,
+  "correction": 0.362,
+  "failure_report": 0.062,
+  "rejection": 0.025
+ },
+ "session_turns_median": 9.5,
+ "session_duration_median_s": 1998.7350000000001,
+ "agent_code_percentage_median": 88.08558285921802,
+ "annotated_personas": {
+  "Vague Requester": 0.75,
+  "Expert Nitpicker": 0.167,
+  "Other": 0.083
+ }
+}

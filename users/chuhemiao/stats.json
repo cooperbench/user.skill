@@ -1,0 +1,51 @@
+{
+  "user_id": "chuhemiao",
+  "slug": "chuhemiao",
+  "n_sessions_total": 22,
+  "n_sessions_train": 18,
+  "n_sessions_test": 4,
+  "agents": {
+    "Claude Code": 1.0
+  },
+  "repos": {
+    "chuhemiao/portfolio": 1.0
+  },
+  "date_range": [
+    "2026-02-12",
+    "2026-04-15"
+  ],
+  "n_prompts_train": 126,
+  "prompt_words": {
+    "median": 4.0,
+    "p90": 69.5,
+    "max": 3539.0
+  },
+  "languages": {
+    "CHINESE": 0.81,
+    "ENGLISH": 0.19
+  },
+  "intent_distribution": {
+    "other": 0.294,
+    "create new code": 0.286,
+    "debug": 0.183,
+    "refactor": 0.119,
+    "connect": 0.079,
+    "understand": 0.024,
+    "git": 0.016
+  },
+  "pushback_distribution": {
+    "correction": 0.513,
+    "non_pushback": 0.303,
+    "failure_report": 0.176,
+    "rejection": 0.008
+  },
+  "session_turns_median": 5.5,
+  "session_duration_median_s": 724.78,
+  "agent_code_percentage_median": 10.269993164730007,
+  "annotated_personas": {
+    "Vague Requester": 0.545,
+    "Expert Nitpicker": 0.273,
+    "Mind Changer": 0.136,
+    "Other": 0.045
+  }
+}

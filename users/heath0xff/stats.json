@@ -1,0 +1,49 @@
+{
+ "user_id": "heath0xFF",
+ "slug": "heath0xff",
+ "n_sessions_total": 12,
+ "n_sessions_train": 10,
+ "n_sessions_test": 2,
+ "agents": {
+  "OpenCode": 0.833,
+  "Claude Code": 0.167
+ },
+ "repos": {
+  "heath0xFF/hChat": 1.0
+ },
+ "date_range": [
+  "2026-04-08",
+  "2026-04-11"
+ ],
+ "n_prompts_train": 75,
+ "prompt_words": {
+  "median": 79.0,
+  "p90": 251.80000000000015,
+  "max": 2015.0
+ },
+ "languages": {},
+ "intent_distribution": {
+  "refactor": 0.293,
+  "understand": 0.24,
+  "debug": 0.16,
+  "create new code": 0.107,
+  "git": 0.093,
+  "other": 0.067,
+  "test": 0.027,
+  "connect": 0.013
+ },
+ "pushback_distribution": {
+  "non_pushback": 0.773,
+  "correction": 0.2,
+  "failure_report": 0.013,
+  "rejection": 0.013
+ },
+ "session_turns_median": 6.0,
+ "session_duration_median_s": 1785.138,
+ "agent_code_percentage_median": 92.6027397260274,
+ "annotated_personas": {
+  "Other": 0.833,
+  "Vague Requester": 0.083,
+  "Mind Changer": 0.083
+ }
+}

@@ -1,0 +1,46 @@
+{
+  "user_id": "savekirk",
+  "slug": "savekirk",
+  "n_sessions_total": 26,
+  "n_sessions_train": 21,
+  "n_sessions_test": 5,
+  "agents": {
+    "Codex": 0.577,
+    "OpenCode": 0.269,
+    "Gemini CLI": 0.154
+  },
+  "repos": {
+    "savekirk/session-bridge": 1.0
+  },
+  "date_range": [
+    "2026-03-30",
+    "2026-04-14"
+  ],
+  "n_prompts_train": 61,
+  "prompt_words": {
+    "median": 21.0,
+    "p90": 71.0,
+    "max": 87245.0
+  },
+  "languages": {},
+  "intent_distribution": {
+    "refactor": 0.344,
+    "debug": 0.23,
+    "create new code": 0.23,
+    "other": 0.098,
+    "git": 0.049,
+    "understand": 0.049
+  },
+  "pushback_distribution": {
+    "non_pushback": 0.41,
+    "correction": 0.41,
+    "failure_report": 0.164,
+    "rejection": 0.016
+  },
+  "session_turns_median": 3.5,
+  "session_duration_median_s": null,
+  "agent_code_percentage_median": 42.64759809314265,
+  "annotated_personas": {
+    "Other": 1.0
+  }
+}

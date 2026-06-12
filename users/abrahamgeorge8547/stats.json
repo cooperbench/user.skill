@@ -1,0 +1,48 @@
+{
+  "user_id": "AbrahamGeorge8547",
+  "slug": "abrahamgeorge8547",
+  "n_sessions_total": 16,
+  "n_sessions_train": 13,
+  "n_sessions_test": 3,
+  "agents": {
+    "Claude Code": 1.0
+  },
+  "repos": {
+    "osvauld/osvauld": 1.0
+  },
+  "date_range": [
+    "2026-02-13",
+    "2026-02-15"
+  ],
+  "n_prompts_train": 243,
+  "prompt_words": {
+    "median": 17.0,
+    "p90": 167.6000000000002,
+    "max": 2756.0
+  },
+  "languages": {
+    "ENGLISH": 1.0
+  },
+  "intent_distribution": {
+    "other": 0.354,
+    "understand": 0.181,
+    "debug": 0.144,
+    "refactor": 0.128,
+    "create new code": 0.128,
+    "test": 0.066
+  },
+  "pushback_distribution": {
+    "correction": 0.466,
+    "non_pushback": 0.409,
+    "failure_report": 0.119,
+    "rejection": 0.006
+  },
+  "session_turns_median": 23.5,
+  "session_duration_median_s": 5338.5045,
+  "agent_code_percentage_median": 8.766928014550754,
+  "annotated_personas": {
+    "Expert Nitpicker": 0.75,
+    "Mind Changer": 0.188,
+    "Vague Requester": 0.062
+  }
+}

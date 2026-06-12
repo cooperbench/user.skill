@@ -1,0 +1,51 @@
+{
+ "user_id": "nodo",
+ "slug": "nodo",
+ "n_sessions_total": 30,
+ "n_sessions_train": 24,
+ "n_sessions_test": 6,
+ "agents": {
+  "Claude Code": 0.867,
+  "Roger Roger Agent": 0.133
+ },
+ "repos": {
+  "entireio/cli": 0.867,
+  "entireio/roger-roger": 0.133
+ },
+ "date_range": [
+  "2026-03-04",
+  "2026-03-06"
+ ],
+ "n_prompts_train": 58,
+ "prompt_words": {
+  "median": 9.5,
+  "p90": 601.2000000000003,
+  "max": 1248.0
+ },
+ "languages": {
+  "ENGLISH": 1.0
+ },
+ "intent_distribution": {
+  "other": 0.224,
+  "debug": 0.19,
+  "understand": 0.172,
+  "refactor": 0.155,
+  "create new code": 0.138,
+  "test": 0.069,
+  "git": 0.052
+ },
+ "pushback_distribution": {
+  "non_pushback": 0.585,
+  "correction": 0.302,
+  "failure_report": 0.075,
+  "rejection": 0.038
+ },
+ "session_turns_median": 4.0,
+ "session_duration_median_s": 393.44100000000003,
+ "agent_code_percentage_median": 100.0,
+ "annotated_personas": {
+  "Expert Nitpicker": 0.467,
+  "Vague Requester": 0.333,
+  "Other": 0.2
+ }
+}

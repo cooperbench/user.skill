@@ -1,0 +1,52 @@
+{
+  "user_id": "AlienKevin",
+  "slug": "alienkevin",
+  "n_sessions_total": 15,
+  "n_sessions_train": 12,
+  "n_sessions_test": 3,
+  "agents": {
+    "Claude Code": 1.0
+  },
+  "repos": {
+    "marin-community/marin": 1.0
+  },
+  "date_range": [
+    "2026-03-20",
+    "2026-04-10"
+  ],
+  "n_prompts_train": 1020,
+  "prompt_words": {
+    "median": 18.0,
+    "p90": 43.0,
+    "max": 586.0
+  },
+  "languages": {
+    "ENGLISH": 0.994,
+    "PORTUGUESE": 0.006
+  },
+  "intent_distribution": {
+    "understand": 0.452,
+    "other": 0.267,
+    "debug": 0.118,
+    "git": 0.049,
+    "create new code": 0.045,
+    "test": 0.042,
+    "refactor": 0.018,
+    "connect": 0.01
+  },
+  "pushback_distribution": {
+    "non_pushback": 0.638,
+    "correction": 0.239,
+    "failure_report": 0.112,
+    "rejection": 0.01,
+    "takeover": 0.001
+  },
+  "session_turns_median": 134.0,
+  "session_duration_median_s": 262103.609,
+  "agent_code_percentage_median": 0.0,
+  "annotated_personas": {
+    "Expert Nitpicker": 0.6,
+    "Vague Requester": 0.267,
+    "Mind Changer": 0.133
+  }
+}

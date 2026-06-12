@@ -1,0 +1,53 @@
+{
+  "user_id": "pc035860",
+  "slug": "pc035860",
+  "n_sessions_total": 44,
+  "n_sessions_train": 36,
+  "n_sessions_test": 8,
+  "agents": {
+   "Claude Code": 1.0
+  },
+  "repos": {
+   "pc035860/cee": 0.659,
+   "pc035860/agent-tail": 0.341
+  },
+  "date_range": [
+   "2026-03-07",
+   "2026-04-09"
+  ],
+  "n_prompts_train": 280,
+  "prompt_words": {
+   "median": 3.0,
+   "p90": 17.099999999999994,
+   "max": 1000.0
+  },
+  "languages": {
+   "ENGLISH": 0.545,
+   "CHINESE": 0.455
+  },
+  "intent_distribution": {
+   "other": 0.361,
+   "git": 0.189,
+   "debug": 0.175,
+   "understand": 0.1,
+   "create new code": 0.086,
+   "refactor": 0.082,
+   "test": 0.007
+  },
+  "pushback_distribution": {
+   "non_pushback": 0.56,
+   "correction": 0.284,
+   "failure_report": 0.132,
+   "takeover": 0.016,
+   "rejection": 0.008
+  },
+  "session_turns_median": 8.0,
+  "session_duration_median_s": 1764.267,
+  "agent_code_percentage_median": 98.85819252929372,
+  "annotated_personas": {
+   "Vague Requester": 0.523,
+   "Expert Nitpicker": 0.364,
+   "Other": 0.068,
+   "Mind Changer": 0.045
+  }
+}

@@ -1,0 +1,48 @@
+{
+ "user_id": "upamune",
+ "slug": "upamune",
+ "n_sessions_total": 7,
+ "n_sessions_train": 6,
+ "n_sessions_test": 1,
+ "agents": {
+  "Claude Code": 1.0
+ },
+ "repos": {
+  "upamune/xi": 1.0
+ },
+ "date_range": [
+  "2026-02-14",
+  "2026-02-14"
+ ],
+ "n_prompts_train": 27,
+ "prompt_words": {
+  "median": 5.0,
+  "p90": 642.4,
+  "max": 1492.0
+ },
+ "languages": {
+  "JAPANESE": 0.593,
+  "ENGLISH": 0.407
+ },
+ "intent_distribution": {
+  "git": 0.259,
+  "create new code": 0.259,
+  "debug": 0.222,
+  "understand": 0.185,
+  "other": 0.074
+ },
+ "pushback_distribution": {
+  "non_pushback": 0.577,
+  "failure_report": 0.231,
+  "takeover": 0.115,
+  "correction": 0.077
+ },
+ "session_turns_median": 4.0,
+ "session_duration_median_s": 683.627,
+ "agent_code_percentage_median": 98.88888888888889,
+ "annotated_personas": {
+  "Expert Nitpicker": 0.571,
+  "Vague Requester": 0.286,
+  "Mind Changer": 0.143
+ }
+}

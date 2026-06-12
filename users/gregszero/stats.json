@@ -1,0 +1,51 @@
+{
+  "user_id": "gregszero",
+  "slug": "gregszero",
+  "n_sessions_total": 45,
+  "n_sessions_train": 37,
+  "n_sessions_test": 8,
+  "agents": {
+    "Claude Code": 1.0
+  },
+  "repos": {
+    "gregszero/open-fang": 1.0
+  },
+  "date_range": [
+    "2026-02-16",
+    "2026-02-23"
+  ],
+  "n_prompts_train": 164,
+  "prompt_words": {
+    "median": 20.0,
+    "p90": 549.8000000000002,
+    "max": 2095.0
+  },
+  "languages": {
+    "ENGLISH": 1.0
+  },
+  "intent_distribution": {
+    "debug": 0.226,
+    "create new code": 0.201,
+    "git": 0.183,
+    "other": 0.152,
+    "refactor": 0.11,
+    "understand": 0.104,
+    "test": 0.018,
+    "connect": 0.006
+  },
+  "pushback_distribution": {
+    "non_pushback": 0.483,
+    "failure_report": 0.212,
+    "correction": 0.185,
+    "takeover": 0.119
+  },
+  "session_turns_median": 4.0,
+  "session_duration_median_s": 403.368,
+  "agent_code_percentage_median": 98.24000000000001,
+  "annotated_personas": {
+    "Expert Nitpicker": 0.689,
+    "Vague Requester": 0.133,
+    "Mind Changer": 0.111,
+    "Other": 0.067
+  }
+}

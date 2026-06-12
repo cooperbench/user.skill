@@ -1,0 +1,47 @@
+{
+ "user_id": "roo-oliv",
+ "slug": "roo-oliv",
+ "n_sessions_total": 10,
+ "n_sessions_train": 8,
+ "n_sessions_test": 2,
+ "agents": {
+  "Claude Code": 1.0
+ },
+ "repos": {
+  "roo-oliv/monodreams": 0.7,
+  "roo-oliv/claude-assisted-review-plugin": 0.3
+ },
+ "date_range": [
+  "2026-02-15",
+  "2026-02-16"
+ ],
+ "n_prompts_train": 28,
+ "prompt_words": {
+  "median": 78.5,
+  "p90": 544.2,
+  "max": 1157.0
+ },
+ "languages": {
+  "ENGLISH": 1.0
+ },
+ "intent_distribution": {
+  "debug": 0.321,
+  "other": 0.25,
+  "create new code": 0.179,
+  "git": 0.143,
+  "refactor": 0.071,
+  "test": 0.036
+ },
+ "pushback_distribution": {
+  "non_pushback": 0.667,
+  "failure_report": 0.19,
+  "takeover": 0.095,
+  "correction": 0.048
+ },
+ "session_turns_median": 4.0,
+ "session_duration_median_s": 569.752,
+ "agent_code_percentage_median": 79.36018743804632,
+ "annotated_personas": {
+  "Expert Nitpicker": 1.0
+ }
+}

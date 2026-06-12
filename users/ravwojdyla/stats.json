@@ -1,0 +1,47 @@
+{
+ "user_id": "ravwojdyla",
+ "slug": "ravwojdyla",
+ "n_sessions_total": 6,
+ "n_sessions_train": 5,
+ "n_sessions_test": 1,
+ "agents": {
+  "Claude Code": 1.0
+ },
+ "repos": {
+  "marin-community/marin": 1.0
+ },
+ "date_range": [
+  "2026-02-16",
+  "2026-02-25"
+ ],
+ "n_prompts_train": 20,
+ "prompt_words": {
+  "median": 10.5,
+  "p90": 48.80000000000001,
+  "max": 552.0
+ },
+ "languages": {
+  "ENGLISH": 1.0
+ },
+ "intent_distribution": {
+  "refactor": 0.35,
+  "git": 0.3,
+  "other": 0.15,
+  "test": 0.05,
+  "debug": 0.05,
+  "understand": 0.05,
+  "create new code": 0.05
+ },
+ "pushback_distribution": {
+  "correction": 0.526,
+  "non_pushback": 0.421,
+  "failure_report": 0.053
+ },
+ "session_turns_median": 8.0,
+ "session_duration_median_s": 1141.4645,
+ "agent_code_percentage_median": 96.0,
+ "annotated_personas": {
+  "Expert Nitpicker": 0.667,
+  "Vague Requester": 0.333
+ }
+}

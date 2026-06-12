@@ -1,0 +1,46 @@
+{
+ "user_id": "kubokawa-dev",
+ "slug": "kubokawa-dev",
+ "n_sessions_total": 9,
+ "n_sessions_train": 8,
+ "n_sessions_test": 1,
+ "agents": {
+  "Claude Code": 1.0
+ },
+ "repos": {
+  "kubokawa-dev/million-pocket-orchestra": 1.0
+ },
+ "date_range": [
+  "2026-03-29",
+  "2026-04-13"
+ ],
+ "n_prompts_train": 55,
+ "prompt_words": {
+  "median": 1.0,
+  "p90": 58.80000000000002,
+  "max": 284.0
+ },
+ "languages": {},
+ "intent_distribution": {
+  "other": 0.491,
+  "git": 0.182,
+  "debug": 0.109,
+  "create new code": 0.091,
+  "understand": 0.073,
+  "refactor": 0.036,
+  "connect": 0.018
+ },
+ "pushback_distribution": {
+  "non_pushback": 0.685,
+  "failure_report": 0.148,
+  "correction": 0.148,
+  "rejection": 0.019
+ },
+ "session_turns_median": 6.0,
+ "session_duration_median_s": 1070.047,
+ "agent_code_percentage_median": 2.552046066305496,
+ "annotated_personas": {
+  "Vague Requester": 0.778,
+  "Other": 0.222
+ }
+}

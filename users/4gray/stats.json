@@ -1,0 +1,51 @@
+{
+  "user_id": "4gray",
+  "slug": "4gray",
+  "n_sessions_total": 21,
+  "n_sessions_train": 17,
+  "n_sessions_test": 4,
+  "agents": {
+    "Claude Code": 1.0
+  },
+  "repos": {
+    "4gray/iptvnator": 1.0
+  },
+  "date_range": [
+    "2026-02-11",
+    "2026-04-16"
+  ],
+  "n_prompts_train": 150,
+  "prompt_words": {
+    "median": 31.5,
+    "p90": 739.9,
+    "max": 12560.0
+  },
+  "languages": {
+    "ENGLISH": 1.0
+  },
+  "intent_distribution": {
+    "understand": 0.253,
+    "create new code": 0.227,
+    "debug": 0.2,
+    "refactor": 0.14,
+    "other": 0.14,
+    "test": 0.027,
+    "connect": 0.007,
+    "git": 0.007
+  },
+  "pushback_distribution": {
+    "correction": 0.459,
+    "non_pushback": 0.404,
+    "failure_report": 0.13,
+    "rejection": 0.007
+  },
+  "session_turns_median": 13.0,
+  "session_duration_median_s": 11534.489,
+  "agent_code_percentage_median": 0.0,
+  "annotated_personas": {
+    "Expert Nitpicker": 0.667,
+    "Vague Requester": 0.19,
+    "Mind Changer": 0.095,
+    "Other": 0.048
+  }
+}

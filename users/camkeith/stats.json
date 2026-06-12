@@ -1,0 +1,51 @@
+{
+ "user_id": "camkeith",
+ "slug": "camkeith",
+ "n_sessions_total": 12,
+ "n_sessions_train": 10,
+ "n_sessions_test": 2,
+ "agents": {
+  "Claude Code": 1.0
+ },
+ "repos": {
+  "camkeith/cameronkeithgolf": 0.917,
+  "ckeith26/cameronkeithgolf": 0.083
+ },
+ "date_range": [
+  "2026-02-20",
+  "2026-04-17"
+ ],
+ "n_prompts_train": 133,
+ "prompt_words": {
+  "median": 7.0,
+  "p90": 23.0,
+  "max": 1091.0
+ },
+ "languages": {
+  "ENGLISH": 1.0
+ },
+ "intent_distribution": {
+  "other": 0.444,
+  "debug": 0.143,
+  "refactor": 0.128,
+  "create new code": 0.105,
+  "git": 0.075,
+  "understand": 0.068,
+  "connect": 0.038
+ },
+ "pushback_distribution": {
+  "correction": 0.488,
+  "non_pushback": 0.323,
+  "failure_report": 0.157,
+  "takeover": 0.024,
+  "rejection": 0.008
+ },
+ "session_turns_median": 14.0,
+ "session_duration_median_s": 749.2475,
+ "agent_code_percentage_median": 1.1904761904761905,
+ "annotated_personas": {
+  "Vague Requester": 0.667,
+  "Expert Nitpicker": 0.25,
+  "Mind Changer": 0.083
+ }
+}

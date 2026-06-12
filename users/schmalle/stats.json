@@ -1,0 +1,49 @@
+{
+  "user_id": "schmalle",
+  "slug": "schmalle",
+  "n_sessions_total": 55,
+  "n_sessions_train": 47,
+  "n_sessions_test": 8,
+  "agents": {
+    "Claude Code": 1.0
+  },
+  "repos": {
+    "schmalle/secman": 1.0
+  },
+  "date_range": [
+    "2026-02-22",
+    "2026-03-19"
+  ],
+  "n_prompts_train": 247,
+  "prompt_words": {
+    "median": 37.0,
+    "p90": 455.40000000000003,
+    "max": 2901.0
+  },
+  "languages": {
+    "ENGLISH": 1.0
+  },
+  "intent_distribution": {
+    "debug": 0.291,
+    "other": 0.219,
+    "create new code": 0.219,
+    "refactor": 0.166,
+    "understand": 0.093,
+    "test": 0.008,
+    "git": 0.004
+  },
+  "pushback_distribution": {
+    "non_pushback": 0.555,
+    "correction": 0.327,
+    "failure_report": 0.118
+  },
+  "session_turns_median": 5.0,
+  "session_duration_median_s": 1660.505,
+  "agent_code_percentage_median": 25.517241379310345,
+  "annotated_personas": {
+    "Mind Changer": 0.418,
+    "Expert Nitpicker": 0.382,
+    "Vague Requester": 0.127,
+    "Other": 0.073
+  }
+}

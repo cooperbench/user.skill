@@ -1,0 +1,49 @@
+{
+  "user_id": "kgcrom",
+  "slug": "kgcrom",
+  "n_sessions_total": 24,
+  "n_sessions_train": 20,
+  "n_sessions_test": 4,
+  "agents": {
+    "Claude Code": 1.0
+  },
+  "repos": {
+    "kgcrom/cluefin": 0.583,
+    "kgcrom/agent-foundry": 0.417
+  },
+  "date_range": [
+    "2026-02-20",
+    "2026-02-25"
+  ],
+  "n_prompts_train": 81,
+  "prompt_words": {
+    "median": 66.0,
+    "p90": 291.0,
+    "max": 2620.0
+  },
+  "languages": {
+    "ENGLISH": 0.852,
+    "KOREAN": 0.148
+  },
+  "intent_distribution": {
+    "git": 0.506,
+    "create new code": 0.284,
+    "debug": 0.111,
+    "other": 0.074,
+    "understand": 0.025
+  },
+  "pushback_distribution": {
+    "non_pushback": 0.711,
+    "correction": 0.158,
+    "failure_report": 0.066,
+    "takeover": 0.053,
+    "rejection": 0.013
+  },
+  "session_turns_median": 5.5,
+  "session_duration_median_s": 287.4905,
+  "agent_code_percentage_median": 100.0,
+  "annotated_personas": {
+    "Expert Nitpicker": 0.75,
+    "Vague Requester": 0.25
+  }
+}

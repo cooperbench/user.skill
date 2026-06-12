@@ -1,0 +1,50 @@
+{
+  "user_id": "dayhaysoos",
+  "slug": "dayhaysoos",
+  "n_sessions_total": 415,
+  "n_sessions_train": 407,
+  "n_sessions_test": 8,
+  "agents": {
+    "OpenCode": 1.0
+  },
+  "repos": {
+    "dayhaysoos/nimbus": 1.0
+  },
+  "date_range": [
+    "2026-03-06",
+    "2026-03-27"
+  ],
+  "n_prompts_train": 2605,
+  "prompt_words": {
+    "median": 87.0,
+    "p90": 371.1999999999998,
+    "max": 1859.0
+  },
+  "languages": {
+    "ENGLISH": 1.0
+  },
+  "intent_distribution": {
+    "other": 0.495,
+    "understand": 0.19,
+    "debug": 0.136,
+    "git": 0.124,
+    "create new code": 0.03,
+    "test": 0.013,
+    "refactor": 0.011,
+    "review": 0.001,
+    "connect": 0.0
+  },
+  "pushback_distribution": {
+    "non_pushback": 0.781,
+    "correction": 0.193,
+    "failure_report": 0.022,
+    "takeover": 0.003,
+    "rejection": 0.001
+  },
+  "session_turns_median": 9.0,
+  "session_duration_median_s": null,
+  "agent_code_percentage_median": 99.79050279329608,
+  "annotated_personas": {
+    "Other": 1.0
+  }
+}

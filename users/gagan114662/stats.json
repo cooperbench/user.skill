@@ -1,0 +1,43 @@
+{
+ "user_id": "gagan114662",
+ "slug": "gagan114662",
+ "n_sessions_total": 8,
+ "n_sessions_train": 7,
+ "n_sessions_test": 1,
+ "agents": {
+  "Claude Code": 1.0
+ },
+ "repos": {
+  "gagan114662/openfang": 1.0
+ },
+ "date_range": [
+  "2026-02-27",
+  "2026-03-01"
+ ],
+ "n_prompts_train": 27,
+ "prompt_words": {
+  "median": 7.0,
+  "p90": 93.00000000000004,
+  "max": 1492.0
+ },
+ "languages": {},
+ "intent_distribution": {
+  "other": 0.556,
+  "debug": 0.148,
+  "understand": 0.148,
+  "git": 0.074,
+  "connect": 0.074
+ },
+ "pushback_distribution": {
+  "non_pushback": 0.609,
+  "failure_report": 0.217,
+  "correction": 0.174
+ },
+ "session_turns_median": 2.0,
+ "session_duration_median_s": 12.278,
+ "agent_code_percentage_median": 1.0060362173038229,
+ "annotated_personas": {
+  "Other": 0.75,
+  "Mind Changer": 0.25
+ }
+}

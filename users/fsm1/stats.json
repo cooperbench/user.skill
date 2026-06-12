@@ -1,0 +1,52 @@
+{
+  "user_id": "FSM1",
+  "slug": "fsm1",
+  "n_sessions_total": 16,
+  "n_sessions_train": 13,
+  "n_sessions_test": 3,
+  "agents": {
+   "Claude Code": 1.0
+  },
+  "repos": {
+   "FSM1/cipher-box": 1.0
+  },
+  "date_range": [
+   "2026-02-11",
+   "2026-04-06"
+  ],
+  "n_prompts_train": 195,
+  "prompt_words": {
+   "median": 12.0,
+   "p90": 65.79999999999998,
+   "max": 1970.0
+  },
+  "languages": {
+   "ENGLISH": 1.0
+  },
+  "intent_distribution": {
+   "other": 0.272,
+   "git": 0.267,
+   "understand": 0.133,
+   "create new code": 0.108,
+   "debug": 0.108,
+   "refactor": 0.062,
+   "test": 0.031,
+   "connect": 0.021
+  },
+  "pushback_distribution": {
+   "non_pushback": 0.525,
+   "correction": 0.391,
+   "failure_report": 0.067,
+   "takeover": 0.011,
+   "rejection": 0.006
+  },
+  "session_turns_median": 20.5,
+  "session_duration_median_s": 3555.873,
+  "agent_code_percentage_median": 100.0,
+  "annotated_personas": {
+   "Expert Nitpicker": 0.438,
+   "Vague Requester": 0.375,
+   "Mind Changer": 0.125,
+   "Other": 0.062
+  }
+ }

@@ -1,0 +1,47 @@
+{
+  "user_id": "Mathews-Tom",
+  "slug": "mathews-tom",
+  "n_sessions_total": 7,
+  "n_sessions_train": 6,
+  "n_sessions_test": 1,
+  "agents": {
+    "Claude Code": 1.0
+  },
+  "repos": {
+    "Mathews-Tom/no-magic": 1.0
+  },
+  "date_range": [
+    "2026-02-13",
+    "2026-02-14"
+  ],
+  "n_prompts_train": 128,
+  "prompt_words": {
+    "median": 27.0,
+    "p90": 326.0,
+    "max": 1794.0
+  },
+  "languages": {
+    "ENGLISH": 1.0
+  },
+  "intent_distribution": {
+    "understand": 0.453,
+    "create new code": 0.133,
+    "git": 0.133,
+    "other": 0.109,
+    "test": 0.078,
+    "refactor": 0.07,
+    "debug": 0.023
+  },
+  "pushback_distribution": {
+    "non_pushback": 0.86,
+    "correction": 0.14
+  },
+  "session_turns_median": 12.0,
+  "session_duration_median_s": 2915.511,
+  "agent_code_percentage_median": 73.72203168381513,
+  "annotated_personas": {
+    "Expert Nitpicker": 0.714,
+    "Vague Requester": 0.143,
+    "Mind Changer": 0.143
+  }
+}

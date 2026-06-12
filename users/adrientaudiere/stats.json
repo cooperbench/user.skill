@@ -1,0 +1,46 @@
+{
+  "user_id": "adrientaudiere",
+  "slug": "adrientaudiere",
+  "n_sessions_total": 14,
+  "n_sessions_train": 12,
+  "n_sessions_test": 2,
+  "agents": {
+    "Claude Code": 1.0
+  },
+  "repos": {
+    "adrientaudiere/MiscMetabar": 1.0
+  },
+  "date_range": [
+    "2026-02-20",
+    "2026-04-15"
+  ],
+  "n_prompts_train": 73,
+  "prompt_words": {
+    "median": 11.0,
+    "p90": 163.2,
+    "max": 1061.0
+  },
+  "languages": {},
+  "intent_distribution": {
+    "other": 0.274,
+    "debug": 0.192,
+    "create new code": 0.151,
+    "test": 0.137,
+    "refactor": 0.123,
+    "git": 0.096,
+    "understand": 0.027
+  },
+  "pushback_distribution": {
+    "non_pushback": 0.538,
+    "correction": 0.354,
+    "failure_report": 0.077,
+    "rejection": 0.031
+  },
+  "session_turns_median": 6.5,
+  "session_duration_median_s": 1916.3784999999998,
+  "agent_code_percentage_median": 91.66666666666667,
+  "annotated_personas": {
+    "Expert Nitpicker": 0.857,
+    "Other": 0.143
+  }
+}

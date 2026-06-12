@@ -1,0 +1,51 @@
+{
+ "user_id": "matthsena",
+ "slug": "matthsena",
+ "n_sessions_total": 20,
+ "n_sessions_train": 16,
+ "n_sessions_test": 4,
+ "agents": {
+  "Claude Code": 1.0
+ },
+ "repos": {
+  "matthsena/reef-coder": 1.0
+ },
+ "date_range": [
+  "2026-02-18",
+  "2026-02-26"
+ ],
+ "n_prompts_train": 87,
+ "prompt_words": {
+  "median": 17.0,
+  "p90": 105.80000000000058,
+  "max": 675.0
+ },
+ "languages": {
+  "PORTUGUESE": 0.586,
+  "ENGLISH": 0.414
+ },
+ "intent_distribution": {
+  "debug": 0.23,
+  "create new code": 0.184,
+  "other": 0.184,
+  "git": 0.149,
+  "refactor": 0.126,
+  "test": 0.069,
+  "understand": 0.057
+ },
+ "pushback_distribution": {
+  "non_pushback": 0.444,
+  "correction": 0.407,
+  "failure_report": 0.136,
+  "rejection": 0.012
+ },
+ "session_turns_median": 6.0,
+ "session_duration_median_s": 1175.1570000000002,
+ "agent_code_percentage_median": 100.0,
+ "annotated_personas": {
+  "Mind Changer": 0.35,
+  "Expert Nitpicker": 0.25,
+  "Vague Requester": 0.2,
+  "Other": 0.2
+ }
+}

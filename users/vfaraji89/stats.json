@@ -1,0 +1,48 @@
+{
+  "user_id": "vfaraji89",
+  "slug": "vfaraji89",
+  "n_sessions_total": 9,
+  "n_sessions_train": 8,
+  "n_sessions_test": 1,
+  "agents": {
+    "Claude Code": 1.0
+  },
+  "repos": {
+    "vfaraji89/tokalator": 1.0
+  },
+  "date_range": [
+    "2026-03-06",
+    "2026-04-11"
+  ],
+  "n_prompts_train": 133,
+  "prompt_words": {
+    "median": 5.0,
+    "p90": 43.19999999999999,
+    "max": 24282.0
+  },
+  "languages": {
+    "ENGLISH": 1.0
+  },
+  "intent_distribution": {
+    "other": 0.481,
+    "create new code": 0.233,
+    "debug": 0.113,
+    "refactor": 0.09,
+    "git": 0.053,
+    "understand": 0.03
+  },
+  "pushback_distribution": {
+    "non_pushback": 0.547,
+    "correction": 0.422,
+    "failure_report": 0.023,
+    "rejection": 0.008
+  },
+  "session_turns_median": 44.0,
+  "session_duration_median_s": 5167.395,
+  "agent_code_percentage_median": 0.0,
+  "annotated_personas": {
+    "Vague Requester": 0.667,
+    "Expert Nitpicker": 0.222,
+    "Mind Changer": 0.111
+  }
+}

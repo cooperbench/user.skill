@@ -1,0 +1,48 @@
+{
+  "user_id": "basher83",
+  "slug": "basher83",
+  "n_sessions_total": 8,
+  "n_sessions_train": 7,
+  "n_sessions_test": 1,
+  "agents": {
+    "Claude Code": 1.0
+  },
+  "repos": {
+    "basher83/tailnet-microservices": 0.625,
+    "basher83/lunar-claude": 0.375
+  },
+  "date_range": [
+    "2026-02-11",
+    "2026-04-16"
+  ],
+  "n_prompts_train": 61,
+  "prompt_words": {
+    "median": 16.0,
+    "p90": 240.0,
+    "max": 2028.0
+  },
+  "languages": {
+    "ENGLISH": 1.0
+  },
+  "intent_distribution": {
+    "other": 0.23,
+    "create new code": 0.213,
+    "debug": 0.197,
+    "git": 0.148,
+    "test": 0.098,
+    "understand": 0.098,
+    "connect": 0.016
+  },
+  "pushback_distribution": {
+    "non_pushback": 0.746,
+    "correction": 0.169,
+    "failure_report": 0.085
+  },
+  "session_turns_median": 9.5,
+  "session_duration_median_s": 883.7835,
+  "agent_code_percentage_median": 69.06077348066299,
+  "annotated_personas": {
+    "Expert Nitpicker": 0.625,
+    "Vague Requester": 0.375
+  }
+}

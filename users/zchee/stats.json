@@ -1,0 +1,50 @@
+{
+  "user_id": "zchee",
+  "slug": "zchee",
+  "n_sessions_total": 96,
+  "n_sessions_train": 88,
+  "n_sessions_test": 8,
+  "agents": {
+    "Codex": 0.865,
+    "Claude Code": 0.135
+  },
+  "repos": {
+    "zchee/zmux": 0.792,
+    "zchee/spanner-manager": 0.125,
+    "zchee/agent": 0.083
+  },
+  "date_range": [
+    "2026-03-30",
+    "2026-04-18"
+  ],
+  "n_prompts_train": 860,
+  "prompt_words": {
+    "median": 34.0,
+    "p90": 917.0,
+    "max": 2563.0
+  },
+  "languages": {},
+  "intent_distribution": {
+    "other": 0.413,
+    "understand": 0.26,
+    "debug": 0.115,
+    "create new code": 0.102,
+    "refactor": 0.06,
+    "git": 0.048,
+    "test": 0.001
+  },
+  "pushback_distribution": {
+    "non_pushback": 0.907,
+    "correction": 0.061,
+    "failure_report": 0.028,
+    "rejection": 0.005
+  },
+  "session_turns_median": 12.0,
+  "session_duration_median_s": 1260.293,
+  "agent_code_percentage_median": 100.0,
+  "annotated_personas": {
+    "Other": 0.896,
+    "Vague Requester": 0.052,
+    "Expert Nitpicker": 0.052
+  }
+}

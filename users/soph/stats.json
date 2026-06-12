@@ -1,0 +1,55 @@
+{
+ "user_id": "Soph",
+ "slug": "soph",
+ "n_sessions_total": 167,
+ "n_sessions_train": 159,
+ "n_sessions_test": 8,
+ "agents": {
+  "Claude Code": 0.862,
+  "unknown": 0.108,
+  "Gemini CLI": 0.018,
+  "Agent": 0.006,
+  "Vogon Agent": 0.006
+ },
+ "repos": {
+  "entireio/cli": 1.0
+ },
+ "date_range": [
+  "2026-01-05",
+  "2026-03-19"
+ ],
+ "n_prompts_train": 1230,
+ "prompt_words": {
+  "median": 15.0,
+  "p90": 68.0,
+  "max": 9619.0
+ },
+ "languages": {
+  "ENGLISH": 1.0
+ },
+ "intent_distribution": {
+  "understand": 0.217,
+  "other": 0.169,
+  "git": 0.166,
+  "debug": 0.158,
+  "refactor": 0.149,
+  "test": 0.079,
+  "create new code": 0.058,
+  "connect": 0.005
+ },
+ "pushback_distribution": {
+  "correction": 0.524,
+  "non_pushback": 0.379,
+  "failure_report": 0.09,
+  "rejection": 0.005,
+  "takeover": 0.002
+ },
+ "session_turns_median": 10.0,
+ "session_duration_median_s": 2471.0755,
+ "agent_code_percentage_median": 100.0,
+ "annotated_personas": {
+  "Expert Nitpicker": 0.677,
+  "Vague Requester": 0.275,
+  "Other": 0.048
+ }
+}

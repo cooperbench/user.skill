@@ -1,0 +1,52 @@
+{
+  "user_id": "moebiusband73",
+  "slug": "moebiusband73",
+  "n_sessions_total": 68,
+  "n_sessions_train": 60,
+  "n_sessions_test": 8,
+  "agents": {
+    "Claude Code": 1.0
+  },
+  "repos": {
+    "ClusterCockpit/cc-backend": 0.941,
+    "ClusterCockpit/cc-metric-store": 0.059
+  },
+  "date_range": [
+    "2026-03-03",
+    "2026-03-30"
+  ],
+  "n_prompts_train": 108,
+  "prompt_words": {
+    "median": 21.0,
+    "p90": 544.2999999999998,
+    "max": 1154.0
+  },
+  "languages": {
+    "ENGLISH": 1.0
+  },
+  "intent_distribution": {
+    "refactor": 0.287,
+    "create new code": 0.25,
+    "debug": 0.176,
+    "other": 0.111,
+    "git": 0.083,
+    "understand": 0.074,
+    "connect": 0.009,
+    "test": 0.009
+  },
+  "pushback_distribution": {
+    "non_pushback": 0.743,
+    "correction": 0.168,
+    "failure_report": 0.069,
+    "takeover": 0.02
+  },
+  "session_turns_median": 2.0,
+  "session_duration_median_s": 315.938,
+  "agent_code_percentage_median": 100.0,
+  "annotated_personas": {
+    "Expert Nitpicker": 0.574,
+    "Vague Requester": 0.191,
+    "Other": 0.191,
+    "Mind Changer": 0.044
+  }
+}

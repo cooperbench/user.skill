@@ -1,0 +1,52 @@
+{
+  "user_id": "LitMc",
+  "slug": "litmc",
+  "n_sessions_total": 13,
+  "n_sessions_train": 11,
+  "n_sessions_test": 2,
+  "agents": {
+    "Claude Code": 1.0
+  },
+  "repos": {
+    "LitMc/gc-playground": 1.0
+  },
+  "date_range": [
+    "2026-02-24",
+    "2026-02-28"
+  ],
+  "n_prompts_train": 134,
+  "prompt_words": {
+    "median": 3.0,
+    "p90": 75.30000000000003,
+    "max": 562.0
+  },
+  "languages": {
+    "JAPANESE": 0.851,
+    "ENGLISH": 0.149
+  },
+  "intent_distribution": {
+    "other": 0.343,
+    "understand": 0.179,
+    "create new code": 0.179,
+    "git": 0.142,
+    "refactor": 0.075,
+    "debug": 0.037,
+    "test": 0.037,
+    "connect": 0.007
+  },
+  "pushback_distribution": {
+    "non_pushback": 0.571,
+    "correction": 0.357,
+    "failure_report": 0.048,
+    "takeover": 0.016,
+    "rejection": 0.008
+  },
+  "session_turns_median": 15.0,
+  "session_duration_median_s": 2785.519,
+  "agent_code_percentage_median": 62.5,
+  "annotated_personas": {
+    "Expert Nitpicker": 0.769,
+    "Vague Requester": 0.154,
+    "Mind Changer": 0.077
+  }
+}

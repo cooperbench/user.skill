@@ -1,0 +1,47 @@
+{
+  "user_id": "junjiezhou1122",
+  "slug": "junjiezhou1122",
+  "n_sessions_total": 6,
+  "n_sessions_train": 5,
+  "n_sessions_test": 1,
+  "agents": {
+   "Claude Code": 1.0
+  },
+  "repos": {
+   "junjiezhou1122/ClawCorp": 1.0
+  },
+  "date_range": [
+   "2026-02-22",
+   "2026-02-23"
+  ],
+  "n_prompts_train": 95,
+  "prompt_words": {
+   "median": 7.0,
+   "p90": 88.80000000000003,
+   "max": 754.0
+  },
+  "languages": {
+   "CHINESE": 0.568,
+   "ENGLISH": 0.432
+  },
+  "intent_distribution": {
+   "create new code": 0.316,
+   "other": 0.221,
+   "understand": 0.221,
+   "debug": 0.189,
+   "git": 0.042,
+   "refactor": 0.011
+  },
+  "pushback_distribution": {
+   "correction": 0.465,
+   "non_pushback": 0.279,
+   "failure_report": 0.256
+  },
+  "session_turns_median": 20.0,
+  "session_duration_median_s": 11816.2605,
+  "agent_code_percentage_median": 0.0,
+  "annotated_personas": {
+   "Expert Nitpicker": 0.5,
+   "Mind Changer": 0.5
+  }
+}

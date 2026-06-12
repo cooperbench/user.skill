@@ -1,0 +1,51 @@
+{
+  "user_id": "abiswas@elastio.com",
+  "slug": "abiswas-elastio-com",
+  "n_sessions_total": 25,
+  "n_sessions_train": 20,
+  "n_sessions_test": 5,
+  "agents": {
+    "Claude Code": 1.0
+  },
+  "repos": {
+    "anchoo2kewl/SprintSpark": 1.0
+  },
+  "date_range": [
+    "2026-02-13",
+    "2026-04-18"
+  ],
+  "n_prompts_train": 310,
+  "prompt_words": {
+    "median": 23.5,
+    "p90": 300.30000000000007,
+    "max": 2678.0
+  },
+  "languages": {
+    "ENGLISH": 1.0
+  },
+  "intent_distribution": {
+    "other": 0.261,
+    "create new code": 0.19,
+    "debug": 0.158,
+    "test": 0.123,
+    "understand": 0.103,
+    "connect": 0.058,
+    "git": 0.055,
+    "refactor": 0.052
+  },
+  "pushback_distribution": {
+    "non_pushback": 0.5,
+    "correction": 0.348,
+    "failure_report": 0.13,
+    "rejection": 0.014,
+    "takeover": 0.007
+  },
+  "session_turns_median": 18.0,
+  "session_duration_median_s": 3923.123,
+  "agent_code_percentage_median": 19.090674244381297,
+  "annotated_personas": {
+    "Mind Changer": 0.4,
+    "Expert Nitpicker": 0.32,
+    "Vague Requester": 0.28
+  }
+}

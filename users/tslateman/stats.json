@@ -1,0 +1,55 @@
+{
+ "user_id": "tslateman",
+ "slug": "tslateman",
+ "n_sessions_total": 41,
+ "n_sessions_train": 33,
+ "n_sessions_test": 8,
+ "agents": {
+  "Claude Code": 0.976,
+  "Gemini CLI": 0.024
+ },
+ "repos": {
+  "tslateman/reck": 0.634,
+  "tslateman/duet": 0.366
+ },
+ "date_range": [
+  "2026-02-20",
+  "2026-03-22"
+ ],
+ "n_prompts_train": 426,
+ "prompt_words": {
+  "median": 10.0,
+  "p90": 355.5,
+  "max": 2145.0
+ },
+ "languages": {
+  "ENGLISH": 0.997,
+  "PORTUGUESE": 0.003
+ },
+ "intent_distribution": {
+  "other": 0.366,
+  "understand": 0.19,
+  "git": 0.181,
+  "create new code": 0.106,
+  "refactor": 0.103,
+  "debug": 0.033,
+  "test": 0.019,
+  "connect": 0.002
+ },
+ "pushback_distribution": {
+  "non_pushback": 0.6,
+  "correction": 0.367,
+  "rejection": 0.019,
+  "failure_report": 0.01,
+  "takeover": 0.005
+ },
+ "session_turns_median": 5.0,
+ "session_duration_median_s": 110.1705,
+ "agent_code_percentage_median": 85.71428571428571,
+ "annotated_personas": {
+  "Expert Nitpicker": 0.61,
+  "Vague Requester": 0.22,
+  "Other": 0.098,
+  "Mind Changer": 0.073
+ }
+}

@@ -1,0 +1,51 @@
+{
+  "user_id": "maoxiaoke",
+  "slug": "maoxiaoke",
+  "n_sessions_total": 7,
+  "n_sessions_train": 6,
+  "n_sessions_test": 1,
+  "agents": {
+    "Claude Code": 1.0
+  },
+  "repos": {
+    "maoxiaoke/nazha": 1.0
+  },
+  "date_range": [
+    "2026-02-19",
+    "2026-02-23"
+  ],
+  "n_prompts_train": 107,
+  "prompt_words": {
+    "median": 7.0,
+    "p90": 62.400000000000006,
+    "max": 894.0
+  },
+  "languages": {
+    "ENGLISH": 0.579,
+    "CHINESE": 0.421
+  },
+  "intent_distribution": {
+    "refactor": 0.308,
+    "other": 0.262,
+    "create new code": 0.262,
+    "debug": 0.084,
+    "understand": 0.047,
+    "git": 0.028,
+    "connect": 0.009
+  },
+  "pushback_distribution": {
+    "correction": 0.73,
+    "non_pushback": 0.21,
+    "failure_report": 0.04,
+    "takeover": 0.01,
+    "rejection": 0.01
+  },
+  "session_turns_median": 18.0,
+  "session_duration_median_s": 12869.3,
+  "agent_code_percentage_median": 0.0,
+  "annotated_personas": {
+    "Expert Nitpicker": 0.571,
+    "Vague Requester": 0.286,
+    "Mind Changer": 0.143
+  }
+}

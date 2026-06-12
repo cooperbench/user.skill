@@ -1,0 +1,53 @@
+{
+ "user_id": "vaayne",
+ "slug": "vaayne",
+ "n_sessions_total": 14,
+ "n_sessions_train": 12,
+ "n_sessions_test": 2,
+ "agents": {
+  "Claude Code": 1.0
+ },
+ "repos": {
+  "vaayne/anna": 0.857,
+  "vaayne/agent-kit": 0.143
+ },
+ "date_range": [
+  "2026-03-13",
+  "2026-03-14"
+ ],
+ "n_prompts_train": 83,
+ "prompt_words": {
+  "median": 7.0,
+  "p90": 29.0,
+  "max": 96.0
+ },
+ "languages": {
+  "ENGLISH": 1.0
+ },
+ "intent_distribution": {
+  "git": 0.313,
+  "refactor": 0.193,
+  "other": 0.181,
+  "understand": 0.133,
+  "create new code": 0.108,
+  "debug": 0.036,
+  "test": 0.024,
+  "connect": 0.012
+ },
+ "pushback_distribution": {
+  "correction": 0.469,
+  "non_pushback": 0.42,
+  "takeover": 0.074,
+  "failure_report": 0.025,
+  "rejection": 0.012
+ },
+ "session_turns_median": 7.0,
+ "session_duration_median_s": 1783.7469999999998,
+ "agent_code_percentage_median": 100.0,
+ "annotated_personas": {
+  "Vague Requester": 0.571,
+  "Expert Nitpicker": 0.286,
+  "Other": 0.071,
+  "Mind Changer": 0.071
+ }
+}

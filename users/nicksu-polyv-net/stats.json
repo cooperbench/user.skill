@@ -1,0 +1,50 @@
+{
+ "user_id": "nicksu@polyv.net",
+ "slug": "nicksu-polyv-net",
+ "n_sessions_total": 11,
+ "n_sessions_train": 9,
+ "n_sessions_test": 2,
+ "agents": {
+  "Claude Code": 1.0
+ },
+ "repos": {
+  "terryso/polymarket-trader": 1.0
+ },
+ "date_range": [
+  "2026-02-26",
+  "2026-02-28"
+ ],
+ "n_prompts_train": 70,
+ "prompt_words": {
+  "median": 4.0,
+  "p90": 94.0,
+  "max": 336.0
+ },
+ "languages": {
+  "ENGLISH": 0.5,
+  "CHINESE": 0.5
+ },
+ "intent_distribution": {
+  "debug": 0.3,
+  "other": 0.186,
+  "create new code": 0.157,
+  "git": 0.143,
+  "understand": 0.114,
+  "refactor": 0.071,
+  "test": 0.029
+ },
+ "pushback_distribution": {
+  "correction": 0.377,
+  "non_pushback": 0.304,
+  "failure_report": 0.275,
+  "takeover": 0.043
+ },
+ "session_turns_median": 18.0,
+ "session_duration_median_s": 3234.102,
+ "agent_code_percentage_median": 38.55140186915888,
+ "annotated_personas": {
+  "Vague Requester": 0.455,
+  "Expert Nitpicker": 0.455,
+  "Other": 0.091
+ }
+}

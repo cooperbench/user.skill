@@ -1,0 +1,52 @@
+{
+ "user_id": "jukellam",
+ "slug": "jukellam",
+ "n_sessions_total": 15,
+ "n_sessions_train": 12,
+ "n_sessions_test": 3,
+ "agents": {
+  "Claude Code": 1.0
+ },
+ "repos": {
+  "jukellam/dispersal-draft": 1.0
+ },
+ "date_range": [
+  "2026-02-10",
+  "2026-03-10"
+ ],
+ "n_prompts_train": 230,
+ "prompt_words": {
+  "median": 208.0,
+  "p90": 1670.999999999997,
+  "max": 4213.0
+ },
+ "languages": {
+  "ENGLISH": 1.0
+ },
+ "intent_distribution": {
+  "understand": 0.352,
+  "create new code": 0.191,
+  "refactor": 0.183,
+  "other": 0.139,
+  "debug": 0.052,
+  "git": 0.039,
+  "test": 0.03,
+  "connect": 0.013
+ },
+ "pushback_distribution": {
+  "non_pushback": 0.676,
+  "correction": 0.302,
+  "failure_report": 0.014,
+  "takeover": 0.005,
+  "rejection": 0.005
+ },
+ "session_turns_median": 16.0,
+ "session_duration_median_s": 3839.934,
+ "agent_code_percentage_median": 33.25966850828729,
+ "annotated_personas": {
+  "Vague Requester": 0.467,
+  "Expert Nitpicker": 0.333,
+  "Mind Changer": 0.133,
+  "Other": 0.067
+ }
+}

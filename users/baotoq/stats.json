@@ -1,0 +1,49 @@
+{
+  "user_id": "baotoq",
+  "slug": "baotoq",
+  "n_sessions_total": 19,
+  "n_sessions_train": 16,
+  "n_sessions_test": 3,
+  "agents": {
+    "Claude Code": 1.0
+  },
+  "repos": {
+    "baotoq/micro-commerce": 1.0
+  },
+  "date_range": [
+    "2026-03-02",
+    "2026-03-10"
+  ],
+  "n_prompts_train": 138,
+  "prompt_words": {
+    "median": 111.0,
+    "p90": 493.69999999999993,
+    "max": 2511.0
+  },
+  "languages": {
+    "ENGLISH": 1.0
+  },
+  "intent_distribution": {
+    "other": 0.449,
+    "create new code": 0.239,
+    "understand": 0.174,
+    "refactor": 0.072,
+    "debug": 0.029,
+    "test": 0.022,
+    "git": 0.014
+  },
+  "pushback_distribution": {
+    "non_pushback": 0.815,
+    "failure_report": 0.096,
+    "correction": 0.074,
+    "rejection": 0.015
+  },
+  "session_turns_median": 5.0,
+  "session_duration_median_s": 2148.679,
+  "agent_code_percentage_median": 39.8422090729783,
+  "annotated_personas": {
+    "Vague Requester": 0.579,
+    "Expert Nitpicker": 0.368,
+    "Other": 0.053
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "user_id": "moven0831",
+  "slug": "moven0831",
+  "n_sessions_total": 7,
+  "n_sessions_train": 6,
+  "n_sessions_test": 1,
+  "agents": {
+    "Claude Code": 1.0
+  },
+  "repos": {
+    "moven0831/anonbook": 1.0
+  },
+  "date_range": [
+    "2026-03-10",
+    "2026-03-11"
+  ],
+  "n_prompts_train": 86,
+  "prompt_words": {
+    "median": 11.0,
+    "p90": 288.0,
+    "max": 1338.0
+  },
+  "languages": {},
+  "intent_distribution": {
+    "other": 0.407,
+    "create new code": 0.198,
+    "understand": 0.14,
+    "debug": 0.128,
+    "git": 0.047,
+    "test": 0.035,
+    "refactor": 0.035,
+    "connect": 0.012
+  },
+  "pushback_distribution": {
+    "non_pushback": 0.554,
+    "correction": 0.325,
+    "failure_report": 0.12
+  },
+  "session_turns_median": 14.0,
+  "session_duration_median_s": 1082.491,
+  "agent_code_percentage_median": 100.0,
+  "annotated_personas": {
+    "Expert Nitpicker": 0.857,
+    "Vague Requester": 0.143
+  }
+}

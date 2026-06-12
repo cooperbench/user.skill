@@ -1,0 +1,52 @@
+{
+ "user_id": "blittle",
+ "slug": "blittle",
+ "n_sessions_total": 22,
+ "n_sessions_train": 18,
+ "n_sessions_test": 4,
+ "agents": {
+  "Claude Code": 1.0
+ },
+ "repos": {
+  "blittle/pressy": 1.0
+ },
+ "date_range": [
+  "2026-02-11",
+  "2026-03-22"
+ ],
+ "n_prompts_train": 242,
+ "prompt_words": {
+  "median": 19.0,
+  "p90": 95.9,
+  "max": 1008.0
+ },
+ "languages": {
+  "ENGLISH": 1.0
+ },
+ "intent_distribution": {
+  "debug": 0.339,
+  "other": 0.24,
+  "create new code": 0.19,
+  "understand": 0.07,
+  "git": 0.066,
+  "refactor": 0.058,
+  "connect": 0.021,
+  "test": 0.017
+ },
+ "pushback_distribution": {
+  "correction": 0.353,
+  "non_pushback": 0.343,
+  "failure_report": 0.289,
+  "takeover": 0.01,
+  "rejection": 0.005
+ },
+ "session_turns_median": 16.5,
+ "session_duration_median_s": 5218.0635,
+ "agent_code_percentage_median": 93.89143770297437,
+ "annotated_personas": {
+  "Mind Changer": 0.455,
+  "Expert Nitpicker": 0.227,
+  "Vague Requester": 0.227,
+  "Other": 0.091
+ }
+}

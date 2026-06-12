@@ -1,0 +1,51 @@
+{
+  "user_id": "zacjones93",
+  "slug": "zacjones93",
+  "n_sessions_total": 22,
+  "n_sessions_train": 18,
+  "n_sessions_test": 4,
+  "agents": {
+    "Claude Code": 1.0
+  },
+  "repos": {
+    "wodsmith/thewodapp": 1.0
+  },
+  "date_range": [
+    "2026-02-14",
+    "2026-03-18"
+  ],
+  "n_prompts_train": 113,
+  "prompt_words": {
+    "median": 17.0,
+    "p90": 263.0,
+    "max": 2405.0
+  },
+  "languages": {
+    "ENGLISH": 1.0
+  },
+  "intent_distribution": {
+    "git": 0.195,
+    "debug": 0.177,
+    "other": 0.168,
+    "understand": 0.159,
+    "create new code": 0.15,
+    "refactor": 0.062,
+    "connect": 0.053,
+    "test": 0.035
+  },
+  "pushback_distribution": {
+    "non_pushback": 0.434,
+    "correction": 0.368,
+    "failure_report": 0.132,
+    "takeover": 0.038,
+    "rejection": 0.028
+  },
+  "session_turns_median": 8.0,
+  "session_duration_median_s": 2366.1625000000004,
+  "agent_code_percentage_median": 34.83586477217051,
+  "annotated_personas": {
+    "Vague Requester": 0.5,
+    "Expert Nitpicker": 0.318,
+    "Mind Changer": 0.182
+  }
+}

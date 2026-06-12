@@ -1,0 +1,51 @@
+{
+  "user_id": "nosman",
+  "slug": "nosman",
+  "n_sessions_total": 29,
+  "n_sessions_train": 24,
+  "n_sessions_test": 5,
+  "agents": {
+    "Claude Code": 1.0
+  },
+  "repos": {
+    "nosman/gossamer": 1.0
+  },
+  "date_range": [
+    "2026-03-01",
+    "2026-03-26"
+  ],
+  "n_prompts_train": 343,
+  "prompt_words": {
+    "median": 19.0,
+    "p90": 51.80000000000001,
+    "max": 1005.0
+  },
+  "languages": {
+    "ENGLISH": 0.997,
+    "PORTUGUESE": 0.003
+  },
+  "intent_distribution": {
+    "create new code": 0.28,
+    "debug": 0.213,
+    "refactor": 0.172,
+    "other": 0.16,
+    "understand": 0.108,
+    "git": 0.035,
+    "test": 0.017,
+    "connect": 0.015
+  },
+  "pushback_distribution": {
+    "correction": 0.511,
+    "non_pushback": 0.352,
+    "failure_report": 0.138
+  },
+  "session_turns_median": 18.0,
+  "session_duration_median_s": 13712.736,
+  "agent_code_percentage_median": 43.52517985611511,
+  "annotated_personas": {
+    "Expert Nitpicker": 0.414,
+    "Mind Changer": 0.276,
+    "Vague Requester": 0.241,
+    "Other": 0.069
+  }
+}

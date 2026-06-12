@@ -1,0 +1,53 @@
+{
+  "user_id": "tarasyarema",
+  "slug": "tarasyarema",
+  "n_sessions_total": 40,
+  "n_sessions_train": 32,
+  "n_sessions_test": 8,
+  "agents": {
+    "Claude Code": 0.9,
+    "OpenCode": 0.1
+  },
+  "repos": {
+    "desplega-ai/agent-swarm": 1.0
+  },
+  "date_range": [
+    "2026-03-05",
+    "2026-03-21"
+  ],
+  "n_prompts_train": 689,
+  "prompt_words": {
+    "median": 96.0,
+    "p90": 738.0000000000002,
+    "max": 6069.0
+  },
+  "languages": {
+    "ENGLISH": 1.0
+  },
+  "intent_distribution": {
+    "understand": 0.549,
+    "other": 0.165,
+    "create new code": 0.131,
+    "test": 0.052,
+    "refactor": 0.039,
+    "debug": 0.028,
+    "git": 0.023,
+    "connect": 0.013
+  },
+  "pushback_distribution": {
+    "non_pushback": 0.835,
+    "correction": 0.138,
+    "failure_report": 0.024,
+    "takeover": 0.001,
+    "rejection": 0.001
+  },
+  "session_turns_median": 22.5,
+  "session_duration_median_s": 4844.968,
+  "agent_code_percentage_median": 55.462084067631,
+  "annotated_personas": {
+    "Expert Nitpicker": 0.425,
+    "Vague Requester": 0.375,
+    "Other": 0.125,
+    "Mind Changer": 0.075
+  }
+}

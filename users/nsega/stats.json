@@ -1,0 +1,50 @@
+{
+ "user_id": "nsega",
+ "slug": "nsega",
+ "n_sessions_total": 6,
+ "n_sessions_train": 5,
+ "n_sessions_test": 1,
+ "agents": {
+  "Claude Code": 1.0
+ },
+ "repos": {
+  "nsega/mcp-obsidian": 0.5,
+  "nsega/.emacs.d": 0.333,
+  "nsega/mcp-todoist": 0.167
+ },
+ "date_range": [
+  "2026-02-17",
+  "2026-04-19"
+ ],
+ "n_prompts_train": 26,
+ "prompt_words": {
+  "median": 7.0,
+  "p90": 17.5,
+  "max": 39.0
+ },
+ "languages": {
+  "ENGLISH": 1.0
+ },
+ "intent_distribution": {
+  "other": 0.308,
+  "git": 0.231,
+  "debug": 0.115,
+  "test": 0.115,
+  "refactor": 0.115,
+  "understand": 0.077,
+  "create new code": 0.038
+ },
+ "pushback_distribution": {
+  "non_pushback": 0.636,
+  "correction": 0.227,
+  "failure_report": 0.091,
+  "rejection": 0.045
+ },
+ "session_turns_median": 8.0,
+ "session_duration_median_s": 2101.6685,
+ "agent_code_percentage_median": 100.0,
+ "annotated_personas": {
+  "Vague Requester": 0.833,
+  "Expert Nitpicker": 0.167
+ }
+}

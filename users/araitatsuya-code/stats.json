@@ -1,0 +1,48 @@
+{
+ "user_id": "araitatsuya-code",
+ "slug": "araitatsuya-code",
+ "n_sessions_total": 14,
+ "n_sessions_train": 12,
+ "n_sessions_test": 2,
+ "agents": {
+  "Claude Code": 1.0
+ },
+ "repos": {
+  "araitatsuya-code/atena-print": 1.0
+ },
+ "date_range": [
+  "2026-03-01",
+  "2026-03-08"
+ ],
+ "n_prompts_train": 45,
+ "prompt_words": {
+  "median": 2.0,
+  "p90": 55.0,
+  "max": 472.0
+ },
+ "languages": {
+  "JAPANESE": 0.622,
+  "ENGLISH": 0.378
+ },
+ "intent_distribution": {
+  "other": 0.422,
+  "create new code": 0.333,
+  "git": 0.089,
+  "test": 0.067,
+  "refactor": 0.067,
+  "understand": 0.022
+ },
+ "pushback_distribution": {
+  "non_pushback": 0.78,
+  "correction": 0.22
+ },
+ "session_turns_median": 5.5,
+ "session_duration_median_s": 3918.2865,
+ "agent_code_percentage_median": 8.714470284237725,
+ "annotated_personas": {
+  "Expert Nitpicker": 0.5,
+  "Vague Requester": 0.286,
+  "Other": 0.143,
+  "Mind Changer": 0.071
+ }
+}

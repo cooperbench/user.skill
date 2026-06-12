@@ -1,0 +1,54 @@
+{
+  "user_id": "Nagi-ovo",
+  "slug": "nagi-ovo",
+  "n_sessions_total": 76,
+  "n_sessions_train": 68,
+  "n_sessions_test": 8,
+  "agents": {
+    "Claude Code": 1.0
+  },
+  "repos": {
+    "Nagi-ovo/gemini-voyager": 1.0
+  },
+  "date_range": [
+    "2026-02-16",
+    "2026-03-29"
+  ],
+  "n_prompts_train": 414,
+  "prompt_words": {
+    "median": 4.0,
+    "p90": 17.0,
+    "max": 1920.0
+  },
+  "languages": {
+    "CHINESE": 0.69,
+    "ENGLISH": 0.307,
+    "JAPANESE": 0.003
+  },
+  "intent_distribution": {
+    "other": 0.268,
+    "git": 0.193,
+    "debug": 0.167,
+    "create new code": 0.147,
+    "understand": 0.123,
+    "refactor": 0.092,
+    "connect": 0.007,
+    "test": 0.002
+  },
+  "pushback_distribution": {
+    "correction": 0.464,
+    "non_pushback": 0.403,
+    "failure_report": 0.085,
+    "rejection": 0.033,
+    "takeover": 0.015
+  },
+  "session_turns_median": 8.0,
+  "session_duration_median_s": 1970.5375,
+  "agent_code_percentage_median": 100.0,
+  "annotated_personas": {
+    "Vague Requester": 0.487,
+    "Expert Nitpicker": 0.447,
+    "Other": 0.039,
+    "Mind Changer": 0.026
+  }
+}

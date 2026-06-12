@@ -1,0 +1,52 @@
+{
+ "user_id": "shunkakinoki",
+ "slug": "shunkakinoki",
+ "n_sessions_total": 26,
+ "n_sessions_train": 21,
+ "n_sessions_test": 5,
+ "agents": {
+  "Claude Code": 1.0
+ },
+ "repos": {
+  "shunkakinoki/dotfiles": 1.0
+ },
+ "date_range": [
+  "2026-02-13",
+  "2026-03-28"
+ ],
+ "n_prompts_train": 160,
+ "prompt_words": {
+  "median": 7.0,
+  "p90": 26.099999999999994,
+  "max": 683.0
+ },
+ "languages": {
+  "ENGLISH": 1.0
+ },
+ "intent_distribution": {
+  "other": 0.3,
+  "debug": 0.181,
+  "git": 0.181,
+  "refactor": 0.131,
+  "understand": 0.081,
+  "create new code": 0.069,
+  "test": 0.037,
+  "connect": 0.019
+ },
+ "pushback_distribution": {
+  "non_pushback": 0.446,
+  "correction": 0.378,
+  "failure_report": 0.135,
+  "rejection": 0.034,
+  "takeover": 0.007
+ },
+ "session_turns_median": 10.0,
+ "session_duration_median_s": 1773.5430000000001,
+ "agent_code_percentage_median": 66.66666666666666,
+ "annotated_personas": {
+  "Vague Requester": 0.538,
+  "Expert Nitpicker": 0.269,
+  "Mind Changer": 0.115,
+  "Other": 0.077
+ }
+}

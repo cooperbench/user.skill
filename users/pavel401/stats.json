@@ -1,0 +1,52 @@
+{
+ "user_id": "Pavel401",
+ "slug": "pavel401",
+ "n_sessions_total": 12,
+ "n_sessions_train": 10,
+ "n_sessions_test": 2,
+ "agents": {
+  "Claude Code": 1.0
+ },
+ "repos": {
+  "Pavel401/BugViper": 1.0
+ },
+ "date_range": [
+  "2026-02-12",
+  "2026-02-22"
+ ],
+ "n_prompts_train": 118,
+ "prompt_words": {
+  "median": 31.5,
+  "p90": 1009.8,
+  "max": 9468.0
+ },
+ "languages": {
+  "ENGLISH": 1.0
+ },
+ "intent_distribution": {
+  "understand": 0.237,
+  "debug": 0.229,
+  "create new code": 0.195,
+  "other": 0.153,
+  "refactor": 0.127,
+  "git": 0.025,
+  "connect": 0.025,
+  "test": 0.008
+ },
+ "pushback_distribution": {
+  "non_pushback": 0.413,
+  "correction": 0.394,
+  "failure_report": 0.174,
+  "takeover": 0.009,
+  "rejection": 0.009
+ },
+ "session_turns_median": 20.5,
+ "session_duration_median_s": 3555.722,
+ "agent_code_percentage_median": 21.634434566801055,
+ "annotated_personas": {
+  "Expert Nitpicker": 0.583,
+  "Mind Changer": 0.167,
+  "Vague Requester": 0.167,
+  "Other": 0.083
+ }
+}

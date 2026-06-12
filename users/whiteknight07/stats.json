@@ -1,0 +1,49 @@
+{
+ "user_id": "Whiteknight07",
+ "slug": "whiteknight07",
+ "n_sessions_total": 10,
+ "n_sessions_train": 8,
+ "n_sessions_test": 2,
+ "agents": {
+  "Claude Code": 0.7,
+  "Copilot CLI": 0.1,
+  "Gemini CLI": 0.1,
+  "OpenCode": 0.1
+ },
+ "repos": {
+  "Whiteknight07/AiTutor": 1.0
+ },
+ "date_range": [
+  "2026-03-30",
+  "2026-04-19"
+ ],
+ "n_prompts_train": 43,
+ "prompt_words": {
+  "median": 27.0,
+  "p90": 382.0000000000003,
+  "max": 771.0
+ },
+ "languages": {},
+ "intent_distribution": {
+  "understand": 0.279,
+  "other": 0.233,
+  "debug": 0.186,
+  "git": 0.116,
+  "create new code": 0.093,
+  "test": 0.047,
+  "refactor": 0.047
+ },
+ "pushback_distribution": {
+  "correction": 0.439,
+  "non_pushback": 0.415,
+  "failure_report": 0.146
+ },
+ "session_turns_median": 7.0,
+ "session_duration_median_s": 1311.946,
+ "agent_code_percentage_median": 29.40464568593311,
+ "annotated_personas": {
+  "Vague Requester": 0.5,
+  "Other": 0.4,
+  "Expert Nitpicker": 0.1
+ }
+}

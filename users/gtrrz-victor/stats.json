@@ -1,0 +1,54 @@
+{
+  "user_id": "gtrrz-victor",
+  "slug": "gtrrz-victor",
+  "n_sessions_total": 77,
+  "n_sessions_train": 69,
+  "n_sessions_test": 8,
+  "agents": {
+    "Claude Code": 0.792,
+    "Agent": 0.156,
+    "unknown": 0.052
+  },
+  "repos": {
+    "entireio/cli": 1.0
+  },
+  "date_range": [
+    "2026-01-13",
+    "2026-03-03"
+  ],
+  "n_prompts_train": 371,
+  "prompt_words": {
+    "median": 17.0,
+    "p90": 296.0,
+    "max": 1958.0
+  },
+  "languages": {
+    "ENGLISH": 1.0
+  },
+  "intent_distribution": {
+    "refactor": 0.216,
+    "create new code": 0.178,
+    "other": 0.156,
+    "debug": 0.124,
+    "git": 0.121,
+    "test": 0.105,
+    "understand": 0.097,
+    "connect": 0.003
+  },
+  "pushback_distribution": {
+    "correction": 0.482,
+    "non_pushback": 0.437,
+    "failure_report": 0.063,
+    "takeover": 0.015,
+    "rejection": 0.003
+  },
+  "session_turns_median": 6.0,
+  "session_duration_median_s": 1210.431,
+  "agent_code_percentage_median": 53.766025641025635,
+  "annotated_personas": {
+    "Expert Nitpicker": 0.701,
+    "Vague Requester": 0.169,
+    "Mind Changer": 0.104,
+    "Other": 0.026
+  }
+}

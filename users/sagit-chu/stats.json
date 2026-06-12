@@ -1,0 +1,49 @@
+{
+ "user_id": "Sagit-chu",
+ "slug": "sagit-chu",
+ "n_sessions_total": 40,
+ "n_sessions_train": 32,
+ "n_sessions_test": 8,
+ "agents": {
+  "OpenCode": 1.0
+ },
+ "repos": {
+  "Sagit-chu/flvx": 1.0
+ },
+ "date_range": [
+  "2026-03-03",
+  "2026-03-14"
+ ],
+ "n_prompts_train": 77,
+ "prompt_words": {
+  "median": 1.0,
+  "p90": 5.0,
+  "max": 30.0
+ },
+ "languages": {
+  "CHINESE": 0.961,
+  "ENGLISH": 0.026,
+  "JAPANESE": 0.013
+ },
+ "intent_distribution": {
+  "debug": 0.338,
+  "create new code": 0.26,
+  "other": 0.13,
+  "understand": 0.091,
+  "git": 0.065,
+  "refactor": 0.065,
+  "test": 0.052
+ },
+ "pushback_distribution": {
+  "non_pushback": 0.506,
+  "correction": 0.299,
+  "failure_report": 0.143,
+  "takeover": 0.052
+ },
+ "session_turns_median": 6.0,
+ "session_duration_median_s": null,
+ "agent_code_percentage_median": 99.59183673469387,
+ "annotated_personas": {
+  "Other": 1.0
+ }
+}

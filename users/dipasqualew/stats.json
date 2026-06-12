@@ -1,0 +1,48 @@
+{
+ "user_id": "dipasqualew",
+ "slug": "dipasqualew",
+ "n_sessions_total": 13,
+ "n_sessions_train": 11,
+ "n_sessions_test": 2,
+ "agents": {
+  "Claude Code": 1.0
+ },
+ "repos": {
+  "dipasqualew/vibereq": 1.0
+ },
+ "date_range": [
+  "2026-02-25",
+  "2026-02-26"
+ ],
+ "n_prompts_train": 37,
+ "prompt_words": {
+  "median": 45.0,
+  "p90": 262.59999999999997,
+  "max": 685.0
+ },
+ "languages": {
+  "ENGLISH": 1.0
+ },
+ "intent_distribution": {
+  "create new code": 0.297,
+  "debug": 0.27,
+  "refactor": 0.189,
+  "other": 0.108,
+  "test": 0.054,
+  "git": 0.054,
+  "understand": 0.027
+ },
+ "pushback_distribution": {
+  "correction": 0.5,
+  "non_pushback": 0.294,
+  "failure_report": 0.206
+ },
+ "session_turns_median": 4.0,
+ "session_duration_median_s": 354.673,
+ "agent_code_percentage_median": 99.32735426008968,
+ "annotated_personas": {
+  "Expert Nitpicker": 0.769,
+  "Vague Requester": 0.154,
+  "Other": 0.077
+ }
+}

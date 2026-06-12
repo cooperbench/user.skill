@@ -1,0 +1,46 @@
+{
+ "user_id": "ashish1099",
+ "slug": "ashish1099",
+ "n_sessions_total": 6,
+ "n_sessions_train": 5,
+ "n_sessions_test": 1,
+ "agents": {
+  "Claude Code": 1.0
+ },
+ "repos": {
+  "Obmondo/gfetch": 1.0
+ },
+ "date_range": [
+  "2026-02-17",
+  "2026-02-19"
+ ],
+ "n_prompts_train": 12,
+ "prompt_words": {
+  "median": 9.0,
+  "p90": 337.6,
+  "max": 591.0
+ },
+ "languages": {
+  "ENGLISH": 1.0
+ },
+ "intent_distribution": {
+  "git": 0.333,
+  "other": 0.25,
+  "create new code": 0.167,
+  "refactor": 0.167,
+  "understand": 0.083
+ },
+ "pushback_distribution": {
+  "non_pushback": 0.7,
+  "takeover": 0.2,
+  "failure_report": 0.1
+ },
+ "session_turns_median": 4.0,
+ "session_duration_median_s": 795.952,
+ "agent_code_percentage_median": 7.962973944709105,
+ "annotated_personas": {
+  "Expert Nitpicker": 0.667,
+  "Vague Requester": 0.167,
+  "Mind Changer": 0.167
+ }
+}

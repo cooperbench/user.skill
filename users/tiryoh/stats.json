@@ -1,0 +1,49 @@
+{
+ "user_id": "Tiryoh",
+ "slug": "tiryoh",
+ "n_sessions_total": 6,
+ "n_sessions_train": 5,
+ "n_sessions_test": 1,
+ "agents": {
+  "Claude Code": 0.5,
+  "OpenCode": 0.167,
+  "opencode": 0.167,
+  "claude-code": 0.167
+ },
+ "repos": {
+  "Tiryoh/entireio-local-viewer": 1.0
+ },
+ "date_range": [
+  "2026-03-09",
+  "2026-03-11"
+ ],
+ "n_prompts_train": 17,
+ "prompt_words": {
+  "median": 2.0,
+  "p90": 7.0,
+  "max": 19.0
+ },
+ "languages": {
+  "JAPANESE": 0.765,
+  "ENGLISH": 0.235
+ },
+ "intent_distribution": {
+  "create new code": 0.294,
+  "other": 0.294,
+  "debug": 0.176,
+  "git": 0.176,
+  "understand": 0.059
+ },
+ "pushback_distribution": {
+  "non_pushback": 0.647,
+  "correction": 0.235,
+  "failure_report": 0.118
+ },
+ "session_turns_median": 7.0,
+ "session_duration_median_s": 889.931,
+ "agent_code_percentage_median": 100.0,
+ "annotated_personas": {
+  "Other": 0.667,
+  "Vague Requester": 0.333
+ }
+}

@@ -1,0 +1,50 @@
+{
+  "user_id": "alishakawaguchi",
+  "slug": "alishakawaguchi",
+  "n_sessions_total": 48,
+  "n_sessions_train": 40,
+  "n_sessions_test": 8,
+  "agents": {
+   "Claude Code": 1.0
+  },
+  "repos": {
+   "entireio/cli": 1.0
+  },
+  "date_range": [
+   "2026-02-20",
+   "2026-03-21"
+  ],
+  "n_prompts_train": 146,
+  "prompt_words": {
+   "median": 13.0,
+   "p90": 687.0,
+   "max": 4027.0
+  },
+  "languages": {
+   "ENGLISH": 1.0
+  },
+  "intent_distribution": {
+   "git": 0.404,
+   "refactor": 0.137,
+   "other": 0.13,
+   "create new code": 0.096,
+   "debug": 0.096,
+   "understand": 0.075,
+   "test": 0.048,
+   "connect": 0.014
+  },
+  "pushback_distribution": {
+   "non_pushback": 0.743,
+   "correction": 0.184,
+   "failure_report": 0.051,
+   "takeover": 0.022
+  },
+  "session_turns_median": 4.0,
+  "session_duration_median_s": 368.2505,
+  "agent_code_percentage_median": 100.0,
+  "annotated_personas": {
+   "Expert Nitpicker": 0.708,
+   "Vague Requester": 0.229,
+   "Other": 0.062
+  }
+}

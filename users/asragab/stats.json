@@ -1,0 +1,52 @@
+{
+  "user_id": "ASRagab",
+  "slug": "asragab",
+  "n_sessions_total": 14,
+  "n_sessions_train": 12,
+  "n_sessions_test": 2,
+  "agents": {
+    "Claude Code": 1.0
+  },
+  "repos": {
+    "ASRagab/optimize-anything": 1.0
+  },
+  "date_range": [
+    "2026-02-24",
+    "2026-02-27"
+  ],
+  "n_prompts_train": 96,
+  "prompt_words": {
+    "median": 37.0,
+    "p90": 647.0,
+    "max": 2028.0
+  },
+  "languages": {
+    "ENGLISH": 1.0
+  },
+  "intent_distribution": {
+    "other": 0.302,
+    "understand": 0.229,
+    "create new code": 0.208,
+    "git": 0.073,
+    "test": 0.073,
+    "debug": 0.052,
+    "refactor": 0.042,
+    "connect": 0.021
+  },
+  "pushback_distribution": {
+    "non_pushback": 0.785,
+    "correction": 0.118,
+    "failure_report": 0.065,
+    "takeover": 0.022,
+    "rejection": 0.011
+  },
+  "session_turns_median": 8.5,
+  "session_duration_median_s": 693.297,
+  "agent_code_percentage_median": 18.970976253298154,
+  "annotated_personas": {
+    "Vague Requester": 0.714,
+    "Expert Nitpicker": 0.143,
+    "Mind Changer": 0.071,
+    "Other": 0.071
+  }
+}

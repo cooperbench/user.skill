@@ -1,0 +1,52 @@
+{
+ "user_id": "KeKs0r",
+ "slug": "keks0r",
+ "n_sessions_total": 206,
+ "n_sessions_train": 198,
+ "n_sessions_test": 8,
+ "agents": {
+  "Claude Code": 1.0
+ },
+ "repos": {
+  "obsessiondb/rudel": 1.0
+ },
+ "date_range": [
+  "2026-02-16",
+  "2026-03-13"
+ ],
+ "n_prompts_train": 891,
+ "prompt_words": {
+  "median": 24.0,
+  "p90": 267.0,
+  "max": 3039.0
+ },
+ "languages": {
+  "ENGLISH": 1.0
+ },
+ "intent_distribution": {
+  "git": 0.205,
+  "understand": 0.198,
+  "other": 0.164,
+  "debug": 0.154,
+  "create new code": 0.144,
+  "refactor": 0.062,
+  "test": 0.045,
+  "connect": 0.029
+ },
+ "pushback_distribution": {
+  "non_pushback": 0.574,
+  "correction": 0.307,
+  "failure_report": 0.11,
+  "takeover": 0.006,
+  "rejection": 0.003
+ },
+ "session_turns_median": 6.0,
+ "session_duration_median_s": 1027.9905,
+ "agent_code_percentage_median": 48.719488230473246,
+ "annotated_personas": {
+  "Vague Requester": 0.519,
+  "Expert Nitpicker": 0.345,
+  "Other": 0.112,
+  "Mind Changer": 0.024
+ }
+}

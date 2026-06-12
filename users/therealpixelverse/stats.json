@@ -1,0 +1,51 @@
+{
+  "user_id": "therealpixelverse",
+  "slug": "therealpixelverse",
+  "n_sessions_total": 16,
+  "n_sessions_train": 13,
+  "n_sessions_test": 3,
+  "agents": {
+    "Claude Code": 1.0
+  },
+  "repos": {
+    "obsessiondb/rudel": 1.0
+  },
+  "date_range": [
+    "2026-03-05",
+    "2026-03-11"
+  ],
+  "n_prompts_train": 104,
+  "prompt_words": {
+    "median": 23.5,
+    "p90": 247.50000000000017,
+    "max": 2241.0
+  },
+  "languages": {
+    "ENGLISH": 1.0
+  },
+  "intent_distribution": {
+    "debug": 0.231,
+    "understand": 0.183,
+    "create new code": 0.173,
+    "refactor": 0.154,
+    "other": 0.115,
+    "git": 0.115,
+    "test": 0.029
+  },
+  "pushback_distribution": {
+    "non_pushback": 0.39,
+    "correction": 0.35,
+    "failure_report": 0.18,
+    "takeover": 0.06,
+    "rejection": 0.02
+  },
+  "session_turns_median": 10.0,
+  "session_duration_median_s": 2044.2890000000002,
+  "agent_code_percentage_median": 34.61133069828722,
+  "annotated_personas": {
+    "Expert Nitpicker": 0.5,
+    "Vague Requester": 0.25,
+    "Mind Changer": 0.188,
+    "Other": 0.062
+  }
+}

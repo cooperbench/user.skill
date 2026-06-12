@@ -1,0 +1,48 @@
+{
+ "user_id": "oddessentials",
+ "slug": "oddessentials",
+ "n_sessions_total": 33,
+ "n_sessions_train": 27,
+ "n_sessions_test": 6,
+ "agents": {
+  "Claude Code": 1.0
+ },
+ "repos": {
+  "oddessentials/ado-git-repo-insights": 1.0
+ },
+ "date_range": [
+  "2026-03-26",
+  "2026-04-07"
+ ],
+ "n_prompts_train": 1114,
+ "prompt_words": {
+  "median": 20.0,
+  "p90": 266.70000000000005,
+  "max": 5994.0
+ },
+ "languages": {},
+ "intent_distribution": {
+  "other": 0.274,
+  "debug": 0.169,
+  "understand": 0.167,
+  "git": 0.163,
+  "refactor": 0.103,
+  "test": 0.072,
+  "create new code": 0.049,
+  "connect": 0.003
+ },
+ "pushback_distribution": {
+  "correction": 0.48,
+  "non_pushback": 0.398,
+  "failure_report": 0.064,
+  "rejection": 0.057
+ },
+ "session_turns_median": 64.0,
+ "session_duration_median_s": 10640.939,
+ "agent_code_percentage_median": 0.0,
+ "annotated_personas": {
+  "Expert Nitpicker": 0.848,
+  "Mind Changer": 0.091,
+  "Vague Requester": 0.061
+ }
+}

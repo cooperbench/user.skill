@@ -1,0 +1,38 @@
+{
+  "user_id": "musicofhel",
+  "slug": "musicofhel",
+  "n_sessions_total": 8,
+  "n_sessions_train": 7,
+  "n_sessions_test": 1,
+  "agents": {
+    "Claude Code": 1.0
+  },
+  "repos": {
+    "musicofhel/dev-loop": 1.0
+  },
+  "date_range": [
+    "2026-03-21",
+    "2026-03-30"
+  ],
+  "n_prompts_train": 7,
+  "prompt_words": {
+    "median": 340.0,
+    "p90": 879.6,
+    "max": 882.0
+  },
+  "languages": {},
+  "intent_distribution": {
+    "understand": 0.571,
+    "test": 0.429
+  },
+  "pushback_distribution": {
+    "non_pushback": 1.0
+  },
+  "session_turns_median": 1.0,
+  "session_duration_median_s": 6.8705,
+  "agent_code_percentage_median": 0.1838235294117647,
+  "annotated_personas": {
+    "Expert Nitpicker": 0.875,
+    "Other": 0.125
+  }
+}

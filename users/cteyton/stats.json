@@ -1,0 +1,52 @@
+{
+  "user_id": "cteyton",
+  "slug": "cteyton",
+  "n_sessions_total": 93,
+  "n_sessions_train": 85,
+  "n_sessions_test": 8,
+  "agents": {
+    "Claude Code": 1.0
+  },
+  "repos": {
+    "PackmindHub/context-evaluator": 1.0
+  },
+  "date_range": [
+    "2026-02-13",
+    "2026-03-12"
+  ],
+  "n_prompts_train": 238,
+  "prompt_words": {
+    "median": 42.5,
+    "p90": 616.6,
+    "max": 5267.0
+  },
+  "languages": {
+    "ENGLISH": 0.992,
+    "FRENCH": 0.008
+  },
+  "intent_distribution": {
+    "create new code": 0.361,
+    "git": 0.277,
+    "refactor": 0.13,
+    "debug": 0.097,
+    "other": 0.08,
+    "test": 0.046,
+    "connect": 0.004,
+    "understand": 0.004
+  },
+  "pushback_distribution": {
+    "non_pushback": 0.667,
+    "correction": 0.171,
+    "takeover": 0.101,
+    "failure_report": 0.061
+  },
+  "session_turns_median": 4.0,
+  "session_duration_median_s": 560.627,
+  "agent_code_percentage_median": 20.474777448071215,
+  "annotated_personas": {
+    "Expert Nitpicker": 0.828,
+    "Vague Requester": 0.075,
+    "Other": 0.054,
+    "Mind Changer": 0.043
+  }
+}

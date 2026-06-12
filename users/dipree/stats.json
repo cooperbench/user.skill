@@ -1,0 +1,51 @@
+{
+  "user_id": "dipree",
+  "slug": "dipree",
+  "n_sessions_total": 22,
+  "n_sessions_train": 18,
+  "n_sessions_test": 4,
+  "agents": {
+    "Claude Code": 1.0
+  },
+  "repos": {
+    "entireio/cli": 1.0
+  },
+  "date_range": [
+    "2026-02-09",
+    "2026-03-19"
+  ],
+  "n_prompts_train": 137,
+  "prompt_words": {
+    "median": 12.0,
+    "p90": 60.400000000000034,
+    "max": 2708.0
+  },
+  "languages": {
+    "ENGLISH": 1.0
+  },
+  "intent_distribution": {
+    "git": 0.46,
+    "debug": 0.168,
+    "create new code": 0.109,
+    "understand": 0.102,
+    "refactor": 0.088,
+    "other": 0.066,
+    "test": 0.007
+  },
+  "pushback_distribution": {
+    "non_pushback": 0.493,
+    "correction": 0.328,
+    "failure_report": 0.112,
+    "takeover": 0.045,
+    "rejection": 0.022
+  },
+  "session_turns_median": 6.5,
+  "session_duration_median_s": 1394.87,
+  "agent_code_percentage_median": 64.28571428571429,
+  "annotated_personas": {
+    "Expert Nitpicker": 0.455,
+    "Vague Requester": 0.409,
+    "Mind Changer": 0.091,
+    "Other": 0.045
+  }
+}

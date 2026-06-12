@@ -1,0 +1,49 @@
+{
+ "user_id": "yorrick",
+ "slug": "yorrick",
+ "n_sessions_total": 17,
+ "n_sessions_train": 14,
+ "n_sessions_test": 3,
+ "agents": {
+  "Claude Code": 1.0
+ },
+ "repos": {
+  "yorrick/claude-code-plugins": 1.0
+ },
+ "date_range": [
+  "2026-03-13",
+  "2026-03-17"
+ ],
+ "n_prompts_train": 84,
+ "prompt_words": {
+  "median": 13.0,
+  "p90": 112.0,
+  "max": 733.0
+ },
+ "languages": {
+  "ENGLISH": 1.0
+ },
+ "intent_distribution": {
+  "other": 0.44,
+  "create new code": 0.214,
+  "git": 0.119,
+  "debug": 0.107,
+  "understand": 0.071,
+  "test": 0.036,
+  "refactor": 0.012
+ },
+ "pushback_distribution": {
+  "non_pushback": 0.595,
+  "correction": 0.342,
+  "failure_report": 0.063
+ },
+ "session_turns_median": 4.0,
+ "session_duration_median_s": 149.16500000000002,
+ "agent_code_percentage_median": 88.88888888888889,
+ "annotated_personas": {
+  "Other": 0.412,
+  "Vague Requester": 0.294,
+  "Expert Nitpicker": 0.235,
+  "Mind Changer": 0.059
+ }
+}

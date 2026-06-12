@@ -1,0 +1,50 @@
+{
+  "user_id": "melagiri",
+  "slug": "melagiri",
+  "n_sessions_total": 29,
+  "n_sessions_train": 24,
+  "n_sessions_test": 5,
+  "agents": {
+    "Claude Code": 1.0
+  },
+  "repos": {
+    "melagiri/code-insights": 1.0
+  },
+  "date_range": [
+    "2026-02-28",
+    "2026-03-13"
+  ],
+  "n_prompts_train": 423,
+  "prompt_words": {
+    "median": 45.0,
+    "p90": 638.0,
+    "max": 3654.0
+  },
+  "languages": {
+    "ENGLISH": 1.0
+  },
+  "intent_distribution": {
+    "other": 0.3,
+    "create new code": 0.187,
+    "git": 0.158,
+    "understand": 0.156,
+    "debug": 0.092,
+    "refactor": 0.078,
+    "test": 0.021,
+    "connect": 0.007
+  },
+  "pushback_distribution": {
+    "non_pushback": 0.594,
+    "correction": 0.355,
+    "failure_report": 0.043,
+    "takeover": 0.007
+  },
+  "session_turns_median": 18.0,
+  "session_duration_median_s": 1821.644,
+  "agent_code_percentage_median": 46.590909090909086,
+  "annotated_personas": {
+    "Expert Nitpicker": 0.483,
+    "Vague Requester": 0.379,
+    "Mind Changer": 0.138
+  }
+}

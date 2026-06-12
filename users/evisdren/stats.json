@@ -1,0 +1,49 @@
+{
+ "user_id": "evisdren",
+ "slug": "evisdren",
+ "n_sessions_total": 12,
+ "n_sessions_train": 10,
+ "n_sessions_test": 2,
+ "agents": {
+  "Claude Code": 1.0
+ },
+ "repos": {
+  "entireio/cli": 1.0
+ },
+ "date_range": [
+  "2026-02-10",
+  "2026-02-28"
+ ],
+ "n_prompts_train": 67,
+ "prompt_words": {
+  "median": 31.0,
+  "p90": 184.99999999999994,
+  "max": 871.0
+ },
+ "languages": {
+  "ENGLISH": 1.0
+ },
+ "intent_distribution": {
+  "refactor": 0.194,
+  "git": 0.164,
+  "understand": 0.149,
+  "debug": 0.134,
+  "create new code": 0.119,
+  "test": 0.119,
+  "other": 0.104,
+  "connect": 0.015
+ },
+ "pushback_distribution": {
+  "correction": 0.571,
+  "non_pushback": 0.349,
+  "failure_report": 0.079
+ },
+ "session_turns_median": 8.0,
+ "session_duration_median_s": 7513.683499999999,
+ "agent_code_percentage_median": 100.0,
+ "annotated_personas": {
+  "Expert Nitpicker": 0.583,
+  "Mind Changer": 0.333,
+  "Vague Requester": 0.083
+ }
+}

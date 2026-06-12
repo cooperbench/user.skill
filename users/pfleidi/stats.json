@@ -1,0 +1,50 @@
+{
+ "user_id": "pfleidi",
+ "slug": "pfleidi",
+ "n_sessions_total": 16,
+ "n_sessions_train": 13,
+ "n_sessions_test": 3,
+ "agents": {
+  "Claude Code": 1.0
+ },
+ "repos": {
+  "entireio/cli": 1.0
+ },
+ "date_range": [
+  "2026-02-20",
+  "2026-03-20"
+ ],
+ "n_prompts_train": 154,
+ "prompt_words": {
+  "median": 36.0,
+  "p90": 454.1,
+  "max": 1416.0
+ },
+ "languages": {
+  "ENGLISH": 0.993,
+  "PORTUGUESE": 0.007
+ },
+ "intent_distribution": {
+  "refactor": 0.24,
+  "understand": 0.214,
+  "other": 0.195,
+  "git": 0.117,
+  "test": 0.091,
+  "create new code": 0.078,
+  "debug": 0.065
+ },
+ "pushback_distribution": {
+  "non_pushback": 0.575,
+  "correction": 0.377,
+  "failure_report": 0.034,
+  "takeover": 0.014
+ },
+ "session_turns_median": 12.5,
+ "session_duration_median_s": 6736.781,
+ "agent_code_percentage_median": 99.24242424242425,
+ "annotated_personas": {
+  "Expert Nitpicker": 0.688,
+  "Vague Requester": 0.25,
+  "Other": 0.062
+ }
+}

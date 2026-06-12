@@ -1,0 +1,55 @@
+{
+ "user_id": "khaong",
+ "slug": "khaong",
+ "n_sessions_total": 94,
+ "n_sessions_train": 86,
+ "n_sessions_test": 8,
+ "agents": {
+  "Claude Code": 0.926,
+  "Agent": 0.074
+ },
+ "repos": {
+  "entireio/cli": 1.0
+ },
+ "date_range": [
+  "2026-01-19",
+  "2026-03-06"
+ ],
+ "n_prompts_train": 1927,
+ "prompt_words": {
+  "median": 11.0,
+  "p90": 243.80000000000064,
+  "max": 7825.0
+ },
+ "languages": {
+  "ENGLISH": 0.998,
+  "PORTUGUESE": 0.001,
+  "SPANISH": 0.001
+ },
+ "intent_distribution": {
+  "git": 0.234,
+  "understand": 0.231,
+  "other": 0.209,
+  "debug": 0.139,
+  "create new code": 0.074,
+  "refactor": 0.061,
+  "test": 0.046,
+  "connect": 0.007
+ },
+ "pushback_distribution": {
+  "non_pushback": 0.516,
+  "correction": 0.399,
+  "failure_report": 0.062,
+  "rejection": 0.012,
+  "takeover": 0.01
+ },
+ "session_turns_median": 15.5,
+ "session_duration_median_s": 6073.5650000000005,
+ "agent_code_percentage_median": 78.4786641929499,
+ "annotated_personas": {
+  "Expert Nitpicker": 0.574,
+  "Vague Requester": 0.351,
+  "Other": 0.043,
+  "Mind Changer": 0.032
+ }
+}

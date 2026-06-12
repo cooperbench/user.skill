@@ -1,0 +1,44 @@
+{
+ "user_id": "mheers",
+ "slug": "mheers",
+ "n_sessions_total": 11,
+ "n_sessions_train": 9,
+ "n_sessions_test": 2,
+ "agents": {
+  "OpenCode": 1.0
+ },
+ "repos": {
+  "mheers/opencode-sandbox": 1.0
+ },
+ "date_range": [
+  "2026-02-27",
+  "2026-03-13"
+ ],
+ "n_prompts_train": 13,
+ "prompt_words": {
+  "median": 22.0,
+  "p90": 30.400000000000002,
+  "max": 38.0
+ },
+ "languages": {
+  "ENGLISH": 1.0
+ },
+ "intent_distribution": {
+  "debug": 0.615,
+  "create new code": 0.154,
+  "git": 0.077,
+  "refactor": 0.077,
+  "connect": 0.077
+ },
+ "pushback_distribution": {
+  "correction": 0.538,
+  "failure_report": 0.385,
+  "non_pushback": 0.077
+ },
+ "session_turns_median": 13.0,
+ "session_duration_median_s": null,
+ "agent_code_percentage_median": 100.0,
+ "annotated_personas": {
+  "Other": 1.0
+ }
+}

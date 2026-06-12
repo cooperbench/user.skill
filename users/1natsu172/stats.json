@@ -1,0 +1,52 @@
+{
+  "user_id": "1natsu172",
+  "slug": "1natsu172",
+  "n_sessions_total": 12,
+  "n_sessions_train": 10,
+  "n_sessions_test": 2,
+  "agents": {
+    "Claude Code": 1.0
+  },
+  "repos": {
+    "1natsu-vacation/agent-skills": 1.0
+  },
+  "date_range": [
+    "2026-03-01",
+    "2026-04-05"
+  ],
+  "n_prompts_train": 206,
+  "prompt_words": {
+    "median": 68.0,
+    "p90": 873.0,
+    "max": 5037.0
+  },
+  "languages": {
+    "ENGLISH": 0.573,
+    "JAPANESE": 0.422,
+    "CHINESE": 0.005
+  },
+  "intent_distribution": {
+    "understand": 0.306,
+    "create new code": 0.189,
+    "other": 0.175,
+    "git": 0.141,
+    "refactor": 0.102,
+    "debug": 0.078,
+    "test": 0.01
+  },
+  "pushback_distribution": {
+    "non_pushback": 0.718,
+    "correction": 0.248,
+    "failure_report": 0.03,
+    "rejection": 0.005
+  },
+  "session_turns_median": 25.5,
+  "session_duration_median_s": 4992.4490000000005,
+  "agent_code_percentage_median": 100.0,
+  "annotated_personas": {
+    "Expert Nitpicker": 0.75,
+    "Other": 0.083,
+    "Vague Requester": 0.083,
+    "Mind Changer": 0.083
+  }
+}
