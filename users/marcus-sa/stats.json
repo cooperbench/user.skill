@@ -1,0 +1,53 @@
+{
+  "user_id": "marcus-sa",
+  "slug": "marcus-sa",
+  "n_sessions_total": 450,
+  "n_sessions_train": 442,
+  "n_sessions_test": 8,
+  "agents": {
+    "Claude Code": 1.0
+  },
+  "repos": {
+    "osabiohq/osabio": 0.504,
+    "marcus-sa/brain": 0.496
+  },
+  "date_range": [
+    "2026-02-27",
+    "2026-04-08"
+  ],
+  "n_prompts_train": 3324,
+  "prompt_words": {
+    "median": 11.0,
+    "p90": 343.0,
+    "max": 3892.0
+  },
+  "languages": {
+    "ENGLISH": 1.0
+  },
+  "intent_distribution": {
+    "other": 0.296,
+    "create new code": 0.152,
+    "understand": 0.15,
+    "git": 0.138,
+    "debug": 0.135,
+    "refactor": 0.072,
+    "test": 0.048,
+    "connect": 0.009
+  },
+  "pushback_distribution": {
+    "non_pushback": 0.544,
+    "correction": 0.344,
+    "failure_report": 0.086,
+    "rejection": 0.016,
+    "takeover": 0.01
+  },
+  "session_turns_median": 7.0,
+  "session_duration_median_s": 809.866,
+  "agent_code_percentage_median": 100.0,
+  "annotated_personas": {
+    "Vague Requester": 0.451,
+    "Expert Nitpicker": 0.376,
+    "Other": 0.14,
+    "Mind Changer": 0.033
+  }
+}

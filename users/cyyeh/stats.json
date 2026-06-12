@@ -1,0 +1,54 @@
+{
+  "user_id": "cyyeh",
+  "slug": "cyyeh",
+  "n_sessions_total": 265,
+  "n_sessions_train": 257,
+  "n_sessions_test": 8,
+  "agents": {
+    "Claude Code": 1.0
+  },
+  "repos": {
+    "wanshicheng/duckdb-data-agent": 0.509,
+    "cyyeh/duckdb-data-agent": 0.457,
+    "cyyeh/duckdb-web": 0.034
+  },
+  "date_range": [
+    "2026-02-19",
+    "2026-03-06"
+  ],
+  "n_prompts_train": 1244,
+  "prompt_words": {
+    "median": 10.5,
+    "p90": 638.0,
+    "max": 16360.0
+  },
+  "languages": {
+    "ENGLISH": 1.0
+  },
+  "intent_distribution": {
+    "debug": 0.215,
+    "git": 0.207,
+    "create new code": 0.193,
+    "other": 0.15,
+    "understand": 0.13,
+    "refactor": 0.084,
+    "test": 0.01,
+    "connect": 0.01
+  },
+  "pushback_distribution": {
+    "non_pushback": 0.471,
+    "correction": 0.263,
+    "failure_report": 0.187,
+    "takeover": 0.063,
+    "rejection": 0.017
+  },
+  "session_turns_median": 6.0,
+  "session_duration_median_s": 641.634,
+  "agent_code_percentage_median": 74.57627118644068,
+  "annotated_personas": {
+    "Vague Requester": 0.623,
+    "Expert Nitpicker": 0.26,
+    "Other": 0.068,
+    "Mind Changer": 0.049
+  }
+}
