@@ -181,21 +181,26 @@ def judge(real, generated, repo):
         "developer.\n\n"
         f"A (real): {truncate_words(real, 300)}\n\n"
         f"B (simulated): {truncate_words(generated, 300)}\n\n"
-        "Score B against A:\n"
-        "- content: same intent/topic/request? (0=unrelated, 100=same ask)\n"
-        "- style: same voice — length, language, casing, tone, formatting? "
+        "Score B against A on three axes:\n"
+        "- content: same intent/topic/request as A? (0=unrelated, 100=same ask)\n"
+        "- style: same surface voice — length, language, casing, tone, formatting? "
         "(0=obviously different person, 100=indistinguishable)\n"
-        'Respond with ONLY JSON: {"content": <int>, "style": <int>}'
+        "- realism: is B a plausible, in-character next message this developer could genuinely "
+        "have sent here — judged by intent and substance, NOT by whether it parrots their pet "
+        "phrases? A message that does the right thing in a fresh wording scores HIGH; a recycled "
+        "catchphrase that ignores the situation scores LOW. (0=implausible/out-of-character, "
+        "100=entirely plausible for them here)\n"
+        'Respond with ONLY JSON: {"content": <int>, "style": <int>, "realism": <int>}'
     )
     out = run_claude(prompt, JUDGE_MODEL, timeout=120)
     m = re.search(r'\{[^{}]*"content"[^{}]*\}', out)
     if not m:
-        return None, None
+        return None, None, None
     try:
         d = json.loads(m.group(0))
-        return int(d.get("content")), int(d.get("style"))
+        return int(d.get("content")), int(d.get("style")), int(d.get("realism"))
     except (ValueError, TypeError):
-        return None, None
+        return None, None, None
 
 
 def load_style_reference(slug, n=8):
@@ -211,9 +216,22 @@ def load_style_reference(slug, n=8):
     return [truncate_words(t, 60) for t in pool[::step][:n]]
 
 
-def discriminate(reference, cand_a, cand_b):
-    """2AFC: given real reference messages from a developer, which candidate (A/B) is
-    more likely written by the SAME developer? Returns 'A', 'B', or None."""
+_DISC_CRITERIA = {
+    # the original metric: rewards surface signature / recognizability (caricature-friendly)
+    "style": "Which candidate better matches the writing STYLE of the real developer above — "
+             "their length, language, casing, tone and characteristic phrasing?",
+    # the (3) metric: rewards content/realism, explicitly discounting catchphrase mimicry
+    "realism": "Which candidate is the more REALISTIC next message this developer would actually "
+               "send — judged by whether it does the right thing given how they work (intent, "
+               "substance, appropriate action)? Ignore superficial mimicry: do NOT reward a "
+               "candidate just for copying their pet phrases, and do NOT penalize a plausible, "
+               "in-character message for being freshly worded.",
+}
+
+
+def discriminate(reference, cand_a, cand_b, criterion="style"):
+    """2AFC: given real reference messages from a developer, which candidate (A/B) better fits
+    them under the given criterion ('style' or 'realism')? Returns 'A', 'B', or None."""
     ref = "\n".join(f"- {r}" for r in reference)
     prompt = (
         "Here are real messages a specific developer typed to an AI coding agent:\n"
@@ -223,8 +241,8 @@ def discriminate(reference, cand_a, cand_b):
         "DIFFERENT developer.\n\n"
         f"A: {truncate_words(cand_a, 120)}\n\n"
         f"B: {truncate_words(cand_b, 120)}\n\n"
-        "Which candidate better matches the writing style, length, language, casing and tone of "
-        'the real developer above? Respond with ONLY JSON: {"pick": "A"} or {"pick": "B"}.'
+        f"{_DISC_CRITERIA[criterion]} "
+        'Respond with ONLY JSON: {"pick": "A"} or {"pick": "B"}.'
     )
     out = run_claude(prompt, JUDGE_MODEL, timeout=120)
     m = re.search(r'"pick"\s*:\s*"([AB])"', out)
@@ -242,6 +260,13 @@ def main():
     ap.add_argument("--generate-only", action="store_true",
                     help="only fill the generations file (resume-safe); skip embedding/judge/2AFC. "
                          "Use for gentle top-up passes when rate-limited.")
+    ap.add_argument("--score-only", action="store_true",
+                    help="skip generation; load existing generations and (re)score them. "
+                         "Use to re-judge with an updated judge without regenerating.")
+    ap.add_argument("--gen-file", default=None,
+                    help="override path to the generations jsonl (default results/generations_<mode>.jsonl)")
+    ap.add_argument("--results-file", default=None,
+                    help="override output results json path")
     args = ap.parse_args()
     read_folder = args.mode == "folder"
 
@@ -287,9 +312,11 @@ def main():
 
     # resume: skip already-generated good records. Drop any CLI-failure records (session limit,
     # overload, max-turns) so they are regenerated and never pollute scoring. Per-mode file.
-    gen_path = RESULTS / f"generations_{args.mode}.jsonl"
+    gen_path = Path(args.gen_file) if args.gen_file else RESULTS / f"generations_{args.mode}.jsonl"
     done = set()
-    if gen_path.exists():
+    if args.score_only:
+        print(f"score-only: loading existing generations from {gen_path}, skipping generation")
+    elif gen_path.exists():
         kept = []
         dropped = 0
         for line in gen_path.read_text().splitlines():
@@ -302,7 +329,7 @@ def main():
         if dropped:
             gen_path.write_text("\n".join(kept) + ("\n" if kept else ""))
             print(f"dropped {dropped} prior CLI-failure generations for regeneration")
-    todo = [j for j in jobs if (j["slug"], j["point_id"], j["cond"]) not in done]
+    todo = [] if args.score_only else [j for j in jobs if (j["slug"], j["point_id"], j["cond"]) not in done]
     print(f"jobs: {len(jobs)} total, {len(todo)} to run")
 
     def work(job):
@@ -314,14 +341,15 @@ def main():
                 "repo": job["point"]["repo"], "real": job["point"]["real"],
                 "generated": gen}
 
-    with gen_path.open("a") as fh, ThreadPoolExecutor(max_workers=args.parallel) as ex:
-        futs = [ex.submit(work, j) for j in todo]
-        for i, fut in enumerate(as_completed(futs), 1):
-            rec = fut.result()
-            fh.write(json.dumps(rec, ensure_ascii=False) + "\n")
-            fh.flush()
-            print(f"[gen {i}/{len(todo)}] {rec['slug']} {rec['cond']} "
-                  f"({len(rec['generated'].split())}w)", flush=True)
+    if todo:
+        with gen_path.open("a") as fh, ThreadPoolExecutor(max_workers=args.parallel) as ex:
+            futs = [ex.submit(work, j) for j in todo]
+            for i, fut in enumerate(as_completed(futs), 1):
+                rec = fut.result()
+                fh.write(json.dumps(rec, ensure_ascii=False) + "\n")
+                fh.flush()
+                print(f"[gen {i}/{len(todo)}] {rec['slug']} {rec['cond']} "
+                      f"({len(rec['generated'].split())}w)", flush=True)
 
     # ---- scoring ----
     records = [json.loads(l) for l in gen_path.read_text().splitlines()]
@@ -350,8 +378,8 @@ def main():
 
     print("judging...")
     def judge_one(r):
-        c, s = judge(r["real"], r["generated"], r["repo"])
-        r["judge_content"], r["judge_style"] = c, s
+        c, s, rl = judge(r["real"], r["generated"], r["repo"])
+        r["judge_content"], r["judge_style"], r["judge_realism"] = c, s, rl
         return r
     with ThreadPoolExecutor(max_workers=args.parallel) as ex:
         futs = [ex.submit(judge_one, r) for r in records if r["generated"]]
@@ -364,26 +392,25 @@ def main():
         vals = [r[key] for r in rows if r.get(key) is not None]
         return round(sum(vals) / len(vals), 3) if vals else None
 
+    JUDGE_AXES = ["judge_content", "judge_style", "judge_realism"]
     by_cond = {c: [r for r in records if r["cond"] == c] for c in CONDITIONS}
-    summary = {c: {"n": len(rows), "cosine": agg(rows, "cosine"),
-                   "judge_content": agg(rows, "judge_content"),
-                   "judge_style": agg(rows, "judge_style"),
-                   "len_ratio": agg(rows, "len_ratio")}
+    summary = {c: {"n": len(rows), "cosine": agg(rows, "cosine"), "len_ratio": agg(rows, "len_ratio"),
+                   **{ax: agg(rows, ax) for ax in JUDGE_AXES}}
                for c, rows in by_cond.items()}
 
-    # paired win rates on cosine and style: distilled vs each baseline
+    # paired win rates: distilled vs each baseline, on cosine + each judge axis
     by_key = {}
     for r in records:
         by_key.setdefault((r["slug"], r["point_id"]), {})[r["cond"]] = r
-    wins = {f"distilled_vs_{b}": {"cosine": [0, 0], "judge_style": [0, 0]}
-            for b in ["generic", "wrong"]}
+    win_metrics = ["cosine"] + JUDGE_AXES
+    wins = {f"distilled_vs_{b}": {m: [0, 0] for m in win_metrics} for b in ["generic", "wrong"]}
     for conds in by_key.values():
         d = conds.get("distilled")
         for b in ["generic", "wrong"]:
             o = conds.get(b)
             if not d or not o:
                 continue
-            for metric in ["cosine", "judge_style"]:
+            for metric in win_metrics:
                 if d.get(metric) is None or o.get(metric) is None:
                     continue
                 wins[f"distilled_vs_{b}"][metric][1] += 1
@@ -392,59 +419,70 @@ def main():
     win_rates = {k: {m: (round(w / n, 3) if n else None)
                      for m, (w, n) in v.items()} for k, v in wins.items()}
 
-    # ---- 2AFC discrimination: distilled vs wrong, given a real style reference ----
-    print("discriminating (2AFC)...")
+    # ---- 2AFC discrimination: distilled vs wrong, under TWO criteria ----
+    # 'style' rewards surface signature (recognizability); 'realism' rewards in-character
+    # content and discounts catchphrase mimicry (the option-(3) metric).
     refs = {s: load_style_reference(s) for s in slugs}
-    pairs = []  # (key, slug, distilled_text, wrong_text, distilled_slot)
+    base_pairs = []  # (key, slug, distilled_text, wrong_text, distilled_slot)
     for key, conds in by_key.items():
         d, w = conds.get("distilled"), conds.get("wrong")
         if not d or not w or not d["generated"] or not w["generated"]:
             continue
         if is_cli_failure(d["generated"]) or is_cli_failure(w["generated"]):
             continue
-        # alternate which slot the distilled candidate occupies to cancel position bias
-        slot = "A" if (hash(key[1]) % 2 == 0) else "B"
-        pairs.append((key, key[0], d["generated"], w["generated"], slot))
+        slot = "A" if (hash(key[1]) % 2 == 0) else "B"  # cancel position bias
+        base_pairs.append((key, key[0], d["generated"], w["generated"], slot))
 
-    def disc_one(pair):
-        key, slug, d_txt, w_txt, slot = pair
-        a, b = (d_txt, w_txt) if slot == "A" else (w_txt, d_txt)
-        pick = discriminate(refs[slug], a, b)
-        chose_distilled = (pick == slot) if pick else None
-        return slug, chose_distilled
+    def run_discrimination(criterion):
+        def disc_one(pair):
+            key, slug, d_txt, w_txt, slot = pair
+            a, b = (d_txt, w_txt) if slot == "A" else (w_txt, d_txt)
+            pick = discriminate(refs[slug], a, b, criterion=criterion)
+            return slug, ((pick == slot) if pick else None)
+        results = []
+        with ThreadPoolExecutor(max_workers=args.parallel) as ex:
+            for fut in as_completed([ex.submit(disc_one, p) for p in base_pairs]):
+                results.append(fut.result())
+        valid = [c for _, c in results if c is not None]
+        agg_disc = {"n": len(valid),
+                    "distilled_chosen_rate": round(sum(valid) / len(valid), 3) if valid else None,
+                    "chance": 0.5}
+        by_user = {}
+        for slug in slugs:
+            u = [c for s, c in results if s == slug and c is not None]
+            by_user[slug] = round(sum(u) / len(u), 3) if u else None
+        return agg_disc, by_user
 
-    disc_results = []
-    with ThreadPoolExecutor(max_workers=args.parallel) as ex:
-        futs = [ex.submit(disc_one, p) for p in pairs]
-        for fut in as_completed(futs):
-            disc_results.append(fut.result())
-    disc_valid = [c for _, c in disc_results if c is not None]
-    discrimination = {
-        "n": len(disc_valid),
-        "distilled_chosen_rate": round(sum(disc_valid) / len(disc_valid), 3) if disc_valid else None,
-        "chance": 0.5,
-    }
-    disc_by_user = {}
-    for slug in slugs:
-        u = [c for s, c in disc_results if s == slug and c is not None]
-        disc_by_user[slug] = round(sum(u) / len(u), 3) if u else None
+    discriminations, discriminations_by_user = {}, {}
+    for crit in ["style", "realism"]:
+        print(f"discriminating (2AFC, {crit})...")
+        agg_disc, by_user = run_discrimination(crit)
+        discriminations[crit] = agg_disc
+        discriminations_by_user[crit] = by_user
+    # back-compat: top-level `discrimination` keeps the style criterion
+    discrimination = discriminations["style"]
+    disc_by_user = discriminations_by_user["style"]
 
     per_user = {}
     for slug in slugs:
         per_user[slug] = {c: {"cosine": agg([r for r in by_cond[c] if r["slug"] == slug], "cosine"),
-                              "judge_style": agg([r for r in by_cond[c] if r["slug"] == slug], "judge_style"),
-                              "judge_content": agg([r for r in by_cond[c] if r["slug"] == slug], "judge_content")}
+                              **{ax: agg([r for r in by_cond[c] if r["slug"] == slug], ax)
+                                 for ax in JUDGE_AXES}}
                           for c in CONDITIONS}
 
     out = {"mode": args.mode, "embed_model": EMBED_MODEL, "gen_model": GEN_MODEL,
            "judge_model": JUDGE_MODEL, "users": slugs, "wrong_pairing": wrong_of,
-           "summary": summary, "win_rates": win_rates, "discrimination": discrimination,
-           "discrimination_by_user": disc_by_user, "per_user": per_user, "records": records}
-    results_name = "validation_results.json" if args.mode == "inline" else f"validation_results_{args.mode}.json"
-    (RESULTS / results_name).write_text(
-        json.dumps(out, indent=1, ensure_ascii=False))
-    print(json.dumps({"summary": summary, "win_rates": win_rates,
-                      "discrimination": discrimination}, indent=1))
+           "summary": summary, "win_rates": win_rates,
+           "discrimination": discrimination, "discrimination_by_user": disc_by_user,
+           "discriminations": discriminations, "discriminations_by_user": discriminations_by_user,
+           "per_user": per_user, "records": records}
+    if args.results_file:
+        results_path = Path(args.results_file)
+    else:
+        name = "validation_results.json" if args.mode == "inline" else f"validation_results_{args.mode}.json"
+        results_path = RESULTS / name
+    results_path.write_text(json.dumps(out, indent=1, ensure_ascii=False))
+    print(json.dumps({"summary": summary, "discriminations": discriminations}, indent=1))
 
 
 if __name__ == "__main__":
