@@ -78,13 +78,23 @@ def pick_points(holdout):
     return points
 
 
-def build_prompt(point, folder_text):
+def _context_block(point):
     ctx_lines = []
     for t in point["context"]:
         who = "DEVELOPER" if t["role"] == "user" else "AGENT"
         ctx_lines.append(f"[{who}]: {truncate_words(t['text'], CONTEXT_TURN_WORDS)}")
-    ctx = "\n\n".join(ctx_lines)
+    return "\n\n".join(ctx_lines)
 
+
+_TASK = (
+    "Write the developer's NEXT message to the agent. Output ONLY the literal text "
+    "the developer would type — their language, length, casing, typos and all. "
+    "No quotes, no commentary, no role labels."
+)
+
+
+def build_prompt(point, folder_text):
+    """INLINE mode: the folder contents are pasted into the prompt (controlled experiment)."""
     profile = (
         f"<user_profile>\n{folder_text}\n</user_profile>\n\n"
         "You are role-playing the developer described in the profile above. "
@@ -93,21 +103,45 @@ def build_prompt(point, folder_text):
     )
     return (
         f"{profile}"
-        f"The developer is using an AI coding agent in the repository "
-        f"`{point['repo']}`. The session so far:\n\n"
-        f"<conversation>\n{ctx}\n</conversation>\n\n"
-        "Write the developer's NEXT message to the agent. Output ONLY the literal text "
-        "the developer would type — their language, length, casing, typos and all. "
-        "No quotes, no commentary, no role labels."
+        f"The developer is using an AI coding agent in the repository `{point['repo']}`. "
+        f"The session so far:\n\n<conversation>\n{_context_block(point)}\n</conversation>\n\n{_TASK}"
     )
 
 
-def run_claude(prompt, model, timeout=TIMEOUT_S):
-    cmd = ["claude", "-p", prompt, "--model", model,
-           "--disallowedTools", "Read,Write,Edit,Bash,Glob,Grep,Task,WebFetch,WebSearch",
-           "--max-turns", "1"]
-    res = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True, timeout=timeout)
-    return (res.stdout or "").strip()
+def build_folder_prompt(point, folder_path):
+    """FOLDER mode: the agent is pointed at the folder and must READ it itself
+    (exercises the real roleplay-user skill / product flow)."""
+    if folder_path:
+        head = (
+            f"Read the user folder at `{folder_path}` (USER.md first, then STYLE.md, "
+            f"PREFERENCES.md, PERSONA.md, PROJECTS.md, and skills/*.md). You ARE that developer. "
+        )
+    else:
+        head = "You are role-playing a generic software developer. "
+    return (
+        f"{head}"
+        f"You are using an AI coding agent in the repository `{point['repo']}`. "
+        f"The session so far:\n\n<conversation>\n{_context_block(point)}\n</conversation>\n\n{_TASK}"
+    )
+
+
+def run_claude(prompt, model, timeout=TIMEOUT_S, read_folder=False):
+    if read_folder:
+        # agent must read the folder; allow only Read/Glob, give it room for the read turns
+        cmd = ["claude", "-p", prompt, "--model", model,
+               "--allowedTools", "Read,Glob", "--permission-mode", "acceptEdits",
+               "--max-turns", "12"]
+    else:
+        # inline mode: no tools needed; force a single text turn (retry once on stray error)
+        cmd = ["claude", "-p", prompt, "--model", model,
+               "--disallowedTools", "Read,Write,Edit,Bash,Glob,Grep,Task,WebFetch,WebSearch,NotebookEdit",
+               "--max-turns", "3"]
+    for _ in range(2):
+        res = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True, timeout=timeout)
+        out = (res.stdout or "").strip()
+        if out and not out.startswith("Error:"):
+            return out
+    return out
 
 
 def judge(real, generated, repo):
@@ -134,12 +168,49 @@ def judge(real, generated, repo):
         return None, None
 
 
+def load_style_reference(slug, n=8):
+    """A sample of the user's REAL messages (from the digest), for the 2AFC test.
+    These are training-side messages, disjoint from the held-out points being predicted."""
+    digest = json.loads((ROOT / "data" / "digests" / f"{slug}.json").read_text())
+    pool = [p["text"] for p in digest.get("mid_session_prompts", [])]
+    pool += [p["text"] for p in digest.get("opening_prompts", [])]
+    pool = [t for t in pool if t and len(t.split()) >= 2]
+    # deterministic spread across the pool, prefer shorter messages (the style tells)
+    pool = sorted(pool, key=len)[: max(n * 3, n)]
+    step = max(1, len(pool) // n)
+    return [truncate_words(t, 60) for t in pool[::step][:n]]
+
+
+def discriminate(reference, cand_a, cand_b):
+    """2AFC: given real reference messages from a developer, which candidate (A/B) is
+    more likely written by the SAME developer? Returns 'A', 'B', or None."""
+    ref = "\n".join(f"- {r}" for r in reference)
+    prompt = (
+        "Here are real messages a specific developer typed to an AI coding agent:\n"
+        f"{ref}\n\n"
+        "Two candidate messages were written at a later point in one of their sessions. "
+        "Exactly one was produced by a system simulating THIS developer; the other simulates a "
+        "DIFFERENT developer.\n\n"
+        f"A: {truncate_words(cand_a, 120)}\n\n"
+        f"B: {truncate_words(cand_b, 120)}\n\n"
+        "Which candidate better matches the writing style, length, language, casing and tone of "
+        'the real developer above? Respond with ONLY JSON: {"pick": "A"} or {"pick": "B"}.'
+    )
+    out = run_claude(prompt, JUDGE_MODEL, timeout=120)
+    m = re.search(r'"pick"\s*:\s*"([AB])"', out)
+    return m.group(1) if m else None
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--users", type=int, default=10)
     ap.add_argument("--slugs", nargs="*", default=None)
     ap.add_argument("--parallel", type=int, default=8)
+    ap.add_argument("--mode", choices=["inline", "folder"], default="inline",
+                    help="inline: paste folder contents into prompt (controlled experiment). "
+                         "folder: point the agent at users/<slug>/ and let it Read (product flow).")
     args = ap.parse_args()
+    read_folder = args.mode == "folder"
 
     RESULTS.mkdir(exist_ok=True)
     manifest = json.loads((ROOT / "data" / "manifest.json").read_text())
@@ -161,6 +232,9 @@ def main():
         if not txt:
             raise SystemExit(f"no distilled folder for {s}; run distill.py first")
 
+    def folder_path(s):
+        return str((ROOT / "users" / s).relative_to(ROOT))
+
     # build all jobs
     jobs = []
     for slug in slugs:
@@ -169,15 +243,17 @@ def main():
         print(f"  {slug}: {len(points)} prediction points")
         for pi, point in enumerate(points):
             for cond in CONDITIONS:
-                folder_text = {"distilled": folders[slug],
-                               "generic": "",
-                               "wrong": folders[wrong_of[slug]]}[cond]
+                src = {"distilled": slug, "generic": None, "wrong": wrong_of[slug]}[cond]
+                if read_folder:
+                    prompt = build_folder_prompt(point, folder_path(src) if src else None)
+                else:
+                    folder_text = folders[src] if src else ""
+                    prompt = build_prompt(point, folder_text)
                 jobs.append({"slug": slug, "point_id": f"{point['session_id']}#{point['turn_index']}",
-                             "cond": cond, "point": point,
-                             "prompt": build_prompt(point, folder_text)})
+                             "cond": cond, "point": point, "prompt": prompt})
 
-    # resume: skip already-generated (slug, point_id, cond)
-    gen_path = RESULTS / "generations.jsonl"
+    # resume: skip already-generated (slug, point_id, cond). Per-mode file so modes don't collide.
+    gen_path = RESULTS / f"generations_{args.mode}.jsonl"
     done = set()
     if gen_path.exists():
         for line in gen_path.read_text().splitlines():
@@ -188,7 +264,7 @@ def main():
 
     def work(job):
         try:
-            gen = run_claude(job["prompt"], GEN_MODEL)
+            gen = run_claude(job["prompt"], GEN_MODEL, read_folder=read_folder)
         except subprocess.TimeoutExpired:
             gen = ""
         return {"slug": job["slug"], "point_id": job["point_id"], "cond": job["cond"],
@@ -265,6 +341,43 @@ def main():
     win_rates = {k: {m: (round(w / n, 3) if n else None)
                      for m, (w, n) in v.items()} for k, v in wins.items()}
 
+    # ---- 2AFC discrimination: distilled vs wrong, given a real style reference ----
+    print("discriminating (2AFC)...")
+    refs = {s: load_style_reference(s) for s in slugs}
+    pairs = []  # (key, slug, distilled_text, wrong_text, distilled_slot)
+    for key, conds in by_key.items():
+        d, w = conds.get("distilled"), conds.get("wrong")
+        if not d or not w or not d["generated"] or not w["generated"]:
+            continue
+        if d["generated"].startswith("Error:") or w["generated"].startswith("Error:"):
+            continue
+        # alternate which slot the distilled candidate occupies to cancel position bias
+        slot = "A" if (hash(key[1]) % 2 == 0) else "B"
+        pairs.append((key, key[0], d["generated"], w["generated"], slot))
+
+    def disc_one(pair):
+        key, slug, d_txt, w_txt, slot = pair
+        a, b = (d_txt, w_txt) if slot == "A" else (w_txt, d_txt)
+        pick = discriminate(refs[slug], a, b)
+        chose_distilled = (pick == slot) if pick else None
+        return slug, chose_distilled
+
+    disc_results = []
+    with ThreadPoolExecutor(max_workers=args.parallel) as ex:
+        futs = [ex.submit(disc_one, p) for p in pairs]
+        for fut in as_completed(futs):
+            disc_results.append(fut.result())
+    disc_valid = [c for _, c in disc_results if c is not None]
+    discrimination = {
+        "n": len(disc_valid),
+        "distilled_chosen_rate": round(sum(disc_valid) / len(disc_valid), 3) if disc_valid else None,
+        "chance": 0.5,
+    }
+    disc_by_user = {}
+    for slug in slugs:
+        u = [c for s, c in disc_results if s == slug and c is not None]
+        disc_by_user[slug] = round(sum(u) / len(u), 3) if u else None
+
     per_user = {}
     for slug in slugs:
         per_user[slug] = {c: {"cosine": agg([r for r in by_cond[c] if r["slug"] == slug], "cosine"),
@@ -272,12 +385,15 @@ def main():
                               "judge_content": agg([r for r in by_cond[c] if r["slug"] == slug], "judge_content")}
                           for c in CONDITIONS}
 
-    out = {"embed_model": EMBED_MODEL, "gen_model": GEN_MODEL, "judge_model": JUDGE_MODEL,
-           "users": slugs, "wrong_pairing": wrong_of, "summary": summary,
-           "win_rates": win_rates, "per_user": per_user, "records": records}
-    (RESULTS / "validation_results.json").write_text(
+    out = {"mode": args.mode, "embed_model": EMBED_MODEL, "gen_model": GEN_MODEL,
+           "judge_model": JUDGE_MODEL, "users": slugs, "wrong_pairing": wrong_of,
+           "summary": summary, "win_rates": win_rates, "discrimination": discrimination,
+           "discrimination_by_user": disc_by_user, "per_user": per_user, "records": records}
+    results_name = "validation_results.json" if args.mode == "inline" else f"validation_results_{args.mode}.json"
+    (RESULTS / results_name).write_text(
         json.dumps(out, indent=1, ensure_ascii=False))
-    print(json.dumps({"summary": summary, "win_rates": win_rates}, indent=1))
+    print(json.dumps({"summary": summary, "win_rates": win_rates,
+                      "discrimination": discrimination}, indent=1))
 
 
 if __name__ == "__main__":

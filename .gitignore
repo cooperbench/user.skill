@@ -1,4 +1,4 @@
 data/
 __pycache__/
 *.pyc
-results/generations.jsonl
+results/generations*.jsonl
