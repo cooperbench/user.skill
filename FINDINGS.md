@@ -12,16 +12,25 @@ points × 3 conditions × 2 generation modes). All 168×2 generations are clean.
   user's folder).
 - **Modes:** `inline` (folder text pasted into the prompt) and `folder` (the agent is pointed at
   `users/<slug>/` and reads it via the `roleplay-user` skill — the product flow).
-- **Metrics:** embedding cosine to the real message, LLM judge (content + style, 0–100), length
-  ratio, and a 2-alternative forced-choice (2AFC) style-discrimination test (own vs. wrong folder,
-  given a sample of the user's real messages; chance = 50%).
+- **Metrics:** embedding cosine to the real message; an LLM judge on three axes (content, style,
+  realism — 0–100), where *style* = surface recognizability and *realism* = a plausible in-character
+  message judged by intent/substance, explicitly **not** rewarding catchphrase mimicry; length
+  ratio; and a 2-alternative forced-choice (2AFC) own-vs-wrong-folder test run under **both** a
+  style and a realism criterion (chance = 50%).
 
 ## Headline results
 
-| Mode | 2AFC own-picked | users 2AFC>0.5 | own vs. wrong: style | own vs. wrong: content |
+The judge scores three axes — content, **style** (surface recognizability) and **realism**
+(plausible in-character message, judged by intent/substance, *not* catchphrase mimicry) — and the
+own-vs-wrong 2AFC is run under both a style and a realism criterion (9-user subset, rescored):
+
+| Mode | 2AFC style | 2AFC realism | realism: own | realism: wrong |
 |---|---|---|---|---|
-| **inline** | **80.4%** | **8/9** | **+9.2** | **+8.1** |
-| folder | 53.6% | 5/9 | +4.3 | +3.0 |
+| **inline** | **83.9%** | **76.8%** | 28.8 | 24.3 |
+| folder | 62.5% | 58.9% | **30.4** | 29.5 |
+
+(Earlier single-criterion style-2AFC numbers were inline 80.4% / folder 53.6%; the rescore with the
+updated judge is consistent.)
 
 ## What we learned
 
@@ -31,19 +40,34 @@ points × 3 conditions × 2 generation modes). All 168×2 generations are clean.
    users** (only `robouden` falls below chance). This is the cleanest test because own-vs-wrong
    holds "has a folder at all" constant; the only difference is *whose* folder.
 
-2. **Inline beats folder-access for short-message role-play.** Pasting the whole folder into context
-   discriminates much better (80.4%) than having the agent read the folder itself and decide what to
-   use (53.6%). For a one-line reply, an agent reading 7 files tends to under-weight the terse style
-   cues; full context keeps them present. (An earlier draft concluded the opposite — that was an
-   artifact of corrupted inline data; see below.)
+2. **Inline beats folder-access on discrimination — but that is mostly *recognizability*.**
+   Inline discriminates better under both criteria (style 83.9% vs 62.5%; realism 76.8% vs 58.9%).
+   The reason is concrete: inline reproduces the user's **signature catchphrases** verbatim — e.g.
+   asragab's `"looks good whats next"` appears identically across unrelated turns (44% of inline
+   distilled generations are exact repeats, vs 36% in folder mode). A discrimination judge rewards
+   that caricature.
 
-3. **The win is against the wrong user, not against a generic agent.** On style, the distilled
-   folder (23.4) is close to the no-folder generic baseline (25.0) — a capable model already writes
-   plausible developer messages. The folder's distinctive value is *specialization toward the right
-   person*: it beats the **wrong** folder by +9.2 style / +8.1 content points. So the folder encodes
-   *which* developer, more than it teaches the model to "sound like a developer" in general.
+3. **On realism, folder-access is actually better.** The per-record realism axis (plausible
+   in-character message, ignoring phrase-parroting) *reverses* the mode ordering: folder-access
+   distilled scores **30.4** vs inline **28.8**. The flexible folder-reading agent writes more
+   natural, situationally-appropriate messages. So "inline is better" is specific to recognizability,
+   not fidelity — inline is better at being *recognizable as* the user, folder-access at being
+   *realistic for* the user.
 
-4. **Exact next-message prediction has a low ceiling.** Absolute judge scores are modest for every
+4. **Realism is real but not user-discriminative.** Switching the 2AFC from a style to a realism
+   criterion only narrows the inline–folder gap (style +21.4pts → realism +17.9pts); it does not flip
+   it. Any 2AFC structurally rewards distinctiveness, and realism is *shared*: in folder mode even the
+   wrong folder scores realistic (29.5, near the right folder's 30.4) because the agent grounds in the
+   live conversation, and the no-folder generic baseline scores **highest of all** on realism (~34).
+   To measure fidelity you must read the per-record realism/content scores, not a discrimination test.
+
+5. **The win is against the wrong user, not against a generic agent.** A capable model already writes
+   plausible developer messages, so the distilled folder barely beats the no-folder baseline on style
+   or realism. Its distinctive value is *specialization toward the right person*: it beats the
+   **wrong** folder under every criterion. The folder encodes *which* developer, more than it teaches
+   the model to "sound like a developer" in general.
+
+6. **Exact next-message prediction has a low ceiling.** Absolute judge scores are modest for every
    condition because many messages are plausible at any point; comparisons between conditions, not
    absolute scores, carry the signal.
 

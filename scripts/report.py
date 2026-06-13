@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Generate results/report.html from the validation result JSON files.
 
-Loads results/validation_results.json (inline mode) and, if present,
-results/validation_results_folder.json (folder-access / product mode),
-and renders both with a headline comparison.
+Prefers the dual-criterion rescored files (style + realism 2AFC, per-record realism):
+  results/rescored_inline_9users.json   (inline mode)
+  results/rescored_folder_9users.json   (folder-access mode)
+falling back to results/validation_results.json / validation_results_folder.json.
 """
 
 import html
@@ -15,56 +16,76 @@ RESULTS = ROOT / "results"
 COND_LABELS = {"distilled": "Own folder (distilled)",
                "generic": "No folder (generic dev)",
                "wrong": "Wrong user's folder"}
-MODE_LABELS = {"inline": "Inline (folder pasted into prompt — controlled experiment)",
-               "folder": "Folder access (agent reads users/&lt;slug&gt;/ — product flow)"}
+MODE_LABELS = {"inline": "Inline (folder pasted into prompt)",
+               "folder": "Folder access (agent reads users/&lt;slug&gt;/)"}
+CRIT_LABELS = {"style": "Style / recognizability", "realism": "Realism / fidelity"}
 
 
 def fmt(v, pct=False):
     if v is None:
         return "–"
-    return f"{100 * v:.1f}%" if pct else (f"{v:.3f}" if isinstance(v, float) else str(v))
+    return f"{100 * v:.1f}%" if pct else (f"{v:.1f}" if isinstance(v, float) else str(v))
+
+
+def load(mode):
+    rescored = RESULTS / f"rescored_{mode}_9users.json"
+    if rescored.exists():
+        return json.loads(rescored.read_text())
+    fallback = (RESULTS / "validation_results.json" if mode == "inline"
+                else RESULTS / f"validation_results_{mode}.json")
+    return json.loads(fallback.read_text()) if fallback.exists() else None
+
+
+def discs(res):
+    """Return {criterion: rate} for whatever discrimination criteria the file has."""
+    if res.get("discriminations"):
+        return {k: v.get("distilled_chosen_rate") for k, v in res["discriminations"].items()}
+    d = res.get("discrimination", {})
+    return {"style": d.get("distilled_chosen_rate")}
 
 
 def cond_table(res):
     rows = "".join(
         f"<tr><td>{COND_LABELS[c]}</td><td class='num'>{s['n']}</td>"
-        f"<td class='num'>{fmt(s['cosine'])}</td><td class='num'>{fmt(s['judge_content'])}</td>"
-        f"<td class='num'>{fmt(s['judge_style'])}</td><td class='num'>{fmt(s['len_ratio'])}</td></tr>"
+        f"<td class='num'>{fmt(s.get('judge_content'))}</td>"
+        f"<td class='num'>{fmt(s.get('judge_style'))}</td>"
+        f"<td class='num'>{fmt(s.get('judge_realism'))}</td>"
+        f"<td class='num'>{fmt(s.get('cosine'))}</td></tr>"
         for c, s in res["summary"].items())
-    return ("<table><thead><tr><th>Condition</th><th class='num'>N</th><th class='num'>Cosine</th>"
-            "<th class='num'>Judge content</th><th class='num'>Judge style</th>"
-            f"<th class='num'>Len ratio</th></tr></thead><tbody>{rows}</tbody></table>")
+    return ("<table><thead><tr><th>Condition</th><th class='num'>N</th>"
+            "<th class='num'>Content</th><th class='num'>Style</th>"
+            "<th class='num'>Realism</th><th class='num'>Cosine</th></tr></thead>"
+            f"<tbody>{rows}</tbody></table>")
 
 
 def user_table(res):
-    pu, dbu = res["per_user"], res.get("discrimination_by_user", {})
+    pu = res["per_user"]
+    dbu = res.get("discriminations_by_user", {})
+    st_by, re_by = dbu.get("style", {}), dbu.get("realism", res.get("discrimination_by_user", {}))
     rows = []
     for slug, conds in pu.items():
-        d, g, w = conds["distilled"], conds["generic"], conds["wrong"]
-        du = dbu.get(slug)
-        cls = " class=win" if (du or 0) > 0.5 else ""
+        d, w = conds["distilled"], conds["wrong"]
+        st, re = st_by.get(slug), re_by.get(slug)
+        cls = " class=win" if (re or 0) > 0.5 else ""
         rows.append(
             f"<tr{cls}><td>{html.escape(slug)}</td>"
-            f"<td class='num'>{fmt(d['judge_content'])}</td><td class='num'>{fmt(g['judge_content'])}</td>"
-            f"<td class='num'>{fmt(w['judge_content'])}</td>"
-            f"<td class='num'>{fmt(d['judge_style'])}</td><td class='num'>{fmt(g['judge_style'])}</td>"
-            f"<td class='num'>{fmt(w['judge_style'])}</td><td class='num'>{fmt(du, pct=True)}</td></tr>")
+            f"<td class='num'>{fmt(d.get('judge_realism'))}</td>"
+            f"<td class='num'>{fmt(w.get('judge_realism'))}</td>"
+            f"<td class='num'>{fmt(st, pct=True)}</td>"
+            f"<td class='num'>{fmt(re, pct=True)}</td></tr>")
     return ("<table><thead><tr><th>User</th>"
-            "<th class='num'>own content</th><th class='num'>none content</th><th class='num'>wrong content</th>"
-            "<th class='num'>own style</th><th class='num'>none style</th><th class='num'>wrong style</th>"
-            f"<th class='num'>2AFC own-picked</th></tr></thead><tbody>{''.join(rows)}</tbody></table>")
+            "<th class='num'>own realism</th><th class='num'>wrong realism</th>"
+            "<th class='num'>2AFC style</th><th class='num'>2AFC realism</th>"
+            f"</tr></thead><tbody>{''.join(rows)}</tbody></table>")
 
 
 def examples(res, n=3):
     recs = sorted((r for r in res["records"] if r["cond"] == "distilled" and r["generated"]
                    and not r["generated"].startswith("Error:")),
-                  key=lambda r: -(r.get("cosine") or 0))
-    if len(recs) < n:
-        picks = recs
-    else:
-        picks = [recs[0], recs[len(recs) // 2], recs[-1]]
+                  key=lambda r: -(r.get("judge_realism") or 0))
+    picks = [recs[0], recs[len(recs) // 2], recs[-1]] if len(recs) >= 3 else recs
     return "".join(
-        f"<div class='ex'><div class='exh'>{html.escape(r['slug'])} — cosine {fmt(r.get('cosine'))}, "
+        f"<div class='ex'><div class='exh'>{html.escape(r['slug'])} — realism {fmt(r.get('judge_realism'))}, "
         f"style {fmt(r.get('judge_style'))}</div>"
         f"<div class='lbl'>real</div><pre>{html.escape((r['real'] or '')[:500])}</pre>"
         f"<div class='lbl'>simulated</div><pre>{html.escape((r['generated'] or '')[:500])}</pre></div>"
@@ -72,57 +93,46 @@ def examples(res, n=3):
 
 
 def mode_section(res):
-    disc = res.get("discrimination", {})
-    wins = res["win_rates"]
-    win_rows = "".join(
-        f"<tr><td>{html.escape(k.replace('_', ' '))}</td>"
-        f"<td class='num'>{fmt(v['cosine'], pct=True)}</td>"
-        f"<td class='num'>{fmt(v['judge_style'], pct=True)}</td></tr>"
-        for k, v in wins.items())
+    dd = discs(res)
     return f"""
-<h3>2AFC discrimination — {fmt(disc.get('distilled_chosen_rate'), pct=True)} (chance 50%, n={disc.get('n', 0)})</h3>
-<p>Given a sample of the user's real messages, how often does the judge pick the candidate from the
-user's <em>own</em> distilled folder over a different user's folder.</p>
+<h3>2AFC discrimination</h3>
+<table><thead><tr><th>Criterion</th><th class='num'>distilled chosen</th></tr></thead>
+<tbody>
+<tr><td>{CRIT_LABELS['style']}</td><td class='num'>{fmt(dd.get('style'), pct=True)}</td></tr>
+<tr><td>{CRIT_LABELS['realism']}</td><td class='num'>{fmt(dd.get('realism'), pct=True)}</td></tr>
+</tbody></table>
+<h4>Judge means by condition (0–100)</h4>
 {cond_table(res)}
-<h4>Paired win rates (distilled beats baseline at the same point)</h4>
-<table><thead><tr><th>Comparison</th><th class='num'>Cosine</th><th class='num'>Style</th></tr></thead>
-<tbody>{win_rows}</tbody></table>
-<h4>Per-user</h4>
+<h4>Per-user (realism, and both 2AFC criteria)</h4>
 {user_table(res)}
-<h4>Examples (best / median / worst distilled prediction)</h4>
+<h4>Examples (best / median / worst by realism)</h4>
 {examples(res)}
 """
 
 
 def main():
-    inline = json.loads((RESULTS / "validation_results.json").read_text())
-    folder_path = RESULTS / "validation_results_folder.json"
-    folder = json.loads(folder_path.read_text()) if folder_path.exists() else None
+    inline = load("inline")
+    folder = load("folder")
     modes = [("inline", inline)] + ([("folder", folder)] if folder else [])
 
-    # headline comparison across modes
-    head_rows = "".join(
-        f"<tr><td>{MODE_LABELS[m]}</td>"
-        f"<td class='num'>{fmt(r['discrimination'].get('distilled_chosen_rate'), pct=True)}</td>"
-        f"<td class='num'>{fmt(r['summary']['distilled']['judge_content'])}</td>"
-        f"<td class='num'>{fmt(r['summary']['generic']['judge_content'])}</td>"
-        f"<td class='num'>{fmt(r['summary']['wrong']['judge_content'])}</td></tr>"
-        for m, r in modes)
+    head_rows = []
+    for m, r in modes:
+        dd = discs(r)
+        s = r["summary"]
+        head_rows.append(
+            f"<tr><td>{MODE_LABELS[m]}</td>"
+            f"<td class='num'>{fmt(dd.get('style'), pct=True)}</td>"
+            f"<td class='num'>{fmt(dd.get('realism'), pct=True)}</td>"
+            f"<td class='num'>{fmt(s['distilled'].get('judge_realism'))}</td>"
+            f"<td class='num'>{fmt(s['wrong'].get('judge_realism'))}</td></tr>")
 
-    sections = "".join(
-        f"<h2>{MODE_LABELS[m]}</h2>{mode_section(r)}" for m, r in modes)
+    sections = "".join(f"<h2>{MODE_LABELS[m]}</h2>{mode_section(r)}" for m, r in modes)
 
-    best = max(modes, key=lambda mr: mr[1]["discrimination"].get("distilled_chosen_rate") or 0)
-    best_rate = best[1]["discrimination"].get("distilled_chosen_rate")
-
-    def dvw(res, metric):  # distilled-minus-wrong lift on a condition mean
-        return res["summary"]["distilled"][metric] - res["summary"]["wrong"][metric]
-    lift_mode = best[1]                       # headline uses the strongest mode
-    lift_mode_name = {"inline": "inline", "folder": "folder-access"}[best[0]]
-    style_lift = dvw(lift_mode, "judge_style")
-    content_lift = dvw(lift_mode, "judge_content")
-    n_above = sum(1 for v in lift_mode.get("discrimination_by_user", {}).values() if v and v > 0.5)
-    n_users = len(lift_mode["users"])
+    # headline numbers (inline is the strongest discriminator)
+    i_d = discs(inline)
+    style_rate, realism_rate = i_d.get("style"), i_d.get("realism")
+    fold_realism_d = folder["summary"]["distilled"].get("judge_realism") if folder else None
+    inl_realism_d = inline["summary"]["distilled"].get("judge_realism")
 
     report = f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <title>User.skill: distillation validation</title>
@@ -143,52 +153,64 @@ def main():
  pre {{ white-space: pre-wrap; background: #f8f8fb; padding: .45rem .65rem; border-radius: 5px;
        font-size: .8rem; margin: .15rem 0; }}
  .note {{ background: #f5f0ff; border-left: 4px solid #7c3aed; padding: .6rem 1rem; border-radius: 4px; }}
- .bigstat {{ background: linear-gradient(135deg,#7c3aed,#a855f7); color:#fff; border-radius:12px;
-            padding:1.3rem 1.6rem; margin:1rem 0 1.4rem; display:flex; align-items:baseline; gap:1.2rem; flex-wrap:wrap; }}
- .bigstat .bn {{ font-size:2.8rem; font-weight:800; line-height:1; }}
- .bigstat .bl {{ font-size:.92rem; max-width:640px; }}
+ .twin {{ display:flex; gap:1rem; flex-wrap:wrap; margin:1rem 0 1.4rem; }}
+ .bigstat {{ flex:1 1 300px; background: linear-gradient(135deg,#7c3aed,#a855f7); color:#fff;
+            border-radius:12px; padding:1.2rem 1.4rem; }}
+ .bigstat.alt {{ background: linear-gradient(135deg,#0ea5e9,#22d3ee); }}
+ .bigstat .bn {{ font-size:2.6rem; font-weight:800; line-height:1; }}
+ .bigstat .bt {{ font-size:.8rem; text-transform:uppercase; letter-spacing:.04em; opacity:.9; margin-bottom:.3rem; }}
+ .bigstat .bl {{ font-size:.86rem; margin-top:.4rem; }}
 </style></head><body>
-<h1>User.skill: can we recreate a developer from their trajectories?</h1>
+<h1>User.skill: recognizable vs. realistic role-play</h1>
 <p>We distilled each SWE-chat user (≥6 sessions) into a role-playable folder, then tested it by
-<strong>held-out next-message prediction</strong>: a role-play agent ({html.escape(inline['gen_model'])})
-sees a real conversation prefix and writes the user's next message under three conditions —
-their own distilled folder, no folder, or a different user's folder. We score against the real
-message with embedding cosine ({html.escape(inline['embed_model'])}), an LLM judge
-({html.escape(inline['judge_model'])}, content + style, 0–100), a length ratio, and a
-2-alternative forced-choice style-discrimination test. Users: {len(inline['users'])}.</p>
+held-out next-message prediction under three conditions (own folder / no folder / wrong user's
+folder) and two generation modes (inline = folder pasted into the prompt; folder-access = the agent
+reads <code>users/&lt;slug&gt;/</code> itself). We score with an LLM judge
+({html.escape(inline['judge_model'])}) on three axes — content, <strong>style</strong>
+(surface recognizability) and <strong>realism</strong> (plausible, in-character message judged by
+intent and substance, <em>not</em> catchphrase mimicry) — plus a 2-alternative forced choice
+(own vs. wrong folder) run under both a style and a realism criterion. 9 users; chance = 50%.</p>
 
-<div class="bigstat">
-  <div class="bn">{fmt(best_rate, pct=True)}</div>
-  <div class="bl">of the time, given a sample of a user's real messages, the judge picks the candidate
-  written from that user's <em>own</em> distilled folder over one from a <em>different</em> user's
-  folder ({lift_mode_name} mode; chance = 50%). It holds for {n_above}/{n_users} users. The folder
-  also lifts style-match by +{style_lift:.1f} and content-match by +{content_lift:.1f} points (0–100
-  judge) over the wrong folder — the distillation captures genuinely user-specific voice.</div>
+<div class="twin">
+  <div class="bigstat">
+    <div class="bt">2AFC · style criterion</div>
+    <div class="bn">{fmt(style_rate, pct=True)}</div>
+    <div class="bl">how often the judge picks the own-folder message as more <em>recognizably</em> this
+    user than a wrong user's message (inline mode). Inline wins this because it reproduces the user's
+    signature phrases.</div>
+  </div>
+  <div class="bigstat alt">
+    <div class="bt">2AFC · realism criterion</div>
+    <div class="bn">{fmt(realism_rate, pct=True)}</div>
+    <div class="bl">same test, but rewarding the more <em>plausible in-character</em> message and
+    discounting phrase-parroting. The signal survives ({fmt(realism_rate, pct=True)} &gt; 50%) but
+    shrinks — confirming part of the style win was caricature.</div>
+  </div>
 </div>
 
+<p class="note"><strong>The headline.</strong> Predicting a user's exact next message is intrinsically
+hard, so the signal is in the comparisons. Two things hold up: (1) the distilled folder beats a
+<em>wrong</em> user's folder under every criterion — the distillation encodes genuinely user-specific
+behaviour; (2) <strong>inline beats folder-access on both discrimination criteria</strong>, but
+this is largely a <em>recognizability</em> effect — inline reproduces signature catchphrases
+(e.g. one user's <code>"looks good whats next"</code> verbatim across unrelated turns), which a
+discrimination judge rewards. On the per-record <strong>realism</strong> axis the ordering flips:
+folder-access produces <em>more realistic</em> distilled messages ({fmt(fold_realism_d)} vs inline
+{fmt(inl_realism_d)}). Realism is real but <em>not user-discriminative</em>: in folder-access mode
+even the wrong folder scores realistic (the agent grounds in the live conversation), so a 2AFC can't
+separate own from wrong on realism alone. <strong>Bottom line:</strong> inline is better at being
+<em>recognizable as</em> the user; folder-access is better at being <em>realistic for</em> the user.
+Discrimination tests measure the former; per-record realism/content measures the latter.</p>
+
 <h2>Headline comparison across modes</h2>
-<table><thead><tr><th>Mode</th><th class='num'>2AFC own-picked</th>
-<th class='num'>content: own</th><th class='num'>content: none</th><th class='num'>content: wrong</th>
-</tr></thead><tbody>{head_rows}</tbody></table>
-<p class="note"><strong>How to read this.</strong> Predicting a user's <em>exact</em> next message is
-intrinsically hard — absolute judge scores are modest because many different messages are plausible
-at any point. The signal lives in the <strong>comparisons</strong>. The clean test is
-<strong>own folder vs. wrong folder</strong>, which isolates user-specificity: the distilled folder
-wins decisively on both content and style, and the 2AFC discrimination reaches
-{fmt(best_rate, pct=True)} in {lift_mode_name} mode. <strong>Inline beats folder-access</strong> here —
-putting the whole folder in context discriminates better than having the agent read it selectively
-for a short one-line reply. The <em>no-folder / generic</em> baseline is strong on style alone,
-because a capable model already writes plausible developer messages; the folder's distinctive value
-shows up against the <em>wrong</em> folder (user-specificity), not against a generic baseline.
-Caveats: the "wrong folder" is a single rotated pairing per user, so per-user 2AFC is noisy — the
-aggregate is the reliable number. (All 168×2 generations are clean; an earlier run was discarded
-after session-limit error strings were detected in some generations and the pipeline was hardened
-to exclude them.)</p>
+<table><thead><tr><th>Mode</th><th class='num'>2AFC style</th><th class='num'>2AFC realism</th>
+<th class='num'>realism: own</th><th class='num'>realism: wrong</th></tr></thead>
+<tbody>{''.join(head_rows)}</tbody></table>
 
 {sections}
 
 <footer style="margin-top:3rem;font-size:.8rem;color:#888">Generated by scripts/report.py —
-github.com/cooperbench/user.skill</footer>
+github.com/cooperbench/user.skill. 9-user subset; the distillation itself ran for all 99 users.</footer>
 </body></html>"""
     out = RESULTS / "report.html"
     out.write_text(report)
