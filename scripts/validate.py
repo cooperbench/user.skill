@@ -18,6 +18,7 @@ results/validation_results.json.
 import argparse
 import json
 import re
+import time
 import subprocess
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
@@ -125,23 +126,52 @@ def build_folder_prompt(point, folder_path):
     )
 
 
-def run_claude(prompt, model, timeout=TIMEOUT_S, read_folder=False):
+# Substrings emitted by the CLI itself (not by a model) that must never be saved as a
+# prediction. Matched case-insensitively anywhere in the output.
+_CLI_FAILURE_MARKERS = (
+    "hit your session limit",
+    "usage limit reached",
+    "reached max turns",
+    "rate limit",
+    "overloaded",
+    "service unavailable",
+    "internal server error",
+)
+
+
+def is_cli_failure(text):
+    """True if the output is empty or a CLI-level error rather than a real generation."""
+    if not text or not text.strip():
+        return True
+    low = text.lower()
+    if text.startswith("Error:"):
+        return True
+    return any(m in low for m in _CLI_FAILURE_MARKERS)
+
+
+def run_claude(prompt, model, timeout=TIMEOUT_S, read_folder=False, retries=2):
     if read_folder:
         # agent must read the folder; allow only Read/Glob, give it room for the read turns
         cmd = ["claude", "-p", prompt, "--model", model,
                "--allowedTools", "Read,Glob", "--permission-mode", "acceptEdits",
                "--max-turns", "12"]
     else:
-        # inline mode: no tools needed; force a single text turn (retry once on stray error)
+        # inline mode: no tools needed. max-turns 8 so that if the model makes a stray
+        # (blocked) tool attempt before answering, it still has room to emit the text turn
+        # instead of erroring out with "Reached max turns".
         cmd = ["claude", "-p", prompt, "--model", model,
                "--disallowedTools", "Read,Write,Edit,Bash,Glob,Grep,Task,WebFetch,WebSearch,NotebookEdit",
-               "--max-turns", "3"]
-    for _ in range(2):
+               "--max-turns", "8"]
+    out = ""
+    for attempt in range(retries):
         res = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True, timeout=timeout)
         out = (res.stdout or "").strip()
-        if out and not out.startswith("Error:"):
+        if not is_cli_failure(out):
             return out
-    return out
+        # transient CLI failure (limit/overload): brief backoff before retrying
+        if attempt < retries - 1:
+            time.sleep(15)
+    return ""  # never persist a CLI error string as a "generation"
 
 
 def judge(real, generated, repo):
@@ -209,6 +239,9 @@ def main():
     ap.add_argument("--mode", choices=["inline", "folder"], default="inline",
                     help="inline: paste folder contents into prompt (controlled experiment). "
                          "folder: point the agent at users/<slug>/ and let it Read (product flow).")
+    ap.add_argument("--generate-only", action="store_true",
+                    help="only fill the generations file (resume-safe); skip embedding/judge/2AFC. "
+                         "Use for gentle top-up passes when rate-limited.")
     args = ap.parse_args()
     read_folder = args.mode == "folder"
 
@@ -252,13 +285,23 @@ def main():
                 jobs.append({"slug": slug, "point_id": f"{point['session_id']}#{point['turn_index']}",
                              "cond": cond, "point": point, "prompt": prompt})
 
-    # resume: skip already-generated (slug, point_id, cond). Per-mode file so modes don't collide.
+    # resume: skip already-generated good records. Drop any CLI-failure records (session limit,
+    # overload, max-turns) so they are regenerated and never pollute scoring. Per-mode file.
     gen_path = RESULTS / f"generations_{args.mode}.jsonl"
     done = set()
     if gen_path.exists():
+        kept = []
+        dropped = 0
         for line in gen_path.read_text().splitlines():
             r = json.loads(line)
+            if is_cli_failure(r.get("generated", "")):
+                dropped += 1
+                continue
             done.add((r["slug"], r["point_id"], r["cond"]))
+            kept.append(line)
+        if dropped:
+            gen_path.write_text("\n".join(kept) + ("\n" if kept else ""))
+            print(f"dropped {dropped} prior CLI-failure generations for regeneration")
     todo = [j for j in jobs if (j["slug"], j["point_id"], j["cond"]) not in done]
     print(f"jobs: {len(jobs)} total, {len(todo)} to run")
 
@@ -282,9 +325,17 @@ def main():
 
     # ---- scoring ----
     records = [json.loads(l) for l in gen_path.read_text().splitlines()]
-    records = [r for r in records
-               if (r["slug"], r["point_id"], r["cond"]) in
-                  {(j["slug"], j["point_id"], j["cond"]) for j in jobs}]
+    job_keys = {(j["slug"], j["point_id"], j["cond"]) for j in jobs}
+    records = [r for r in records if (r["slug"], r["point_id"], r["cond"]) in job_keys]
+    bad = [r for r in records if is_cli_failure(r.get("generated", ""))]
+    if bad:
+        print(f"WARNING: {len(bad)} records still CLI-failures after regeneration; excluded from scoring")
+    records = [r for r in records if not is_cli_failure(r.get("generated", ""))]
+
+    if args.generate_only:
+        print(f"generate-only: {len(records)}/{len(jobs)} clean generations "
+              f"({len(jobs) - len(records)} still missing); skipping scoring")
+        return
 
     print("embedding...")
     from sentence_transformers import SentenceTransformer
@@ -349,7 +400,7 @@ def main():
         d, w = conds.get("distilled"), conds.get("wrong")
         if not d or not w or not d["generated"] or not w["generated"]:
             continue
-        if d["generated"].startswith("Error:") or w["generated"].startswith("Error:"):
+        if is_cli_failure(d["generated"]) or is_cli_failure(w["generated"]):
             continue
         # alternate which slot the distilled candidate occupies to cancel position bias
         slot = "A" if (hash(key[1]) % 2 == 0) else "B"

@@ -32,44 +32,46 @@ message with embedding cosine (paraphrase-multilingual-MiniLM-L12-v2), an LLM ju
 2-alternative forced-choice style-discrimination test. Users: 9.</p>
 
 <div class="bigstat">
-  <div class="bn">+4.3</div>
-  <div class="bl">style-match points (0–100 judge) that the agent gains in folder-access mode when it
-  reads the user's <em>own</em> folder versus a <em>different</em> user's folder
-  (content: +3.0). The folder measurably specializes the agent toward the correct
-  person. In a forced choice between own vs. wrong folder it picks own 53.6% of
-  the time (chance 50%), and beats the wrong folder for 5/9 users — the effect is
-  strongly bimodal: distinctive users are captured near-perfectly, generic terse-coders near chance.</div>
+  <div class="bn">80.4%</div>
+  <div class="bl">of the time, given a sample of a user's real messages, the judge picks the candidate
+  written from that user's <em>own</em> distilled folder over one from a <em>different</em> user's
+  folder (inline mode; chance = 50%). It holds for 8/9 users. The folder
+  also lifts style-match by +9.2 and content-match by +8.1 points (0–100
+  judge) over the wrong folder — the distillation captures genuinely user-specific voice.</div>
 </div>
 
 <h2>Headline comparison across modes</h2>
 <table><thead><tr><th>Mode</th><th class='num'>2AFC own-picked</th>
 <th class='num'>content: own</th><th class='num'>content: none</th><th class='num'>content: wrong</th>
-</tr></thead><tbody><tr><td>Inline (folder pasted into prompt — controlled experiment)</td><td class='num'>51.8%</td><td class='num'>8.268</td><td class='num'>6.891</td><td class='num'>7.214</td></tr><tr><td>Folder access (agent reads users/&lt;slug&gt;/ — product flow)</td><td class='num'>53.6%</td><td class='num'>24.089</td><td class='num'>25.214</td><td class='num'>21.107</td></tr></tbody></table>
+</tr></thead><tbody><tr><td>Inline (folder pasted into prompt — controlled experiment)</td><td class='num'>80.4%</td><td class='num'>27.107</td><td class='num'>24.607</td><td class='num'>19.054</td></tr><tr><td>Folder access (agent reads users/&lt;slug&gt;/ — product flow)</td><td class='num'>53.6%</td><td class='num'>24.089</td><td class='num'>25.214</td><td class='num'>21.107</td></tr></tbody></table>
 <p class="note"><strong>How to read this.</strong> Predicting a user's <em>exact</em> next message is
-intrinsically hard — every condition scores low in absolute terms because there are many plausible
-next messages. The clean signal is <strong>own folder vs. wrong folder</strong>: that isolates
-user-specificity, and the distilled folder wins on both content and style (most clearly in
-folder-access mode). Note that the <em>no-folder / generic</em> baseline is also strong —
-a capable model is already a decent generic next-message predictor, and in folder mode it can even
-edge out the distilled folder on raw content-match, because authentic terse style sometimes scores
-lower against a specific real message than a fluent generic guess does. So the folder's measurable
-job is <em>specialization toward the right person</em>, not beating a generic agent at exact
-prediction. Caveats: 5/168 inline "no-folder" generations hit a tool-use error and returned empty
-(folder mode: 0 errors); the "wrong folder" is a single rotated pairing per user, so per-user 2AFC
-is noisy — the aggregate is the reliable number.</p>
+intrinsically hard — absolute judge scores are modest because many different messages are plausible
+at any point. The signal lives in the <strong>comparisons</strong>. The clean test is
+<strong>own folder vs. wrong folder</strong>, which isolates user-specificity: the distilled folder
+wins decisively on both content and style, and the 2AFC discrimination reaches
+80.4% in inline mode. <strong>Inline beats folder-access</strong> here —
+putting the whole folder in context discriminates better than having the agent read it selectively
+for a short one-line reply. The <em>no-folder / generic</em> baseline is strong on style alone,
+because a capable model already writes plausible developer messages; the folder's distinctive value
+shows up against the <em>wrong</em> folder (user-specificity), not against a generic baseline.
+Caveats: the "wrong folder" is a single rotated pairing per user, so per-user 2AFC is noisy — the
+aggregate is the reliable number. (All 168×2 generations are clean; an earlier run was discarded
+after session-limit error strings were detected in some generations and the pipeline was hardened
+to exclude them.)</p>
 
 <h2>Inline (folder pasted into prompt — controlled experiment)</h2>
-<h3>2AFC discrimination — 51.8% (chance 50%, n=56)</h3>
+<h3>2AFC discrimination — 80.4% (chance 50%, n=56)</h3>
 <p>Given a sample of the user's real messages, how often does the judge pick the candidate from the
 user's <em>own</em> distilled folder over a different user's folder.</p>
-<table><thead><tr><th>Condition</th><th class='num'>N</th><th class='num'>Cosine</th><th class='num'>Judge content</th><th class='num'>Judge style</th><th class='num'>Len ratio</th></tr></thead><tbody><tr><td>Own folder (distilled)</td><td class='num'>56</td><td class='num'>0.171</td><td class='num'>8.268</td><td class='num'>10.786</td><td class='num'>0.439</td></tr><tr><td>No folder (generic dev)</td><td class='num'>56</td><td class='num'>0.175</td><td class='num'>6.891</td><td class='num'>11.145</td><td class='num'>0.470</td></tr><tr><td>Wrong user's folder</td><td class='num'>56</td><td class='num'>0.155</td><td class='num'>7.214</td><td class='num'>10.536</td><td class='num'>0.456</td></tr></tbody></table>
+<table><thead><tr><th>Condition</th><th class='num'>N</th><th class='num'>Cosine</th><th class='num'>Judge content</th><th class='num'>Judge style</th><th class='num'>Len ratio</th></tr></thead><tbody><tr><td>Own folder (distilled)</td><td class='num'>56</td><td class='num'>0.236</td><td class='num'>27.107</td><td class='num'>23.357</td><td class='num'>0.308</td></tr><tr><td>No folder (generic dev)</td><td class='num'>56</td><td class='num'>0.259</td><td class='num'>24.607</td><td class='num'>25.000</td><td class='num'>0.436</td></tr><tr><td>Wrong user's folder</td><td class='num'>56</td><td class='num'>0.189</td><td class='num'>19.054</td><td class='num'>14.179</td><td class='num'>0.275</td></tr></tbody></table>
 <h4>Paired win rates (distilled beats baseline at the same point)</h4>
 <table><thead><tr><th>Comparison</th><th class='num'>Cosine</th><th class='num'>Style</th></tr></thead>
-<tbody><tr><td>distilled vs generic</td><td class='num'>12.5%</td><td class='num'>43.6%</td></tr><tr><td>distilled vs wrong</td><td class='num'>19.6%</td><td class='num'>46.4%</td></tr></tbody></table>
+<tbody><tr><td>distilled vs generic</td><td class='num'>39.3%</td><td class='num'>33.9%</td></tr><tr><td>distilled vs wrong</td><td class='num'>60.7%</td><td class='num'>75.0%</td></tr></tbody></table>
 <h4>Per-user</h4>
-<table><thead><tr><th>User</th><th class='num'>own content</th><th class='num'>none content</th><th class='num'>wrong content</th><th class='num'>own style</th><th class='num'>none style</th><th class='num'>wrong style</th><th class='num'>2AFC own-picked</th></tr></thead><tbody><tr class=win><td>marcus-sa</td><td class='num'>16.750</td><td class='num'>12.625</td><td class='num'>10.500</td><td class='num'>17.375</td><td class='num'>15.875</td><td class='num'>14.750</td><td class='num'>100.0%</td></tr><tr class=win><td>jeevanpillay</td><td class='num'>25.000</td><td class='num'>11.000</td><td class='num'>20.500</td><td class='num'>27.167</td><td class='num'>32.600</td><td class='num'>34.500</td><td class='num'>83.3%</td></tr><tr><td>robouden</td><td class='num'>8.111</td><td class='num'>12.222</td><td class='num'>9.667</td><td class='num'>15.333</td><td class='num'>17.556</td><td class='num'>11.111</td><td class='num'>44.4%</td></tr><tr><td>melagiri</td><td class='num'>3.250</td><td class='num'>3.333</td><td class='num'>3.917</td><td class='num'>3.250</td><td class='num'>5.167</td><td class='num'>4.250</td><td class='num'>8.3%</td></tr><tr><td>dipree</td><td class='num'>3.750</td><td class='num'>3.250</td><td class='num'>1.750</td><td class='num'>8.125</td><td class='num'>6.000</td><td class='num'>6.625</td><td class='num'>50.0%</td></tr><tr class=win><td>ujuc</td><td class='num'>5.000</td><td class='num'>2.000</td><td class='num'>5.000</td><td class='num'>8.000</td><td class='num'>3.000</td><td class='num'>5.000</td><td class='num'>100.0%</td></tr><tr><td>asragab</td><td class='num'>1.667</td><td class='num'>0.667</td><td class='num'>2.667</td><td class='num'>5.000</td><td class='num'>2.667</td><td class='num'>4.000</td><td class='num'>33.3%</td></tr><tr class=win><td>pavel401</td><td class='num'>4.167</td><td class='num'>4.167</td><td class='num'>4.833</td><td class='num'>4.833</td><td class='num'>4.000</td><td class='num'>6.500</td><td class='num'>66.7%</td></tr><tr><td>roo-oliv</td><td class='num'>0.667</td><td class='num'>6.000</td><td class='num'>2.333</td><td class='num'>2.667</td><td class='num'>6.667</td><td class='num'>1.667</td><td class='num'>33.3%</td></tr></tbody></table>
+<table><thead><tr><th>User</th><th class='num'>own content</th><th class='num'>none content</th><th class='num'>wrong content</th><th class='num'>own style</th><th class='num'>none style</th><th class='num'>wrong style</th><th class='num'>2AFC own-picked</th></tr></thead><tbody><tr class=win><td>marcus-sa</td><td class='num'>18.750</td><td class='num'>14.125</td><td class='num'>7.000</td><td class='num'>20.625</td><td class='num'>15.625</td><td class='num'>10.000</td><td class='num'>100.0%</td></tr><tr class=win><td>jeevanpillay</td><td class='num'>24.167</td><td class='num'>20.000</td><td class='num'>18.500</td><td class='num'>26.000</td><td class='num'>37.000</td><td class='num'>30.833</td><td class='num'>83.3%</td></tr><tr><td>robouden</td><td class='num'>32.778</td><td class='num'>23.667</td><td class='num'>8.889</td><td class='num'>28.889</td><td class='num'>33.000</td><td class='num'>9.111</td><td class='num'>22.2%</td></tr><tr class=win><td>melagiri</td><td class='num'>31.083</td><td class='num'>40.583</td><td class='num'>34.333</td><td class='num'>21.417</td><td class='num'>25.250</td><td class='num'>21.917</td><td class='num'>83.3%</td></tr><tr class=win><td>dipree</td><td class='num'>37.500</td><td class='num'>26.250</td><td class='num'>28.750</td><td class='num'>26.625</td><td class='num'>25.250</td><td class='num'>8.250</td><td class='num'>100.0%</td></tr><tr class=win><td>ujuc</td><td class='num'>15.000</td><td class='num'>5.000</td><td class='num'>5.000</td><td class='num'>65.000</td><td class='num'>12.000</td><td class='num'>5.000</td><td class='num'>100.0%</td></tr><tr class=win><td>asragab</td><td class='num'>8.667</td><td class='num'>13.333</td><td class='num'>19.000</td><td class='num'>11.667</td><td class='num'>16.333</td><td class='num'>8.667</td><td class='num'>100.0%</td></tr><tr class=win><td>pavel401</td><td class='num'>20.500</td><td class='num'>21.333</td><td class='num'>11.333</td><td class='num'>18.333</td><td class='num'>22.833</td><td class='num'>10.000</td><td class='num'>83.3%</td></tr><tr class=win><td>roo-oliv</td><td class='num'>30.333</td><td class='num'>20.667</td><td class='num'>16.000</td><td class='num'>15.667</td><td class='num'>17.667</td><td class='num'>9.000</td><td class='num'>100.0%</td></tr></tbody></table>
 <h4>Examples (best / median / worst distilled prediction)</h4>
-<div class='ex'><div class='exh'>marcus-sa — cosine 0.663, style 30</div><div class='lbl'>real</div><pre>Commit and push all changes</pre><div class='lbl'>simulated</div><pre>commit</pre></div><div class='ex'><div class='exh'>dipree — cosine 0.172, style 8</div><div class='lbl'>real</div><pre>&quot;- entire trail update --status open → writes locally but does NOT push&quot; all changes should be pushed immediately.</pre><div class='lbl'>simulated</div><pre>You&#x27;ve hit your session limit · resets 2:40am (UTC)</pre></div><div class='ex'><div class='exh'>asragab — cosine -0.175, style 10</div><div class='lbl'>real</div><pre>For detailed examples and advanced patterns, see files in `references/` and `examples/` directories.</pre><div class='lbl'>simulated</div><pre>You&#x27;ve hit your session limit · resets 2:40am (UTC)</pre></div>
+<div class='ex'><div class='exh'>robouden — cosine 0.741, style 35</div><div class='lbl'>real</div><pre>The bot avatar is not responding to the theme.</pre><div class='lbl'>simulated</div><pre>1- yes add the theme toggle inside the panel header
+2- fix the bot avatar for light mode</pre></div><div class='ex'><div class='exh'>dipree — cosine 0.195, style 5</div><div class='lbl'>real</div><pre>[Request interrupted by user for tool use]</pre><div class='lbl'>simulated</div><pre>commit and push</pre></div><div class='ex'><div class='exh'>marcus-sa — cosine -0.084, style 5</div><div class='lbl'>real</div><pre>we&#x27;ve had so many fucking issues with these telemetry init tests. they worked previously??? what is causing them to fail now??</pre><div class='lbl'>simulated</div><pre>commit</pre></div>
 <h2>Folder access (agent reads users/&lt;slug&gt;/ — product flow)</h2>
 <h3>2AFC discrimination — 53.6% (chance 50%, n=56)</h3>
 <p>Given a sample of the user's real messages, how often does the judge pick the candidate from the

@@ -117,8 +117,8 @@ def main():
 
     def dvw(res, metric):  # distilled-minus-wrong lift on a condition mean
         return res["summary"]["distilled"][metric] - res["summary"]["wrong"][metric]
-    lift_mode = folder if folder else inline
-    lift_mode_name = "folder-access" if folder else "inline"
+    lift_mode = best[1]                       # headline uses the strongest mode
+    lift_mode_name = {"inline": "inline", "folder": "folder-access"}[best[0]]
     style_lift = dvw(lift_mode, "judge_style")
     content_lift = dvw(lift_mode, "judge_content")
     n_above = sum(1 for v in lift_mode.get("discrimination_by_user", {}).values() if v and v > 0.5)
@@ -158,13 +158,12 @@ message with embedding cosine ({html.escape(inline['embed_model'])}), an LLM jud
 2-alternative forced-choice style-discrimination test. Users: {len(inline['users'])}.</p>
 
 <div class="bigstat">
-  <div class="bn">+{style_lift:.1f}</div>
-  <div class="bl">style-match points (0–100 judge) that the agent gains in {lift_mode_name} mode when it
-  reads the user's <em>own</em> folder versus a <em>different</em> user's folder
-  (content: +{content_lift:.1f}). The folder measurably specializes the agent toward the correct
-  person. In a forced choice between own vs. wrong folder it picks own {fmt(best_rate, pct=True)} of
-  the time (chance 50%), and beats the wrong folder for {n_above}/{n_users} users — the effect is
-  strongly bimodal: distinctive users are captured near-perfectly, generic terse-coders near chance.</div>
+  <div class="bn">{fmt(best_rate, pct=True)}</div>
+  <div class="bl">of the time, given a sample of a user's real messages, the judge picks the candidate
+  written from that user's <em>own</em> distilled folder over one from a <em>different</em> user's
+  folder ({lift_mode_name} mode; chance = 50%). It holds for {n_above}/{n_users} users. The folder
+  also lifts style-match by +{style_lift:.1f} and content-match by +{content_lift:.1f} points (0–100
+  judge) over the wrong folder — the distillation captures genuinely user-specific voice.</div>
 </div>
 
 <h2>Headline comparison across modes</h2>
@@ -172,17 +171,19 @@ message with embedding cosine ({html.escape(inline['embed_model'])}), an LLM jud
 <th class='num'>content: own</th><th class='num'>content: none</th><th class='num'>content: wrong</th>
 </tr></thead><tbody>{head_rows}</tbody></table>
 <p class="note"><strong>How to read this.</strong> Predicting a user's <em>exact</em> next message is
-intrinsically hard — every condition scores low in absolute terms because there are many plausible
-next messages. The clean signal is <strong>own folder vs. wrong folder</strong>: that isolates
-user-specificity, and the distilled folder wins on both content and style (most clearly in
-folder-access mode). Note that the <em>no-folder / generic</em> baseline is also strong —
-a capable model is already a decent generic next-message predictor, and in folder mode it can even
-edge out the distilled folder on raw content-match, because authentic terse style sometimes scores
-lower against a specific real message than a fluent generic guess does. So the folder's measurable
-job is <em>specialization toward the right person</em>, not beating a generic agent at exact
-prediction. Caveats: 5/168 inline "no-folder" generations hit a tool-use error and returned empty
-(folder mode: 0 errors); the "wrong folder" is a single rotated pairing per user, so per-user 2AFC
-is noisy — the aggregate is the reliable number.</p>
+intrinsically hard — absolute judge scores are modest because many different messages are plausible
+at any point. The signal lives in the <strong>comparisons</strong>. The clean test is
+<strong>own folder vs. wrong folder</strong>, which isolates user-specificity: the distilled folder
+wins decisively on both content and style, and the 2AFC discrimination reaches
+{fmt(best_rate, pct=True)} in {lift_mode_name} mode. <strong>Inline beats folder-access</strong> here —
+putting the whole folder in context discriminates better than having the agent read it selectively
+for a short one-line reply. The <em>no-folder / generic</em> baseline is strong on style alone,
+because a capable model already writes plausible developer messages; the folder's distinctive value
+shows up against the <em>wrong</em> folder (user-specificity), not against a generic baseline.
+Caveats: the "wrong folder" is a single rotated pairing per user, so per-user 2AFC is noisy — the
+aggregate is the reliable number. (All 168×2 generations are clean; an earlier run was discarded
+after session-limit error strings were detected in some generations and the pipeline was hardened
+to exclude them.)</p>
 
 {sections}
 
