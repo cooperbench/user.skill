@@ -56,25 +56,60 @@ def load_folder_text(slug):
     return truncate_words("\n\n".join(parts), FOLDER_WORD_CAP)
 
 
+def is_interrupt(text):
+    """The user cutting the agent off — a genuine user ACTION the simulator can take."""
+    s = (text or "").strip()
+    return ("interrupted by user" in s.lower()
+            or s.upper().startswith("[INTERRUPT"))
+
+
+def is_user_action_target(text):
+    """True if the held-out turn is something the USER actually did (a typed prompt, a
+    slash command, or an interrupt) — False for harness/tool artifacts that merely have
+    role=user (injected skill/doc content, rendered command output, auto-continue resumes)."""
+    s = (text or "").strip()
+    low = s.lower()
+    if not s:
+        return False
+    if is_interrupt(s):
+        return True
+    # harness/tool artifacts — not authored by the user
+    if s.startswith("<") and ("command-" in s or "local-command" in low):
+        return False
+    if any(x in low for x in (
+            "base directory for this skill", "for detailed examples and advanced patterns",
+            "see files in `references", ".claude/plugins/cache", "<system-reminder")):
+        return False
+    if "continue from where you left off" in low and len(s.split()) <= 8:
+        return False
+    return True
+
+
 def pick_points(holdout):
-    """Choose prediction points: user turns with >=1 assistant turn before them."""
+    """Choose prediction points: USER ACTIONS with >=1 assistant turn before them.
+    Keeps genuine prompts and interrupts; drops harness/tool artifacts (see
+    is_user_action_target). Interrupt points have a short real text, so they bypass the
+    >=3-word floor."""
     points = []
     for sess in holdout["sessions"][:MAX_SESSIONS_PER_USER]:
         turns = sess["turns"]
         idxs = [i for i, t in enumerate(turns)
                 if t["role"] == "user" and not t.get("is_continuation")
                 and any(p["role"] == "assistant" for p in turns[:i])
-                and len((t.get("text") or "").split()) >= 3]
+                and is_user_action_target(t.get("text"))
+                and (is_interrupt(t.get("text")) or len((t.get("text") or "").split()) >= 3)]
         if not idxs:
             continue
         if len(idxs) > MAX_POINTS_PER_SESSION:  # spread across the session
             step = len(idxs) / MAX_POINTS_PER_SESSION
             idxs = [idxs[int(k * step)] for k in range(MAX_POINTS_PER_SESSION)]
         for i in idxs:
+            ctx = turns[max(0, i - CONTEXT_TURNS):i]
+            prev_agent = next((t["text"] for t in reversed(ctx) if t["role"] == "assistant"), "")
             points.append({
                 "session_id": sess["session_id"], "repo": sess["repo"],
                 "turn_index": i, "real": turns[i]["text"],
-                "context": turns[max(0, i - CONTEXT_TURNS):i],
+                "context": ctx, "prev_agent": prev_agent,
             })
     return points
 
@@ -111,18 +146,50 @@ def build_prompt(point, folder_text):
 
 def build_folder_prompt(point, folder_path):
     """FOLDER mode: the agent is pointed at the folder and must READ it itself
-    (exercises the real roleplay-user skill / product flow)."""
+    (exercises the real roleplay-user skill / product flow).
+
+    Improved simulator: intent-first (ground the message in the live conversation state),
+    voice-not-script (use the folder for HOW they write, never recycle catchphrases), and
+    leak-proof (output only the message, no narration of reasoning)."""
+    repo = point["repo"]
+    repo_clause = ""
+    if point.get("repo_path"):
+        repo_clause = (
+            f" A checkout of the repository is at `{point['repo_path']}` — you may read it "
+            "(Read/Glob/Grep) to ground yourself in the project's real state, exactly as the "
+            "developer can see their own codebase."
+        )
     if folder_path:
         head = (
-            f"Read the user folder at `{folder_path}` (USER.md first, then STYLE.md, "
-            f"PREFERENCES.md, PERSONA.md, PROJECTS.md, and skills/*.md). You ARE that developer. "
+            f"You ARE the developer described in the user folder at `{folder_path}`. "
+            f"First read the folder — USER.md, then STYLE.md and PREFERENCES.md (how they write and "
+            f"what they accept or reject), then PERSONA.md, PROJECTS.md and skills/*.md. "
+        )
+        guide = (
+            "Now produce their NEXT message. Reason silently, then output only the message:\n"
+            "1. INTENT — you are a developer DRIVING this project, not just reacting. Look at where "
+            "the task stands and decide what THIS developer would push for next: this may be "
+            "approving and moving on, but just as often it is introducing the next feature, opening a "
+            "new direction, tightening a requirement, reporting a bug they'd notice, pushing back, or "
+            "interrupting. Use PROJECTS.md and their skills to infer how THEY move a project forward, "
+            "and feel free to introduce new scope the way they would — you don't need the agent to "
+            "prompt you. Anchor it in this exact situation.\n"
+            "2. VOICE — say it the way the folder shows they write: typical length, language, casing, "
+            "punctuation, bluntness, what they leave implicit. Use the folder for HOW they talk, NOT "
+            "as a script — do not reuse their stock phrases unless one genuinely fits here.\n"
+            "If this developer would cut the agent off mid-work rather than send a normal message, "
+            'output exactly "[INTERRUPT]" (optionally followed by what they\'d type next).\n'
         )
     else:
-        head = "You are role-playing a generic software developer. "
+        head = "You ARE a generic software developer. "
+        guide = ("Produce your next message, grounded in what the agent just did and the project "
+                 'state. If you would cut the agent off, output exactly "[INTERRUPT]". ')
     return (
-        f"{head}"
-        f"You are using an AI coding agent in the repository `{point['repo']}`. "
-        f"The session so far:\n\n<conversation>\n{_context_block(point)}\n</conversation>\n\n{_TASK}"
+        f"{head}You are using an AI coding agent in the repository `{repo}`.{repo_clause}\n\n"
+        f"<conversation>\n{_context_block(point)}\n</conversation>\n\n{guide}\n"
+        "Output ONLY the literal message text the developer would type next — their exact idiom, "
+        "casing and typos. No quotes, no role labels, no narration, and no explanation of your "
+        "reasoning. Just the message."
     )
 
 
@@ -151,10 +218,10 @@ def is_cli_failure(text):
 
 def run_claude(prompt, model, timeout=TIMEOUT_S, read_folder=False, retries=2):
     if read_folder:
-        # agent must read the folder; allow only Read/Glob, give it room for the read turns
+        # agent reads the folder (and, when provided, the repo checkout); read-only tools.
         cmd = ["claude", "-p", prompt, "--model", model,
-               "--allowedTools", "Read,Glob", "--permission-mode", "acceptEdits",
-               "--max-turns", "12"]
+               "--allowedTools", "Read,Glob,Grep", "--permission-mode", "acceptEdits",
+               "--max-turns", "16"]
     else:
         # inline mode: no tools needed. max-turns 8 so that if the model makes a stray
         # (blocked) tool attempt before answering, it still has room to emit the text turn
@@ -201,6 +268,39 @@ def judge(real, generated, repo):
         return int(d.get("content")), int(d.get("style")), int(d.get("realism"))
     except (ValueError, TypeError):
         return None, None, None
+
+
+SPEECH_ACTS = ["new_work", "refine_redirect", "pushback", "bug_report",
+               "approve_proceed", "question", "interrupt", "other"]
+
+
+def speech_act(text, prev_agent):
+    """Classify the developer's conversational MOVE (speech act), ignoring specific details.
+    Interrupts are detected without an API call; everything else is LLM-classified."""
+    if is_interrupt(text):
+        return "interrupt"
+    if not (text or "").strip():
+        return None
+    prompt = (
+        "A developer is using an AI coding agent. The agent just said:\n"
+        f"<agent>{truncate_words(prev_agent, 120)}</agent>\n\n"
+        "The developer's next message was:\n"
+        f"<message>{truncate_words(text, 150)}</message>\n\n"
+        "Classify the developer's conversational MOVE (speech act), ignoring the specific "
+        "details/topic. Choose exactly one:\n"
+        "- new_work: introduces a NEW feature/task/requirement to build or document\n"
+        "- refine_redirect: steers or adjusts the CURRENT task; changes requirements\n"
+        "- pushback: corrects, rejects, or complains about the agent's output/approach\n"
+        "- bug_report: reports something broken or not behaving as expected\n"
+        "- approve_proceed: approves, says continue, commit/push, or moves on\n"
+        "- question: asks for information or clarification\n"
+        "- other\n"
+        'Respond with ONLY JSON: {"act": "<one of the above>"}'
+    )
+    out = run_claude(prompt, JUDGE_MODEL, timeout=120)
+    m = re.search(r'"act"\s*:\s*"(\w+)"', out)
+    act = m.group(1) if m else None
+    return act if act in SPEECH_ACTS else ("other" if act else None)
 
 
 def load_style_reference(slug, n=8):
@@ -267,8 +367,12 @@ def main():
                     help="override path to the generations jsonl (default results/generations_<mode>.jsonl)")
     ap.add_argument("--results-file", default=None,
                     help="override output results json path")
+    ap.add_argument("--repos-dir", default=None,
+                    help="dir of repo checkouts (<repos-dir>/<owner>/<repo>); when a target session's "
+                         "repo is present, folder-mode simulator is given read access to it (point 3).")
     args = ap.parse_args()
     read_folder = args.mode == "folder"
+    repos_dir = Path(args.repos_dir) if args.repos_dir else None
 
     RESULTS.mkdir(exist_ok=True)
     manifest = json.loads((ROOT / "data" / "manifest.json").read_text())
@@ -295,11 +399,18 @@ def main():
 
     # build all jobs
     jobs = []
+    point_meta = {}  # point_id -> {prev_agent, real} for speech-act labeling
     for slug in slugs:
         holdout = json.loads((ROOT / "data" / "holdout" / f"{slug}.json").read_text())
         points = pick_points(holdout)
         print(f"  {slug}: {len(points)} prediction points")
         for pi, point in enumerate(points):
+            pid = f"{point['session_id']}#{point['turn_index']}"
+            point_meta[pid] = {"prev_agent": point.get("prev_agent", ""), "real": point["real"]}
+            if repos_dir is not None:
+                cand = repos_dir / point["repo"]  # repo is "owner/name"
+                if cand.exists():
+                    point["repo_path"] = str(cand)
             for cond in CONDITIONS:
                 src = {"distilled": slug, "generic": None, "wrong": wrong_of[slug]}[cond]
                 if read_folder:
@@ -387,16 +498,46 @@ def main():
             if i % 20 == 0:
                 print(f"[judge {i}/{len(futs)}]", flush=True)
 
+    # ---- speech-act labeling: the REAL move per point, and each generation's move ----
+    print("labeling speech acts...")
+    real_acts = {}   # point_id -> real speech act (labeled once)
+    def label_real(pid):
+        meta = point_meta.get(pid, {})
+        return pid, speech_act(meta.get("real", ""), meta.get("prev_agent", ""))
+    with ThreadPoolExecutor(max_workers=args.parallel) as ex:
+        for fut in as_completed([ex.submit(label_real, pid) for pid in point_meta]):
+            pid, act = fut.result()
+            real_acts[pid] = act
+
+    def label_gen(r):
+        pa = point_meta.get(r["point_id"], {}).get("prev_agent", "")
+        r["pred_act"] = speech_act(r["generated"], pa)
+        r["real_act"] = real_acts.get(r["point_id"])
+        r["act_match"] = (r["pred_act"] is not None and r["pred_act"] == r["real_act"])
+        return r
+    with ThreadPoolExecutor(max_workers=args.parallel) as ex:
+        list(as_completed([ex.submit(label_gen, r) for r in records if r["generated"]]))
+
     # ---- aggregate ----
     def agg(rows, key):
         vals = [r[key] for r in rows if r.get(key) is not None]
         return round(sum(vals) / len(vals), 3) if vals else None
 
+    def act_match_rate(rows):
+        v = [r["act_match"] for r in rows if r.get("real_act") and r.get("pred_act")]
+        return round(sum(v) / len(v), 3) if v else None
+
     JUDGE_AXES = ["judge_content", "judge_style", "judge_realism"]
     by_cond = {c: [r for r in records if r["cond"] == c] for c in CONDITIONS}
     summary = {c: {"n": len(rows), "cosine": agg(rows, "cosine"), "len_ratio": agg(rows, "len_ratio"),
+                   "act_match": act_match_rate(rows),
                    **{ax: agg(rows, ax) for ax in JUDGE_AXES}}
                for c, rows in by_cond.items()}
+    from collections import Counter
+    real_act_dist = dict(Counter(a for a in real_acts.values() if a))
+    act_confusion = {c: dict(Counter(f"{r.get('real_act')}>{r.get('pred_act')}"
+                                     for r in by_cond[c] if r.get("real_act") and r.get("pred_act")))
+                     for c in CONDITIONS}
 
     # paired win rates: distilled vs each baseline, on cosine + each judge axis
     by_key = {}
@@ -466,6 +607,7 @@ def main():
     per_user = {}
     for slug in slugs:
         per_user[slug] = {c: {"cosine": agg([r for r in by_cond[c] if r["slug"] == slug], "cosine"),
+                              "act_match": act_match_rate([r for r in by_cond[c] if r["slug"] == slug]),
                               **{ax: agg([r for r in by_cond[c] if r["slug"] == slug], ax)
                                  for ax in JUDGE_AXES}}
                           for c in CONDITIONS}
@@ -475,6 +617,7 @@ def main():
            "summary": summary, "win_rates": win_rates,
            "discrimination": discrimination, "discrimination_by_user": disc_by_user,
            "discriminations": discriminations, "discriminations_by_user": discriminations_by_user,
+           "real_act_distribution": real_act_dist, "act_confusion": act_confusion,
            "per_user": per_user, "records": records}
     if args.results_file:
         results_path = Path(args.results_file)
