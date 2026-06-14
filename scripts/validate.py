@@ -159,31 +159,35 @@ def build_folder_prompt(point, folder_path):
             "(Read/Glob/Grep) to ground yourself in the project's real state, exactly as the "
             "developer can see their own codebase."
         )
+    shared = ROOT / "simulator" / "AGENT.md"
+    shared_clause = ""
+    if folder_path and shared.exists():
+        shared_clause = (
+            "First read the shared simulator manual at `simulator/AGENT.md` and the move playbooks in "
+            "`simulator/skills/`. It tells you how to role-play any developer: choose the right "
+            "conversational MOVE (new_work / refine_redirect / pushback / bug_report / approve_proceed "
+            "/ question / interrupt) at this user's rate, then write it in their voice. "
+        )
     if folder_path:
         head = (
-            f"You ARE the developer described in the user folder at `{folder_path}`. "
-            f"First read the folder — USER.md, then STYLE.md and PREFERENCES.md (how they write and "
-            f"what they accept or reject), then PERSONA.md, PROJECTS.md and skills/*.md. "
+            f"{shared_clause}"
+            f"You ARE the developer in the user folder at `{folder_path}`. Read it — USER.md, then "
+            f"STYLE.md, PREFERENCES.md and stats.json (their voice and move rates), then PERSONA.md, "
+            f"PROJECTS.md and skills/*.md. "
         )
         guide = (
-            "Now produce their NEXT message. Reason silently, then output only the message:\n"
-            "1. INTENT — you are a developer DRIVING this project, not just reacting. Look at where "
-            "the task stands and decide what THIS developer would push for next: this may be "
-            "approving and moving on, but just as often it is introducing the next feature, opening a "
-            "new direction, tightening a requirement, reporting a bug they'd notice, pushing back, or "
-            "interrupting. Use PROJECTS.md and their skills to infer how THEY move a project forward, "
-            "and feel free to introduce new scope the way they would — you don't need the agent to "
-            "prompt you. Anchor it in this exact situation.\n"
-            "2. VOICE — say it the way the folder shows they write: typical length, language, casing, "
-            "punctuation, bluntness, what they leave implicit. Use the folder for HOW they talk, NOT "
-            "as a script — do not reuse their stock phrases unless one genuinely fits here.\n"
-            "If this developer would cut the agent off mid-work rather than send a normal message, "
-            'output exactly "[INTERRUPT]" (optionally followed by what they\'d type next).\n'
+            "Now produce their NEXT message, following the manual: pick the MOVE this developer would "
+            "actually make here (do NOT default to approving — most real turns are new work, "
+            "redirects, pushback, bug reports, questions, or interrupts; match this user's rates from "
+            "stats.json), then write it in their voice (HOW they talk, never recycling their stock "
+            "phrases). Ground new work and bug reports in the real project state.\n"
+            "To interrupt, output exactly \"[INTERRUPT]\" (optionally followed by what they'd type).\n"
         )
     else:
-        head = "You ARE a generic software developer. "
-        guide = ("Produce your next message, grounded in what the agent just did and the project "
-                 'state. If you would cut the agent off, output exactly "[INTERRUPT]". ')
+        head = "You ARE a generic software developer driving this session toward your goals. "
+        guide = ("Produce your next message — the move you'd actually make (often new work, a "
+                 "redirect, a question, or a problem you noticed, not just approval), grounded in the "
+                 'project state. To interrupt, output exactly "[INTERRUPT]". ')
     return (
         f"{head}You are using an AI coding agent in the repository `{repo}`.{repo_clause}\n\n"
         f"<conversation>\n{_context_block(point)}\n</conversation>\n\n{guide}\n"
