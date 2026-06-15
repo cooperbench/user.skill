@@ -16,6 +16,7 @@ results/validation_results.json.
 """
 
 import argparse
+import hashlib
 import json
 import re
 import time
@@ -355,6 +356,24 @@ def derive_move_prior(stats):
     return {k: round(v / tot, 3) for k, v in prior.items() if v > 0}
 
 
+def sample_move(prior, seed_key):
+    """Stage 1 (sampling variant): draw the move from the user's prior, deterministically per
+    point so own/wrong differ by their priors. Matches the user's true move-mix — including the
+    interrupt rate — instead of letting an LLM argmax 'assertiveness' (which over-picks pushback)."""
+    items = sorted((k, v) for k, v in prior.items() if v > 0)
+    if not items:
+        return None
+    tot = sum(w for _, w in items)
+    h = int(hashlib.sha256(seed_key.encode()).hexdigest(), 16)
+    x = (h % 10_000) / 10_000 * tot
+    c = 0.0
+    for mv, w in items:
+        c += w
+        if x <= c:
+            return mv
+    return items[-1][0]
+
+
 def predict_move(context_block, prior):
     """Stage 1 of move-conditioned generation: predict the move this user makes next,
     given the conversation and their move-mix prior. Calibrated so it does not collapse
@@ -443,9 +462,14 @@ def main():
                     help="dir of repo checkouts (<repos-dir>/<owner>/<repo>); when a target session's "
                          "repo is present, folder-mode simulator is given read access to it (point 3).")
     ap.add_argument("--move-conditioned", action="store_true",
-                    help="two-stage generation: Stage 1 predicts the move from context + the user's "
-                         "move prior (folder mode); Stage 2 renders that move in their voice. Fixes "
-                         "the approve-collapse / zero-interrupt bias and adds user-specificity.")
+                    help="two-stage generation: Stage 1 picks the move (folder mode); Stage 2 renders "
+                         "it in voice. Fixes the approve-collapse / zero-interrupt bias and adds "
+                         "user-specificity.")
+    ap.add_argument("--move-source", choices=["sample", "predict"], default="sample",
+                    help="Stage-1 move source: 'sample' draws from the user's move prior (true "
+                         "move-mix incl. interrupts; own!=wrong by construction; no LLM call); "
+                         "'predict' uses an LLM classifier over context+prior (tends to over-pick "
+                         "pushback). Default sample.")
     args = ap.parse_args()
     read_folder = args.mode == "folder"
     move_conditioned = args.move_conditioned
@@ -535,8 +559,11 @@ def main():
         prompt = job["prompt"]
         try:
             if move_conditioned:
-                # Stage 1: predict the move from context + the user's prior
-                cond_move = predict_move(_context_block(job["point"]), job["prior"])
+                # Stage 1: choose the move — sample from the user's prior (default) or LLM-predict
+                if args.move_source == "sample":
+                    cond_move = sample_move(job["prior"], f"{job['point_id']}|{job['fpath']}")
+                else:
+                    cond_move = predict_move(_context_block(job["point"]), job["prior"])
                 # Stage 2: render that move (fall back to free generation if Stage 1 failed)
                 prompt = build_folder_prompt(job["point"], job["fpath"], target_move=cond_move)
             gen = run_claude(prompt, GEN_MODEL, read_folder=read_folder)
