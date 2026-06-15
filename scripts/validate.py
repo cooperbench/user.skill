@@ -144,13 +144,16 @@ def build_prompt(point, folder_text):
     )
 
 
-def build_folder_prompt(point, folder_path):
+def build_folder_prompt(point, folder_path, target_move=None):
     """FOLDER mode: the agent is pointed at the folder and must READ it itself
     (exercises the real roleplay-user skill / product flow).
 
     Improved simulator: intent-first (ground the message in the live conversation state),
     voice-not-script (use the folder for HOW they write, never recycle catchphrases), and
-    leak-proof (output only the message, no narration of reasoning)."""
+    leak-proof (output only the message, no narration of reasoning).
+
+    If target_move is set (move-conditioned generation, Stage 2), the move is fixed for the
+    simulator and it only has to render that move in the user's voice."""
     repo = point["repo"]
     repo_clause = ""
     if point.get("repo_path"):
@@ -168,6 +171,15 @@ def build_folder_prompt(point, folder_path):
             "conversational MOVE (new_work / refine_redirect / pushback / bug_report / approve_proceed "
             "/ question / interrupt) at this user's rate, then write it in their voice. "
         )
+    move_clause = ""
+    if target_move:
+        move_clause = (
+            f"\n\nYour move here is fixed: **{target_move}**. Do not choose a different move — make "
+            f"exactly a `{target_move}` message, expressed naturally in this developer's voice and "
+            f"grounded in the situation. "
+            + ('If the move is `interrupt`, output exactly "[INTERRUPT]" (optionally followed by the '
+               'short thing they\'d snap). ' if True else "")
+        )
     if folder_path:
         head = (
             f"{shared_clause}"
@@ -175,19 +187,27 @@ def build_folder_prompt(point, folder_path):
             f"STYLE.md, PREFERENCES.md and stats.json (their voice and move rates), then PERSONA.md, "
             f"PROJECTS.md and skills/*.md. "
         )
-        guide = (
-            "Now produce their NEXT message, following the manual: pick the MOVE this developer would "
-            "actually make here (do NOT default to approving — most real turns are new work, "
-            "redirects, pushback, bug reports, questions, or interrupts; match this user's rates from "
-            "stats.json), then write it in their voice (HOW they talk, never recycling their stock "
-            "phrases). Ground new work and bug reports in the real project state.\n"
-            "To interrupt, output exactly \"[INTERRUPT]\" (optionally followed by what they'd type).\n"
-        )
+        if target_move:
+            guide = (
+                f"Now produce their NEXT message.{move_clause}Write it in their voice (HOW they talk, "
+                "never recycling their stock phrases); ground new work and bug reports in the real "
+                "project state.\n"
+            )
+        else:
+            guide = (
+                "Now produce their NEXT message, following the manual: pick the MOVE this developer would "
+                "actually make here (do NOT default to approving — most real turns are new work, "
+                "redirects, pushback, bug reports, questions, or interrupts; match this user's rates from "
+                "stats.json), then write it in their voice (HOW they talk, never recycling their stock "
+                "phrases). Ground new work and bug reports in the real project state.\n"
+                "To interrupt, output exactly \"[INTERRUPT]\" (optionally followed by what they'd type).\n"
+            )
     else:
         head = "You ARE a generic software developer driving this session toward your goals. "
-        guide = ("Produce your next message — the move you'd actually make (often new work, a "
-                 "redirect, a question, or a problem you noticed, not just approval), grounded in the "
-                 'project state. To interrupt, output exactly "[INTERRUPT]". ')
+        guide = (f"Produce your next message.{move_clause}" if target_move else
+                 ("Produce your next message — the move you'd actually make (often new work, a "
+                  "redirect, a question, or a problem you noticed, not just approval), grounded in the "
+                  'project state. To interrupt, output exactly "[INTERRUPT]". '))
     return (
         f"{head}You are using an AI coding agent in the repository `{repo}`.{repo_clause}\n\n"
         f"<conversation>\n{_context_block(point)}\n</conversation>\n\n{guide}\n"
@@ -307,6 +327,54 @@ def speech_act(text, prev_agent):
     return act if act in SPEECH_ACTS else ("other" if act else None)
 
 
+_INTENT_MOVE = {"create new code": "new_work", "refactor": "refine_redirect",
+                "debug": "bug_report", "understand": "question", "connect": "new_work",
+                "git": "approve_proceed", "test": "new_work", "other": "approve_proceed"}
+_PB_MOVE = {"correction": "pushback", "rejection": "pushback", "failure_report": "bug_report",
+            "pacing_complaint": "pushback", "takeover": "interrupt",
+            "requirement_change": "refine_redirect"}
+
+
+def derive_move_prior(stats):
+    """A per-user prior over the 7 moves, from the user's train intent + pushback rates.
+    This is the user-specific lever: different users get different move-mixes."""
+    intent = stats.get("intent_distribution") or {}
+    pb = stats.get("pushback_distribution") or {}
+    prior = {a: 0.0 for a in SPEECH_ACTS if a != "other"}
+    pb_mass = sum(f for c, f in pb.items() if c in _PB_MOVE)
+    for c, f in pb.items():
+        if c in _PB_MOVE:
+            prior[_PB_MOVE[c]] += f
+    f0 = pb.get("non_pushback", max(0.0, 1.0 - pb_mass)) if pb else 1.0
+    if intent:
+        for it, f in intent.items():
+            prior[_INTENT_MOVE.get(it, "approve_proceed")] += f0 * f
+    else:
+        prior["approve_proceed"] += f0
+    tot = sum(prior.values()) or 1.0
+    return {k: round(v / tot, 3) for k, v in prior.items() if v > 0}
+
+
+def predict_move(context_block, prior):
+    """Stage 1 of move-conditioned generation: predict the move this user makes next,
+    given the conversation and their move-mix prior. Calibrated so it does not collapse
+    to approve_proceed the way free generation does."""
+    pr = ", ".join(f"{k} {int(100 * v)}%" for k, v in sorted(prior.items(), key=lambda x: -x[1]))
+    prompt = (
+        "A developer is DRIVING an AI coding session toward their own goals. Across their history "
+        f"their move mix is: {pr}.\n\n<conversation>\n{context_block}\n</conversation>\n\n"
+        "They are about to send their next message. Which single MOVE will they make? They drive the "
+        "project — do NOT assume they just approve; weigh the situation together with their mix "
+        "(a developer who often pushes back or introduces work likely does so here too). Options: "
+        "new_work, refine_redirect, pushback, bug_report, approve_proceed, question, interrupt.\n"
+        'Respond with ONLY JSON: {"move": "<one>"}'
+    )
+    out = run_claude(prompt, JUDGE_MODEL, timeout=120)
+    m = re.search(r'"move"\s*:\s*"(\w+)"', out)
+    mv = m.group(1) if m else None
+    return mv if mv in SPEECH_ACTS else None
+
+
 def load_style_reference(slug, n=8):
     """A sample of the user's REAL messages (from the digest), for the 2AFC test.
     These are training-side messages, disjoint from the held-out points being predicted."""
@@ -374,8 +442,13 @@ def main():
     ap.add_argument("--repos-dir", default=None,
                     help="dir of repo checkouts (<repos-dir>/<owner>/<repo>); when a target session's "
                          "repo is present, folder-mode simulator is given read access to it (point 3).")
+    ap.add_argument("--move-conditioned", action="store_true",
+                    help="two-stage generation: Stage 1 predicts the move from context + the user's "
+                         "move prior (folder mode); Stage 2 renders that move in their voice. Fixes "
+                         "the approve-collapse / zero-interrupt bias and adds user-specificity.")
     args = ap.parse_args()
     read_folder = args.mode == "folder"
+    move_conditioned = args.move_conditioned
     repos_dir = Path(args.repos_dir) if args.repos_dir else None
 
     RESULTS.mkdir(exist_ok=True)
@@ -401,6 +474,13 @@ def main():
     def folder_path(s):
         return str((ROOT / "users" / s).relative_to(ROOT))
 
+    # per-user move priors (for move-conditioned generation). A flat prior backs the generic cond.
+    priors = {}
+    for s in set(slugs) | {wrong_of[s] for s in slugs}:
+        sp = ROOT / "users" / s / "stats.json"
+        priors[s] = derive_move_prior(json.loads(sp.read_text())) if sp.exists() else {}
+    flat_prior = {a: round(1 / 7, 3) for a in SPEECH_ACTS if a != "other"}
+
     # build all jobs
     jobs = []
     point_meta = {}  # point_id -> {prev_agent, real} for speech-act labeling
@@ -417,13 +497,16 @@ def main():
                     point["repo_path"] = str(cand)
             for cond in CONDITIONS:
                 src = {"distilled": slug, "generic": None, "wrong": wrong_of[slug]}[cond]
-                if read_folder:
-                    prompt = build_folder_prompt(point, folder_path(src) if src else None)
+                job = {"slug": slug, "point_id": pid, "cond": cond, "point": point,
+                       "fpath": folder_path(src) if src else None,
+                       "prior": priors.get(src) or flat_prior}
+                if move_conditioned:
+                    job["prompt"] = None  # built in work() after Stage-1 move prediction
+                elif read_folder:
+                    job["prompt"] = build_folder_prompt(point, job["fpath"])
                 else:
-                    folder_text = folders[src] if src else ""
-                    prompt = build_prompt(point, folder_text)
-                jobs.append({"slug": slug, "point_id": f"{point['session_id']}#{point['turn_index']}",
-                             "cond": cond, "point": point, "prompt": prompt})
+                    job["prompt"] = build_prompt(point, folders[src] if src else "")
+                jobs.append(job)
 
     # resume: skip already-generated good records. Drop any CLI-failure records (session limit,
     # overload, max-turns) so they are regenerated and never pollute scoring. Per-mode file.
@@ -448,13 +531,22 @@ def main():
     print(f"jobs: {len(jobs)} total, {len(todo)} to run")
 
     def work(job):
+        cond_move = None
+        prompt = job["prompt"]
         try:
-            gen = run_claude(job["prompt"], GEN_MODEL, read_folder=read_folder)
+            if move_conditioned:
+                # Stage 1: predict the move from context + the user's prior
+                cond_move = predict_move(_context_block(job["point"]), job["prior"])
+                # Stage 2: render that move (fall back to free generation if Stage 1 failed)
+                prompt = build_folder_prompt(job["point"], job["fpath"], target_move=cond_move)
+            gen = run_claude(prompt, GEN_MODEL, read_folder=read_folder)
         except subprocess.TimeoutExpired:
             gen = ""
-        return {"slug": job["slug"], "point_id": job["point_id"], "cond": job["cond"],
-                "repo": job["point"]["repo"], "real": job["point"]["real"],
-                "generated": gen}
+        rec = {"slug": job["slug"], "point_id": job["point_id"], "cond": job["cond"],
+               "repo": job["point"]["repo"], "real": job["point"]["real"], "generated": gen}
+        if move_conditioned:
+            rec["conditioned_move"] = cond_move
+        return rec
 
     if todo:
         with gen_path.open("a") as fh, ThreadPoolExecutor(max_workers=args.parallel) as ex:
