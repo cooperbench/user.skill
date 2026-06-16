@@ -1,0 +1,11 @@
+{
+ "n_realism": 53,
+ "n_disc": 54,
+ "realism_ceiling_real_messages": 29.1,
+ "realism_v5_simulator": 38.8,
+ "discrimination_ceiling": {
+  "style": 0.648,
+  "realism": 0.537
+ },
+ "chance": 0.5
+}
