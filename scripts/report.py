@@ -146,15 +146,25 @@ def main():
         return json.loads(f.read_text()) if f.exists() else None
     sc = _load("session_compare.json")
     ar = _load("agent_replay_pavel401_cfdde919.json")
-    crisis_rows = ""
-    if ar:
-        for r in ar["rows"]:
-            blob = (r["agent_said"] + r["real_msg"]).lower()
-            if "delete" in blob or r["real_move"] == "interrupt":
-                crisis_rows += (
-                    f"<tr><td>{html.escape(r['agent_said'][:90])}…</td>"
-                    f"<td><b>[{r['real_move']}]</b><br>{html.escape(r['real_msg'][:70])}</td>"
-                    f"<td>[{r['sim_move']}]<br>{html.escape((r['sim_msg'] or '')[:70])}</td></tr>")
+    ex = _load("session_example.json")
+    # complete real-vs-simulated session transcript (agent turns shared, user turns split)
+    full_session_rows = ""
+    if ex:
+        for t in ex["turns"]:
+            if t["role"] == "assistant":
+                txt = html.escape(t["real"][:360]) + ("…" if len(t["real"]) > 360 else "")
+                full_session_rows += f"<tr><td class='ag' colspan='2'>⚙ AGENT · {txt}</td></tr>"
+            else:
+                real_txt = html.escape(t["real"][:240])
+                if t.get("sim") is not None:
+                    rm, sm = t.get("real_move") or "–", t.get("sim_move") or "–"
+                    cls = "us agree" if rm == sm else "us"
+                    full_session_rows += (
+                        f"<tr><td class='ur'><span class='mv'>{rm}</span> {real_txt}</td>"
+                        f"<td class='{cls}'><span class='mv'>{sm}</span> {html.escape((t['sim'] or '')[:240])}</td></tr>")
+                else:
+                    full_session_rows += (f"<tr><td class='ur'>{real_txt}</td>"
+                                          f"<td class='us na'>— opening / not simulated</td></tr>")
 
     a_r, a_v, a_d = delta("realism")
     c_r, c_v, c_d = delta("content")
@@ -187,6 +197,15 @@ def main():
  .stat .bn {{ font-size:1.7rem; font-weight:800; color:#4361ee; }}
  .stat.up .bn {{ color:#16a34a; }} .stat .bl {{ font-size:.8rem; color:#555; }}
  .legend {{ font-size:.8rem; color:#666; }} .sw {{ display:inline-block; width:10px; height:10px; border-radius:2px; margin:0 3px 0 8px; vertical-align:middle; }}
+ table.sess td {{ vertical-align:top; font-size:.82rem; border-bottom:1px solid #eee; }}
+ table.sess td.ag {{ background:#f6f6fb; color:#666; font-size:.76rem; }}
+ table.sess td.ur {{ width:50%; background:#fbf7ff; border-left:3px solid #7c3aed; }}
+ table.sess td.us {{ width:50%; background:#f0f9ff; border-left:3px solid #0ea5e9; }}
+ table.sess td.us.agree {{ background:#f0fdf4; border-left-color:#16a34a; }}
+ table.sess td.us.na {{ color:#aaa; background:#fafafa; border-left-color:#ddd; }}
+ .mv {{ display:inline-block; font-size:.66rem; text-transform:uppercase; background:#e7e1f5; color:#4c1d95; border-radius:3px; padding:0 4px; margin-right:4px; }}
+ .hdr {{ display:flex; gap:1rem; font-weight:600; margin-top:1rem; }} .hdr div {{ flex:1; }}
+ .hdr .l {{ color:#7c3aed; }} .hdr .r {{ color:#0ea5e9; }}
 </style></head><body>
 <h1>User.skill: how faithfully can we simulate a developer?</h1>
 <p>We distil each SWE-chat user (≥6 sessions) into a role-playable folder, then a Claude-Code agent
@@ -300,10 +319,12 @@ reproducing that session's agent trajectory.</p>
 <p>To isolate the simulator from agent divergence, we replayed the <em>real</em> agent's actual turns
 and asked the simulator for the user's reaction at each real point. Per-turn move agreement
 <b>{ar['per_turn_move_agreement'] if ar else '–'}</b>, conditional TVD
-<b>{ar['move_distribution_TVD_conditional'] if ar else '–'}</b>. The crisis turns expose the gap
-exactly — when the real agent proposes/does destructive git operations:</p>
-<table><thead><tr><th>real agent did</th><th>REAL user</th><th>SIMULATED user</th></tr></thead>
-<tbody>{crisis_rows}</tbody></table>
+<b>{ar['move_distribution_TVD_conditional'] if ar else '–'}</b>. Below is the <b>complete</b> session,
+real developer (left) vs simulated developer (right), with the real agent turns shared between them
+(grey) — so both columns face identical context at every step. Move tags are the labelled speech act;
+green = the simulator made the same move as the real user.</p>
+<div class="hdr"><div class="l">◀ REAL developer</div><div class="r">SIMULATED developer ▶</div></div>
+<table class="sess"><tbody>{full_session_rows}</tbody></table>
 <p class="warn"><b>The fidelity gap is emotional escalation, not agent divergence.</b> With the agent
 held fixed, the real developer <em>interrupts, rages, and panics</em> ("bastard you deleted all the
 queries…", "madarchod… any way to restore them?"); the simulator stays <em>calm and analytical</em>
