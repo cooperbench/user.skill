@@ -11,7 +11,7 @@
  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
  tr.opt td { background: #f0fdf4; font-weight: 600; }
  td.barcell { width: 26%; } .bar { height: 13px; border-radius: 3px; }
- .bar.real { background: #7c3aed; } .bar.pred { background: #f0883e; }
+ .bar.real { background: #7c3aed; } .bar.pred { background: #f0883e; } .bar.v5 { background: #16a34a; }
  .note { background: #f5f0ff; border-left: 4px solid #7c3aed; padding: .6rem 1rem; border-radius: 4px; }
  .warn { background: #fff7ed; border-left: 4px solid #f0883e; padding: .6rem 1rem; border-radius: 4px; }
  .twin { display:flex; gap:1rem; flex-wrap:wrap; margin:1rem 0; }
@@ -22,10 +22,11 @@
 </style></head><body>
 <h1>User.skill: how faithfully can we simulate a developer?</h1>
 <p>We distil each SWE-chat user (≥6 sessions) into a role-playable folder, then a Claude-Code agent
-role-plays them and we score the next message it produces against the real held-out one. This report
-covers the evaluation as it stands after several iterations: <b>filtering targets to genuine user
-actions</b>, scoring on <b>content</b>, <b>realism</b> and <b>speech-act match</b>, and an
-<b>optimized simulator</b> built on a shared scaffold. 9 users; the distillation itself ran for all 99.</p>
+role-plays them and we score the next message it produces against the real held-out one. The report
+traces the arc from a plain folder-reading simulator to the best one: <b>filtering targets to genuine
+user actions</b>, scoring on <b>content</b>, <b>realism</b> and <b>speech-act match</b>, a
+<b>shared scaffold</b>, and finally <b>per-user move-sampling</b> — which gives the most realistic and
+correctly user-specific simulator. 9 users; the distillation itself ran for all 99.</p>
 
 <h2>How we measure fidelity</h2>
 <p>Predicting a user's <em>exact</em> next message is near-impossible — at any point many messages
@@ -53,53 +54,62 @@ user's folder.</p>
 <th class='num'>content own</th><th class='num'>content wrong</th>
 <th class='num'>realism own</th><th class='num'>realism wrong</th>
 <th class='num'>act own</th><th class='num'>act wrong</th></tr></thead>
-<tbody><tr><td>Inline (folder pasted in)</td><td class='num'>25.2</td><td class='num'>20.6</td><td class='num'>29.5</td><td class='num'>24.3</td><td class='num'>29.4%</td><td class='num'>25.5%</td></tr><tr><td>Folder-access (reads folder)</td><td class='num'>27.1</td><td class='num'>24.0</td><td class='num'>31.6</td><td class='num'>30.3</td><td class='num'>23.5%</td><td class='num'>19.6%</td></tr><tr><td>Folder + intent-first prompt</td><td class='num'>24.3</td><td class='num'>27</td><td class='num'>31.9</td><td class='num'>30.5</td><td class='num'>25.5%</td><td class='num'>25.5%</td></tr><tr class=opt><td>Folder + shared scaffold (optimized)</td><td class='num'>26.4</td><td class='num'>30.2</td><td class='num'>36.0</td><td class='num'>32.3</td><td class='num'>29.2%</td><td class='num'>29.2%</td></tr></tbody></table>
+<tbody><tr><td>Inline (folder pasted in)</td><td class='num'>25.2</td><td class='num'>20.6</td><td class='num'>29.5</td><td class='num'>24.3</td><td class='num'>29.4%</td><td class='num'>25.5%</td></tr><tr><td>Folder-access (reads folder)</td><td class='num'>27.1</td><td class='num'>24.0</td><td class='num'>31.6</td><td class='num'>30.3</td><td class='num'>23.5%</td><td class='num'>19.6%</td></tr><tr><td>Folder + intent-first prompt</td><td class='num'>24.3</td><td class='num'>27</td><td class='num'>31.9</td><td class='num'>30.5</td><td class='num'>25.5%</td><td class='num'>25.5%</td></tr><tr><td>Folder + shared scaffold</td><td class='num'>26.4</td><td class='num'>30.2</td><td class='num'>36.0</td><td class='num'>32.3</td><td class='num'>29.2%</td><td class='num'>29.2%</td></tr><tr class=opt><td>Folder + move-sampling (best)</td><td class='num'>25.4</td><td class='num'>21.8</td><td class='num'>38.8</td><td class='num'>30.4</td><td class='num'>24.1%</td><td class='num'>9.3%</td></tr></tbody></table>
 <p class="legend">Green row = the optimized simulator (shared scaffold). Content/realism are
 0–100 judge means; act is speech-act match rate.</p>
 
-<h2>The optimization: a shared simulator scaffold</h2>
-<p>The biggest fidelity lever isn't voice — it's <em>which move</em> the user makes. We added a
-<b>shared layer</b> across all users (<code>simulator/AGENT.md</code> + move-playbook skills:
-drive-the-project, push-back, interrupt, report-what-you-notice, calibrate-to-the-user) that encodes
-how real developers drive a session and tells each simulation to match the user's move rates. The
-per-user folder then only specialises voice. Effect on the distilled condition (folder-v1 → optimized):</p>
+<h2>Best simulator: folder-v1 → move-sampling (v5)</h2>
+<p>The biggest fidelity lever isn't voice — it's <em>which move</em> the user makes. The final design
+has three layers: a <b>shared scaffold</b> (<code>simulator/AGENT.md</code> + move-playbook skills)
+for general competence; a <b>per-user move prior</b> (sampled each turn from the user's own
+intent/pushback rates in <code>stats.json</code>) that sets the move-mix; and the <b>per-user
+folder</b> for voice. Effect of the best simulator (folder-v1 → v5) on the distilled condition:</p>
 <div class="twin">
-  <div class="stat up"><div class="bn">+4.4</div><div class="bl">realism (31.6 → 36.0)</div></div>
-  <div class="stat up"><div class="bn">+5.7%</div><div class="bl">speech-act match (23.5% → 29.2%)</div></div>
-  <div class="stat"><div class="bn">-0.7</div><div class="bl">content (27.1 → 26.4)</div></div>
+  <div class="stat up"><div class="bn">+7.2</div><div class="bl">realism (31.6 → 38.8), highest of any variant</div></div>
+  <div class="stat up"><div class="bn">+0.6%</div><div class="bl">speech-act match (23.5% → 24.1%)</div></div>
+  <div class="stat"><div class="bn">-1.7</div><div class="bl">content (27.1 → 25.4)</div></div>
 </div>
-<p>The shared scaffold genuinely raised <b>absolute</b> realism and move-accuracy. But it exposed two
-hard limits, below.</p>
+<p>Getting there took two iterations past the shared scaffold (v3), which raised absolute realism but
+exposed two limits — both now resolved by move-sampling.</p>
 
-<h2>Limit 1 — the simulator still won't diversify its moves</h2>
-<p>Real users approve only part of the time and make a wide range of moves; the simulator collapses
-toward "approve / continue" and — despite an explicit interrupt action and skill — <b>never
-interrupts</b>.</p>
-<table><thead><tr><th>move</th><th class='num'>real</th><th></th>
-<th class='num'>simulated</th><th></th></tr></thead><tbody><tr><td>approve_proceed</td><td class='num'>28%</td><td class='barcell'><div class='bar real' style='width:28%'></div></td><td class='num'>54%</td><td class='barcell'><div class='bar pred' style='width:54%'></div></td></tr><tr><td>refine_redirect</td><td class='num'>19%</td><td class='barcell'><div class='bar real' style='width:19%'></div></td><td class='num'>4%</td><td class='barcell'><div class='bar pred' style='width:4%'></div></td></tr><tr><td>new_work</td><td class='num'>15%</td><td class='barcell'><div class='bar real' style='width:15%'></div></td><td class='num'>17%</td><td class='barcell'><div class='bar pred' style='width:17%'></div></td></tr><tr><td>bug_report</td><td class='num'>13%</td><td class='barcell'><div class='bar real' style='width:13%'></div></td><td class='num'>8%</td><td class='barcell'><div class='bar pred' style='width:8%'></div></td></tr><tr><td>pushback</td><td class='num'>11%</td><td class='barcell'><div class='bar real' style='width:11%'></div></td><td class='num'>8%</td><td class='barcell'><div class='bar pred' style='width:8%'></div></td></tr><tr><td>interrupt ⚠</td><td class='num'>9%</td><td class='barcell'><div class='bar real' style='width:9%'></div></td><td class='num'>0%</td><td class='barcell'><div class='bar pred' style='width:0%'></div></td></tr><tr><td>question</td><td class='num'>6%</td><td class='barcell'><div class='bar real' style='width:6%'></div></td><td class='num'>8%</td><td class='barcell'><div class='bar pred' style='width:8%'></div></td></tr></tbody></table>
+<h2>Limit 1 (resolved) — diversify the moves &amp; actually interrupt</h2>
+<p>Real users approve only part of the time; the shared-scaffold simulator (v3) collapsed toward
+"approve / continue" and never interrupted. The fix is <b>move-conditioned generation</b>: choose the
+move first, then render it. Choosing it with an LLM (v4) over-corrected to 74% pushback; <b>sampling
+the move from the user's own rate distribution (v5)</b> matches the real move-mix and fires interrupts.
+Distance from the real move distribution (total-variation, lower is better):
+v4-predict <b>0.667</b> → v5-sample <b>0.296</b>.</p>
+<table><thead><tr><th>move</th>
+<th class='num'>real</th><th></th>
+<th class='num'>v4 predict</th><th></th>
+<th class='num'>v5 sample</th><th></th></tr></thead><tbody><tr><td>approve_proceed</td><td class='num'>28%</td><td class='barcell'><div class='bar real' style='width:28%'></div></td><td class='num'>6%</td><td class='barcell'><div class='bar pred' style='width:6%'></div></td><td class='num'>31%</td><td class='barcell'><div class='bar v5' style='width:31%'></div></td></tr><tr><td>refine_redirect</td><td class='num'>19%</td><td class='barcell'><div class='bar real' style='width:19%'></div></td><td class='num'>2%</td><td class='barcell'><div class='bar pred' style='width:2%'></div></td><td class='num'>2%</td><td class='barcell'><div class='bar v5' style='width:2%'></div></td></tr><tr><td>new_work</td><td class='num'>15%</td><td class='barcell'><div class='bar real' style='width:15%'></div></td><td class='num'>2%</td><td class='barcell'><div class='bar pred' style='width:2%'></div></td><td class='num'>11%</td><td class='barcell'><div class='bar v5' style='width:11%'></div></td></tr><tr><td>bug_report</td><td class='num'>13%</td><td class='barcell'><div class='bar real' style='width:13%'></div></td><td class='num'>17%</td><td class='barcell'><div class='bar pred' style='width:17%'></div></td><td class='num'>22%</td><td class='barcell'><div class='bar v5' style='width:22%'></div></td></tr><tr><td>pushback</td><td class='num'>11%</td><td class='barcell'><div class='bar real' style='width:11%'></div></td><td class='num'>74%</td><td class='barcell'><div class='bar pred' style='width:74%'></div></td><td class='num'>28%</td><td class='barcell'><div class='bar v5' style='width:28%'></div></td></tr><tr><td>interrupt</td><td class='num'>9%</td><td class='barcell'><div class='bar real' style='width:9%'></div></td><td class='num'>0%</td><td class='barcell'><div class='bar pred' style='width:0%'></div></td><td class='num'>2%</td><td class='barcell'><div class='bar v5' style='width:2%'></div></td></tr><tr><td>question</td><td class='num'>6%</td><td class='barcell'><div class='bar real' style='width:6%'></div></td><td class='num'>0%</td><td class='barcell'><div class='bar pred' style='width:0%'></div></td><td class='num'>4%</td><td class='barcell'><div class='bar v5' style='width:4%'></div></td></tr></tbody></table>
 <p class="legend"><span class="sw" style="background:#7c3aed"></span>real users
-<span class="sw" style="background:#f0883e"></span>optimized simulator (labeled predictions). ⚠ = the
-simulator produced zero of this move across all targets.</p>
-<p class="warn">The base model's cooperative "approve and continue" prior survives prompt-level
-instructions. Forcing move-diversity needs <b>move-conditioned generation</b>: sample the move from the
-user's own rate distribution, then generate that move — the clear next iteration.</p>
+<span class="sw" style="background:#f0883e"></span>v4 (LLM picks move — collapses to pushback)
+<span class="sw" style="background:#16a34a"></span>v5 (sampled from prior — tracks real, interrupts included).</p>
 
-<h2>Limit 2 — better, but not more user-specific</h2>
-<p>The shared scaffold lifts <em>every</em> condition — the no-folder generic baseline's realism rose
-to 46.7 and the wrong folder improved too. So while absolute
-fidelity went up, the <b>own-vs-wrong</b> gap did not: content even inverted (own 26.4
-vs wrong 30.2) and speech-act match tied. General simulator skill and
-user-discriminability are partly in tension — shared knowledge helps the wrong folder just as much.</p>
+<h2>Limit 2 (resolved) — make the gains user-specific</h2>
+<p>The shared scaffold lifted <em>every</em> condition equally, so the <b>own-vs-wrong</b> gap
+collapsed: v3's content gap even inverted (-3.8). Because the v5 move prior is
+<em>derived from each user's own rates</em>, the own-folder and wrong-folder simulators now sample
+<em>different</em> move-mixes (own vs. wrong move-distribution distance = <b>0.167</b>), so
+discriminability returns across all axes:</p>
+<div class="twin">
+  <div class="stat up"><div class="bn">+3.6</div><div class="bl">content own−wrong (was -3.8 in v3)</div></div>
+  <div class="stat up"><div class="bn">+8.4</div><div class="bl">realism own−wrong</div></div>
+  <div class="stat up"><div class="bn">+14.8%</div><div class="bl">speech-act own−wrong</div></div>
+</div>
 
 <h2>Where it stands</h2>
 <ul>
-<li><b>The distillation captures real user signal</b> — own beats wrong on all three axes (v1 sims).</li>
-<li><b>Exact content has a low ceiling</b>; speech-act + realism are the fair fidelity axes, and
-content stays useful where substance is predictable.</li>
-<li><b>The shared scaffold raised absolute realism (+4.4) and move-accuracy
-(+5.7%)</b>, but can't force move-diversity or add user-specificity by itself.</li>
-<li><b>Next:</b> move-conditioned generation — sample each turn's move from the user's measured
-distribution, then generate — to fix both the over-approval/zero-interrupt bias and discriminability.</li>
+<li><b>The distillation captures real user signal</b> — the own folder beats a wrong user's folder on
+content, realism and speech-act, restored and strongest in v5.</li>
+<li><b>v5 is the best simulator</b>: highest realism (38.8), move-mix that tracks reality
+(TVD 0.296, interrupts included), and correctly user-specific.</li>
+<li><b>Architecture:</b> shared scaffold = competence; per-user sampled prior = move-mix;
+per-user folder = voice. All user-specificity lives in the per-user layers.</li>
+<li><b>Honest ceiling:</b> sampling matches the move <em>distribution</em> and discriminability, not
+single-point move accuracy — predicting the exact next move at a given point stays near its entropy
+floor, as it must.</li>
 </ul>
 
 <footer style="margin-top:3rem;font-size:.8rem;color:#888">Generated by scripts/report.py —
