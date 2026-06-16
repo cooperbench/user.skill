@@ -1,0 +1,62 @@
+{
+ "approve_proceed": [
+  "how good is our paper now for a solid acceptance in neuralips 2026",
+  "Help me perform deep reasoning on this paper and evaluate how likely it is an exception into NeurIPS 2026.",
+  "Help me provide scoring for this paper and how likely it is to be accepted into NeurIPS 2026. ultrathink. Recommend improvements to make it a solid acceptance 8+",
+  "Help me provide scoring for this paper and how likely it is to be accepted into NeurIPS 2026. ultrathink",
+  "/ralph-loop:ralph-loop \"let reason deeply through this paper, is this a likely acceptance into NeurIPS 2026. Document the findings into a folder called april09.md\" --max-iterations 50",
+  "so how good our paper is now for neuralips 2026 ultrathink",
+  "ultrathink\n\nperform extended thinking on our paper. Act like a NeuralIPS reviewer and score the paper",
+  "plan further experiments that would strength our paper significantly because our RACE VM is still ready for us to use and the time to conference is plenty (recall memory on how to use the Race VM). Plan broad ones and deep ones",
+  "let's do that carefully",
+  "let's continue",
+  "recompile and reopen",
+  "there is no time constraint, we can keep it running at RACE VM. We still have 2 weeks until Neurips submission"
+ ],
+ "new_work": [
+  "/ralph-loop:ralph-loop now that we understand that current model and setup cannot beat DLinear. But we want to close this gap. Given a more relaxed set of constraint, what else can we do. Ultrathink. Explore further. Write to a .md file --max-iterations 20",
+  "how do we begin full suite experiments now for the adapter design",
+  "let run new experiments now and write after that",
+  "/loop monitor experimetns at RACE VM and GPU utilisation --15 minutes",
+  "monitor experiments at RACE VM and GPU utilisation",
+  "let plan out some new algorithms or architectural tweak  that may potentially help here and queue them so that GPUs get used until I wake up (the deadline given)",
+  "now let's design the script for the 2 ablation study",
+  "Can we have some latext-native plots and some visualisation of the discovered architecture",
+  "let's do that, but start with exa academic search",
+  "test if it is active",
+  "let's use exa search to understand the taste of reviewers on neuralips 2025, for time series related papers, launch claude in chrome to read openreviews",
+  "based on all the results so far, can we devise some sort of novel algorithm or adapter now that guarantees acceptance into NeuralIPS ultrathink"
+ ],
+ "pushback": [
+  "we are trying to access the VM again. Notice that once the profressor activate an ssh key we have 60 seconds to login. Prepare a script that whitelist our IP at that machine level. The desired IP is 23.27.187.5 \n\nPrepare this. I'll call the professor later",
+  "just whitelist, try again reaching the vm",
+  "are any of these should be written into the paper (aware of length limit of 9 pages)",
+  "did we factor in new relevant results into the paper ?",
+  "make sure we wrote very clearly about this: \"the gap being closable is evidence that the diagnosis leads somewhere useful\"",
+  "plan changes and further experiments needed to reach 9",
+  "we are using gpt4-o right ? let's also test more models, use exa search to see which LLMs are often used",
+  "plan on how we make this Neural IPS worthy",
+  "I want the boldest path to NeuralIPS 2026",
+  "let's do that planning ultrathink",
+  "should we replan our approach ?",
+  "[Image #1]  make this one look more organised, no overlapped arrow, a bit bigger\n[Image: image/png]"
+ ],
+ "question": [
+  "at current state how comprehensive and well designed is our experimental studies",
+  "why all seems to run faster than we estimatd, like always faster",
+  "analyse the recently arrived results",
+  "Let's do progress check for the currently running at vm",
+  "monitor the experiments running at RACE",
+  "how is our narrative so far",
+  "so one dataset is still running ?",
+  "what is LSTF bench, just answer me no writing",
+  "ETA for the still running experiments",
+  "how are our experiments so far",
+  "did the experiments confirm that our newly discovered arhictetures outperformed baseline ?",
+  "so is it neuralips worthy"
+ ],
+ "bug_report": [
+  "recompile to check for error",
+  "so by now we just could not prove that the discovered architecture is not generalising"
+ ]
+}

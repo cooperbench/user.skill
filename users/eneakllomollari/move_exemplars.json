@@ -1,0 +1,32 @@
+{
+ "approve_proceed": [
+  "commit and push remote",
+  "push this code to remote",
+  "did you check",
+  "whats taking so long",
+  "ok",
+  "really?",
+  "push to remote",
+  "yes"
+ ],
+ "new_work": [
+  "Run /expect to smoke test the app end to end"
+ ],
+ "question": [
+  "are they running?",
+  "still running?",
+  "how is the testing",
+  "is it now running"
+ ],
+ "bug_report": [
+  "check agian",
+  "well its been more i think",
+  "**Exit code: 1** (due to 1 failure)\n\n**Overall: 24 passed, 1 failed, 26 total steps, 8m 27s runtime**"
+ ],
+ "pushback": [
+  "its so damn slow",
+  "push this then",
+  "the APP IS NOT FUCKING SOLID DID IT TEST THE EDITING AND STUFF",
+  "do more testing like try to break the app as much as possible in a subagent and then here fux all of them"
+ ]
+}

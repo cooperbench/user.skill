@@ -1,0 +1,76 @@
+{
+ "new_work": [
+  "let's install a router package for our app. We want to make new routes for each screen. We also want to add a new page that shows a timeline for checkpoints.",
+  "Let's persist open tabs and sessions so that the next time the user opens the app, they pick up where they left off.",
+  "Test new session",
+  "we want to parse entire cli logs instead of directly parsing claude code hook payloads. Create some new database tables that match the structure of the json log events. Then, write code to parse the jsonl log file and write corresponding rows to the table",
+  "now that we have installed electron, let's use mantine as our ui component library",
+  "each checkpoint is associated with a commit. The commit message will be structured like \"\n    Try and match OpenItems across checkpoints. If the ai rephrases an issue that was already closed, we keep it closed instead of making a new open issue\n    \n    Entire-Checkpoint: 7791a81172db\". Write a function to get the checkpoint id from the commit message.",
+  "Please work on the following open items:\n- The diff viewer falls back to a plain `filesTouched` filename list when no `CheckpointIdGitOidJoin` mapping exists for a checkpoint — checkpoints without a git OID mapping will never show actual diffs.",
+  "## 10. `app/src/components/EventItem.tsx`\n\n- Symbol (▶ ✓ ✗ → etc.) coloured by event type + event name + tool name + timestamp\n- UserPromptSubmit: italic prompt text (truncated, expandable)\n- Stop/Notification: italic message text\n- Tool events: tap to expand/collapse JSON input (first 800 chars, monospace)\n- `BLOCKED` red badge if `event.blocked`",
+  "## 8. `app/src/screens/SessionDetail.tsx`\n\n- `ScrollView` of `<EventItem>` components, fetched via `fetchSessionEvents(sessionId)`\n- Loading spinner → events list or empty state",
+  "Let's persist the open tabs across sessions. When i exit the app and reopen it, i should be able to see the same tabs that i had open before.",
+  "Write a new controller method that gets the v2 checkpoints",
+  "Let's index all the v2 sessions now and then call the new endpoint to make sure it works"
+ ],
+ "refine_redirect": [
+  "Please work on the following open items:\n- The `saveGitOidMapping` call now runs on every index pass for every checkpoint; a more targeted approach (e.g., only for checkpoints missing a mapping) could reduce unnecessary DB reads at scale.",
+  "we are going to refactor the sqlite schema for how we represent checkpoints to match the actual layout of the entire cli files. First, let's create a token_usage table with columns that match this json:   \"token_usage\": {\n    \"input_tokens\": 356,\n    \"cache_creation_tokens\": 618411,\n    \"cache_read_tokens\": 26160556,\n    \"output_tokens\": 129906,\n    \"api_call_count\": 278\n  }",
+  "Please work on the following open items:\n- The legacy `Session` table is no longer consulted for session listing but may still exist in the DB — no migration or cleanup was done to remove stale rows.",
+  "Please work on the following open items:\n- tool_result authorship attribution (treated as Claude-side) is a design assumption that may need revisiting if tool results from human-run tools are added.",
+  "Please work on the following open items:\n- A broader codebase-wide grep for hardcoded color values (#fff, #000, light Mantine color tokens used without light-dark()) has not been performed and may surface additional issues.",
+  "let's make the indexer/poll loop more robust. Instead of checking out the entire/checkpoints/v1 branch into /private/tmp, check it out into a directory underneath the git root directory. Let's also put the default sqlite db in a hidden .gossamer directory in the root git directory. let the user specify alternative paths but use these as the default",
+  "In the main claude-sessions component, the table columns don't line up with the rows. Format the user column to just show the username with a mailto link. Also format the keywords column to show a chip for each keyword."
+ ],
+ "bug_report": [
+  "Please work on the following open items:\n- subSessionId is never actually populated in the DB — the AppleScript spawn opens a terminal but doesn't return a session ID to store back on the open items",
+  "Please work on the following open items:\n- CheckpointDetail.tsx and CheckpointTimeline.tsx may still have hardcoded light colors not audited in this session\n- ToolUseItem.tsx and CheckpointMessageItem.tsx dark mode colors were patched but not fully verified in the chat transcript layout",
+  "the checkpoints ui is not updating anymore, is that broken?",
+  "I'm using the dash one. When i do select * from CheckpointSessionMetadata where sessionId = '593570d7a2f3', i get no rows back",
+  "There is clearly something wrong still after i refresh. Most checkpoints i click on don't have summaries, only a few. Fix the UI to show the summaries for all checkpoints.",
+  "Markdown is still not being rendered correctly. For examples, on some of the assistant events, i see what are supposed to be markdown tables but i see the raw text of the markdown, not a table.",
+  "run the new subcommand so that we can see the data in sqlite",
+  "restart the server so that we see the checkpoints",
+  "I still see ellipses",
+  "It still seems to show extra backticks around bolded words. It also doesn't seem to handle multiline code blocks.",
+  "yes. also when i start the app, i just get a loading screen with a spinner on it. It doesn't load active sessions",
+  "It still asks me for my ssh key. Are these commands maybe looking at the origin branch?"
+ ],
+ "approve_proceed": [
+  "resume",
+  "what recently changed about the package.json file?",
+  "open http://localhost:19006",
+  "restart the server to pick up the backend changes",
+  "First, just run the command to reindex the checkpoints",
+  "yes",
+  "restart the server",
+  "start the app again",
+  "Let's use mantine whenever we can moving forward.",
+  "restart the server to get the new backend routes",
+  "start the server",
+  "git status"
+ ],
+ "question": [
+  "Please work on the following open items:\n- Status inheritance across checkpoints only works for identical item text; if AI rephrases an open item in a new checkpoint, status is lost by design",
+  "## Special notes\n\n- **NodeNext imports in `src/server.ts`**: all local imports use `.js` extension\n- **Two separate tsconfigs**: root (`NodeNext`) and `app/` (`expo/tsconfig.base`) — must not merge\n- **Single port**: `WebSocketServer({ server: httpServer })` shares port 3000 with Express; no separate WS port needed",
+  "## 9. `app/src/components/SessionRow.tsx`\n\n- `TouchableOpacity` wrapping `flexDirection: 'row'` View\n- 7 `Text` cells (flex:1 each; summaryCell flex:2)\n- `numberOfLines={1}` for truncation on narrow screens\n- Calls `onPress` → navigate to SessionDetail",
+  "Are you also indexing the Entire CLI's metadata.json file?",
+  "How do i actually interact with the new session though? Is there a way to transfer it to an open terminal window?",
+  "Do the github usernames get stored on the tool uses or messages in the database or are they always gotten from the git config?",
+  "Are the thinking events not displayed directly on the session details page?"
+ ],
+ "pushback": [
+  "why is there now an app/app folder?",
+  "I think electron would be a better fit for this app, since we want to be able to use different component libraries. Can you refactor this app to use electron?",
+  "The controller is fetching from the OLD checkpointSession table. Instead of using that table, we should be using the new V2 tables, in this case CheckpointSessionMetadata. Refactor the sessions UI and controller to use this new table.",
+  "Now that we're using the CheckpointSessionMetadata models, let's get the summary field from CheckpointSessionMetadata.Summary.Intent, and rename the summary table column to intent.",
+  "Can you link the plan and implementation sessions together?",
+  "The session pages don't scroll at all, so i can't see the end and events get cut off. Implement scrolling. Also, collapse PreToolUse with matching PostToolUse in the UI so that they don't take so much visual space.",
+  "let's collapse the tool uses even further. When there are a bunch of consecutive tool uses, just show a single entry saying something like \"(x) tool uses\". when clicked, the entry should expand and show the individual tool uses.",
+  "Now, let's also collapse the notification events in with the tool events. The notification events are mainly asking me about \"claude needs your permission\" so they aren't super useful to show.",
+  "get rid of the line underneath the tool uses row",
+  "We should fetch by both checkpoint id and git hashid together. After all, if i rebase a branch i can manually change the mapping between git commit and checkpoint id. Therefore, the same checkpointid might be mapped to a new oid.",
+  "I want to let the user \"pin\" any prompts, tool calls, or checkpoints they want. Create a join table called PinnedEntity with a column for the entity id, a column for the entity type, a boolean for isActive, and a createAt timestamp.",
+  "Great now create a new tab in the app drawer for accessing your pins. Clicking it show take you to a new page where it fetches the entity that the pin links to and displays it according to what entity type it is. Each folder should have a dropdown where you can collapse or expand to show everything pinned there"
+ ]
+}

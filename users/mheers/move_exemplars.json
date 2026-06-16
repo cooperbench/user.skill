@@ -1,0 +1,25 @@
+{
+ "approve_proceed": [
+  "check the current git changes. I get an error that the container has no CAP_MKNOD that needs to be passed and starts with --device"
+ ],
+ "refine_redirect": [
+  "adjust the \"oc -t\" that it also accepts an docker image reference as parameter to run in a specified container (and not the default one)"
+ ],
+ "new_work": [
+  "the installed skills are not available inside the container. I need those to be merged with the ones installed on the host",
+  "we already have some skill installed (look at the skills folder and how the Dockerfile adds them). I need to add 'npx skills add pbakaus/impeccable'",
+  "into the docker image add vuejs agent skills from https://github.com/antfu/skills"
+ ],
+ "bug_report": [
+  "the audio notification is not send from inside the docker container. fix it in a loop until it works",
+  "check the last changes where we added the notifications. without docker a sound is played. running inside docker I receive the notification on the host, but no sound.",
+  "the last changes made my prompt look broken. run the container yourself, inspect the prompt, adjust the scripts and fix the prompt, build and restart the container until it is fixed",
+  "install \"docker compose\" in the Dockerimage. right now it gives ╰─$ docker compose\ndocker: unknown command: docker compose",
+  "locally in my ~/.config/opencode/opencode.json (mounted into docker) I've added '\"plugin\": [\"@mohak34/opencode-notifier@latest\"]' that uses libnotify (installed on my linux host). when I run opencode with this notification tool inside a container (using './os -t') the notifications do not work",
+  "10.02 E: Unable to locate package docker-compose-plugin\nrun \"make\" yourself until it works"
+ ],
+ "pushback": [
+  "hm, lsusb confirms that the device is there, but my internal code shows Start the container with --device /dev/bus/usb/BUS/DEV:/dev/bus/usb/BUS/DEV",
+  "irread: auto-detect: device 0b48:2003 not found under /dev/bus/usb\n\nStart the container with --device /dev/bus/usb/BUS/DEV:/dev/bus/usb/BUS/DEV"
+ ]
+}

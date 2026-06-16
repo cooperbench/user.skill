@@ -1,0 +1,36 @@
+{
+ "question": [
+  "please make sure if the current implementation is following the best practice of logging in Go.",
+  "how about .claude directory in this repo?"
+ ],
+ "bug_report": [
+  "Recently emacs30.2 is consuming high cpu usage. how can I address that?\n[Image: image/png]",
+  "2. buffer-list-update-hook fires extremely often",
+  "The two GitHub Actions of CI failed  https://github.com/nsega/mcp-obsidian/pull/12\nPlease address them"
+ ],
+ "new_work": [
+  "Walk me through to verify the mcp works as expected",
+  "yes, create the plan first and save it to .claude/plan",
+  "verify if this mcp works as expected",
+  "Ensure lint, tests, build, and ci-jobs pass successfully."
+ ],
+ "refine_redirect": [
+  "upgrade go-sdk to v1.5.0 https://github.com/modelcontextprotocol/go-sdk/releases/tag/v1.5.0",
+  "upgrade go version 1.26.1 to 1.26.2"
+ ],
+ "approve_proceed": [
+  "please add tree-sitter/ to .gitignore . Any thought?",
+  "resume it",
+  "update the README to the latest",
+  "git commit this",
+  "it makes sennse to me. add settings.local.json to .gitignore, and decide on\n  settings.json."
+ ],
+ "pushback": [
+  "Create the pull request first, and proceed with the implementation. \nupdate the plan, git commit and push the chnage step by step when each step is done.",
+  "no.",
+  "I would like to choose  2. buffer-list-update-hook fires extremely often",
+  "Currently, mcp-obisidian server logic is leaving at only main.go. I want to refactor the main logic to meaningful size of logic into the structure by follwoing the Go best practice. Please create the plan and save it at .claude/plan/",
+  "Also, create the pull request first. And update the plan, git commit, and push if each step is done",
+  "update the REAME to the latest"
+ ]
+}

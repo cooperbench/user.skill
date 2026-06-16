@@ -1,0 +1,62 @@
+{
+ "bug_report": [
+  "the mermaid diagram from @docs/architecture.md is not rendered in the astro @website/ . Please use https://github.com/joesaby/astro-mermaid to fix",
+  "I got this error when I tried to install the skf module:  Module directories created\n│\n│\n▲  Failed to parse workflow at /home/armel/Projects/demo/quick/_bmad/skf/workflows/audit-skill/workflow.md: Nested mappings are not allowed in compact mappings at line 2, column 14:\n│\n│  description: Drift detection. Forge tier: structural. Deep tier: full.",
+  "My @website/ is not aligned with the website reference @temp/bmad-method-test-architecture-enterprise/website/. Take a deep look at the documentation layout and compisitions. Every links should point on a valide existing doc.",
+  "read the bug we described in @installation-bug.txt . See @temp/BMAD-METHOD-main/ reference that also generate IDE specfic configurations.",
+  "the app is ready up at http://localhost:4321/. Why I have a different layout when I switch to dark mode?",
+  "The app is live at http://localhost:4321/architecture/. When I click on the diagram, it is shown too small.",
+  "you did not test it in light mode"
+ ],
+ "question": [
+  "is it important to add `nodeJs` as a prerequisite accross all docs ( @README.md , @docs/ @_bmad-output/planning-artifacts/medium-article-skf.md )? It is need to run npx command where is needed.",
+  "# BMAD Workflow Validation Report: `export-skill`\n\n**Validation Date:** 2026-03-21\n**Workflow Path:** `/home/armel/Projects/OSS/bmad-module-skill-forge/src/workflows/export-skill/`\n**Validator:** BMAD Workflow Validation Agent (independent re-validation)\n**Standards Reference:** `/home/armel/Projects/OSS/bmad-module-skill-forge/_bmad/bmb/workflows/workflow/data/step-file-rules.md`",
+  "# BMAD Workflow Validation Report: `create-skill`\n\n**Workflow:** create-skill\n**Path:** `/home/armel/Projects/OSS/bmad-module-skill-forge/src/workflows/create-skill/`\n**Date:** 2026-03-21",
+  "review the changes for any breaking changes, or missing impact.",
+  "@src/ . Read https://github.com/armelhbobdad/bmad-module-skill-forge/issues/12",
+  "Does it adhere to our official bmad module template structure?",
+  "do we need to update the @website/src/content/docs?",
+  "@src/workflows/",
+  "## BMAD Workflow Validation Report: `src/workflows/export-skill/`\n\n**Scope reviewed:** workflow.md, all 6 step files in steps-c/, data/snippet-format.md, data/managed-section-format.md, workflow-plan-export-skill.md, validation-report.md (existing). All files read in full.",
+  "# BMAD Workflow Validation Report: `create-stack-skill`\n\n**Validator:** Code Review Agent\n**Date:** 2026-03-18\n**Scope:** All 16 files in `src/workflows/create-stack-skill/`",
+  "# BMAD Workflow Validation Report: `src/workflows/brief-skill/`\n\nReviewed all 10 files in the workflow directory: `workflow.md`, `workflow-plan-brief-skill.md`, `validation-report.md`, `steps-c/step-01-gather-intent.md`, `steps-c/step-02-analyze-target.md`, `steps-c/step-03-scope-definition.md`, `steps-c/step-04-confirm-brief.md`, `steps-c/step-05-write-brief.md`, `data/skill-brief-schema.md`, `data/scope-templates.md`."
+ ],
+ "new_work": [
+  "Since our SKF module is not part of the BMAd ecosystem yet, we can only install is as a standalone using npm package (npx bmad-module-skill-forge install). Please update @README.md and @website/src/content/docs",
+  "can we publish our package to npm? You can use the memory plugin to see what works in the past.",
+  "It will usefull if we can explicitly add for pro users who what to test and compare skills generated for the same target but with different tier. what do you think?",
+  "the repo has the \"About\" section. Is there a way to add the doc link just below using gh command?"
+ ],
+ "approve_proceed": [
+  "Deep review the changes from the last 7 commits for any breaking changes, or missing impact and ect...",
+  "commit files from git status",
+  "PM",
+  "# BMAD Workflow Validation Report: `create-stack-skill`\n\n**Workflow Path:** `/home/armel/Projects/OSS/bmad-module-skill-forge/src/workflows/create-stack-skill/`\n**Validation Date:** 2026-03-21\n**Validator:** BMAD Workflow Validation Agent",
+  "E",
+  "all the three in order",
+  "read all changes and commit",
+  "perfect. please commit",
+  "commit and close the issue",
+  "V",
+  "commit",
+  "D"
+ ],
+ "pushback": [
+  "A last fix. The navigation url to the page \"How It Works\" is /architecture. It is not aligned with the semantic of the other pages",
+  "Actually, we use `qmd` for deep tier. We should brainstorming on https://github.com/cocoindex-io/cocoindex-code as an alternative tool for deep tier in case it provides better code understanding and accuracy needed for complexe worflow like Stack Skill. Let's go to the party mode for multiple point of views.",
+  "IT IS CRITICAL THAT YOU FOLLOW THIS COMMAND: LOAD the FULL {project-root}/_bmad/core/workflows/party-mode/workflow.md, READ its entire contents and follow its directions exactly!",
+  "1. What is the best move?\n2. Deduce the best answers\n3. Yes",
+  "yes",
+  "@src/",
+  "Before we open a PR. Run a deep review to make sure we did forget missing impact, etc...",
+  "@src/ . I see in @README.md we have the possibility to compile skill with quick mode on demand. Can we also compile skills using the forge or deep modes on demand without breaking changes? the current version automatically set the tier during the setup forge workflow (verify this assertion).",
+  "Look at @_bmad-output/todo/skf-issues-2026-03-20.md. We will need the party mode to carfully work on those issues without breaking changes, missing impacts or regressions.",
+  "you said \"Skill Forge (SKF) — Part of the BMad Method ecosystem.\" from the @README.md . It is not the case for the moment.",
+  "some links from the home page does not works. For example, from the home page, we have \"https://armelhbobdad.github.io/getting-started/\" instead of \"https://armelhbobdad.github.io/bmad-module-skill-forge/getting-started/\"",
+  "IT IS CRITICAL THAT YOU FOLLOW THIS COMMAND: LOAD the FULL {project-root}/_bmad/bmb/workflows/module/workflow-edit-module.md, READ its entire contents and follow its directions exactly!"
+ ],
+ "refine_redirect": [
+  "## 7. docs/agents.md — Light Edit\n\n- Add opening sentence: \"Ferris is the AI agent that runs all SKF workflows.\"",
+  "review the changes for any breaking changes, or missing impact and ect..."
+ ]
+}

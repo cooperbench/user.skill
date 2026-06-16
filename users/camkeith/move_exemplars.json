@@ -1,0 +1,69 @@
+{
+ "bug_report": [
+  "in the about page, the cards for the classes and other sections overlap. Fix this behavior on mobile.\n[Image: image/png]",
+  "ya, it still doesn't change the speed of the carousol",
+  "it still doesn't change the speed",
+  "[Image: source: REDACTED 2026-02-26 at 10.59.34 PM.png]",
+  "Yes, it is running, but I still don't see the changes on the home page cam code",
+  "[Image: source: REDACTED 2026-02-19 at 9.06.49 PM.png]",
+  "ok I added them, can you check if they're working now",
+  "how about now?\n\n[Image: image/png]",
+  "[Image: source: REDACTED 2026-02-19 at 10.02.14 PM.png]",
+  "if I press a link in the chat, it doesn't send me to the correct page (just home page)?\n[Image: image/png]",
+  "[Image: source: REDACTED 2026-02-20 at 6.00.06 PM.png]",
+  "yes, this was added before I rebuilt it"
+ ],
+ "refine_redirect": [
+  "can you change the invoke chatbot to use streaming instead of invoke",
+  "make the github history fit the width of the component better \n[Image: image/png]",
+  "slow down the gallery",
+  "good it works. Let's change the name animatioun to something similar but renders in a more stable way"
+ ],
+ "approve_proceed": [
+  "can you see my superset browser?",
+  "[Image: source: REDACTED 2026-03-06 at 2.31.29 PM.png]",
+  "[Image: source: REDACTED 2026-02-26 at 10.49.39 PM.png]",
+  "[Image: image/png]",
+  "are there any other commands I should include?",
+  "5",
+  "A",
+  "A or B",
+  "maybe combo. Besides my coding philosophy should I include anything else? like my life philosophy? future predictions anything?\n[Image: image/png]",
+  "[Image: source: REDACTED 2026-02-26 at 11.31.24 PM.png]",
+  "continue",
+  "commit and push everything"
+ ],
+ "new_work": [
+  "update my results in golf to show as red if the score is less than the par on that row",
+  "add dates ranges to the project cards",
+  "add a linkedin button in my header next to my name",
+  "the leaky rents at the frontier project should have a github and pdf button\n\nhttps://github.com/ckeith26/flood-exposure-asset-repricing",
+  "how do i connect you to superset with the built in browser feature?",
+  "add dates ranges to the project cards and order them by date finished then date started",
+  "also if I type anything into the website, can the terminal pick that up so I don't have to explicitly click on it?"
+ ],
+ "pushback": [
+  "right now. my projects x contributions number shows the number of commits\n  instead of the number of contributions frmo github. Fix it so they match",
+  "yes",
+  "ok try to access it shouldn't be able to have",
+  "wait what happened to my develop branch?",
+  "yes check previous sessions",
+  "Let's add some more commands in my cam code. I think it would be cool if we included a /skills command haha. Look at all of my skills on LInkedin: https://www.linkedin.com/in/cam-keith/details/skills/",
+  "all of them sound good.",
+  "Let's add some more commands in my cam code. I think it would be cool if we included a /skills command haha. Look at all of my skills on LInkedin: <PRESIDIO_ANONYMIZED_URL>",
+  "make it bigger",
+  "the bottom of the image should be in line with the paragraph and the to pof the image should line up with Golf\n[Image: image/png]",
+  "[Image: source: REDACTED 2026-02-27 at 12.08.10 AM.png]",
+  "where should this photo go?\n[Image: image/png]"
+ ],
+ "question": [
+  "is this token read only?",
+  "where should my coding philsophy go in my app?",
+  "what is this one?\n  1. ACM Verification (this is the one blocking you)\n  - Type: CNAME                                       \n  - Name: _d65db6b38391cb206ff88f371c803f0f      \n  - Content: _981c3f2ec5d0d4ebe69b3dd7d3ec1353.jkddzzt\n  szm.acm-validations.aws."
+ ],
+ "interrupt": [
+  "no, just commit and push everything",
+  "commit everything by each feature and push to main",
+  "commit this"
+ ]
+}

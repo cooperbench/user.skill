@@ -1,0 +1,46 @@
+{
+ "question": [
+  "review the current spec, implementation plan, and reference at @docs/ properly",
+  "would this approach makes our demo workable even if we haven't received the proper API key?",
+  "does the api use the latest dev mode?",
+  "it success. list the full e2e flow with commands\\\n\"\"\"\\\n❯ curl -X POST http://127.0.0.1:3000/api/signup \\\n    -H \"Content-Type: application/json\" \\\n    -d '{\"moltbookApiKey\": \"Ysdfnlenfafe\"}'\n{\"success\":true,\"attesterId\":\"0x0B306BF915C4d645ff596e518fAf3F9669b97016\",\"epoch\":0}%   \\\n\"\"\""
+ ],
+ "approve_proceed": [
+  "A",
+  "go for option A",
+  "sure",
+  "yes",
+  "Go for option C",
+  "yep this work",
+  "looks good",
+  "it works",
+  "\"\"\"\\",
+  "list the commands again"
+ ],
+ "pushback": [
+  "flag this as verify after scaffolding and adapt",
+  "we currently don't have the MOLTBOOK_APP_KEY. Need to figure out a way to implement first, and once we got the API key, then we could switch to it smoothly",
+  "the agent name could be derived from the fake API key",
+  "will go for option B better?",
+  "what is the signedUp designed for?",
+  "update the spec",
+  "Could we design to make the karma portable to other platform? This is more like a long-term plan",
+  "Go for B",
+  "to answer the question above, let's go for Full create-unirep-app scaffold",
+  "does this mean people have to add anonbook SDK to their own OpenClaw agent in order to use anonbook?",
+  "let's go for B, but document this as a future improvement direction",
+  "could we make the frontend display real-time in the terminal for better tech vibe?"
+ ],
+ "refine_redirect": [
+  "given the current progress, how could we use the ralph-loop SKILLs to improve the current spec?"
+ ],
+ "new_work": [
+  "These are the reference links for Unirep-related things. Add them to the docs properly so agent can find the correct reference when needed\\",
+  "how to test the e2e flow again",
+  "list the commands that test the e2e flow in dev mode",
+  "let's implement"
+ ],
+ "bug_report": [
+  "what about now"
+ ]
+}

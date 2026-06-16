@@ -1,0 +1,90 @@
+{
+ "refine_redirect": [
+  "fix lint errors",
+  "can you fix:   1. Critical: Duplicate Code (~55 LOC)\n\n  Three timestamp functions are fully duplicated between resume.go and manual_commit_rewind.go:\n  - getLastTimestampFromFile()\n  - getLastTimestampFromBytes()\n  - parseTimestampFromJSONL()",
+  "I want to invert that flag logic. Now it is no-telemetry, by default false. I want to be called just telemetry and if true means telemetry enable, by default should be true otherwise the user specify a different value.",
+  "Right now, we are prefixing the entire session id with date+agent session. I think this is unstable so there is no way to know the entire session id with just agent session id.\nWhat alternatives do you propose me ?",
+  "remove the 'choose strategy' step from entire enable\n\ndocument the alternative (use --strategy flag) - in README / getting started docs",
+  "fix lint issues",
+  "The comment on lines 212-213 is outdated. It still refers to the old function name SessionMetadataDirFromEntireID and mentions \"date prefix like 2026-01-12-abc123\". Based on the PR changes and the function rename, session IDs are now used directly without transformation, so this comment should be updated.",
+  "print shadowBranch into message only if hasShadowBranch is trye",
+  "update the expectation description to match with the assertions",
+  "fix lint",
+  "## Files to Modify\n\n| File | Changes |\n|------|---------|\n| `cmd/entire/cli/checkpoint/checkpoint.go` | Add `CheckpointSummary`, `SessionFilePaths` structs |\n| `cmd/entire/cli/checkpoint/committed.go` | Rewrite `writeStandardCheckpointEntries`, update `ReadCommitted`, `readArchivedSessions` |\n| `cmd/entire/cli/strategy/manual_commit_logs.go` | Update `GetSessionContext` to use sessions map |",
+  "find unused code after all this refactor"
+ ],
+ "new_work": [
+  "fix tests",
+  "if my api key is \"REDACTED\" give me the build command to have a binary ready to send events",
+  "Right now, to disable telemetry we use: Opt-out via ENTIRE_TELEMETRY_OPTOUT=1 environment variable\n\nI would suggest we add this also to entire enable. We would like to gather some metrics, are you ok with that? something like that. I would be open about it and let people opt out. A bit like the Apple does.",
+  "We should add the agent name to any logging",
+  "Implement the PostHog async analytics solution following POSTHOG_ASYNC_PLAN.md",
+  "I do want want to get notify If I run any entire command to see if current version is not the latest one, and print suggestion to user to brew update entire",
+  "if we catch any error unmarshaling session data we should, at least, log a warning message with the content",
+  "implement the printWrngAgentError, follow same pattern as printMissinAgentError",
+  "add a test that checks we are sending the full command",
+  "run the test",
+  "can we also add a shortform -c command for ./entire explain --checkpoint?",
+  "do we have a test for this?"
+ ],
+ "bug_report": [
+  "I am having problems if I start a claude session inside a folder while entire is enabled, becuase either is auto or manual mode, it is not creating checkpoints neither shadow branches. It only works if the claude session is started at root git folder. why ?",
+  "Right now we are tracking the token usage for every checkpoint created as well as the last TranscriptUUIDAtStart and TranscriptLinesAtStart. It seems to work all right only if auto-commit strategy is selected.",
+  "Low Severity\n\nThe error from loadSettingsFromFile() is wrapped with \"reading settings file:\" at line 239, then wrapped again with the same prefix at line 84 in LoadEntireSettings(). This produces duplicate error messages like \"reading settings file: reading settings file: permission denied\" when file read errors occur, making the output confusing for users.",
+  "The TranscriptLinesAtStart and TranscriptIdentifierAtStart fields were added to the PromptAttribution struct but are never populated anywhere in the codebase. When PendingPromptAttribution is set in calculatePromptAttributionAtStart (manual_commit_hooks.go), these fields remain at their zero values. These fields should either be populated from the pre-prompt state when the attribution is calculated, or they should be removed if they're not needed in PromptAttribution.",
+  "Q: why is `entire explain` showing no checkpoints here on the main branch?",
+  "fix mise test",
+  "fix the compilation errors, we are deleting all the references of multiple strategies, right now, only manual-commit is the one",
+  "fix mise run test",
+  "mise run test:ci is failing, fix it",
+  "mise lint is broken",
+  "can you run simplifier again and report it's findings",
+  "hmm, also we seem to be missing checkpoints again, this explain is back to 19 instead of 26..."
+ ],
+ "question": [
+  "what is the output if you run \"entire status\" ?",
+  "why this method does only work on unix and not windows?",
+  "update method documentation with what is it doing right now",
+  "when was that added? the tracking agent ?",
+  "what are the pros and cons of using build files or compile on the fly ?",
+  "What is the difference between LoadEntireSettings and loadSettingsFromFile",
+  "yes, that makes sense. and GetRewindPoints _is_ strategy specific yes?",
+  "if we extend that to 50 how many do we see?",
+  "I mean, it's nice to be able to do an explain on it directly and get the same prompt context",
+  "can you summarize me the changes to soph/improved-shadow in a few sentences",
+  "we have a transcript_path inside state. how is this filled?"
+ ],
+ "approve_proceed": [
+  "okay, so we were working on ENT-109 (linear) on this branch... I have lost track of where we're up to.",
+  "commit it",
+  "create a pr, keep description breif, just what we have done.",
+  "does git config have it? is that something we can get with go-git?",
+  "how about the changes in common?",
+  "commit this",
+  "okay, let's commit",
+  "commit this - but let's test out making some changes after",
+  "yes please",
+  "<bash-input>git branch -v</bash-input>",
+  "<bash-stdout>* main 706e2e3 Merge pull request #137 from entireio/update-security-email</bash-stdout><bash-stderr></bash-stderr>",
+  "<bash-stdout>/Users/alex/workspace/tmp/cli</bash-stdout><bash-stderr></bash-stderr>"
+ ],
+ "pushback": [
+  "ok, let's clean the code then, we do not longer need to check and a do a fallback of agents as it is always there.",
+  "All test cases use the --force flag, which bypasses the interactive confirmation prompt. There's no test coverage for the interactive confirmation path (lines 52-83 in manual_commit_reset.go) where the user is prompted to confirm the deletion. Consider adding a test that verifies the confirmation prompt works correctly and that canceling the operation leaves the shadow branch and sessions intact.",
+  "the command string send to posthog only contains the last command of cobra. if \"entire session list\" is sending \"list\" it should send \"entire session list\"",
+  "All good, but, I would replace ENTIRE_TELEMETRY_OPTOUT with the preferences stored at settings files",
+  "let's implement options 2",
+  "I want to inform about telemetry only first time user calls entire enable.",
+  "do the critical duplicate code",
+  "1. Inline getFirstPromptPreview() (trivial)",
+  "I would add a specific section inside README.md with the most important flags available at entire enable command.",
+  "😭\n\nso basically we'd move git_operations into it's own package, and move any git specific things from strategy/ into that package as well?",
+  "Ideally we would see all checkpoints (and in the manual strat, the shadow-only 'steps') when we call explain - regardless of which strategy created them",
+  "- let's drop the '-' before each commit\n- we can also drop the '\"' around (no prompt)"
+ ],
+ "interrupt": [
+  "push it",
+  "first commit the current changes",
+  "commit all the changes, push the branch and create a PR"
+ ]
+}

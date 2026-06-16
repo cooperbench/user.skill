@@ -1,0 +1,53 @@
+{
+ "approve_proceed": [
+  "what can you do?",
+  "commit",
+  "what tools you think are useful for you?",
+  "should we update the docs to let the model know how to build and use?",
+  "should we update .claude files ?"
+ ],
+ "question": [
+  "hi ned, what can you do in this framework?"
+ ],
+ "bug_report": [
+  "the scroll lock on canvas should lock the scroll in the position the user left and not move to 0,0",
+  "when i move things in canvas, the new position is not saved",
+  "when ned answers or any error happens, its now showing automatically via turbo, only when i refresh manualy",
+  "Agent error: Agent exited with code 1: Error: When using --print, --output-format=stream-json requires --verbose",
+  "Computer use error: No such file or directory - xdpyinfo",
+  "Agent error: Agent exited with code : {\"level\":\"warn\",\"message\":\"[BashTool] Pre-flight check is taking longer than expected. Run with ANTHROPIC_LOG=debug to check for failed or slow API requests.\"}",
+  "when i click in the notification bell does not open anything it seems to subscribe mutiple times to notifications,  TypeError: Cannot read properties of undefined (reading 'renderMethod')\n    at FrameView.render (turbo.es2017-esm.js:1490:79)\n    at async #loadFrameResponse (turbo.es2017-esm.js:6001:7)\n    at async FrameController.loadResponse (turbo.es2017-esm.js:5824:11)\n    at async FrameController.requestSucceededWithResponse (turbo.es2017-esm.js:5898:5)",
+  "now when i click in the bell it makes a request to notifications that is returning html but the dropdown does not appear",
+  "still not working as expected. the scroll should lock in the position, keeping the zoom and canvas placement and scroll vertically",
+  "why the agent wasnt able to create?",
+  "still everything too bright look\n[Image: image/png]",
+  "Agent error: Agent exited with code 1:\n{\"type\":\"result\",\"subtype\":\"success\",\"is_error\":true,\"duration_ms\":3328,\"duration_api_ms\":0,\"num_turns\":1,\"result\":\"Failed to authenticate. API Error: 401 {\\\"type\\\":\\\"error\\\",\\\"error\\\":{\\\"type\\\":\\\"authentication_error\\\",\\\"message\\\":\\\"OAuth token has expired. Please obtain a new token or refresh your existing token.\\\"},\\\"request_id\\\":\\\"req_011CYDeeDJtRQdnchwFd931K\\\"}\",\"stop_reason\":\"stop_sequence\",\"session_id\":\"2941d8db-ae20-5dd1-8bf0-8f51a3cb15bd\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\"modelUsage\":{},\"permission_denials\":[],\"uuid\":\"519d12ef-d941-4d9a-88e3-3912fe091dbf\"}"
+ ],
+ "new_work": [
+  "create a page that shows the scheduled jobs and skills",
+  "Web fetch / HTTP requests — So I can pull external data (APIs, RSS feeds, weather, news) from within MCP tools, not just from the outer Claude Code layer. as skill or tool?",
+  "any test to add?"
+ ],
+ "refine_redirect": [
+  "change the app colors to terminal green instead of purple",
+  "add better error logging so I can see the actual stderr"
+ ],
+ "pushback": [
+  "remove the notifications page. the bell should only show a dropdown with the latest 5 notifications with a button below to loadmore (paginate? use pagy gem if paginates)",
+  "lets create a web_fetch tool just in case we need to create a skill that fetches data so we use that tool exclusively, makes sense?",
+  "update the memory prompt to when use wants to schedule something it should use the frameworks tool to schedule",
+  "in two minutes remind me of turn off the fire\nAI 10:40 PM\nAgent error: Agent exited with code 1:",
+  "make a bit darker green",
+  "in lightmode can we make the white less white? its too strong in the eyes",
+  "the drag handle is in the wrong place, should be on top bar of widget, and the drag should work only if i drag the drag handle not in the entire widget. because widgets may have buttons and clickable stuff",
+  "[Image: image/png]",
+  "the drag handle is in the wrong place, should be on top bar of widget, and the drag should work only if i drag the drag handle not in the entire widget. because widgets may have buttons and clickable stuff\n[Image: image/png]",
+  "just need to align the handle a lil bit to the top and make 6 dots instead of 3",
+  "3 dots only, but the rest is nice \n[Image: image/png]",
+  "and lets update to be subscribed only to current canvas page, not all pages"
+ ],
+ "interrupt": [
+  "commit this",
+  "it works now, commit this"
+ ]
+}

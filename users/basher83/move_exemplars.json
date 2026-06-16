@@ -1,0 +1,47 @@
+{
+ "new_work": [
+  "Review mise settings and validate mise ci works as designed",
+  "Hey Claude. I need to add a new plugin to my marketplace can you help me?",
+  "Awesome. Can we now run a registration to get an account loaded in there?",
+  "great, lets update the repo docs and annotate the fields that are expected in the proxy. might be useful to document a sample creds.json somewhere as well and the note for oauth consent page issue check the specs thats likely a solid place for this",
+  "cool, have we done a curl test through the proxy for a hello world to haiku?",
+  "document the proper test path",
+  "lets verify ci cleared"
+ ],
+ "approve_proceed": [
+  "I'm working remotly and have ssh'ed in here. the system uses 1password to manage ssh keys so none are on disk. are we able to git pull working around this current limitation",
+  "Perfect. That sounds like a great approach.",
+  "make sure to close out any port fwds that were opened",
+  "**Begin with Phase 1: Discovery**",
+  "pls do",
+  "great, let commit all local changes (entire files too, has its own gitignore)",
+  "send it",
+  "interesting, can you check it out",
+  "run it, then commit and push",
+  "lets do the gh auth setup-git route",
+  "check rool out"
+ ],
+ "bug_report": [
+  "hmm I click auth button but dont get the redirect to token",
+  "same page stuck\n[Image: image/png]",
+  "[Image: source: REDACTED 2026-02-12 at 9.19.31 AM.png]",
+  "I get stuck here. This is an incognito window.\n[Image: image/png]",
+  "[Image: source: REDACTED 2026-02-12 at 9.26.19 AM.png]",
+  "yeah, fix all 3"
+ ],
+ "pushback": [
+  "hold on, why are you trying to curl through the port fwd? the real test is over tailnet to the proxy",
+  "Sry I wasn't clear, the plugin is already created. You just need to update the marketplace. The one I need to register is https://github.com/basher83/domain-chassis. It's also here on disk if you need to verify the repo structure let me know and I'll add the dir",
+  "you can swap the kubectl auth to the on disk config for the mcp. i think its at ~/.config/kubectl mcp something like that. actually you can see it in ~/.claude/plugins/cache/omni-scale/",
+  "well lets do it",
+  "lets review repo docs and make sure everything is updated properly before we commit it all",
+  "i thought we just fixed that via kustomization.yaml",
+  "isn't the proper fix:  Migrate from configmap.yaml as a resource to configMapGenerator in kustomization.yaml — then any config change automatically gets a new hash suffix, which changes the pod spec, which triggers a rollout"
+ ],
+ "question": [
+  "cool, can you look at the oauth proxy and tell me how it works at a high level",
+  "that is interesting, so the admin api ... how does one interact with that?",
+  "sounds pretty well thought out and implemented. can we see if theres any accounts in there",
+  "ci cleared, check cluster"
+ ]
+}

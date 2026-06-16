@@ -1,0 +1,55 @@
+{
+ "refine_redirect": [
+  "we need to take the favicon files in \"/home/peterc/ccw/apps/frontend/public\" and change their names slightly so that we can bust the online cache. force and update",
+  "ok great now on the landing route page we need to add more top & bottom margin to the headers and cards. they're too close together now",
+  "it looks good for now. on the \"/contact\" route let's go ahead and change the max width to 50% on desktop, and 40% on 4k views",
+  "ok 1 more thing. on mobile on an actual phone, the background image is set to 100vh. we need to set it to 100dvh to account for browser bar"
+ ],
+ "new_work": [
+  "today we're going to work on adjusting the max height on our header cards and our content cards on desktop views. use the penpot mcp server to view the Desktop page. you can view the frame Intro to see the max widths of the header and cards. then we will apply those max width styles to the landing page first.",
+  "great i have updated some of the props to WaterShader.tsx. what we need to do now is make so that we can swap out the colorHighlight based on light/dark themes. light mode will be \"#17A9E5\" and dark mode will be the curent value. let's go!",
+  "also do og-image",
+  "great let's update the agents.md file with how theming works in this project"
+ ],
+ "approve_proceed": [
+  "today we're going to work on issue #27 in this repo. let's make a plan to do it",
+  "okay let's git stash the header changes, then switch to main and pull",
+  "let's commit changes to branch",
+  "great looks good. let's make a new branch, and commit these changes",
+  "◇ ultraplan\nStarting Claude Code on the web…",
+  "The remote ultraplan session produced a plan and is waiting for approval. Tell the user to open https://claude.ai/code/REDACTED to review it.",
+  "make a new branch and commit changes to it",
+  "yes",
+  "great now let's make a pr from docs to main with changes",
+  "great let's go ahead and commit these changes to this branch and make a pr to main",
+  "good 2 go now",
+  "ok good enough for now. make a new branch, and commit changes to it"
+ ],
+ "bug_report": [
+  "today we are working on why we keep seeing the old favicon despite changing it out for the new svg one",
+  "yes it works now. good job. let's spin up chrome mcp and try to debug those console errors",
+  "great, now we need to look at the landing page mobile view. in the subheader only 1 of the emojis gets put on a new line. the other ends up at the end of the text. we want both to be on their own line below the text. only happens on mobile",
+  "already running, port 3000. check with chrome mcp, seems like code changes didn't have much effect",
+  "opened incog window, still doesn't reload favicon",
+  "ok here is what is in the head: <link rel=\"icon\" type=\"image/svg+xml\" href=\"/favicon.svg?v=2\" data-tsd-source=\"/src/components/GlobalLayout/FavIcons.tsx:3:5\">",
+  "ok code works but doesn't seem to be applied in browser. check Yourself with Chrome MCP",
+  "great works well. look into the tanstack devtools error and see what that's about"
+ ],
+ "pushback": [
+  "also change the web-app-manifest files and refs in the webmanifest",
+  "ref in this file but i fixed it: /home/peterc/ccw/apps/frontend/src/lib/seo.ts",
+  "ok try again penpot mcp is working",
+  "we need to adjust the headerPill size to be less than the formCard size. like we did with the rest of the headers",
+  "lets see what would happen if we added the backgroud svgs to the image prop in the shader.",
+  "no it's too wild let's undo those last changes. fallback to when the shader had no image",
+  "switch branches to docs, and then push all the claude and entire files up to that branch",
+  "switch to branch feat-ui-updates-and-styles, pull in changes from main, then pop the stash",
+  "yes refractor",
+  "i forgot to upload new icons. i have added them, they work. now can we get the favicon to swap out for a different one in dark mode",
+  "\"apps/frontend/public/favicon-dark.png\"",
+  "add seo.ts & meta.ts to this pr"
+ ],
+ "question": [
+  "let's look at \"apps/frontend/src/componets/Header/Header.tsx\". Do we need to have 3 different useEffects in 1 component?"
+ ]
+}

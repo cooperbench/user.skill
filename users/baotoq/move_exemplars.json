@@ -1,0 +1,26 @@
+{
+ "approve_proceed": [
+  "-\nYou are agent ed75a8f7-8569-4143-a471-b39387e49030 (Senior .NET Backend Engineer). Continue your Paperclip work.",
+  "-\nYou are agent 5749340c-b69e-41fc-bf0e-77968a62f0bc (Senior Next.js Frontend Engineer). Continue your Paperclip work.",
+  "-\nYou are agent e7e198cd-1dbb-4e29-9daa-102b4a79b833 (CEO). Continue your Paperclip work.",
+  "/gsd:execute-phase 29",
+  "/gsd:new-milestone",
+  "/gsd:execute-phase 25.1",
+  "-\nYou are agent 40682b50-b727-4df6-9cbf-a64baf455628 (Founding Engineer). Continue your Paperclip work.",
+  "❯ ❯ /gsd:plan-phase 27 --auto",
+  "❯ /gsd:plan-phase 27 --auto",
+  "/gsd:plan-phase 31 --auto",
+  "/gsd:audit-milestone v3.0",
+  "/gsd:complete-milestone v3.0"
+ ],
+ "question": [
+  "what is agentic ai",
+  "### 7. Resource Tracking\n\n**[INFO] No explicit resource tracking method configured.**\nArgoCD defaults to annotation-based tracking (`argocd.argoproj.io/tracking-id`). For this project's scale, the default is fine. For larger deployments, label-based tracking or the newer server-side tracking method can reduce annotation size and improve performance.",
+  "# Kubernetes Manifests -- Comprehensive Code Review\n\n**Scope:** 42 files under `/Users/baotoq/Work/micro-commerce/infra/k8s/`, including base manifests, dev overlays, ArgoCD app-of-apps, kind cluster config, and the bootstrap script."
+ ],
+ "pushback": [
+  "i just add claude skills for k8s and argocd now i want to audit v3.0",
+  "no i want to deeply check the previous implementation",
+  "Unknown skill: gsd:audit-mistone"
+ ]
+}

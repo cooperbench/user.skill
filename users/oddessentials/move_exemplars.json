@@ -1,0 +1,61 @@
+{
+ "new_work": [
+  "Alright, welcome back. Time to close out this branch. We have to carefully review the spec and plan first so you have a big picture view of the goal. Then, move forward with the remaining tasks up to the end of PHase 7.",
+  "Now do a thorough review again. Remember the goal of this branch. We are aware of the 100 python any violations. The important thing to look for is if\n  our quality checks have parity between local and ci and that our quality checks prevents any new violations.",
+  "### 5. NO BARE EXCEPTION CATCHES (`except:`)\n\n✓ Verified with grep: 0 bare `except:` clauses found",
+  "Do we have the checks in place so that this code repo no longer will allow linting warnings or type warnings or lint errors or type errors in both ts and python?",
+  "When implementation is complete will our CI gates match our local gates and our projecdt be completely clean of any types and warning in all ts and python?",
+  "Verify that adding \"BREAKING TASK CHANGE:\" to out commit message will pass the CI gate, \"task-major-guard\". It says it will, but verify this by the code. https://github.com/oddessentials/ado-git-repo-insights/actions/runs/23878398481/job/69626308441?pr=231",
+  "I thought the problem was more around how long our full test suite takes to run",
+  "Super, I can smoke test this using the local cli loaded with the synthetic data, right? What would that commmand be? Similar to this one I use for prod data: ado-insights stage-artifacts --org oddessentials --project oddessentials --pipeline-id 15 --pat $env:PAT --out ./run_artifacts --serve --open"
+ ],
+ "approve_proceed": [
+  "Howdy! We are going to pick up on the branch where we left off. Do you recall the P2 that must be fixed?",
+  "Please verify the unstage changes (.md files) are no longer needed and we can delete them",
+  "/review current branch",
+  "Do you recall where we left off on this commit? OUr session was interupted",
+  "Howdy, we made some incredible progress on the current branch we are on but we still have some more work to do. Can you catch up quick and let me know when you're ready?",
+  "However, this session must start with deep research of the current issues that will need to be closed and planned for https://github.com/oddessentials/ado-git-repo-insights/issues/211. Once the appropriate research is complete, run /speckit.specify and outline a high-level specification I can review before planning.",
+  "Howdy, do you recall where we wanted to pick up from last session?",
+  "Do you have access to teamcreate in the env?",
+  "Hey, do you remember where we left off last session by chance?",
+  "delete this branch specs/040-fix-ci-noise-floor/. This spec is no good.",
+  "Sorry, you're right, proceed as you planned",
+  "Got it. Proceed"
+ ],
+ "question": [
+  "Howdy. We are currently churning on a very complex branch. Review it and get familiar. Then let me know when you understand our goals.",
+  "The current branch we are working on is very large. Please review it before we begin with the final phase.",
+  "Welcome back. We're now going to pick up on this branch where we left off. Please review the current changes on this branch and then review what is remaining of Phase 7: mypy Extension + Type Cleanup. Carefully review tasks T057-T065 in particular. That is where we'll be focusing first.",
+  "Can you deep dive where extension/run_artifacts/ came from?",
+  "Carefully review our deep use of typescript in this code repository and the related third party dependencies and carefully review these following two issues to determine if they should be handled together or one at a time. If the later, which one first? https://github.com/oddessentials/ado-git-repo-insights/issues/223 https://github.com/oddessentials/ado-git-repo-insights/issues/222",
+  "Carefully review the invariant and constitution of this repo and let me know when you understand the high professional enterprise grade standards. Then we will begin work.",
+  "Before committing, help me understand the Node 22 thing. Do we currently maintain and engine properly in our package.json?"
+ ],
+ "bug_report": [
+  "https://github.com/oddessentials/ado-git-repo-insights/actions/runs/23574696309/job/68644515503?pr=199  Carefully review why this check failed in CI and we didn't catch it locally first. /plan a fix that I can review thoroughly.",
+  "The current tree already routes version lookups through a shared resolver, so I’m reading that resolver and the new tests rather than assuming the regression is\n  fixed just because importlib.metadata.version() disappeared from cli.py. I also want to confirm the precedence rules still behave correctly in editable installs\n  and in built distributions?",
+  "mypy failed in ci",
+  "When you say \"host\" what are you referring to? Becaue I am seeing this problem play out in different browser, in different organizations.",
+  "<task-notification>\n<task-id>b5p3lel6y</task-id>\n<tool-use-id>REDACTED</tool-use-id>\n<output-file>C:\\Users\\petep\\AppData\\Local\\Temp\\claude\\E--projects-ado-git-repo-insights\\65d63295-a03f-4e20-b60e-4217deebcb05\\tasks\\b5p3lel6y.output</output-file>\n<status>failed</status>\n<summary>Background command \"Run Python tests from repo root\" failed with exit code 1</summary>\n</task-notification>",
+  "Can you explain this? [pre-push] push blocked: CRLF line endings found\n[pre-push] Fix: run `git add --renormalize .` after checking .gitattributes\nerror: failed to push some refs to 'https://github.com/oddessentials/ado-git-repo-insights.git'",
+  "\"Known risk: The CI parity audit found 3 critical gaps (ruff not enforced locally, mypy only at pre-push, docs parity missing locally) plus several HIGH/MEDIUM gaps.\n  These are systemic QG-35 violations.\" Is this sometihng you read somewhere or are these verified findings?",
+  "Do not make code changes. Review the staging changes for potential bugs.",
+  "Super. Can you determine if there are any similar bugs of this class in the code base?",
+  "### 4. PYTHON SUPPRESSIONS - NONE FOUND\n\n✓ No `# noqa` comments in src/ (found only in tests/ as test data)\n✓ No `# type: ignore` comments in src/\n✓ No `# pylint: disable` comments in src/\n✓ No `# ruff: noqa` comments in src/\n✓ No `per-file-ignores` in pyproject.toml"
+ ],
+ "pushback": [
+  "Critical: do not silently swallow Exception in __init__.py. Catch only the expected version-resolution failures, because a broad catch can hide a real bug in the new resolver and create more churn later.",
+  "answer me before committing",
+  "Review the unocommitted changes. Is this the right idea?",
+  "wait what? Revert what ever you just did and do not make any code changes unless i givey ou permission",
+  "I'm not sure I agree with this finding though. In practice, given the current setup, if I run \"pnpm run package:vsix:dev\" is produces a new vsix that I can upload to marketplace and it increments the version of the package produced. So it does seem to work fine. Are we overlooking something?",
+  "Are we able to modify dev-overrides.json so that when I run pnpm run package:vsix:dev it allows me to publish the extension to https://marketplace.visualstudio.com/manage/publishers/OddEssentials-Dev instead of https://marketplace.visualstudio.com/manage/publishers/OddEssentials. However, the catch is that last time this broke our Azure DevOps \"Preview Features\" FeatureFlag, essentially making the dashboard impossible to flag on.",
+  "No code changes until we plan this out better. Do you see the problem with what we just did?",
+  "The deletion is fine as long as this will continue to work on all OS's. I do not want some shit where the user doesn't have python installed so all checks silenty fails or something insane like that",
+  "What the fuck do you think?",
+  "Now please commit these naunces to memory and, more importantly, record them effectively in LOCAL_CI_PARITY_INVARIANTS.md so it never trips us up again",
+  "hold up. Wtf is with the branch name?",
+  "Yes, but proceed very carefully. There is no need to rush it. Ensure we aren't violating any invariants or the spirit of them"
+ ]
+}

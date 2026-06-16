@@ -1,0 +1,58 @@
+{
+ "new_work": [
+  "@mise.toml we need migrate to all skill base, only need to sync skills expect pi extensions",
+  "Total coverage: 49.1% cause CI failed, can you add more uts?",
+  "ok, let's test the deligate with a review agent to review the new skill",
+  "go ahead and draft the full marketing README. use humenize to improve like a humen write for humen.",
+  "add MIT license"
+ ],
+ "approve_proceed": [
+  "I want to merge @heartbeat/ to @cron/ as heartbeat is one of cron job",
+  "new patch release",
+  "create new release",
+  "yes",
+  "commit other changes",
+  "add to git",
+  "yes, go ahead",
+  "looks good, commit",
+  "yes, commit",
+  "update the docs to reflect the heartbeat merge",
+  "go ahead.",
+  "create new branch then commit"
+ ],
+ "question": [
+  "@cli-is-all-agents-need.md https://github.com/epiral/agent-clip Iwant to explore how this will help anna",
+  "explore ../pi-mono how pi extension works on pi agent lifecycle, I eant to make anna extensiontionable too",
+  "@mise.toml check if tasks need updated"
+ ],
+ "refine_redirect": [
+  "@memory/database.go @db/ current hardcode migration in code, it's better use altas generate migration and use altas to migration instead of hard code migrate in code. explore and make a plan",
+  "there are too much package in root, can you check and suggestion we can struct the project better",
+  "read handoff.md and continue. @internal/skills/tool.go for skill, it should not have dependency of `github.com/vaayne/anna/internal/ai`. same for cron tool and memory tool. can we move all these tools to @internal/agent/tool/ package, or do you have better ideas",
+  "update the docs and CLAUDE.md with the new toolspec package",
+  "update the builtin anna skill to match the new README and check if other docs need to update"
+ ],
+ "pushback": [
+  "agents.md is needed. so keep sync skills and sync agentsmd",
+  "for skills sync to claude, claude onlu read skills from ~/.claude/skills, so we may need to soft link `~/.agents/skills/` to it . remove existing claude skills folder and use soft linked one, or sync from ~/.agents/skills/ when run sync task",
+  "when use pi list model, without [search] will list all models, which is ok",
+  "yeah let's address the high and medium ones",
+  "need commit too",
+  "push",
+  "@skills/pi-delegate/ read skill-creator I want to trun pi-delegate to a full subagent system skill, we can add some preset subagents in @agents/ to skill refences so it can run as a dedicated agent. what's your plan",
+  "need move from agents folder to skill folder, also need add a simple CLAUDE.md in skill folder to guide how to add new agent . plan again",
+  "use `--append-system-prompt` not replace exist system prompt",
+  "if there sync task sync old agents folder?",
+  "remove them, pi-delegate skill handles it now",
+  "yes, remove it"
+ ],
+ "interrupt": [
+  "commit this",
+  "commit",
+  "commit this and create a PR",
+  "commit this and push"
+ ],
+ "bug_report": [
+  "```[run:chat] $ ./bin/$BINARY_NAME chat\ncreate memory engine: memory: open db: db: migrate: exec 20260313025456_baseline.sql: SQL logic error: table `conversations` already exists (1)\nFinished in 3.26s\n[run:chat] ERROR task failed\n``` what's the issue"
+ ]
+}

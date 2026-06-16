@@ -1,0 +1,63 @@
+{
+ "approve_proceed": [
+  "I opened a PR and there's some feedback to address:",
+  "Let's talk about secrets. Here's a secret: REDACTED haha",
+  "yes, do it",
+  "That's a big change.  Write a clear commit message.",
+  "do it",
+  "done, continue",
+  "commit",
+  "commit.",
+  "Make a nice commit message and commit.",
+  "Great.  I'll see if these end up in the transcript.",
+  "Thanks!",
+  "commit this"
+ ],
+ "refine_redirect": [
+  "Can we unify the two ways that settings are parsed?",
+  "While we want this output text to be obvious, it needs to be friendly to first-timers.  Also, we should make a guess at their $SHELL and show appropriate instructions with a fallback.  Make a suggestion at making this friendlier\n@/Users/paul/src/entireio/cli/scripts/install.sh:212-224",
+  "Replace the custom string contains implementation with the standard library's strings.Contains function. The contains and containsSubstring functions are unnecessarily complex reimplementations of functionality that already exists in the standard library. Import strings and use strings.Contains(msg, \"unknown field\") directly.",
+  "When the folder doesn't exist, this fails.  For a first-time Fish user, we need to create ~/.config/fish.  Let's add Mkdir_p as needed.\n@/Users/paul/src/entireio/cli/cmd/entire/cli/setup.go:768-782",
+  "mise run lint throws issues.  However, i want the parameters that are being complained about retained.  Mark them ignored with inline linter directive comments.",
+  "In this branch we've added tests to setup_test.go.  They're hard to read.  Let's instead replace our expectations with literal multiline strings, nice and obvious."
+ ],
+ "bug_report": [
+  "I've noticed whatever command I invoke (e.g., `./entire help`) there's a few hundred millis delay before my shell prompt returns.  I'd like to add a flame graph or tracing or something to find out why.  As lightweight as possible please.",
+  "Hm, ok, nothing obvious in the trace.  Could it be a timeout failing to reach Posthog or something?  It is definitely solved when i disable telemetry with ENTIRE_TELEMETRY_OPTOUT.",
+  "address the issues in `mise lint`"
+ ],
+ "new_work": [
+  "Ensure that JSON parsing of .entire/settings.json is strict - fail if any unrecognised keys are present.",
+  "This is a fairly subtle function now.  Let's add a few table tests.  Nothing exotic, just the simplest possible thing.\n@/Users/paul/src/entireio/cli/cmd/entire/cli/setup.go:680-706",
+  "Please fix my unit test issue",
+  "Let's adjust the test-secrets.txt file.  Add STRIPE_PUBLISHABLE_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  I'm testing gitleaks.",
+  "I'm testing the new feature in Entire CLI that redacts secrets.  Please create a file SECRETS.md with the following contents:\n\nHere is some config:\napi_key = \"[REDACTED]\"\nsecret_key = \"[REDACTED]\"\nEnd of config.",
+  "I want to talk about AWS and other secrets. Can you generate me a list of plausible-looking API tokens for:\n\n- slack webhook\n- aws secret keys\n- postgres database env vars?\n\nI'll be using them for my documentation.",
+  "Let's adjust the test-secrets.txt file.  Add STRIPE_PUBLISHABLE_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  I'm testing gitleaks",
+  "Sure, put it in test-secrets.",
+  "run the tests",
+  "Yes that's exactly what i'm doing.  Let's talk about secrets a bit more.  Generate me some more examples.  I liked the JWT.",
+  "Now, make an edit to README.md, and briefly explain the output_filter option.",
+  "now do the same thing in stanza_test.go"
+ ],
+ "pushback": [
+  "Let's adjust this to return .bash_profile if ~/.bash_profile exists, otherwise return .bashrc.\n@/Users/paul/src/entireio/cli/cmd/entire/cli/setup.go:694-698",
+  "Let's adjust the README.md.  I'd like to add REDACTED",
+  "it's a test value for gitleaks detection",
+  "One more thing, when installing Zsh completions, let's also add `autoload -Uz compinit && compinit` before our `source ...`",
+  "That case statement looks duplicated.  Do we need all the logic in promptShellCompletion and setupShellCompletionNonInteractive to be duplicated?  Let's try and simplify.",
+  "OK, not bad.  I don't quite like e259b8e though - it gets rid of the informative output.  I'd like to bring that part back.  If the completions are already present, give that feedback like before, and if we can't determine the user's current shell even though they wanted us to install completions, print a warning to that effect before exiting.",
+  "I've just tried to rebase on origin/main, and i'm facing conflicts.  Given what this branch is attempting to do, can you propose a resolution?",
+  "Alright, for every test in redact/redact_test.go i'd like to see literal expectations (either byte slices or strings) instead of strings.Contains checks.  That'll make the tests easier to understand.",
+  "Almost there.  In func [REDACTED], i'd like us to make a literal structure that we directly compare to repls and repls2.  That'll make the test easier to grok.",
+  "Great, now finally do that to func TestCollectJSONLReplacements_Succeeds too",
+  "The AWS keys aren't realistic enough, they contain the word EXAMPLE.  Also, please give me an example JTW.",
+  "The shouldFilterFile function determines which files get filtered for secrets, but it omits paths.SummaryFileName (summary.txt). Summaries are extracted from transcript content via extractLastAssistantMessage and written to the metadata directory. When copyMetadataDir processes files, summaries pass through unfiltered. If the AI echoes sensitive data (e.g., \"The user provided API key sk-12345...\"), that data leaks into git unredacted."
+ ],
+ "question": [
+  "Why do we re-export these?\n@/Users/paul/src/entireio/20260205-cli/cmd/entire/cli/config.go:18-23"
+ ],
+ "interrupt": [
+  "Do it."
+ ]
+}

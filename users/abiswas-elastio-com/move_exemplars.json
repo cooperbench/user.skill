@@ -1,0 +1,64 @@
+{
+ "bug_report": [
+  "still issues with swim lanes and status, some of these are done but in swim lane to do check task and check screenshot in task description\n\nhttps://taskai.cc/app/projects/1/tasks/19",
+  "when I go to a task and look at dropdown, it is in different positions both are wrong, overlay issue, why does it sometimes appear on the left? Same for settings page\n[Image: image/png]\n[Image: image/png]\n[Image: image/png]",
+  "why is this still running? https://github.com/anchoo2kewl/SprintSpark/actions/runs/22001641454",
+  "<task-notification>\n<task-id>b14cb64</task-id>\n<output-file>/private/tmp/claude-501/-Users-anshumanbiswas-play-SprintSpark/tasks/b14cb64.output</output-file>\n<status>failed</status>\n<summary>Background command \"Run Ansible playbook to provision the new server\" failed with exit code 2</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-anshumanbiswas-play-SprintSpark/tasks/b14cb64.output",
+  "i cannot login anymore invalid email or password\n\nhttps://staging.taskai.cc/login did we destroy the db again? https://staging.taskai.cc/login",
+  "please deploy, i don;t see the changhes",
+  "you broke something https://staging.taskai.cc/login Unexpected token '<', \"<html> <h\"... is not valid JSON\n\n please don't break things, what are tests for then?",
+  "Same issue, what did you test?\n[Image: image/png]",
+  "I still cannot get wiki articles to show up when I search, what is happening?",
+  "I do and see this in the UI Cloudinary returned HTTP 401",
+  "ok works, why are we not backing up though? It maybe because it wasnt connected, but after connecting I cannot find my folder which was crated Storage Folder\nGoogle Drive root\n[Image: image/png]\n[Image: image/png]",
+  "same issue, no TaskAI folder, but it is there and one backup was made to that folder, the folders showing are not in the root\n[Image: image/png]\n[Image: image/png]"
+ ],
+ "approve_proceed": [
+  "please close all tasks on https://taskai.cc/app/projects/1",
+  "ready, keep continuing from last session",
+  "yes",
+  "## Step 5: Trigger First SonarQube Scan\n\nAfter all tests pass and coverage is up:\n1. Commit and push to main\n2. CI will run tests → generate coverage → run SonarQube scan\n3. Verify dashboard at https://sonar.taskai.cc shows project data\n4. Check quality gate status",
+  "please resolve this: https://taskai.cc/app/projects/1/tasks/11",
+  "[Image: source: /Users/anshumanbiswas/Documents/Screenshot 2026-02-17 at 9.35.41 PM.png]",
+  "continue",
+  "keep going to the next phase",
+  "please proceed",
+  "keep going pelase",
+  "try again",
+  "staging shows as Environment\nproduction"
+ ],
+ "new_work": [
+  "please fix the remaining tests and upload get the sonar project taskai live, so far it is empty",
+  "I want you to figure out a way to write high-quality tests to get up to 80% right now. We're just at 15.4%",
+  "please boost UI tests and then run CI, check sonar to make sure we're at close to 80%",
+  "allow comments to be deleted or updated, super admin, admin or the owner of the comment can delete or edit any comment in a project, make sure MCP server also supports it",
+  "All 26 new tests pass, and the full existing test suite (35.7s) continues to pass with no regressions. The tests follow the established patterns from the codebase: table-driven tests for validation, `MakeAuthRequest` with chi URL params, and `AssertError`/`AssertStatusCode`/`DecodeJSON` helpers for assertions.</result>\n<usage>total_tokens: 52340\ntool_uses: 23\nduration_ms: 203827</usage>\n</task-notification>\nFull transcript available at: /private/tmp/claude-501/-Users-anshumanbiswas-play-SprintSpark/tasks/a75a2b0.output",
+  "please solve the tasks\nhttps://taskai.cc/app/projects/1\nThen comment and close",
+  "please create a command for ./script/server watch [staging\\prod] which will return the status and logs of the last gh build",
+  "You need to use MCP server for taskai",
+  "let's also get deploy working fully with travis, does it need changes to me.sh?"
+ ],
+ "refine_redirect": [
+  "make sure we know our project is https://taskai.cc/app/projects/1 commit to memory - please improve the MCP server, it is returning too many tokens that drones and overwhelm the llm. please allow all tokens but default behaviour should be to minimize tokens all the time",
+  "Start refactoring handlers (beginning with authentication)",
+  "yes, do those optimizations please"
+ ],
+ "pushback": [
+  "yes, please fix",
+  "no, 5 are in todo swim lane and 9 are done",
+  "wait i meant https://taskai.cc/app/projects/1/tasks/17 https://taskai.cc/app/projects/1/tasks/16 https://taskai.cc/app/projects/1/tasks/15",
+  "ok, both the API and web tests are taking more than a minute, optimize it please",
+  "is it deployed to prod? do it and close all tasks",
+  "it is healthy but did we cimmit, start ci cd pipeline and thewn promote to prod",
+  "use anshuman@biswas.me for this project",
+  "i want you to make deployment to main trigger deploy to staging, sprintspark.biswas.me, then if deployment is successful, we can promote another action run github to production taskai.cc",
+  "please move data from staging to production",
+  "ok wait, just create a user anchoo2kewl@gmail.com with password R5*D9LQuRyg0Q9 on staging and move to production",
+  "make user admin and then move to production",
+  "please write a claude skill to make user admin, choose staging or production, use stagign in this case"
+ ],
+ "question": [
+  "<task-notification>\n<task-id>b4e4f32</task-id>\n<output-file>REDACTED.output</output-file>\n<status>completed</status>\n<summary>Background command \"Re-run Ansible from docker-compose task with fixed ports\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: REDACTED.output",
+  "what are the oAuth callback urls, one key is fine for all env"
+ ]
+}

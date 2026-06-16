@@ -1,0 +1,60 @@
+{
+ "bug_report": [
+  "please have a look at the UI, there are vulnerabilities shown, which are less than 30 days open and already shown as overdue. I havent imported new Crowdstrike data here for ages, maybe something in the import is wrong, maybe only the UI calculation is wrong. Please propose a holistic fixing plan\n[Image: image/png]",
+  "there seems to be a bug. i have asked for an exception for a CVE from 2024, but in the Details view for my exception requests I dont see the number at all, please propose a fix plan\n[Image: image/png]",
+  "please fix this warnings\n[Image: image/png]",
+  "fix this bug in the export function, i tried exporting vulnerabilies and exporting assets\n[Image: image/png]",
+  "IMAGE 15 shows an exception request, image 16 shows an error, the Exception was already deleted from admin user, hence the error should not appear at all, please analyze and propose a fix\n[Image: image/png]\n[Image: image/png]",
+  "as secmanadmin (pw is secmanadmin also) i have assigned the ownershop of an asset to to secmanuser, but when i log into secmanuser, i can see only 0 assets. Please evaluate, why this assignment of assets is not working.",
+  "i dont see the change in the UI ? See the image, i would expect a listbox below the domain to select one of the available domaina\n[Image: image/png]",
+  "[Image: source: REDACTED 2026-03-06 at 09.54.31.png]",
+  "analyze the error in the picture and propose a fixing plan\n[Image: image/png]",
+  "[Image: source: REDACTED 2026-03-04 at 21.46.58.png]",
+  "[Image: source: REDACTED 2026-03-01 at 08.33.35.png]\n\n[Image: source: REDACTED 2026-03-01 at 08.33.58.png]",
+  "something is wrong, i tried to approve an exception, but i still see it, but at the same time I see 0 pending exceptions, please carefully review the behavior and propose a fi.\n[Image: image/png]"
+ ],
+ "new_work": [
+  "add an account-id column in the table and populate it\n[Image: image/png]",
+  "review the implemented functionality, add email configuration export also to UI and business logic. Also include AWS account sharing data in the export and import.\n[Image: image/png]",
+  "if an instance id from AWS is available, also show this in the UI\n[Image: image/png]",
+  "if the user has ADMIN rights, System Vulns, Account vulns and WG vulns must not be visible\n[Image: image/png]",
+  "implement a function that individual exception requests can be deleted from the users and granted corresponging exceptions will also be deleted\n[Image: image/png]",
+  "please also support here the Edit details function for the asset\n[Image: image/png]",
+  "please carefully analyze and add the AWS Account ID if existing also in the table , last element in line\n[Image: image/png]"
+ ],
+ "refine_redirect": [
+  "the buttons \"Create new release\" and \"Compare releases\" should be small in height\n[Image: image/png]",
+  "upgrade all dependecnies in the frontend where possible"
+ ],
+ "approve_proceed": [
+  "yes",
+  "b",
+  "Unknown skill: voice",
+  "A",
+  "[Image: source: REDACTED 2026-02-22 at 16.06.38.png]",
+  "[Image: source: REDACTED 2026-02-22 at 16.12.24.png]",
+  "[Image: source: REDACTED 2026-03-06 at 09.41.18.png]\n\n[Image: source: REDACTED 2026-03-06 at 09.41.52.png]",
+  "[Image: source: REDACTED 2026-03-05 at 09.02.44.png]"
+ ],
+ "pushback": [
+  "i created a vuln report, which is already downloaded. I get now a completely wrong error for exporting assets, please fix this\n[Image: image/png]",
+  "review all docs in /docs if they match the current implementation, if not, please adjust",
+  "please carefully analyze how the memory footprint for the command line interface import of crowdstrike can be reduced , i fear that eg 800000 vulnerabilities will generate quite some memory overhead",
+  "if a user, who is not ADMIN or SECCHAMPION, has no workgroups, the subitem \"WG vulns\" under Vulnerability management must not be shown\n[Image: image/png]",
+  "if a user, who is not ADMIN or SECCHAMPION, has no AWS accounts (direct or shared), the subitem \"Account vulns\" under Vulnerability management must not be shown",
+  "if a user, who is not ADMIN or SECCHAMPION, has no domains mapped (direct or shared), the subitem \"Domain vulns\" under Vulnerability management must not be shown",
+  "please carefully analyze how to this this Javascript errors and propose a fixing plan.\n[Image: image/png]",
+  "& fix vulns with prio 0 (vulns 1,2,3,4,5)",
+  "fix all findings identified",
+  "implement findings HI-3, HI-5, HI-9, HI-10, ME-1, ME-2, ME-3, ME-4, ME-5, ME-7-HI-7, HI-1, HI-4, HI-8",
+  "i want to be able to download all reviews (if a reviewer answered CHANGE or NOGO including comments) in an Excel speedsheet, named Review.(ReleaseNumber).Date.xlsx (Use the relevant release number) \n[Image: image/png]",
+  "rename the Vulnerabilities Button to Vulns to make it better fit to the page\n[Image: image/png]"
+ ],
+ "question": [
+  "please do a holistic review of all backend endpoints, if the authentication is properly handled",
+  "do a full security review over the entire source code",
+  "# Security Review: secman Codebase\n\n## File Handling, Data Exposure, and Business Logic Vulnerabilities",
+  "# Frontend Client-Side Security Review -- secman\n\n## Executive Summary\n\nThe secman frontend has a generally sound security posture. The migration from JWT-in-localStorage to HttpOnly cookies is a significant improvement. However, I identified several findings ranging from a committed credential to excessive logging and inconsistent authentication patterns. Below are the findings organized by severity.",
+  "you implemented a function, so that the mapping of AWS accounts to user a can be transferred to user b. Please explain how this feature can be accessed from the UI."
+ ]
+}

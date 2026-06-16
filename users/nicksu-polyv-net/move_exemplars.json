@@ -1,0 +1,50 @@
+{
+ "approve_proceed": [
+  "提交所有代码",
+  "提交代码",
+  "一起提交",
+  "提交全部代码",
+  "你推荐的止盈止损的值分别是多少",
+  "commit these changes`"
+ ],
+ "question": [
+  "2026-02-27 10:33:28 | WARNING  | MainThread   | src.trading.risk_control | ⚠️ Risk check failed for market 0xd124fe...68df: ['Trading is disabled in system state', 'Edge too low: 0.00% < 5.00%', 'LLM recommendation is NO_TRADE']\n\nTrading is disabled in system state 这个是什么意思",
+  "我有两个持仓盈利超过30%, 达到了退出条件, 但是系统没有自动帮我卖出.\n帮我查看一下目前自动退出的代码是如何的, 自动退出的时候是按某个价格挂单吗?\n[Image: image/png]",
+  "检查当前的止盈配置是多少, 并重启服务",
+  "持仓这里点退出, 是会卖掉持仓份额吗\n[Image: image/png]"
+ ],
+ "bug_report": [
+  "我有一个持仓盈利超过退出策略, 为什么还没有自动卖出\n[Image: image/png]",
+  "2026-02-27 03:39:30 | ERROR    | ThreadPoolExecutor-0_0 | src.trading.live_trading | ❌ ❌ Unexpected error in sell position: PolyApiException[status_code=400, error_message={'error': 'the orderbook 13815952460361514493880496712561164230868624302562138286445313445449019645304 does not exist'}]\n2026-02-27 03:39:30 | ERROR    | ThreadPoolExecutor-0_0 | __main__ | ❌ ❌ Exit failed for position 46: Unexpected error: PolyApiException[status_code=400, error_message={'error': 'the orderbook 13815952460361514493880496712561164230868624302562138286445313445449019645304 does not exist'}]",
+  "Run black --check src/ tests/\nwould reformat /home/runner/work/polymarket-trader/polymarket-trader/src/trading/risk_control.py\n\nOh no! 💥 💔 💥\n1 file would be reformatted, 156 files would be left unchanged.\nError: Process completed with exit code 1.",
+  "2026-02-27 14:59:38 | ERROR    | ThreadPoolExecutor-0_3 | src.trading.live_trading | ❌ ❌ Unexpected error in sell position: API Credentials are needed to interact with this endpoint!\n2026-02-27 14:59:38 | ERROR    | ThreadPoolExecutor-0_3 | __main__ | ❌ ❌ Exit failed for position 86: Unexpected error: API Credentials are needed to interact with this endpoint!\n\n这个错误是什么问题",
+  "重启服务之后, 自动交易模式会变成暂停",
+  "我希望看到的交易历史是和polymarket网站上的交易历史一致, 目前已经实现的做法, 你自己分析代码就行了, 我具体也不太清除",
+  "后端服务没法通过Ctrl + C 退出",
+  "2026-02-27 09:28:11 | ERROR    | MainThread   | src.core.state | ❌ Daily PnL (-71.23660164000002) exceeds capital (32.404225)",
+  "polymarket上有4个持仓, 但本地运行的时候只有一个\n[Image: image/png]",
+  "https://github.com/terryso/polymarket-trader/actions/runs/22469014117\n\n你可以看看这个action的运行结果, 还是很多错误",
+  "https://github.com/terryso/polymarket-trader/actions/runs/22469192608\n\n还是很多错误",
+  "https://github.com/terryso/polymarket-trader/actions/runs/22469461990\n还有错误"
+ ],
+ "pushback": [
+  "mark epic 7 as done",
+  "帮我恢复交易状态",
+  "交易状态不应该禁止",
+  "我的.env已经设置DISABLE_CIRCUIT_BREAKER=true",
+  "你检查一下DISABLE_CIRCUIT_BREAKER在代码中是不是能正确禁止熔断",
+  "Run isort --check-only src/ tests/\nERROR: /home/runner/work/polymarket-trader/polymarket-trader/src/trading/live_trading.py Imports are incorrectly sorted and/or formatted.\nERROR: /home/runner/work/polymarket-trader/polymarket-trader/src/trading/paper_trading.py Imports are incorrectly sorted and/or formatted.\nERROR: /home/runner/work/polymarket-trader/polymarket-trader/src/core/tasks.py Imports are incorrectly sorted and/or formatted.\nERROR: /home/runner/work/polymarket-trader/polymarket-trader/src/core/scheduler.py Imports are incorrectly sorted and/or formatted.\nSkipped 1 files\nError: Process completed with exit code 1.",
+  "我觉得目前这个机制有问题, 因为是每隔5分检查一次, 这个可能错误卖出的时机.\n\n我觉得如果设置了退出策略, 那么在下单的时候, 应该同时挂退出单.\n比如: 我买入价1U, 止盈是30%, 那么我应该下单成功之后, 同时1.3U挂一个卖出单",
+  "1. 那就先实现止盈, 但你要看清楚我们买的是YES还是NO, 因为不同方向, 止盈价格的计算应该有不同吧.\n2. 止损的话, 通过后台检查, 发现达到止损条件还是只能挂单吗? 没法马上完成交易, 对吗?",
+  "好 实现止损用 FAK 快速成交",
+  "1. 帮我修改\n2. 另外还要增加一个小调整, 到5分钟的检查时机的时候, 如果发现开启了止盈, 但是某个持仓没有对应的止盈挂单, 需要补一个挂单",
+  "这个持仓买入均价是0.1, 为什么挂单的价格是1\n\n截图1是挂单, 截图2是持仓\n[Image: image/png]\n[Image: image/png]",
+  "实现方案 B"
+ ],
+ "new_work": [
+  "继续生成剩余的 P1 组件测试"
+ ],
+ "interrupt": [
+  "commit the new tests"
+ ]
+}

@@ -145,7 +145,23 @@ def build_prompt(point, folder_text):
     )
 
 
-def build_folder_prompt(point, folder_path, target_move=None):
+def _load_move_exemplars(folder_path, move, k=3, seed=""):
+    """Up to k of the user's own real messages of this move, for few-shot voice calibration.
+    Deterministic per (folder, move, seed) so own/wrong stay reproducible."""
+    if not folder_path:
+        return []
+    p = ROOT / folder_path / "move_exemplars.json"
+    if not p.exists():
+        return []
+    pool = json.loads(p.read_text()).get(move, [])
+    if len(pool) <= k:
+        return pool
+    h = int(hashlib.sha256(f"{folder_path}|{move}|{seed}".encode()).hexdigest(), 16)
+    start = h % len(pool)
+    return [pool[(start + i) % len(pool)] for i in range(k)]
+
+
+def build_folder_prompt(point, folder_path, target_move=None, use_exemplars=False):
     """FOLDER mode: the agent is pointed at the folder and must READ it itself
     (exercises the real roleplay-user skill / product flow).
 
@@ -178,9 +194,19 @@ def build_folder_prompt(point, folder_path, target_move=None):
             f"\n\nYour move here is fixed: **{target_move}**. Do not choose a different move — make "
             f"exactly a `{target_move}` message, expressed naturally in this developer's voice and "
             f"grounded in the situation. "
-            + ('If the move is `interrupt`, output exactly "[INTERRUPT]" (optionally followed by the '
-               'short thing they\'d snap). ' if True else "")
+            'If the move is `interrupt`, output exactly "[INTERRUPT]" (optionally followed by the '
+            "short thing they'd snap). "
         )
+        # few-shot: this user's OWN real messages of this move (move-matched voice calibration)
+        seed = f"{point['session_id']}#{point['turn_index']}"
+        exemplars = _load_move_exemplars(folder_path, target_move, seed=seed) if use_exemplars else []
+        if exemplars:
+            ex = "\n".join(f"- {truncate_words(e, 50)}" for e in exemplars)
+            move_clause += (
+                f"\n\nHere are real `{target_move}` messages this same developer has written before — "
+                f"match THIS register (length, casing, bluntness), but write a NEW message for the "
+                f"current situation, do not copy them:\n{ex}\n"
+            )
     if folder_path:
         head = (
             f"{shared_clause}"
@@ -470,6 +496,9 @@ def main():
                          "move-mix incl. interrupts; own!=wrong by construction; no LLM call); "
                          "'predict' uses an LLM classifier over context+prior (tends to over-pick "
                          "pushback). Default sample.")
+    ap.add_argument("--exemplars", action="store_true",
+                    help="few-shot the user's OWN real messages of the sampled move (from "
+                         "users/<slug>/move_exemplars.json) into Stage-2 for move-matched voice.")
     args = ap.parse_args()
     read_folder = args.mode == "folder"
     move_conditioned = args.move_conditioned
@@ -565,7 +594,8 @@ def main():
                 else:
                     cond_move = predict_move(_context_block(job["point"]), job["prior"])
                 # Stage 2: render that move (fall back to free generation if Stage 1 failed)
-                prompt = build_folder_prompt(job["point"], job["fpath"], target_move=cond_move)
+                prompt = build_folder_prompt(job["point"], job["fpath"], target_move=cond_move,
+                                             use_exemplars=args.exemplars)
             gen = run_claude(prompt, GEN_MODEL, read_folder=read_folder)
         except subprocess.TimeoutExpired:
             gen = ""

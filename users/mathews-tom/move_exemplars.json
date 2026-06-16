@@ -1,0 +1,48 @@
+{
+ "approve_proceed": [
+  "Should we update all the sections to be numbered based on priority?",
+  "keep going, don't wait for me",
+  "push and open a detailed PR",
+  "merge the PR",
+  "Create a local branch and start working on phase 2 scripts",
+  "I think we should number the scripts as well so that a user try to follow through from the begining know exactly how to proceed in priority. What do you think?",
+  "commit this",
+  "## Execution\n\n1. `git mv` all 7 files in `01-foundations/`\n2. Update all 7 documentation files (find-replace `0N-micro` → `micro` for each prefix)\n3. Single commit: `refactor(foundations): remove numeric prefixes from script filenames`",
+  "commit this using multiple commits and push the changes"
+ ],
+ "question": [
+  "<task-notification>\n<task-id>b079152</task-id>\n<output-file>REDACTED.output</output-file>\n<status>completed</status>\n<summary>Background command \"Validate microattention.py runs successfully\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: REDACTED.output",
+  "<task-notification>\n<task-id>bdf5182</task-id>\n<output-file>REDACTED.output</output-file>\n<status>completed</status>\n<summary>Background command \"Validate microflash.py runs successfully\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: REDACTED.output",
+  "<task-notification>\n<task-id>b58f22e</task-id>\n<output-file>REDACTED.output</output-file>\n<status>completed</status>\n<summary>Background command \"Validate micromoe.py\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: REDACTED.output",
+  "<task-notification>\n<task-id>b0abb69</task-id>\n<output-file>REDACTED.output</output-file>\n<status>completed</status>\n<summary>Background command \"Validate microppo.py\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: REDACTED.output",
+  "<task-notification>\n<task-id>b5ab7ff</task-id>\n<output-file>REDACTED.output</output-file>\n<status>completed</status>\n<summary>Background command \"Validate microkv.py\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: REDACTED.output",
+  "<task-notification>\n<task-id>be510ab</task-id>\n<output-file>REDACTED.output</output-file>\n<status>completed</status>\n<summary>Background command \"Validate microquant.py\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: REDACTED.output",
+  "<task-notification>\n<task-id>bcde1fd</task-id>\n<output-file>REDACTED.output</output-file>\n<status>completed</status>\n<summary>Background command \"Validate microbeam.py\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: REDACTED.output",
+  "<task-notification>\n<task-id>b58e432</task-id>\n<output-file>REDACTED.output</output-file>\n<status>completed</status>\n<summary>Background command \"Validate microlora.py\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: REDACTED.output",
+  "<task-notification>\n<task-id>b6b9f07</task-id>\n<output-file>REDACTED.output</output-file>\n<status>completed</status>\n<summary>Background command \"Validate microdpo.py\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: REDACTED.output",
+  "<task-notification>\n<task-id>bbe2c0d</task-id>\n<output-file>REDACTED.output</output-file>\n<status>completed</status>\n<summary>Background command \"Re-validate microppo.py after fixes\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: REDACTED.output",
+  "<task-notification>\n<task-id>b018295</task-id>\n<output-file>REDACTED.output</output-file>\n<status>completed</status>\n<summary>Background command \"Run microattention.py\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: REDACTED.output",
+  "<task-notification>\n<task-id>b070767</task-id>\n<output-file>REDACTED.output</output-file>\n<status>completed</status>\n<summary>Background command \"Run microflash.py\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: REDACTED.output"
+ ],
+ "new_work": [
+  "test all the newly created scripts and validate everything is working.",
+  "run all 7 scripts to validate before merging. At the end present the results from each script as a summary."
+ ],
+ "pushback": [
+  "We need to make some chnages. All the scripts in the `foundations` folder are numbered to be in order but the scripts in the `alignment` and `systems` folders don't have it. The repo appears to lack consistency. how can and should we fix this?",
+  "Would it be a better idea to completely remove the numbering completely?",
+  "Why is the test run for `03-microgpt.py` only has a marginal pass. Wasn't this script we got from karpathy directly, https://gist.github.com/karpathy/8627fe009c40f57531cb18360106ce95.",
+  "Use the branch name `feat/alignment-systems`",
+  "use sequential thinking and commit using multiple commits by logically grouping all the changes.",
+  "push the commits and create a detailed PR",
+  "i have merged the pr. Are we done with development of the system.",
+  "I was talking secitons like `foundational` (rename it to `foundations`), `alignment` and `systems`.",
+  "Let us create a local branch and start the development of script for the section `foundations`"
+ ],
+ "bug_report": [
+  "<task-notification>\n<task-id>b2d73e4</task-id>\n<output-file>REDACTED.output</output-file>\n<status>completed</status>\n<summary>Background command \"Re-run microgpt.py after fixing safe_log graph disconnection\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: REDACTED.output"
+ ],
+ "refine_redirect": [
+  "Before we publish the repo, let us make sure we we have all documentation, comments in scripts and everything perfectly updated and aligned with the overall goal of the repo."
+ ]
+}

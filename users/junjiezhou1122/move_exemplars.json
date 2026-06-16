@@ -1,0 +1,50 @@
+{
+ "question": [
+  "first see the readme.md file and then let's think faster!",
+  "下面假如我派出去一个工作 整个工作流程会是什么样呢",
+  "现在来说一下我们的项目的目前的结构 以及之后的规划！",
+  "你实现我们的所有spec了吗"
+ ],
+ "new_work": [
+  "Now first implement spec 006!",
+  "写一个plan doc 先不改代码",
+  "先做一个最小的可用版本！",
+  "团队的结构我可以后面新加新的团队！",
+  "先这样！ 我们先做demo而已！",
+  "我想与entire.io这个项目结合 可以记录agent的对话和commit 这是第五个spec 你可以先调研一下entire.io 我觉得agent在工作的时候 要有自己的工作记录等等 （也可以是思想借鉴来实现entire.io) 调研后写一个spec!",
+  "更改一下README.md 要高大尚一点 像是成熟的项目的那种！"
+ ],
+ "approve_proceed": [
+  "continue",
+  "用mcp吧 也可以的！",
+  "commit一下"
+ ],
+ "pushback": [
+  "这个chat是他们自己内部的chat！ 每一个chat都可以点开实时查看！",
+  "你不需要给我开一个可以和他们chat的东西！",
+  "我的消息只用传递给我的下层 那些高管 实验室的leader这种！",
+  "就是和公司一样 一般下属可以直接和自己的上级和同事 还有下级交流！ 但是他不能和更高层的交流呀！",
+  "我这里要自己select agent ，实际的工作流应该是 我给一个task 然后下层高管讨论 这是谁该管的 如何是技术的就是CTO的管理部分 然后就是CTO该继续往下统筹安排 最后可能安排到一个agent来做这个工作 或者几个agent合作来做这个工作！ \n[Image: image/png]",
+  "I think we can re build it, let's first rethink about this project! And think about what language or framework should we use to build this project",
+  "why not recommend other language like rust or go to build backend??",
+  "Do u think next.js is also a good choice?",
+  "Now, think again deeply and give me some advice, Maybe in the future i will run many agents simlutanously! it must be quickly for this",
+  "But go is not good for some ai tools, typescript sometimes is better, like claude code or other tools they all use typescript!",
+  "Then what's the strength of Go",
+  "So I think hono and bun has not big difference between next.js"
+ ],
+ "bug_report": [
+  "这个现在的问题在哪里！ 我发现没有run 这个功能了 而且我加入一个task 自动变成两个！ 是不是因为之前board被删除的缘故！ \n[Image: image/png]",
+  "下面先帮我git commit 一个版本 我刚刚还遇到点问题！",
+  "there are no agent can choose!\n[Image: image/png]",
+  "[research-assistant] ▶ Agent started\nError: Failed to change directory to /Users/junjie/research/ClawCorp/server/brainstorming how to learn(metalearning)\n[research-assistant] ■ Agent done (exit 0)",
+  "Not logged in · Please run /login\n[research-assistant] ■ done (exit 1) 我这个run的时候环境没有植入进去呀",
+  "一直卡在这个状态是为啥呢\n[Image: image/png]",
+  "@../missions/M-1771680529149/artifacts/  这里面一直有新的文件在诞生 你给的prompt是啥啊 为啥可以一直工作呢？",
+  "@../missions/M-1771680529149/messages/  这个给上一级了之后呢 好像没后续了呀",
+  "有一个bug 就是运行任务的时候 我刷新网页 任务就不再运行了！",
+  "啥意思\n[Image: image/png]",
+  "这个网页打不开",
+  "又出现了两个\n[Image: image/png]"
+ ]
+}

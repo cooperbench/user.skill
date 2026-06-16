@@ -1,0 +1,52 @@
+{
+ "bug_report": [
+  "the checkout flow stopped working after we recreated the admin account",
+  "getting 401 error on checkout again just check that once and tell me!",
+  "hey in the DO hosted version the images are not loading , earlier when i was hosted in gcp as well got the similar or more like an same issue arraisd but then i have create a bucker in gcp and hosted the image there but now guide me here what should we do? [Image #2]\n[Image: image/png]",
+  "hey have a look into the mainhoempage and whats wrong with that that video stylings and sizes and positioning are messed up and in the desktop that videos arent even visible investigate whats wrong i think in the prev update only something messedup!!",
+  "[Image #3] see still showing the same and it immedeately closing that tab insted of showing anything!!\n[Image: image/png]",
+  "1. no there is no products have images attached there, and 2nd is all ican see it this [Image #3]\n[Image: image/png]",
+  "[Image #4] Hey. But see, it is telling that the Bangalore the Bangalore region is not available currently. So should we wait to get it back up or what should we actually do now?\n[Image: image/png]",
+  "hey those DO backend's environment variables are fine, and that cart-session this is what we got see the screenshot [Image #1] and and that line-items [Image #2]\n[Image: image/png]\n[Image: image/png]",
+  "hey ive check that calculated price was coming null see \"\"calculated_price\": null\"",
+  "[Image #14] ok now i have fixed all the keys issues and others but now its cant aquire the lock its saying when i try to complete the order investigate whats the issue!!\n[Image: image/png]",
+  "hey i removed those from the both backend and storefront app env vars in DO but still its giving same!",
+  "hey wait i just completed an order in the localhost and it works fine so the issue isnt logical, investigate harder!!"
+ ],
+ "question": [
+  "did you receive any agent-memory context from a hook?",
+  "K. We we And tell me this that you are telling essentially by ones visit and load that images on my device after the whole thing in the digital ocean. That you're telling everybody in India would be serving at the faster speeds once have get it loaded for the very first time. From my device.",
+  "[Image #7] which would need to select??\n[Image: image/png]",
+  "once again check and make sure that all ur assumption are 100% correct, just to reval one last time to confirm!",
+  "where to check exactly that account id and namespace id actually correct?",
+  "[Image #3] hey this is it right that kv ur telling??\n[Image: image/png]"
+ ],
+ "pushback": [
+  "okk and also i need that after that page closes that it should automatically switches to the checkout page no matter in which tab the user is in , should we build this as well?",
+  "ok but what about if the user is using in mobile device and he opned that in the mail app in that kind of scenatio?",
+  "hey lets fix that system itself relaible insted of implementing other thing!!!",
+  "hey once have a look into the code very previous commits codes while this was working fine compare the files from there and restore it was working very fine    \n  earlier in after recent commits only the issue araises!",
+  "remove that coautherd by and keep the commit msg normal one line only!",
+  "hey see this screenshot [Image #4] fix that extra spacing in that page at top in desktop!!\n[Image: image/png]",
+  "hey it still same!!",
+  "hey it still has a lot of space see [Image #5]\n[Image: image/png]",
+  "hey i wanted to mirate to DO so guide me on that clearly!!",
+  "hey why do we need to have an another service? and can we just do that with the existing postgress db??",
+  "Okay. So once again, check and tell me that does that a digital ocean would actually compatible with our app. I mean, to host the images so that it could properly You're telling that something s3 and like sort of things??",
+  "[Image #5] see this is what im donna do create!\n[Image: image/png]"
+ ],
+ "approve_proceed": [
+  "ok goahead!",
+  "lets ignore that no issue",
+  "lets ingnore those for now!",
+  "ok now its working!!",
+  "so lets push this into the current fixingmajorissues branch!",
+  "Yeah. That is what I'm asking for. Don't worry. Leave it. I understood.",
+  "wait i forgot havent pushed give me a sec i will push now!! and i updated that env vars!!",
+  "first should we check in the localhost by running??",
+  "yes ok fine now that errors in locla re gone!",
+  "ok now i have checked the whole flow in the localhost and its working fine and also updated the keys as well in the DO!",
+  "hey i have check those all are correct! and for now lets leave Upstash!",
+  "ok now thats fixed!"
+ ]
+}

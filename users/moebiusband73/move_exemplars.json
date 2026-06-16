@@ -1,0 +1,72 @@
+{
+ "question": [
+  "When are the wal journal files reset. Are there situation where they can grow indefintily?",
+  "Check if there are points missing in the ReleaseNotes for the upcoming v1.5.2 release",
+  "What is the default for EnableJobTaggers if the option is not set in the config file?",
+  "Does it make sense to also inline the literal state value in other places?",
+  "Explain how Fix 3 works and why this is an improvement"
+ ],
+ "refine_redirect": [
+  "handleError is called from many different functions. How can I enrich the log message to make transparent from where the error is triggered?",
+  "Update the README to current implementation",
+  "Update ReleaseNotes and set correct latest Migration",
+  "The buildStatsQuery is still very slow and does not return. This is the endpoint http://localhost:8080/monitoring/users/?cluster=woody&startTime=last30d . Check again the query and find improvements.",
+  "Compare and analyze the UpdateNodestate REST vs NATS implementations and provide an identical functionality in NATS compared to REST.",
+  "The shutdown used to take only up to 10s. Since some time around a week the shutdown takes up to 40s. This may be linked to the worker pools added. Can the shutdown time be improved?",
+  "The buildQueries logic on @pkg/metricstore/query.go  is diverged from the buildQueries logic in @internal/metricstoreclient/cc-metric-store-queries.go . As it appears the latter is the cleaner implementation. Analyse the difference, synchronize and evaluate if the code can be consolidated.",
+  "Update documentation and config schema accordingly",
+  "Adopt handleError using the runtime.Caller option",
+  "Also updaten the documentation and config schema to reflect the new options",
+  "writeWALRecord is unused according to the LSP. Can it be removed?"
+ ],
+ "new_work": [
+  "Integrate swaggo/swag  and update to latest release",
+  "Add a section for the upcoming Release 1.5.3 in the ReleaseNotes. Update other documentation as required",
+  "Update the releasenotes with the recent changes",
+  "Add a notice about the new checkpointreader tool to the ReleaseNotes",
+  "Review gorelease config. Add to build archive-migration",
+  "Add a  timer around JobStatsGrouped call and print result. Also add timer for overall routine.",
+  "Add PlotRenderOptions also to AdminsSettings",
+  "Also add a section in the README.md discussing and documenting the new db options."
+ ],
+ "approve_proceed": [
+  "Apply the patch at @~/Downloads/fix-removed-metrics-shown-as-missing.patch",
+  "Update cc-backend to latest master HEAD",
+  "Update and extend  the release notes",
+  "Consolidate all migrations after 10 to one migration 11.",
+  "Update the ReleaseNotes for the bugfix release 1.5.1 . Keep the existing information and highlight changes and fixes.",
+  "commit the changes",
+  "commit it",
+  "Check if the fixes are correctly merged in nodes.go",
+  "Yes please add a clarification to the README",
+  "Dig deeper",
+  "Also commit the other changes using the previous session infos",
+  "What about the other Improvements. Which ones do you recommend"
+ ],
+ "bug_report": [
+  "The following error occurs in the Log view if enabling Auto Refresh. Investigate the issue and fix it.",
+  "The cleanup archiving still does not work correctly. For some clusters the following log message occurs: Investigate the issue: Mar 21 06:28:04 monitoring cc-backend[2671537]: [ERROR]    /home/jan/cc-backend/pkg/metricstore/archive.go:69: [METRICSTORE]> archiving failed: writing parquet archive for cluster fritz: flushing parquet row group: the limit of 32767 row groups has been reached",
+  "There are occasional warnings in the log: [WARNING]  lineprotocol.go:368: [METRICSTORE]> WAL shard channel full, dropped 7220001 messages (data safe in memory, next snapshot will capture). Is this a problem? And how can it be fixed?",
+  "Plan a fix for scenario 1",
+  "Analyse if similar errors exist in cc-lib metrics.go",
+  "Check if the previous bug is fixed no in the current cc-lib used",
+  "The render options are not show here yet for admins: http://localhost:8080/config . Debug and fix it"
+ ],
+ "pushback": [
+  "Also update the ReleaseNotes with the recent changes",
+  "Update it to also reflect changes to the cc-backend metricstore package, in particular the wal checkpoint format and the parquet cleanup archive",
+  "There also have to be bugs in jobQuery.go . Especially the following query triggers the memory leak: SELECT * FROM job WHERE job.job_state IN (\"completed\", \"running\", \"failed\") ORDER BY job.start_time DESC LIMIT 1 OFFSET 10; Dig deeper to find the cause. Also investigate why no existing index is used for this query.",
+  "Why is the option cache-size-mb set to DB size / max-open-connections and not to DB size. Why does this allow to hold the complete DB in memory when the cache size is smaller than the total DB?",
+  "Our server has 512GB main memory. Does it make sense to make cache_size and soft_heap_limit configurable to make use of the main memory capacity?",
+  "Add the points as suggested",
+  "Also set MinimumPoints automatically based on the policy",
+  "Currently a segvault occurs when the option enable-job-taggers is set to true but the tagger rules directories are missing. Analyse the problem and fix it.",
+  "It must have been changes of the last 2 days. Before the startup was fast. Maybe the changes in the startup and shutdown handling code?",
+  "Make the checkpoints option also option also optional",
+  "Remove Queue group support again",
+  "Do an in-depth review of the sharded WAL buffer pipeline. Including startup and shutdown. Find potential problems and suggest imrovements."
+ ],
+ "interrupt": [
+  "commit this"
+ ]
+}

@@ -1,0 +1,58 @@
+{
+ "approve_proceed": [
+  "Hi",
+  "Yes check",
+  "Continue from where you left off.",
+  "first plan it",
+  "## Changes (in priority order)"
+ ],
+ "question": [
+  "do you load the claude.md every time I initiate a new claude chat ?",
+  "source /Users/skmabudalam/Documents/BugViper/.venv/bin/activate\ns all the api's run on same port ? see",
+  "did you read the claude.md",
+  "### 📊 Impact Analysis\n\n- **Symbols modified**: 56\n- **Downstream callers**: 47\n- **Risk level**: 🔴 HIGH",
+  "## Agent Prompt Enhancement\n\nBefore calling the agents on a follow-up review, the previous run's open issues are fetched from Firestore and injected into the prompt as an additional context section. This gives the agents awareness of what was previously flagged so they can give more informed analysis.",
+  "## Issue Fingerprinting\n\nTo match issues across runs (even after line numbers shift due to fixes), each issue gets a stable fingerprint derived from `file path + normalized title`. Line numbers are intentionally excluded — they drift after code changes. This fingerprint is the identity of an issue across its entire lifetime in the PR.",
+  "Review the current /Users/skmabudalam/Documents/BugViper/ingestion_service/languages/python.py does it store the repo path properly ?",
+  "Please analyse the firebase service .py and how the schema is setup",
+  "All in the repo stats",
+  "How to complete Code Ingestion works let's say for the Python what steps does it go through ?",
+  "bro I just ingested can you check the stats now",
+  "<task-notification>\n<task-id>b72fd63</task-id>\n<output-file>REDACTED.output</output-file>\n<status>completed</status>\n<summary>Background command \"Fetch graph stats from the API\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: REDACTED.output"
+ ],
+ "refine_redirect": [
+  "So for all the things that we store in the firebase we should have proper data class using the basemodel , see i the ingestion and in other places we are dicrly calling the \"owner\" , \"repoName\" like this , instead we should just creatr a data class and use it"
+ ],
+ "pushback": [
+  "for each step store the results in a .md file , every time create a new folder called review-current time / inside this for each step in the execute_pr_review store the results in .md for now don't call the LLm , I only want to debug the context",
+  "Even the positive findings are empty",
+  "Ok Bro , just burned so much money for no reason ,from next time always warn me where things can go wrong . please put this in your caludemd , time to time update it as well . Should the claude.md be part of a oublic repo ?",
+  "Please add it to the gitignore and remove it from git history as well",
+  "Can you implement the Plan.md ?",
+  "Bro you fucking deleted the plan.md ?",
+  "Can we store the repo details in the firestore",
+  "When we ingest a new repo it should create a repo and metadata in the firebase unders the users",
+  "await gh.post_comment(owner, repo, pr_number, review_results.summary + review_results.positive_findings + \"\\n\\n\" + review_results.issues + review_results.error)\n post the raw agent response directly",
+  "Post two commient one the formtted one and another the RAW Agent one",
+  "No need to read the code write high level what you will change , you have already have  43.1k tokens                                     \n   │  ⎿  Done                                       \n   └─ Explore agent schemas and GitHub client context · 17 tool uses · 39.4k tokens    context don't fetch more else I will run out of tokens",
+  "For the delete add a Dialog and ask them if they want to delete the repo m create a dialog component for this"
+ ],
+ "bug_report": [
+  "why so many errors and why did it call the model multiple times ?",
+  "delete repo is not working it should delete from the firestore and the neo4j",
+  "look at the api.log it has so many issues",
+  "Please write the plan.md of what you will fix in this ?",
+  "I don't think the 99 files\n624 functions\n67 classes\n780,431,213 lines\ntypescript\nunknown\npython stats are correct",
+  "yes apply both fixes",
+  "99 files\n624 functions\n67 classes\n23,174 lines\npython\nunknown\ntypescript why the languages one is unknown ? check the raw query and it's response",
+  "it's not popping up when the delete icon is clicked on",
+  "Is the files , functions and lasses count correct ?"
+ ],
+ "interrupt": [
+  "Please do it"
+ ],
+ "new_work": [
+  "So in the frontend we should have a + button that shows all of the user's github repositories and then we should be able to ingest them . How to do it ?",
+  "Please update your claude.md with all of the context you gathered so far"
+ ]
+}

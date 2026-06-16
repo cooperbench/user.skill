@@ -1,0 +1,46 @@
+{
+ "refine_redirect": [
+  "Надо лучше связать timeline (diff) с кодом и сделать всю навигацию более связанной"
+ ],
+ "approve_proceed": [
+  "Directory\nUsers/balkhaev\\\n\\\nхотя мы в ~/mycode/yep",
+  "продолжай",
+  "3",
+  "всего плана",
+  "Делай дальше"
+ ],
+ "bug_report": [
+  "Failed to load patterns\n\nError: Failed to load patterns",
+  "Failed to load trends\n\nError: Unexpected token '<', \"<!doctype \"... is not valid JSON\\\nFailed to load trends\n\nError: Unexpected token '<', \"<!doctype \"... is not valid JSON",
+  "не загружаются со страницы http://localhost:3838/insights?tab=patterns  Internal Server Error",
+  "[background] Git available - will extract git metadata\n2026-02-25T15:12:30.299Z [INFO] [pagerank] PageRank cache invalidated\n[background] Embedding 286/286...\n[background] Code index failed: Found field not in schema: metadata at row 0\nc",
+  "а запросы все еще http://localhost:3838/code/stats а они отдают html",
+  "installHook.js:1 TypeError: Cannot read properties of undefined (reading 'length')\n    at sme (index-BNFdBs5N.js:231:46440)\\\n    if (e.snapshots.length === 0)"
+ ],
+ "new_work": [
+  "Generating recommendations...\nнадо генерировать рекомендации по клику и с подпись что будут потрачены токены",
+  "тест текущей и проанализуй где еще можем использовать"
+ ],
+ "question": [
+  "Нужно лучше понимать кодовую базу и в целом code quality",
+  "<task-notification>\n<task-id>ba3c625</task-id>\n<output-file>/tmp/claude/-Users-balkhaev-mycode-yep/tasks/ba3c625.output</output-file>\n<status>completed</status>\n<summary>Background command \"Запустить dev server в фоне\" completed (exit code 0).</summary>\n</task-notification>\nRead the output file to retrieve the result: /tmp/claude/-Users-balkhaev-mycode-yep/tasks/ba3c625.output",
+  "<task-notification>\n<task-id>bcc4249</task-id>\n<output-file>/tmp/claude/-Users-balkhaev-mycode-yep/tasks/bcc4249.output</output-file>\n<status>completed</status>\n<summary>Background command \"Запуск API сервера\" completed (exit code 0).</summary>\n</task-notification>\nRead the output file to retrieve the result: /tmp/claude/-Users-balkhaev-mycode-yep/tasks/bcc4249.output",
+  "<task-notification>\n<task-id>bfee0b2</task-id>\n<output-file>/tmp/claude/-Users-balkhaev-mycode-yep/tasks/bfee0b2.output</output-file>\n<status>completed</status>\n<summary>Background command \"Запуск API сервера из корня\" completed (exit code 0).</summary>\n</task-notification>\nRead the output file to retrieve the result: /tmp/claude/-Users-balkhaev-mycode-yep/tasks/bfee0b2.output",
+  "<task-notification>\n<task-id>b3f5148</task-id>\n<output-file>/tmp/claude/-Users-balkhaev-mycode-yep/tasks/b3f5148.output</output-file>\n<status>completed</status>\n<summary>Background command \"Запуск API сервера\" completed (exit code 0).</summary>\n</task-notification>\nRead the output file to retrieve the result: /tmp/claude/-Users-balkhaev-mycode-yep/tasks/b3f5148.output",
+  "<task-notification>\n<task-id>b77c30b</task-id>\n<output-file>/tmp/claude/-Users-balkhaev-mycode-yep/tasks/b77c30b.output</output-file>\n<status>completed</status>\n<summary>Background command \"Запуск GUI\" completed (exit code 0).</summary>\n</task-notification>\nRead the output file to retrieve the result: /tmp/claude/-Users-balkhaev-mycode-yep/tasks/b77c30b.output",
+  "<task-notification>\n<task-id>bd7544a</task-id>\n<output-file>/tmp/claude/-Users-balkhaev-mycode-yep/tasks/bd7544a.output</output-file>\n<status>completed</status>\n<summary>Background command \"Повторный запуск GUI\" completed (exit code 0).</summary>\n</task-notification>\nRead the output file to retrieve the result: /tmp/claude/-Users-balkhaev-mycode-yep/tasks/bd7544a.output",
+  "<task-notification>\n<task-id>b5211d3</task-id>\n<output-file>/tmp/claude/-Users-balkhaev-mycode-yep/tasks/b5211d3.output</output-file>\n<status>completed</status>\n<summary>Background command \"Запуск GUI\" completed (exit code 0).</summary>\n</task-notification>\nRead the output file to retrieve the result: /tmp/claude/-Users-balkhaev-mycode-yep/tasks/b5211d3.output",
+  "<task-notification>\n<task-id>bfad4b2</task-id>\n<output-file>/tmp/claude/-Users-balkhaev-mycode-yep/tasks/bfad4b2.output</output-file>\n<status>completed</status>\n<summary>Background command \"Запуск GUI\" completed (exit code 0).</summary>\n</task-notification>\nRead the output file to retrieve the result: /tmp/claude/-Users-balkhaev-mycode-yep/tasks/bfad4b2.output",
+  "<task-notification>\n<task-id>bd2a34b</task-id>\n<output-file>/tmp/claude/-Users-balkhaev-mycode-yep/tasks/bd2a34b.output</output-file>\n<status>completed</status>\n<summary>Background command \"Запуск GUI\" completed (exit code 0).</summary>\n</task-notification>\nRead the output file to retrieve the result: /tmp/claude/-Users-balkhaev-mycode-yep/tasks/bd2a34b.output",
+  "<task-notification>\n<task-id>b8d8926</task-id>\n<output-file>/tmp/claude/-Users-balkhaev-mycode-yep/tasks/b8d8926.output</output-file>\n<status>completed</status>\n<summary>Background command \"Запуск GUI\" completed (exit code 0).</summary>\n</task-notification>\nRead the output file to retrieve the result: /tmp/claude/-Users-balkhaev-mycode-yep/tasks/b8d8926.output",
+  "В ui все выведено? tui/gui"
+ ],
+ "pushback": [
+  "view history передает полный путь, а на странице используется относительный",
+  "А теперь надо значительно улучшить Code чтобы с детальной страниец со всей инфой",
+  "http://localhost:3838/api/risk-analysis?limit=20\nнужно пофиксить эту ручку",
+  "http://localhost:3838/code/insights и другие все еще, сделай нормальное api путь",
+  "1",
+  "исправь все tui ошибки"
+ ]
+}

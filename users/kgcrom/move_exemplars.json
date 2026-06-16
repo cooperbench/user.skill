@@ -1,0 +1,25 @@
+{
+ "bug_report": [
+  "3 THEME 메뉴에서 테마 정보가 보이지 않습니다. 원인을 파악하고 수정해주세요. \n[Image: image/png]",
+  "오류 화면이야. 키 매칭이 안되는거 같은데 수정해줘\n[Image: image/png]",
+  "코스피, 코스닥은 잘 된것 같은데 여전히 업종 리스트 조회는안되고 있어. 원인을 다시 파악하고 수정해줘 \n[Image: image/png]",
+  "오류 판단해서 수정해줘 \n[Image: image/png]",
+  "출력되는 오류 확인해서 파악되는 원인 알려줘 \n[Image: image/png]"
+ ],
+ "approve_proceed": [
+  "방금 커밋도 reset해줘",
+  "yes, And please add a short description to github description."
+ ],
+ "new_work": [
+  ".github/PULL_REQUEST_TEMPLATE.md 만들어줘. 오픈소스 pull request template best practice 조시해서 해당 프로젝트에 맞게 수정해줘",
+  "claude code, codex, gemini, github copilot에서 범용적으로 쓸 목적의 agent, skill 저장소라는 말이 포함되게 description을 영어로 적어줘",
+  "@packages/cluefin-openapi/ uv build 해줘",
+  "pypi publish 하려면 어떻게 해야돼?"
+ ],
+ "pushback": [
+  "switch_screen 했을 때 선택된 메뉴는 하이라이트 되서 지금 어떤 화면인지 보여줘.",
+  "rank 화면에서 메뉴 선택했을 때 detail이 활성화 되는데 사실 \n두번째 사진에서 종목 detail이 활성화되고 상세보기가 가능해야되는데 확인해줘 \n[Image: image/png]\n[Image: image/png]",
+  "해당 프로젝트의 description을 한글로 적어줘",
+  "아니다 미안. 영어로적어줘"
+ ]
+}
