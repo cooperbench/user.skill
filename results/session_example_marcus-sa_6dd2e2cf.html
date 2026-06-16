@@ -1,0 +1,92 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<title>Real vs simulated session — marcus-sa</title>
+<style>
+ body { font-family: -apple-system, "Segoe UI", Roboto, sans-serif; max-width: 1100px; margin: 2rem auto;
+        padding: 0 1rem; color: #1a1a2e; line-height: 1.5; }
+ h1 { border-bottom: 3px solid #7c3aed; padding-bottom: .3rem; }
+ table { border-collapse: collapse; width: 100%; margin-top: 1rem; }
+ td { vertical-align: top; padding: .5rem .7rem; border-bottom: 1px solid #eee; font-size: .9rem; }
+ td.agent { background: #f6f6fb; color: #555; font-size: .82rem; }
+ td.ur { width: 50%; background: #fbf7ff; border-left: 3px solid #7c3aed; }
+ td.us { width: 50%; background: #f0f9ff; border-left: 3px solid #0ea5e9; }
+ td.us.agree { background: #f0fdf4; border-left-color: #16a34a; }
+ td.us.na { color: #aaa; background: #fafafa; border-left-color: #ddd; }
+ .mv { display:inline-block; font-size:.7rem; text-transform:uppercase; letter-spacing:.03em;
+       background:#e7e1f5; color:#4c1d95; border-radius:3px; padding:0 5px; margin-right:5px; }
+ .hdr { display:flex; gap:1rem; font-weight:600; margin-top:1rem; }
+ .hdr div { flex:1; } .l { color:#7c3aed; } .r { color:#0ea5e9; }
+ .note { background:#f5f0ff; border-left:4px solid #7c3aed; padding:.6rem 1rem; border-radius:4px; }
+</style></head><body>
+<h1>Complete session: real vs simulated developer (marcus-sa)</h1>
+<p class="note">One real held-out session in <code>osabiohq/osabio</code>, replayed from the
+reconstructed pre-session codebase. The <b>real agent turns are held fixed</b>; at each user turn the
+<b>simulated developer</b> (v5 folder simulator) produces its message conditioned on the same real
+prefix — so the left and right columns face identical context. Move tags are the labelled speech act;
+green = same move as the real user. Per-turn move agreement: <b>3/6</b>.</p>
+<div class="hdr"><div class="l">◀ REAL developer</div><div class="r">SIMULATED developer ▶</div></div>
+<table><tbody><tr><td class='ur'>&lt;system_instruction&gt;
+You are working inside Conductor, a Mac app that lets the user run many coding agents in parallel.
+Your work should take place in the /Users/marcus/conductor/workspaces/brain-v1/san-francisco-v2 directory (unless otherwise directed), which has been set up for you to work in.
+Each workspace has a .context directory (gitignored) where you can save files to collaborate with other agents.
+The target branch for this workspace is main. Use this for actions like creating new PRs, bisecting, etc., unless you&#x27;re told otherwise.
+
+By default, the user will only see the last message that you send before stopping. Include all essential information in the last message. The intermediate messages will be collapsed and accessible by the user but not displayed by default.
+
+If the user asks you to work on several unrelated tasks, you can suggest they start new workspaces.
+Sometimes the user might send you a message they meant to send in a different workspace or a different chat. If something doesn&#x27;t make sense in the context of your work, just ask. 
+If the user asks for help with Conductor, you can ask them to go to &quot;Help -&gt; Send Feedback&quot; to get in touch with our team.
+&lt;/system_instruction&gt;
+
+/nw-root-why marcus@Marcuss-MacBook-Pro san-francisco-v2 % bun migrate
+$ bun run --env-file=.env schema/migrate.ts
+90 pending migration(s):
+✗ Failed: 0001_agent_session_and_subtask.surql (statement 2)
+  → The query was not executed due to a failed transaction
+error: script &quot;migrate&quot; exited with code 1</td><td class='us na'>— (not simulated)</td></tr><tr><td class='ur'>Base directory for this skill: /Users/marcus/.claude/skills/nw-root-why # NW-ROOT-WHY: Toyota 5 Whys Root Cause Analysis **Wave**: CROSS_WAVE **Agent**: Rex (nw-troubleshooter) ## Overview Systematic root cause analysis using Toyota&#x27;s 5 Whys with multi-causal investigation and evidence-based validation. Investigates multiple cause branches at each level|validates solutions against all identified root causes. ## Agent Invocation @nw-troubleshooter Execute \*investigate-root-cause for {problem-statement}. **Configuration:** - investigation_depth: 5 - multi_causal: true - evidence_required: true ## Usage: DELIVER Wave Retrospective (Phase 3.5) When invoked as part of `/nw-deliver` Phase 3.5, analyze across 4 categories: 1. **What worked well** (and why — preserve these practices) 2. **What worked better than before** (and why — reinforce improvements) 3. **What worked badly** (5 Whys root cause, actionable fix) 4. **What worked worse than before** (5 Whys root cause, prevent regression) **Inputs**: Evolution document|execution-log.json|mutation results|git log. **Output**: Retrospective section appended to evolution document. **Skip**: If clean execution (no skips|no failures|no tooling issues), generate brief summary only. Tag items requiring nWave framework changes as **meta-improvements**. ## Success Criteria - [ ] All 5 WHY levels investigated with evidence - [ ] Multi-causal branches explored at each level - [ ] Root causes identified and validated - [ ] Solutions address all identified root causes - [ ] Backward chain validation performed ## Next Wave **Handoff To**: {invoking-agent-returns-to-workflow} **Deliverables**: Root cause analysis report with solutions ## Examples ### Example 1: Investigate test flakiness ``` /nw-root-why &quot;Integration tests fail intermittently on CI but pass locally&quot; ``` Rex investigates 5 WHY levels with multi-causal branches, discovers race […truncated, 287 words total]</td><td class='us na'>— (not simulated)</td></tr><tr><td class='ur'>Continue from where you left off.</td><td class='us na'>— (not simulated)</td></tr><tr><td class='agent' colspan='2'><b>AGENT</b> · No response requested.</td></tr><tr><td class='ur'><span class='mv'>bug_report</span> marcus@Marcuss-MacBook-Pro san-francisco-v2 % dc down -v
+[+] Running 4/4
+ ✔ Container osabio-surrealdb-init         Removed               0.0s
+ ✔ Container osabio-surrealdb              Removed               0.2s
+ ✔ Volume san-francisco-v2_surrealdb-data  Removed               0.0s
+ ✔ Network san-francisco-v2_default        Removed               0.1s
+marcus@Marcuss-MacBook-Pro san-francisco-v2 % dc up -d
+[+] Running 4/4
+ ✔ Network san-francisco-v2_default        Created               0.0s
+ ✔ Volume san-francisco-v2_surrealdb-data  Created               0.0s
+ ✔ Container osabio-surrealdb              Healthy               2.7s
+ ✔ Container osabio-surrealdb-init         Started               2.8s
+marcus@Marcuss-MacBook-Pro san-francisco-v2 %
+
+it works fine. base schema is applied fine. applying migrations on top used to work fine previously. we need to debug what changed and why</td><td class='us'><span class='mv'>pushback</span> what do you mean &quot;no response requested&quot; — run the retrospective analysis</td></tr><tr><td class='ur'>Continue from where you left off.</td><td class='us na'>— (not simulated)</td></tr><tr><td class='agent' colspan='2'><b>AGENT</b> · No response requested.</td></tr><tr><td class='ur'><span class='mv'>refine_redirect</span> this issue goes further back than whats on main</td><td class='us'><span class='mv'>question</span> what changed in the migrations recently</td></tr><tr><td class='agent' colspan='2'><b>AGENT</b> · Root cause confirmed. **`DEFINE FIELD` without `OVERWRITE` is no longer idempotent in SurrealDB v3.0.4** — it now throws &quot;The field &#x27;X&#x27; already exists&quot;. The base schema (`surreal-schema.surql`) is cumulative, so `surrealdb-init` already creates all tables/fields. Then migration 0001+ tries bare `DEFINE FIELD` on existing fields and fails.
+
+71 of 92 migration files use bare `DEFINE FIELD`. Two fix options:
+
+**A) Add `OVERWRITE` to all `DEFINE FIELD/INDEX` in migrations** — makes them idempotent, aligns with CLAUDE.md guidance. Mechanical change across 71 files.
+
+**B) Fix the migration runner** — after base schema import, detect it&#x27;s a fresh DB and record all migrations as &quot;applied&quot; without ex…</td></tr><tr><td class='ur'>&lt;command-message&gt;nw-research&lt;/command-message&gt;
+&lt;command-name&gt;/nw-research&lt;/command-name&gt;
+&lt;command-args&gt;how are we supposed to write migrations then ?&lt;/command-args&gt;</td><td class='us na'>— (not simulated)</td></tr><tr><td class='ur'>Base directory for this skill: /Users/marcus/.claude/skills/nw-research # NW-RESEARCH: Evidence-Driven Knowledge Research **Wave**: CROSS_WAVE **Agent**: Nova (nw-researcher) **Command**: `*research` ## Overview Systematic evidence-based research with source verification. Cross-wave support providing research-backed insights for any nWave phase using trusted academic|official|industry sources. Optional `--skill-for={agent-name}` distills research into a practitioner-focused skill file for a specific agent. ## Orchestration: Trusted Source Config At orchestration time, before invoking the researcher subagent: 1. **Read** `.nwave/trusted-source-domains.yaml` from the project root 2. **If file missing**, seed it from the defaults in the `## Default Trusted Sources` section below, then notify the user: &quot;Seeded `.nwave/trusted-source-domains.yaml` with defaults (7 categories, 42 trusted domains, 5 excluded). Edit the YAML directly to customize.&quot; 3. **Embed** the YAML content inline in the researcher subagent Task prompt so the agent receives trusted source config via prompt context ## Agent Invocation @nw-researcher Execute \*research on {topic} [--skill-for={agent-name}]. **Configuration:** - research_depth: detailed # overview/detailed/comprehensive/deep-dive - source_preferences: [&quot;academic&quot;, &quot;official&quot;, &quot;technical_docs&quot;] - output_directory: docs/research/ - skill_for: {agent-name} # Optional: distilled skill for specified agent - skill_output_directory: ~/.claude/nWave/skills/{agent-name}/ ## Output Management The researcher MUST create the output file in the FIRST 5 turns with a document skeleton (title, sections, placeholders). All subsequent findings are written DIRECTLY to this file as they are gathered -- never held only in context. If the agent is interrupted or runs out of turns, the output file contains all work done so far. This is the researcher&#x27;s equivalent of the crafter&#x27;s &quot;commit early, commit often.&quot; Progressive write checkpoints: - Turn ~5: Output file exists with […truncated, 920 words total]</td><td class='us na'>— (not simulated)</td></tr><tr><td class='agent' colspan='2'><b>AGENT</b> · Here&#x27;s what the research found:
+
+## Root Cause
+
+SurrealDB **intentionally removed** bare `DEFINE` idempotency in the v2.0 alpha cycle (PR #4148, August 2024). The `OVERWRITE` keyword was added as the explicit replacement (PR #4465). This carries forward to all v3.0.x releases — it&#x27;s not a bug, it&#x27;s by design.
+
+## How to Write Migrations
+
+**Rule: Always use `DEFINE ... OVERWRITE` in migration files.**
+
+| Statement | Correct | Wrong |
+|-----------|---------|-------|
+| Field | `DEFINE FIELD OVERWRITE name ON table TYPE string;` | `DEFINE FIELD name ON table TYPE string;` |
+| Table | `DEFINE TABLE OVERWRITE foo SCHEMAFULL;` | `DEFINE TABLE foo SCHEMAFULL;` |
+| Index | `DEFINE INDEX OVERWRITE idx…</td></tr><tr><td class='ur'><span class='mv'>approve_proceed</span> yes, fix all the migration files</td><td class='us agree'><span class='mv'>approve_proceed</span> go with A, add OVERWRITE to all migrations</td></tr><tr><td class='agent' colspan='2'><b>AGENT</b> · All 90 migrations applied successfully. Here&#x27;s the summary of what was fixed:
+
+**Three categories of SurrealDB v3.0 idempotency breakage:**
+
+1. **`DEFINE FIELD/INDEX/TABLE` without `OVERWRITE`** — now errors &quot;already exists&quot;. Fixed by adding `OVERWRITE` to all bare `DEFINE` statements across all migration files via sed.
+
+2. **`REMOVE FIELD/INDEX` without `IF EXISTS`** — now errors &quot;does not exist&quot;. Fixed by adding `IF EXISTS` to all `REMOVE` statements.
+
+3. **Transaction write conflict in 0081** — `DEFINE FIELD OVERWRITE` + `REMOVE FIELD` on the same table within one transaction causes a write conflict in v3.0.4. Fixed by removing the transaction wrapper (all statements are idempotent DDL, d…</td></tr><tr><td class='ur'><span class='mv'>new_work</span> add the &quot;How to Write Migrations&quot; section to schema/CLAUDE.md</td><td class='us'><span class='mv'>approve_proceed</span> commit and push</td></tr><tr><td class='agent' colspan='2'><b>AGENT</b> · No response requested.</td></tr><tr><td class='agent' colspan='2'><b>AGENT</b> · Done. Added the migration authoring guide to `schema/CLAUDE.md` covering the three rules: `OVERWRITE` for `DEFINE`, `IF EXISTS` for `REMOVE`, and avoiding mixed DDL/DML transactions on the same table.</td></tr><tr><td class='ur'><span class='mv'>approve_proceed</span> update pr description to include these fixes</td><td class='us agree'><span class='mv'>approve_proceed</span> commit and push</td></tr><tr><td class='agent' colspan='2'><b>AGENT</b> · Updated PR #210 with the migration fix summary and added `bun migrate` to the test plan.</td></tr><tr><td class='ur'><span class='mv'>approve_proceed</span> commit and push</td><td class='us agree'><span class='mv'>approve_proceed</span> commit and push</td></tr></tbody></table>
+<footer style="margin-top:2rem;font-size:.8rem;color:#888">scripts/session_example.py ·
+github.com/cooperbench/user.skill</footer>
+</body></html>

@@ -103,15 +103,16 @@ green = same move as the real user. Per-turn move agreement: <b>{agree}/{len(sim
 <footer style="margin-top:2rem;font-size:.8rem;color:#888">scripts/session_example.py ·
 github.com/cooperbench/user.skill</footer>
 </body></html>"""
-    (ROOT / "results" / "session_example.html").write_text(page)
-    (ROOT / "results" / "session_example.json").write_text(json.dumps(
+    tag = f"_{slug}_{prefix}" if len(sys.argv) > 3 and sys.argv[3] == "--tagged" else ""
+    (ROOT / "results" / f"session_example{tag}.html").write_text(page)
+    (ROOT / "results" / f"session_example{tag}.json").write_text(json.dumps(
         {"slug": slug, "session": sess["session_id"], "repo": repo,
          "agreement": f"{agree}/{len(sim_idx)}",
          "turns": [{"i": i, "role": turns[i]["role"], "real": turns[i]["text"],
                     "sim": sims.get(i), "real_move": lab.get(("real", i)),
                     "sim_move": lab.get(("sim", i))} for i in range(len(turns))]},
         indent=1, ensure_ascii=False))
-    print(f"wrote results/session_example.html  (agreement {agree}/{len(sim_idx)})")
+    print(f"wrote results/session_example{tag}.html  (agreement {agree}/{len(sim_idx)})")
 
 
 if __name__ == "__main__":

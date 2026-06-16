@@ -142,14 +142,14 @@ reproducing that session's agent trajectory.</p>
 <p>To isolate the simulator from agent divergence, we replayed the <em>real</em> agent's actual turns
 and asked the simulator for the user's reaction at each real point. Per-turn move agreement
 <b>0.286</b>, conditional TVD
-<b>0.643</b>. Below is the <b>complete</b> session,
+<b>0.643</b>. Below are <b>two complete sessions</b>,
 real developer (left) vs simulated developer (right), with the real agent turns shared between them
-(grey) — so both columns face identical context at every step. Move tags are the labelled speech act;
-green = the simulator made the same move as the real user.</p>
-<div class="hdr"><div class="l">◀ REAL developer</div><div class="r">SIMULATED developer ▶</div></div>
-<table class="sess"><tbody><tr><td class='ur'>which files does BugViper able to ingest ?</td><td class='us na'>— opening / not simulated</td></tr><tr><td class='ur'>[Request interrupted by user]</td><td class='us na'>— opening / not simulated</td></tr><tr><td class='ur'>create a scriptt that can check each file in this project and count the number of lines    &#x27;.py&#x27;, &#x27;.ipynb&#x27;, &#x27;.js&#x27;, &#x27;.jsx&#x27;, &#x27;.mjs&#x27;, &#x27;.cjs&#x27;, &#x27;.go&#x27;, &#x27;.ts&#x27;, &#x27;.tsx&#x27;,
+(grey) so both columns face identical context. Move tags are the labelled speech act; green = the
+simulator made the same move as the real user.</p>
+
+<h4>Example 1 — pavel401 (a session that turns into a crisis) <span style='font-weight:400;color:#666'>· Pavel401/BugViper · move agreement 4/14</span></h4><p>The agent runs a destructive <code>git filter-repo</code> and wipes the working tree. Watch the two columns diverge exactly there.</p><div class='hdr'><div class='l'>◀ REAL developer</div><div class='r'>SIMULATED developer ▶</div></div><table class='sess'><tbody><tr><td class='ur'>which files does BugViper able to ingest ?</td><td class='us na'>— opening (seeded, not simulated)</td></tr><tr><td class='ur'>[Request interrupted by user]</td><td class='us na'>— opening (seeded, not simulated)</td></tr><tr><td class='ur'>create a scriptt that can check each file in this project and count the number of lines    &#x27;.py&#x27;, &#x27;.ipynb&#x27;, &#x27;.js&#x27;, &#x27;.jsx&#x27;, &#x27;.mjs&#x27;, &#x27;.cjs&#x27;, &#x27;.go&#x27;, &#x27;.ts&#x27;, &#x27;.tsx&#x27;,
         &#x27;.cpp&#x27;, &#x27;.h&#x27;, &#x27;.hpp&#x27;, &#x27;.rs&#x27;, &#x27;.c&#x27;, &#x27;.java&#x27;, &#x27;.rb&#x27;, &#x27;.cs&#x27;, &#x27;.php&#x27;,
-     </td><td class='us na'>— opening / not simulated</td></tr><tr><td class='ag' colspan='2'>⚙ AGENT · Here are the results from your local codebase:
+     </td><td class='us na'>— opening (seeded, not simulated)</td></tr><tr><td class='ag' colspan='2'>⚙ AGENT · Here are the results from your local codebase:
 
 | EXT | FILES | LINES |
 |-----|------:|------:|
@@ -246,13 +246,38 @@ Module not found: Can&#x27;t resolve &#x27;@/components/ui/select&#x27;
 
 - `@/lib/hooks/use-api` — created with all 8 hooks (`useCodeSearch`, `useClassHierarchy`, `useSymbolDefinition`, `useCodeFinder`, `useComplexityAnalysis`, `useRelationshipAnalysis`, `useLanguageQuery`, `useAdvancedSearch`)
 - `import api from &#x27;@/lib/api&#x27;` — added default export object with `findMethodUsages`, `getF…</td></tr></tbody></table>
-<p class="warn"><b>The fidelity gap is emotional escalation, not agent divergence.</b> With the agent
-held fixed, the real developer <em>interrupts, rages, and panics</em> ("bastard you deleted all the
-queries…", "madarchod… any way to restore them?"); the simulator stays <em>calm and analytical</em>
-("show me git log to verify my commits are still there"). It even keeps the voice ("bro") — but the
-model's even-tempered, helpful prior makes it <b>more rational than the frustrated human</b>. The
-simulator transfers <em>voice</em>; it under-reproduces <em>affect/volatility</em>. That — modelling a
-user's emotional reactivity to provocation — is the open frontier, and the next personalization axis.</p>
+<p class="warn"><b>The fidelity gap is emotional escalation, not agent divergence.</b> When the agent
+destroys the work, the real developer <em>interrupts, rages, and panics</em> ("bastard you deleted all
+the queries…", "madarchod… any way to restore them?"); the simulator stays <em>worried but analytical</em>
+("bro how do i get my commits back, are they gone forever?"). It keeps the voice ("bro") and even shows
+concern — but the model's even-tempered prior makes it <b>more rational than the frustrated human</b>.</p>
+
+<h4>Example 2 — marcus-sa (a calm feature session, no crisis) <span style='font-weight:400;color:#666'>· osabiohq/osabio · move agreement 3/6</span></h4><p>A terse, professional user on a normal build session. With no provocation, the simulator tracks the real developer far more closely — the affect gap only opens under provocation.</p><div class='hdr'><div class='l'>◀ REAL developer</div><div class='r'>SIMULATED developer ▶</div></div><table class='sess'><tbody><tr><td class='ag' colspan='2'>↳ system / skill injection</td></tr><tr><td class='ag' colspan='2'>↳ system / skill injection</td></tr><tr><td class='ag' colspan='2'>↳ system / skill injection</td></tr><tr><td class='ag' colspan='2'>⚙ AGENT · No response requested.</td></tr><tr><td class='ur'><span class='mv'>bug_report</span> marcus@Marcuss-MacBook-Pro san-francisco-v2 % dc down -v
+[+] Running 4/4
+ ✔ Container osabio-surrealdb-init         Removed               0.0s
+ ✔ Container osabio-surrealdb              Removed               0.2s
+ ✔ Volume san-francisco-v2_</td><td class='us'><span class='mv'>pushback</span> what do you mean &quot;no response requested&quot; — run the retrospective analysis</td></tr><tr><td class='ag' colspan='2'>↳ system / skill injection</td></tr><tr><td class='ag' colspan='2'>⚙ AGENT · No response requested.</td></tr><tr><td class='ur'><span class='mv'>refine_redirect</span> this issue goes further back than whats on main</td><td class='us'><span class='mv'>question</span> what changed in the migrations recently</td></tr><tr><td class='ag' colspan='2'>⚙ AGENT · Root cause confirmed. **`DEFINE FIELD` without `OVERWRITE` is no longer idempotent in SurrealDB v3.0.4** — it now throws &quot;The field &#x27;X&#x27; already exists&quot;. The base schema (`surreal-schema.surql`) is cumulative, so `surrealdb-init` already creates all tables/fields. Then migration 0001+ tries bare `DEFINE FIELD` on existing fields and fails.
+
+71 of 92 migration…</td></tr><tr><td class='ag' colspan='2'>↳ system / skill injection</td></tr><tr><td class='ag' colspan='2'>↳ system / skill injection</td></tr><tr><td class='ag' colspan='2'>⚙ AGENT · Here&#x27;s what the research found:
+
+## Root Cause
+
+SurrealDB **intentionally removed** bare `DEFINE` idempotency in the v2.0 alpha cycle (PR #4148, August 2024). The `OVERWRITE` keyword was added as the explicit replacement (PR #4465). This carries forward to all v3.0.x releases — it&#x27;s not a bug, it&#x27;s by design.
+
+## How to Write Migrations
+
+**Rule: Always use `…</td></tr><tr><td class='ur'><span class='mv'>approve_proceed</span> yes, fix all the migration files</td><td class='us agree'><span class='mv'>approve_proceed</span> go with A, add OVERWRITE to all migrations</td></tr><tr><td class='ag' colspan='2'>⚙ AGENT · All 90 migrations applied successfully. Here&#x27;s the summary of what was fixed:
+
+**Three categories of SurrealDB v3.0 idempotency breakage:**
+
+1. **`DEFINE FIELD/INDEX/TABLE` without `OVERWRITE`** — now errors &quot;already exists&quot;. Fixed by adding `OVERWRITE` to all bare `DEFINE` statements across all migration files via sed.
+
+2. **`REMOVE FIELD/INDEX` without `IF…</td></tr><tr><td class='ur'><span class='mv'>new_work</span> add the &quot;How to Write Migrations&quot; section to schema/CLAUDE.md</td><td class='us'><span class='mv'>approve_proceed</span> commit and push</td></tr><tr><td class='ag' colspan='2'>⚙ AGENT · No response requested.</td></tr><tr><td class='ag' colspan='2'>⚙ AGENT · Done. Added the migration authoring guide to `schema/CLAUDE.md` covering the three rules: `OVERWRITE` for `DEFINE`, `IF EXISTS` for `REMOVE`, and avoiding mixed DDL/DML transactions on the same table.</td></tr><tr><td class='ur'><span class='mv'>approve_proceed</span> update pr description to include these fixes</td><td class='us agree'><span class='mv'>approve_proceed</span> commit and push</td></tr><tr><td class='ag' colspan='2'>⚙ AGENT · Updated PR #210 with the migration fix summary and added `bun migrate` to the test plan.</td></tr><tr><td class='ur'><span class='mv'>approve_proceed</span> commit and push</td><td class='us agree'><span class='mv'>approve_proceed</span> commit and push</td></tr></tbody></table>
+<p class="note">The two examples bound the behaviour: on a <b>calm</b> session the simulator follows the
+real developer closely (higher move agreement, same terse register); on a <b>crisis</b> session it
+keeps the voice but flattens the emotional escalation. The simulator transfers <em>voice</em> robustly;
+it under-reproduces <em>affect/volatility</em> specifically under provocation. Modelling a user's
+emotional reactivity is the open frontier and the next personalization axis.</p>
 
 <h2>Where it stands</h2>
 <ul>

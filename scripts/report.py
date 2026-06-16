@@ -146,25 +146,43 @@ def main():
         return json.loads(f.read_text()) if f.exists() else None
     sc = _load("session_compare.json")
     ar = _load("agent_replay_pavel401_cfdde919.json")
-    ex = _load("session_example.json")
-    # complete real-vs-simulated session transcript (agent turns shared, user turns split)
-    full_session_rows = ""
-    if ex:
+
+    import re as _re
+    _SYS = _re.compile(r"<system_instruction|base directory for this skill|<command-|"
+                       r"continue from where you left off|local-command", _re.I)
+
+    def transcript_rows(ex):
+        out = ""
+        if not ex:
+            return out
         for t in ex["turns"]:
             if t["role"] == "assistant":
                 txt = html.escape(t["real"][:360]) + ("…" if len(t["real"]) > 360 else "")
-                full_session_rows += f"<tr><td class='ag' colspan='2'>⚙ AGENT · {txt}</td></tr>"
-            else:
-                real_txt = html.escape(t["real"][:240])
-                if t.get("sim") is not None:
-                    rm, sm = t.get("real_move") or "–", t.get("sim_move") or "–"
-                    cls = "us agree" if rm == sm else "us"
-                    full_session_rows += (
-                        f"<tr><td class='ur'><span class='mv'>{rm}</span> {real_txt}</td>"
+                out += f"<tr><td class='ag' colspan='2'>⚙ AGENT · {txt}</td></tr>"
+            elif t.get("sim") is not None:
+                rm, sm = t.get("real_move") or "–", t.get("sim_move") or "–"
+                cls = "us agree" if rm == sm else "us"
+                out += (f"<tr><td class='ur'><span class='mv'>{rm}</span> {html.escape(t['real'][:240])}</td>"
                         f"<td class='{cls}'><span class='mv'>{sm}</span> {html.escape((t['sim'] or '')[:240])}</td></tr>")
-                else:
-                    full_session_rows += (f"<tr><td class='ur'>{real_txt}</td>"
-                                          f"<td class='us na'>— opening / not simulated</td></tr>")
+            elif _SYS.search(t["real"]):
+                out += "<tr><td class='ag' colspan='2'>↳ system / skill injection</td></tr>"
+            else:  # genuine user turn we didn't simulate (e.g. the opening task)
+                out += (f"<tr><td class='ur'>{html.escape(t['real'][:240])}</td>"
+                        f"<td class='us na'>— opening (seeded, not simulated)</td></tr>")
+        return out
+
+    def session_block(ex, title, blurb):
+        if not ex:
+            return ""
+        return (f"<h4>{title} <span style='font-weight:400;color:#666'>· {html.escape(ex['repo'])} · "
+                f"move agreement {ex['agreement']}</span></h4><p>{blurb}</p>"
+                f"<div class='hdr'><div class='l'>◀ REAL developer</div>"
+                f"<div class='r'>SIMULATED developer ▶</div></div>"
+                f"<table class='sess'><tbody>{transcript_rows(ex)}</tbody></table>")
+
+    ex = _load("session_example.json")  # pavel401 (crisis)
+    ex2 = _load("session_example_marcus-sa_6dd2e2cf.json")  # marcus-sa (clean)
+    full_session_rows = transcript_rows(ex)
 
     a_r, a_v, a_d = delta("realism")
     c_r, c_v, c_d = delta("content")
@@ -319,19 +337,28 @@ reproducing that session's agent trajectory.</p>
 <p>To isolate the simulator from agent divergence, we replayed the <em>real</em> agent's actual turns
 and asked the simulator for the user's reaction at each real point. Per-turn move agreement
 <b>{ar['per_turn_move_agreement'] if ar else '–'}</b>, conditional TVD
-<b>{ar['move_distribution_TVD_conditional'] if ar else '–'}</b>. Below is the <b>complete</b> session,
+<b>{ar['move_distribution_TVD_conditional'] if ar else '–'}</b>. Below are <b>two complete sessions</b>,
 real developer (left) vs simulated developer (right), with the real agent turns shared between them
-(grey) — so both columns face identical context at every step. Move tags are the labelled speech act;
-green = the simulator made the same move as the real user.</p>
-<div class="hdr"><div class="l">◀ REAL developer</div><div class="r">SIMULATED developer ▶</div></div>
-<table class="sess"><tbody>{full_session_rows}</tbody></table>
-<p class="warn"><b>The fidelity gap is emotional escalation, not agent divergence.</b> With the agent
-held fixed, the real developer <em>interrupts, rages, and panics</em> ("bastard you deleted all the
-queries…", "madarchod… any way to restore them?"); the simulator stays <em>calm and analytical</em>
-("show me git log to verify my commits are still there"). It even keeps the voice ("bro") — but the
-model's even-tempered, helpful prior makes it <b>more rational than the frustrated human</b>. The
-simulator transfers <em>voice</em>; it under-reproduces <em>affect/volatility</em>. That — modelling a
-user's emotional reactivity to provocation — is the open frontier, and the next personalization axis.</p>
+(grey) so both columns face identical context. Move tags are the labelled speech act; green = the
+simulator made the same move as the real user.</p>
+
+{session_block(ex, "Example 1 — pavel401 (a session that turns into a crisis)",
+  "The agent runs a destructive <code>git filter-repo</code> and wipes the working tree. Watch the "
+  "two columns diverge exactly there.")}
+<p class="warn"><b>The fidelity gap is emotional escalation, not agent divergence.</b> When the agent
+destroys the work, the real developer <em>interrupts, rages, and panics</em> ("bastard you deleted all
+the queries…", "madarchod… any way to restore them?"); the simulator stays <em>worried but analytical</em>
+("bro how do i get my commits back, are they gone forever?"). It keeps the voice ("bro") and even shows
+concern — but the model's even-tempered prior makes it <b>more rational than the frustrated human</b>.</p>
+
+{session_block(ex2, "Example 2 — marcus-sa (a calm feature session, no crisis)",
+  "A terse, professional user on a normal build session. With no provocation, the simulator tracks the "
+  "real developer far more closely — the affect gap only opens under provocation.")}
+<p class="note">The two examples bound the behaviour: on a <b>calm</b> session the simulator follows the
+real developer closely (higher move agreement, same terse register); on a <b>crisis</b> session it
+keeps the voice but flattens the emotional escalation. The simulator transfers <em>voice</em> robustly;
+it under-reproduces <em>affect/volatility</em> specifically under provocation. Modelling a user's
+emotional reactivity is the open frontier and the next personalization axis.</p>
 
 <h2>Where it stands</h2>
 <ul>
