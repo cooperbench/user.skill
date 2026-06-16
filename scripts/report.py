@@ -140,6 +140,22 @@ def main():
             f"<td class='num'>{p5:.0f}%</td><td class='barcell'><div class='bar v5' style='width:{p5:.0f}%'></div></td></tr>")
     move_table = "".join(move_rows)
 
+    # ---- session-level experiments (closed-loop + agent-replay) ----
+    def _load(p):
+        f = RESULTS / p
+        return json.loads(f.read_text()) if f.exists() else None
+    sc = _load("session_compare.json")
+    ar = _load("agent_replay_pavel401_cfdde919.json")
+    crisis_rows = ""
+    if ar:
+        for r in ar["rows"]:
+            blob = (r["agent_said"] + r["real_msg"]).lower()
+            if "delete" in blob or r["real_move"] == "interrupt":
+                crisis_rows += (
+                    f"<tr><td>{html.escape(r['agent_said'][:90])}…</td>"
+                    f"<td><b>[{r['real_move']}]</b><br>{html.escape(r['real_msg'][:70])}</td>"
+                    f"<td>[{r['sim_move']}]<br>{html.escape((r['sim_msg'] or '')[:70])}</td></tr>")
+
     a_r, a_v, a_d = delta("realism")
     c_r, c_v, c_d = delta("content")
     m_r, m_v, m_d = delta("act")
@@ -260,6 +276,42 @@ discriminability returns across all axes:</p>
   <div class="stat up"><div class="bn">{fmt(v5_agap, pct=True, plus=True)}</div><div class="bl">speech-act own−wrong</div></div>
 </div>
 
+<h2>The real frontier: whole-session simulation</h2>
+<p>Single-message fidelity turns out to be <b>saturated</b>: scoring real held-out messages with the
+same instruments, a genuine human message scores <b>29.1</b> realism — <em>lower</em> than v5's 38.8 —
+and two <em>real</em> developers are barely distinguishable from one message (2AFC ceiling 0.65 style /
+0.54 realism, vs ~0.5 chance). v5 already meets or exceeds these ceilings, so there is no per-message
+headroom; pushing further just produces caricature (which is why the v6/v7 ablations regressed). The
+real headroom is at the <b>session</b> level — does a simulated developer drive a whole session like
+the real one? Two experiments, both starting from the <em>reconstructed real codebase state</em>
+(clone the repo, checkout the parent of the session's first commit):</p>
+
+<h3>1. Closed loop — simulator drives a fresh real agent</h3>
+<p>The v5 simulator drove a real Claude-Code agent through a session from the reconstructed state.
+Voice transfer was excellent — the simulated developer independently produced this user's tics
+("bro", lowercase, the "doesnot" typo). But the session move-distribution distance was
+<b>{sc['move_distribution_TVD'] if sc else '–'}</b> (worse than single-message), for an informative
+reason: the <em>real</em> session was a crisis (the real agent deleted the user's uncommitted work →
+rage, interrupts), while the well-behaved fresh agent gave the simulated user nothing to react to.
+<b>User moves are coupled to agent actions</b> — you can't match a session's move-mix without
+reproducing that session's agent trajectory.</p>
+
+<h3>2. Agent-replay — hold the real agent fixed</h3>
+<p>To isolate the simulator from agent divergence, we replayed the <em>real</em> agent's actual turns
+and asked the simulator for the user's reaction at each real point. Per-turn move agreement
+<b>{ar['per_turn_move_agreement'] if ar else '–'}</b>, conditional TVD
+<b>{ar['move_distribution_TVD_conditional'] if ar else '–'}</b>. The crisis turns expose the gap
+exactly — when the real agent proposes/does destructive git operations:</p>
+<table><thead><tr><th>real agent did</th><th>REAL user</th><th>SIMULATED user</th></tr></thead>
+<tbody>{crisis_rows}</tbody></table>
+<p class="warn"><b>The fidelity gap is emotional escalation, not agent divergence.</b> With the agent
+held fixed, the real developer <em>interrupts, rages, and panics</em> ("bastard you deleted all the
+queries…", "madarchod… any way to restore them?"); the simulator stays <em>calm and analytical</em>
+("show me git log to verify my commits are still there"). It even keeps the voice ("bro") — but the
+model's even-tempered, helpful prior makes it <b>more rational than the frustrated human</b>. The
+simulator transfers <em>voice</em>; it under-reproduces <em>affect/volatility</em>. That — modelling a
+user's emotional reactivity to provocation — is the open frontier, and the next personalization axis.</p>
+
 <h2>Where it stands</h2>
 <ul>
 <li><b>The distillation captures real user signal</b> — the own folder beats a wrong user's folder on
@@ -268,9 +320,12 @@ content, realism and speech-act, restored and strongest in v5.</li>
 (TVD {tvd_v5}, interrupts included), and correctly user-specific.</li>
 <li><b>Architecture:</b> shared scaffold = competence; per-user sampled prior = move-mix;
 per-user folder = voice. All user-specificity lives in the per-user layers.</li>
-<li><b>Honest ceiling:</b> sampling matches the move <em>distribution</em> and discriminability, not
-single-point move accuracy — predicting the exact next move at a given point stays near its entropy
-floor, as it must.</li>
+<li><b>Single-message fidelity is saturated</b> — v5 meets/exceeds the human ceiling (real messages
+score 29.1 realism; real-vs-real discrimination only ~0.65). More prompt-personalization caricatures.</li>
+<li><b>The open frontier is the session</b>, and it is a <em>coupled</em> user↔agent problem: agent-replay
+shows the residual gap is <b>emotional escalation</b> — the simulator keeps the user's voice but stays
+calmer and more rational than the real, frustrated human. Modelling per-user affect/volatility is the
+next axis.</li>
 </ul>
 
 <footer style="margin-top:3rem;font-size:.8rem;color:#888">Generated by scripts/report.py —
