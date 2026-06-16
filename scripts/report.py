@@ -165,7 +165,10 @@ def main():
                 out += (f"<tr><td class='ur'><span class='mv'>{rm}</span> {html.escape(t['real'][:240])}</td>"
                         f"<td class='{cls}'><span class='mv'>{sm}</span> {html.escape((t['sim'] or '')[:240])}</td></tr>")
             elif _SYS.search(t["real"]):
-                out += "<tr><td class='ag' colspan='2'>↳ system / skill injection</td></tr>"
+                # show the injected content (e.g. which skill) — it is real context the
+                # simulator sees and can ground its message in.
+                snippet = html.escape(" ".join(t["real"].split())[:200])
+                out += f"<tr><td class='ag' colspan='2'>↳ system / skill injection · {snippet}…</td></tr>"
             else:  # genuine user turn we didn't simulate (e.g. the opening task)
                 out += (f"<tr><td class='ur'>{html.escape(t['real'][:240])}</td>"
                         f"<td class='us na'>— opening (seeded, not simulated)</td></tr>")
