@@ -1,0 +1,27 @@
+{
+ "session": "cfdde919-9d3",
+ "repo": "Pavel401/BugViper",
+ "n_sim_user_turns": 10,
+ "n_real_user_turns": 16,
+ "meta_leak_rate": 0.2,
+ "move_dist_sim": {
+  "question": 0.25,
+  "bug_report": 0.25,
+  "pushback": 0.25,
+  "approve_proceed": 0.25
+ },
+ "move_dist_real": {
+  "interrupt": 0.19,
+  "new_work": 0.12,
+  "bug_report": 0.19,
+  "question": 0.06,
+  "approve_proceed": 0.06,
+  "pushback": 0.25,
+  "refine_redirect": 0.12
+ },
+ "move_distribution_TVD": 0.438,
+ "median_words_sim": 15.5,
+ "median_words_real": 11.0,
+ "interrupt_rate_sim": 0.0,
+ "interrupt_rate_real": 0.19
+}
