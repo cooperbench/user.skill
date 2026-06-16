@@ -1,49 +1,58 @@
 {
- "new_work": [
-  "How can I build signed APK? give me the script",
-  "Could you give me build script which install in my cellphone?",
-  "How can I base64 encode?",
-  "file to clipboard",
-  "HOW CAN I DO FOR NOTIFICATION CENTER?",
-  "Okay, just file about the context. title would be push notification related"
- ],
- "approve_proceed": [
-  "Bump up to v1.0.1, and auto increment version code",
-  "<bash-input>git switch main</bash-input>",
-  "<bash-stdout>Your branch is up to date with 'origin/main'.\nSwitched to branch 'main'</bash-stdout><bash-stderr></bash-stderr>",
-  "<bash-input>git switch -c fix/html-highlighting</bash-input>",
-  "<bash-stdout>Switched to a new branch 'fix/html-highlighting'</bash-stdout><bash-stderr></bash-stderr>",
-  "<bash-input>git pull upstream main</bash-input>",
-  "<bash-stdout>From github.com:hackers-pub/android\n * branch            main       -> FETCH_HEAD\n * [new branch]      main       -> upstream/main\nRebasing (1/1)\nSuccessfully rebased and updated refs/heads/fix/html-highlighting.</bash-stdout><bash-stderr></bash-stderr>",
-  "git pull upstream main",
-  "<bash-input>git push</bash-input>",
-  "<bash-stdout>To github.com:malkoG/hackerspub-android.git\n   f5ca675..984cc02  main -> main</bash-stdout><bash-stderr></bash-stderr>",
-  "<bash-input>git switch -c fix/article-rendering</bash-input>",
-  "<bash-stdout>Switched to a new branch 'fix/article-rendering'</bash-stdout><bash-stderr></bash-stderr>"
- ],
- "pushback": [
-  "Wait, it should point at hackerspub/android.",
-  "Okay, it was hackers-pub",
-  "Okay, I forked",
-  "For rendering mention, hashtag, link, and so all, Could you hightlight differently? Reference ../hackerspub/web-next",
-  "For rendering article, Could you render article card differently, and create the article detail page? See ../hackerspub/web-next",
-  "For article rendering or note rendering, we need to full support for code snippet/heading/list/numbered list. Could you also considerate them?",
-  "Continue from where you left off.",
-  "How about this? https://github.com/Irineu333/Highlight",
-  "Yes. Please",
-  "Not highlighting html, syntax highlighting code snippet. Got it?",
-  "But, it renders starts with <span><code>...",
-  "<bash-stdout>[entire] Pushing session logs to origin...\nTo github.com:malkoG/hackerspub-android.git\n   027e0c7..26766de  fix/article-rendering -> fix/article-rendering</bash-stdout><bash-stderr></bash-stderr>"
- ],
- "bug_report": [
-  "<bash-stdout></bash-stdout><bash-stderr>error: cannot pull with rebase: You have unstaged changes.\nerror: Please commit or stash them.\n</bash-stderr>",
-  "keyboard has not spawned up",
-  "Why I can't still reaction?",
-  "And, For each actions for post, most of all are broken. Take a deep look again",
-  "I mean, not correctly functioning",
-  "1. On clicking post, not navigate to post detail page. Only when cliking reaction button it navigates.\n2. Clicking reaction button from list page, it doesn't spawn reaction sheet."
- ],
- "question": [
-  "For source code rendering, is there any good library for syntax highlighting? It should also be applied to note rendering too"
- ]
+ "exemplars": {
+  "new_work": [
+   "How can I build signed APK? give me the script",
+   "Could you give me build script which install in my cellphone?",
+   "How can I base64 encode?",
+   "file to clipboard",
+   "HOW CAN I DO FOR NOTIFICATION CENTER?",
+   "Okay, just file about the context. title would be push notification related"
+  ],
+  "approve_proceed": [
+   "Bump up to v1.0.1, and auto increment version code",
+   "<bash-input>git switch main</bash-input>",
+   "<bash-stdout>Your branch is up to date with 'origin/main'.\nSwitched to branch 'main'</bash-stdout><bash-stderr></bash-stderr>",
+   "<bash-input>git switch -c fix/html-highlighting</bash-input>",
+   "<bash-stdout>Switched to a new branch 'fix/html-highlighting'</bash-stdout><bash-stderr></bash-stderr>",
+   "<bash-input>git pull upstream main</bash-input>",
+   "<bash-stdout>From github.com:hackers-pub/android\n * branch            main       -> FETCH_HEAD\n * [new branch]      main       -> upstream/main\nRebasing (1/1)\nSuccessfully rebased and updated refs/heads/fix/html-highlighting.</bash-stdout><bash-stderr></bash-stderr>",
+   "git pull upstream main",
+   "<bash-input>git push</bash-input>",
+   "<bash-stdout>To github.com:malkoG/hackerspub-android.git\n   f5ca675..984cc02  main -> main</bash-stdout><bash-stderr></bash-stderr>",
+   "<bash-input>git switch -c fix/article-rendering</bash-input>",
+   "<bash-stdout>Switched to a new branch 'fix/article-rendering'</bash-stdout><bash-stderr></bash-stderr>"
+  ],
+  "pushback": [
+   "Wait, it should point at hackerspub/android.",
+   "Okay, it was hackers-pub",
+   "Okay, I forked",
+   "For rendering mention, hashtag, link, and so all, Could you hightlight differently? Reference ../hackerspub/web-next",
+   "For rendering article, Could you render article card differently, and create the article detail page? See ../hackerspub/web-next",
+   "For article rendering or note rendering, we need to full support for code snippet/heading/list/numbered list. Could you also considerate them?",
+   "Continue from where you left off.",
+   "How about this? https://github.com/Irineu333/Highlight",
+   "Yes. Please",
+   "Not highlighting html, syntax highlighting code snippet. Got it?",
+   "But, it renders starts with <span><code>...",
+   "<bash-stdout>[entire] Pushing session logs to origin...\nTo github.com:malkoG/hackerspub-android.git\n   027e0c7..26766de  fix/article-rendering -> fix/article-rendering</bash-stdout><bash-stderr></bash-stderr>"
+  ],
+  "bug_report": [
+   "<bash-stdout></bash-stdout><bash-stderr>error: cannot pull with rebase: You have unstaged changes.\nerror: Please commit or stash them.\n</bash-stderr>",
+   "keyboard has not spawned up",
+   "Why I can't still reaction?",
+   "And, For each actions for post, most of all are broken. Take a deep look again",
+   "I mean, not correctly functioning",
+   "1. On clicking post, not navigate to post detail page. Only when cliking reaction button it navigates.\n2. Clicking reaction button from list page, it doesn't spawn reaction sheet."
+  ],
+  "question": [
+   "For source code rendering, is there any good library for syntax highlighting? It should also be applied to note rendering too"
+  ]
+ },
+ "length_median": {
+  "new_work": 8,
+  "approve_proceed": 3,
+  "pushback": 6,
+  "bug_report": 16,
+  "question": 21
+ }
 }

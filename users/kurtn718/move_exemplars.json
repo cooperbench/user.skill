@@ -1,68 +1,79 @@
 {
- "approve_proceed": [
-  "hi ya when i did the force push - did i mess up the entire.io reporting?",
-  "let's commit things",
-  "let's setup beads please",
-  "pull latest main - and then fix merge conflict on my open pr",
-  "can you put latest main and merge/fx the beads issue if neceessary",
-  "whats next on phase 1 of our plan",
-  "/work next epic",
-  "hi can you summarize what i've done yesterday Feb 24th - use the entire branch to help",
-  "yeah whats in entire/checkpoints/v1 - does it reference individual commits which would be affected",
-  "and be like 16 minutes running",
-  "what about the phase 1 tasks",
-  "Yes"
- ],
- "question": [
-  "whats next on speaker diarization",
-  "what's next with phase 1 on the audio transcription?",
-  "whats next in phase 1 of audio transcription",
-  "and while we are checking how do i update beads or should i",
-  "Just curious how long the speech recognition part is - can you rerun and let me know how long",
-  "take a look",
-  "do have to ask how does this affect security, do we scan the rust code elsewhere?",
-  "ok so if i like relaunch the app i get prompted that Pablo wants to use info in the kychain - wouldn't an app that put it in not need permission?",
-  "please take another look - is there a way we can run codeql locally",
-  "how do i see the debug view",
-  "how do i dismiss that debug view? in the ui",
-  "specificlly what went well with my prompting/use of AI agents.   Take a look at the entire branch and files"
- ],
- "bug_report": [
-  "hi on ci i'm getting the codeql swift error -  is the problem with my cmake?",
-  "let's do SPM caching fix / also explain why we have swift lint and swift format in CI - swift format is failing (i'd expect we'd run format locally before checkin gin )",
-  "can you take at codeql linker error on latest github run on the only PR I have",
-  "hi when i run the app in xcode - i get '/Users/kurtn/Developer/pablo-companion/core/target/debug/deps/libpablo_core.dylib' not valid for use in process: mapping process and mapped file (non-platform) have different Team IDs)",
-  "is it normal for codeql to appear hung on resolve package graph",
-  "codeql fails",
-  "it's still failing on main CI - take a close look at all of the erros - reason if you have to",
-  "does any of these chages have to do with auth - app crashed on signing ni",
-  "ok let's commit these.   when i click quick start - choose patent i get an auth error",
-  "ok let's commit if we haven't.   i noticed buffer overflow - after 35 seconds apture state: capturing(duration: 35.465677976608276)\nBuffer overflow: dropping 256 oldest samples\nBuffer overflow: dropping 512 oldest samples",
-  "yes if you could do that please - i think we still might have a problem just later on in losing buffers - it's longer now",
-  "<teammate-message teammate_id=\"hipaa-reviewer\" color=\"orange\">\n{\"type\":\"idle_notification\",\"from\":\"hipaa-reviewer\",\"timestamp\":\"2026-02-25T02:52:22.731Z\",\"idleReason\":\"available\",\"summary\":\"[to coder] D-102 FAIL: struct must be caseless enum\"}\n</teammate-message>"
- ],
- "refine_redirect": [
-  "i want you to review all of the code and fix all linting errors"
- ],
- "new_work": [
-  "audiocapturekit has a v1.0.1 version with the changes - please update and let's resume this feature",
-  "is there a way i could do an integration test - where we use 11labs to generate audio for a synthetic therapy session and have it go through the whole pipeline - i can provide the key in an .env file",
-  "i think that's fine.   can we make the e2e test cache the audio file creation - maybe using a checksum in the test on the content that we push up to 11 labs.",
-  "## What's Already Done\n\n- Display name: \"Pablo\" already set via `REDACTED` in `project.pbxproj` ✓\n- `AppIcon.appiconset` exists but only has `AppIcon512x512@2x.png` (a placeholder)",
-  "Did you lint the code"
- ],
- "pushback": [
-  "ok can you do that for me",
-  "ok, so let's say i have a colloborator on a different computer how would they get the issues",
-  "that seams like a lot - could you read what we have and then use new bd commands to populate the issues",
-  "We did implement something already",
-  "even if it's preexisting we need to fix",
-  "ok let's do it but whats a WeakSendableBox??",
-  "why not do gas town :-)",
-  "audit take2 repo - and i think you could just copy the xcode project (and maybe rename it something besides SampleApp)",
-  "reopen please",
-  "if the transcription code works - it should be almost 100% i would think.  and if we can't do it with AI generated voices there is no way it would work with humans.   yes let's do it",
-  "yes please",
-  "ok, so we know that there is silence?    are we detecting the waveforms"
- ]
+ "exemplars": {
+  "approve_proceed": [
+   "hi ya when i did the force push - did i mess up the entire.io reporting?",
+   "let's commit things",
+   "let's setup beads please",
+   "pull latest main - and then fix merge conflict on my open pr",
+   "can you put latest main and merge/fx the beads issue if neceessary",
+   "whats next on phase 1 of our plan",
+   "/work next epic",
+   "hi can you summarize what i've done yesterday Feb 24th - use the entire branch to help",
+   "yeah whats in entire/checkpoints/v1 - does it reference individual commits which would be affected",
+   "and be like 16 minutes running",
+   "what about the phase 1 tasks",
+   "Yes"
+  ],
+  "question": [
+   "whats next on speaker diarization",
+   "what's next with phase 1 on the audio transcription?",
+   "whats next in phase 1 of audio transcription",
+   "and while we are checking how do i update beads or should i",
+   "Just curious how long the speech recognition part is - can you rerun and let me know how long",
+   "take a look",
+   "do have to ask how does this affect security, do we scan the rust code elsewhere?",
+   "ok so if i like relaunch the app i get prompted that Pablo wants to use info in the kychain - wouldn't an app that put it in not need permission?",
+   "please take another look - is there a way we can run codeql locally",
+   "how do i see the debug view",
+   "how do i dismiss that debug view? in the ui",
+   "specificlly what went well with my prompting/use of AI agents.   Take a look at the entire branch and files"
+  ],
+  "bug_report": [
+   "hi on ci i'm getting the codeql swift error -  is the problem with my cmake?",
+   "let's do SPM caching fix / also explain why we have swift lint and swift format in CI - swift format is failing (i'd expect we'd run format locally before checkin gin )",
+   "can you take at codeql linker error on latest github run on the only PR I have",
+   "hi when i run the app in xcode - i get '/Users/kurtn/Developer/pablo-companion/core/target/debug/deps/libpablo_core.dylib' not valid for use in process: mapping process and mapped file (non-platform) have different Team IDs)",
+   "is it normal for codeql to appear hung on resolve package graph",
+   "codeql fails",
+   "it's still failing on main CI - take a close look at all of the erros - reason if you have to",
+   "does any of these chages have to do with auth - app crashed on signing ni",
+   "ok let's commit these.   when i click quick start - choose patent i get an auth error",
+   "ok let's commit if we haven't.   i noticed buffer overflow - after 35 seconds apture state: capturing(duration: 35.465677976608276)\nBuffer overflow: dropping 256 oldest samples\nBuffer overflow: dropping 512 oldest samples",
+   "yes if you could do that please - i think we still might have a problem just later on in losing buffers - it's longer now",
+   "<teammate-message teammate_id=\"hipaa-reviewer\" color=\"orange\">\n{\"type\":\"idle_notification\",\"from\":\"hipaa-reviewer\",\"timestamp\":\"2026-02-25T02:52:22.731Z\",\"idleReason\":\"available\",\"summary\":\"[to coder] D-102 FAIL: struct must be caseless enum\"}\n</teammate-message>"
+  ],
+  "refine_redirect": [
+   "i want you to review all of the code and fix all linting errors"
+  ],
+  "new_work": [
+   "audiocapturekit has a v1.0.1 version with the changes - please update and let's resume this feature",
+   "is there a way i could do an integration test - where we use 11labs to generate audio for a synthetic therapy session and have it go through the whole pipeline - i can provide the key in an .env file",
+   "i think that's fine.   can we make the e2e test cache the audio file creation - maybe using a checksum in the test on the content that we push up to 11 labs.",
+   "## What's Already Done\n\n- Display name: \"Pablo\" already set via `REDACTED` in `project.pbxproj` ✓\n- `AppIcon.appiconset` exists but only has `AppIcon512x512@2x.png` (a placeholder)",
+   "Did you lint the code"
+  ],
+  "pushback": [
+   "ok can you do that for me",
+   "ok, so let's say i have a colloborator on a different computer how would they get the issues",
+   "that seams like a lot - could you read what we have and then use new bd commands to populate the issues",
+   "We did implement something already",
+   "even if it's preexisting we need to fix",
+   "ok let's do it but whats a WeakSendableBox??",
+   "why not do gas town :-)",
+   "audit take2 repo - and i think you could just copy the xcode project (and maybe rename it something besides SampleApp)",
+   "reopen please",
+   "if the transcription code works - it should be almost 100% i would think.  and if we can't do it with AI generated voices there is no way it would work with humans.   yes let's do it",
+   "yes please",
+   "ok, so we know that there is silence?    are we detecting the waveforms"
+  ]
+ },
+ "length_median": {
+  "approve_proceed": 5,
+  "question": 10,
+  "bug_report": 16,
+  "refine_redirect": 14,
+  "new_work": 24,
+  "pushback": 12,
+  "interrupt": 3
+ }
 }

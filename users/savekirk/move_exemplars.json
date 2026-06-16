@@ -1,58 +1,68 @@
 {
- "bug_report": [
-  "Make sure extension runs",
-  "For repos with lots of checkpoint, when checkpoint is selected, sessions list shows loading for sometime and crashes. Investigate and fix",
-  "For initial load without any loaded checkpoint, show the loading checkpoints text as it used to be",
-  "Clicking on Session Bridge plugin status in the status bar should open the plugin view instead of showing the CLI status",
-  "Loading indicator is not showing anymore. Fix it",
-  "Selecting a checkpoint is not loading or replacing the existing sessions with the ones in the selected checkpoint within the view tree",
-  "Error loading session conversation details with message `No readable transcript turns were found.` for a repo that has one in /Users/savekirk/dev/swapinga/swapinga-platform",
-  "Checkpoint just loads forever showing progress bar and then debug vscode closes",
-  "keeps timing out"
- ],
- "approve_proceed": [
-  "Commit the changes",
-  "Use vscode version 1.105.0",
-  "Do not add the full names",
-  "retry",
-  "Continue if you have next steps, or stop and ask for clarification if you are unsure how to proceed."
- ],
- "refine_redirect": [
-  "In session metadata, created_at is when the session was ended and the metadata created so in src/checkpoints/transcript.ts and src/checkpoints/orchestration.ts, the createdAt and lastActivityAt should reflect this. The first item in the jsonl is when the session is created/started",
-  "Group tool calls, any tool call before a response from the model should go below the model. Tool calls should not directly follow user type message.",
-  "In the session details header file, use the full dates (day, month name and year) for started and last active",
-  "Session details should not have any initial agent bootstraping messages. The first item should be the first prompt from the user",
-  "On a small screen, the header for session details in [sessionDetailsPanel.ts](src/components/sessionDetailsPanel.ts) takes majority of of the space and not enough room for the conversation to be visible. Improve the design so user can see more conversation when scrolling",
-  "`listSessions` in [orchestration.ts](src/checkpoints/orchestration.ts) must accept a session ID and always make sure whatever is loaded, parsed and processed has the same session id. Update the necessary callers and tests with the new change",
-  "Update [sessionsTreeView.ts](src/components/sessionsTreeView.ts) [extension.ts](src/extension.ts) and any related module to return data as defined by `SessionCheckpointEntry` in [models.ts](src/checkpoints/models.ts) . A selected session should already have the information needed to load the related details for the [sessionDetailsPanel.ts](src/components/sessionDetailsPanel.ts) . Should make sure the right conversation history/transcript is loaded and parsed with no fallback to unrelated conversation history"
- ],
- "question": [
-  "Are remote checkpoints supported",
-  "Quickly explore the codebase at /Users/savekirk/dev/ai/entire/session-bridge to understand:\n1. How `runCommand` is used across the codebase (search for imports/calls of runCommand)\n2. How `resolveEntireBinary` is used across the codebase\n3. What the project is (check package.json, tsconfig, etc.)\n4. Are there any tests for these files?\n\nReturn all findings including file paths and relevant code snippets."
- ],
- "new_work": [
-  "Session details in src/components/sessionsTreeView.ts should include the attributions",
-  "Create LICENSE.md file with MIT license",
-  "Implement the plan.",
-  "Go ahead with the implementation",
-  "Show a ui sketch of the design",
-  "Build a session details webview. Should be shown when the user selects a sections. The view should have the following, the details of the session and a scrollable turn by turn conversation between the author and ai, parsed, formatted and displayed in a human readable manner",
-  "Refresh should always make sure the checkpoint repo is synced with remote",
-  "# Files mentioned by the user:\n\n## Screenshot 2026-04-10 at 13.58.20.png: /var/folders/20/76km_m352m390m49yn4j7yjm0000gq/T/TemporaryItems/NSIRD_screencaptureui_Gkv5xW/Screenshot 2026-04-10 at 13.58.20.png\n\n## My request for Codex:\nUse the attached image a inspiration to redesign the session details. Apart from user prompt and agent text message. Other information e.g tool call, thinking etc should be collapsible",
-  "Make sure session details [sessionDetailsPanel.ts](src/components/sessionDetailsPanel.ts) view is loaded when session is selected in the view tree"
- ],
- "pushback": [
-  "Use the viewsWelcome for session and checkpoint in package.json based on the `EntireWorkspaceState` and get rid of the versions in src/components/checkpointTreeView.ts and src/components/activeSessionTreeView.ts",
-  "Use `viewsWelcome` in package.json for empty views and do away with src/components/emptyViews.ts",
-  "Get rid of the Recovery tree view and any related codebase since the options are exposed as vscode commands that can be triggered by the user already.",
-  "Should be aligned with just the avatar in the middle",
-  "[Image #1] Messate/text should be aligned in the middle of the avatar and time",
-  "- Use only time and not full date unless session duration is more than a day, even that use only day and time and not full date\n- Tool calls should not have the leading agent avatar",
-  "Do not render any content that is not a text response or tool call by the agent. Details should not have raw transcript content",
-  "Do not add the full name of the agent as well",
-  "\"You\" should be replaced with the avatar of the user and AI should be the name of the agent with logo. If not available use the initials within the avatar",
-  "Maintain the current row but show the native tree item loading bar",
-  "They should have borders around them. Make them look distint and use the tool icon instead of full word",
-  "All tool use design in [sessionDetailsPanel.ts](src/components/sessionDetailsPanel.ts) should have same design and remove the trailing timestamp"
- ]
+ "exemplars": {
+  "bug_report": [
+   "Make sure extension runs",
+   "For repos with lots of checkpoint, when checkpoint is selected, sessions list shows loading for sometime and crashes. Investigate and fix",
+   "For initial load without any loaded checkpoint, show the loading checkpoints text as it used to be",
+   "Clicking on Session Bridge plugin status in the status bar should open the plugin view instead of showing the CLI status",
+   "Loading indicator is not showing anymore. Fix it",
+   "Selecting a checkpoint is not loading or replacing the existing sessions with the ones in the selected checkpoint within the view tree",
+   "Error loading session conversation details with message `No readable transcript turns were found.` for a repo that has one in /Users/savekirk/dev/swapinga/swapinga-platform",
+   "Checkpoint just loads forever showing progress bar and then debug vscode closes",
+   "keeps timing out"
+  ],
+  "approve_proceed": [
+   "Commit the changes",
+   "Use vscode version 1.105.0",
+   "Do not add the full names",
+   "retry",
+   "Continue if you have next steps, or stop and ask for clarification if you are unsure how to proceed."
+  ],
+  "refine_redirect": [
+   "In session metadata, created_at is when the session was ended and the metadata created so in src/checkpoints/transcript.ts and src/checkpoints/orchestration.ts, the createdAt and lastActivityAt should reflect this. The first item in the jsonl is when the session is created/started",
+   "Group tool calls, any tool call before a response from the model should go below the model. Tool calls should not directly follow user type message.",
+   "In the session details header file, use the full dates (day, month name and year) for started and last active",
+   "Session details should not have any initial agent bootstraping messages. The first item should be the first prompt from the user",
+   "On a small screen, the header for session details in [sessionDetailsPanel.ts](src/components/sessionDetailsPanel.ts) takes majority of of the space and not enough room for the conversation to be visible. Improve the design so user can see more conversation when scrolling",
+   "`listSessions` in [orchestration.ts](src/checkpoints/orchestration.ts) must accept a session ID and always make sure whatever is loaded, parsed and processed has the same session id. Update the necessary callers and tests with the new change",
+   "Update [sessionsTreeView.ts](src/components/sessionsTreeView.ts) [extension.ts](src/extension.ts) and any related module to return data as defined by `SessionCheckpointEntry` in [models.ts](src/checkpoints/models.ts) . A selected session should already have the information needed to load the related details for the [sessionDetailsPanel.ts](src/components/sessionDetailsPanel.ts) . Should make sure the right conversation history/transcript is loaded and parsed with no fallback to unrelated conversation history"
+  ],
+  "question": [
+   "Are remote checkpoints supported",
+   "Quickly explore the codebase at /Users/savekirk/dev/ai/entire/session-bridge to understand:\n1. How `runCommand` is used across the codebase (search for imports/calls of runCommand)\n2. How `resolveEntireBinary` is used across the codebase\n3. What the project is (check package.json, tsconfig, etc.)\n4. Are there any tests for these files?\n\nReturn all findings including file paths and relevant code snippets."
+  ],
+  "new_work": [
+   "Session details in src/components/sessionsTreeView.ts should include the attributions",
+   "Create LICENSE.md file with MIT license",
+   "Implement the plan.",
+   "Go ahead with the implementation",
+   "Show a ui sketch of the design",
+   "Build a session details webview. Should be shown when the user selects a sections. The view should have the following, the details of the session and a scrollable turn by turn conversation between the author and ai, parsed, formatted and displayed in a human readable manner",
+   "Refresh should always make sure the checkpoint repo is synced with remote",
+   "# Files mentioned by the user:\n\n## Screenshot 2026-04-10 at 13.58.20.png: /var/folders/20/76km_m352m390m49yn4j7yjm0000gq/T/TemporaryItems/NSIRD_screencaptureui_Gkv5xW/Screenshot 2026-04-10 at 13.58.20.png\n\n## My request for Codex:\nUse the attached image a inspiration to redesign the session details. Apart from user prompt and agent text message. Other information e.g tool call, thinking etc should be collapsible",
+   "Make sure session details [sessionDetailsPanel.ts](src/components/sessionDetailsPanel.ts) view is loaded when session is selected in the view tree"
+  ],
+  "pushback": [
+   "Use the viewsWelcome for session and checkpoint in package.json based on the `EntireWorkspaceState` and get rid of the versions in src/components/checkpointTreeView.ts and src/components/activeSessionTreeView.ts",
+   "Use `viewsWelcome` in package.json for empty views and do away with src/components/emptyViews.ts",
+   "Get rid of the Recovery tree view and any related codebase since the options are exposed as vscode commands that can be triggered by the user already.",
+   "Should be aligned with just the avatar in the middle",
+   "[Image #1] Messate/text should be aligned in the middle of the avatar and time",
+   "- Use only time and not full date unless session duration is more than a day, even that use only day and time and not full date\n- Tool calls should not have the leading agent avatar",
+   "Do not render any content that is not a text response or tool call by the agent. Details should not have raw transcript content",
+   "Do not add the full name of the agent as well",
+   "\"You\" should be replaced with the avatar of the user and AI should be the name of the agent with logo. If not available use the initials within the avatar",
+   "Maintain the current row but show the native tree item loading bar",
+   "They should have borders around them. Make them look distint and use the tool icon instead of full word",
+   "All tool use design in [sessionDetailsPanel.ts](src/components/sessionDetailsPanel.ts) should have same design and remove the trailing timestamp"
+  ]
+ },
+ "length_median": {
+  "bug_report": 21,
+  "approve_proceed": 3,
+  "refine_redirect": 33,
+  "question": 30,
+  "new_work": 8,
+  "pushback": 19
+ }
 }

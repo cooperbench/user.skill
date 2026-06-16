@@ -1,65 +1,75 @@
 {
- "new_work": [
-  "upgrade node to 22+",
-  "Evaluate the step-1430 checkpoint in gs:REDACTED on TerminalBench and then TB-Lite, following https://github.com/marin-community/marin/issues/3490#issuecomment-4056513317 and https://github.com/marin-community/marin/issues/3490#issuecomment-4060954300. Before you run anything, update harbor evals to run on Iris. Then let me inspect.",
-  "Eval 32K SFT released weights and update this github comment with the eval results: https://github.com/marin-community/marin/issues/3896#issuecomment-4094765632. Reference to this other issue on how to run the eval https://github.com/marin-community/marin/issues/3846#issuecomment-4087523679. Start with TB-Lite first. Once it finishes successfully and the score is within the acceptable range, start TB2.",
-  "start an Iris dashboard for me",
-  "Great, can you launch a full SFT run on all of nemotron-terminal traces?",
-  "what's the accuracy so far?",
-  "how's the accuracy right now?"
- ],
- "pushback": [
-  "I see, how did the 65k context run work on v4-512?",
-  "I recall you resumed an SFT previously at us-central1?",
-  "why did we change the training configs and switch to v5p-64??",
-  "I see, just keep waiting and monitoring. Don't mess with training config/TPU slice size.",
-  "Update the 2 PR comments tracking these changes with wandb links and link to the sft commit",
-  "awesome, is it possible to SFT 131k with the exact same training config but without gradient offloading by moving to a larger tpu slice (e.g. v5p-64/256?)",
-  "Are we evaling with the latest 4-way sharding method introduced in https://github.com/marin-community/marin/issues/3846#issuecomment-4087523679?",
-  "which DAYTONA_API_KEY is used?",
-  "nevermind, /kevin/kevin-exp3490b-full-sft-r2 is another experiment.",
-  "Just focus on 131K SFT. Continue monitoring.",
-  "Can you check whether the <|start_think|> tokens are present in the SFT dataset? Also check how prevelant it is in our eval rollouts vs the released rollouts.",
-  "Avoid duplicated fixes in https://github.com/marin-community/marin/issues/3897#issuecomment-4124118807. Only preserve 131k specific fixes here and link to the relevant comment in the 32k issue."
- ],
- "approve_proceed": [
-  "any pre-emption so far?",
-  "how me the wandb link",
-  "how's it going?",
-  "which branch are we on?",
-  "Continue monitoring and finishing the tasks until everything is done.",
-  "how many TBLite eval trials have we completed in the last 20 minutes?",
-  "how long do you expect the v3 would have to wait?",
-  "yes",
-  "Continue from where you left off.",
-  "<bash-stdout>/home/kevin/marin-harbor</bash-stdout><bash-stderr></bash-stderr>",
-  "Update https://github.com/marin-community/marin/issues/3490#issuecomment-4116542615 with links to exact commit and branch used for eval",
-  "great, log this intermediate eval. We will do another one once the 32k v2 sft fully finishes."
- ],
- "bug_report": [
-  "why did you initially project the SFT to finish <1h left before but it ran for >11h?",
-  "Why did task REDACTED fail?",
-  "I only see 5 tasks there.",
-  "I didn't see this job submitted on my us-east5-a dashboard tho",
-  "Check exp3490b SFT job (symlink fix): 1) `uv run scripts/ray/cluster.py --cluster us-east5-a list-jobs 2>&1 | grep -A8 \"REDACTED\" | grep \"status\"`. 2) Check logs: `uv run scripts/ray/cluster.py --cluster us-east5-a job-logs REDACTED 2>&1 | grep -E \"step|loss|checkpoint|Error|FAIL|Traceback|wandb|Training|training|Module\" | grep -v \"tpu_info\\|html\\|google\\|SSH\\|cli.py\" | tail -10`. 3) If SUCCEEDED or FAILED, report to user with details.",
-  "Check exp3490b SFT job (cross_entropy fix): 1) `uv run scripts/ray/cluster.py --cluster us-east5-a list-jobs 2>&1 | grep -A8 \"REDACTED\" | grep \"status\"`. 2) Check logs: `uv run scripts/ray/cluster.py --cluster us-east5-a job-logs REDACTED 2>&1 | grep -E \"step|loss|checkpoint|Error|FAIL|Traceback|wandb|Training|training|TypeError|download\" | grep -v \"tpu_info\\|html\\|google\\|SSH\\|cli.py\" | tail -15`. 3) If SUCCEEDED or FAILED, report to user with full error details.",
-  "what about now?",
-  "wait where did you get the grad norm? Also, why did run 1 take >400 steps while run 2 take only 244 steps?",
-  "I deleted the /usr/local codex but now the codex name no longer resolves to a binary",
-  "REDACTED seems to have failed? why?",
-  "why do you project to finish <1h left before but it ran for >11h?",
-  "Wait you mean chckpointing alone added hours to a training that should finish in 80 min?"
- ],
- "question": [
-  "is /kevin/kevin-exp3490b-full-sft-r2 running the 32K SFT?",
-  "Check exp3490 eval progress: count trials in gs://marin-us-central1/evaluation/harbor/terminal-bench/nemotron-terminal-8b/terminus-2/harbor_trials/, tally pass/fail/pending, and report unique tasks completed out of 89. Also check .executor_status.",
-  "Why do I see \"Accuracy: 14/89 = 15.7% (target: 13.0 ± 2.2)\"?",
-  "Check exp3490b SFT job: 1) `uv run scripts/ray/cluster.py --cluster us-east5-a list-jobs 2>&1 | grep -A8 \"REDACTED\" | grep \"status\"`. 2) Check logs for progress: `uv run scripts/ray/cluster.py --cluster us-east5-a job-logs REDACTED 2>&1 | grep -E \"step|loss|checkpoint|Error|FAIL|Traceback|wandb\" | grep -v \"tpu_info\\|html\\|google\\|SSH\\|cli.py\" | tail -10`. 3) If SUCCEEDED or FAILED, report to user with details.",
-  "Check TBLite eval of SFT model (exp3490b-sft-5pct):\n1) `gcloud storage ls \"gs:REDACTED\" 2>&1 | grep -c \"/\"`\n2) If 100 trials: `gcloud storage cat \"gs:REDACTED\"*.json 2>&1`. Report TBLite results to user and compare with TB2 (3.4%).\n3) If FAILED: check logs for `REDACTED`.",
-  "got it, how many tasks left for trial 2?",
-  "show me the last 3 chars of the key"
- ],
- "refine_redirect": [
-  "Could you also run the rest of the shards in parallel?"
- ]
+ "exemplars": {
+  "new_work": [
+   "upgrade node to 22+",
+   "Evaluate the step-1430 checkpoint in gs:REDACTED on TerminalBench and then TB-Lite, following https://github.com/marin-community/marin/issues/3490#issuecomment-4056513317 and https://github.com/marin-community/marin/issues/3490#issuecomment-4060954300. Before you run anything, update harbor evals to run on Iris. Then let me inspect.",
+   "Eval 32K SFT released weights and update this github comment with the eval results: https://github.com/marin-community/marin/issues/3896#issuecomment-4094765632. Reference to this other issue on how to run the eval https://github.com/marin-community/marin/issues/3846#issuecomment-4087523679. Start with TB-Lite first. Once it finishes successfully and the score is within the acceptable range, start TB2.",
+   "start an Iris dashboard for me",
+   "Great, can you launch a full SFT run on all of nemotron-terminal traces?",
+   "what's the accuracy so far?",
+   "how's the accuracy right now?"
+  ],
+  "pushback": [
+   "I see, how did the 65k context run work on v4-512?",
+   "I recall you resumed an SFT previously at us-central1?",
+   "why did we change the training configs and switch to v5p-64??",
+   "I see, just keep waiting and monitoring. Don't mess with training config/TPU slice size.",
+   "Update the 2 PR comments tracking these changes with wandb links and link to the sft commit",
+   "awesome, is it possible to SFT 131k with the exact same training config but without gradient offloading by moving to a larger tpu slice (e.g. v5p-64/256?)",
+   "Are we evaling with the latest 4-way sharding method introduced in https://github.com/marin-community/marin/issues/3846#issuecomment-4087523679?",
+   "which DAYTONA_API_KEY is used?",
+   "nevermind, /kevin/kevin-exp3490b-full-sft-r2 is another experiment.",
+   "Just focus on 131K SFT. Continue monitoring.",
+   "Can you check whether the <|start_think|> tokens are present in the SFT dataset? Also check how prevelant it is in our eval rollouts vs the released rollouts.",
+   "Avoid duplicated fixes in https://github.com/marin-community/marin/issues/3897#issuecomment-4124118807. Only preserve 131k specific fixes here and link to the relevant comment in the 32k issue."
+  ],
+  "approve_proceed": [
+   "any pre-emption so far?",
+   "how me the wandb link",
+   "how's it going?",
+   "which branch are we on?",
+   "Continue monitoring and finishing the tasks until everything is done.",
+   "how many TBLite eval trials have we completed in the last 20 minutes?",
+   "how long do you expect the v3 would have to wait?",
+   "yes",
+   "Continue from where you left off.",
+   "<bash-stdout>/home/kevin/marin-harbor</bash-stdout><bash-stderr></bash-stderr>",
+   "Update https://github.com/marin-community/marin/issues/3490#issuecomment-4116542615 with links to exact commit and branch used for eval",
+   "great, log this intermediate eval. We will do another one once the 32k v2 sft fully finishes."
+  ],
+  "bug_report": [
+   "why did you initially project the SFT to finish <1h left before but it ran for >11h?",
+   "Why did task REDACTED fail?",
+   "I only see 5 tasks there.",
+   "I didn't see this job submitted on my us-east5-a dashboard tho",
+   "Check exp3490b SFT job (symlink fix): 1) `uv run scripts/ray/cluster.py --cluster us-east5-a list-jobs 2>&1 | grep -A8 \"REDACTED\" | grep \"status\"`. 2) Check logs: `uv run scripts/ray/cluster.py --cluster us-east5-a job-logs REDACTED 2>&1 | grep -E \"step|loss|checkpoint|Error|FAIL|Traceback|wandb|Training|training|Module\" | grep -v \"tpu_info\\|html\\|google\\|SSH\\|cli.py\" | tail -10`. 3) If SUCCEEDED or FAILED, report to user with details.",
+   "Check exp3490b SFT job (cross_entropy fix): 1) `uv run scripts/ray/cluster.py --cluster us-east5-a list-jobs 2>&1 | grep -A8 \"REDACTED\" | grep \"status\"`. 2) Check logs: `uv run scripts/ray/cluster.py --cluster us-east5-a job-logs REDACTED 2>&1 | grep -E \"step|loss|checkpoint|Error|FAIL|Traceback|wandb|Training|training|TypeError|download\" | grep -v \"tpu_info\\|html\\|google\\|SSH\\|cli.py\" | tail -15`. 3) If SUCCEEDED or FAILED, report to user with full error details.",
+   "what about now?",
+   "wait where did you get the grad norm? Also, why did run 1 take >400 steps while run 2 take only 244 steps?",
+   "I deleted the /usr/local codex but now the codex name no longer resolves to a binary",
+   "REDACTED seems to have failed? why?",
+   "why do you project to finish <1h left before but it ran for >11h?",
+   "Wait you mean chckpointing alone added hours to a training that should finish in 80 min?"
+  ],
+  "question": [
+   "is /kevin/kevin-exp3490b-full-sft-r2 running the 32K SFT?",
+   "Check exp3490 eval progress: count trials in gs://marin-us-central1/evaluation/harbor/terminal-bench/nemotron-terminal-8b/terminus-2/harbor_trials/, tally pass/fail/pending, and report unique tasks completed out of 89. Also check .executor_status.",
+   "Why do I see \"Accuracy: 14/89 = 15.7% (target: 13.0 ± 2.2)\"?",
+   "Check exp3490b SFT job: 1) `uv run scripts/ray/cluster.py --cluster us-east5-a list-jobs 2>&1 | grep -A8 \"REDACTED\" | grep \"status\"`. 2) Check logs for progress: `uv run scripts/ray/cluster.py --cluster us-east5-a job-logs REDACTED 2>&1 | grep -E \"step|loss|checkpoint|Error|FAIL|Traceback|wandb\" | grep -v \"tpu_info\\|html\\|google\\|SSH\\|cli.py\" | tail -10`. 3) If SUCCEEDED or FAILED, report to user with details.",
+   "Check TBLite eval of SFT model (exp3490b-sft-5pct):\n1) `gcloud storage ls \"gs:REDACTED\" 2>&1 | grep -c \"/\"`\n2) If 100 trials: `gcloud storage cat \"gs:REDACTED\"*.json 2>&1`. Report TBLite results to user and compare with TB2 (3.4%).\n3) If FAILED: check logs for `REDACTED`.",
+   "got it, how many tasks left for trial 2?",
+   "show me the last 3 chars of the key"
+  ],
+  "refine_redirect": [
+   "Could you also run the rest of the shards in parallel?"
+  ]
+ },
+ "length_median": {
+  "new_work": 9,
+  "pushback": 12,
+  "approve_proceed": 5,
+  "bug_report": 17,
+  "question": 21,
+  "refine_redirect": 11
+ }
 }

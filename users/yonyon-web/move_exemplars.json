@@ -1,25 +1,33 @@
 {
- "new_work": [
-  "<ide_opened_file>The user opened the file /home/yonyon/dev/記事作成支援ツール4/web-ui/src/lib/components/SpreadsheetTable.svelte in the IDE. This may or may not be related to the current task.</ide_opened_file>\n属性に画像を追加する仕組みを入れたい。画像を新規投稿もしくはすでに投稿されている画像を選ぶ形にしたい",
-  "<ide_opened_file>The user opened the file /home/yonyon/dev/記事作成支援ツール4/web-ui/src/lib/components/SpreadsheetTable.svelte in the IDE. This may or may not be related to the current task.</ide_opened_file>\ndataやwikiを初期状態に戻すnodeスクリプトを作成して",
-  "画像管理ページを作成して"
- ],
- "approve_proceed": [
-  "<ide_opened_file>The user opened the file /home/yonyon/dev/記事作成支援ツール4/package.json in the IDE. This may or may not be related to the current task.</ide_opened_file>\nコミットして",
-  "こちらでインストールしましょうか？",
-  "インストールできました"
- ],
- "refine_redirect": [
-  "<ide_opened_file>The user opened the file /home/yonyon/dev/記事作成支援ツール4/CLAUDE.md in the IDE. This may or may not be related to the current task.</ide_opened_file>\nこのシステムは非エンジニアが使うものなのでエンジニア用語をUI上にできるだけ出さないようにしたい。改善できるところを探して"
- ],
- "pushback": [
-  "reset.jsの内容も更新しておいて",
-  "新規レコードを追加を押さなくてもいいように行をいくつか事前に作っておいて",
-  "<ide_opened_file>The user opened the file /home/yonyon/dev/記事作成支援ツール4/data/tables.json in the IDE. This may or may not be related to the current task.</ide_opened_file>\nクリックじゃなくて値を入れたときだけ保存にしてほしい",
-  "<ide_selection>The user selected the lines 108 to 108 from /home/yonyon/dev/記事作成支援ツール4/web-ui/src/lib/components/SpreadsheetTable.svelte:\n名前を入力\n\nThis may or may not be related to the current task.</ide_selection>\n名前列が必ずあるのはなぜ？",
-  "<ide_opened_file>The user opened the file /home/yonyon/dev/記事作成支援ツール4/web-ui/src/lib/components/SpreadsheetTable.svelte in the IDE. This may or may not be related to the current task.</ide_opened_file>\n識別子が必要ということ？であればランダムのIDde",
-  "<ide_opened_file>The user opened the file /home/yonyon/dev/記事作成支援ツール4/web-ui/src/lib/components/SpreadsheetTable.svelte in the IDE. This may or may not be related to the current task.</ide_opened_file>\nnumberはフォーカスすると自動で0入っちゃうので数値でもinput type textにしよう。さらにフォーカスするとinput要素に切り替わり横幅が変わってしまうのが変なのでセルのサイズは変わらないようにして",
-  "<ide_opened_file>The user opened the file /home/yonyon/dev/記事作成支援ツール4/wiki/19dd65qy/cd779284-e361-4c37-bc5c-581d59f2e902.md in the IDE. This may or may not be related to the current task.</ide_opened_file>\nまだレイアウトシフトが発生してしまいます",
-  "属性を追加するさい属性の説明も入力できる必要があると思う。\nまた入力例とかを入れれるといいよね\n\nあと属性を修正できるようにして。\n\nさらに属性の順番を並び替えれるようにもしたい"
- ]
+ "exemplars": {
+  "new_work": [
+   "<ide_opened_file>The user opened the file /home/yonyon/dev/記事作成支援ツール4/web-ui/src/lib/components/SpreadsheetTable.svelte in the IDE. This may or may not be related to the current task.</ide_opened_file>\n属性に画像を追加する仕組みを入れたい。画像を新規投稿もしくはすでに投稿されている画像を選ぶ形にしたい",
+   "<ide_opened_file>The user opened the file /home/yonyon/dev/記事作成支援ツール4/web-ui/src/lib/components/SpreadsheetTable.svelte in the IDE. This may or may not be related to the current task.</ide_opened_file>\ndataやwikiを初期状態に戻すnodeスクリプトを作成して",
+   "画像管理ページを作成して"
+  ],
+  "approve_proceed": [
+   "<ide_opened_file>The user opened the file /home/yonyon/dev/記事作成支援ツール4/package.json in the IDE. This may or may not be related to the current task.</ide_opened_file>\nコミットして",
+   "こちらでインストールしましょうか？",
+   "インストールできました"
+  ],
+  "refine_redirect": [
+   "<ide_opened_file>The user opened the file /home/yonyon/dev/記事作成支援ツール4/CLAUDE.md in the IDE. This may or may not be related to the current task.</ide_opened_file>\nこのシステムは非エンジニアが使うものなのでエンジニア用語をUI上にできるだけ出さないようにしたい。改善できるところを探して"
+  ],
+  "pushback": [
+   "reset.jsの内容も更新しておいて",
+   "新規レコードを追加を押さなくてもいいように行をいくつか事前に作っておいて",
+   "<ide_opened_file>The user opened the file /home/yonyon/dev/記事作成支援ツール4/data/tables.json in the IDE. This may or may not be related to the current task.</ide_opened_file>\nクリックじゃなくて値を入れたときだけ保存にしてほしい",
+   "<ide_selection>The user selected the lines 108 to 108 from /home/yonyon/dev/記事作成支援ツール4/web-ui/src/lib/components/SpreadsheetTable.svelte:\n名前を入力\n\nThis may or may not be related to the current task.</ide_selection>\n名前列が必ずあるのはなぜ？",
+   "<ide_opened_file>The user opened the file /home/yonyon/dev/記事作成支援ツール4/web-ui/src/lib/components/SpreadsheetTable.svelte in the IDE. This may or may not be related to the current task.</ide_opened_file>\n識別子が必要ということ？であればランダムのIDde",
+   "<ide_opened_file>The user opened the file /home/yonyon/dev/記事作成支援ツール4/web-ui/src/lib/components/SpreadsheetTable.svelte in the IDE. This may or may not be related to the current task.</ide_opened_file>\nnumberはフォーカスすると自動で0入っちゃうので数値でもinput type textにしよう。さらにフォーカスするとinput要素に切り替わり横幅が変わってしまうのが変なのでセルのサイズは変わらないようにして",
+   "<ide_opened_file>The user opened the file /home/yonyon/dev/記事作成支援ツール4/wiki/19dd65qy/cd779284-e361-4c37-bc5c-581d59f2e902.md in the IDE. This may or may not be related to the current task.</ide_opened_file>\nまだレイアウトシフトが発生してしまいます",
+   "属性を追加するさい属性の説明も入力できる必要があると思う。\nまた入力例とかを入れれるといいよね\n\nあと属性を修正できるようにして。\n\nさらに属性の順番を並び替えれるようにもしたい"
+  ]
+ },
+ "length_median": {
+  "new_work": 21,
+  "approve_proceed": 1,
+  "refine_redirect": 21,
+  "pushback": 21
+ }
 }

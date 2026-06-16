@@ -1,29 +1,37 @@
 {
- "new_work": [
-  "/speckit.plan proceed while also doing research on prototypes and related projects listed in  docs/design/00-initial-design.md file",
-  "/speckit.implement T054 T061 T068 T072 — sweep tests",
-  "/speckit.clarify there should be easy ways to enable shell completion for bids-utils commands. https://click.palletsprojects.com/en/stable/shell-completion/ since click is used could be the relevant documentation",
-  "/speckit.implement",
-  "/speckit.specify Build a Python application/library following what is described in docs/design/00-initial-design.md file",
-  "/speckit.implement T034 T035  — complete 1.x migration"
- ],
- "approve_proceed": [
-  "/speckit.tasks",
-  "/speckit.clarify - in prior commit I added some changes to user stories -- please analyze and potentially adjust user stories to reflect better.",
-  "## File Paths for Reference\n\n- **bids-utils design document**: `/home/yoh/proj/bids/bids-utils/.specify/specs/00-initial-design.md`\n- All project repositories accessible via links above (public GitHub repos)</result>\n<usage><total_tokens>24770</total_tokens><tool_uses>9</tool_uses><duration_ms>58874</duration_ms></usage>\n</task-notification>\nFull transcript available at: /tmp/claude-1000/-home-yoh-proj-bids-bids-utils/09006296-669b-4161-a3c3-d9847ff0b319/tasks/a7220ea90c3588a7f.output",
-  "A",
-  "B",
-  "yes",
-  "proceed how you recommend",
-  "should I run /speckit.implement now or we can somehow prioritie recommended next steps? (just asking - no action needed)"
- ],
- "question": [
-  "### Key Characteristics\n\n**Lightweight:** Minimizes dependencies; serves as the reference parsing implementation  \n**Dict-like:** Namespace objects support both dot notation and bracket notation for property access  \n**Cached:** `load_schema()` caches results, so multiple calls with same path are efficient  \n**CLI Available:** Command-line interface with `bst export` and other bindings"
- ],
- "pushback": [
-  "2+1 but also see if SHELL env var available -- should tell which shell is running.  and also 3 - yes, we should complete what we know.   Also you could not find /speckit.clarify but there is ./.claude/skills/speckit-clarify -- did you see it?",
-  "honor --dataset, but if not given -- deduce by going up the folders hierarchy until seeing dataset_description.json which should be an indicator of BIDS dataset root",
-  "commit and add that bids-examples submodule -- you should have git write access",
-  "re question: the https://pypi.org/project/bids/ is placeholder pointing to pybids.  https://pypi.org/project/bids-utils/ is not yet taken.    I think let's just keep 'bids-utils' CLI entry point for now."
- ]
+ "exemplars": {
+  "new_work": [
+   "/speckit.plan proceed while also doing research on prototypes and related projects listed in  docs/design/00-initial-design.md file",
+   "/speckit.implement T054 T061 T068 T072 — sweep tests",
+   "/speckit.clarify there should be easy ways to enable shell completion for bids-utils commands. https://click.palletsprojects.com/en/stable/shell-completion/ since click is used could be the relevant documentation",
+   "/speckit.implement",
+   "/speckit.specify Build a Python application/library following what is described in docs/design/00-initial-design.md file",
+   "/speckit.implement T034 T035  — complete 1.x migration"
+  ],
+  "approve_proceed": [
+   "/speckit.tasks",
+   "/speckit.clarify - in prior commit I added some changes to user stories -- please analyze and potentially adjust user stories to reflect better.",
+   "## File Paths for Reference\n\n- **bids-utils design document**: `/home/yoh/proj/bids/bids-utils/.specify/specs/00-initial-design.md`\n- All project repositories accessible via links above (public GitHub repos)</result>\n<usage><total_tokens>24770</total_tokens><tool_uses>9</tool_uses><duration_ms>58874</duration_ms></usage>\n</task-notification>\nFull transcript available at: /tmp/claude-1000/-home-yoh-proj-bids-bids-utils/09006296-669b-4161-a3c3-d9847ff0b319/tasks/a7220ea90c3588a7f.output",
+   "A",
+   "B",
+   "yes",
+   "proceed how you recommend",
+   "should I run /speckit.implement now or we can somehow prioritie recommended next steps? (just asking - no action needed)"
+  ],
+  "question": [
+   "### Key Characteristics\n\n**Lightweight:** Minimizes dependencies; serves as the reference parsing implementation  \n**Dict-like:** Namespace objects support both dot notation and bracket notation for property access  \n**Cached:** `load_schema()` caches results, so multiple calls with same path are efficient  \n**CLI Available:** Command-line interface with `bst export` and other bindings"
+  ],
+  "pushback": [
+   "2+1 but also see if SHELL env var available -- should tell which shell is running.  and also 3 - yes, we should complete what we know.   Also you could not find /speckit.clarify but there is ./.claude/skills/speckit-clarify -- did you see it?",
+   "honor --dataset, but if not given -- deduce by going up the folders hierarchy until seeing dataset_description.json which should be an indicator of BIDS dataset root",
+   "commit and add that bids-examples submodule -- you should have git write access",
+   "re question: the https://pypi.org/project/bids/ is placeholder pointing to pybids.  https://pypi.org/project/bids-utils/ is not yet taken.    I think let's just keep 'bids-utils' CLI entry point for now."
+  ]
+ },
+ "length_median": {
+  "new_work": 8,
+  "approve_proceed": 1,
+  "question": 47,
+  "pushback": 25
+ }
 }

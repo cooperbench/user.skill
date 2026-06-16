@@ -1,44 +1,54 @@
 {
- "new_work": [
-  "今あるGitHub Actionsの中のAnalysisで、最新の当選結果を本番のsupabase にデータ挿入するような実家お願いできますか？",
-  "もっと精度あげて、予測当選番号の精度あげて、当選確率を上げたいです。基本、セットボックスを狙っているので。ワンチャン、セットストレート狙えればぐらいのスタンス。順不同4つの数字全部あてればいいです。各モデルで当選確率あげたいです。わかりますか？もう必死なんですよ。おねがいします！",
-  "前も当選確率を上げるように調整させていただきましたが、もっともっと当選確率をあげたいです！！現在の実装もそうですが、かならずあたるような感じで確率をあげる方法をご提案いただけますでしょうか？？？",
-  "このgithub actionsで手動ではしらせるときどのモデルをはしらせるかなどの選択できるようなジョブというかgithub actionsの設定って可能ですか？"
- ],
- "refine_redirect": [
-  "スマホでのランキングとあたりのところのテーブルをもっといい感じのレスポンシブ対応していただけますでしょうか？"
- ],
- "approve_proceed": [
-  "アラブの石油王に見てもらえるぐらいのSEO対策するならどうしたら良いでしょうか？",
-  "コミットしてPUSHしてー",
-  "はい、両方設定済みです",
-  "<bash-input>cursor .</bash-input>",
-  "<bash-stdout>(Bash completed with no output)</bash-stdout><bash-stderr></bash-stderr>",
-  "stagedにさせていただきました。適切なコミットメッセージでコミットしていただけますか？",
-  "いいですね！同様にコミットして！",
-  "pushしてー",
-  "stagedにしたよ！コミットしてpushしてー",
-  "対応した内容をコミットしてください",
-  "全部やる",
-  "いいですね！\nもっともっといろんな人やAIでひっかかるようにするためにはどうすればいいですか？？"
- ],
- "question": [
-  "numbers4/evaluate_methods.pyはどのgithub actionsで自動的に重みの調整したりするんですか？？",
-  "webのほうは具体的にどのようなことが変わった感じでしょうか？",
-  "どこで確認できる感じー？"
- ],
- "pushback": [
-  "この追加していただいたモデルとかLightGBMなど日次予測のgithub actions で走ってないモデルがあります。わかりますか？追加したいです。1時から20分毎でジョブがはしるように調整修正していただけますか？わかりますか？いいたいこと",
-  "ありがとうございます！近傍10件クリックしたら、予測当選番号があると思うけど、それも当選番号に同じように同じ条件で薄い赤色いれて欲しいです。可能ですか？",
-  "スマホでの全体のフォントがダサいので、モダンな感じで見やすい感じで調整してください",
-  "もっともっと上げる方法ってありますか？？",
-  "おねがいします！！もう本気なので！！",
-  "いいんですけど。なんかあまりにも購入方法での確率に優先しているイメージがあります。"
- ],
- "bug_report": [
-  "アプリケーション上でml_neighborhood, lightgbm, lgbm_boxの予測当選番号のランキングやスコアが表示されません。このモデルは直近ランで候補がありませんと表示されます。",
-  "あれ？終わった感じ？",
-  "みえてないんですよねー",
-  "<task-notification>\n<task-id>byo6kk3zh</task-id>\n<tool-use-id>toolu_012NJNAfYARNPR5s2ySW1xb9</tool-use-id>\n<output-file>REDACTED.output</output-file>\n<status>failed</status>\n<summary>Background command \"Start Next.js dev server\" failed with exit code 143</summary>\n</task-notification>"
- ]
+ "exemplars": {
+  "new_work": [
+   "今あるGitHub Actionsの中のAnalysisで、最新の当選結果を本番のsupabase にデータ挿入するような実家お願いできますか？",
+   "もっと精度あげて、予測当選番号の精度あげて、当選確率を上げたいです。基本、セットボックスを狙っているので。ワンチャン、セットストレート狙えればぐらいのスタンス。順不同4つの数字全部あてればいいです。各モデルで当選確率あげたいです。わかりますか？もう必死なんですよ。おねがいします！",
+   "前も当選確率を上げるように調整させていただきましたが、もっともっと当選確率をあげたいです！！現在の実装もそうですが、かならずあたるような感じで確率をあげる方法をご提案いただけますでしょうか？？？",
+   "このgithub actionsで手動ではしらせるときどのモデルをはしらせるかなどの選択できるようなジョブというかgithub actionsの設定って可能ですか？"
+  ],
+  "refine_redirect": [
+   "スマホでのランキングとあたりのところのテーブルをもっといい感じのレスポンシブ対応していただけますでしょうか？"
+  ],
+  "approve_proceed": [
+   "アラブの石油王に見てもらえるぐらいのSEO対策するならどうしたら良いでしょうか？",
+   "コミットしてPUSHしてー",
+   "はい、両方設定済みです",
+   "<bash-input>cursor .</bash-input>",
+   "<bash-stdout>(Bash completed with no output)</bash-stdout><bash-stderr></bash-stderr>",
+   "stagedにさせていただきました。適切なコミットメッセージでコミットしていただけますか？",
+   "いいですね！同様にコミットして！",
+   "pushしてー",
+   "stagedにしたよ！コミットしてpushしてー",
+   "対応した内容をコミットしてください",
+   "全部やる",
+   "いいですね！\nもっともっといろんな人やAIでひっかかるようにするためにはどうすればいいですか？？"
+  ],
+  "question": [
+   "numbers4/evaluate_methods.pyはどのgithub actionsで自動的に重みの調整したりするんですか？？",
+   "webのほうは具体的にどのようなことが変わった感じでしょうか？",
+   "どこで確認できる感じー？"
+  ],
+  "pushback": [
+   "この追加していただいたモデルとかLightGBMなど日次予測のgithub actions で走ってないモデルがあります。わかりますか？追加したいです。1時から20分毎でジョブがはしるように調整修正していただけますか？わかりますか？いいたいこと",
+   "ありがとうございます！近傍10件クリックしたら、予測当選番号があると思うけど、それも当選番号に同じように同じ条件で薄い赤色いれて欲しいです。可能ですか？",
+   "スマホでの全体のフォントがダサいので、モダンな感じで見やすい感じで調整してください",
+   "もっともっと上げる方法ってありますか？？",
+   "おねがいします！！もう本気なので！！",
+   "いいんですけど。なんかあまりにも購入方法での確率に優先しているイメージがあります。"
+  ],
+  "bug_report": [
+   "アプリケーション上でml_neighborhood, lightgbm, lgbm_boxの予測当選番号のランキングやスコアが表示されません。このモデルは直近ランで候補がありませんと表示されます。",
+   "あれ？終わった感じ？",
+   "みえてないんですよねー",
+   "<task-notification>\n<task-id>byo6kk3zh</task-id>\n<tool-use-id>toolu_012NJNAfYARNPR5s2ySW1xb9</tool-use-id>\n<output-file>REDACTED.output</output-file>\n<status>failed</status>\n<summary>Background command \"Start Next.js dev server\" failed with exit code 143</summary>\n</task-notification>"
+  ]
+ },
+ "length_median": {
+  "new_work": 2,
+  "refine_redirect": 1,
+  "approve_proceed": 1,
+  "question": 1,
+  "pushback": 1,
+  "bug_report": 1
+ }
 }

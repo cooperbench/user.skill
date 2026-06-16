@@ -1,50 +1,60 @@
 {
- "question": [
-  "i've cleared up context -- spin up paranoid review agents and review the codebase",
-  "what happens when someone, in their config, has say the default endpoint but also has one or more [[saved.endpoints]]?",
-  "ok so walk me through how i switch from the default of ollama locally to openrouter. the settings drop down has a place to switch as well as add in an api key? how does the config.toml file do this?",
-  "ok last thing -- i'd like for you to review agents.md and tell me what you think",
-  "ok nice i like that. i'm going to test it real quick. -- tell me how the app picks the model for openrouter?"
- ],
- "new_work": [
-  "i'd like to build a feature that enables the ability to use openrouter. let's plan that out",
-  "i'd like a few review agents to be spun up and review the updates that just got written",
-  "let's add in a config reload button that can reload the config if someone makes live changes. \n\nfor example -- i just added in openrouter to my config, and added in my api key while hchat was running. but now, i have to close and relaunch hchat for it to pick it up",
-  "run cargo clippy to see what it has to say",
-  "ok now i want to get this on homebrew for macos -- how do we do that?",
-  "ok i did step 1. go ahead and do the rest",
-  "ok last thing -- update the readme with the homebrew information"
- ],
- "bug_report": [
-  "ok so there's a bug with using openrouter in hchat now. \n\nwhen i switch to the openrouter endpoint, there are no models listed for me to select..."
- ],
- "approve_proceed": [
-  "can you tag and push a new release? i just made some updates to how the config file is initialized",
-  "yes",
-  "ok let's commit and push",
-  "and this can all be automated with github actions yeah?",
-  "i'll create the repo, you can get to work",
-  "yep!",
-  "yeah push this update and then push a new tag, 0.3.5 i think now?",
-  "commit and push",
-  "so what's up? been working for a bit",
-  "you been working for a long time what's going on? did you get hung up?"
- ],
- "refine_redirect": [
-  "This is a functional desktop app with no memory corruption vulnerabilities, but several security hygiene issues around credential handling, input validation, and system integration that should be addressed before storing sensitive API keys.</result>\n<usage><total_tokens>58787</total_tokens><tool_uses>41</tool_uses><duration_ms>99993</duration_ms></usage>\n</task-notification>",
-  "### FILES AFFECTED\n\n- `/Users/heath/code/hChat/src/config.rs` - API key storage, TOCTOU, file permissions\n- `/Users/heath/code/hChat/src/api.rs` - URL validation, error exposure, TLS config\n- `/Users/heath/code/hChat/src/app.rs` - Input validation, error messages\n- `/Users/heath/code/hChat/src/storage.rs` - File permissions, database access\n- `/Users/heath/code/hChat/Cargo.toml` - Missing security-focused dependencies",
-  "fix the high and medium priority issues you outlined. delete the temp_app.txt file. and fix formatting."
- ],
- "pushback": [
-  "why would you fix those 5 first? seems to be a mix of critical and non critical?",
-  "why not just fix them all?",
-  "oh in hchat and not the hombrew tap repo. let me fix that",
-  "ok so -- need two things:\n\n1. update the readme\n2. need examples of the config somehwere that shows all configuration options. example.config.toml maybe?",
-  "yeah i'm with you on that -- go ahead and update agents.md with information about points 2 and 4",
-  "ok commit and push these changes -- knowing what you know about the updates -- think we should push a new tag? 0.3.4?",
-  "well i think my thing is that i want to be able to run `brew update` or whatever the command is to pull these updates down, and the way it's organized right now is that the updates are only made available to the homebrew tap via a github action that only runs when a new release is pushed",
-  "add instructions for updating via homebrew to the readme",
-  "instead of the symbol, just make it a button in the settings menu that says \"reload config\"",
-  "ok now i see you've modified a lot of files -- what you been doing? we've just been chatting _about_ the codebase, not actually editing files"
- ]
+ "exemplars": {
+  "question": [
+   "i've cleared up context -- spin up paranoid review agents and review the codebase",
+   "what happens when someone, in their config, has say the default endpoint but also has one or more [[saved.endpoints]]?",
+   "ok so walk me through how i switch from the default of ollama locally to openrouter. the settings drop down has a place to switch as well as add in an api key? how does the config.toml file do this?",
+   "ok last thing -- i'd like for you to review agents.md and tell me what you think",
+   "ok nice i like that. i'm going to test it real quick. -- tell me how the app picks the model for openrouter?"
+  ],
+  "new_work": [
+   "i'd like to build a feature that enables the ability to use openrouter. let's plan that out",
+   "i'd like a few review agents to be spun up and review the updates that just got written",
+   "let's add in a config reload button that can reload the config if someone makes live changes. \n\nfor example -- i just added in openrouter to my config, and added in my api key while hchat was running. but now, i have to close and relaunch hchat for it to pick it up",
+   "run cargo clippy to see what it has to say",
+   "ok now i want to get this on homebrew for macos -- how do we do that?",
+   "ok i did step 1. go ahead and do the rest",
+   "ok last thing -- update the readme with the homebrew information"
+  ],
+  "bug_report": [
+   "ok so there's a bug with using openrouter in hchat now. \n\nwhen i switch to the openrouter endpoint, there are no models listed for me to select..."
+  ],
+  "approve_proceed": [
+   "can you tag and push a new release? i just made some updates to how the config file is initialized",
+   "yes",
+   "ok let's commit and push",
+   "and this can all be automated with github actions yeah?",
+   "i'll create the repo, you can get to work",
+   "yep!",
+   "yeah push this update and then push a new tag, 0.3.5 i think now?",
+   "commit and push",
+   "so what's up? been working for a bit",
+   "you been working for a long time what's going on? did you get hung up?"
+  ],
+  "refine_redirect": [
+   "This is a functional desktop app with no memory corruption vulnerabilities, but several security hygiene issues around credential handling, input validation, and system integration that should be addressed before storing sensitive API keys.</result>\n<usage><total_tokens>58787</total_tokens><tool_uses>41</tool_uses><duration_ms>99993</duration_ms></usage>\n</task-notification>",
+   "### FILES AFFECTED\n\n- `/Users/heath/code/hChat/src/config.rs` - API key storage, TOCTOU, file permissions\n- `/Users/heath/code/hChat/src/api.rs` - URL validation, error exposure, TLS config\n- `/Users/heath/code/hChat/src/app.rs` - Input validation, error messages\n- `/Users/heath/code/hChat/src/storage.rs` - File permissions, database access\n- `/Users/heath/code/hChat/Cargo.toml` - Missing security-focused dependencies",
+   "fix the high and medium priority issues you outlined. delete the temp_app.txt file. and fix formatting."
+  ],
+  "pushback": [
+   "why would you fix those 5 first? seems to be a mix of critical and non critical?",
+   "why not just fix them all?",
+   "oh in hchat and not the hombrew tap repo. let me fix that",
+   "ok so -- need two things:\n\n1. update the readme\n2. need examples of the config somehwere that shows all configuration options. example.config.toml maybe?",
+   "yeah i'm with you on that -- go ahead and update agents.md with information about points 2 and 4",
+   "ok commit and push these changes -- knowing what you know about the updates -- think we should push a new tag? 0.3.4?",
+   "well i think my thing is that i want to be able to run `brew update` or whatever the command is to pull these updates down, and the way it's organized right now is that the updates are only made available to the homebrew tap via a github action that only runs when a new release is pushed",
+   "add instructions for updating via homebrew to the readme",
+   "instead of the symbol, just make it a button in the settings menu that says \"reload config\"",
+   "ok now i see you've modified a lot of files -- what you been doing? we've just been chatting _about_ the codebase, not actually editing files"
+  ]
+ },
+ "length_median": {
+  "question": 19,
+  "new_work": 17,
+  "bug_report": 27,
+  "approve_proceed": 8,
+  "refine_redirect": 35,
+  "pushback": 19
+ }
 }

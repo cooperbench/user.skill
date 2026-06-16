@@ -1,61 +1,70 @@
 {
- "approve_proceed": [
-  "翻译当前这个文档的内容为地道机构级英语",
-  "根据当前的项目，重写readme 内容",
-  "为这个故事写一个总结",
-  "Unknown skill: claude",
-  "更新内容同步到readme",
-  "## 🌏 中国 / 新兴市场\n\n| 公司 | Ticker | 上市 | 一句话基本面 |\n| --- | --- | --- | --- |\n| Alibaba | BABA | ✅ | 电商+云，估值低但增长承压 |\n| Xiaomi | 1810.HK | ✅ | 手机+IoT+汽车新故事 |\n| Tencent（已列） | - | - | - |",
-  "方案1",
-  "继续下一部分",
-  "是的  最新的在前面",
-  "继续",
-  "开始执行吧"
- ],
- "bug_report": [
-  "在mdx中支持 mermaid的渲染，目前无法展示 \n[Image: image/png]",
-  "我在本地pnpm build 没有问题，但是在vercel上出现了 Export encountered an error on /fear/page: /fear, exiting the build.\n⨯ Next.js build worker exited with code: 1 and signal: null\n ELIFECYCLE  Command failed with exit code 1.\nError: Command \"pnpm run build\" exited with 1",
-  "在fund的页面中，ai筛选出现了问题，当前分类下只有一个资产\n[Image: image/png]",
-  "✓ Ready in 399ms\n⨯ ./src/components/mermaid.tsx:13:5\nModule not found: Can't resolve 'mermaid'\n  11 |     if (nodes.length === 0) return;\n  12 |\n> 13 |     import('mermaid').then((mod) => {\n     |     ^^^^^^^^^^^^^^^^^",
-  "我发现同步的旧数据被重写了",
-  "无法渲染",
-  "[Image: source: /Users/kk/.claude/image-cache/1a7149b7-7ef7-48d0-ad8a-d37add1826b2/2.png]",
-  "LayersIcon is not defined",
-  "Parsing ecmascript source code failed",
-  "为什么渲染的数据 和我给你的平台都不一样  检查\n[Image: image/png]",
-  "虽然有5条数据 但是前端只展示了2条\n[Image: image/png]",
-  "每个部分切换都出现了两次 Hyperliquid Quality\n\nCrypto\n\nHYPE\n[Image: image/png]\n[Image: image/png]"
- ],
- "new_work": [
-  "优化thoughts 来自 kk 的碎碎念  页面的渲染，如过是链接则支持markdown进行跳转，如过是数据超过10条 请使用懒加载",
-  "my project 增加两个项目  稳定币观察  https://usdc.kkdemian.com/   Fear Dashboard\nCrypto market observation & regime classification system\n\n   https://watch.kkdemian.com/",
-  "在fund页面，预测市场部分, 增加更多主流预测市场 并注明是否已经发行token\n[Image: image/png]",
-  "根据mem.mdx这个文档，以及我现在的疑问，我正在研究ai的长久记忆问题，比如在vscode中打开对话框，但是隔一天再次打开就无法看到上下文，以及当前的记忆超过1m 或某些长度后就无法存在，那么应该如何解决这个隔天、隔周、隔月上下文的问题。你有什么好的解决方案",
-  "底部增加一个单独的thoughts 页面  我用来写一些想法和碎碎念，我想通过telegram频道实现数据可以实时传送到GitHub的仓库然后在更新  这样就可以通过telegram的订阅直接推送消息，我现在有一个公开的群组  https://t.me/kkdemian2050",
-  "我希望可以通过社交软件进行控制当前的cli 请给我方案",
-  "claude plugin install telegram@claude-plugins-official",
-  "帮我生成 CLAUDE.md",
-  "进入代码实现阶段"
- ],
- "refine_redirect": [
-  "在首页的内容展示中，Education下面 增加 philosophy的页面内容部分，内容改为英文版，去掉底部philosophy 的入口和整个页面",
-  "更换social部分的telegram icon",
-  "优化这个skill",
-  "优化当前项目的seo，不要改变当前的sitemap 路由，增加有利于ai搜索、索引的优化",
-  "可能是文章内容突然增加了很多  我发现在页面渲染的时候变慢了  如何优化"
- ],
- "pushback": [
-  "在fund 页面的Infrastructure 部分，增加一个新的资产：ondo ,同时，如果在 content已经写过报告的项目添加一个 research 链接，比如 hyperliquid  保留当前项目的跳转",
-  "调整布局，链接和blog地址 可以放在当前card的下方，目前很拥挤\n[Image: image/png]",
-  "是否需要调整当前可显示的内容宽度 看起来不是很协调 实际上屏幕还有很大\n[Image: image/png]",
-  "我希望的是对话模式进行交互  然后可以改我本地的代码",
-  "删除之前的文件   安装这个bot https://github.com/anthropics/claude-plugins-official/blob/main/external_plugins/telegram/README.md",
-  "plugin install telegram@claude-plugins-official",
-  "选项1",
-  "blog 新增一个story部分，我用来写关于加密货币传奇人物的故事",
-  "pnpm 的脚本没有同步更新",
-  "pnpm 的脚本没有同步更新 [Image #2]\n[Image: image/png]",
-  "在blog部分，同步我已经发布过的crypto项目研究报告标题到 readme，同时增加一个新的页面 research，关于深度调研加密货币项目的地图，里面增加已经调研过的项目logo和、一句话介绍、类型、研报链接等\n[Image: image/png]",
-  "Research Map 为每个项目增加具体的logo\n[Image: image/png]"
- ]
+ "exemplars": {
+  "approve_proceed": [
+   "翻译当前这个文档的内容为地道机构级英语",
+   "根据当前的项目，重写readme 内容",
+   "为这个故事写一个总结",
+   "Unknown skill: claude",
+   "更新内容同步到readme",
+   "## 🌏 中国 / 新兴市场\n\n| 公司 | Ticker | 上市 | 一句话基本面 |\n| --- | --- | --- | --- |\n| Alibaba | BABA | ✅ | 电商+云，估值低但增长承压 |\n| Xiaomi | 1810.HK | ✅ | 手机+IoT+汽车新故事 |\n| Tencent（已列） | - | - | - |",
+   "方案1",
+   "继续下一部分",
+   "是的  最新的在前面",
+   "继续",
+   "开始执行吧"
+  ],
+  "bug_report": [
+   "在mdx中支持 mermaid的渲染，目前无法展示 \n[Image: image/png]",
+   "我在本地pnpm build 没有问题，但是在vercel上出现了 Export encountered an error on /fear/page: /fear, exiting the build.\n⨯ Next.js build worker exited with code: 1 and signal: null\n ELIFECYCLE  Command failed with exit code 1.\nError: Command \"pnpm run build\" exited with 1",
+   "在fund的页面中，ai筛选出现了问题，当前分类下只有一个资产\n[Image: image/png]",
+   "✓ Ready in 399ms\n⨯ ./src/components/mermaid.tsx:13:5\nModule not found: Can't resolve 'mermaid'\n  11 |     if (nodes.length === 0) return;\n  12 |\n> 13 |     import('mermaid').then((mod) => {\n     |     ^^^^^^^^^^^^^^^^^",
+   "我发现同步的旧数据被重写了",
+   "无法渲染",
+   "[Image: source: /Users/kk/.claude/image-cache/1a7149b7-7ef7-48d0-ad8a-d37add1826b2/2.png]",
+   "LayersIcon is not defined",
+   "Parsing ecmascript source code failed",
+   "为什么渲染的数据 和我给你的平台都不一样  检查\n[Image: image/png]",
+   "虽然有5条数据 但是前端只展示了2条\n[Image: image/png]",
+   "每个部分切换都出现了两次 Hyperliquid Quality\n\nCrypto\n\nHYPE\n[Image: image/png]\n[Image: image/png]"
+  ],
+  "new_work": [
+   "优化thoughts 来自 kk 的碎碎念  页面的渲染，如过是链接则支持markdown进行跳转，如过是数据超过10条 请使用懒加载",
+   "my project 增加两个项目  稳定币观察  https://usdc.kkdemian.com/   Fear Dashboard\nCrypto market observation & regime classification system\n\n   https://watch.kkdemian.com/",
+   "在fund页面，预测市场部分, 增加更多主流预测市场 并注明是否已经发行token\n[Image: image/png]",
+   "根据mem.mdx这个文档，以及我现在的疑问，我正在研究ai的长久记忆问题，比如在vscode中打开对话框，但是隔一天再次打开就无法看到上下文，以及当前的记忆超过1m 或某些长度后就无法存在，那么应该如何解决这个隔天、隔周、隔月上下文的问题。你有什么好的解决方案",
+   "底部增加一个单独的thoughts 页面  我用来写一些想法和碎碎念，我想通过telegram频道实现数据可以实时传送到GitHub的仓库然后在更新  这样就可以通过telegram的订阅直接推送消息，我现在有一个公开的群组  https://t.me/kkdemian2050",
+   "我希望可以通过社交软件进行控制当前的cli 请给我方案",
+   "claude plugin install telegram@claude-plugins-official",
+   "帮我生成 CLAUDE.md",
+   "进入代码实现阶段"
+  ],
+  "refine_redirect": [
+   "在首页的内容展示中，Education下面 增加 philosophy的页面内容部分，内容改为英文版，去掉底部philosophy 的入口和整个页面",
+   "更换social部分的telegram icon",
+   "优化这个skill",
+   "优化当前项目的seo，不要改变当前的sitemap 路由，增加有利于ai搜索、索引的优化",
+   "可能是文章内容突然增加了很多  我发现在页面渲染的时候变慢了  如何优化"
+  ],
+  "pushback": [
+   "在fund 页面的Infrastructure 部分，增加一个新的资产：ondo ,同时，如果在 content已经写过报告的项目添加一个 research 链接，比如 hyperliquid  保留当前项目的跳转",
+   "调整布局，链接和blog地址 可以放在当前card的下方，目前很拥挤\n[Image: image/png]",
+   "是否需要调整当前可显示的内容宽度 看起来不是很协调 实际上屏幕还有很大\n[Image: image/png]",
+   "我希望的是对话模式进行交互  然后可以改我本地的代码",
+   "删除之前的文件   安装这个bot https://github.com/anthropics/claude-plugins-official/blob/main/external_plugins/telegram/README.md",
+   "plugin install telegram@claude-plugins-official",
+   "选项1",
+   "blog 新增一个story部分，我用来写关于加密货币传奇人物的故事",
+   "pnpm 的脚本没有同步更新",
+   "pnpm 的脚本没有同步更新 [Image #2]\n[Image: image/png]",
+   "在blog部分，同步我已经发布过的crypto项目研究报告标题到 readme，同时增加一个新的页面 research，关于深度调研加密货币项目的地图，里面增加已经调研过的项目logo和、一句话介绍、类型、研报链接等\n[Image: image/png]",
+   "Research Map 为每个项目增加具体的logo\n[Image: image/png]"
+  ]
+ },
+ "length_median": {
+  "approve_proceed": 1,
+  "bug_report": 4,
+  "new_work": 4,
+  "refine_redirect": 2,
+  "pushback": 4
+ }
 }

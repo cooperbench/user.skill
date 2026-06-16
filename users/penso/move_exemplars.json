@@ -1,52 +1,63 @@
 {
- "bug_report": [
-  "Look at this issue https://github.com/moltis-org/moltis/issues/319 and give me a good understanding and a potential fix.",
-  "Look at https://github.com/moltis-org/moltis/issues/376 and suggest a fix",
-  "Look at https://github.com/moltis-org/moltis/issues/351 then look at the code and plan a fix",
-  "Look at this issue: https://github.com/moltis-org/moltis/issues/306 and look if that issue still exist, if so suggest a fix",
-  "Look at https://github.com/moltis-org/moltis/issues/350 and suggest a fix",
-  "CI failed: https://github.com/moltis-org/moltis/actions/runs/22933477161/job/66559788743",
-  "try again",
-  "apply the best fix yes",
-  "See greptileai comments and plan a fix: https://github.com/moltis-org/moltis/pull/356"
- ],
- "approve_proceed": [
-  "Push a new 0.10 release",
-  "proceed if you need to do more, commit push and create a PR.",
-  "commit, push, create a PR",
-  "Fix comment added in https://github.com/moltis-org/moltis/pull/398",
-  "please yes",
-  "commit push create a PR",
-  "I use https://entire.io/ but it creates a large .entire directory, should this be git ignored? What does https://docs.entire.io/introduction say?",
-  "ok add the .entire directory, commit and push",
-  "commit and push",
-  "merge main to this branch, commit and push",
-  "any remaining comments to fix at https://github.com/moltis-org/moltis/pull/393 ?",
-  "commit and push, add something in CLAUDE.md and AGENTS.md about always making sure documentation is up to date when adding or changing features."
- ],
- "new_work": [
-  "Can you improve test coverage, see https://github.com/moltis-org/moltis/pull/356/checks?check_run_id=66237902602",
-  "Please implement this",
-  "please implement it",
-  "Yes create it"
- ],
- "pushback": [
-  "Look at comments in https://github.com/moltis-org/moltis/pull/389 and solve them, fix if needed",
-  "Please implement all",
-  "commit and push main, no need for release",
-  "Look at comments at https://github.com/moltis-org/moltis/pull/384 and fixes anything",
-  "did you fix all issues? Can you resolve comments then?",
-  "Check if all comments were fixed from https://github.com/moltis-org/moltis/pull/384",
-  "I like 1 but then it should require only to setup auth, not all the onboarding steps",
-  "Is that what the entire documentation say? Why do I have this directory?",
-  "Yes, I guess it is better to upgrade",
-  "commit, push, resolve comments.",
-  "Fix the pineentry program, I see a ncurse stuffcccccdebgltidgrnehijknrhblnnucccurtgclhudcbk"
- ],
- "refine_redirect": [
-  "proceed about cleaning bd tasks then"
- ],
- "question": [
-  "Looking at entire documentation, anything I should put in entire settings?"
- ]
+ "exemplars": {
+  "bug_report": [
+   "Look at this issue https://github.com/moltis-org/moltis/issues/319 and give me a good understanding and a potential fix.",
+   "Look at https://github.com/moltis-org/moltis/issues/376 and suggest a fix",
+   "Look at https://github.com/moltis-org/moltis/issues/351 then look at the code and plan a fix",
+   "Look at this issue: https://github.com/moltis-org/moltis/issues/306 and look if that issue still exist, if so suggest a fix",
+   "Look at https://github.com/moltis-org/moltis/issues/350 and suggest a fix",
+   "CI failed: https://github.com/moltis-org/moltis/actions/runs/22933477161/job/66559788743",
+   "try again",
+   "apply the best fix yes",
+   "See greptileai comments and plan a fix: https://github.com/moltis-org/moltis/pull/356"
+  ],
+  "approve_proceed": [
+   "Push a new 0.10 release",
+   "proceed if you need to do more, commit push and create a PR.",
+   "commit, push, create a PR",
+   "Fix comment added in https://github.com/moltis-org/moltis/pull/398",
+   "please yes",
+   "commit push create a PR",
+   "I use https://entire.io/ but it creates a large .entire directory, should this be git ignored? What does https://docs.entire.io/introduction say?",
+   "ok add the .entire directory, commit and push",
+   "commit and push",
+   "merge main to this branch, commit and push",
+   "any remaining comments to fix at https://github.com/moltis-org/moltis/pull/393 ?",
+   "commit and push, add something in CLAUDE.md and AGENTS.md about always making sure documentation is up to date when adding or changing features."
+  ],
+  "new_work": [
+   "Can you improve test coverage, see https://github.com/moltis-org/moltis/pull/356/checks?check_run_id=66237902602",
+   "Please implement this",
+   "please implement it",
+   "Yes create it"
+  ],
+  "pushback": [
+   "Look at comments in https://github.com/moltis-org/moltis/pull/389 and solve them, fix if needed",
+   "Please implement all",
+   "commit and push main, no need for release",
+   "Look at comments at https://github.com/moltis-org/moltis/pull/384 and fixes anything",
+   "did you fix all issues? Can you resolve comments then?",
+   "Check if all comments were fixed from https://github.com/moltis-org/moltis/pull/384",
+   "I like 1 but then it should require only to setup auth, not all the onboarding steps",
+   "Is that what the entire documentation say? Why do I have this directory?",
+   "Yes, I guess it is better to upgrade",
+   "commit, push, resolve comments.",
+   "Fix the pineentry program, I see a ncurse stuffcccccdebgltidgrnehijknrhblnnucccurtgclhudcbk"
+  ],
+  "refine_redirect": [
+   "proceed about cleaning bd tasks then"
+  ],
+  "question": [
+   "Looking at entire documentation, anything I should put in entire settings?"
+  ]
+ },
+ "length_median": {
+  "bug_report": 6,
+  "approve_proceed": 5,
+  "new_work": 3,
+  "pushback": 8,
+  "refine_redirect": 6,
+  "interrupt": 5,
+  "question": 11
+ }
 }

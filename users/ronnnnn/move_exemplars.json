@@ -1,54 +1,64 @@
 {
- "refine_redirect": [
-  "wt skill で shopt 使ってるけど、macos だとデフォルトで shopt 使えないので修正して\nスクリプト修正後、期待通りに動作するかどうか実際に確認して",
-  "pr-fix や pr-watch のレビュー修正の際に、レビューの指摘内容を鵜呑みにせず、検証や信頼できるソースからのファクトチェックにより、指摘が正しい確認するようにして\nファクトチェックのソースは tech-research と同じ優先順位で確認して\n\ntech-research や claude-md-style に例外的な優先順位として下記を含めてほしい\n- terraform に関する内容は terraform MCP が最優先\n- Google Cloud に関する内容は google-developer-knowledge MCP が最優先",
-  "wt skill の wt config は basedir = ./ -> basedir = .. にして",
-  "pr-create skill で reviewer を指定するのをなくして",
-  "pr-create skill で PR title を決定する際に差分コミットが 1 つしかない場合はそのコミットメッセージを PR title にして、commit-proposer で再確認するのはスキップして"
- ],
- "new_work": [
-  "create-rules skill で引数が渡されなかったデフォルトの挙動は、staged/unstaged の diff から rule 作成にして",
-  "このプロジェクトに https://github.com/entireio/cli 導入して\ncli はインストール済み",
-  "review skill の codex の mcp__codex__codex のパラメータ profile を review に設定して",
-  "ls -la commitlint.config.* 2>/dev/null\n   ls -la .commitlintrc.* 2>/dev/null\n   grep -l '\"commitlint\"' package.json 2>/dev/null\n\nこれが正しく動くかどうかも検証してみて",
-  "この wt 作成の動作確認を\nDocuments/agent/openai-testing-agent-demo/ に対して行なってみて"
- ],
- "question": [
-  "pr-watch や pr-ci で ci の status 確認してるけど、ページングにより全てのステータス確認できてない可能性ある？",
-  "既存の skill でデフォルトの挙動が決まっていないものってある？",
-  "https://docs.entire.io/cli/strategies#auto-summarize は有効にした方がいい？"
- ],
- "approve_proceed": [
-  "レビューを行うスキルで、自分によるコメントには返信、resolve しないようにして",
-  "1",
-  "**Begin with Phase 1: Discovery**",
-  "Continue from where you left off.",
-  "y",
-  "<bash-input>idea</bash-input>",
-  "<bash-input>idea1 .</bash-input>",
-  "<bash-stdout></bash-stdout><bash-stderr></bash-stderr>",
-  "<bash-stdout>Switched to a new branch 'fix-paging-commit'</bash-stdout><bash-stderr></bash-stderr>",
-  "<bash-input>diffit .</bash-input>",
-  "<bash-input>difit .</bash-input>",
-  "<bash-input>difit</bash-input>"
- ],
- "bug_report": [
-  "claude plugin validate . の CI がこけてるので修正して",
-  "<bash-stdout>zsh: command not found: idea\n</bash-stdout><bash-stderr>zsh: command not found: idea\n</bash-stderr>",
-  "<bash-stdout></bash-stdout><bash-stderr>Error: No diff content received from stdin\n</bash-stderr>"
- ],
- "pushback": [
-  "Commands は全て skill に移行してほしい\nagent や skill の markdown は全て日本語にして\nexamples は削除\nREADME も書いて",
-  "Commands は全て skill に移行してほしい\nagent や skill の markdown は全て日本語にして\nexamples は削除\nREADME も書いて\n\n@\"claude-code-guide (agent)\" 使っていいよ",
-  "@plugins/hookify/.claude-plugin/plugin.json は他の plugin を参考にして\nバージョンは 1.0.0 でいいよ\nmarketplace.json も更新して\nバージョンはマイナーアプデでおけ",
-  "pr-explain の引数がない時のデフォルト挙動は、現在のブランチに commit されていない変更 (staged/unstaged) があればそれを解説 -> ブランチに PR が紐づいていればそれを解説 -> 直近のコミットを解説 という優先度にして\n他は今のままでおけ",
-  "A にして",
-  "<bash-input>idea1</bash-input>",
-  "<bash-stdout></bash-stdout><bash-stderr>zsh: command not found: diffit\n</bash-stderr>",
-  "マージして",
-  "entire を manual-commit に変更して\nhttps://github.com/entireio/cli\n\n変更したら commit message を commitlint 設定に合わせて",
-  "skill のフォーマットは他の skill を参考にして",
-  "plugins/git/skills/wt/SKILL.md:L68\nbare.git とは限らない\n=====\nplugins/git/skills/wt/SKILL.md:L138\nworktree 前の元の構成の時の remote リポジトリ設定から変わっていないかも確認して",
-  "1 で scope は不要"
- ]
+ "exemplars": {
+  "refine_redirect": [
+   "wt skill で shopt 使ってるけど、macos だとデフォルトで shopt 使えないので修正して\nスクリプト修正後、期待通りに動作するかどうか実際に確認して",
+   "pr-fix や pr-watch のレビュー修正の際に、レビューの指摘内容を鵜呑みにせず、検証や信頼できるソースからのファクトチェックにより、指摘が正しい確認するようにして\nファクトチェックのソースは tech-research と同じ優先順位で確認して\n\ntech-research や claude-md-style に例外的な優先順位として下記を含めてほしい\n- terraform に関する内容は terraform MCP が最優先\n- Google Cloud に関する内容は google-developer-knowledge MCP が最優先",
+   "wt skill の wt config は basedir = ./ -> basedir = .. にして",
+   "pr-create skill で reviewer を指定するのをなくして",
+   "pr-create skill で PR title を決定する際に差分コミットが 1 つしかない場合はそのコミットメッセージを PR title にして、commit-proposer で再確認するのはスキップして"
+  ],
+  "new_work": [
+   "create-rules skill で引数が渡されなかったデフォルトの挙動は、staged/unstaged の diff から rule 作成にして",
+   "このプロジェクトに https://github.com/entireio/cli 導入して\ncli はインストール済み",
+   "review skill の codex の mcp__codex__codex のパラメータ profile を review に設定して",
+   "ls -la commitlint.config.* 2>/dev/null\n   ls -la .commitlintrc.* 2>/dev/null\n   grep -l '\"commitlint\"' package.json 2>/dev/null\n\nこれが正しく動くかどうかも検証してみて",
+   "この wt 作成の動作確認を\nDocuments/agent/openai-testing-agent-demo/ に対して行なってみて"
+  ],
+  "question": [
+   "pr-watch や pr-ci で ci の status 確認してるけど、ページングにより全てのステータス確認できてない可能性ある？",
+   "既存の skill でデフォルトの挙動が決まっていないものってある？",
+   "https://docs.entire.io/cli/strategies#auto-summarize は有効にした方がいい？"
+  ],
+  "approve_proceed": [
+   "レビューを行うスキルで、自分によるコメントには返信、resolve しないようにして",
+   "1",
+   "**Begin with Phase 1: Discovery**",
+   "Continue from where you left off.",
+   "y",
+   "<bash-input>idea</bash-input>",
+   "<bash-input>idea1 .</bash-input>",
+   "<bash-stdout></bash-stdout><bash-stderr></bash-stderr>",
+   "<bash-stdout>Switched to a new branch 'fix-paging-commit'</bash-stdout><bash-stderr></bash-stderr>",
+   "<bash-input>diffit .</bash-input>",
+   "<bash-input>difit .</bash-input>",
+   "<bash-input>difit</bash-input>"
+  ],
+  "bug_report": [
+   "claude plugin validate . の CI がこけてるので修正して",
+   "<bash-stdout>zsh: command not found: idea\n</bash-stdout><bash-stderr>zsh: command not found: idea\n</bash-stderr>",
+   "<bash-stdout></bash-stdout><bash-stderr>Error: No diff content received from stdin\n</bash-stderr>"
+  ],
+  "pushback": [
+   "Commands は全て skill に移行してほしい\nagent や skill の markdown は全て日本語にして\nexamples は削除\nREADME も書いて",
+   "Commands は全て skill に移行してほしい\nagent や skill の markdown は全て日本語にして\nexamples は削除\nREADME も書いて\n\n@\"claude-code-guide (agent)\" 使っていいよ",
+   "@plugins/hookify/.claude-plugin/plugin.json は他の plugin を参考にして\nバージョンは 1.0.0 でいいよ\nmarketplace.json も更新して\nバージョンはマイナーアプデでおけ",
+   "pr-explain の引数がない時のデフォルト挙動は、現在のブランチに commit されていない変更 (staged/unstaged) があればそれを解説 -> ブランチに PR が紐づいていればそれを解説 -> 直近のコミットを解説 という優先度にして\n他は今のままでおけ",
+   "A にして",
+   "<bash-input>idea1</bash-input>",
+   "<bash-stdout></bash-stdout><bash-stderr>zsh: command not found: diffit\n</bash-stderr>",
+   "マージして",
+   "entire を manual-commit に変更して\nhttps://github.com/entireio/cli\n\n変更したら commit message を commitlint 設定に合わせて",
+   "skill のフォーマットは他の skill を参考にして",
+   "plugins/git/skills/wt/SKILL.md:L68\nbare.git とは限らない\n=====\nplugins/git/skills/wt/SKILL.md:L138\nworktree 前の元の構成の時の remote リポジトリ設定から変わっていないかも確認して",
+   "1 で scope は不要"
+  ]
+ },
+ "length_median": {
+  "refine_redirect": 12,
+  "new_work": 8,
+  "question": 3,
+  "approve_proceed": 2,
+  "bug_report": 8,
+  "pushback": 8
+ }
 }

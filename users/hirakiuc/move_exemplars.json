@@ -1,26 +1,35 @@
 {
- "approve_proceed": [
-  "I have merged the pull request on GitHub. switch to the main branch and pull the latest commits.",
-  "Yes, please create the pull request with this topic branch.",
-  "Please switch back to the topic branch. Then the reviewer will review the topic branch.",
-  "OK, I had already same understanding. I just clearify if you need some more knowledge (like, latest specific module information or howto...) to solve this situation. Then, please proceed this. Let's complete this hard work!"
- ],
- "pushback": [
-  "got some feedback on the current code base. please check the @.agent/feedback.md file.",
-  "Wait, please make a proposal to address those feedback.",
-  "I think, you should research related knowledge online at first. Then you might have enough understanding how to fix them. Please research anything actively as you need.",
-  "Hey, do you forget about this project development workflow? Before making code change, you should create a topic branch. and after changing codes, the change should be committed to the topic branch. And then you should create a pull request.",
-  "Wait, could you analyze the current situation? I'm really curious why this topic branch needs to be changed with so much diffs."
- ],
- "refine_redirect": [
-  "OK, let's proceed this refactoring task"
- ],
- "question": [
-  "Wait, could you explain why you are struggling with now?",
-  "got some feedback. please check the @.agent/feedback.md file.",
-  "What happened?"
- ],
- "bug_report": [
-  "CI status shows failure. please check and fix it."
- ]
+ "exemplars": {
+  "approve_proceed": [
+   "I have merged the pull request on GitHub. switch to the main branch and pull the latest commits.",
+   "Yes, please create the pull request with this topic branch.",
+   "Please switch back to the topic branch. Then the reviewer will review the topic branch.",
+   "OK, I had already same understanding. I just clearify if you need some more knowledge (like, latest specific module information or howto...) to solve this situation. Then, please proceed this. Let's complete this hard work!"
+  ],
+  "pushback": [
+   "got some feedback on the current code base. please check the @.agent/feedback.md file.",
+   "Wait, please make a proposal to address those feedback.",
+   "I think, you should research related knowledge online at first. Then you might have enough understanding how to fix them. Please research anything actively as you need.",
+   "Hey, do you forget about this project development workflow? Before making code change, you should create a topic branch. and after changing codes, the change should be committed to the topic branch. And then you should create a pull request.",
+   "Wait, could you analyze the current situation? I'm really curious why this topic branch needs to be changed with so much diffs."
+  ],
+  "refine_redirect": [
+   "OK, let's proceed this refactoring task"
+  ],
+  "question": [
+   "Wait, could you explain why you are struggling with now?",
+   "got some feedback. please check the @.agent/feedback.md file.",
+   "What happened?"
+  ],
+  "bug_report": [
+   "CI status shows failure. please check and fix it."
+  ]
+ },
+ "length_median": {
+  "approve_proceed": 16,
+  "pushback": 17,
+  "question": 8,
+  "refine_redirect": 9,
+  "bug_report": 5
+ }
 }

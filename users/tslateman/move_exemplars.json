@@ -1,62 +1,72 @@
 {
- "question": [
-  "explain diff in proto/reck.proto",
-  "audit usage of duet skills/commands",
-  "how do we clear the cache?",
-  "does iterm have anything similar?",
-  "yes, consider crystallized and fluid intelligence, File-Backed vs Repo-Backed memory",
-  "explain why you thought those were good ideas",
-  "review other architecture decisions across plans",
-  "are the plans intended to be sequentially implemented or are they independent proposals?",
-  "will changes to ~/dev/cli/duet get picked up?",
-  "consider the relation between bach and flow - explain",
-  "how will we know  a pattern proves itself",
-  "explain graph/data/graph.json"
- ],
- "approve_proceed": [
-  "Unknown skill: duet:vibe-check",
-  "who did elton john sing duets with?",
-  "we can drop vamp.md and the related pre-push hook",
-  "how do we publish duet?",
-  "Move .claude/commands/install-statusline.md to commands/install-statusline.md so it ships with the plugin for all users.\n\nSteps:\n1. Use Bash to run: git mv .claude/commands/install-statusline.md commands/install-statusline.md\n2. Verify the move succeeded with: git status\n3. Report what you did.",
-  "commit this",
-  "how to apply duet changes to local dev env?",
-  "yes",
-  "apply /prose",
-  "1a: 4. all three\n1b: developer",
-  "2a: 1\n2b: 3\n2c: confirmed about all 4 out of scope",
-  "read current plans\nuse subagents to explore what should be the next plan"
- ],
- "new_work": [
-  "review: https://tessl.io/blog/anthropic-brings-evals-to-skill-creator-heres-why-thats-a-big-deal/\n\nespecially \"Measuring skills: what good evals look like\"\n\nthen let's spec out a new skill dedicated to this called \"vibe-check\" where we do a \"vibe check\" to eval \"vibe coding\" results",
-  "yes, let's do evals first\nexplore with subagents",
-  "Yes. Let's add a few more into the mix: intent, commands, simplicity, complexity, outcomes",
-  "use a team of agents to implement the plan",
-  "yes, alias in zshrc"
- ],
- "bug_report": [
-  "fix:\nskills/excalidraw/SKILL.md:12:13 error MD034/no-bare-urls Bare URL used [Context: \"https://excalidraw.com\"]\nskills/excalidraw/SKILL.md:375:30 error MD034/no-bare-urls Bare URL used [Context: \"https://excalidraw.com\"]\nskills/mermaid/SKILL.md:58:22 error MD038/no-space-in-code Spaces inside code span elements [Context: \"`%% `\"]\nError: Process completed with exit code 1.",
-  "interesting... i resumed \"elton\" but now i see kiki?\n[Image: image/png]",
-  "is \"plannotator review (running)\" stuck?",
-  "see? the /duet:vibe-check still not working\n[Image: image/png]",
-  "it's a bug"
- ],
- "refine_redirect": [
-  "adapt all plans to use just instead of make",
-  "note a preference for just over make (justfile over makefile)"
- ],
- "pushback": [
-  "the commit body covers it, skip the note",
-  "i think we can cut the /note-why - utility feels low",
-  "yep",
-  "hey... we probably should NOT file issues in this way - we ought to check guidelines first",
-  "oops! keep the `/vamp` skill - i just mean drop the note",
-  "woah, I didn't want to delete .git/hooks/pre-push.pre-entire",
-  "can we tighten this line?\nA Claude Code plugin for reflection, code, writing, and design.",
-  "yes, closest to 1 - much like a linter check behavior\n\ni am curious about elements of other layers. perhaps we can fold them into existing skills or create additional duet themed ones",
-  "let's add basic qol features\nand support for 'just help' 'just install' 'just setup'\nask clarifying questions if needed",
-  "agreed",
-  "use a team of agents to work through plans 001-004",
-  "yes, use subagents and apply fixes"
- ]
+ "exemplars": {
+  "question": [
+   "explain diff in proto/reck.proto",
+   "audit usage of duet skills/commands",
+   "how do we clear the cache?",
+   "does iterm have anything similar?",
+   "yes, consider crystallized and fluid intelligence, File-Backed vs Repo-Backed memory",
+   "explain why you thought those were good ideas",
+   "review other architecture decisions across plans",
+   "are the plans intended to be sequentially implemented or are they independent proposals?",
+   "will changes to ~/dev/cli/duet get picked up?",
+   "consider the relation between bach and flow - explain",
+   "how will we know  a pattern proves itself",
+   "explain graph/data/graph.json"
+  ],
+  "approve_proceed": [
+   "Unknown skill: duet:vibe-check",
+   "who did elton john sing duets with?",
+   "we can drop vamp.md and the related pre-push hook",
+   "how do we publish duet?",
+   "Move .claude/commands/install-statusline.md to commands/install-statusline.md so it ships with the plugin for all users.\n\nSteps:\n1. Use Bash to run: git mv .claude/commands/install-statusline.md commands/install-statusline.md\n2. Verify the move succeeded with: git status\n3. Report what you did.",
+   "commit this",
+   "how to apply duet changes to local dev env?",
+   "yes",
+   "apply /prose",
+   "1a: 4. all three\n1b: developer",
+   "2a: 1\n2b: 3\n2c: confirmed about all 4 out of scope",
+   "read current plans\nuse subagents to explore what should be the next plan"
+  ],
+  "new_work": [
+   "review: https://tessl.io/blog/anthropic-brings-evals-to-skill-creator-heres-why-thats-a-big-deal/\n\nespecially \"Measuring skills: what good evals look like\"\n\nthen let's spec out a new skill dedicated to this called \"vibe-check\" where we do a \"vibe check\" to eval \"vibe coding\" results",
+   "yes, let's do evals first\nexplore with subagents",
+   "Yes. Let's add a few more into the mix: intent, commands, simplicity, complexity, outcomes",
+   "use a team of agents to implement the plan",
+   "yes, alias in zshrc"
+  ],
+  "bug_report": [
+   "fix:\nskills/excalidraw/SKILL.md:12:13 error MD034/no-bare-urls Bare URL used [Context: \"https://excalidraw.com\"]\nskills/excalidraw/SKILL.md:375:30 error MD034/no-bare-urls Bare URL used [Context: \"https://excalidraw.com\"]\nskills/mermaid/SKILL.md:58:22 error MD038/no-space-in-code Spaces inside code span elements [Context: \"`%% `\"]\nError: Process completed with exit code 1.",
+   "interesting... i resumed \"elton\" but now i see kiki?\n[Image: image/png]",
+   "is \"plannotator review (running)\" stuck?",
+   "see? the /duet:vibe-check still not working\n[Image: image/png]",
+   "it's a bug"
+  ],
+  "refine_redirect": [
+   "adapt all plans to use just instead of make",
+   "note a preference for just over make (justfile over makefile)"
+  ],
+  "pushback": [
+   "the commit body covers it, skip the note",
+   "i think we can cut the /note-why - utility feels low",
+   "yep",
+   "hey... we probably should NOT file issues in this way - we ought to check guidelines first",
+   "oops! keep the `/vamp` skill - i just mean drop the note",
+   "woah, I didn't want to delete .git/hooks/pre-push.pre-entire",
+   "can we tighten this line?\nA Claude Code plugin for reflection, code, writing, and design.",
+   "yes, closest to 1 - much like a linter check behavior\n\ni am curious about elements of other layers. perhaps we can fold them into existing skills or create additional duet themed ones",
+   "let's add basic qol features\nand support for 'just help' 'just install' 'just setup'\nask clarifying questions if needed",
+   "agreed",
+   "use a team of agents to work through plans 001-004",
+   "yes, use subagents and apply fixes"
+  ]
+ },
+ "length_median": {
+  "question": 7,
+  "approve_proceed": 6,
+  "new_work": 9,
+  "bug_report": 8,
+  "refine_redirect": 9,
+  "pushback": 8
+ }
 }

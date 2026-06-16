@@ -1,60 +1,70 @@
 {
- "bug_report": [
-  "in tokalator we have some bugs-- detect first",
-  "find critical problem on vercel and github workflows",
-  "fix",
-  "BibTeX: I was expecting a `{' or a `(' : %% @anthropic-ai/tokenizer : replicates this client-side for offline / zero-API-call use.-- error of latex",
-  "what are critical bugs of tokalator extension first",
-  "plan and fix",
-  "can you fix",
-  "why wiki fetch is not updated"
- ],
- "question": [
-  "check comments of paper first",
-  "why we skipped, what we missed, do we need any new packages?"
- ],
- "approve_proceed": [
-  "find paper folder",
-  "what do you think, which one is professional",
-  "ok let me do that",
-  "keep on",
-  "yes",
-  "https://github.com/vercel-labs/skills/pulls -- ı didnt see my pr",
-  "in addition add up to 8 march and count the new commited we did as github repo here",
-  "overleaf",
-  "pushed now",
-  "now time to publish on vs marketplace",
-  "vercel login",
-  "continue"
- ],
- "new_work": [
-  "need a demo paper as 3 pages for this project, make a demo paper format with latex, no use emoji or -- or any complex language, give a good example how to use system and what is tokalator in simple language for demo paper",
-  "yes and add count of installs from: https://marketplace.visualstudio.com/items?itemName=vfaraji89.tokalator",
-  "https://skills.sh/ -- add tokalator context management as skill here",
-  "now you have screenshots-- update website",
-  "can we have cli for this",
-  "add how to install it",
-  "make a temp folder of paper",
-  "create a empty latex file",
-  "add found paper to wiki too",
-  "[Image: image/png]\nadd this graph from https://marketplace.visualstudio.com/manage/publishers/vfaraji89/extensions/tokalator/hub?_a=acquisition",
-  "add changelog for vs market briefly"
- ],
- "pushback": [
-  "[Image: image/png]\ncan we insipire like this and add red abacus as moscot with this ui for cli and then add in website",
-  "fix first bugs of extension and then I will manually update paper",
-  "do it",
-  "yes all, and chedk bugs first, VS code pin, unpin, model sync with window of githıb copilot",
-  "update readme and do it",
-  "[Image: image/png]\nwebsite should be clean and check first hrerp, drop about and replace with summary as ı have cv in vfaraji89.github.io, check verbosity, make clean and use real screens as I give you here",
-  "create it to put images",
-  "check home pages-- add new features as we have cli, we can add in main page for claude code if you think and drop coming soon",
-  "fix all",
-  "now plan for claude code extension or cli of tokalayor",
-  "check paper errors first and do not modify the text and add only as %% comment-- align with new updates and use fetched paper of context engineer already we have-- as literature review",
-  "apply your suggestion and check figures, appendix and missing parts"
- ],
- "refine_redirect": [
-  "check all risky claims too and add as comment"
- ]
+ "exemplars": {
+  "bug_report": [
+   "in tokalator we have some bugs-- detect first",
+   "find critical problem on vercel and github workflows",
+   "fix",
+   "BibTeX: I was expecting a `{' or a `(' : %% @anthropic-ai/tokenizer : replicates this client-side for offline / zero-API-call use.-- error of latex",
+   "what are critical bugs of tokalator extension first",
+   "plan and fix",
+   "can you fix",
+   "why wiki fetch is not updated"
+  ],
+  "question": [
+   "check comments of paper first",
+   "why we skipped, what we missed, do we need any new packages?"
+  ],
+  "approve_proceed": [
+   "find paper folder",
+   "what do you think, which one is professional",
+   "ok let me do that",
+   "keep on",
+   "yes",
+   "https://github.com/vercel-labs/skills/pulls -- ı didnt see my pr",
+   "in addition add up to 8 march and count the new commited we did as github repo here",
+   "overleaf",
+   "pushed now",
+   "now time to publish on vs marketplace",
+   "vercel login",
+   "continue"
+  ],
+  "new_work": [
+   "need a demo paper as 3 pages for this project, make a demo paper format with latex, no use emoji or -- or any complex language, give a good example how to use system and what is tokalator in simple language for demo paper",
+   "yes and add count of installs from: https://marketplace.visualstudio.com/items?itemName=vfaraji89.tokalator",
+   "https://skills.sh/ -- add tokalator context management as skill here",
+   "now you have screenshots-- update website",
+   "can we have cli for this",
+   "add how to install it",
+   "make a temp folder of paper",
+   "create a empty latex file",
+   "add found paper to wiki too",
+   "[Image: image/png]\nadd this graph from https://marketplace.visualstudio.com/manage/publishers/vfaraji89/extensions/tokalator/hub?_a=acquisition",
+   "add changelog for vs market briefly"
+  ],
+  "pushback": [
+   "[Image: image/png]\ncan we insipire like this and add red abacus as moscot with this ui for cli and then add in website",
+   "fix first bugs of extension and then I will manually update paper",
+   "do it",
+   "yes all, and chedk bugs first, VS code pin, unpin, model sync with window of githıb copilot",
+   "update readme and do it",
+   "[Image: image/png]\nwebsite should be clean and check first hrerp, drop about and replace with summary as ı have cv in vfaraji89.github.io, check verbosity, make clean and use real screens as I give you here",
+   "create it to put images",
+   "check home pages-- add new features as we have cli, we can add in main page for claude code if you think and drop coming soon",
+   "fix all",
+   "now plan for claude code extension or cli of tokalayor",
+   "check paper errors first and do not modify the text and add only as %% comment-- align with new updates and use fetched paper of context engineer already we have-- as literature review",
+   "apply your suggestion and check figures, appendix and missing parts"
+  ],
+  "refine_redirect": [
+   "check all risky claims too and add as comment"
+  ]
+ },
+ "length_median": {
+  "bug_report": 8,
+  "question": 8,
+  "approve_proceed": 3,
+  "new_work": 6,
+  "pushback": 10,
+  "refine_redirect": 9
+ }
 }

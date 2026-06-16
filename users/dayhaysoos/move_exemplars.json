@@ -1,46 +1,57 @@
 {
- "refine_redirect": [
-  "in the wrangler.toml where it says NIMBUS_HOSTED=“false” please set that to true",
-  "Before we do that, from my manual run and the issues I experienced along the way, are there any improvements you think you can make for things to be easier?"
- ],
- "pushback": [
-  "Give me the exact add/commit command for this. Do that every time.",
-  "Input:",
-  "I’m confused, this is a brand new Entire checkpoiint: 29dc5c812720\n\nWhy does it not have th Entire-Attribution?",
-  "Okay, so I want you to finish ALL of the other slices. Remember to keep reviewing, writing tests and not moving on to the next slice until the last one is complete. I really want to se an AI agent analysis by the time you’re done.",
-  "you pushed but didn’t make the PR. Put all that info in the PR",
-  "Did you make sure to deploy everything first? I actually want you to run all the checking commands and report back if they were completed successfully",
-  "why are we running such an old version of node? Shouldn't we upgrade?",
-  "wait so you mean to tell me I should be able to create a sandbox off of a checkpoint right now?",
-  "You checked for it within this chat history, look there",
-  "That’s literally also the current message on the PR right now. Why do you think that it’s not the same?",
-  "I like 2, let’s start with that",
-  "Go through the entire process to make me a workspace with a deployment id and create a review and give me the review id"
- ],
- "question": [
-  "Summarize the task tool output above and continue with your task."
- ],
- "new_work": [
-  "Can you run through the entire process then and see if we get back a successful deployed url for a workspace?",
-  "Can you give me instructions on how to test the new things you added in the last commit",
-  "it looks like the reviewer found no high confidence bug. Now I want you to run the commands you would need to confirm that this body of work for this phase is done. Report your results. If you have unexpected errors, fix them."
- ],
- "approve_proceed": [
-  "Input: f26c5f3",
-  "I want you to commit everything we have unstaged right now. Push to the branch and make a PR summarizing what we did here in this branch",
-  "Can you give me all the commands in one copy/pastable snippet without comments? The comments are forcing me to break it all up",
-  "Input:  a4d1b52 included unstaged code in this review as well",
-  "We're on main branch now. Create a new branch for phase 1 and begin",
-  "Just merged to main. What's next? Can we finally get to a point where we can deploy an app based on an Entire Checkpoint? Should we create the app fixture first before we do that?"
- ],
- "bug_report": [
-  "Okay, we really need to get to the bottom of this node issue. Why is this happening? It should be trying to run this: nickdejesus@MacBook-Pro-6 nimbus % nvm useFound '/Users/nickdejesus/Code/nimbus/.nvmrc' with version <20>\nNow using node v20.20.1 (npm v10.8.2)\nnickdejesus@MacBook-Pro-6 nimbus %",
-  "Why could this be happening? I am starting to feel like we should move away from this experience because the PR comment does not get updated consistently at all",
-  "I just pushed and it looks like a new comment wasn’t even added. What happened?",
-  "Unable to load reviewUnexpected token '<', \"<!doctype \"... is not valid JSON"
- ],
- "interrupt": [
-  "Yes, start building.",
-  "Go ahead and build it just to see"
- ]
+ "exemplars": {
+  "refine_redirect": [
+   "in the wrangler.toml where it says NIMBUS_HOSTED=“false” please set that to true",
+   "Before we do that, from my manual run and the issues I experienced along the way, are there any improvements you think you can make for things to be easier?"
+  ],
+  "pushback": [
+   "Give me the exact add/commit command for this. Do that every time.",
+   "Input:",
+   "I’m confused, this is a brand new Entire checkpoiint: 29dc5c812720\n\nWhy does it not have th Entire-Attribution?",
+   "Okay, so I want you to finish ALL of the other slices. Remember to keep reviewing, writing tests and not moving on to the next slice until the last one is complete. I really want to se an AI agent analysis by the time you’re done.",
+   "you pushed but didn’t make the PR. Put all that info in the PR",
+   "Did you make sure to deploy everything first? I actually want you to run all the checking commands and report back if they were completed successfully",
+   "why are we running such an old version of node? Shouldn't we upgrade?",
+   "wait so you mean to tell me I should be able to create a sandbox off of a checkpoint right now?",
+   "You checked for it within this chat history, look there",
+   "That’s literally also the current message on the PR right now. Why do you think that it’s not the same?",
+   "I like 2, let’s start with that",
+   "Go through the entire process to make me a workspace with a deployment id and create a review and give me the review id"
+  ],
+  "question": [
+   "Summarize the task tool output above and continue with your task."
+  ],
+  "new_work": [
+   "Can you run through the entire process then and see if we get back a successful deployed url for a workspace?",
+   "Can you give me instructions on how to test the new things you added in the last commit",
+   "it looks like the reviewer found no high confidence bug. Now I want you to run the commands you would need to confirm that this body of work for this phase is done. Report your results. If you have unexpected errors, fix them."
+  ],
+  "approve_proceed": [
+   "Input: f26c5f3",
+   "I want you to commit everything we have unstaged right now. Push to the branch and make a PR summarizing what we did here in this branch",
+   "Can you give me all the commands in one copy/pastable snippet without comments? The comments are forcing me to break it all up",
+   "Input:  a4d1b52 included unstaged code in this review as well",
+   "We're on main branch now. Create a new branch for phase 1 and begin",
+   "Just merged to main. What's next? Can we finally get to a point where we can deploy an app based on an Entire Checkpoint? Should we create the app fixture first before we do that?"
+  ],
+  "bug_report": [
+   "Okay, we really need to get to the bottom of this node issue. Why is this happening? It should be trying to run this: nickdejesus@MacBook-Pro-6 nimbus % nvm useFound '/Users/nickdejesus/Code/nimbus/.nvmrc' with version <20>\nNow using node v20.20.1 (npm v10.8.2)\nnickdejesus@MacBook-Pro-6 nimbus %",
+   "Why could this be happening? I am starting to feel like we should move away from this experience because the PR comment does not get updated consistently at all",
+   "I just pushed and it looks like a new comment wasn’t even added. What happened?",
+   "Unable to load reviewUnexpected token '<', \"<!doctype \"... is not valid JSON"
+  ],
+  "interrupt": [
+   "Yes, start building.",
+   "Go ahead and build it just to see"
+  ]
+ },
+ "length_median": {
+  "refine_redirect": 21,
+  "pushback": 12,
+  "approve_proceed": 1,
+  "question": 11,
+  "new_work": 21,
+  "bug_report": 22,
+  "interrupt": 5
+ }
 }

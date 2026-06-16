@@ -1,15 +1,23 @@
 {
- "interrupt": [
-  "Commit this creating the main branch, this will be the first commit. Remote is git@github.com:roo-oliv/claude-assisted-review-plugin.git.",
-  "push it"
- ],
- "approve_proceed": [
-  "Open a new Pull Request with all the changes currently made localy. Read them all to give a good but brief description for the Pull Request (I've gh installed, you can use it)."
- ],
- "pushback": [
-  "Look at /Users/rodrigooliveira/Desktop/Captura de Tela 2026-02-16 às 00.31.48.png. Now the Dialogue box appears but the text doesnt (maybe it's the same color of the dialogue box or it's been drawn underneath it)."
- ],
- "bug_report": [
-  "Ok, this seems to work better, just one issue: on the main level selection screen now I don't see any of the buttons (they're still clickable though)"
- ]
+ "exemplars": {
+  "interrupt": [
+   "Commit this creating the main branch, this will be the first commit. Remote is git@github.com:roo-oliv/claude-assisted-review-plugin.git.",
+   "push it"
+  ],
+  "approve_proceed": [
+   "Open a new Pull Request with all the changes currently made localy. Read them all to give a good but brief description for the Pull Request (I've gh installed, you can use it)."
+  ],
+  "pushback": [
+   "Look at /Users/rodrigooliveira/Desktop/Captura de Tela 2026-02-16 às 00.31.48.png. Now the Dialogue box appears but the text doesnt (maybe it's the same color of the dialogue box or it's been drawn underneath it)."
+  ],
+  "bug_report": [
+   "Ok, this seems to work better, just one issue: on the main level selection screen now I don't see any of the buttons (they're still clickable though)"
+  ]
+ },
+ "length_median": {
+  "interrupt": 8,
+  "approve_proceed": 17,
+  "pushback": 32,
+  "bug_report": 27
+ }
 }

@@ -145,15 +145,20 @@ def build_prompt(point, folder_text):
     )
 
 
+def _load_move_data(folder_path):
+    if not folder_path:
+        return {}
+    p = ROOT / folder_path / "move_exemplars.json"
+    if not p.exists():
+        return {}
+    d = json.loads(p.read_text())
+    return d if "exemplars" in d else {"exemplars": d, "length_median": {}}
+
+
 def _load_move_exemplars(folder_path, move, k=3, seed=""):
     """Up to k of the user's own real messages of this move, for few-shot voice calibration.
     Deterministic per (folder, move, seed) so own/wrong stay reproducible."""
-    if not folder_path:
-        return []
-    p = ROOT / folder_path / "move_exemplars.json"
-    if not p.exists():
-        return []
-    pool = json.loads(p.read_text()).get(move, [])
+    pool = _load_move_data(folder_path).get("exemplars", {}).get(move, [])
     if len(pool) <= k:
         return pool
     h = int(hashlib.sha256(f"{folder_path}|{move}|{seed}".encode()).hexdigest(), 16)
@@ -161,7 +166,13 @@ def _load_move_exemplars(folder_path, move, k=3, seed=""):
     return [pool[(start + i) % len(pool)] for i in range(k)]
 
 
-def build_folder_prompt(point, folder_path, target_move=None, use_exemplars=False):
+def _load_move_length(folder_path, move):
+    """The user's median word count for messages of this move (None if unknown)."""
+    return _load_move_data(folder_path).get("length_median", {}).get(move)
+
+
+def build_folder_prompt(point, folder_path, target_move=None, use_exemplars=False,
+                        length_cal=False):
     """FOLDER mode: the agent is pointed at the folder and must READ it itself
     (exercises the real roleplay-user skill / product flow).
 
@@ -197,6 +208,16 @@ def build_folder_prompt(point, folder_path, target_move=None, use_exemplars=Fals
             'If the move is `interrupt`, output exactly "[INTERRUPT]" (optionally followed by the '
             "short thing they'd snap). "
         )
+        # length calibration: this user's median length for this move (a number, not human text —
+        # personalises without inducing mimicry).
+        if length_cal:
+            ln = _load_move_length(folder_path, target_move)
+            if ln:
+                approx = "about 1-3 words" if ln <= 3 else f"around {ln} words"
+                move_clause += (
+                    f"This developer's `{target_move}` messages are typically {approx} long — match "
+                    f"that length. "
+                )
         # few-shot: this user's OWN real messages of this move (move-matched voice calibration)
         seed = f"{point['session_id']}#{point['turn_index']}"
         exemplars = _load_move_exemplars(folder_path, target_move, seed=seed) if use_exemplars else []
@@ -499,6 +520,9 @@ def main():
     ap.add_argument("--exemplars", action="store_true",
                     help="few-shot the user's OWN real messages of the sampled move (from "
                          "users/<slug>/move_exemplars.json) into Stage-2 for move-matched voice.")
+    ap.add_argument("--length-cal", action="store_true",
+                    help="inject the user's median word-count for the sampled move (a number, no "
+                         "human text) so Stage-2 matches their per-move message length.")
     args = ap.parse_args()
     read_folder = args.mode == "folder"
     move_conditioned = args.move_conditioned
@@ -595,7 +619,7 @@ def main():
                     cond_move = predict_move(_context_block(job["point"]), job["prior"])
                 # Stage 2: render that move (fall back to free generation if Stage 1 failed)
                 prompt = build_folder_prompt(job["point"], job["fpath"], target_move=cond_move,
-                                             use_exemplars=args.exemplars)
+                                             use_exemplars=args.exemplars, length_cal=args.length_cal)
             gen = run_claude(prompt, GEN_MODEL, read_folder=read_folder)
         except subprocess.TimeoutExpired:
             gen = ""

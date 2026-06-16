@@ -1,61 +1,72 @@
 {
- "bug_report": [
-  "the dashboard that opens from cli.. the graph chart doesn't load in it.. fix it",
-  "code-insights dashboard\n✖ Failed to start dashboard server.\nCannot find package '@hono/node-server' imported from /Users/melagiri/.nvm/versions/node/v22.21.1/lib/node_modules/@code-insights/cli/server-dist/index.js",
-  "I tried installing npm g @code-insights/cli multiple times even after uninstalling existing one, but still it downloads and installs v3.0.0 not 3.0.2 which is the latest",
-  "There was a bug in updating existing sessions in sync operation of the cli. Asked codex ai tool to fix, it has come up with this PR - https://github.com/melagiri/code-insights/pull/77\n\n\nVerify if the fix is valid and correct. Also, identify if the bug is real or some edgecases or flows missed out",
-  "We need to run a security audit on the cli to supabase connection and writes.. because we are trying to collect some usage stats, we have public tables to supabase being written without full auth setup.. Run a security audit to find out security loopholes and list out what standard measures should be taken to be secure",
-  "<bash-stdout>3.0.0</bash-stdout><bash-stderr></bash-stderr>",
-  "CI tests are failing.. investigate, fix them and check if we need to add more tests to have proper coverage",
-  "codex-cli chat conversations aren't showing properly.. can you run the messages synced to my machine's sqlite db and verify against the parser built to understand what are the gaps and why the conversation view is broken",
-  "try again chrome now"
- ],
- "approve_proceed": [
-  "Can you access this session from the branch claude/analyze-insights-generation-Zwj8t i used for some work using claude code remote",
-  "What should be the tagline of the product? Code Insights? @docs/PRODUCT.md @docs/VISION.md",
-  "yes, create PR and run a review",
-  "## Important Rules\n\n- **NEVER merge the PR** — founder-only\n- **Reviews MUST be independent** — no reviewer sees another's output during Phase 1\n- **TA synthesis is authoritative** — TA can mark outsider comments as \"NOT APPLICABLE\" with technical justification\n- **Always post summary to GitHub PR** — this creates the audit trail",
-  "yes",
-  "<teammate-message teammate_id=\"pm-agent\" color=\"blue\">\n{\"type\":\"idle_notification\",\"from\":\"pm-agent\",\"timestamp\":\"2026-03-04T01:14:59.089Z\",\"idleReason\":\"available\"}\n</teammate-message>",
-  "<teammate-message teammate_id=\"dev-agent\" color=\"green\">\n{\"type\":\"idle_notification\",\"from\":\"dev-agent\",\"timestamp\":\"2026-03-04T01:20:26.379Z\",\"idleReason\":\"available\",\"summary\":\"[to pm-agent] PR #106 ready for review\"}\n</teammate-message>",
-  "<teammate-message teammate_id=\"pm-agent\" color=\"blue\">\n{\"type\":\"idle_notification\",\"from\":\"pm-agent\",\"timestamp\":\"2026-03-04T01:49:05.744Z\",\"idleReason\":\"available\"}\n</teammate-message>",
-  "merged",
-  "<teammate-message teammate_id=\"pm-agent\" color=\"blue\">\n{\"type\":\"idle_notification\",\"from\":\"pm-agent\",\"timestamp\":\"2026-03-04T02:23:55.155Z\",\"idleReason\":\"available\"}\n</teammate-message>",
-  "<teammate-message teammate_id=\"ta-agent\" color=\"green\">\n{\"type\":\"idle_notification\",\"from\":\"ta-agent\",\"timestamp\":\"2026-03-04T02:25:52.793Z\",\"idleReason\":\"available\"}\n</teammate-message>\n\n<teammate-message teammate_id=\"pm-agent\" color=\"blue\">\n{\"type\":\"idle_notification\",\"from\":\"pm-agent\",\"timestamp\":\"2026-03-04T02:26:06.600Z\",\"idleReason\":\"available\",\"summary\":\"[to orchestrator] TA approved, Task #4 unblocked, requesting dev-agent spawn\"}\n</teammate-message>",
-  "<teammate-message teammate_id=\"dev-agent\" color=\"yellow\">\n{\"type\":\"idle_notification\",\"from\":\"dev-agent\",\"timestamp\":\"2026-03-04T02:28:04.082Z\",\"idleReason\":\"available\",\"summary\":\"[to ta-agent] Approach confirmed, need index migration decision\"}\n</teammate-message>"
- ],
- "question": [
-  "If i run code-insights sync without running init, will it work for the first time after installation?",
-  "we should delete all transient docs from the codebase like plan docs and then update any missing details in product, vision, roadmap and other such business docs. analyze",
-  "We were in middle of UI overhaul and optimization.. I think the documents are stale now.. Check @docs/ux/sessions-three-panel-design.md \n\nLook into the file and compare with code to understand how much is complete, what is pending",
-  "**Correctly handled:**\n- Sessions with no insights — both templates show appropriate notes\n- Null/missing metadata fields — graceful defaults and content fallbacks\n- Empty sessions array — explicit handling in both templates",
-  "yea, i already had working config and sync in my machine, so i didn't use init.. but let's see how users will do it.. \n\nNow, explain me the telemetry part.. what are we capturing, how are we capturing, what value/insight we can generate from each type or the data captures?"
- ],
- "new_work": [
-  "There are multiple test failures in the test suite. Fix all the tests and verify coverage to add missing tests and then we should implement CI gate",
-  "I setup custom domain for posthog events, I have configured the CNAME in my DNS settings, Posthog gave the below snippet to be added to the sdk.. \nposthog.init('<your-project-api-key>', {\n    api_host: 'https://code-insights.app',\n    ui_host: 'https://us.i.posthog.com',\n})\n\nHelp me implement this for both posthog node and js used in batonship app",
-  "i am good with the plan.. if the implementation agents require wireframes, build it.. and then proceed to implementation. Let @\"product-manager (agent)\" take care of assigning and getting it completed.. Involve @\"technical-architect (agent)\", @\"ux-engineer (agent)\" and @\"engineer (agent)\" for ensuring all have same understanding and reach consensus",
-  "i am good. go ahead, follow full ceremony for development"
- ],
- "pushback": [
-  "i think this should make the release 3.4.0 \n\nprepare the release with relevant updates to code, npm publish and gh release",
-  "yes, fix this, add to your memory and mark it as v3.0.2",
-  "fix them as well",
-  "yes, do all necessary changes required to bump to 3.0.3 including npm publish and gh release",
-  "the filters ssection should be sticky in insights page..",
-  "### Security\n\n1. **SQL Injection** — All queries use parameterized placeholders. Safe.\n2. **Markdown injection** — Output is plain text file download, not rendered HTML. User's own data. Acceptable risk.\n3. **Template validation** — Server validates before processing. Good.",
-  "the export should be able to filter at project level.. because the agent rules/learnings can be specific to each project and some may be generic across projects. is this considered? Run a review of the plan with @\"technical-architect (agent)\" and understand their views as well",
-  "then it should be added to pr comments",
-  "it is now available, checkout the branch claude/analyze-insights-generation-Zwj8t and list the new file added in the last commit there",
-  "For now shall we imitate the claude-code insights report? I would want an LLM Expert persona agent to actually give some inputs into this before we decide",
-  "push and update the PR and run multiple rounds of reviews until you narrow down code review comments to 0. No comment should be skipped addressing with comment sayign this is MVP, and looked into in future. if there are such genuine cases, bring them to my notice. TA cannot decide what do push for future",
-  "we must also update the @docs/PRODUCT.md @docs/VISION.md @docs/ROADMAP.md docs. and may be delete the stale or duplicate @docs/MULTI-TOOL-VISION.md doc and merge the content within product doc"
- ],
- "interrupt": [
-  "push the changes and create PR, i will merge",
-  "commit this change to master directly.. And then in the web repo, we have a blog post created. i am planning to publish that later, so create a PR and leave it there. i will merge when i want to publish"
- ],
- "refine_redirect": [
-  "I am not sure if there are real insights people have created yet.. so, i don't mind not considering them and having option to re-generate if old format is found.. after a week or 2 we stop backward compatibility support"
- ]
+ "exemplars": {
+  "bug_report": [
+   "the dashboard that opens from cli.. the graph chart doesn't load in it.. fix it",
+   "code-insights dashboard\n✖ Failed to start dashboard server.\nCannot find package '@hono/node-server' imported from /Users/melagiri/.nvm/versions/node/v22.21.1/lib/node_modules/@code-insights/cli/server-dist/index.js",
+   "I tried installing npm g @code-insights/cli multiple times even after uninstalling existing one, but still it downloads and installs v3.0.0 not 3.0.2 which is the latest",
+   "There was a bug in updating existing sessions in sync operation of the cli. Asked codex ai tool to fix, it has come up with this PR - https://github.com/melagiri/code-insights/pull/77\n\n\nVerify if the fix is valid and correct. Also, identify if the bug is real or some edgecases or flows missed out",
+   "We need to run a security audit on the cli to supabase connection and writes.. because we are trying to collect some usage stats, we have public tables to supabase being written without full auth setup.. Run a security audit to find out security loopholes and list out what standard measures should be taken to be secure",
+   "<bash-stdout>3.0.0</bash-stdout><bash-stderr></bash-stderr>",
+   "CI tests are failing.. investigate, fix them and check if we need to add more tests to have proper coverage",
+   "codex-cli chat conversations aren't showing properly.. can you run the messages synced to my machine's sqlite db and verify against the parser built to understand what are the gaps and why the conversation view is broken",
+   "try again chrome now"
+  ],
+  "approve_proceed": [
+   "Can you access this session from the branch claude/analyze-insights-generation-Zwj8t i used for some work using claude code remote",
+   "What should be the tagline of the product? Code Insights? @docs/PRODUCT.md @docs/VISION.md",
+   "yes, create PR and run a review",
+   "## Important Rules\n\n- **NEVER merge the PR** — founder-only\n- **Reviews MUST be independent** — no reviewer sees another's output during Phase 1\n- **TA synthesis is authoritative** — TA can mark outsider comments as \"NOT APPLICABLE\" with technical justification\n- **Always post summary to GitHub PR** — this creates the audit trail",
+   "yes",
+   "<teammate-message teammate_id=\"pm-agent\" color=\"blue\">\n{\"type\":\"idle_notification\",\"from\":\"pm-agent\",\"timestamp\":\"2026-03-04T01:14:59.089Z\",\"idleReason\":\"available\"}\n</teammate-message>",
+   "<teammate-message teammate_id=\"dev-agent\" color=\"green\">\n{\"type\":\"idle_notification\",\"from\":\"dev-agent\",\"timestamp\":\"2026-03-04T01:20:26.379Z\",\"idleReason\":\"available\",\"summary\":\"[to pm-agent] PR #106 ready for review\"}\n</teammate-message>",
+   "<teammate-message teammate_id=\"pm-agent\" color=\"blue\">\n{\"type\":\"idle_notification\",\"from\":\"pm-agent\",\"timestamp\":\"2026-03-04T01:49:05.744Z\",\"idleReason\":\"available\"}\n</teammate-message>",
+   "merged",
+   "<teammate-message teammate_id=\"pm-agent\" color=\"blue\">\n{\"type\":\"idle_notification\",\"from\":\"pm-agent\",\"timestamp\":\"2026-03-04T02:23:55.155Z\",\"idleReason\":\"available\"}\n</teammate-message>",
+   "<teammate-message teammate_id=\"ta-agent\" color=\"green\">\n{\"type\":\"idle_notification\",\"from\":\"ta-agent\",\"timestamp\":\"2026-03-04T02:25:52.793Z\",\"idleReason\":\"available\"}\n</teammate-message>\n\n<teammate-message teammate_id=\"pm-agent\" color=\"blue\">\n{\"type\":\"idle_notification\",\"from\":\"pm-agent\",\"timestamp\":\"2026-03-04T02:26:06.600Z\",\"idleReason\":\"available\",\"summary\":\"[to orchestrator] TA approved, Task #4 unblocked, requesting dev-agent spawn\"}\n</teammate-message>",
+   "<teammate-message teammate_id=\"dev-agent\" color=\"yellow\">\n{\"type\":\"idle_notification\",\"from\":\"dev-agent\",\"timestamp\":\"2026-03-04T02:28:04.082Z\",\"idleReason\":\"available\",\"summary\":\"[to ta-agent] Approach confirmed, need index migration decision\"}\n</teammate-message>"
+  ],
+  "question": [
+   "If i run code-insights sync without running init, will it work for the first time after installation?",
+   "we should delete all transient docs from the codebase like plan docs and then update any missing details in product, vision, roadmap and other such business docs. analyze",
+   "We were in middle of UI overhaul and optimization.. I think the documents are stale now.. Check @docs/ux/sessions-three-panel-design.md \n\nLook into the file and compare with code to understand how much is complete, what is pending",
+   "**Correctly handled:**\n- Sessions with no insights — both templates show appropriate notes\n- Null/missing metadata fields — graceful defaults and content fallbacks\n- Empty sessions array — explicit handling in both templates",
+   "yea, i already had working config and sync in my machine, so i didn't use init.. but let's see how users will do it.. \n\nNow, explain me the telemetry part.. what are we capturing, how are we capturing, what value/insight we can generate from each type or the data captures?"
+  ],
+  "new_work": [
+   "There are multiple test failures in the test suite. Fix all the tests and verify coverage to add missing tests and then we should implement CI gate",
+   "I setup custom domain for posthog events, I have configured the CNAME in my DNS settings, Posthog gave the below snippet to be added to the sdk.. \nposthog.init('<your-project-api-key>', {\n    api_host: 'https://code-insights.app',\n    ui_host: 'https://us.i.posthog.com',\n})\n\nHelp me implement this for both posthog node and js used in batonship app",
+   "i am good with the plan.. if the implementation agents require wireframes, build it.. and then proceed to implementation. Let @\"product-manager (agent)\" take care of assigning and getting it completed.. Involve @\"technical-architect (agent)\", @\"ux-engineer (agent)\" and @\"engineer (agent)\" for ensuring all have same understanding and reach consensus",
+   "i am good. go ahead, follow full ceremony for development"
+  ],
+  "pushback": [
+   "i think this should make the release 3.4.0 \n\nprepare the release with relevant updates to code, npm publish and gh release",
+   "yes, fix this, add to your memory and mark it as v3.0.2",
+   "fix them as well",
+   "yes, do all necessary changes required to bump to 3.0.3 including npm publish and gh release",
+   "the filters ssection should be sticky in insights page..",
+   "### Security\n\n1. **SQL Injection** — All queries use parameterized placeholders. Safe.\n2. **Markdown injection** — Output is plain text file download, not rendered HTML. User's own data. Acceptable risk.\n3. **Template validation** — Server validates before processing. Good.",
+   "the export should be able to filter at project level.. because the agent rules/learnings can be specific to each project and some may be generic across projects. is this considered? Run a review of the plan with @\"technical-architect (agent)\" and understand their views as well",
+   "then it should be added to pr comments",
+   "it is now available, checkout the branch claude/analyze-insights-generation-Zwj8t and list the new file added in the last commit there",
+   "For now shall we imitate the claude-code insights report? I would want an LLM Expert persona agent to actually give some inputs into this before we decide",
+   "push and update the PR and run multiple rounds of reviews until you narrow down code review comments to 0. No comment should be skipped addressing with comment sayign this is MVP, and looked into in future. if there are such genuine cases, bring them to my notice. TA cannot decide what do push for future",
+   "we must also update the @docs/PRODUCT.md @docs/VISION.md @docs/ROADMAP.md docs. and may be delete the stale or duplicate @docs/MULTI-TOOL-VISION.md doc and merge the content within product doc"
+  ],
+  "interrupt": [
+   "push the changes and create PR, i will merge",
+   "commit this change to master directly.. And then in the web repo, we have a blog post created. i am planning to publish that later, so create a PR and leave it there. i will merge when i want to publish"
+  ],
+  "refine_redirect": [
+   "I am not sure if there are real insights people have created yet.. so, i don't mind not considering them and having option to re-generate if old format is found.. after a week or 2 we stop backward compatibility support"
+  ]
+ },
+ "length_median": {
+  "bug_report": 15,
+  "approve_proceed": 5,
+  "question": 33,
+  "new_work": 37,
+  "pushback": 21,
+  "interrupt": 25,
+  "refine_redirect": 40
+ }
 }

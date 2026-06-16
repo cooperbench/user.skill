@@ -1,80 +1,91 @@
 {
- "bug_report": [
-  "分析问题:https://github.com/Nagi-ovo/gemini-voyager/discussions/495",
-  "解决当前修改中，fork 按钮仍然没有和另外的原生按钮对齐的问题。",
-  "https://github.com/Nagi-ovo/gemini-voyager/issues/538",
-  "你看下上个 PR,时间线的背景不应该挡住后面的东西(就是本身应该是可以挡住的,但是变细之后他仍然是按照最大的面积,也就是变细前的大小遮挡的范围)",
-  "用户发现:\n今天同步雲端時出現錯誤訊息：\n已封鎖存取權：授權錯誤\nCustom scheme URIs are not allowed for 'WEB' client type.\n如果您是「Gemini-Voyager」的開發人員，請查看錯誤詳細資料。\n發生錯誤 400： invalid_request",
-  "请分批修复 bun run lint 里面的错误，可以先把这 5 个 error 给解决了",
-  "修复： https://github.com/Nagi-ovo/gemini-voyager/issues/421",
-  "What the fuck，有人告诉我现在这个插件已经是 1.3.1 版本了。                                                                                                                       \n                                                                                                                                                                               \n  就是更新之后，用户点了“知道了”，还是会在下次打开的时候弹出那个弹窗。但我这个设计我记得是它只会弹一次啊，这是哪里有问题呢？",
-  "gh 429 修复正确吗？",
-  "https://github.com/Nagi-ovo/gemini-voyager/issues/497\\\n是插件导致的吗?",
-  "有人反应更新后对话宽度等功能都恢复默认了（需要自己关闭再打开那几个开启宽度调整的按钮再刷新），请分析原因并解决",
-  "查看一下最新有什么 bug 反馈吗？"
- ],
- "approve_proceed": [
-  "把 https://github.com/urzeye/ophel 加入readme 里的致谢里，放到最后一个就行，然后commit message 里引用一下 #236",
-  "检查一下，在 issue、相关的 contributing 以及 issue 模板里提一下：\n\n我个人觉得 Voyager 的功能已经足够充分且全面。引入过多过于个性化、小众的功能，并不会让软件更好用，反而会增加更大的维护负担。因此，除非你觉得这个功能真的是急需，且确实是大家都会用到的，否则不建议再发这个 feature request。\n\n此外，请把 GitHub Action 里的自动 stale 并且关闭的那个 action 改一下。不要改它是不是两周，而是把 close as completed 改成 close as not planned。",
-  "https://chromewebstore.google.com/detail/voyager/iifacdnjakkhjjiengaffnegbndgingi\\\n更新所有有需要的地方然后直接 push,这是我这个插件的新 ID，不是 Direct URL。之前那个老的插件 ID 被下架了，这是新的。",
-  "当前所有还没有 push 到 remote 的改动会影响任何功能吗？还是仅仅只是修复了 ESLint 警告呢",
-  "<bash-input>git pull</bash-input>",
-  "bump version,检查 changelog(现在的 rules, skills 或者 claude.md 这些 cc 专用的文件里有提到说 bump 后要检查 changelog 是否有否则提醒用户)",
-  "bump 然后 changelog",
-  "bun run bump, 跟之前版本升级的提交message 格式一致，然后增加一个 1.3.1 的 change log(现在有 1.2.9 和 1.3.0 参考)",
-  "提交",
-  "Commit",
-  "你每次改完都要 build",
-  "好事，提交吧，Closes #311"
- ],
- "new_work": [
-  "为 safari 用户提供：提醒更新点击后不要去 github release 手动安装，而是当场弹窗下载安装，就像内置的更新服务一样（如果有的话最好这样实现，没有的话只能手搓了，不过我不清楚 ssafari是否允许这样），做一个 fallback，因为有可能更新后我还没来得及上传最新版 dmg 到 github release，所以要显示更新源暂时没同步，请稍等几小时。",
-  "给韩国的文档和 README，就是涉及这个 Promo Banner 的，也加上这个新的被提交的 Promo Banner KO",
-  "当前插件是不是文件夹和文件夹内的对话排序都是先根据 unicode 顺序，再根据点击顺序呢？我觉得点击顺序不太好，能否实现让用户自己调整顺序（顺序也计入存储，我不记得当前有没有计入了）？要考虑到当前UI的剩余空间问题",
-  "文件夹相关的所有面板UI 和当前提示词管理器 &  popup 一样设计i，我是指 move to folder 里，还有删除对话、文件夹的那个面板",
-  "打包一个 chrome 的 zip",
-  "当前只有下雪特效，但现在是春天了，加一个 sakura 飘落吧！Popup 里从开启改为一个滑动 bar, 关闭，下雪、樱花樱花之间切换，用非常优雅简洁的 icon，令人惊艳",
-  "实现一个功能：popup里每一个功能区域块都有一个上调、下调按钮，有一个维护这个顺序的数组（类似的东西我随便说的），这样用户可以自己决定popup里的功能顺序（越常用的越靠上）",
-  "请web search 查找最佳实践，当前是否有能将 release 中的 package 自动更新到 chrome extension 和 edge addons 的 workflow / script? 我目前是已经支持了自动更新 firefox addons",
-  "更新 CLAUDE.md。更新后同步 AGENTS.md",
-  "赞助那里按顺序加上这些人\\\nID:\\\n[Image #3][Image #4]四个人一共\n[Image: image/png]\n[Image: image/png]",
-  "你可以看一下前 commit 里面那个改主题、换颜色的变动，是否把整个项目的原生页面切换主题时的效果也变成这样了？我的意思是“能否”而不是“是否”。\n\n就加个按钮吧，在 popup（弹窗）里加个小按钮吧。这个 popup 里边的那种功能可以放一块儿。\n\n这样的话，每个按钮就不用单占一行了，可以放在一个区域里边，按钮本身每个也都小一点。",
-  "vitepress 和 README 所有语言里都加上一个合适的位置说明 Voyager 之前因为商标问题被Chrome Web Store下架丢失了所有用户和评价,所以现在正在重新增长中"
- ],
- "refine_redirect": [
-  "我觉得这个项目当前的 i18n message JSON 有点太长了，每个语言都维护一份，而且里面很多内容都是冗余的。\n\n这是否是最佳实践呢？还是说有没有什么办法，能够更高效地完成同样的效果？还是说得引入来解决呢？",
-  "vitepress 文档里所有 Gemini Voyager 改成 Voyager",
-  "可以看到 Prompt Manager 里面是有个阴影的，能不能去掉？很奇怪。\n[Image: image/png]"
- ],
- "question": [
-  "https://github.com/Nagi-ovo/gemini-voyager/issues/446 这个可以实现吗,根据已有信息",
-  "查看 issue 371 是否可以很轻松解决",
-  "大概能减少多少体积呢？",
-  "不同浏览器的 redirect url 是不同的吗",
-  "arc 里是 chrome.identity.getRedirectURL() \n'https://kjdpnimcnfinmilocccippmododhceol.chromiumapp.org/'",
-  "那现在已经触发这个问题的用户和没有触发这个问题的用户，都能够正常地去处理吗？",
-  "你实现了什么",
-  "vitepress 文档里如何告知呢？",
-  "还有一件事，就是点 x 关掉和点知道了都是只弹一次吗",
-  "樱花和雨的效果是哪个版本？",
-  "你做了啥"
- ],
- "pushback": [
-  "并没有修改所有语言吧",
-  "检查你的所有修改，是否可能在safari上无法工作，或者影响其他浏览器或者其他功能",
-  "好呀，就这么干吧。\n\n如果使用原生 Chrome i18n 的话，是不是会更好？然后会影响 Firefox 和 Safari 吗？",
-  "wait .claude 里的内容不要被 format,撤回后重新 format",
-  "[Image: source: /var/folders/fq/d_yn5ybs289gm6d7t2mhgy_w0000gn/T/TemporaryItems/NSIRD_screencaptureui_c4bMBD/Screenshot 2026-03-26 at 14.54.31.png]",
-  "push,只要你改动的文件",
-  "算了，你这个太严格了，去掉吧,能不能加一个功能？就是说如果那个人的 issue（或者是 issue 里的 bug report 或 issue request）没有写标题，只留了一个方括号和那个预设的内容，你就给他贴一个标签，或者是帮他起个标题之类的。",
-  "你是否取消了那个根据上次访问来调整顺序的功能？",
-  "注意啊，不是所有用户都遇到了，是个别用户。有一个人是 Arc 浏览器遇到的，一个是 Chrome",
-  "chrome 那个应该也不用，也是遇到了某个小概率问题，因为我的 redirect url 都加过",
-  "commit closes#303& push",
-  "用 vite 移除生产环境中的 console.log，不过必要的 console.warn 和 error 要保留，如果当前都是用的 console.log，请你将必要的调试信息改为error和warn，参考：\nesbuild: {\n    pure: mode === 'production' ? ['console.log', 'console.debug'] : [],\n  },"
- ],
- "interrupt": [
-  "提交 push",
-  "ok 了，commit Closes #445"
- ]
+ "exemplars": {
+  "bug_report": [
+   "分析问题:https://github.com/Nagi-ovo/gemini-voyager/discussions/495",
+   "解决当前修改中，fork 按钮仍然没有和另外的原生按钮对齐的问题。",
+   "https://github.com/Nagi-ovo/gemini-voyager/issues/538",
+   "你看下上个 PR,时间线的背景不应该挡住后面的东西(就是本身应该是可以挡住的,但是变细之后他仍然是按照最大的面积,也就是变细前的大小遮挡的范围)",
+   "用户发现:\n今天同步雲端時出現錯誤訊息：\n已封鎖存取權：授權錯誤\nCustom scheme URIs are not allowed for 'WEB' client type.\n如果您是「Gemini-Voyager」的開發人員，請查看錯誤詳細資料。\n發生錯誤 400： invalid_request",
+   "请分批修复 bun run lint 里面的错误，可以先把这 5 个 error 给解决了",
+   "修复： https://github.com/Nagi-ovo/gemini-voyager/issues/421",
+   "What the fuck，有人告诉我现在这个插件已经是 1.3.1 版本了。                                                                                                                       \n                                                                                                                                                                               \n  就是更新之后，用户点了“知道了”，还是会在下次打开的时候弹出那个弹窗。但我这个设计我记得是它只会弹一次啊，这是哪里有问题呢？",
+   "gh 429 修复正确吗？",
+   "https://github.com/Nagi-ovo/gemini-voyager/issues/497\\\n是插件导致的吗?",
+   "有人反应更新后对话宽度等功能都恢复默认了（需要自己关闭再打开那几个开启宽度调整的按钮再刷新），请分析原因并解决",
+   "查看一下最新有什么 bug 反馈吗？"
+  ],
+  "approve_proceed": [
+   "把 https://github.com/urzeye/ophel 加入readme 里的致谢里，放到最后一个就行，然后commit message 里引用一下 #236",
+   "检查一下，在 issue、相关的 contributing 以及 issue 模板里提一下：\n\n我个人觉得 Voyager 的功能已经足够充分且全面。引入过多过于个性化、小众的功能，并不会让软件更好用，反而会增加更大的维护负担。因此，除非你觉得这个功能真的是急需，且确实是大家都会用到的，否则不建议再发这个 feature request。\n\n此外，请把 GitHub Action 里的自动 stale 并且关闭的那个 action 改一下。不要改它是不是两周，而是把 close as completed 改成 close as not planned。",
+   "https://chromewebstore.google.com/detail/voyager/iifacdnjakkhjjiengaffnegbndgingi\\\n更新所有有需要的地方然后直接 push,这是我这个插件的新 ID，不是 Direct URL。之前那个老的插件 ID 被下架了，这是新的。",
+   "当前所有还没有 push 到 remote 的改动会影响任何功能吗？还是仅仅只是修复了 ESLint 警告呢",
+   "<bash-input>git pull</bash-input>",
+   "bump version,检查 changelog(现在的 rules, skills 或者 claude.md 这些 cc 专用的文件里有提到说 bump 后要检查 changelog 是否有否则提醒用户)",
+   "bump 然后 changelog",
+   "bun run bump, 跟之前版本升级的提交message 格式一致，然后增加一个 1.3.1 的 change log(现在有 1.2.9 和 1.3.0 参考)",
+   "提交",
+   "Commit",
+   "你每次改完都要 build",
+   "好事，提交吧，Closes #311"
+  ],
+  "new_work": [
+   "为 safari 用户提供：提醒更新点击后不要去 github release 手动安装，而是当场弹窗下载安装，就像内置的更新服务一样（如果有的话最好这样实现，没有的话只能手搓了，不过我不清楚 ssafari是否允许这样），做一个 fallback，因为有可能更新后我还没来得及上传最新版 dmg 到 github release，所以要显示更新源暂时没同步，请稍等几小时。",
+   "给韩国的文档和 README，就是涉及这个 Promo Banner 的，也加上这个新的被提交的 Promo Banner KO",
+   "当前插件是不是文件夹和文件夹内的对话排序都是先根据 unicode 顺序，再根据点击顺序呢？我觉得点击顺序不太好，能否实现让用户自己调整顺序（顺序也计入存储，我不记得当前有没有计入了）？要考虑到当前UI的剩余空间问题",
+   "文件夹相关的所有面板UI 和当前提示词管理器 &  popup 一样设计i，我是指 move to folder 里，还有删除对话、文件夹的那个面板",
+   "打包一个 chrome 的 zip",
+   "当前只有下雪特效，但现在是春天了，加一个 sakura 飘落吧！Popup 里从开启改为一个滑动 bar, 关闭，下雪、樱花樱花之间切换，用非常优雅简洁的 icon，令人惊艳",
+   "实现一个功能：popup里每一个功能区域块都有一个上调、下调按钮，有一个维护这个顺序的数组（类似的东西我随便说的），这样用户可以自己决定popup里的功能顺序（越常用的越靠上）",
+   "请web search 查找最佳实践，当前是否有能将 release 中的 package 自动更新到 chrome extension 和 edge addons 的 workflow / script? 我目前是已经支持了自动更新 firefox addons",
+   "更新 CLAUDE.md。更新后同步 AGENTS.md",
+   "赞助那里按顺序加上这些人\\\nID:\\\n[Image #3][Image #4]四个人一共\n[Image: image/png]\n[Image: image/png]",
+   "你可以看一下前 commit 里面那个改主题、换颜色的变动，是否把整个项目的原生页面切换主题时的效果也变成这样了？我的意思是“能否”而不是“是否”。\n\n就加个按钮吧，在 popup（弹窗）里加个小按钮吧。这个 popup 里边的那种功能可以放一块儿。\n\n这样的话，每个按钮就不用单占一行了，可以放在一个区域里边，按钮本身每个也都小一点。",
+   "vitepress 和 README 所有语言里都加上一个合适的位置说明 Voyager 之前因为商标问题被Chrome Web Store下架丢失了所有用户和评价,所以现在正在重新增长中"
+  ],
+  "refine_redirect": [
+   "我觉得这个项目当前的 i18n message JSON 有点太长了，每个语言都维护一份，而且里面很多内容都是冗余的。\n\n这是否是最佳实践呢？还是说有没有什么办法，能够更高效地完成同样的效果？还是说得引入来解决呢？",
+   "vitepress 文档里所有 Gemini Voyager 改成 Voyager",
+   "可以看到 Prompt Manager 里面是有个阴影的，能不能去掉？很奇怪。\n[Image: image/png]"
+  ],
+  "question": [
+   "https://github.com/Nagi-ovo/gemini-voyager/issues/446 这个可以实现吗,根据已有信息",
+   "查看 issue 371 是否可以很轻松解决",
+   "大概能减少多少体积呢？",
+   "不同浏览器的 redirect url 是不同的吗",
+   "arc 里是 chrome.identity.getRedirectURL() \n'https://kjdpnimcnfinmilocccippmododhceol.chromiumapp.org/'",
+   "那现在已经触发这个问题的用户和没有触发这个问题的用户，都能够正常地去处理吗？",
+   "你实现了什么",
+   "vitepress 文档里如何告知呢？",
+   "还有一件事，就是点 x 关掉和点知道了都是只弹一次吗",
+   "樱花和雨的效果是哪个版本？",
+   "你做了啥"
+  ],
+  "pushback": [
+   "并没有修改所有语言吧",
+   "检查你的所有修改，是否可能在safari上无法工作，或者影响其他浏览器或者其他功能",
+   "好呀，就这么干吧。\n\n如果使用原生 Chrome i18n 的话，是不是会更好？然后会影响 Firefox 和 Safari 吗？",
+   "wait .claude 里的内容不要被 format,撤回后重新 format",
+   "[Image: source: /var/folders/fq/d_yn5ybs289gm6d7t2mhgy_w0000gn/T/TemporaryItems/NSIRD_screencaptureui_c4bMBD/Screenshot 2026-03-26 at 14.54.31.png]",
+   "push,只要你改动的文件",
+   "算了，你这个太严格了，去掉吧,能不能加一个功能？就是说如果那个人的 issue（或者是 issue 里的 bug report 或 issue request）没有写标题，只留了一个方括号和那个预设的内容，你就给他贴一个标签，或者是帮他起个标题之类的。",
+   "你是否取消了那个根据上次访问来调整顺序的功能？",
+   "注意啊，不是所有用户都遇到了，是个别用户。有一个人是 Arc 浏览器遇到的，一个是 Chrome",
+   "chrome 那个应该也不用，也是遇到了某个小概率问题，因为我的 redirect url 都加过",
+   "commit closes#303& push",
+   "用 vite 移除生产环境中的 console.log，不过必要的 console.warn 和 error 要保留，如果当前都是用的 console.log，请你将必要的调试信息改为error和warn，参考：\nesbuild: {\n    pure: mode === 'production' ? ['console.log', 'console.debug'] : [],\n  },"
+  ],
+  "interrupt": [
+   "提交 push",
+   "ok 了，commit Closes #445"
+  ]
+ },
+ "length_median": {
+  "bug_report": 3,
+  "approve_proceed": 3,
+  "new_work": 7,
+  "refine_redirect": 6,
+  "question": 2,
+  "pushback": 4,
+  "interrupt": 3
+ }
 }

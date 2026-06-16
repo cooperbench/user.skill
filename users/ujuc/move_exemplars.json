@@ -1,35 +1,44 @@
 {
- "question": [
-  "@spec-design/writing-guide.md 를 기반으로 작성되는 문서들에 대해서 영어가 아닌 한국어로 출력하도록 설정하고 싶은데. 어떤 문구를 넣으면 좋을까?",
-  "<task-notification>\n<task-id>b6a0ad7</task-id>\n<output-file>/private/tmp/claude-501/-Users-ujuc-repos-agent-stuff/tasks/b6a0ad7.output</output-file>\n<status>completed</status>\n<summary>Background command \"Search for system-rules.md file location\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-ujuc-repos-agent-stuff/tasks/b6a0ad7.output",
-  "@spec-design/common-template.md 에서 yaml 에 맞지 않는게 있을까?"
- ],
- "approve_proceed": [
-  "방법 1로 진행하자.",
-  "수정된것들을 전부 커밋해줘.",
-  "지금까지 수정한 내용에 대해서 정리해서 커밋해줘.",
-  "이야기해준 것에서 받아들여지는 것들을 추가했어.",
-  "문서에 대해서 작업한 내용들을 커밋해줘.",
-  "변경사항들을 커밋해줘.",
-  "어 부탁해"
- ],
- "interrupt": [
-  "커밋해줘."
- ],
- "pushback": [
-  "어 그렇게 해줘. 그리고 @spec-design/writing-guide.md도 비슷한게 있는지 확인해서 수정해줘.",
-  "@spec-design/writing-guide.md 문서의 내용도 한글로 변경해야할꺼같아.",
-  "## 📚 See Also\n\n- [**CLAUDE.md**](../CLAUDE.md) - Primary document with complete guidelines\n- [**System Rules**](../system-rules.md) - Critical non-negotiable rules (highest priority)\n- [Guidelines](../guidelines.md) - Important reminders and best practices\n- [Process](../process.md) - Problem solving and troubleshooting approaches\n- [Quality Assurance](../quality-assurance.md) - Testing and quality gates",
-  "@docs/guides/interaction-modes.md 는 삭제해줘. 연관된 문서가 있으면 삭제해줘.",
-  "어 해줘. 그리고 필드 전부 필수에 대한 항목을 명시해줘.",
-  "metadata에서 내부 필드는 필수가 아니라 예제인데 들어간거같아. 해당 부분은 제거해줘.",
-  "다시 작업해줘",
-  "@agents/claude/skills/generate-claude-md/SKILL.md 내용을 압축했어. 좀더 압축할 내용이 있을까? 명확성은 낮추지마.",
-  "어 적용해줘.",
-  "nested 된 CLAUDE.md 파일을 생성하는 분에 대해서도 추가했으면하는데. 이거는 새로운 SKILL을 만드는게 좋을까?"
- ],
- "new_work": [
-  "그리고 @spec-design/common-template.md 의 yaml frontmatter도 추가해줘.",
-  "## Step 3: 검증\n\n1. **분량**: CLAUDE.md ~60줄, AGENTS.md ~130줄\n2. **참조 정합성**: 참조된 모든 파일이 실존하는지 확인\n3. **추측 배제**: 프로젝트 탐지에서 확인된 사실만 포함\n4. **자기 테스트**: 각 줄에 대해 \"이것 없이 실수하는가?\" 확인\n5. **린터 역할 배제**: 코드에서 자명한 스타일 규칙 미포함"
- ]
+ "exemplars": {
+  "question": [
+   "@spec-design/writing-guide.md 를 기반으로 작성되는 문서들에 대해서 영어가 아닌 한국어로 출력하도록 설정하고 싶은데. 어떤 문구를 넣으면 좋을까?",
+   "<task-notification>\n<task-id>b6a0ad7</task-id>\n<output-file>/private/tmp/claude-501/-Users-ujuc-repos-agent-stuff/tasks/b6a0ad7.output</output-file>\n<status>completed</status>\n<summary>Background command \"Search for system-rules.md file location\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-ujuc-repos-agent-stuff/tasks/b6a0ad7.output",
+   "@spec-design/common-template.md 에서 yaml 에 맞지 않는게 있을까?"
+  ],
+  "approve_proceed": [
+   "방법 1로 진행하자.",
+   "수정된것들을 전부 커밋해줘.",
+   "지금까지 수정한 내용에 대해서 정리해서 커밋해줘.",
+   "이야기해준 것에서 받아들여지는 것들을 추가했어.",
+   "문서에 대해서 작업한 내용들을 커밋해줘.",
+   "변경사항들을 커밋해줘.",
+   "어 부탁해"
+  ],
+  "interrupt": [
+   "커밋해줘."
+  ],
+  "pushback": [
+   "어 그렇게 해줘. 그리고 @spec-design/writing-guide.md도 비슷한게 있는지 확인해서 수정해줘.",
+   "@spec-design/writing-guide.md 문서의 내용도 한글로 변경해야할꺼같아.",
+   "## 📚 See Also\n\n- [**CLAUDE.md**](../CLAUDE.md) - Primary document with complete guidelines\n- [**System Rules**](../system-rules.md) - Critical non-negotiable rules (highest priority)\n- [Guidelines](../guidelines.md) - Important reminders and best practices\n- [Process](../process.md) - Problem solving and troubleshooting approaches\n- [Quality Assurance](../quality-assurance.md) - Testing and quality gates",
+   "@docs/guides/interaction-modes.md 는 삭제해줘. 연관된 문서가 있으면 삭제해줘.",
+   "어 해줘. 그리고 필드 전부 필수에 대한 항목을 명시해줘.",
+   "metadata에서 내부 필드는 필수가 아니라 예제인데 들어간거같아. 해당 부분은 제거해줘.",
+   "다시 작업해줘",
+   "@agents/claude/skills/generate-claude-md/SKILL.md 내용을 압축했어. 좀더 압축할 내용이 있을까? 명확성은 낮추지마.",
+   "어 적용해줘.",
+   "nested 된 CLAUDE.md 파일을 생성하는 분에 대해서도 추가했으면하는데. 이거는 새로운 SKILL을 만드는게 좋을까?"
+  ],
+  "new_work": [
+   "그리고 @spec-design/common-template.md 의 yaml frontmatter도 추가해줘.",
+   "## Step 3: 검증\n\n1. **분량**: CLAUDE.md ~60줄, AGENTS.md ~130줄\n2. **참조 정합성**: 참조된 모든 파일이 실존하는지 확인\n3. **추측 배제**: 프로젝트 탐지에서 확인된 사실만 포함\n4. **자기 테스트**: 각 줄에 대해 \"이것 없이 실수하는가?\" 확인\n5. **린터 역할 배제**: 코드에서 자명한 스타일 규칙 미포함"
+  ]
+ },
+ "length_median": {
+  "question": 16,
+  "approve_proceed": 3,
+  "interrupt": 1,
+  "pushback": 9,
+  "new_work": 25
+ }
 }

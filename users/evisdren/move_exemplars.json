@@ -1,45 +1,55 @@
 {
- "new_work": [
-  "look at the docs folder and review what i have written there for instructions. This is our external docs folder. \n\nThen i want you to look at the readme in the cli repo and suggest any updates to it to make it the perfect CLI readme.",
-  "let's add in tests to benchmark against main to show differences. Let's add it in our mise.toml file",
-  "add some text to tell the user to use space to select it."
- ],
- "bug_report": [
-  "we're running into an issue with the gemini cli where shadow branches aren't being converted to checkpoints on commit.\n\nhere is the github link: https://github.com/entireio/cli/issues/356\n\ni want you to scan that link for all of the data and then read the CLI/ codebase and come up with a possible explanation as to why this is happening including a root cause.",
-  "so how is it possible that someone then who had 100 sessions in their .git/entire-sessions folder took 16s for a commit?",
-  "its still qasking me to link? if you look at the screenshot and the terminal\n[Image: image/png]",
-  "does this line up with what i see when i push the entire cli repo with 1140 checkpoints and a total of 3141 MB in data, which takesa bout 108s"
- ],
- "refine_redirect": [
-  "can you updaet the single select in the enable agent selection window to be a multi-select?"
- ],
- "pushback": [
-  "why don't we just use an existing repo like the entire/cli repo for this? update the test to clone the entireio/cli repo and use that to benchmark this test",
-  "look at the omments on the PR by cursor and copilot and address them. If you have any questions ask me. Remember that we should maintain existing settings as \"prompt\" while setting \"always\" for only brand new repos where entire is not enabled or being enabled for the first time.",
-  "rebase this on main and then force push with lease",
-  "in my manual testing, i noticed that when there already is an .entire/settings file and then entire is enabled, that we don't overwrite the strategy field to call it \"commit_linking\". But we do when it's a brand new repo. \n\nI think we should rename the setting in the file? What do you think?",
-  "i was thinking that we would swap out the old field and replace with the commit_linking field and then set it \"prompt\" so it's up to date with the new spec. What od you think?",
-  "how can i update the path for the hooks, this doesn't work:\n\n[2026-02-26 16:28] ~/code/gemini-test (main)% git commit -m 'updates'\nstat ./cmd/entire/main.go: no such file or directory\n\nsince im running it from a separate repo",
-  "let's start with implementing suggestions 1-4 first",
-  "yeah we can do that - but ensure that getworktree path and reporoot funcitonally do the same thing, but in the simple use-case and in the use-case where it's being used inside of a worktree with other potential worktrees",
-  "pull main and rebase this branch onto it and then push it",
-  "lets update the TUI so it's a little nicer. we shoudl explain to the user what the optinos mean - users won't know what \"a\" means. update the formatting and styling.",
-  "is this before or after using the zstd compression? also, im concerned taht the transcript sizes are not realistic. i have a few test repos locally, what command can i run to see how big my checkpoint files are.",
-  "why did it take so long? first update the tests to handle the new transcript size tests and return those before running i"
- ],
- "approve_proceed": [
-  "commit and push this to a new PR",
-  "okay now let's do 6,7,8,10",
-  "commit this",
-  "push it to github",
-  "commit and push this",
-  "commit and push",
-  "run it",
-  "Continue from where you left off.",
-  "where is the prepare-commit-msg"
- ],
- "question": [
-  "okay give me an overview of the user workflow now with regards to the commit linking and how it works functionally",
-  "the cor elogic of it"
- ]
+ "exemplars": {
+  "new_work": [
+   "look at the docs folder and review what i have written there for instructions. This is our external docs folder. \n\nThen i want you to look at the readme in the cli repo and suggest any updates to it to make it the perfect CLI readme.",
+   "let's add in tests to benchmark against main to show differences. Let's add it in our mise.toml file",
+   "add some text to tell the user to use space to select it."
+  ],
+  "bug_report": [
+   "we're running into an issue with the gemini cli where shadow branches aren't being converted to checkpoints on commit.\n\nhere is the github link: https://github.com/entireio/cli/issues/356\n\ni want you to scan that link for all of the data and then read the CLI/ codebase and come up with a possible explanation as to why this is happening including a root cause.",
+   "so how is it possible that someone then who had 100 sessions in their .git/entire-sessions folder took 16s for a commit?",
+   "its still qasking me to link? if you look at the screenshot and the terminal\n[Image: image/png]",
+   "does this line up with what i see when i push the entire cli repo with 1140 checkpoints and a total of 3141 MB in data, which takesa bout 108s"
+  ],
+  "refine_redirect": [
+   "can you updaet the single select in the enable agent selection window to be a multi-select?"
+  ],
+  "pushback": [
+   "why don't we just use an existing repo like the entire/cli repo for this? update the test to clone the entireio/cli repo and use that to benchmark this test",
+   "look at the omments on the PR by cursor and copilot and address them. If you have any questions ask me. Remember that we should maintain existing settings as \"prompt\" while setting \"always\" for only brand new repos where entire is not enabled or being enabled for the first time.",
+   "rebase this on main and then force push with lease",
+   "in my manual testing, i noticed that when there already is an .entire/settings file and then entire is enabled, that we don't overwrite the strategy field to call it \"commit_linking\". But we do when it's a brand new repo. \n\nI think we should rename the setting in the file? What do you think?",
+   "i was thinking that we would swap out the old field and replace with the commit_linking field and then set it \"prompt\" so it's up to date with the new spec. What od you think?",
+   "how can i update the path for the hooks, this doesn't work:\n\n[2026-02-26 16:28] ~/code/gemini-test (main)% git commit -m 'updates'\nstat ./cmd/entire/main.go: no such file or directory\n\nsince im running it from a separate repo",
+   "let's start with implementing suggestions 1-4 first",
+   "yeah we can do that - but ensure that getworktree path and reporoot funcitonally do the same thing, but in the simple use-case and in the use-case where it's being used inside of a worktree with other potential worktrees",
+   "pull main and rebase this branch onto it and then push it",
+   "lets update the TUI so it's a little nicer. we shoudl explain to the user what the optinos mean - users won't know what \"a\" means. update the formatting and styling.",
+   "is this before or after using the zstd compression? also, im concerned taht the transcript sizes are not realistic. i have a few test repos locally, what command can i run to see how big my checkpoint files are.",
+   "why did it take so long? first update the tests to handle the new transcript size tests and return those before running i"
+  ],
+  "approve_proceed": [
+   "commit and push this to a new PR",
+   "okay now let's do 6,7,8,10",
+   "commit this",
+   "push it to github",
+   "commit and push this",
+   "commit and push",
+   "run it",
+   "Continue from where you left off.",
+   "where is the prepare-commit-msg"
+  ],
+  "question": [
+   "okay give me an overview of the user workflow now with regards to the commit linking and how it works functionally",
+   "the cor elogic of it"
+  ]
+ },
+ "length_median": {
+  "new_work": 18,
+  "bug_report": 21,
+  "refine_redirect": 16,
+  "pushback": 31,
+  "approve_proceed": 4,
+  "question": 13
+ }
 }

@@ -1,78 +1,89 @@
 {
- "bug_report": [
-  "can you find out why I can not connect to the MCP server at https://simplemap.safecast.org/mcp-http?",
-  "Can you check why the docs do not show up anymore at the vps at https://simplemap.safecast.org/docs/ ? I thought we had that working?",
-  "I did reset the changes we made today and send tthe new build code to the production server. .Can you check why the production server is slow? Is it indexing/backinup/archiving?",
-  "Seems we lost the AI disclaimer at the bottom of the replies?",
-  "[Image: image/png]\ncan we fix this?",
-  "Can you check why https://simplemap.safecast.org/assistant/ does not  show the last chan\nges?",
-  "[Image: image/png]\nCan you check why the global search on the track upload page does not work?",
-  "<task-notification>\n<task-id>be134a8</task-id>\n<output-file>/tmp/claude-1000/-home-rob-Documents-Safecast-safecast-map-MCP/tasks/be134a8.output</output-file>\n<status>failed</status>\n<summary>Background command \"Check if Redis processes are running\" failed with exit code 255</summary>\n</task-notification>\nRead the output file to retrieve the result: /tmp/claude-1000/-home-rob-Documents-Safecast-safecast-map-MCP/tasks/be134a8.output",
-  "[Image: image/png]\nnext issue.. On the map now the sepctrum garphs will not be shown when a spectrum popup is presented. See:",
-  "[Image: image/png]\nscreen schot of issues.",
-  "If I use the assitant.safecast.org it works well. But if I use Mistral it  the results are not that great.",
-  "[Image: image/png]\nWhy is it not deployed?"
- ],
- "approve_proceed": [
-  "[Image: image/png]\ncan we guide Mistral better?",
-  "Great!!",
-  "ou can do that too.",
-  "That worked!!",
-  "### References for Interpretation\n\nBackground Radiation Baseline (undisturbed regions): 0.1–0.3 µSv/h\nInternational Safety Threshold (public exposure): 1.0 µSv/h per year average\nSensor network status: Operational and actively transmitting data for distributed radiological monitoring across Ukraine",
-  "yes",
-  "<ide_selection>The user selected the lines 2 to 2 from /temp/readonly/command (2k8k7q):\nhttp://65.108.24.131:3333/mcp-http\n\nThis may or may not be related to the current task.</ide_selection>\nyes",
-  "Thanks.. Can you document that and push the updated readme file?",
-  "can you update the README.md?",
-  "Go ahaed  merge it.",
-  "yes,,",
-  "When was that changes?"
- ],
- "new_work": [
-  "I am wondering  when a new commit is issued, the could automatically deploys to the simplemap srever?",
-  "1- Can you change the login for the users to be able to login with their API key or thier password?\n2- if a new register, send the api key to them. \n3- add  option for (admin only) to generate new api key for users.",
-  "Can you check this?:\n\n\n\"The CloudFront distribution for simplemap.safecast.org is missing a /api/* behavior, so API calls return oversized HTML and cause a ResponseTooLargeError. Could you please add a cache behavior for /api/* that forwards to the same Apache origin as /mcp-http and /docs/* (no caching, forward query strings). If you have access to the server\"",
-  "I have locally mistral setup with Ollama. We can use that. Can you install            \n  mistral-rs for me for testing?  And it tesing is working as expected , we can move the setup to the VPS.",
-  "Can you add that when a admin logs in, he/she gets two extra buttons on the right top aera wher he/she can goto the users and tracks menus and modify the data?",
-  "[Image: image/png]\ncan we create an option for an AI bot to exclude data? See:",
-  "[Image: image/png]\nMuch better.. Can we have always a table with links to the location of the sensors like we have for the asistant.safecast.org?",
-  "can you recreate the mermaid file and save that?",
-  "can we deploy one more time to test?"
- ],
- "refine_redirect": [
-  "[Image: image/png]\nOn the simplemap admin/users and uploads I noticed a swagger favicon, can you remove replace that with the safecast favicon?",
-  "can you modify the code in the test folder an AI bot search the MCP server for data and real time data is requested, automatically realtime table is used for that query. Not the device histrory?",
-  "Can you check the two repos in the workspace and cleanup doc, comments that are not relevant any more?",
-  "[Image: image/png]\ncan we make the interface to use the markdown text nicer?"
- ],
- "question": [
-  "can you check if all the documentions is current and updated?",
-  "Would moving the MCP server to the map server speedup the queries?",
-  "Do you remember we made a mermaid map if the intergation of the MCP server and the Map server?",
-  "Are we logging the log in's to the server?",
-  "Are you using the local setup? Not the production server?",
-  "<task-notification>\n<task-id>b0125b5</task-id>\n<output-file>/tmp/claude-1000/-home-rob-Documents-Safecast-safecast-new-map/tasks/b0125b5.output</output-file>\n<status>completed</status>\n<summary>Background command \"Recreate the old working spatial index\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /tmp/claude-1000/-home-rob-Documents-Safecast-safecast-new-map/tasks/b0125b5.output",
-  "<task-notification>\n<task-id>b4081a5</task-id>\n<output-file>/tmp/claude-1000/-home-rob-Documents-Safecast-safecast-new-map/tasks/b4081a5.output</output-file>\n<status>completed</status>\n<summary>Background command \"Test different zoom levels\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /tmp/claude-1000/-home-rob-Documents-Safecast-safecast-new-map/tasks/b4081a5.output",
-  "<task-notification>\n<task-id>b03382e</task-id>\n<output-file>/tmp/claude-1000/-home-rob-Documents-Safecast-safecast-new-map/tasks/b03382e.output</output-file>\n<status>completed</status>\n<summary>Background command \"Create zoom 10 clusters\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /tmp/claude-1000/-home-rob-Documents-Safecast-safecast-new-map/tasks/b03382e.output",
-  "root@simplemap:~# ss -tlnp | grep 8765\nLISTEN 0      4096               *:8765             *:*    users:((\"safecast-new-ma\",pid=560087,fd=7))                                                                                                                                                                                                                                                                                                                                                                                                                                       \nroot@simplemap:~#",
-  "root@simplemap:~# curl -I http://localhost:8765\nHTTP/1.1 200 OK\nServer: safecast-new-map/latest\nDate: Fri, 20 Feb 2026 14:37:05 GMT\n\nroot@simplemap:~#",
-  "root@simplemap:~# ss -tlnp | grep safecast\nLISTEN 0      4096               *:3333             *:*    users:((\"safecast-mcp\",pid=558428,fd=9))                                                                                                                                                                                                                                                                                                                                                                                                                                          \nLISTEN 0      4096               *:8765             *:*    users:((\"safecast-new-ma\",pid=560087,fd=7))",
-  "rob@rob-GS66-Stealth-10UG:~/Documents/Safecast/safecast-new-map$ curl -I https://simplemap.safecast.org | grep -i cloudfront\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\nx-cache: Miss from cloudfront\nvia: 1.1 b5743985f69bb58a44aaba649101cdf6.cloudfront.net (CloudFront)\nrob@rob-GS66-Stealth-10UG:~/Documents/Safecast/safecast-new-map$"
- ],
- "pushback": [
-  "can you make an AI hintin the Go file that will direct Cluade or other AI to get the right data?",
-  "[Image: image/png]\nBetter, but can we make a AI hint that data in the future should be disregarded?",
-  "[Image: image/png]\nHow to prevent this?",
-  "Prefable wihtout bridge.",
-  "[Image: image/png]\nFor this kind data we need to have it in a table format the be more readable.",
-  "That should have been done in the Github actions?",
-  "Two more things to imrove.\n1- make the downlaod button the same blue color as the rest of the buttons.\n2- the log and text of the header on the right should , if clicked clear the page.",
-  "Next issue. If sensors are shown in the answers, they shoul have a clickable link to the sensors on the simplemap.safecast.org.",
-  "maybe we should do the same the same for real time radnote and pointcast ,devices that are call note:dev I think?",
-  "[Image: image/png]\nMnn not sure. Itest gaain with Mistral Thnk option:",
-  "[Image: image/png]\nscren",
-  "Seems the mistral thinks that Mitsue, Nara ken is in Mie ken, not Nara. Maybe we should make the search area of villages and towns much biggre maybe 50km radius?"
- ],
- "interrupt": [
-  "Please do those steps for me"
- ]
+ "exemplars": {
+  "bug_report": [
+   "can you find out why I can not connect to the MCP server at https://simplemap.safecast.org/mcp-http?",
+   "Can you check why the docs do not show up anymore at the vps at https://simplemap.safecast.org/docs/ ? I thought we had that working?",
+   "I did reset the changes we made today and send tthe new build code to the production server. .Can you check why the production server is slow? Is it indexing/backinup/archiving?",
+   "Seems we lost the AI disclaimer at the bottom of the replies?",
+   "[Image: image/png]\ncan we fix this?",
+   "Can you check why https://simplemap.safecast.org/assistant/ does not  show the last chan\nges?",
+   "[Image: image/png]\nCan you check why the global search on the track upload page does not work?",
+   "<task-notification>\n<task-id>be134a8</task-id>\n<output-file>/tmp/claude-1000/-home-rob-Documents-Safecast-safecast-map-MCP/tasks/be134a8.output</output-file>\n<status>failed</status>\n<summary>Background command \"Check if Redis processes are running\" failed with exit code 255</summary>\n</task-notification>\nRead the output file to retrieve the result: /tmp/claude-1000/-home-rob-Documents-Safecast-safecast-map-MCP/tasks/be134a8.output",
+   "[Image: image/png]\nnext issue.. On the map now the sepctrum garphs will not be shown when a spectrum popup is presented. See:",
+   "[Image: image/png]\nscreen schot of issues.",
+   "If I use the assitant.safecast.org it works well. But if I use Mistral it  the results are not that great.",
+   "[Image: image/png]\nWhy is it not deployed?"
+  ],
+  "approve_proceed": [
+   "[Image: image/png]\ncan we guide Mistral better?",
+   "Great!!",
+   "ou can do that too.",
+   "That worked!!",
+   "### References for Interpretation\n\nBackground Radiation Baseline (undisturbed regions): 0.1–0.3 µSv/h\nInternational Safety Threshold (public exposure): 1.0 µSv/h per year average\nSensor network status: Operational and actively transmitting data for distributed radiological monitoring across Ukraine",
+   "yes",
+   "<ide_selection>The user selected the lines 2 to 2 from /temp/readonly/command (2k8k7q):\nhttp://65.108.24.131:3333/mcp-http\n\nThis may or may not be related to the current task.</ide_selection>\nyes",
+   "Thanks.. Can you document that and push the updated readme file?",
+   "can you update the README.md?",
+   "Go ahaed  merge it.",
+   "yes,,",
+   "When was that changes?"
+  ],
+  "new_work": [
+   "I am wondering  when a new commit is issued, the could automatically deploys to the simplemap srever?",
+   "1- Can you change the login for the users to be able to login with their API key or thier password?\n2- if a new register, send the api key to them. \n3- add  option for (admin only) to generate new api key for users.",
+   "Can you check this?:\n\n\n\"The CloudFront distribution for simplemap.safecast.org is missing a /api/* behavior, so API calls return oversized HTML and cause a ResponseTooLargeError. Could you please add a cache behavior for /api/* that forwards to the same Apache origin as /mcp-http and /docs/* (no caching, forward query strings). If you have access to the server\"",
+   "I have locally mistral setup with Ollama. We can use that. Can you install            \n  mistral-rs for me for testing?  And it tesing is working as expected , we can move the setup to the VPS.",
+   "Can you add that when a admin logs in, he/she gets two extra buttons on the right top aera wher he/she can goto the users and tracks menus and modify the data?",
+   "[Image: image/png]\ncan we create an option for an AI bot to exclude data? See:",
+   "[Image: image/png]\nMuch better.. Can we have always a table with links to the location of the sensors like we have for the asistant.safecast.org?",
+   "can you recreate the mermaid file and save that?",
+   "can we deploy one more time to test?"
+  ],
+  "refine_redirect": [
+   "[Image: image/png]\nOn the simplemap admin/users and uploads I noticed a swagger favicon, can you remove replace that with the safecast favicon?",
+   "can you modify the code in the test folder an AI bot search the MCP server for data and real time data is requested, automatically realtime table is used for that query. Not the device histrory?",
+   "Can you check the two repos in the workspace and cleanup doc, comments that are not relevant any more?",
+   "[Image: image/png]\ncan we make the interface to use the markdown text nicer?"
+  ],
+  "question": [
+   "can you check if all the documentions is current and updated?",
+   "Would moving the MCP server to the map server speedup the queries?",
+   "Do you remember we made a mermaid map if the intergation of the MCP server and the Map server?",
+   "Are we logging the log in's to the server?",
+   "Are you using the local setup? Not the production server?",
+   "<task-notification>\n<task-id>b0125b5</task-id>\n<output-file>/tmp/claude-1000/-home-rob-Documents-Safecast-safecast-new-map/tasks/b0125b5.output</output-file>\n<status>completed</status>\n<summary>Background command \"Recreate the old working spatial index\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /tmp/claude-1000/-home-rob-Documents-Safecast-safecast-new-map/tasks/b0125b5.output",
+   "<task-notification>\n<task-id>b4081a5</task-id>\n<output-file>/tmp/claude-1000/-home-rob-Documents-Safecast-safecast-new-map/tasks/b4081a5.output</output-file>\n<status>completed</status>\n<summary>Background command \"Test different zoom levels\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /tmp/claude-1000/-home-rob-Documents-Safecast-safecast-new-map/tasks/b4081a5.output",
+   "<task-notification>\n<task-id>b03382e</task-id>\n<output-file>/tmp/claude-1000/-home-rob-Documents-Safecast-safecast-new-map/tasks/b03382e.output</output-file>\n<status>completed</status>\n<summary>Background command \"Create zoom 10 clusters\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /tmp/claude-1000/-home-rob-Documents-Safecast-safecast-new-map/tasks/b03382e.output",
+   "root@simplemap:~# ss -tlnp | grep 8765\nLISTEN 0      4096               *:8765             *:*    users:((\"safecast-new-ma\",pid=560087,fd=7))                                                                                                                                                                                                                                                                                                                                                                                                                                       \nroot@simplemap:~#",
+   "root@simplemap:~# curl -I http://localhost:8765\nHTTP/1.1 200 OK\nServer: safecast-new-map/latest\nDate: Fri, 20 Feb 2026 14:37:05 GMT\n\nroot@simplemap:~#",
+   "root@simplemap:~# ss -tlnp | grep safecast\nLISTEN 0      4096               *:3333             *:*    users:((\"safecast-mcp\",pid=558428,fd=9))                                                                                                                                                                                                                                                                                                                                                                                                                                          \nLISTEN 0      4096               *:8765             *:*    users:((\"safecast-new-ma\",pid=560087,fd=7))",
+   "rob@rob-GS66-Stealth-10UG:~/Documents/Safecast/safecast-new-map$ curl -I https://simplemap.safecast.org | grep -i cloudfront\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\nx-cache: Miss from cloudfront\nvia: 1.1 b5743985f69bb58a44aaba649101cdf6.cloudfront.net (CloudFront)\nrob@rob-GS66-Stealth-10UG:~/Documents/Safecast/safecast-new-map$"
+  ],
+  "pushback": [
+   "can you make an AI hintin the Go file that will direct Cluade or other AI to get the right data?",
+   "[Image: image/png]\nBetter, but can we make a AI hint that data in the future should be disregarded?",
+   "[Image: image/png]\nHow to prevent this?",
+   "Prefable wihtout bridge.",
+   "[Image: image/png]\nFor this kind data we need to have it in a table format the be more readable.",
+   "That should have been done in the Github actions?",
+   "Two more things to imrove.\n1- make the downlaod button the same blue color as the rest of the buttons.\n2- the log and text of the header on the right should , if clicked clear the page.",
+   "Next issue. If sensors are shown in the answers, they shoul have a clickable link to the sensors on the simplemap.safecast.org.",
+   "maybe we should do the same the same for real time radnote and pointcast ,devices that are call note:dev I think?",
+   "[Image: image/png]\nMnn not sure. Itest gaain with Mistral Thnk option:",
+   "[Image: image/png]\nscren",
+   "Seems the mistral thinks that Mitsue, Nara ken is in Mie ken, not Nara. Maybe we should make the search area of villages and towns much biggre maybe 50km radius?"
+  ],
+  "interrupt": [
+   "Please do those steps for me"
+  ]
+ },
+ "length_median": {
+  "bug_report": 15,
+  "approve_proceed": 4,
+  "new_work": 24,
+  "refine_redirect": 20,
+  "question": 17,
+  "pushback": 13,
+  "interrupt": 6
+ }
 }

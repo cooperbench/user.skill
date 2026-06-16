@@ -1,15 +1,23 @@
 {
- "question": [
-  "update the doc and where does global.yaml is read from ?"
- ],
- "interrupt": [
-  "commit this and its already in staged"
- ],
- "approve_proceed": [
-  "https://github.com/Obmondo/gfetch/issues/1 issue",
-  "commit this"
- ],
- "bug_report": [
-  "tag sync v1.4.4: checkout tag v1.4.4: reset v1.4.4: invalid reset option: object not found"
- ]
+ "exemplars": {
+  "question": [
+   "update the doc and where does global.yaml is read from ?"
+  ],
+  "interrupt": [
+   "commit this and its already in staged"
+  ],
+  "approve_proceed": [
+   "https://github.com/Obmondo/gfetch/issues/1 issue",
+   "commit this"
+  ],
+  "bug_report": [
+   "tag sync v1.4.4: checkout tag v1.4.4: reset v1.4.4: invalid reset option: object not found"
+  ]
+ },
+ "length_median": {
+  "question": 11,
+  "interrupt": 7,
+  "approve_proceed": 2,
+  "bug_report": 14
+ }
 }

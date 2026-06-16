@@ -1,35 +1,45 @@
 {
- "question": [
-  "ok, is the team agent feature for claude enabled?",
-  "summarize this list. Just bullet points",
-  "give me a one sentence summary"
- ],
- "approve_proceed": [
-  "Ok, kick off some teams to go look into the LSP",
-  "<teammate-message teammate_id=\"industry-researcher\" color=\"yellow\">\n{\"type\":\"idle_notification\",\"from\":\"industry-researcher\",\"timestamp\":\"2026-02-13T23:34:42.205Z\",\"idleReason\":\"available\"}\n</teammate-message>",
-  "<teammate-message teammate_id=\"industry-researcher\" color=\"yellow\">\n{\"type\":\"idle_notification\",\"from\":\"industry-researcher\",\"timestamp\":\"2026-02-13T23:36:09.574Z\",\"idleReason\":\"available\"}\n</teammate-message>",
-  "lets first do A + B + C. When done, lets see if D + E make sense",
-  "ok, can we now go back to our list?",
-  "lay out a plan for E"
- ],
- "refine_redirect": [
-  "kick off a bunch of teams that look into how to make the compiler pipeline here simpler and more concise.",
-  "## Comprehensive Analysis: Compiler Architecture Simplification Opportunities\n\nBased on thorough examination of the codebase, here are **specific, actionable opportunities to simplify the Gleam compiler orchestration and cross-cutting concerns**:"
- ],
- "pushback": [
-  "yep do this",
-  "understand the architecture so I can propose an idea I have",
-  "When we specify relations (DependencyRelations) can we go to source, linking the relation name to the file its implemented in. Also what would it take to squiggly if that relation doesnt exist?",
-  "yes, look into what this would take, propose a plan. Also how much of this can we do by getting whatever is implemented in the compiler for free?",
-  "ok fix these",
-  "ok, recall our like 10 step todo list? Can you pull that back up?",
-  "Ok, kick off about 10 agents to hyperfocus on ensuring correctness here. Then after doing this, lets chat about ensuring correctness here. Its been brittle in the past"
- ],
- "new_work": [
-  "ok, now can you kick off a bunch of teams to go INDEPTH with assume/guarantee ideas? Our SLO approach + dependency mapping can get us pretty close to a model where _measurable_ assumes can be explicitly stated here I think.",
-  "let's do it, start building"
- ],
- "bug_report": [
-  "yes, but first tests are failing now"
- ]
+ "exemplars": {
+  "question": [
+   "ok, is the team agent feature for claude enabled?",
+   "summarize this list. Just bullet points",
+   "give me a one sentence summary"
+  ],
+  "approve_proceed": [
+   "Ok, kick off some teams to go look into the LSP",
+   "<teammate-message teammate_id=\"industry-researcher\" color=\"yellow\">\n{\"type\":\"idle_notification\",\"from\":\"industry-researcher\",\"timestamp\":\"2026-02-13T23:34:42.205Z\",\"idleReason\":\"available\"}\n</teammate-message>",
+   "<teammate-message teammate_id=\"industry-researcher\" color=\"yellow\">\n{\"type\":\"idle_notification\",\"from\":\"industry-researcher\",\"timestamp\":\"2026-02-13T23:36:09.574Z\",\"idleReason\":\"available\"}\n</teammate-message>",
+   "lets first do A + B + C. When done, lets see if D + E make sense",
+   "ok, can we now go back to our list?",
+   "lay out a plan for E"
+  ],
+  "refine_redirect": [
+   "kick off a bunch of teams that look into how to make the compiler pipeline here simpler and more concise.",
+   "## Comprehensive Analysis: Compiler Architecture Simplification Opportunities\n\nBased on thorough examination of the codebase, here are **specific, actionable opportunities to simplify the Gleam compiler orchestration and cross-cutting concerns**:"
+  ],
+  "pushback": [
+   "yep do this",
+   "understand the architecture so I can propose an idea I have",
+   "When we specify relations (DependencyRelations) can we go to source, linking the relation name to the file its implemented in. Also what would it take to squiggly if that relation doesnt exist?",
+   "yes, look into what this would take, propose a plan. Also how much of this can we do by getting whatever is implemented in the compiler for free?",
+   "ok fix these",
+   "ok, recall our like 10 step todo list? Can you pull that back up?",
+   "Ok, kick off about 10 agents to hyperfocus on ensuring correctness here. Then after doing this, lets chat about ensuring correctness here. Its been brittle in the past"
+  ],
+  "new_work": [
+   "ok, now can you kick off a bunch of teams to go INDEPTH with assume/guarantee ideas? Our SLO approach + dependency mapping can get us pretty close to a model where _measurable_ assumes can be explicitly stated here I think.",
+   "let's do it, start building"
+  ],
+  "bug_report": [
+   "yes, but first tests are failing now"
+  ]
+ },
+ "length_median": {
+  "question": 6,
+  "approve_proceed": 7,
+  "refine_redirect": 24,
+  "pushback": 14,
+  "new_work": 22,
+  "bug_report": 7
+ }
 }

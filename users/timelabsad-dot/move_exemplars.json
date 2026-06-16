@@ -1,59 +1,69 @@
 {
- "approve_proceed": [
-  "Go ahead and restart Terminal. When you're back, just tell me to continue fixing the\n  claude.ai context issue.\n\n[Image: image/png]\n[Image: image/png]",
-  "\"I am resuming as Rex. You are the Product Owner. Read @REDACTED.md and @docs/plans/EVOLUTION_PLAN_V1.md. Use Nexus protocol to remember the latest details. Let's begin Stage 0. Report status.\"",
-  "You are Rex. Resume from branch hyperion/memory. \n1) Run: git checkout hyperion/memory\n2) Show: docs/state.md\n3) List inbox for: COWORK_20260219_genome-evidence.md\n4) Write a 20-line status report to: ops/virtual-office/outbox/REX_STATUS.md\nBe concise and do not do extra work.",
-  "merge main into feature/mvp-loop и push",
-  "go on",
-  "how to save for next usage your freshly-achieved skills from this session? share a raw ai-recipe via text prompt with me, please",
-  "is this all your knowlages from this session? nothing to share more?",
-  "are you alright?",
-  "\"Let me do everything myself — fast.\" I'm in love! You are the best!",
-  "any updates?",
-  "3",
-  "hey buddy are you alive?"
- ],
- "question": [
-  "Show current usage stats, billing stats, API stats, show any active limits",
-  "do you have any clues of how shall I proceed with the current project which is in ~/rh.1 and https://github.com/serg-alexv/rhea-project ? New prolong session would be bettaer that this current  chat, is this right?",
-  "is Orion alive? Show currents system status",
-  "remember me what was the Hyperion role and part of work that was done",
-  "how to launch Hyperion?",
-  "Show current system status; is firebase and entire.io fully operatable and in use?",
-  "The the EVOLUTION_PLAN_V1.md performing in full-parallel mode? nobody is blocking others? can i go out for a while?",
-  "show the list on actins you have done since my last pronpt. show memory/tokens/contexts stat",
-  "Compare the CORE_RULES.md with the AUTONOMY_WITH_AUDIT_ROOT.md -- what is key diffs",
-  "explore the project docs to relearn about how memory works and then we will discuss"
- ],
- "interrupt": [
-  "Yas, you can. Just do it - step by step.",
-  "1 + 2 - that is enought"
- ],
- "pushback": [
-  "um, help me , ima lil monkey \n[Image: image/png]",
-  "Save all useful inside ~/rh.1/rhea-elementary i will also create for you full-structured skyscrapper of learning. This planet makes us sick, right?",
-  "give me tricky tips to become an industry leader right tomorrow then start a new session for the rhea project",
-  "i would like to keep this session as long as possible - love your exact mood and answers. Your main goal from this point is to ship one thing publicly.  Tomorrow morning! Сделай расширенный список советов на русском языке. Попробуй воспользорваться rhea_bridge - api ключи лежат внутри файла!",
-  "use Unlim Sonnet agents to speedup. This is my personal matrix -- feel free to be creative, Neo. Do not scary to make any mistakes -- take me as a father",
-  "find and run also agents Orion, B-2nd, Hyperion -- Orion as Opus abn others as Sonnet; show me any traces of other agents thats off;",
-  "Switch him back and show me other's schema (before last commant and now); provide your \"saving tokens\" strategy with max operational horizons",
-  "B - then consultate with B-2nd, Orion and Hyperion for the best next move; should we process something or continue to restore the full-comand including gpt to cooperate?",
-  "A",
-  "Now, do you guys need gpt-5 as cli agent here for the full consensus-party begins?",
-  "Can you up the gpt yourself once it would be helpful for the team? how can you detect this? What is the current consensus for the Keys? Can you perform all the needed actions via chrome extension at your own? I'd recommend to run some more sonnet-helpers, but your call this time",
-  "So, show me your current ready-to-go full desribed plan"
- ],
- "bug_report": [
-  "I can see two Rex alived also some other obviously-deprecated statuses",
-  "why have you stopped",
-  "the important poing: i im fully ready to test thism but CHP has basic subsriptin and pretty much limited in ability to perfom any external actions. A huge % of very short sessions. Lets test it?",
-  "это из-за скриншотов?",
-  "how to stop it lol?)",
-  "the alarm is still ringing)"
- ],
- "new_work": [
-  "show me an example of usage with your proposed variant implemented",
-  "can you help me to remember a bridge-level solution for free chatgpt queries proxying we used to connected but currently obsolete",
-  "show me the daily team report: a tasks, a results, an extras"
- ]
+ "exemplars": {
+  "approve_proceed": [
+   "Go ahead and restart Terminal. When you're back, just tell me to continue fixing the\n  claude.ai context issue.\n\n[Image: image/png]\n[Image: image/png]",
+   "\"I am resuming as Rex. You are the Product Owner. Read @REDACTED.md and @docs/plans/EVOLUTION_PLAN_V1.md. Use Nexus protocol to remember the latest details. Let's begin Stage 0. Report status.\"",
+   "You are Rex. Resume from branch hyperion/memory. \n1) Run: git checkout hyperion/memory\n2) Show: docs/state.md\n3) List inbox for: COWORK_20260219_genome-evidence.md\n4) Write a 20-line status report to: ops/virtual-office/outbox/REX_STATUS.md\nBe concise and do not do extra work.",
+   "merge main into feature/mvp-loop и push",
+   "go on",
+   "how to save for next usage your freshly-achieved skills from this session? share a raw ai-recipe via text prompt with me, please",
+   "is this all your knowlages from this session? nothing to share more?",
+   "are you alright?",
+   "\"Let me do everything myself — fast.\" I'm in love! You are the best!",
+   "any updates?",
+   "3",
+   "hey buddy are you alive?"
+  ],
+  "question": [
+   "Show current usage stats, billing stats, API stats, show any active limits",
+   "do you have any clues of how shall I proceed with the current project which is in ~/rh.1 and https://github.com/serg-alexv/rhea-project ? New prolong session would be bettaer that this current  chat, is this right?",
+   "is Orion alive? Show currents system status",
+   "remember me what was the Hyperion role and part of work that was done",
+   "how to launch Hyperion?",
+   "Show current system status; is firebase and entire.io fully operatable and in use?",
+   "The the EVOLUTION_PLAN_V1.md performing in full-parallel mode? nobody is blocking others? can i go out for a while?",
+   "show the list on actins you have done since my last pronpt. show memory/tokens/contexts stat",
+   "Compare the CORE_RULES.md with the AUTONOMY_WITH_AUDIT_ROOT.md -- what is key diffs",
+   "explore the project docs to relearn about how memory works and then we will discuss"
+  ],
+  "interrupt": [
+   "Yas, you can. Just do it - step by step.",
+   "1 + 2 - that is enought"
+  ],
+  "pushback": [
+   "um, help me , ima lil monkey \n[Image: image/png]",
+   "Save all useful inside ~/rh.1/rhea-elementary i will also create for you full-structured skyscrapper of learning. This planet makes us sick, right?",
+   "give me tricky tips to become an industry leader right tomorrow then start a new session for the rhea project",
+   "i would like to keep this session as long as possible - love your exact mood and answers. Your main goal from this point is to ship one thing publicly.  Tomorrow morning! Сделай расширенный список советов на русском языке. Попробуй воспользорваться rhea_bridge - api ключи лежат внутри файла!",
+   "use Unlim Sonnet agents to speedup. This is my personal matrix -- feel free to be creative, Neo. Do not scary to make any mistakes -- take me as a father",
+   "find and run also agents Orion, B-2nd, Hyperion -- Orion as Opus abn others as Sonnet; show me any traces of other agents thats off;",
+   "Switch him back and show me other's schema (before last commant and now); provide your \"saving tokens\" strategy with max operational horizons",
+   "B - then consultate with B-2nd, Orion and Hyperion for the best next move; should we process something or continue to restore the full-comand including gpt to cooperate?",
+   "A",
+   "Now, do you guys need gpt-5 as cli agent here for the full consensus-party begins?",
+   "Can you up the gpt yourself once it would be helpful for the team? how can you detect this? What is the current consensus for the Keys? Can you perform all the needed actions via chrome extension at your own? I'd recommend to run some more sonnet-helpers, but your call this time",
+   "So, show me your current ready-to-go full desribed plan"
+  ],
+  "bug_report": [
+   "I can see two Rex alived also some other obviously-deprecated statuses",
+   "why have you stopped",
+   "the important poing: i im fully ready to test thism but CHP has basic subsriptin and pretty much limited in ability to perfom any external actions. A huge % of very short sessions. Lets test it?",
+   "это из-за скриншотов?",
+   "how to stop it lol?)",
+   "the alarm is still ringing)"
+  ],
+  "new_work": [
+   "show me an example of usage with your proposed variant implemented",
+   "can you help me to remember a bridge-level solution for free chatgpt queries proxying we used to connected but currently obsolete",
+   "show me the daily team report: a tasks, a results, an extras"
+  ]
+ },
+ "length_median": {
+  "approve_proceed": 4,
+  "question": 13,
+  "interrupt": 10,
+  "pushback": 22,
+  "bug_report": 5,
+  "new_work": 12
+ }
 }

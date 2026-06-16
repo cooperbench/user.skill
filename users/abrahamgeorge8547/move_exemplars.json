@@ -1,58 +1,67 @@
 {
- "bug_report": [
-  "so check the e2e test dm_channel, we are using presence library here, but some how all of them does not show the online users, Session kept alive: tmux attach -t dm_channel the session is here, please check the logs and find out why presense is not workin gnow.",
-  "so refer e2e test dm test, currently the dm test sometimes passes sometimes it fails i can manually add a dm and it works fine. what could be the reason the test fail some time while it does not on other times, it has something to do with the creation of the channel.",
-  "check the latest plan we werere usingin about sync_meta, this test test_viewer_writes_to_dynamic_channel does not pass check the e2e test channel test, and add viwer adding a messge to dynamic channel and cpature the events and lets analyze.,",
-  "e2e_tests/test_custom_channel.py check this out, so now also we still have no data sync from other users, only alice data goes to them. refer the jsonl Captured 342 events -> /tmp/custom_channel_test/captures/custom_channel_merged.jsonl so we have the events here. can you check analyze it and check whats the issue?",
-  "how are channels currently working?. it shouldnt work right.",
-  "so first lets make the dynamic channels work. so channels dont work now anymore, check the channel e2e test alice has project x bob anbd carol forcebly writes to some project-x channels that is not the original chennel, it does not reach them.",
-  "no i buitl and tested it, /tmp/custom_channel_test/captures/ here you will find the captured events.",
-  "we are using debug builds only its new",
-  "does nto work, lets analyze the captured events , with the dynamic channels where did we reach?",
-  "okay now that works. but when i manually click on the dm the app just terminates why is that happening?",
-  "next we need to fix the viwer writing to the dynamic layer, this is the logs when the viwer writes to the dynamic layer. what could be hapening here?",
-  "not integration test the e2e test, i try sending a message from a viwer, it does not show any logs on whats going on why is that. we need first find that out. it should not have done that right?"
- ],
- "question": [
-  "we were doing a logging module capture , its in our plan check the plan where are we at with this?",
-  "check again in the captures we have added observability to there as well.",
-  "not that in layer syunc there is a test for node fanout that passed, how did that pass?",
-  "/tmp/custom_channel_test/captures/ its here",
-  "1, we can have something cached on load, can write etc right. layerunit configuration itself will be based on the permit it has.  layer actor can managed the subscribers right, would that be costly or should we just have layer unit as some object with state?",
-  "so this would not affect the node right?",
-  "so for this and other tests where some are offline we i think we should mock it correctly, lets analyze the integration test infra and understand what we have and what we can do to correctly mock this.",
-  "atleast the one node has, thats the source of truth right.",
-  "so how do i use this?",
-  "so we have we got observability into layer unit and AuthorizeLayerSubscriber events",
-  "okay now we move to the next phase named collaborators for the channel, where are we with that. check the plan and documentation."
- ],
- "pushback": [
-  "only give me a detailed description of what all do you think we should add, now that you have used it, what  extra convinience tags could we add etc as well please. be detailed about it.",
-  "can you make sure the dynamic role granted one works, we changed the flow, previously we had the data in in a meta layer and we used that to sync with each other, we have moved away from that and currently uses protocol exclusive sync_meta layer.",
-  "so this path should be removed. its does not follow offline first principles. for a new layer it should be discovered through sync meta, it should have layer permits as well.",
-  "what are we doing there?, we already have a code path where we append to syncmeta right.",
-  "no we have one more where in creator when creates the dm layer currently also write to sync meta, here for dynamic channels as well it would write to sync meta both should follow the same path with optional dids right.",
-  "first lets for now remove read_postions layer, lets also removed the presense layer so we can get less logs.",
-  "no the read tracker can be a local only layer right.",
-  "so now lets do this lets take the group chat into another directory and just run that not all the osvauld demos. we need to update the permit template as well for this. this is so that we can have cleaner logs.",
-  "the layer should exists when they subscribe right.",
-  "sync_meta should not go through lua layer its protocol owned, so it must be handled inside the protocol. if you see the node handling the meta layer updates, it should also follow the same protocol as well.",
-  "we need a debug build not the release build",
-  "no lets reproduce the same in our integration test only lets not use the e2e tests for this for now."
- ],
- "approve_proceed": [
-  "ls\nalice  bob  carol  node\n/tmp/custom_channel_test\n➜ pwd\n/tmp/custom_channel_test\n/tmp/custom_channel_test\n➜ yes it does",
-  "yea this works.",
-  "yes please coninue",
-  "lets continue with the next phase.",
-  "yes please",
-  "yes its working we need to update the documentation if required, in observability",
-  "yes lets do the hybrid one.",
-  "so we need to update the documentations with this right. lets update that as well."
- ],
- "new_work": [
-  "kay now this works, we go the dynamic channel working, next lets take enable the presense library, we need dms. with dids , so we need to update the integration test for the dynamic channel in the integratoin test.",
-  "yes lets start the implementation now.",
-  "okay lets run them and test now."
- ]
+ "exemplars": {
+  "bug_report": [
+   "so check the e2e test dm_channel, we are using presence library here, but some how all of them does not show the online users, Session kept alive: tmux attach -t dm_channel the session is here, please check the logs and find out why presense is not workin gnow.",
+   "so refer e2e test dm test, currently the dm test sometimes passes sometimes it fails i can manually add a dm and it works fine. what could be the reason the test fail some time while it does not on other times, it has something to do with the creation of the channel.",
+   "check the latest plan we werere usingin about sync_meta, this test test_viewer_writes_to_dynamic_channel does not pass check the e2e test channel test, and add viwer adding a messge to dynamic channel and cpature the events and lets analyze.,",
+   "e2e_tests/test_custom_channel.py check this out, so now also we still have no data sync from other users, only alice data goes to them. refer the jsonl Captured 342 events -> /tmp/custom_channel_test/captures/custom_channel_merged.jsonl so we have the events here. can you check analyze it and check whats the issue?",
+   "how are channels currently working?. it shouldnt work right.",
+   "so first lets make the dynamic channels work. so channels dont work now anymore, check the channel e2e test alice has project x bob anbd carol forcebly writes to some project-x channels that is not the original chennel, it does not reach them.",
+   "no i buitl and tested it, /tmp/custom_channel_test/captures/ here you will find the captured events.",
+   "we are using debug builds only its new",
+   "does nto work, lets analyze the captured events , with the dynamic channels where did we reach?",
+   "okay now that works. but when i manually click on the dm the app just terminates why is that happening?",
+   "next we need to fix the viwer writing to the dynamic layer, this is the logs when the viwer writes to the dynamic layer. what could be hapening here?",
+   "not integration test the e2e test, i try sending a message from a viwer, it does not show any logs on whats going on why is that. we need first find that out. it should not have done that right?"
+  ],
+  "question": [
+   "we were doing a logging module capture , its in our plan check the plan where are we at with this?",
+   "check again in the captures we have added observability to there as well.",
+   "not that in layer syunc there is a test for node fanout that passed, how did that pass?",
+   "/tmp/custom_channel_test/captures/ its here",
+   "1, we can have something cached on load, can write etc right. layerunit configuration itself will be based on the permit it has.  layer actor can managed the subscribers right, would that be costly or should we just have layer unit as some object with state?",
+   "so this would not affect the node right?",
+   "so for this and other tests where some are offline we i think we should mock it correctly, lets analyze the integration test infra and understand what we have and what we can do to correctly mock this.",
+   "atleast the one node has, thats the source of truth right.",
+   "so how do i use this?",
+   "so we have we got observability into layer unit and AuthorizeLayerSubscriber events",
+   "okay now we move to the next phase named collaborators for the channel, where are we with that. check the plan and documentation."
+  ],
+  "pushback": [
+   "only give me a detailed description of what all do you think we should add, now that you have used it, what  extra convinience tags could we add etc as well please. be detailed about it.",
+   "can you make sure the dynamic role granted one works, we changed the flow, previously we had the data in in a meta layer and we used that to sync with each other, we have moved away from that and currently uses protocol exclusive sync_meta layer.",
+   "so this path should be removed. its does not follow offline first principles. for a new layer it should be discovered through sync meta, it should have layer permits as well.",
+   "what are we doing there?, we already have a code path where we append to syncmeta right.",
+   "no we have one more where in creator when creates the dm layer currently also write to sync meta, here for dynamic channels as well it would write to sync meta both should follow the same path with optional dids right.",
+   "first lets for now remove read_postions layer, lets also removed the presense layer so we can get less logs.",
+   "no the read tracker can be a local only layer right.",
+   "so now lets do this lets take the group chat into another directory and just run that not all the osvauld demos. we need to update the permit template as well for this. this is so that we can have cleaner logs.",
+   "the layer should exists when they subscribe right.",
+   "sync_meta should not go through lua layer its protocol owned, so it must be handled inside the protocol. if you see the node handling the meta layer updates, it should also follow the same protocol as well.",
+   "we need a debug build not the release build",
+   "no lets reproduce the same in our integration test only lets not use the e2e tests for this for now."
+  ],
+  "approve_proceed": [
+   "ls\nalice  bob  carol  node\n/tmp/custom_channel_test\n➜ pwd\n/tmp/custom_channel_test\n/tmp/custom_channel_test\n➜ yes it does",
+   "yea this works.",
+   "yes please coninue",
+   "lets continue with the next phase.",
+   "yes please",
+   "yes its working we need to update the documentation if required, in observability",
+   "yes lets do the hybrid one.",
+   "so we need to update the documentations with this right. lets update that as well."
+  ],
+  "new_work": [
+   "kay now this works, we go the dynamic channel working, next lets take enable the presense library, we need dms. with dids , so we need to update the integration test for the dynamic channel in the integratoin test.",
+   "yes lets start the implementation now.",
+   "okay lets run them and test now."
+  ]
+ },
+ "length_median": {
+  "bug_report": 22,
+  "question": 13,
+  "pushback": 23,
+  "approve_proceed": 6,
+  "new_work": 7
+ }
 }

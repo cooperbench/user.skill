@@ -1,41 +1,51 @@
 {
- "new_work": [
-  "could you pull test on this branch",
-  "I need you to have proper documentation for this project. Use explore subagents. The subagents should be Opus 4.6 and spawn them across the codebase and have documentation where necessary and needed. Also update the README file. Do what is needed, basically ask me questions as needed."
- ],
- "question": [
-  "So I have access to my uni machine for deploying Aitutor Webapp onto uni servers. you can access it by ssh <PRESIDIO_ANONYMIZED_EMAIL_ADDRESS> can you access it and find the aitutor web app and see how it is hosted?",
-  "!ssh stavan@aitutor.ok.ubc.ca \"ls -la ~ && which docker docker-compose pm2 nginx systemctl 2>/dev/null && docker ps 2>/dev/null && ls -la /etc/nginx/sites-enabled/\n  2>/dev/null && cat /etc/systemd/system/aitutor* 2>/dev/null\"",
-  "!ssh <PRESIDIO_ANONYMIZED_EMAIL_ADDRESS> \"ls -la ~ && which docker docker-compose pm2 nginx systemctl 2>/dev/null && docker ps 2>/dev/null && ls -la /etc/nginx/sites-enabled/\n  2>/dev/null && cat /etc/systemd/system/aitutor* 2>/dev/null\"",
-  "<bash-input> ssh stavan@aitutor.ok.ubc.ca \"ls -la ~ && which docker docker-compose pm2 nginx systemctl 2>/dev/null && docker ps 2>/dev/null && ls -la /etc/nginx/sites-enabled/\n  2>/dev/null && cat /etc/systemd/system/aitutor* 2>/dev/null\"</bash-input>"
- ],
- "refine_redirect": [
-  "I need you to completely rethingk and redo the front page for this app. I need you to Compltely boldly redesign it, you ahve all the freedom in the world to show\n  off your skill use the frontend design skill",
-  "I think readme and System overview has some overlaps, remove stuff from readme that overlaps so we practice srp"
- ],
- "pushback": [
-  "reabse",
-  "run all the tests and commit and push and we use bun",
-  "Go ahead and do phases 1, 2, and 3 with as many sub-agents as you want, working on the same or different work trees, whatever you feel like. I need it done right now. Everything",
-  "just give me the status dont do anything Give me an update on what is done and what if left and what do we need to do. Tell it to me in detail",
-  "Give me a deatiled prompt to paste into a coding agent that will do everything we need to do fully end to end. I cant have you do it cuz u are costing me lot.",
-  "lets have api-reference.md and connit and push",
-  "there is @README.md here it does exist what are you smoking",
-  "check all the readme in the codebase and lmk they all do a good job , commit and pish everything",
-  "<bash-input>ssh -o IdentityAgent=none -o IdentitiesOnly=no -o PreferredAuthentications=password <PRESIDIO_ANONYMIZED_EMAIL_ADDRESS></bash-input>",
-  "I want the  /srv/www/AiTutor to be the main one",
-  "now parallel w opus subgagents the same way redo the entire UI",
-  "stash all these chages"
- ],
- "approve_proceed": [
-  "yes please",
-  "continue",
-  "<bash-input> ssh -o IdentityAgent=none -o IdentitiesOnly=no -o PreferredAuthentications=password stavan@aitutor.ok.ubc.ca \"ls -la ~ && which docker docker-compose pm2 nginx\n  systemctl 2>/dev/null && docker ps 2>/dev/null && ls -la /etc/nginx/sites-enabled/ 2>/dev/null</bash-input>",
-  "yes pls do it"
- ],
- "bug_report": [
-  "<bash-input> ssh <PRESIDIO_ANONYMIZED_EMAIL_ADDRESS> \"ls -la ~ && which docker docker-compose pm2 nginx systemctl 2>/dev/null && docker ps 2>/dev/null && ls -la /etc/nginx/sites-enabled/\n  2>/dev/null && cat /etc/systemd/system/aitutor* 2>/dev/null\"</bash-input>",
-  "<bash-input>ssh -o IdentityAgent=none -o IdentitiesOnly=no -o PreferredAuthentications=password stavan@aitutor.ok.ubc.ca</bash-input>",
-  "[stavan@s216 AiTutor]$  echo \"===NGINX MAIN===\" && sudo cat /etc/nginx/nginx.conf && echo \"===PORT 4768===\" && ss -tlnp | grep 4768\n===NGINX MAIN===\ncat: /etc/nginx/nginx.conf: No such file or directory"
- ]
+ "exemplars": {
+  "new_work": [
+   "could you pull test on this branch",
+   "I need you to have proper documentation for this project. Use explore subagents. The subagents should be Opus 4.6 and spawn them across the codebase and have documentation where necessary and needed. Also update the README file. Do what is needed, basically ask me questions as needed."
+  ],
+  "question": [
+   "So I have access to my uni machine for deploying Aitutor Webapp onto uni servers. you can access it by ssh <PRESIDIO_ANONYMIZED_EMAIL_ADDRESS> can you access it and find the aitutor web app and see how it is hosted?",
+   "!ssh stavan@aitutor.ok.ubc.ca \"ls -la ~ && which docker docker-compose pm2 nginx systemctl 2>/dev/null && docker ps 2>/dev/null && ls -la /etc/nginx/sites-enabled/\n  2>/dev/null && cat /etc/systemd/system/aitutor* 2>/dev/null\"",
+   "!ssh <PRESIDIO_ANONYMIZED_EMAIL_ADDRESS> \"ls -la ~ && which docker docker-compose pm2 nginx systemctl 2>/dev/null && docker ps 2>/dev/null && ls -la /etc/nginx/sites-enabled/\n  2>/dev/null && cat /etc/systemd/system/aitutor* 2>/dev/null\"",
+   "<bash-input> ssh stavan@aitutor.ok.ubc.ca \"ls -la ~ && which docker docker-compose pm2 nginx systemctl 2>/dev/null && docker ps 2>/dev/null && ls -la /etc/nginx/sites-enabled/\n  2>/dev/null && cat /etc/systemd/system/aitutor* 2>/dev/null\"</bash-input>"
+  ],
+  "refine_redirect": [
+   "I need you to completely rethingk and redo the front page for this app. I need you to Compltely boldly redesign it, you ahve all the freedom in the world to show\n  off your skill use the frontend design skill",
+   "I think readme and System overview has some overlaps, remove stuff from readme that overlaps so we practice srp"
+  ],
+  "pushback": [
+   "reabse",
+   "run all the tests and commit and push and we use bun",
+   "Go ahead and do phases 1, 2, and 3 with as many sub-agents as you want, working on the same or different work trees, whatever you feel like. I need it done right now. Everything",
+   "just give me the status dont do anything Give me an update on what is done and what if left and what do we need to do. Tell it to me in detail",
+   "Give me a deatiled prompt to paste into a coding agent that will do everything we need to do fully end to end. I cant have you do it cuz u are costing me lot.",
+   "lets have api-reference.md and connit and push",
+   "there is @README.md here it does exist what are you smoking",
+   "check all the readme in the codebase and lmk they all do a good job , commit and pish everything",
+   "<bash-input>ssh -o IdentityAgent=none -o IdentitiesOnly=no -o PreferredAuthentications=password <PRESIDIO_ANONYMIZED_EMAIL_ADDRESS></bash-input>",
+   "I want the  /srv/www/AiTutor to be the main one",
+   "now parallel w opus subgagents the same way redo the entire UI",
+   "stash all these chages"
+  ],
+  "approve_proceed": [
+   "yes please",
+   "continue",
+   "<bash-input> ssh -o IdentityAgent=none -o IdentitiesOnly=no -o PreferredAuthentications=password stavan@aitutor.ok.ubc.ca \"ls -la ~ && which docker docker-compose pm2 nginx\n  systemctl 2>/dev/null && docker ps 2>/dev/null && ls -la /etc/nginx/sites-enabled/ 2>/dev/null</bash-input>",
+   "yes pls do it"
+  ],
+  "bug_report": [
+   "<bash-input> ssh <PRESIDIO_ANONYMIZED_EMAIL_ADDRESS> \"ls -la ~ && which docker docker-compose pm2 nginx systemctl 2>/dev/null && docker ps 2>/dev/null && ls -la /etc/nginx/sites-enabled/\n  2>/dev/null && cat /etc/systemd/system/aitutor* 2>/dev/null\"</bash-input>",
+   "<bash-input>ssh -o IdentityAgent=none -o IdentitiesOnly=no -o PreferredAuthentications=password stavan@aitutor.ok.ubc.ca</bash-input>",
+   "[stavan@s216 AiTutor]$  echo \"===NGINX MAIN===\" && sudo cat /etc/nginx/nginx.conf && echo \"===PORT 4768===\" && ss -tlnp | grep 4768\n===NGINX MAIN===\ncat: /etc/nginx/nginx.conf: No such file or directory"
+  ]
+ },
+ "length_median": {
+  "new_work": 27,
+  "question": 27,
+  "refine_redirect": 29,
+  "pushback": 12,
+  "approve_proceed": 3,
+  "bug_report": 27
+ }
 }

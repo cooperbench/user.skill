@@ -1,48 +1,58 @@
 {
- "refine_redirect": [
-  "fix linting please"
- ],
- "bug_report": [
-  "Fix this comment: ```Discovery uses context.Background() at startup\n  hooks_cmd.go:29 — Combined with #1, CLI startup hangs for N * forever if N binaries on PATH are unresponsive. Pass a bounded context (e.g., 5s total for\n  discovery).```",
-  "another issue: ```Shell injection in test helper\n  external/external_test.go:36-101 — mockInfoScript concatenates JSON into a shell script with single-quote wrapping. A single quote in test JSON silently breaks the\n   script. Use a heredoc instead.```",
-  "there a few more comments to fix: ```No execution timeout on external binary calls\n  external/external.go:396-425 — The run() method uses exec.CommandContext but 16 callers pass context.Background() with no deadline. A hung external binary blocks\n  the CLI (and git hooks) indefinitely. Fix: add a default timeout in run() when the context has no deadline.```",
-  "Look at `docs/requirements/external-plugins/review-01.md` and fix the first critical issue.",
-  "`/voice` doesn't work it says no speech detected",
-  "it seems the test hangs or is super slow",
-  "`golangci-lint` failed in ci",
-  "fix liniting and run the tests"
- ],
- "question": [
-  "@cmd/entire/cli/agent/external/capabilities.go can you explain me why we need Wrap?",
-  "can you do a review of the changes in this pr?",
-  "looking at the `Agent interface` which methods are required?",
-  "@cmd/entire/cli/agent/cursor/lifecycle.go why this file was changed?",
-  "After all the refactoring and changes can you verify that the docs of the external agents protocol is still up to date with the implementation?",
-  "Review this PR."
- ],
- "approve_proceed": [
-  "Undo the changes to migrate cursor to an external agent.",
-  "resume",
-  "continue",
-  "I attempted to write this review to `/Users/nodo/work/cli/docs/requirements/external-plugins/review-03.md` but was denied write permission. You can save it manually or grant write access for me to create the file.</result>\n<usage><total_tokens>80312</total_tokens><tool_uses>37</tool_uses><duration_ms>190947</duration_ms></usage>\n</task-notification>\nFull transcript available at: /private/tmp/claude-501/-Users-nodo-work-cli/tasks/a9f2499c32a652ef3.output",
-  "yes",
-  "which other outstanding issues we have?",
-  "Run git rebase main and fix the conflicts."
- ],
- "new_work": [
-  "Add a specific setting to enable external agents, default is false. Without this setting we don't do discovery or allow interaction with external agents.",
-  "run tests and litners",
-  "can you add a test for it?",
-  "same for cmd/entire/cli/agent/cursor/transcript.go"
- ],
- "pushback": [
-  "the problem though is that the Wrap command doesn't cover all the possible combinations, can we fix that in another way?",
-  "revert it to `main`",
-  "same for `cmd/entire/cli/agent/cursor/lifecycle_test.go`",
-  "yes please, look at build in agents to find the source of truth",
-  "Can you implement the cursor agent using the new external type? Keep it in this repo for now.",
-  "The review file should be saved to `/Users/nodo/work/cli/docs/requirements/external-plugins/review-03.md`. Please grant Write permission if you would like me to persist it, or copy the content above manually.</result>\n<usage><total_tokens>69874</total_tokens><tool_uses>32</tool_uses><duration_ms>164981</duration_ms></usage>\n</task-notification>\nFull transcript available at: /private/tmp/claude-501/-Users-nodo-work-cli/tasks/a1e721472992b4372.output",
-  "don't remove the `nolint:ireturn` comments",
-  "please fix the (2) critical issue about limiting stdout"
- ]
+ "exemplars": {
+  "refine_redirect": [
+   "fix linting please"
+  ],
+  "bug_report": [
+   "Fix this comment: ```Discovery uses context.Background() at startup\n  hooks_cmd.go:29 — Combined with #1, CLI startup hangs for N * forever if N binaries on PATH are unresponsive. Pass a bounded context (e.g., 5s total for\n  discovery).```",
+   "another issue: ```Shell injection in test helper\n  external/external_test.go:36-101 — mockInfoScript concatenates JSON into a shell script with single-quote wrapping. A single quote in test JSON silently breaks the\n   script. Use a heredoc instead.```",
+   "there a few more comments to fix: ```No execution timeout on external binary calls\n  external/external.go:396-425 — The run() method uses exec.CommandContext but 16 callers pass context.Background() with no deadline. A hung external binary blocks\n  the CLI (and git hooks) indefinitely. Fix: add a default timeout in run() when the context has no deadline.```",
+   "Look at `docs/requirements/external-plugins/review-01.md` and fix the first critical issue.",
+   "`/voice` doesn't work it says no speech detected",
+   "it seems the test hangs or is super slow",
+   "`golangci-lint` failed in ci",
+   "fix liniting and run the tests"
+  ],
+  "question": [
+   "@cmd/entire/cli/agent/external/capabilities.go can you explain me why we need Wrap?",
+   "can you do a review of the changes in this pr?",
+   "looking at the `Agent interface` which methods are required?",
+   "@cmd/entire/cli/agent/cursor/lifecycle.go why this file was changed?",
+   "After all the refactoring and changes can you verify that the docs of the external agents protocol is still up to date with the implementation?",
+   "Review this PR."
+  ],
+  "approve_proceed": [
+   "Undo the changes to migrate cursor to an external agent.",
+   "resume",
+   "continue",
+   "I attempted to write this review to `/Users/nodo/work/cli/docs/requirements/external-plugins/review-03.md` but was denied write permission. You can save it manually or grant write access for me to create the file.</result>\n<usage><total_tokens>80312</total_tokens><tool_uses>37</tool_uses><duration_ms>190947</duration_ms></usage>\n</task-notification>\nFull transcript available at: /private/tmp/claude-501/-Users-nodo-work-cli/tasks/a9f2499c32a652ef3.output",
+   "yes",
+   "which other outstanding issues we have?",
+   "Run git rebase main and fix the conflicts."
+  ],
+  "new_work": [
+   "Add a specific setting to enable external agents, default is false. Without this setting we don't do discovery or allow interaction with external agents.",
+   "run tests and litners",
+   "can you add a test for it?",
+   "same for cmd/entire/cli/agent/cursor/transcript.go"
+  ],
+  "pushback": [
+   "the problem though is that the Wrap command doesn't cover all the possible combinations, can we fix that in another way?",
+   "revert it to `main`",
+   "same for `cmd/entire/cli/agent/cursor/lifecycle_test.go`",
+   "yes please, look at build in agents to find the source of truth",
+   "Can you implement the cursor agent using the new external type? Keep it in this repo for now.",
+   "The review file should be saved to `/Users/nodo/work/cli/docs/requirements/external-plugins/review-03.md`. Please grant Write permission if you would like me to persist it, or copy the content above manually.</result>\n<usage><total_tokens>69874</total_tokens><tool_uses>32</tool_uses><duration_ms>164981</duration_ms></usage>\n</task-notification>\nFull transcript available at: /private/tmp/claude-501/-Users-nodo-work-cli/tasks/a1e721472992b4372.output",
+   "don't remove the `nolint:ireturn` comments",
+   "please fix the (2) critical issue about limiting stdout"
+  ]
+ },
+ "length_median": {
+  "refine_redirect": 3,
+  "bug_report": 9,
+  "question": 9,
+  "approve_proceed": 6,
+  "new_work": 5,
+  "pushback": 13
+ }
 }

@@ -1,56 +1,67 @@
 {
- "new_work": [
-  "use PR 478 as a template (where opencode was added to the docs) and now update the docs for the recently-added cursor",
-  "fix the tests please",
-  "see https://github.com/entireio/cli/issues/279 we need to make it more clear that --local only affects the settings.json for entire, not for the  \n  agent",
-  "add a test to exercise the change to calculateTokenUsage in manual_commit_condensation.go",
-  "add test cases to manual_commit_condensation_test.go which use the following claude sample:",
-  "add test cases to manual_commit_condensation_test.go which use the following cursor sample:",
-  "please fix the tests in cmd/entire/cli/agent/claudecode/transcript_test.go",
-  "lets run the manual tests"
- ],
- "approve_proceed": [
-  "commit the changes and make a pr",
-  "make a PR for this",
-  "create and empty commit so we capture this conversation with entire",
-  "push this to the branch",
-  "commit and push",
-  "commit and create a pr referencing #279 and #293",
-  "/reviewer",
-  "create a PR",
-  "push it",
-  "pull and merge the changes from the remote",
-  "git push",
-  "commit and create a pr referencing issue 424"
- ],
- "bug_report": [
-  "please fix this e2e test failure https://github.com/entireio/cli/actions/runs/22436704103/job/64968279708"
- ],
- "question": [
-  "is Agent.GetHookConfigPath used anywhere?",
-  "in setup.go we now call strategy.OpenRepository(). do we need to close the repositiory again?",
-  "why is HookManager and DetectHookManagers exported (capitalized)?",
-  "what is the difference between HookSupport.GetSupportedHooks and Agent.HookNames",
-  "is ParseHookInput unused?"
- ],
- "pushback": [
-  "commit this on a feature branch. use prefix 'rwr/' for the branch name",
-  "rather than modifying intiializesession for manual_commit_session.go and auto_commit.go, could we call 'IsEmptyRepository' inside common.go:OpenRepository()?",
-  "can you check hooks_geminicli_handers.go. perhaps this needs a change too",
-  "fix the description on 392",
-  "fix the description on pr#392",
-  "lets fix extractUserPrompts so it works for cursor",
-  "ive just moved to another branch, can you apply those changes again please?",
-  "move to another branch before committing",
-  "let make HookManager and DetectHookManagers local (not captialised)",
-  "initGitRepo duplicates the existing initHooksTestRepo helper in hooks_test.go (both run git init, t.Chdir, and clear the RepoRoot cache). Reusing the shared helper would reduce duplication and keep repo setup logic consistent across tests.",
-  "should the tests in cmd/entire/cli/strategy/hook_managers_test.go use t.Parallel()?",
-  "cmdPrefix selection logic is duplicated here and in hooks.go (both branch on isLocalDev() to pick either entire or go run ...). Consider extracting a small helper (e.g. hookCmdPrefix() / commandPrefix()) to avoid future drift where hook contents and warning instructions could disagree."
- ],
- "interrupt": [
-  "commit this"
- ],
- "refine_redirect": [
-  "now lets remove HookHandler interface, which only contains GetHookNames(). Call sites should call Agent.HookNames() instead. Check that this refactor does not cause any changes."
- ]
+ "exemplars": {
+  "new_work": [
+   "use PR 478 as a template (where opencode was added to the docs) and now update the docs for the recently-added cursor",
+   "fix the tests please",
+   "see https://github.com/entireio/cli/issues/279 we need to make it more clear that --local only affects the settings.json for entire, not for the  \n  agent",
+   "add a test to exercise the change to calculateTokenUsage in manual_commit_condensation.go",
+   "add test cases to manual_commit_condensation_test.go which use the following claude sample:",
+   "add test cases to manual_commit_condensation_test.go which use the following cursor sample:",
+   "please fix the tests in cmd/entire/cli/agent/claudecode/transcript_test.go",
+   "lets run the manual tests"
+  ],
+  "approve_proceed": [
+   "commit the changes and make a pr",
+   "make a PR for this",
+   "create and empty commit so we capture this conversation with entire",
+   "push this to the branch",
+   "commit and push",
+   "commit and create a pr referencing #279 and #293",
+   "/reviewer",
+   "create a PR",
+   "push it",
+   "pull and merge the changes from the remote",
+   "git push",
+   "commit and create a pr referencing issue 424"
+  ],
+  "bug_report": [
+   "please fix this e2e test failure https://github.com/entireio/cli/actions/runs/22436704103/job/64968279708"
+  ],
+  "question": [
+   "is Agent.GetHookConfigPath used anywhere?",
+   "in setup.go we now call strategy.OpenRepository(). do we need to close the repositiory again?",
+   "why is HookManager and DetectHookManagers exported (capitalized)?",
+   "what is the difference between HookSupport.GetSupportedHooks and Agent.HookNames",
+   "is ParseHookInput unused?"
+  ],
+  "pushback": [
+   "commit this on a feature branch. use prefix 'rwr/' for the branch name",
+   "rather than modifying intiializesession for manual_commit_session.go and auto_commit.go, could we call 'IsEmptyRepository' inside common.go:OpenRepository()?",
+   "can you check hooks_geminicli_handers.go. perhaps this needs a change too",
+   "fix the description on 392",
+   "fix the description on pr#392",
+   "lets fix extractUserPrompts so it works for cursor",
+   "ive just moved to another branch, can you apply those changes again please?",
+   "move to another branch before committing",
+   "let make HookManager and DetectHookManagers local (not captialised)",
+   "initGitRepo duplicates the existing initHooksTestRepo helper in hooks_test.go (both run git init, t.Chdir, and clear the RepoRoot cache). Reusing the shared helper would reduce duplication and keep repo setup logic consistent across tests.",
+   "should the tests in cmd/entire/cli/strategy/hook_managers_test.go use t.Parallel()?",
+   "cmdPrefix selection logic is duplicated here and in hooks.go (both branch on isLocalDev() to pick either entire or go run ...). Consider extracting a small helper (e.g. hookCmdPrefix() / commandPrefix()) to avoid future drift where hook contents and warning instructions could disagree."
+  ],
+  "interrupt": [
+   "commit this"
+  ],
+  "refine_redirect": [
+   "now lets remove HookHandler interface, which only contains GetHookNames(). Call sites should call Agent.HookNames() instead. Check that this refactor does not cause any changes."
+  ]
+ },
+ "length_median": {
+  "new_work": 11,
+  "approve_proceed": 5,
+  "bug_report": 7,
+  "question": 7,
+  "pushback": 8,
+  "interrupt": 2,
+  "refine_redirect": 24
+ }
 }

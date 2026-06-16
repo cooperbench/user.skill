@@ -1,32 +1,42 @@
 {
- "bug_report": [
-  "この AI Agent だけど、read / write / edit / bash がツールとして全く使えないみたい。どうにかしてくれ",
-  "ci コケてる",
-  "何も出てないのでそれを調査してほしい",
-  "o3-search で解決策見つけられない??"
- ],
- "question": [
-  ".github/workflows/release.yml 出やってる bun の compile は手元でも通る??",
-  "すごい！これagent でファイルの書き込みとか編集したやつを実際に反映したいときはどうすればいいの??",
-  "1 はどんな感じになる?? Ctrl-D で終了した時にこのセッションの変更をapply するためのコマンドが表示されてる感じかな?",
-  "compile するには？"
- ],
- "interrupt": [
-  "commit & push & create a pr",
-  "commit",
-  "commit して, push して、 create a pr"
- ],
- "pushback": [
-  "branch 切って"
- ],
- "new_work": [
-  "実装しよう",
-  "この設計、仕組みを docs/ ディレクトリに残してください",
-  "Ctrl-D で tui を終了できるようにして"
- ],
- "approve_proceed": [
-  "check, commit, push, create a pr",
-  "お願い",
-  "branch / commit / push / create a pr"
- ]
+ "exemplars": {
+  "bug_report": [
+   "この AI Agent だけど、read / write / edit / bash がツールとして全く使えないみたい。どうにかしてくれ",
+   "ci コケてる",
+   "何も出てないのでそれを調査してほしい",
+   "o3-search で解決策見つけられない??"
+  ],
+  "question": [
+   ".github/workflows/release.yml 出やってる bun の compile は手元でも通る??",
+   "すごい！これagent でファイルの書き込みとか編集したやつを実際に反映したいときはどうすればいいの??",
+   "1 はどんな感じになる?? Ctrl-D で終了した時にこのセッションの変更をapply するためのコマンドが表示されてる感じかな?",
+   "compile するには？"
+  ],
+  "interrupt": [
+   "commit & push & create a pr",
+   "commit",
+   "commit して, push して、 create a pr"
+  ],
+  "pushback": [
+   "branch 切って"
+  ],
+  "new_work": [
+   "実装しよう",
+   "この設計、仕組みを docs/ ディレクトリに残してください",
+   "Ctrl-D で tui を終了できるようにして"
+  ],
+  "approve_proceed": [
+   "check, commit, push, create a pr",
+   "お願い",
+   "branch / commit / push / create a pr"
+  ]
+ },
+ "length_median": {
+  "bug_report": 2,
+  "question": 3,
+  "interrupt": 7,
+  "pushback": 2,
+  "new_work": 3,
+  "approve_proceed": 3
+ }
 }

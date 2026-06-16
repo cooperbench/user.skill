@@ -1,71 +1,81 @@
 {
- "bug_report": [
-  "the stats on homepage dont seem corrrect\n[Image: image/png]",
-  "[Image: source: REDACTED 2026-02-13 at 12.35.31 AM.png]",
-  "what do i have to do to get it working?",
-  "why dont you trigger an error then and just monitor the rest of the process to see if it actually works",
-  "<task-notification>\n<task-id>b43b85f</task-id>\n<output-file>/private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b43b85f.output</output-file>\n<status>failed</status>\n<summary>Background command \"Type-check entire monorepo\" failed with exit code 1</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b43b85f.output",
-  "can you make sure its all tested and work",
-  "<task-notification>\n<task-id>b9439ee</task-id>\n<output-file>/private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b9439ee.output</output-file>\n<status>failed</status>\n<summary>Background command \"Push to main to trigger Vercel deploy\" failed with exit code 1</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b9439ee.output",
-  "and have you called the action that syncs it to tpmjs",
-  "https://grumpy-lands-look.loca.lt/ could you analyze why this url seems to hang while loading",
-  "<task-notification>\n<task-id>b9103ca</task-id>\n<output-file>/private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b9103ca.output</output-file>\n<status>failed</status>\n<summary>Background command \"Push CLAUDE.md update\" failed with exit code 1</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b9103ca.output",
-  "<task-notification>\n<task-id>be5ccec</task-id>\n<output-file>/private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/be5ccec.output</output-file>\n<status>failed</status>\n<summary>Background command \"Push\" failed with exit code 1</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/be5ccec.output",
-  "<task-notification>\n<task-id>b4f17e3</task-id>\n<output-file>/private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b4f17e3.output</output-file>\n<status>failed</status>\n<summary>Background command \"Type-check all packages\" failed with exit code 1</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b4f17e3.output"
- ],
- "new_work": [
-  "use the tpmjs add tool skill and add all of agngg tools that you can https://raw.githubusercontent.com/agnt-gg/agnt/refs/heads/main/docs/llms-full.txt",
-  "i need you to do a tonne of research. when users create collections, i need a feature where they can add custom sse mcp servers, and those tools that get listed out can be enabled or disabled into the normal tools of the collect (they will obviously be a different type of tool or something)",
-  "## Step 5: Update README\n\nUpdate `templates/agent-sandbox/README.md` with deployment + testing instructions.",
-  "can you create an agent for thomasalwyndavis@gmail.com that i can see in my user dashboard i am an admin, and i want to be able to type into the ui clone this repo edit that and it can commit i can add any tokens required",
-  "create a tpmjs memory",
-  "post step by step what i have to do to discord",
-  "write and post a testing script so i can do something, and instructions on what i have to do with railway or something",
-  "write to discord what we done and create a memory"
- ],
- "pushback": [
-  "create a test that uses a collection from thomaslawyndavis@gmail.com and agent andd runs up a conversation that clones a repo https://github.com/thomasdavis/omega and commits it and test it,",
-  "do it all",
-  "add way more test i need it to work bullet proof",
-  "you trigger it also update claude.md on how to do things with CRON_SECRET and where the value is located",
-  "after you are done, boot up claude inc hrome and look at the style guide. i want you to make tpmjs styleguide crisp, minimal, spacious, sexy, extra polish, interact with everything, consistency, i want you to take the tpmjs design to the absolute next level but analyze everything like an anal designer",
-  "go harder in a loop comphrensive",
-  "do all of it",
-  "i can see them in sentry. can you create an error that can be fixed, trigger it, and then make sure the github action actually gets claude code to fix it and deploy all automatically",
-  "https://telemetry.betterstack.com/team/t307276/explore-logs/new?alert_type=relative&drag_and_drop=true&rf=now-3h&rt=now#newAlert can you use claude in chrome to setup the alert properly",
-  "https://telemetry.betterstack.com/team/t307276/explore-logs/new?alert_type=relative&drag_and_drop=true&rf=now-3h&rt=now#newAlert can you use claude in chrome to setup\n  the alert properly",
-  "acctually keep doing it the free way",
-  "yes make it perfect, take no shortcuts, i want it to automatically fix all issues that come in through sentry, dont stop until it works beautifullly"
- ],
- "question": [
-  "<task-notification>\n<task-id>b0f5aba</task-id>\n<output-file>/private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b0f5aba.output</output-file>\n<status>completed</status>\n<summary>Background command \"Type-check the web app for executor changes\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b0f5aba.output",
-  "<task-notification>\n<task-id>baee1ae</task-id>\n<output-file>/private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/baee1ae.output</output-file>\n<status>completed</status>\n<summary>Background command \"Check latest deployment status\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/baee1ae.output",
-  "<task-notification>\n<task-id>b87391d</task-id>\n<output-file>/private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b87391d.output</output-file>\n<status>completed</status>\n<summary>Background command \"Run full blocks validation in background\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b87391d.output",
-  "<task-notification>\n<task-id>bba526d</task-id>\n<output-file>/private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/bba526d.output</output-file>\n<status>completed</status>\n<summary>Background command \"Lint check after changes\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/bba526d.output",
-  "so what happens after an hour of a sandbox? if i send a message two hours later what should expect to happen",
-  "<task-notification>\n<task-id>b72fba6</task-id>\n<output-file>/private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b72fba6.output</output-file>\n<status>completed</status>\n<summary>Background command \"Redeploy latest production deployment\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b72fba6.output",
-  "<task-notification>\n<task-id>b65f763</task-id>\n<output-file>/private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b65f763.output</output-file>\n<status>completed</status>\n<summary>Background command \"Check redeploy status\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b65f763.output",
-  "<task-notification>\n<task-id>b897a4d</task-id>\n<output-file>/private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b897a4d.output</output-file>\n<status>completed</status>\n<summary>Background command \"Docker build of agent sandbox\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b897a4d.output",
-  "<task-notification>\n<task-id>bde4ec3</task-id>\n<output-file>/private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/bde4ec3.output</output-file>\n<status>completed</status>\n<summary>Background command \"Build the web app to verify the docs page compiles fully\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/bde4ec3.output",
-  "<task-notification>\n<task-id>b24e29f</task-id>\n<output-file>/private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b24e29f.output</output-file>\n<status>completed</status>\n<summary>Background command \"Full monorepo type-check\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b24e29f.output",
-  "<task-notification>\n<task-id>be32c5d</task-id>\n<output-file>/private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/be32c5d.output</output-file>\n<status>completed</status>\n<summary>Background command \"Full monorepo build\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/be32c5d.output",
-  "is the new memory tools published and synced to tpmjs"
- ],
- "approve_proceed": [
-  "yes of course",
-  "<task-notification>\n<task-id>bb89314</task-id>\n<output-file>/private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/bb89314.output</output-file>\n<status>completed</status>\n<summary>Background command \"Stage Sentry files and commit\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/bb89314.output",
-  "so did it create the github issue from sentry and can you provide a link to it",
-  "you can push those env vars to vercel",
-  "[Image: source: REDACTED 2026-02-12 at 8.45.16 AM.png]",
-  "yes",
-  "<task-notification>\n<task-id>b250a6f</task-id>\n<output-file>/private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b250a6f.output</output-file>\n<status>completed</status>\n<summary>Background command \"Commit diagnostic change\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b250a6f.output",
-  "<task-notification>\n<task-id>b5b933f</task-id>\n<output-file>/private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b5b933f.output</output-file>\n<status>completed</status>\n<summary>Background command \"Commit updated webhook\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b5b933f.output",
-  "post everything we did to tpmjs",
-  "deploy",
-  "is it deployed yet",
-  "<task-notification>\n<task-id>b37ea6f</task-id>\n<output-file>/private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b37ea6f.output</output-file>\n<status>completed</status>\n<summary>Background command \"Push to main\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b37ea6f.output"
- ],
- "interrupt": [
-  "commit and push and verify deployment is succesful"
- ]
+ "exemplars": {
+  "bug_report": [
+   "the stats on homepage dont seem corrrect\n[Image: image/png]",
+   "[Image: source: REDACTED 2026-02-13 at 12.35.31 AM.png]",
+   "what do i have to do to get it working?",
+   "why dont you trigger an error then and just monitor the rest of the process to see if it actually works",
+   "<task-notification>\n<task-id>b43b85f</task-id>\n<output-file>/private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b43b85f.output</output-file>\n<status>failed</status>\n<summary>Background command \"Type-check entire monorepo\" failed with exit code 1</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b43b85f.output",
+   "can you make sure its all tested and work",
+   "<task-notification>\n<task-id>b9439ee</task-id>\n<output-file>/private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b9439ee.output</output-file>\n<status>failed</status>\n<summary>Background command \"Push to main to trigger Vercel deploy\" failed with exit code 1</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b9439ee.output",
+   "and have you called the action that syncs it to tpmjs",
+   "https://grumpy-lands-look.loca.lt/ could you analyze why this url seems to hang while loading",
+   "<task-notification>\n<task-id>b9103ca</task-id>\n<output-file>/private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b9103ca.output</output-file>\n<status>failed</status>\n<summary>Background command \"Push CLAUDE.md update\" failed with exit code 1</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b9103ca.output",
+   "<task-notification>\n<task-id>be5ccec</task-id>\n<output-file>/private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/be5ccec.output</output-file>\n<status>failed</status>\n<summary>Background command \"Push\" failed with exit code 1</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/be5ccec.output",
+   "<task-notification>\n<task-id>b4f17e3</task-id>\n<output-file>/private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b4f17e3.output</output-file>\n<status>failed</status>\n<summary>Background command \"Type-check all packages\" failed with exit code 1</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b4f17e3.output"
+  ],
+  "new_work": [
+   "use the tpmjs add tool skill and add all of agngg tools that you can https://raw.githubusercontent.com/agnt-gg/agnt/refs/heads/main/docs/llms-full.txt",
+   "i need you to do a tonne of research. when users create collections, i need a feature where they can add custom sse mcp servers, and those tools that get listed out can be enabled or disabled into the normal tools of the collect (they will obviously be a different type of tool or something)",
+   "## Step 5: Update README\n\nUpdate `templates/agent-sandbox/README.md` with deployment + testing instructions.",
+   "can you create an agent for thomasalwyndavis@gmail.com that i can see in my user dashboard i am an admin, and i want to be able to type into the ui clone this repo edit that and it can commit i can add any tokens required",
+   "create a tpmjs memory",
+   "post step by step what i have to do to discord",
+   "write and post a testing script so i can do something, and instructions on what i have to do with railway or something",
+   "write to discord what we done and create a memory"
+  ],
+  "pushback": [
+   "create a test that uses a collection from thomaslawyndavis@gmail.com and agent andd runs up a conversation that clones a repo https://github.com/thomasdavis/omega and commits it and test it,",
+   "do it all",
+   "add way more test i need it to work bullet proof",
+   "you trigger it also update claude.md on how to do things with CRON_SECRET and where the value is located",
+   "after you are done, boot up claude inc hrome and look at the style guide. i want you to make tpmjs styleguide crisp, minimal, spacious, sexy, extra polish, interact with everything, consistency, i want you to take the tpmjs design to the absolute next level but analyze everything like an anal designer",
+   "go harder in a loop comphrensive",
+   "do all of it",
+   "i can see them in sentry. can you create an error that can be fixed, trigger it, and then make sure the github action actually gets claude code to fix it and deploy all automatically",
+   "https://telemetry.betterstack.com/team/t307276/explore-logs/new?alert_type=relative&drag_and_drop=true&rf=now-3h&rt=now#newAlert can you use claude in chrome to setup the alert properly",
+   "https://telemetry.betterstack.com/team/t307276/explore-logs/new?alert_type=relative&drag_and_drop=true&rf=now-3h&rt=now#newAlert can you use claude in chrome to setup\n  the alert properly",
+   "acctually keep doing it the free way",
+   "yes make it perfect, take no shortcuts, i want it to automatically fix all issues that come in through sentry, dont stop until it works beautifullly"
+  ],
+  "question": [
+   "<task-notification>\n<task-id>b0f5aba</task-id>\n<output-file>/private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b0f5aba.output</output-file>\n<status>completed</status>\n<summary>Background command \"Type-check the web app for executor changes\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b0f5aba.output",
+   "<task-notification>\n<task-id>baee1ae</task-id>\n<output-file>/private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/baee1ae.output</output-file>\n<status>completed</status>\n<summary>Background command \"Check latest deployment status\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/baee1ae.output",
+   "<task-notification>\n<task-id>b87391d</task-id>\n<output-file>/private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b87391d.output</output-file>\n<status>completed</status>\n<summary>Background command \"Run full blocks validation in background\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b87391d.output",
+   "<task-notification>\n<task-id>bba526d</task-id>\n<output-file>/private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/bba526d.output</output-file>\n<status>completed</status>\n<summary>Background command \"Lint check after changes\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/bba526d.output",
+   "so what happens after an hour of a sandbox? if i send a message two hours later what should expect to happen",
+   "<task-notification>\n<task-id>b72fba6</task-id>\n<output-file>/private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b72fba6.output</output-file>\n<status>completed</status>\n<summary>Background command \"Redeploy latest production deployment\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b72fba6.output",
+   "<task-notification>\n<task-id>b65f763</task-id>\n<output-file>/private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b65f763.output</output-file>\n<status>completed</status>\n<summary>Background command \"Check redeploy status\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b65f763.output",
+   "<task-notification>\n<task-id>b897a4d</task-id>\n<output-file>/private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b897a4d.output</output-file>\n<status>completed</status>\n<summary>Background command \"Docker build of agent sandbox\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b897a4d.output",
+   "<task-notification>\n<task-id>bde4ec3</task-id>\n<output-file>/private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/bde4ec3.output</output-file>\n<status>completed</status>\n<summary>Background command \"Build the web app to verify the docs page compiles fully\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/bde4ec3.output",
+   "<task-notification>\n<task-id>b24e29f</task-id>\n<output-file>/private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b24e29f.output</output-file>\n<status>completed</status>\n<summary>Background command \"Full monorepo type-check\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b24e29f.output",
+   "<task-notification>\n<task-id>be32c5d</task-id>\n<output-file>/private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/be32c5d.output</output-file>\n<status>completed</status>\n<summary>Background command \"Full monorepo build\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/be32c5d.output",
+   "is the new memory tools published and synced to tpmjs"
+  ],
+  "approve_proceed": [
+   "yes of course",
+   "<task-notification>\n<task-id>bb89314</task-id>\n<output-file>/private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/bb89314.output</output-file>\n<status>completed</status>\n<summary>Background command \"Stage Sentry files and commit\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/bb89314.output",
+   "so did it create the github issue from sentry and can you provide a link to it",
+   "you can push those env vars to vercel",
+   "[Image: source: REDACTED 2026-02-12 at 8.45.16 AM.png]",
+   "yes",
+   "<task-notification>\n<task-id>b250a6f</task-id>\n<output-file>/private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b250a6f.output</output-file>\n<status>completed</status>\n<summary>Background command \"Commit diagnostic change\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b250a6f.output",
+   "<task-notification>\n<task-id>b5b933f</task-id>\n<output-file>/private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b5b933f.output</output-file>\n<status>completed</status>\n<summary>Background command \"Commit updated webhook\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b5b933f.output",
+   "post everything we did to tpmjs",
+   "deploy",
+   "is it deployed yet",
+   "<task-notification>\n<task-id>b37ea6f</task-id>\n<output-file>/private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b37ea6f.output</output-file>\n<status>completed</status>\n<summary>Background command \"Push to main\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-ajaxdavis-repos-tpmjs-tpmjs/tasks/b37ea6f.output"
+  ],
+  "interrupt": [
+   "commit and push and verify deployment is succesful"
+  ]
+ },
+ "length_median": {
+  "bug_report": 22,
+  "new_work": 14,
+  "pushback": 13,
+  "question": 24,
+  "approve_proceed": 23,
+  "interrupt": 8
+ }
 }

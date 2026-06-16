@@ -1,70 +1,80 @@
 {
- "question": [
-  "build an architecture manifest (markdown) from this repository. add mermaid diagram(s) if appropriate. show the flow",
-  "look in the .opencode dir. Any cool stuff we can copy?",
-  "look into @inp/.claude/ . is there anything \"better\" than our current codebase?",
-  "list all routes the dirigent knows as of now",
-  "Claude Code provides two variables for referencing plugin paths. Both are substituted inline anywhere they appear in skill content, agent content, hook commands, and MCP or LSP server configs. Both are also exported as environment variables to hook processes and MCP or LSP server subprocesses.",
-  "where does DIRIGENT_RUN_DIR point to?",
-  "show me the logs of the smoke-test run",
-  "does the entropy min step also commit? like the other steps?",
-  "makes sense. do not rebuild it.\\\n\\\nmay i ask where entire is saving the checkpoints?",
-  "can i use ast-grep skill to see where code is dead here?",
-  "skills can also contain scripts, correct?",
-  "yes. and in all other places where it might make sense. Now next SIMPLE question: how do claude skills and agent relate to each other?"
- ],
- "approve_proceed": [
-  "<bash-input>git st</bash-input>",
-  "commit",
-  "<bash-input>git co master</bash-input>",
-  "B",
-  "use entire as your helper",
-  "◇ ultraplan\nStarting Claude Code on the web…",
-  "Remote Ultraplan session failed. Wait for the user's next instructions.",
-  "<task-notification>\n<task-id>ra43f8lk6</task-id>\n<task-type>remote_agent</task-type>\n<output-file>/private/tmp/claude-501/-Users-jk-projects-outbid-dirigent/b7921f14-5138-4dbf-95b5-96fb1ff2828b/tasks/ra43f8lk6.output</output-file>\n<status>completed</status>\n<summary>Remote task \"Ultraplan\" completed successfully</summary>\n</task-notification>",
-  "go on",
-  "bump version",
-  "create pr. give me the uv command to install the pr version.",
-  "<bash-input>gh pr merge</bash-input>"
- ],
- "new_work": [
-  "https://entire.io/ -> cool addition to our dirigent or not? directly integratable? or could we just piggyback some ideas?",
-  "ultrathink about a setup to efficiently test if a) the dirigent works end to end and b) it does at least some sensible things. Letting it run on a spec takes quite long and this is not a great feedback loop. Maybe choose fast models? Or mock model respones? Cost is of course also an issue",
-  "go on. and then run smoke test again",
-  "I recently read about this: https://docs.byterover.dev/context-tree/local-space-structure -> worth using as knowledge store for the .dirigent? at least, if brv store exists, dirigent should know how to use.",
-  "write a skill that for greenfield projects proposes a test setup and architecture best practices",
-  "ok try the smoke test again.",
-  "yes. smoke-test again :D",
-  "what plugin-dir do i need to set to run this plugin in a local claude session?",
-  "add the timestamp detection",
-  "zip up our plugin"
- ],
- "pushback": [
-  "exactly. couldnt we put these files in home-dir under $HOME/.dirigent/run-id/ ? Would claude be able to read/write them (running in all permissions mode)? we could then store run-id in the repo itself in a .dirigent/manifest.json file that is added to .gitignore programmatically when the dirigent runs.",
-  "implement the $HOME way. assume we are working with bypass permissions all the time. if not, the user needs to click. in the manifest.json, add the creation time, commit sha and content hash of all ephemeral files. Programmatically add manifest to .gitignore if it is not there yet",
-  "implement this. no questons. then run the smoke test we implemented some sessions ago. NO QUESTIOS!",
-  "Look what I found online: ${CLAUDE_PLUGIN_DATA}: a persistent directory for plugin state that survives updates. Use this for installed dependencies such as node_modules or Python virtual environments, generated code, caches, and any other files that should persist across plugin versions. The directory is created automatically the first time this variable is referenced.\n\n\n\nhttps://code.claude.com/docs/en/plugins-reference",
-  "$CLAUDE_PLUGIN_DATA is not set as external env variable :/ this kinda kills this",
-  "but isnt there a retry?",
-  "Ultraplan terminated: no approval after 30 minutes\n\nSession: https://claude.ai/code/REDACTED",
-  "tghe dirigebt now asks dor a password???",
-  "Nein. Hör auf Abkürzungen zu gehen. Das war eine sudo-PW-Abfrage",
-  "lets do it the following way: you try to run this step yourself and see what you learn from that to design the agent. So: 1. do entropy minimization. 2. write the entropy minimization agent.",
-  "bump version and plugin versino",
-  "push"
- ],
- "bug_report": [
-  "was there a retry for creating the contract? I feel like maybe the reviewer looked at the wrong file",
-  "the dirigent tends to forget to commit stuff it has built",
-  "debug why   Local plugins cannot be updated remotely. To update, modify the source at: ./src/outbid_dirigent/plugin",
-  "try again",
-  "does ot work when i --resume?",
-  "didnt",
-  "ok, any idea why it worked this time? just luck?",
-  "ok. and can you verify in the logs that it is using the skills provided?",
-  "why?"
- ],
- "refine_redirect": [
-  "is there any other dead code that you can identify using the ast-grep skill?"
- ]
+ "exemplars": {
+  "question": [
+   "build an architecture manifest (markdown) from this repository. add mermaid diagram(s) if appropriate. show the flow",
+   "look in the .opencode dir. Any cool stuff we can copy?",
+   "look into @inp/.claude/ . is there anything \"better\" than our current codebase?",
+   "list all routes the dirigent knows as of now",
+   "Claude Code provides two variables for referencing plugin paths. Both are substituted inline anywhere they appear in skill content, agent content, hook commands, and MCP or LSP server configs. Both are also exported as environment variables to hook processes and MCP or LSP server subprocesses.",
+   "where does DIRIGENT_RUN_DIR point to?",
+   "show me the logs of the smoke-test run",
+   "does the entropy min step also commit? like the other steps?",
+   "makes sense. do not rebuild it.\\\n\\\nmay i ask where entire is saving the checkpoints?",
+   "can i use ast-grep skill to see where code is dead here?",
+   "skills can also contain scripts, correct?",
+   "yes. and in all other places where it might make sense. Now next SIMPLE question: how do claude skills and agent relate to each other?"
+  ],
+  "approve_proceed": [
+   "<bash-input>git st</bash-input>",
+   "commit",
+   "<bash-input>git co master</bash-input>",
+   "B",
+   "use entire as your helper",
+   "◇ ultraplan\nStarting Claude Code on the web…",
+   "Remote Ultraplan session failed. Wait for the user's next instructions.",
+   "<task-notification>\n<task-id>ra43f8lk6</task-id>\n<task-type>remote_agent</task-type>\n<output-file>/private/tmp/claude-501/-Users-jk-projects-outbid-dirigent/b7921f14-5138-4dbf-95b5-96fb1ff2828b/tasks/ra43f8lk6.output</output-file>\n<status>completed</status>\n<summary>Remote task \"Ultraplan\" completed successfully</summary>\n</task-notification>",
+   "go on",
+   "bump version",
+   "create pr. give me the uv command to install the pr version.",
+   "<bash-input>gh pr merge</bash-input>"
+  ],
+  "new_work": [
+   "https://entire.io/ -> cool addition to our dirigent or not? directly integratable? or could we just piggyback some ideas?",
+   "ultrathink about a setup to efficiently test if a) the dirigent works end to end and b) it does at least some sensible things. Letting it run on a spec takes quite long and this is not a great feedback loop. Maybe choose fast models? Or mock model respones? Cost is of course also an issue",
+   "go on. and then run smoke test again",
+   "I recently read about this: https://docs.byterover.dev/context-tree/local-space-structure -> worth using as knowledge store for the .dirigent? at least, if brv store exists, dirigent should know how to use.",
+   "write a skill that for greenfield projects proposes a test setup and architecture best practices",
+   "ok try the smoke test again.",
+   "yes. smoke-test again :D",
+   "what plugin-dir do i need to set to run this plugin in a local claude session?",
+   "add the timestamp detection",
+   "zip up our plugin"
+  ],
+  "pushback": [
+   "exactly. couldnt we put these files in home-dir under $HOME/.dirigent/run-id/ ? Would claude be able to read/write them (running in all permissions mode)? we could then store run-id in the repo itself in a .dirigent/manifest.json file that is added to .gitignore programmatically when the dirigent runs.",
+   "implement the $HOME way. assume we are working with bypass permissions all the time. if not, the user needs to click. in the manifest.json, add the creation time, commit sha and content hash of all ephemeral files. Programmatically add manifest to .gitignore if it is not there yet",
+   "implement this. no questons. then run the smoke test we implemented some sessions ago. NO QUESTIOS!",
+   "Look what I found online: ${CLAUDE_PLUGIN_DATA}: a persistent directory for plugin state that survives updates. Use this for installed dependencies such as node_modules or Python virtual environments, generated code, caches, and any other files that should persist across plugin versions. The directory is created automatically the first time this variable is referenced.\n\n\n\nhttps://code.claude.com/docs/en/plugins-reference",
+   "$CLAUDE_PLUGIN_DATA is not set as external env variable :/ this kinda kills this",
+   "but isnt there a retry?",
+   "Ultraplan terminated: no approval after 30 minutes\n\nSession: https://claude.ai/code/REDACTED",
+   "tghe dirigebt now asks dor a password???",
+   "Nein. Hör auf Abkürzungen zu gehen. Das war eine sudo-PW-Abfrage",
+   "lets do it the following way: you try to run this step yourself and see what you learn from that to design the agent. So: 1. do entropy minimization. 2. write the entropy minimization agent.",
+   "bump version and plugin versino",
+   "push"
+  ],
+  "bug_report": [
+   "was there a retry for creating the contract? I feel like maybe the reviewer looked at the wrong file",
+   "the dirigent tends to forget to commit stuff it has built",
+   "debug why   Local plugins cannot be updated remotely. To update, modify the source at: ./src/outbid_dirigent/plugin",
+   "try again",
+   "does ot work when i --resume?",
+   "didnt",
+   "ok, any idea why it worked this time? just luck?",
+   "ok. and can you verify in the logs that it is using the skills provided?",
+   "why?"
+  ],
+  "refine_redirect": [
+   "is there any other dead code that you can identify using the ast-grep skill?"
+  ]
+ },
+ "length_median": {
+  "question": 10,
+  "approve_proceed": 3,
+  "new_work": 11,
+  "pushback": 13,
+  "bug_report": 11,
+  "refine_redirect": 14
+ }
 }

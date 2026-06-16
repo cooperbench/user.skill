@@ -1,73 +1,84 @@
 {
- "new_work": [
-  "run `bun lint`",
-  "whe running `bun dev` it is running into trouble with the sqlite database. but i think I want to run the api with wrangler and remote:true, is it possible to point with `bun dev` to the production d1 database in cloudflare?",
-  "make sure on logout to clean all react-query caches and everything, so there is no data cached",
-  "run `bun lint` The error you will see is in a package of JSON that my editor auto formatted. Can you create an editor settings file that matches the expected formatting from Biome to align auto formatting and linting expected formatting?",
-  "can we test this?",
-  "okay then please now deploy, verify the domain and potentially update after verification",
-  "yes do it,  we want to get those ingestions functions",
-  "okay. now can we test the CLI, and manually try to upload a session?",
-  "okay I updated the backfill plugin to support the --time-column, make a plan how to use it now properly",
-  "run `bun verify` when done and make sure eveyrthing passes",
-  "add how to use the command to the readme",
-  "ANd then add this connection string for the prd config in doppler (also project RUDEL) \n```\npostgresql://<TRUFFLEHOG_REDACTED_POSTGRES>@ep-fragrant-field-al2xkvx7-pooler.c-3.eu-central-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require\n```"
- ],
- "bug_report": [
-  "in @apps/cli/src/lib/claude-settings.ts why is it if I run `rudel enable` in the root of this repository, that the hook is added to my user directory? It shuold NEVER be added to the user directory. only to the current project/repo",
-  "Start the webserver (apps/web - bun dev) and api server (apps/api -  bun dev:env) in the backgorund. and the use chrome to navigate on this website: http://localhost:4011 and login with email: <PRESIDIO_ANONYMIZED_EMAIL_ADDRESS> and pw: hundhund\\\nAnd then see if the app loads",
-  "okay lets investigate the failing test case then. what exactly is the issue?",
-  "okay just did, try again",
-  "yes atuo fix",
-  "nothing is loading, can you check what the issue is?",
-  "wasnt one of the ports 4011 before? also when goign to 4012, nothing loads",
-  "did you commit and push your fixes to fix CI?",
-  "check why the tests are failing now, i can easily run `bun verify` locally",
-  "yes but it failed on CI, why?",
-  "give me the prompt to fix that bug in chkit",
-  "okay i added the `RUDEL_LOG_DIR` to the prd_local doppler env with the value `.context`  and restarted the api server, but I dont seem to see the logfile"
- ],
- "approve_proceed": [
-  "navigate to   http://localhost:4011/ in the browser",
-  "we just changed the infrastructure setup on main. please merge main and double check the changes to properly integrate them into this branch",
-  "rebase with main.  and then continue.",
-  "commit, push and create a PR, merge when passed",
-  "execute the request",
-  "Continue from where you left off.",
-  "Resolve any existing merge conflicts with the remote branch (main). Then, commit and push your changes.",
-  "run the commands",
-  "commit the files that you changed in this session. dont do any git status and ignore all other uncommited files.",
-  "### 9. Migration Metadata (JSON)\n\n- `/Users/marc/conductor/workspaces/rudel/miami/packages/ch-schema/chx/meta/journal.json`\n- `/Users/marc/conductor/workspaces/rudel/miami/packages/ch-schema/chx/meta/snapshot.json`\n- `/Users/marc/conductor/workspaces/rudel/miami/packages/sql-schema/db/migrations/meta/0000_snapshot.json`\n- `/Users/marc/conductor/workspaces/rudel/miami/packages/sql-schema/db/migrations/meta/_journal.json`",
-  "retrigger CI",
-  "Commit and push all changes"
- ],
- "pushback": [
-  "lets change the namespace from `@repo` to `@gazed` and potentially even call the CLi just `gazed`  (for now)",
-  "wait why is the path \"/compound\" should it not be `/uploadSession`?",
-  "should we not do even both? to align prod with test?",
-  "i dont like this. can we not start the webserver with wrangler locally, which will spin up a in memory d1.",
-  "no actually also address that gap",
-  "can we name the d1 database please rudel instead of tripoli-auth",
-  "the domains will probably be the normal worker domain for the `rudel` app and also rudel.ai\nplease generate the auth secret as well as the other env variables and push them to doppler",
-  "maybe extract that hint into its own component to have it out of the OverviewPage,",
-  "this seems to be a flaky situation. Can we somehow rewrite the test? I generlaly dont like mocks. can we build a e2e test around the same functionality that does not mock things?\nwhat would it need to do it?",
-  "lets just delete the test. this is better-auth type base functionality and should be stable.",
-  "i saw that we are mapping this in ci.yml\n```\n DATABASE_URL: ${{ secrets.PG_CONNECTION_STRING }}\n```\n\ni dont like this patter. I want to always map environment variables to their same name, otherwise its a possible issue. please align all the env variables for the postgres to `PG_CONNECTION_STRING`",
-  "ah no the redaction is actually terrible css, its the same color of background and text. can we use proper shadcn components with proper theming to get a nice UI in the timeline"
- ],
- "question": [
-  "how does the release flow work? since it did not seem to have published it to npm or did it?",
-  "wher eis the current plan stored?",
-  "oh what was the plan for the session date then? regarding the date extraction",
-  "### 11. Documentation\n\n- `/Users/marc/conductor/workspaces/rudel/miami/CLAUDE.md`\n- `/Users/marc/conductor/workspaces/rudel/miami/docs/self-hosting.md`",
-  "which port is the frontend rnuning on?",
-  "why did CI call verify?"
- ],
- "refine_redirect": [
-  "run bun  lint and fix the lint error. then fix the title of the PR (check the rules in the pr-creation skill). if the PR-creation skill has nothign about the names, check the name validating CI action and extend the pr creation skill with the proper naming rules",
-  "update the @.claude/skills/api-testing/SKILL.md to know where the logs are for the api, so it can debug better. its based on the .env var content."
- ],
- "interrupt": [
-  "yes"
- ]
+ "exemplars": {
+  "new_work": [
+   "run `bun lint`",
+   "whe running `bun dev` it is running into trouble with the sqlite database. but i think I want to run the api with wrangler and remote:true, is it possible to point with `bun dev` to the production d1 database in cloudflare?",
+   "make sure on logout to clean all react-query caches and everything, so there is no data cached",
+   "run `bun lint` The error you will see is in a package of JSON that my editor auto formatted. Can you create an editor settings file that matches the expected formatting from Biome to align auto formatting and linting expected formatting?",
+   "can we test this?",
+   "okay then please now deploy, verify the domain and potentially update after verification",
+   "yes do it,  we want to get those ingestions functions",
+   "okay. now can we test the CLI, and manually try to upload a session?",
+   "okay I updated the backfill plugin to support the --time-column, make a plan how to use it now properly",
+   "run `bun verify` when done and make sure eveyrthing passes",
+   "add how to use the command to the readme",
+   "ANd then add this connection string for the prd config in doppler (also project RUDEL) \n```\npostgresql://<TRUFFLEHOG_REDACTED_POSTGRES>@ep-fragrant-field-al2xkvx7-pooler.c-3.eu-central-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require\n```"
+  ],
+  "bug_report": [
+   "in @apps/cli/src/lib/claude-settings.ts why is it if I run `rudel enable` in the root of this repository, that the hook is added to my user directory? It shuold NEVER be added to the user directory. only to the current project/repo",
+   "Start the webserver (apps/web - bun dev) and api server (apps/api -  bun dev:env) in the backgorund. and the use chrome to navigate on this website: http://localhost:4011 and login with email: <PRESIDIO_ANONYMIZED_EMAIL_ADDRESS> and pw: hundhund\\\nAnd then see if the app loads",
+   "okay lets investigate the failing test case then. what exactly is the issue?",
+   "okay just did, try again",
+   "yes atuo fix",
+   "nothing is loading, can you check what the issue is?",
+   "wasnt one of the ports 4011 before? also when goign to 4012, nothing loads",
+   "did you commit and push your fixes to fix CI?",
+   "check why the tests are failing now, i can easily run `bun verify` locally",
+   "yes but it failed on CI, why?",
+   "give me the prompt to fix that bug in chkit",
+   "okay i added the `RUDEL_LOG_DIR` to the prd_local doppler env with the value `.context`  and restarted the api server, but I dont seem to see the logfile"
+  ],
+  "approve_proceed": [
+   "navigate to   http://localhost:4011/ in the browser",
+   "we just changed the infrastructure setup on main. please merge main and double check the changes to properly integrate them into this branch",
+   "rebase with main.  and then continue.",
+   "commit, push and create a PR, merge when passed",
+   "execute the request",
+   "Continue from where you left off.",
+   "Resolve any existing merge conflicts with the remote branch (main). Then, commit and push your changes.",
+   "run the commands",
+   "commit the files that you changed in this session. dont do any git status and ignore all other uncommited files.",
+   "### 9. Migration Metadata (JSON)\n\n- `/Users/marc/conductor/workspaces/rudel/miami/packages/ch-schema/chx/meta/journal.json`\n- `/Users/marc/conductor/workspaces/rudel/miami/packages/ch-schema/chx/meta/snapshot.json`\n- `/Users/marc/conductor/workspaces/rudel/miami/packages/sql-schema/db/migrations/meta/0000_snapshot.json`\n- `/Users/marc/conductor/workspaces/rudel/miami/packages/sql-schema/db/migrations/meta/_journal.json`",
+   "retrigger CI",
+   "Commit and push all changes"
+  ],
+  "pushback": [
+   "lets change the namespace from `@repo` to `@gazed` and potentially even call the CLi just `gazed`  (for now)",
+   "wait why is the path \"/compound\" should it not be `/uploadSession`?",
+   "should we not do even both? to align prod with test?",
+   "i dont like this. can we not start the webserver with wrangler locally, which will spin up a in memory d1.",
+   "no actually also address that gap",
+   "can we name the d1 database please rudel instead of tripoli-auth",
+   "the domains will probably be the normal worker domain for the `rudel` app and also rudel.ai\nplease generate the auth secret as well as the other env variables and push them to doppler",
+   "maybe extract that hint into its own component to have it out of the OverviewPage,",
+   "this seems to be a flaky situation. Can we somehow rewrite the test? I generlaly dont like mocks. can we build a e2e test around the same functionality that does not mock things?\nwhat would it need to do it?",
+   "lets just delete the test. this is better-auth type base functionality and should be stable.",
+   "i saw that we are mapping this in ci.yml\n```\n DATABASE_URL: ${{ secrets.PG_CONNECTION_STRING }}\n```\n\ni dont like this patter. I want to always map environment variables to their same name, otherwise its a possible issue. please align all the env variables for the postgres to `PG_CONNECTION_STRING`",
+   "ah no the redaction is actually terrible css, its the same color of background and text. can we use proper shadcn components with proper theming to get a nice UI in the timeline"
+  ],
+  "question": [
+   "how does the release flow work? since it did not seem to have published it to npm or did it?",
+   "wher eis the current plan stored?",
+   "oh what was the plan for the session date then? regarding the date extraction",
+   "### 11. Documentation\n\n- `/Users/marc/conductor/workspaces/rudel/miami/CLAUDE.md`\n- `/Users/marc/conductor/workspaces/rudel/miami/docs/self-hosting.md`",
+   "which port is the frontend rnuning on?",
+   "why did CI call verify?"
+  ],
+  "refine_redirect": [
+   "run bun  lint and fix the lint error. then fix the title of the PR (check the rules in the pr-creation skill). if the PR-creation skill has nothign about the names, check the name validating CI action and extend the pr creation skill with the proper naming rules",
+   "update the @.claude/skills/api-testing/SKILL.md to know where the logs are for the api, so it can debug better. its based on the .env var content."
+  ],
+  "interrupt": [
+   "yes"
+  ]
+ },
+ "length_median": {
+  "new_work": 13,
+  "bug_report": 10,
+  "approve_proceed": 6,
+  "pushback": 21,
+  "question": 7,
+  "refine_redirect": 36,
+  "interrupt": 1
+ }
 }

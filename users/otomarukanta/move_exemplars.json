@@ -1,12 +1,18 @@
 {
- "pushback": [
-  "開くべきURLをコンソールに表示するようにして",
-  "stateを利用して、pollingでトークンを取得しにいく方針にしたい。",
-  "権限が足りなくて取得できていなさそう。extract_messagesでやっているように、足りていない権限があればエラーを出すようにしたい。"
- ],
- "bug_report": [
-  "redirect_uri did not match any configured URIs. Passed URI: http://localhost:9876\nというエラーがSlack側で出た",
-  "redirect_uri did not match any configured URIs. Passed URI: http://localhost:9876\n同じエラーのままです。Redirect URLsにhttpsが登録できないからでは？",
-  "Error: failed to read from TLS stream: received fatal alert: CertificateUnknown で失敗した"
- ]
+ "exemplars": {
+  "pushback": [
+   "開くべきURLをコンソールに表示するようにして",
+   "stateを利用して、pollingでトークンを取得しにいく方針にしたい。",
+   "権限が足りなくて取得できていなさそう。extract_messagesでやっているように、足りていない権限があればエラーを出すようにしたい。"
+  ],
+  "bug_report": [
+   "redirect_uri did not match any configured URIs. Passed URI: http://localhost:9876\nというエラーがSlack側で出た",
+   "redirect_uri did not match any configured URIs. Passed URI: http://localhost:9876\n同じエラーのままです。Redirect URLsにhttpsが登録できないからでは？",
+   "Error: failed to read from TLS stream: received fatal alert: CertificateUnknown で失敗した"
+  ]
+ },
+ "length_median": {
+  "pushback": 1,
+  "bug_report": 12
+ }
 }

@@ -1,61 +1,71 @@
 {
- "new_work": [
-  "Update the home page so that it mentions that it's open source.",
-  "I've added the logos for claude, cursor and github copilot in @frontend/assets/agents/ . Update them in the \"Context\" tab of the report, and also when choosing the target ai coding agents in the remediation tab.",
-  "update changelog.md as well",
-  "Do you think you can also fetch claude code logo to display \"CLaude Code\" seciton",
-  "## Logo Note\n\nThe SVG is already available at `frontend/assets/packmind_logo_dark.svg`. We'll inline all SVG paths into the `PackmindLogo` component (no asset bundling needed). The logo aspect ratio is ~6.3:1, so using `h-6` (24px) to `h-8` (32px) renders it at 150–200px wide, which fits well in banners.",
-  "## Critical Files\n\n- `src/shared/file-system/docs-finder.ts` — add `isSkillsSubFile()` + 2 `continue` statements\n- `src/shared/file-system/docs-finder.test.ts` — add test cases"
- ],
- "bug_report": [
-  "I cannot re-run an \"Evaluate Impact\" on a remediation where I already run the \"Evaluate impact\" but removed the evaluation to restart it again \n[Image: image/png]",
-  "For a remediation I've selected both Cursor as agent and target rendering. After clicking on \"Execute Remediation\", the modals shows me \"copilot\". Investigate why and fix this bug\n[Image: image/png]\n[Image: image/png]",
-  "Looks like here, ai coding agents logo are not rendered correctly. \n[Image: image/png]",
-  "I still have weird display issues in the \"Remediate\" tab \n[Image: image/png]",
-  "Review your changes to find potential issues",
-  "In this url: http://localhost:3000/evaluation/6e47bfce-57ce-48b6-912e-334e37d721de?tab=summary&debug=true - i don't see the button. \n[Image: image/png]",
-  "It only logs score but it's not updated in DB",
-  "Are you sure? Chceck http://localhost:3000/evaluation/dd283666-3a94-43cd-8565-7dff030c01d1?tab=summary\n[Image: image/png]"
- ],
- "refine_redirect": [
-  "We should not display \"AGENTS.md\" for GitHub Copilot instructions, but instead \"Copilot instructions\"\n[Image: image/png]",
-  "In cloud mode we should not display in the remediation module the possibility to choose the running cli agent as we handle that. \n[Image: image/png]",
-  "Update @prompts/context-remediation/packmind-remediation-prompt.md so that claude rules can include globs like this : 'https://code.claude.com/docs/en/memory#glob-patterns'",
-  "## Critical File\n\n- `frontend/src/components/ContextTab.tsx` — only file to modify",
-  "## Critical Files\n\n| File | Change |\n|------|--------|\n| `frontend/src/components/RemediationHistoryCard.tsx` | Main change: new `UnifiedFilesSection` component, remove `CompactActionSummary` + `FileChangeCard` rendering |\n| `frontend/src/components/FileChangeCard.tsx` | No change (just remove import from above file) |\n| `frontend/src/components/DiffViewer.tsx` | No change (imported directly into new component) |"
- ],
- "approve_proceed": [
-  "commit and update changelog",
-  "commit",
-  "commit this",
-  "update changelog with a small sentence",
-  "commit this and update changelog",
-  "commi",
-  "commit and update changelog.md",
-  "continue",
-  "commit and update @CHANGELOG.md",
-  "clear",
-  "Great. Also, sort issues fixed by alphabtical order.\n[Image: image/png]",
-  "commit then"
- ],
- "pushback": [
-  "Mention that github also create \".github/instructions\" and \".github/skills\"",
-  "Mention also that that for AGENTS.md target, the skills should be in \".agent/skills\" directory",
-  "comit",
-  "When there is only file in the browser, it should be select by default.",
-  "I think we should be clearer on the text. We should have distinct sections for Claude Code, GitHub Copilot. So that for instance the Claude Code section lists three lines with ClaudeMD, Claude Rules and Claude Skills. And same concept for GitHub Copilot.\n[Image: image/png]",
-  "Can you ensure that somewhere in the process of error fixing, especially when we have both Agents.md and Claude.md files, both will be merged and we will respect the rules that Claude.md will refer the Agents.md file like it's normally included somewhere in the code.",
-  "Looks like here, ai coding agents logo are not rendered correctly. Cursor logo is @cursor-logo.svg",
-  "now we should highlight the \"Remediate\" feature in addition to existing features, and I think that in the UI, we must update 1) the welcome page to mention that 2) the \"How it works\" page to highlight this. Suggest ways to improve this.",
-  "Make these two button \"List / Tree\" more visible, on the left side, and maybe create a frame that encompass the whole content below ? \n[Image: image/png]",
-  "Claude Rule should appear as \"Claude Rule\", not just \"Rule\" \n[Image: image/png]",
-  "The packmind section should be visible when reaching the remediate tab: . And at anytime even after display/hiding elements in the page \n[Image: image/png]",
-  "Another agent worked on your files, he has finished, update your context and continue"
- ],
- "interrupt": [
-  "commit all your recent changes",
-  "commit\n[Image: image/png]",
-  "commit your changes",
-  "commit and hpush"
- ]
+ "exemplars": {
+  "new_work": [
+   "Update the home page so that it mentions that it's open source.",
+   "I've added the logos for claude, cursor and github copilot in @frontend/assets/agents/ . Update them in the \"Context\" tab of the report, and also when choosing the target ai coding agents in the remediation tab.",
+   "update changelog.md as well",
+   "Do you think you can also fetch claude code logo to display \"CLaude Code\" seciton",
+   "## Logo Note\n\nThe SVG is already available at `frontend/assets/packmind_logo_dark.svg`. We'll inline all SVG paths into the `PackmindLogo` component (no asset bundling needed). The logo aspect ratio is ~6.3:1, so using `h-6` (24px) to `h-8` (32px) renders it at 150–200px wide, which fits well in banners.",
+   "## Critical Files\n\n- `src/shared/file-system/docs-finder.ts` — add `isSkillsSubFile()` + 2 `continue` statements\n- `src/shared/file-system/docs-finder.test.ts` — add test cases"
+  ],
+  "bug_report": [
+   "I cannot re-run an \"Evaluate Impact\" on a remediation where I already run the \"Evaluate impact\" but removed the evaluation to restart it again \n[Image: image/png]",
+   "For a remediation I've selected both Cursor as agent and target rendering. After clicking on \"Execute Remediation\", the modals shows me \"copilot\". Investigate why and fix this bug\n[Image: image/png]\n[Image: image/png]",
+   "Looks like here, ai coding agents logo are not rendered correctly. \n[Image: image/png]",
+   "I still have weird display issues in the \"Remediate\" tab \n[Image: image/png]",
+   "Review your changes to find potential issues",
+   "In this url: http://localhost:3000/evaluation/6e47bfce-57ce-48b6-912e-334e37d721de?tab=summary&debug=true - i don't see the button. \n[Image: image/png]",
+   "It only logs score but it's not updated in DB",
+   "Are you sure? Chceck http://localhost:3000/evaluation/dd283666-3a94-43cd-8565-7dff030c01d1?tab=summary\n[Image: image/png]"
+  ],
+  "refine_redirect": [
+   "We should not display \"AGENTS.md\" for GitHub Copilot instructions, but instead \"Copilot instructions\"\n[Image: image/png]",
+   "In cloud mode we should not display in the remediation module the possibility to choose the running cli agent as we handle that. \n[Image: image/png]",
+   "Update @prompts/context-remediation/packmind-remediation-prompt.md so that claude rules can include globs like this : 'https://code.claude.com/docs/en/memory#glob-patterns'",
+   "## Critical File\n\n- `frontend/src/components/ContextTab.tsx` — only file to modify",
+   "## Critical Files\n\n| File | Change |\n|------|--------|\n| `frontend/src/components/RemediationHistoryCard.tsx` | Main change: new `UnifiedFilesSection` component, remove `CompactActionSummary` + `FileChangeCard` rendering |\n| `frontend/src/components/FileChangeCard.tsx` | No change (just remove import from above file) |\n| `frontend/src/components/DiffViewer.tsx` | No change (imported directly into new component) |"
+  ],
+  "approve_proceed": [
+   "commit and update changelog",
+   "commit",
+   "commit this",
+   "update changelog with a small sentence",
+   "commit this and update changelog",
+   "commi",
+   "commit and update changelog.md",
+   "continue",
+   "commit and update @CHANGELOG.md",
+   "clear",
+   "Great. Also, sort issues fixed by alphabtical order.\n[Image: image/png]",
+   "commit then"
+  ],
+  "pushback": [
+   "Mention that github also create \".github/instructions\" and \".github/skills\"",
+   "Mention also that that for AGENTS.md target, the skills should be in \".agent/skills\" directory",
+   "comit",
+   "When there is only file in the browser, it should be select by default.",
+   "I think we should be clearer on the text. We should have distinct sections for Claude Code, GitHub Copilot. So that for instance the Claude Code section lists three lines with ClaudeMD, Claude Rules and Claude Skills. And same concept for GitHub Copilot.\n[Image: image/png]",
+   "Can you ensure that somewhere in the process of error fixing, especially when we have both Agents.md and Claude.md files, both will be merged and we will respect the rules that Claude.md will refer the Agents.md file like it's normally included somewhere in the code.",
+   "Looks like here, ai coding agents logo are not rendered correctly. Cursor logo is @cursor-logo.svg",
+   "now we should highlight the \"Remediate\" feature in addition to existing features, and I think that in the UI, we must update 1) the welcome page to mention that 2) the \"How it works\" page to highlight this. Suggest ways to improve this.",
+   "Make these two button \"List / Tree\" more visible, on the left side, and maybe create a frame that encompass the whole content below ? \n[Image: image/png]",
+   "Claude Rule should appear as \"Claude Rule\", not just \"Rule\" \n[Image: image/png]",
+   "The packmind section should be visible when reaching the remediate tab: . And at anytime even after display/hiding elements in the page \n[Image: image/png]",
+   "Another agent worked on your files, he has finished, update your context and continue"
+  ],
+  "interrupt": [
+   "commit all your recent changes",
+   "commit\n[Image: image/png]",
+   "commit your changes",
+   "commit and hpush"
+  ]
+ },
+ "length_median": {
+  "new_work": 16,
+  "bug_report": 12,
+  "refine_redirect": 15,
+  "approve_proceed": 1,
+  "pushback": 15,
+  "interrupt": 1
+ }
 }

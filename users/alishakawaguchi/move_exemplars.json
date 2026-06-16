@@ -1,50 +1,61 @@
 {
- "new_work": [
-  "update main.go to have two players roll dice and then print out winner",
-  "in @.github/workflows/e2e.yml add factoryai droid to           E2E_CONCURRENT_TEST_LIMIT: ${{ matrix.agent == 'gemini-cli' && '6' || '' }}",
-  "how hard to setup e2e test for droid",
-  "give steps for setting this up in slack / github",
-  "how to run specific test TestE2E_BasicWorkflow"
- ],
- "approve_proceed": [
-  "claude --resume \"fix-e2e-triage-github-summary\"",
-  "create pr",
-  "<bash-input>pwd</bash-input>",
-  "<bash-stdout>/Users/alisha/Projects/wt/factoryai-agent</bash-stdout><bash-stderr></bash-stderr>",
-  "<bash-input> git st</bash-input>",
-  "<bash-stdout>On branch alisha/factoryai-agent\nChanges not staged for commit:\n  (use \"git add <file>...\" to update what will be committed)\n  (use \"git restore <file>...\" to discard changes in working directory)\n\tmodified:   cmd/entire/main.go\n\nno changes added to commit (use \"git add\" and/or \"git commit -a\")</bash-stdout><bash-stderr></bash-stderr>",
-  "commit and push",
-  "yes",
-  "commit",
-  "push",
-  "<bash-input>git st</bash-input>",
-  "[Image: source: /var/folders/5g/w6qvhr890pxfz9sg1l0d5c0r0000gn/T/TemporaryItems/NSIRD_screencaptureui_uw7g88/Screenshot 2026-02-25 at 4.19.53 PM.png]"
- ],
- "refine_redirect": [
-  "agent-integration plugin not quite right. the commands should point to the skill md file instead of duplicating logic"
- ],
- "question": [
-  "explain difference between @cmd/entire/cli/e2e_test/ and @cmd/entire/cli/integration_test/",
-  "is IsPaneDead necessary / valuable?"
- ],
- "bug_report": [
-  "the droid interactive mode settings.json file is missing the custom model and autonomyMode = high",
-  "golangci-lint run\ncmd/entire/cli/agent/factoryaidroid/factoryaidroid.go:1: : # github.com/entireio/cli/cmd/entire/cli/agent/factoryaidroid [github.com/entireio/cli/cmd/entire/cli/agent/factoryaidroid.test]\ncmd/entire/cli/agent/factoryaidroid/factoryaidroid.go:41:44: undefined: agent.AgentName\ncmd/entire/cli/agent/factoryaidroid/factoryaidroid.go:44:44: undefined: agent.AgentType (typecheck)\n// Package factoryaidroid implements the Agent interface for Factory AI Droid.\n1 issues:\n* typecheck: 1",
-  "I don't see ability to run it\n[Image: image/png]",
-  "ran it and it failed please debug and fix https://github.com/entireio/cli/actions/runs/23354978743"
- ],
- "pushback": [
-  "update E2E_CONCURRENT_TEST_LIMIT for droid to be 3",
-  "for now can we allow running on my branch for testing",
-  "no thats not what I wanted. I didn't want it to auto trigger. I want a button and drop down that lets me run it against any E2E run that I want",
-  "no allow the drop down on my branch",
-  "why can't it exist on my branch?",
-  "2",
-  "don't use dangerously skip. list exact permissions allowed be very strict",
-  "even those seem too permissive. make more explicit",
-  "the droid interactive mode settings.json file in e2e tests is missing the custom model and autonomyMode = high",
-  "I don't like the names of the md files in the agent-integration skill",
-  "prob is really an agent / entire evaluator. e2e test is a test writer and implement-prompt is really an agent implementer. need better names",
-  "run glangci-lint and fix any errors"
- ]
+ "exemplars": {
+  "new_work": [
+   "update main.go to have two players roll dice and then print out winner",
+   "in @.github/workflows/e2e.yml add factoryai droid to           E2E_CONCURRENT_TEST_LIMIT: ${{ matrix.agent == 'gemini-cli' && '6' || '' }}",
+   "how hard to setup e2e test for droid",
+   "give steps for setting this up in slack / github",
+   "how to run specific test TestE2E_BasicWorkflow"
+  ],
+  "approve_proceed": [
+   "claude --resume \"fix-e2e-triage-github-summary\"",
+   "create pr",
+   "<bash-input>pwd</bash-input>",
+   "<bash-stdout>/Users/alisha/Projects/wt/factoryai-agent</bash-stdout><bash-stderr></bash-stderr>",
+   "<bash-input> git st</bash-input>",
+   "<bash-stdout>On branch alisha/factoryai-agent\nChanges not staged for commit:\n  (use \"git add <file>...\" to update what will be committed)\n  (use \"git restore <file>...\" to discard changes in working directory)\n\tmodified:   cmd/entire/main.go\n\nno changes added to commit (use \"git add\" and/or \"git commit -a\")</bash-stdout><bash-stderr></bash-stderr>",
+   "commit and push",
+   "yes",
+   "commit",
+   "push",
+   "<bash-input>git st</bash-input>",
+   "[Image: source: /var/folders/5g/w6qvhr890pxfz9sg1l0d5c0r0000gn/T/TemporaryItems/NSIRD_screencaptureui_uw7g88/Screenshot 2026-02-25 at 4.19.53 PM.png]"
+  ],
+  "refine_redirect": [
+   "agent-integration plugin not quite right. the commands should point to the skill md file instead of duplicating logic"
+  ],
+  "question": [
+   "explain difference between @cmd/entire/cli/e2e_test/ and @cmd/entire/cli/integration_test/",
+   "is IsPaneDead necessary / valuable?"
+  ],
+  "bug_report": [
+   "the droid interactive mode settings.json file is missing the custom model and autonomyMode = high",
+   "golangci-lint run\ncmd/entire/cli/agent/factoryaidroid/factoryaidroid.go:1: : # github.com/entireio/cli/cmd/entire/cli/agent/factoryaidroid [github.com/entireio/cli/cmd/entire/cli/agent/factoryaidroid.test]\ncmd/entire/cli/agent/factoryaidroid/factoryaidroid.go:41:44: undefined: agent.AgentName\ncmd/entire/cli/agent/factoryaidroid/factoryaidroid.go:44:44: undefined: agent.AgentType (typecheck)\n// Package factoryaidroid implements the Agent interface for Factory AI Droid.\n1 issues:\n* typecheck: 1",
+   "I don't see ability to run it\n[Image: image/png]",
+   "ran it and it failed please debug and fix https://github.com/entireio/cli/actions/runs/23354978743"
+  ],
+  "pushback": [
+   "update E2E_CONCURRENT_TEST_LIMIT for droid to be 3",
+   "for now can we allow running on my branch for testing",
+   "no thats not what I wanted. I didn't want it to auto trigger. I want a button and drop down that lets me run it against any E2E run that I want",
+   "no allow the drop down on my branch",
+   "why can't it exist on my branch?",
+   "2",
+   "don't use dangerously skip. list exact permissions allowed be very strict",
+   "even those seem too permissive. make more explicit",
+   "the droid interactive mode settings.json file in e2e tests is missing the custom model and autonomyMode = high",
+   "I don't like the names of the md files in the agent-integration skill",
+   "prob is really an agent / entire evaluator. e2e test is a test writer and implement-prompt is really an agent implementer. need better names",
+   "run glangci-lint and fix any errors"
+  ]
+ },
+ "length_median": {
+  "new_work": 10,
+  "approve_proceed": 2,
+  "refine_redirect": 18,
+  "question": 5,
+  "bug_report": 10,
+  "interrupt": 3,
+  "pushback": 11
+ }
 }

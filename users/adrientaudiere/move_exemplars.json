@@ -1,42 +1,51 @@
 {
- "approve_proceed": [
-  "entire status",
-  "No, I did",
-  "Yes !",
-  "yes",
-  "Yes, tackle the suggestion with clearly mechanical and safe ones."
- ],
- "bug_report": [
-  "The function MiscMetabar::cutadapt_remove_primers is to verbose, even when surrounding by suppressMessages(invisible(capture.output(...)))",
-  "Error in `geom_text()`:\n! Problem while computing aesthetics.\nℹ Error occurred in the 6th layer.\nCaused by error:\n! objet '.stack_order' introuvable",
-  "With huge abundance (e.g. if log10trans=F) the text of abundance overlap the bar.",
-  "When I push i obtainde the following error : .git/hooks/commit-msg: 4: entire: not found",
-  "When I commit \" git commit -m 'Improve test' \" i obtainde the following error : .git/hooks/commit-msg: 4: entire: not found"
- ],
- "new_work": [
-  "r-build",
-  "I want to improve my codefactor result https://www.codefactor.io/repository/github/adrientaudiere/miscmetabar/overview/master . I want to add a way to verify codefactor result in my claude command `r-build`. After change I want you test the package and a summary of the change. Note that I want to supress the \"return_linter\" rules.",
-  "I want to add a new test package to test for function that use \"fact\" param in the case of physeq object with only one sample",
-  "I want to add a new parameter (logical, default FALSE) to biplot_pq. If true, each bar part (ie each sample sum total for the given taxa) is delimited by vertical bars. So using contour color (default white) of bar, I want to see the distribution of the number of sequences across samples using staked bar.",
-  "add usage bar to statusline",
-  "I want the code you use to test for this new feature",
-  "I want an example with taxa exclusive to the first bar get left-side labels (extra layers)"
- ],
- "refine_redirect": [
-  "lint the package"
- ],
- "pushback": [
-  "only add @importFrom grDevices convertColor and @importFrom stats dist to\n  the reorder_colors roxygen block.",
-  "commit this",
-  "all the changes",
-  "in tax_bar_pq with option fact = \"a_factor_for_exemple_TIME\" label_taxa=TRUE and add_ribbon = TRUE, if there is taxa that are present in other level(s) than the last level, we can't see the value. Please add a way to label taxa that are not present in other level than the last one.",
-  "Ok still improving the tax_bar_pq. If their is taxonomic level(s) that are absent of both the right and the left side of the plot, add a warning that conseil to don't use label_taxa = TRUE",
-  "For the note 2 how to avoid the creation of Rplots.pdf when running exemple",
-  "Yes please add",
-  "Please help reduce the lint issues",
-  "In the case of a factor with only one level (for exemple if there is only one samples), I want that the functions work. So lets create the test file in a new testthat file and after we will improve the code to pass the test (sort of test-driven development).",
-  "There is two problems. First we want that the order of samples to be sorted so the samples with low sequences be placed close to the 0 vertical line. Second, when log10trans=T, teh use fo split_by_sample=TRUE change the global aspect of the figure.",
-  "For log10 consistency, try another approch, compute the segment heights and then segment using non-log10 transformed proportion.",
-  "ok just modify the direction of the ordernig of samples."
- ]
+ "exemplars": {
+  "approve_proceed": [
+   "entire status",
+   "No, I did",
+   "Yes !",
+   "yes",
+   "Yes, tackle the suggestion with clearly mechanical and safe ones."
+  ],
+  "bug_report": [
+   "The function MiscMetabar::cutadapt_remove_primers is to verbose, even when surrounding by suppressMessages(invisible(capture.output(...)))",
+   "Error in `geom_text()`:\n! Problem while computing aesthetics.\nℹ Error occurred in the 6th layer.\nCaused by error:\n! objet '.stack_order' introuvable",
+   "With huge abundance (e.g. if log10trans=F) the text of abundance overlap the bar.",
+   "When I push i obtainde the following error : .git/hooks/commit-msg: 4: entire: not found",
+   "When I commit \" git commit -m 'Improve test' \" i obtainde the following error : .git/hooks/commit-msg: 4: entire: not found"
+  ],
+  "new_work": [
+   "r-build",
+   "I want to improve my codefactor result https://www.codefactor.io/repository/github/adrientaudiere/miscmetabar/overview/master . I want to add a way to verify codefactor result in my claude command `r-build`. After change I want you test the package and a summary of the change. Note that I want to supress the \"return_linter\" rules.",
+   "I want to add a new test package to test for function that use \"fact\" param in the case of physeq object with only one sample",
+   "I want to add a new parameter (logical, default FALSE) to biplot_pq. If true, each bar part (ie each sample sum total for the given taxa) is delimited by vertical bars. So using contour color (default white) of bar, I want to see the distribution of the number of sequences across samples using staked bar.",
+   "add usage bar to statusline",
+   "I want the code you use to test for this new feature",
+   "I want an example with taxa exclusive to the first bar get left-side labels (extra layers)"
+  ],
+  "refine_redirect": [
+   "lint the package"
+  ],
+  "pushback": [
+   "only add @importFrom grDevices convertColor and @importFrom stats dist to\n  the reorder_colors roxygen block.",
+   "commit this",
+   "all the changes",
+   "in tax_bar_pq with option fact = \"a_factor_for_exemple_TIME\" label_taxa=TRUE and add_ribbon = TRUE, if there is taxa that are present in other level(s) than the last level, we can't see the value. Please add a way to label taxa that are not present in other level than the last one.",
+   "Ok still improving the tax_bar_pq. If their is taxonomic level(s) that are absent of both the right and the left side of the plot, add a warning that conseil to don't use label_taxa = TRUE",
+   "For the note 2 how to avoid the creation of Rplots.pdf when running exemple",
+   "Yes please add",
+   "Please help reduce the lint issues",
+   "In the case of a factor with only one level (for exemple if there is only one samples), I want that the functions work. So lets create the test file in a new testthat file and after we will improve the code to pass the test (sort of test-driven development).",
+   "There is two problems. First we want that the order of samples to be sorted so the samples with low sequences be placed close to the 0 vertical line. Second, when log10trans=T, teh use fo split_by_sample=TRUE change the global aspect of the figure.",
+   "For log10 consistency, try another approch, compute the segment heights and then segment using non-log10 transformed proportion.",
+   "ok just modify the direction of the ordernig of samples."
+  ]
+ },
+ "length_median": {
+  "approve_proceed": 1,
+  "bug_report": 14,
+  "new_work": 16,
+  "refine_redirect": 3,
+  "pushback": 14
+ }
 }

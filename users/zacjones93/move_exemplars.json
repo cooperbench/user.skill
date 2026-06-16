@@ -1,60 +1,70 @@
 {
- "bug_report": [
-  "fix the typecheck fail in ci",
-  "is there something I have to do to get cloudflare workflows to function properly in development? I'm testing stripe and registration is handled through workflows",
-  "pretty sure the submission page is saying a submission is reviewed when it is not",
-  "I don't see any ui for selecting major or minor penalty..",
-  "yeah I made a registration and didn't see any logs come through",
-  "I told you, there are no logs",
-  "why dont I see it in compete-hero?",
-  "please figure out why the shader isn't rendering.....",
-  "dev server is already running dummy"
- ],
- "approve_proceed": [
-  "pull the pr comments and address them if needed, please ignore the one about authing the transfer page. we intentially set it as unauthed, we want unauthed users to be able to view it and accept and are fine with protection by obscurity",
-  "pull origin main and resolve conflicts",
-  "pull pull request comments and address any that make sense",
-  "please pull pr comments and address any relevant ones",
-  "commit and push",
-  "commit and push then",
-  "push the changes",
-  "commit the tests",
-  "continue",
-  "I just authed",
-  "please commit",
-  "pull down changes and resolve conflicts"
- ],
- "new_work": [
-  "use the test skill and test the changes made in this branch",
-  "lets add a little icon for major and minor penalties applied on the public leaderboard when you click/press on it it shows the penalty details. if it's just directly modified we can display that",
-  "I want a new column for 'status' that is empty if not pending invite or removed. you can put team invite status here as well \n[Image: image/png]",
-  "this page needs to have a dropdown in the cornder to select the different divisions that an athlete is registered for http://localhost:REDACTED",
-  "please add tests with the test skill",
-  "yes backfill"
- ],
- "question": [
-  "this url just looks like the workout edit page on a competition... http://localhost:REDACTED",
-  "what database changes do we need for this adr?",
-  "<task-notification>\n<task-id>bd9cb30</task-id>\n<output-file>REDACTED.output</output-file>\n<status>completed</status>\n<summary>Background command \"List live mode charges\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: REDACTED.output"
- ],
- "pushback": [
-  "Date comparison after serialization (transfer/$transferId.tsx:161) — Wrapped transfer.expiresAt in new Date() to handle\n  string→Date comparison correctly after server serialization. this should respect timezone...",
-  "create a new branch off of main and add link icon that when clicked will copy the transfer registration page to the clipboard for the organizer to hand out if they need to\n[Image: image/png]",
-  "pull comments add address and commit",
-  "I think we should have the same icon applied for all score modifications to reduce visual noise. they all essentially mean the same thing",
-  "no make it the alert for all",
-  "the table column is being truncated unnecisarily",
-  "commit your changes, leave db/index.ts alone",
-  "use the planet scale mcp to make updates, make sure its the dev branch",
-  "http://localhost:REDACTED this review page doesn't actually exist. look at the github pr description and fix this.",
-  "can you use the planetscale mcp to push the change?",
-  "yes, will this result in data loss?",
-  "lets just not handle re-registration right now. if a team is removed then they are not allowed to re-register and that's fine as a constraint"
- ],
- "interrupt": [
-  "commit your work, ignore the db/index.ts",
-  "commit code you changed",
-  "alright commit and push this branch and open up a pr so the adr can get a review",
-  "commit"
- ]
+ "exemplars": {
+  "bug_report": [
+   "fix the typecheck fail in ci",
+   "is there something I have to do to get cloudflare workflows to function properly in development? I'm testing stripe and registration is handled through workflows",
+   "pretty sure the submission page is saying a submission is reviewed when it is not",
+   "I don't see any ui for selecting major or minor penalty..",
+   "yeah I made a registration and didn't see any logs come through",
+   "I told you, there are no logs",
+   "why dont I see it in compete-hero?",
+   "please figure out why the shader isn't rendering.....",
+   "dev server is already running dummy"
+  ],
+  "approve_proceed": [
+   "pull the pr comments and address them if needed, please ignore the one about authing the transfer page. we intentially set it as unauthed, we want unauthed users to be able to view it and accept and are fine with protection by obscurity",
+   "pull origin main and resolve conflicts",
+   "pull pull request comments and address any that make sense",
+   "please pull pr comments and address any relevant ones",
+   "commit and push",
+   "commit and push then",
+   "push the changes",
+   "commit the tests",
+   "continue",
+   "I just authed",
+   "please commit",
+   "pull down changes and resolve conflicts"
+  ],
+  "new_work": [
+   "use the test skill and test the changes made in this branch",
+   "lets add a little icon for major and minor penalties applied on the public leaderboard when you click/press on it it shows the penalty details. if it's just directly modified we can display that",
+   "I want a new column for 'status' that is empty if not pending invite or removed. you can put team invite status here as well \n[Image: image/png]",
+   "this page needs to have a dropdown in the cornder to select the different divisions that an athlete is registered for http://localhost:REDACTED",
+   "please add tests with the test skill",
+   "yes backfill"
+  ],
+  "question": [
+   "this url just looks like the workout edit page on a competition... http://localhost:REDACTED",
+   "what database changes do we need for this adr?",
+   "<task-notification>\n<task-id>bd9cb30</task-id>\n<output-file>REDACTED.output</output-file>\n<status>completed</status>\n<summary>Background command \"List live mode charges\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: REDACTED.output"
+  ],
+  "pushback": [
+   "Date comparison after serialization (transfer/$transferId.tsx:161) — Wrapped transfer.expiresAt in new Date() to handle\n  string→Date comparison correctly after server serialization. this should respect timezone...",
+   "create a new branch off of main and add link icon that when clicked will copy the transfer registration page to the clipboard for the organizer to hand out if they need to\n[Image: image/png]",
+   "pull comments add address and commit",
+   "I think we should have the same icon applied for all score modifications to reduce visual noise. they all essentially mean the same thing",
+   "no make it the alert for all",
+   "the table column is being truncated unnecisarily",
+   "commit your changes, leave db/index.ts alone",
+   "use the planet scale mcp to make updates, make sure its the dev branch",
+   "http://localhost:REDACTED this review page doesn't actually exist. look at the github pr description and fix this.",
+   "can you use the planetscale mcp to push the change?",
+   "yes, will this result in data loss?",
+   "lets just not handle re-registration right now. if a team is removed then they are not allowed to re-register and that's fine as a constraint"
+  ],
+  "interrupt": [
+   "commit your work, ignore the db/index.ts",
+   "commit code you changed",
+   "alright commit and push this branch and open up a pr so the adr can get a review",
+   "commit"
+  ]
+ },
+ "length_median": {
+  "bug_report": 9,
+  "approve_proceed": 3,
+  "new_work": 17,
+  "question": 13,
+  "pushback": 15,
+  "interrupt": 5
+ }
 }

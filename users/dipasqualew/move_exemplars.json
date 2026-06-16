@@ -1,26 +1,35 @@
 {
- "question": [
-  "have a look at the unresolved comments in https://github.com/dipasqualew/vibereq/pull/2"
- ],
- "bug_report": [
-  "I think the plugin vibereq is missing the plugin.json manifest file, catch up on Claude Code plugins / marketplaces, see what is missing. Fact - Install is not working",
-  "Yeah fix",
-  "$ python3 plugins/vibereq/scripts/run-review.py \"code-review\"\nRunning reviewer 'code-review' for PR #1...\nCould not extract JSON from reviewer output\nOutput:\n\nI think it is not waiting for something?",
-  "$ claude -p /code-review ci --output-format json\n{\"type\":\"result\",\"subtype\":\"success\",\"is_error\":false,\"duration_ms\":224,\"duration_api_ms\":0,\"num_turns\":5,\"result\":\"\",\"stop_reason\":null,\"session_id\":\"be73bc48-9d42-4323-a82c-91ccabfe25d3\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\"modelUsage\":{},\"permission_denials\":[],\"uuid\":\"82750b9f-84d7-4723-a3a8-6938eee1000b\"}"
- ],
- "refine_redirect": [
-  "I'd like to update `vibx review` to have a more clean experience.\n\n1. Don't use a single general comment. Instead, start a review, add the diff comments to the review, then add the general comment to the main review comment\n2. Diff comments that are \"fulfilled\" (e.g. not warnings/violations) should be marked as resolved immediately"
- ],
- "pushback": [
-  "Can you update `vibx run-review` to be `vibx review` and also share the link the PR when done?",
-  "I think you need to use $CLAUDE_PLUGIN_ROOT",
-  "Cool. Create a default skill /code-reviewer in the skills, use the format in /create-reviewer (no need to ask me questions, you know the answers)",
-  "1. That works\n2. The skill should tease the user for those instructions, e.g. \"How do I spawn playwright? What is the website URL?\" etc\n3. Just the SKILL.md",
-  "I think the approach you are taking is wrong - Can't we !`echo $CLAUDE_PLUGIN_ROOT` in the meta skill to get the path of where the vibx plugin is so that the created skill can reference an absolute path to the python scripts in the plugin?",
-  "Feedback: All the initial questons come one by one, can we use the AskUserQuestions tool in one go for many questions?",
-  "Thanks. Can you go and fix:\n\n~/git/dipasqualew/vibe-writing/.claude/skills/code-review/SKILL.md"
- ],
- "new_work": [
-  "1. Yes the JSON Schema should be updated, feel free to do breaking changes\n2. Update the same comment for now\n3. No, the script is about producing the review, not about findings in the review\n4. Python for now as it requires no setup\n5. Yes, each section should have ## [reviewer-name]"
- ]
+ "exemplars": {
+  "question": [
+   "have a look at the unresolved comments in https://github.com/dipasqualew/vibereq/pull/2"
+  ],
+  "bug_report": [
+   "I think the plugin vibereq is missing the plugin.json manifest file, catch up on Claude Code plugins / marketplaces, see what is missing. Fact - Install is not working",
+   "Yeah fix",
+   "$ python3 plugins/vibereq/scripts/run-review.py \"code-review\"\nRunning reviewer 'code-review' for PR #1...\nCould not extract JSON from reviewer output\nOutput:\n\nI think it is not waiting for something?",
+   "$ claude -p /code-review ci --output-format json\n{\"type\":\"result\",\"subtype\":\"success\",\"is_error\":false,\"duration_ms\":224,\"duration_api_ms\":0,\"num_turns\":5,\"result\":\"\",\"stop_reason\":null,\"session_id\":\"be73bc48-9d42-4323-a82c-91ccabfe25d3\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\"modelUsage\":{},\"permission_denials\":[],\"uuid\":\"82750b9f-84d7-4723-a3a8-6938eee1000b\"}"
+  ],
+  "refine_redirect": [
+   "I'd like to update `vibx review` to have a more clean experience.\n\n1. Don't use a single general comment. Instead, start a review, add the diff comments to the review, then add the general comment to the main review comment\n2. Diff comments that are \"fulfilled\" (e.g. not warnings/violations) should be marked as resolved immediately"
+  ],
+  "pushback": [
+   "Can you update `vibx run-review` to be `vibx review` and also share the link the PR when done?",
+   "I think you need to use $CLAUDE_PLUGIN_ROOT",
+   "Cool. Create a default skill /code-reviewer in the skills, use the format in /create-reviewer (no need to ask me questions, you know the answers)",
+   "1. That works\n2. The skill should tease the user for those instructions, e.g. \"How do I spawn playwright? What is the website URL?\" etc\n3. Just the SKILL.md",
+   "I think the approach you are taking is wrong - Can't we !`echo $CLAUDE_PLUGIN_ROOT` in the meta skill to get the path of where the vibx plugin is so that the created skill can reference an absolute path to the python scripts in the plugin?",
+   "Feedback: All the initial questons come one by one, can we use the AskUserQuestions tool in one go for many questions?",
+   "Thanks. Can you go and fix:\n\n~/git/dipasqualew/vibe-writing/.claude/skills/code-review/SKILL.md"
+  ],
+  "new_work": [
+   "1. Yes the JSON Schema should be updated, feel free to do breaking changes\n2. Update the same comment for now\n3. No, the script is about producing the review, not about findings in the review\n4. Python for now as it requires no setup\n5. Yes, each section should have ## [reviewer-name]"
+  ]
+ },
+ "length_median": {
+  "question": 9,
+  "bug_report": 17,
+  "refine_redirect": 55,
+  "pushback": 22,
+  "new_work": 53
+ }
 }

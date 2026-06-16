@@ -1,42 +1,50 @@
 {
- "new_work": [
-  "update CLAUDE.md, add to it that avery change must be validated by linting, formating, type chaking, and also that agent must asses whether docs need to be updated for each change (and update docs if need be of course). Then, add an issue to document /workflow",
-  "Okay, create a new version of the plugin.",
-  "and yes, A) Engine method — graph.to_mermaid()",
-  "option 1. use /dev-loop:workflow to implement it",
-  "c) I want to be able to run claude -p and also codecs and also the Gemini coding tool, all three in headless mode.",
-  "I want that to be super lightweight. And at some point we might want to say, okay, we want to build a UI on top of that. But yeah, I want it to be super lightweight. So I'll probably to roll my own.",
-  "A\nI want to test our new feature by re-implementing the DelveLoop.py using the engine. But maybe we could call it DelveLoop2 and also I want to do all of that work using /dev-loop:dev-loop"
- ],
- "approve_proceed": [
-  "In the main branch, ignore dot cloud slash work trees, commit and push right away on main.",
-  "Create a git worktree for branch 'dev-loop/issue-11' using the superpowers:using-git-worktrees skill. Follow the skill exactly.\n\nAfter the worktree is created and verified, output EXACTLY this line as the very last line of your response:\nWORKTREE_PATH=<absolute path to the worktree>\n\nDo NOT use superpowers:finishing-a-development-branch — just create the worktree.",
-  "open an issue in GH",
-  "commit push chnages",
-  "ok",
-  "2",
-  "c",
-  "I would think Python native. I want something that is really simple for LLMs to generate. What do you think?",
-  "Also ask perplexity if anyone already built such a tool.",
-  "yes",
-  "good",
-  "1."
- ],
- "pushback": [
-  "oh also, we want to /simplify + /code-review:code-review + /security-review every big change",
-  "(and add that issues are managed in GH in CLAUDE.md)",
-  "actually CLAUDE.md should say that we want to use /brainstorming to write plans, then execute them with /workflow",
-  "then depending on complexity, we should use /simplify , /code-review:code-review /security-review as needed (and also all other potential steps, like uddating docs etc)",
-  "add it to CLAUDE.md",
-  "also, add to CLAUDE.md that whever we see things to improve, we should create an issue in GH for tracking",
-  "always use opus + max effort for brainstorming, not for everything!",
-  "In the cloud/worktrees directory, commit and push right away on main just for this small change.",
-  "Did you create a plan or what? \nI would like to actually implement this using the /dev-loop:dev-loop",
-  "are you going to use /dev-loop:workflow ?",
-  "I don't wanna run the dev loop script, I wanna run the workflow.",
-  "I would like to understand why. How do we choose the reasoning level and the model because my implementation steps actually use SYNET medium effort. Also, we don't seem to be using any OpenAI or Gemini models, which could be a good idea. So I want to understand a little bit more, like, yeah, how we choose those."
- ],
- "question": [
-  "btw, how can i make sure /brainstorming uses opus + max effort?"
- ]
+ "exemplars": {
+  "new_work": [
+   "update CLAUDE.md, add to it that avery change must be validated by linting, formating, type chaking, and also that agent must asses whether docs need to be updated for each change (and update docs if need be of course). Then, add an issue to document /workflow",
+   "Okay, create a new version of the plugin.",
+   "and yes, A) Engine method — graph.to_mermaid()",
+   "option 1. use /dev-loop:workflow to implement it",
+   "c) I want to be able to run claude -p and also codecs and also the Gemini coding tool, all three in headless mode.",
+   "I want that to be super lightweight. And at some point we might want to say, okay, we want to build a UI on top of that. But yeah, I want it to be super lightweight. So I'll probably to roll my own.",
+   "A\nI want to test our new feature by re-implementing the DelveLoop.py using the engine. But maybe we could call it DelveLoop2 and also I want to do all of that work using /dev-loop:dev-loop"
+  ],
+  "approve_proceed": [
+   "In the main branch, ignore dot cloud slash work trees, commit and push right away on main.",
+   "Create a git worktree for branch 'dev-loop/issue-11' using the superpowers:using-git-worktrees skill. Follow the skill exactly.\n\nAfter the worktree is created and verified, output EXACTLY this line as the very last line of your response:\nWORKTREE_PATH=<absolute path to the worktree>\n\nDo NOT use superpowers:finishing-a-development-branch — just create the worktree.",
+   "open an issue in GH",
+   "commit push chnages",
+   "ok",
+   "2",
+   "c",
+   "I would think Python native. I want something that is really simple for LLMs to generate. What do you think?",
+   "Also ask perplexity if anyone already built such a tool.",
+   "yes",
+   "good",
+   "1."
+  ],
+  "pushback": [
+   "oh also, we want to /simplify + /code-review:code-review + /security-review every big change",
+   "(and add that issues are managed in GH in CLAUDE.md)",
+   "actually CLAUDE.md should say that we want to use /brainstorming to write plans, then execute them with /workflow",
+   "then depending on complexity, we should use /simplify , /code-review:code-review /security-review as needed (and also all other potential steps, like uddating docs etc)",
+   "add it to CLAUDE.md",
+   "also, add to CLAUDE.md that whever we see things to improve, we should create an issue in GH for tracking",
+   "always use opus + max effort for brainstorming, not for everything!",
+   "In the cloud/worktrees directory, commit and push right away on main just for this small change.",
+   "Did you create a plan or what? \nI would like to actually implement this using the /dev-loop:dev-loop",
+   "are you going to use /dev-loop:workflow ?",
+   "I don't wanna run the dev loop script, I wanna run the workflow.",
+   "I would like to understand why. How do we choose the reasoning level and the model because my implementation steps actually use SYNET medium effort. Also, we don't seem to be using any OpenAI or Gemini models, which could be a good idea. So I want to understand a little bit more, like, yeah, how we choose those."
+  ],
+  "question": [
+   "btw, how can i make sure /brainstorming uses opus + max effort?"
+  ]
+ },
+ "length_median": {
+  "new_work": 24,
+  "approve_proceed": 1,
+  "pushback": 20,
+  "question": 12
+ }
 }

@@ -1,56 +1,65 @@
 {
- "question": [
-  "What is the difference between a mutex and a semaphore?",
-  "https://modelcontextprotocol.io/specification/draft/basic/authorization",
-  "how does it know which workspace to create it in  ?",
-  "what does `/nw:roadmap` do",
-  "what is \"shadow mode\"?",
-  "observation and task have source_session fields",
-  "out of curiosity, is \"POST /v1/messages\" the same request/response structure as openapi (the inudstry standard)?"
- ],
- "approve_proceed": [
-  "Continue from where you left off.",
-  "commit",
-  "commit and push",
-  "commit and then try and tune",
-  "commit fixes",
-  "\"Replaced per-test MSW instances with shared module-level server\" add this as learning to tests/AGENTS.md",
-  "Commit and push all changes",
-  "continue",
-  "CHAT_AGENT_MODEL=openai/gpt-4.1-mini and PM_AGENT_MODEL=openai/gpt-4.1-mini is used"
- ],
- "pushback": [
-  "we removed api keys in favor of ouath",
-  "what is the \"existing backend callback endpoint\" ?",
-  "shouldn't these go under its own \"needs resolution\" instead of \"awareness\"?",
-  "needs to support scrolling to a specific message:\n\neither\n- /chat/:id#message=<id>\n- /chat/:id?message=<id>",
-  "THE EMBEDDING ENV VARS ARE NO LONGER USED!!!!",
-  "i mean using https://mcpcat.io/guides/reference-other-files/ is that better ?",
-  "remove .skip from them, run the tests, and fix any errors",
-  "Option 3 with the gating from option 2",
-  "\"Only someone offering\n  Brain-as-a-service to others must share modifications\" this is what i want to avoid",
-  "but don't we need conversation-hash-resolver.ts for the agent session id ?",
-  "proceed with Release 1 scope",
-  "it should not depend on onboarding either"
- ],
- "new_work": [
-  "begin implementation",
-  "what about showing the tool-create_suggestion i nthe chat ui ?",
-  "implement plan",
-  "add seedProxyToken to @tests/acceptance/shared-fixtures.ts",
-  "add learning to AGENTS.md",
-  "plan implementation",
-  "add regression tests",
-  "any tests?",
-  "run smoke tests"
- ],
- "bug_report": [
-  "check the status of the agents. i dont think they're running...",
-  "when I go to tool registry page it fails with \"undefined is not an object (evaluating 'mcpServers.length')\"",
-  "the auth system i really flaky... not i get \"User not found\" again for jordan@acme-analytics.com. restarting the server helps",
-  "Stop hook feedback:\nPrompt hook condition was not met: MCP tools (Brain, Supermemory) not available in this context. Cannot log decisions, observations, or task progress without them.",
-  "gh runs are still failing",
-  "acceptance tests are still failing. check gh pr runs",
-  "entity detail panel for workspace doesnt show now in graph"
- ]
+ "exemplars": {
+  "question": [
+   "What is the difference between a mutex and a semaphore?",
+   "https://modelcontextprotocol.io/specification/draft/basic/authorization",
+   "how does it know which workspace to create it in  ?",
+   "what does `/nw:roadmap` do",
+   "what is \"shadow mode\"?",
+   "observation and task have source_session fields",
+   "out of curiosity, is \"POST /v1/messages\" the same request/response structure as openapi (the inudstry standard)?"
+  ],
+  "approve_proceed": [
+   "Continue from where you left off.",
+   "commit",
+   "commit and push",
+   "commit and then try and tune",
+   "commit fixes",
+   "\"Replaced per-test MSW instances with shared module-level server\" add this as learning to tests/AGENTS.md",
+   "Commit and push all changes",
+   "continue",
+   "CHAT_AGENT_MODEL=openai/gpt-4.1-mini and PM_AGENT_MODEL=openai/gpt-4.1-mini is used"
+  ],
+  "pushback": [
+   "we removed api keys in favor of ouath",
+   "what is the \"existing backend callback endpoint\" ?",
+   "shouldn't these go under its own \"needs resolution\" instead of \"awareness\"?",
+   "needs to support scrolling to a specific message:\n\neither\n- /chat/:id#message=<id>\n- /chat/:id?message=<id>",
+   "THE EMBEDDING ENV VARS ARE NO LONGER USED!!!!",
+   "i mean using https://mcpcat.io/guides/reference-other-files/ is that better ?",
+   "remove .skip from them, run the tests, and fix any errors",
+   "Option 3 with the gating from option 2",
+   "\"Only someone offering\n  Brain-as-a-service to others must share modifications\" this is what i want to avoid",
+   "but don't we need conversation-hash-resolver.ts for the agent session id ?",
+   "proceed with Release 1 scope",
+   "it should not depend on onboarding either"
+  ],
+  "new_work": [
+   "begin implementation",
+   "what about showing the tool-create_suggestion i nthe chat ui ?",
+   "implement plan",
+   "add seedProxyToken to @tests/acceptance/shared-fixtures.ts",
+   "add learning to AGENTS.md",
+   "plan implementation",
+   "add regression tests",
+   "any tests?",
+   "run smoke tests"
+  ],
+  "bug_report": [
+   "check the status of the agents. i dont think they're running...",
+   "when I go to tool registry page it fails with \"undefined is not an object (evaluating 'mcpServers.length')\"",
+   "the auth system i really flaky... not i get \"User not found\" again for jordan@acme-analytics.com. restarting the server helps",
+   "Stop hook feedback:\nPrompt hook condition was not met: MCP tools (Brain, Supermemory) not available in this context. Cannot log decisions, observations, or task progress without them.",
+   "gh runs are still failing",
+   "acceptance tests are still failing. check gh pr runs",
+   "entity detail panel for workspace doesnt show now in graph"
+  ]
+ },
+ "length_median": {
+  "question": 6,
+  "approve_proceed": 2,
+  "pushback": 9,
+  "new_work": 3,
+  "bug_report": 9
+ }
 }

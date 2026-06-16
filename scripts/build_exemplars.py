@@ -48,10 +48,14 @@ def build(slug):
     digest = json.loads((ROOT / "data" / "digests" / f"{slug}.json").read_text())
     buckets = {}
     seen = set()
+    lengths = {}  # move -> [word counts] over ALL (non-junk) messages of that move
 
     def add(move, text):
         t = clean(text)
-        if not t or t.lower() in seen:
+        if not t:
+            return
+        lengths.setdefault(move, []).append(len(t.split()))
+        if t.lower() in seen:
             return
         buckets.setdefault(move, [])
         if len(buckets[move]) < MAX_PER_MOVE:
@@ -70,8 +74,11 @@ def build(slug):
         mv = V._PB_MOVE.get(p.get("type"), "pushback")
         add(mv, p.get("user_replied"))
 
+    import statistics as _st
+    payload = {"exemplars": buckets,
+               "length_median": {m: int(_st.median(v)) for m, v in lengths.items() if v}}
     out = ROOT / "users" / slug / "move_exemplars.json"
-    out.write_text(json.dumps(buckets, indent=1, ensure_ascii=False))
+    out.write_text(json.dumps(payload, indent=1, ensure_ascii=False))
     return {m: len(v) for m, v in buckets.items()}
 
 

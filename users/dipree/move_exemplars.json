@@ -1,71 +1,82 @@
 {
- "bug_report": [
-  "After de-selecting e.g. Gemini CLI and seeing in git that the hooks got deleted (you can check in this repo) I still see it being selected on next \"entire enable\".",
-  "golangci-lint does fire a few times",
-  "Let's investigate first why every \"Stop\" now says \"  ⎿  Stop says: [Wingman] Reviewing your changes...    \" but I don't see anything in the logs?",
-  "Stop hook says   ⎿  Stop says: [Wingman] Reviewing your changes...  but I don't see anything in the logs, which means that nothing is actually getting reviewed. Check the timeline when the problem got introduced and fix it.",
-  "Things looking ok now. The one thing that still doesn't work. I'm closing this session and I'm expecting that the review is then addressed completely in a background job but that doesn't happen.",
-  "I built the binary again, started the CLI in entire-playground, then started Claude and seeing this: SessionStart:startup says:\n\n     Powered by Entire:\n       This conversation will be linked to your next commit.\n       Wingman is active: your changes will be automatically reviewed.\n but nothing is happening. Isn't it supposed to fire after 30s?",
-  "I don't see a REVIEW.md file being created even though the logs say so, they talk about auto-apply but nothing happens. Also nothing in my active claude session happens. Investigate",
-  "Look at the @.entire/REVIEW.md, check if it's valid feedback and resolve if necessary.",
-  "Clear the Review file. Then let's add some sort of log output to the wingman command for debuggin purposes. I would like to verfiy each step happening in the background. What would you propose? That said, it's currently not working.",
-  "Weird, it was there before and just when starting this session didn't appear."
- ],
- "approve_proceed": [
-  "Check the PR comments quickly and if there's anything valid in there.",
-  "https://github.com/entireio/cli/pull/190 address the PR feedback",
-  "Change the branch format from entire/trails to entire/trails/v1 to align with the concept of entire/checkpoints/v1",
-  "wingman.lock and wingman-state.json should be added to gitignore?",
-  "Is there still trail \"generation\" code in this branch from the auto generation that we removed?",
-  "Commit+push",
-  "commit an push",
-  "commit and push",
-  "commit this",
-  "I like that the prompt structure is documented.",
-  "Commit the changes",
-  "commit"
- ],
- "question": [
-  "Does Copilot in the PR review comments has any valid points? https://github.com/entireio/cli/pull/192",
-  "I don't see the \"Powered by Entire\" message anymore in this Claude session, is it enabled?",
-  "Ok, but what if there's a review available in the README.md under what conditions is it picked up?",
-  "After what time period or determination do we do the \"auto-apply\" then?",
-  "We don't further specify how the \"wingman_prompt.go\" is being constructed in the docs. It's the key point of doing this to leverage the context for the review.",
-  "I haven't seen a [wingman] notice in claude, only the prompt injection one. But that's what I meant, I want to see it in the agent for user awareness but no prompt, we have that already. It's more to indicate what's happening in the back.",
-  "<task-notification>\n<task-id>bc8a49f</task-id>\n<output-file>/private/tmp/claude-501/-Users-dip-Repositories-cli/tasks/bc8a49f.output</output-file>\n<status>completed</status>\n<summary>Background command \"Run integration tests\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-dip-Repositories-cli/tasks/bc8a49f.output",
-  "Does creating a trail also check it out automatically? (it should not).",
-  "What are the trail create parameters now?",
-  "How is the user determined for the Trail?",
-  "Double check whether there is any automated trails creation here."
- ],
- "new_work": [
-  "Let's add an additional note to this \"Powered by Entire: This conversation will be linked to your next commit.\" in case wingman is enabled.",
-  "\"entire enable\" should have an interactive step to select the agents supported. When running the commands subsequent times I would expect to see the interactive step again indicating which agents are already active and allow me to select/deselect.",
-  "Add a \"--local\" option for \"entire wingman enable\" which adds to the local settings.",
-  "Also, I would like to have a better indication that the review is in progress in the logs",
-  "Yes. Then document the entire scenario in /docs.",
-  "Are all tests passing?",
-  "Can we inject a warning message in the active session that the next prompt will trigger the review to be executed?"
- ],
- "pushback": [
-  "yes remove it",
-  "Ignore those. Now when there are no agents selected, crashing out with a hard error feels jarring when you're already in an interactive flow. The expected behavior for an interactive multi-select like this would be inline validation — don't let the user proceed, show a message like \"Please select at least one agent\", and keep the prompt open.",
-  "Update the documentation make sure there's no redundant parts in there, add a table for messaging and when they happen. Look at the PR review comments and see if there's anything valid in there. Adress them. Commit and push.",
-  "Yes, but for 2. we need to have a more robust solution to ensure it's definitely \"always\" addressed. What do you suggest? What if we don't wait for the user to send a prompt but pro-actively just trigger a new prompt? Don't wait 30s just send it?",
-  "Mh... the user makes a commit, that triggers the reviewer to look at things, which takes a while, then eventually, maybe, writes in the README.md only at this point we would --continue and that's long after the commit happened.",
-  "Ok, it seems to have worked. The main problem I have now is that it's all very \"invisible\" I was thinking that at least the part of resolving would be done by an active user session in the terminal, so they see what's going on.",
-  "Revert that. I don't want to open a new tab! I want to continue using the existing session.",
-  "Let's try again based on user interaction but, can we ensure that the Review comment is definitely done first?",
-  "push",
-  "Adress them but be careful not to screw over existing functionality.",
-  "I would like to have \"notifications\" into the agent when hooks fire. E.g. commit hook, I want the notification that the Reviewer is send to do its job. Then on stop hook I want a \"notification\" if a review is still \"pending\". Does that make sense?",
-  "Where the bugs already present before? Address the first two."
- ],
- "interrupt": [
-  "push it"
- ],
- "refine_redirect": [
-  "Run lint and fix the issues, then push.",
-  "A code review is available at `.entire/REVIEW.md`.\n\nRead `.entire/REVIEW.md` and address each suggestion you agree with. Be critical. When done, delete `.entire/REVIEW.md`."
- ]
+ "exemplars": {
+  "bug_report": [
+   "After de-selecting e.g. Gemini CLI and seeing in git that the hooks got deleted (you can check in this repo) I still see it being selected on next \"entire enable\".",
+   "golangci-lint does fire a few times",
+   "Let's investigate first why every \"Stop\" now says \"  ⎿  Stop says: [Wingman] Reviewing your changes...    \" but I don't see anything in the logs?",
+   "Stop hook says   ⎿  Stop says: [Wingman] Reviewing your changes...  but I don't see anything in the logs, which means that nothing is actually getting reviewed. Check the timeline when the problem got introduced and fix it.",
+   "Things looking ok now. The one thing that still doesn't work. I'm closing this session and I'm expecting that the review is then addressed completely in a background job but that doesn't happen.",
+   "I built the binary again, started the CLI in entire-playground, then started Claude and seeing this: SessionStart:startup says:\n\n     Powered by Entire:\n       This conversation will be linked to your next commit.\n       Wingman is active: your changes will be automatically reviewed.\n but nothing is happening. Isn't it supposed to fire after 30s?",
+   "I don't see a REVIEW.md file being created even though the logs say so, they talk about auto-apply but nothing happens. Also nothing in my active claude session happens. Investigate",
+   "Look at the @.entire/REVIEW.md, check if it's valid feedback and resolve if necessary.",
+   "Clear the Review file. Then let's add some sort of log output to the wingman command for debuggin purposes. I would like to verfiy each step happening in the background. What would you propose? That said, it's currently not working.",
+   "Weird, it was there before and just when starting this session didn't appear."
+  ],
+  "approve_proceed": [
+   "Check the PR comments quickly and if there's anything valid in there.",
+   "https://github.com/entireio/cli/pull/190 address the PR feedback",
+   "Change the branch format from entire/trails to entire/trails/v1 to align with the concept of entire/checkpoints/v1",
+   "wingman.lock and wingman-state.json should be added to gitignore?",
+   "Is there still trail \"generation\" code in this branch from the auto generation that we removed?",
+   "Commit+push",
+   "commit an push",
+   "commit and push",
+   "commit this",
+   "I like that the prompt structure is documented.",
+   "Commit the changes",
+   "commit"
+  ],
+  "question": [
+   "Does Copilot in the PR review comments has any valid points? https://github.com/entireio/cli/pull/192",
+   "I don't see the \"Powered by Entire\" message anymore in this Claude session, is it enabled?",
+   "Ok, but what if there's a review available in the README.md under what conditions is it picked up?",
+   "After what time period or determination do we do the \"auto-apply\" then?",
+   "We don't further specify how the \"wingman_prompt.go\" is being constructed in the docs. It's the key point of doing this to leverage the context for the review.",
+   "I haven't seen a [wingman] notice in claude, only the prompt injection one. But that's what I meant, I want to see it in the agent for user awareness but no prompt, we have that already. It's more to indicate what's happening in the back.",
+   "<task-notification>\n<task-id>bc8a49f</task-id>\n<output-file>/private/tmp/claude-501/-Users-dip-Repositories-cli/tasks/bc8a49f.output</output-file>\n<status>completed</status>\n<summary>Background command \"Run integration tests\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-dip-Repositories-cli/tasks/bc8a49f.output",
+   "Does creating a trail also check it out automatically? (it should not).",
+   "What are the trail create parameters now?",
+   "How is the user determined for the Trail?",
+   "Double check whether there is any automated trails creation here."
+  ],
+  "new_work": [
+   "Let's add an additional note to this \"Powered by Entire: This conversation will be linked to your next commit.\" in case wingman is enabled.",
+   "\"entire enable\" should have an interactive step to select the agents supported. When running the commands subsequent times I would expect to see the interactive step again indicating which agents are already active and allow me to select/deselect.",
+   "Add a \"--local\" option for \"entire wingman enable\" which adds to the local settings.",
+   "Also, I would like to have a better indication that the review is in progress in the logs",
+   "Yes. Then document the entire scenario in /docs.",
+   "Are all tests passing?",
+   "Can we inject a warning message in the active session that the next prompt will trigger the review to be executed?"
+  ],
+  "pushback": [
+   "yes remove it",
+   "Ignore those. Now when there are no agents selected, crashing out with a hard error feels jarring when you're already in an interactive flow. The expected behavior for an interactive multi-select like this would be inline validation — don't let the user proceed, show a message like \"Please select at least one agent\", and keep the prompt open.",
+   "Update the documentation make sure there's no redundant parts in there, add a table for messaging and when they happen. Look at the PR review comments and see if there's anything valid in there. Adress them. Commit and push.",
+   "Yes, but for 2. we need to have a more robust solution to ensure it's definitely \"always\" addressed. What do you suggest? What if we don't wait for the user to send a prompt but pro-actively just trigger a new prompt? Don't wait 30s just send it?",
+   "Mh... the user makes a commit, that triggers the reviewer to look at things, which takes a while, then eventually, maybe, writes in the README.md only at this point we would --continue and that's long after the commit happened.",
+   "Ok, it seems to have worked. The main problem I have now is that it's all very \"invisible\" I was thinking that at least the part of resolving would be done by an active user session in the terminal, so they see what's going on.",
+   "Revert that. I don't want to open a new tab! I want to continue using the existing session.",
+   "Let's try again based on user interaction but, can we ensure that the Review comment is definitely done first?",
+   "push",
+   "Adress them but be careful not to screw over existing functionality.",
+   "I would like to have \"notifications\" into the agent when hooks fire. E.g. commit hook, I want the notification that the Reviewer is send to do its job. Then on stop hook I want a \"notification\" if a review is still \"pending\". Does that make sense?",
+   "Where the bugs already present before? Address the first two."
+  ],
+  "interrupt": [
+   "push it"
+  ],
+  "refine_redirect": [
+   "Run lint and fix the issues, then push.",
+   "A code review is available at `.entire/REVIEW.md`.\n\nRead `.entire/REVIEW.md` and address each suggestion you agree with. Be critical. When done, delete `.entire/REVIEW.md`."
+  ]
+ },
+ "length_median": {
+  "bug_report": 30,
+  "approve_proceed": 4,
+  "question": 12,
+  "new_work": 18,
+  "pushback": 16,
+  "interrupt": 2,
+  "refine_redirect": 15
+ }
 }

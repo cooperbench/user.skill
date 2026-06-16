@@ -1,47 +1,57 @@
 {
- "question": [
-  "I am ready to start working on the website migration of my webapp. Read Claude.md and Website Migration.md to understand what the plan is and ask any questions you need to fully understand what we are doing and how to work on each Phase, including testing each phase/step along the way to make sure it's working as intended.",
-  "is the way to run this app locally still correct in README line 71?",
-  "## Key Invariants\n[Guarantees the implementation maintains]",
-  "## Working Solution\n[Detailed implementation walkthrough]\n\n[Code snippets showing main patterns, helpers, endpoints]",
-  "## Architecture Decisions\n[How the feature was designed]\n\n[Code examples showing key patterns]"
- ],
- "approve_proceed": [
-  "Unknown skill: workflow:brainstorm",
-  "Should the database files (drafts.db, drafts.db-shm, drafts.db-wal) be added to the .gitignore on this repo?",
-  "Thank you. Also give me quick instructions of how to update my Python on that WIndows PC",
-  "First commit and push these changes to the repo. Also, I added Entire to this repo to track your context and how you help me do this. Is there anything else I need to do to make sure your context is sent to my Github repo with each commit we make going forward?",
-  "Let's keep the current setup and see how it works. Let's move on to PHase B now",
-  "Let's do Phase C",
-  "Let's do Phase D",
-  "Let's continue with Phase E",
-  "commit and push those changes",
-  "I did some light testing to verify the app works in its current state. Let's move on to Phase F",
-  "Let's move on to Phase G",
-  "Commit and push this"
- ],
- "bug_report": [
-  "When I run the app on a Windows PC on this branch, I get this error, help me debug it:"
- ],
- "pushback": [
-  "Before you commit, update the Claude.md and Website Migration.md files to reflect what has been done. And make sure to do this each time you make progress towards one of our phases for this project (add taht instruction to Claude.md)",
-  "At what point do I need to do some of the manual steps in this migration? Before we do Phase H?",
-  "I want you to alter the plan file for the feat-startup-dynasty-draft with what's been done and what still has to be done to complete this feature fully in this current branch and PR. Use the workflows:plan skill to do that, then present the updated plan to me for the final phase of work to be done.",
-  "use the brainstorm document about startup draft",
-  "## Plan Review: Startup Dynasty Draft + Trading System\n\n### Overall Assessment\n\nThis is a well-structured plan. The phasing is logical, the decision to extend existing models (Approach A) is correct, and the risk analysis is thoughtful. However, there are several Python implementation quality concerns and architectural issues that should be addressed before implementation begins.",
-  "push it",
-  "1. No, no active state needs to be migrated.",
-  "Before going on to Phase F, write me a plan of how to run this app locally and do some basic testing to make sure the major aspects of what we changed work correctly. Put the plan in the form of a checklist in a markdown file in the repo and commit it.",
-  "update the plan to mark those background task items as done"
- ],
- "new_work": [
-  "update the memory file with the compound workflow pattern",
-  "verify the background task handles sale auction expiry and then run a basic test that the app actually runs as-is and the startup auction feature works",
-  "Use a subagent to run this app and see if it starts and if the startup draft feature is fully implemented",
-  "I was able to fix the email send prlblem. Can I edit hte email so it has a from name of \"Dynasty Auction Approval\"?",
-  "I've got the Resend side of things set up for email. Just include instructions of how to make sure it's working and configured in the app"
- ],
- "interrupt": [
-  "commit this"
- ]
+ "exemplars": {
+  "question": [
+   "I am ready to start working on the website migration of my webapp. Read Claude.md and Website Migration.md to understand what the plan is and ask any questions you need to fully understand what we are doing and how to work on each Phase, including testing each phase/step along the way to make sure it's working as intended.",
+   "is the way to run this app locally still correct in README line 71?",
+   "## Key Invariants\n[Guarantees the implementation maintains]",
+   "## Working Solution\n[Detailed implementation walkthrough]\n\n[Code snippets showing main patterns, helpers, endpoints]",
+   "## Architecture Decisions\n[How the feature was designed]\n\n[Code examples showing key patterns]"
+  ],
+  "approve_proceed": [
+   "Unknown skill: workflow:brainstorm",
+   "Should the database files (drafts.db, drafts.db-shm, drafts.db-wal) be added to the .gitignore on this repo?",
+   "Thank you. Also give me quick instructions of how to update my Python on that WIndows PC",
+   "First commit and push these changes to the repo. Also, I added Entire to this repo to track your context and how you help me do this. Is there anything else I need to do to make sure your context is sent to my Github repo with each commit we make going forward?",
+   "Let's keep the current setup and see how it works. Let's move on to PHase B now",
+   "Let's do Phase C",
+   "Let's do Phase D",
+   "Let's continue with Phase E",
+   "commit and push those changes",
+   "I did some light testing to verify the app works in its current state. Let's move on to Phase F",
+   "Let's move on to Phase G",
+   "Commit and push this"
+  ],
+  "bug_report": [
+   "When I run the app on a Windows PC on this branch, I get this error, help me debug it:"
+  ],
+  "pushback": [
+   "Before you commit, update the Claude.md and Website Migration.md files to reflect what has been done. And make sure to do this each time you make progress towards one of our phases for this project (add taht instruction to Claude.md)",
+   "At what point do I need to do some of the manual steps in this migration? Before we do Phase H?",
+   "I want you to alter the plan file for the feat-startup-dynasty-draft with what's been done and what still has to be done to complete this feature fully in this current branch and PR. Use the workflows:plan skill to do that, then present the updated plan to me for the final phase of work to be done.",
+   "use the brainstorm document about startup draft",
+   "## Plan Review: Startup Dynasty Draft + Trading System\n\n### Overall Assessment\n\nThis is a well-structured plan. The phasing is logical, the decision to extend existing models (Approach A) is correct, and the risk analysis is thoughtful. However, there are several Python implementation quality concerns and architectural issues that should be addressed before implementation begins.",
+   "push it",
+   "1. No, no active state needs to be migrated.",
+   "Before going on to Phase F, write me a plan of how to run this app locally and do some basic testing to make sure the major aspects of what we changed work correctly. Put the plan in the form of a checklist in a markdown file in the repo and commit it.",
+   "update the plan to mark those background task items as done"
+  ],
+  "new_work": [
+   "update the memory file with the compound workflow pattern",
+   "verify the background task handles sale auction expiry and then run a basic test that the app actually runs as-is and the startup auction feature works",
+   "Use a subagent to run this app and see if it starts and if the startup draft feature is fully implemented",
+   "I was able to fix the email send prlblem. Can I edit hte email so it has a from name of \"Dynasty Auction Approval\"?",
+   "I've got the Resend side of things set up for email. Just include instructions of how to make sure it's working and configured in the app"
+  ],
+  "interrupt": [
+   "commit this"
+  ]
+ },
+ "length_median": {
+  "question": 13,
+  "approve_proceed": 5,
+  "bug_report": 20,
+  "pushback": 30,
+  "new_work": 24,
+  "interrupt": 2
+ }
 }

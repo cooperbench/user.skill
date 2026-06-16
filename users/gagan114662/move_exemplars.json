@@ -1,28 +1,36 @@
 {
- "approve_proceed": [
-  "Reply with only: Hello there friend",
-  "Say 'hello' in one word",
-  "User: Say hello in 5 words.",
-  "End this session (type /exit or close)\n  2. Entire creates checkpoint branch\n  3. Push it:\n  cd /Users/gaganarora/Desktop/my\\ projects/open_fang\n  git push fork entire/checkpoints/v1\n  4. Refresh: https://entire.io/repositories",
-  "Say hello",
-  "**After completing checklist, ask:** \"Ready to end session?\"",
-  "[Image: image/png]",
-  "[Image: source: /var/folders/79/x0hsq2wj3qz0d3k35271zm5w0000gn/T/TemporaryItems/NSIRD_screencaptureui_Lw7dSy/Screenshot 2026-02-27 at 5.37.51 PM.png]",
-  "yes"
- ],
- "bug_report": [
-  "http://127.0.0.1:50051/ this is not working",
-  "<task-notification>\n<task-id>b5a83ee</task-id>\n<output-file>/private/tmp/claude-501/-Users-gaganarora-Desktop-my-projects-open-fang/tasks/b5a83ee.output</output-file>\n<status>failed</status>\n<summary>Background command \"Build release binary with Codex token support\" failed with exit code 144</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-gaganarora-Desktop-my-projects-open-fang/tasks/b5a83ee.output",
-  "http://127.0.0.1:50051/ is down i wanna see codex and claude here",
-  "<task-notification>\n<task-id>bcc906e</task-id>\n<output-file>/private/tmp/claude-501/-Users-gaganarora-Desktop-my-projects-open-fang/tasks/bcc906e.output</output-file>\n<status>completed</status>\n<summary>Background command \"Send test message to verify Codex token works\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-gaganarora-Desktop-my-projects-open-fang/tasks/bcc906e.output"
- ],
- "pushback": [
-  "even telegram isnt starting and this was supposed to work with claude code and codex not gemini",
-  "with auth token not api key",
-  "i wanna autheticate with codex cli"
- ],
- "question": [
-  "<task-notification>\n<task-id>b3c379c</task-id>\n<output-file>/private/tmp/claude-501/-Users-gaganarora-Desktop-my-projects-open-fang/tasks/b3c379c.output</output-file>\n<status>completed</status>\n<summary>Background command \"Build release binary\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-gaganarora-Desktop-my-projects-open-fang/tasks/b3c379c.output",
-  "<task-notification>\n<task-id>ba11631</task-id>\n<output-file>/private/tmp/claude-501/-Users-gaganarora-Desktop-my-projects-open-fang/tasks/ba11631.output</output-file>\n<status>completed</status>\n<summary>Background command \"Retry release build\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-gaganarora-Desktop-my-projects-open-fang/tasks/ba11631.output"
- ]
+ "exemplars": {
+  "approve_proceed": [
+   "Reply with only: Hello there friend",
+   "Say 'hello' in one word",
+   "User: Say hello in 5 words.",
+   "End this session (type /exit or close)\n  2. Entire creates checkpoint branch\n  3. Push it:\n  cd /Users/gaganarora/Desktop/my\\ projects/open_fang\n  git push fork entire/checkpoints/v1\n  4. Refresh: https://entire.io/repositories",
+   "Say hello",
+   "**After completing checklist, ask:** \"Ready to end session?\"",
+   "[Image: image/png]",
+   "[Image: source: /var/folders/79/x0hsq2wj3qz0d3k35271zm5w0000gn/T/TemporaryItems/NSIRD_screencaptureui_Lw7dSy/Screenshot 2026-02-27 at 5.37.51 PM.png]",
+   "yes"
+  ],
+  "bug_report": [
+   "http://127.0.0.1:50051/ this is not working",
+   "<task-notification>\n<task-id>b5a83ee</task-id>\n<output-file>/private/tmp/claude-501/-Users-gaganarora-Desktop-my-projects-open-fang/tasks/b5a83ee.output</output-file>\n<status>failed</status>\n<summary>Background command \"Build release binary with Codex token support\" failed with exit code 144</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-gaganarora-Desktop-my-projects-open-fang/tasks/b5a83ee.output",
+   "http://127.0.0.1:50051/ is down i wanna see codex and claude here",
+   "<task-notification>\n<task-id>bcc906e</task-id>\n<output-file>/private/tmp/claude-501/-Users-gaganarora-Desktop-my-projects-open-fang/tasks/bcc906e.output</output-file>\n<status>completed</status>\n<summary>Background command \"Send test message to verify Codex token works\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-gaganarora-Desktop-my-projects-open-fang/tasks/bcc906e.output"
+  ],
+  "pushback": [
+   "even telegram isnt starting and this was supposed to work with claude code and codex not gemini",
+   "with auth token not api key",
+   "i wanna autheticate with codex cli"
+  ],
+  "question": [
+   "<task-notification>\n<task-id>b3c379c</task-id>\n<output-file>/private/tmp/claude-501/-Users-gaganarora-Desktop-my-projects-open-fang/tasks/b3c379c.output</output-file>\n<status>completed</status>\n<summary>Background command \"Build release binary\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-gaganarora-Desktop-my-projects-open-fang/tasks/b3c379c.output",
+   "<task-notification>\n<task-id>ba11631</task-id>\n<output-file>/private/tmp/claude-501/-Users-gaganarora-Desktop-my-projects-open-fang/tasks/ba11631.output</output-file>\n<status>completed</status>\n<summary>Background command \"Retry release build\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-gaganarora-Desktop-my-projects-open-fang/tasks/ba11631.output"
+  ]
+ },
+ "length_median": {
+  "approve_proceed": 5,
+  "bug_report": 19,
+  "pushback": 6,
+  "question": 23
+ }
 }

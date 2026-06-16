@@ -1,70 +1,81 @@
 {
- "approve_proceed": [
-  "Look at the last commit, we made a change that fixed the touch to change pages when on Samsung galaxy phones. It works, touching doesn't move the page, but it does display an icon on each side of the screen when tapped",
-  "Commit the changes we have made so far and push",
-  "Can you rebase this branch with main and help me fix conflicts",
-  "commit this",
-  "commit the changes",
-  "create a branch, commit, and push the branch remotely",
-  "Create a pull request with these changes",
-  "git s",
-  "I'd like the home page to support a large cover image for the book. Can you do some research on what would look good for a cover image layout wise, then give me recommendations on size and aspect ratio?",
-  "Yes",
-  "I'll wait to solve it instead",
-  "write this to a plan document first, so we can track the progress"
- ],
- "new_work": [
-  "I'm trying to setup automatic deploys to github pages of the flatland example. It has two requirements:",
-  "I don't have almost any tests in this project. Can you help me setup a plan for how to add test for the most important functionality? Should they all be e2e? Or is there more integration middle ground? I don't see a huge amount of value in fine grain unit tests for it.",
-  "build and test it",
-  "On desktop, when I mouse move over the page, maybe show large icons for next and previous pages on the left and right of the page. Or would there be a better UX? I want it to somehow be obvious how to navigate through pages, but I don't want it to _always_ be visible to the user while reading",
-  "On mobile, could we make a double tap toggle full screen?",
-  "That appeared to work. Another thing that might make the ux a bit better is when at the beginning of a chapter, it would be nice if there is always at least a full screen size before the current page, even if it is empty, so that the swiping appears to move the content.",
-  "Can you use the images inside ~/Downloads/test for the moby dick example?",
-  "The layout of the home page is fine, but it just feels a bit boring. How could we make it more exciting or engaging given the content on it?",
-  "Could we add the ability for people to provide an icon for the installed PWA?",
-  "Could we also have a button on the home page next to start reading that asks the user if they want to install the book, which would then invoke the PWA install for the browser?",
-  "I'm trying to setup automatic deploys to github pages of the flatland example. It has two requirements:\n1. Merging to main, deploys to github pages\n2. An open PR, should also deploy to github pages, but in a directory scoped to the PR\n3. When the PR is closed, the scoped directory on github pages should get removed"
- ],
- "bug_report": [
-  "Why does running claude in cursor not allow me to shift+enter to make a new line? Instead shift+enter executes my command. To make a new line I have to use a backslash then enter. How do I fix this in cursor?",
-  "The github action deploy to pages works two ways:\n\n1. On a PR, it deploys to pages with `rossjrw/pr-preview-action` on a pull request\n2. On a push/merge of a pull request, it does a normal deploy.\n\nThe first case appears to deploy all examples, whereas the second one only deploys flatland. Can you help me fix that?",
-  "If I hard refresh the page at `http://localhost:3000/books/flatland/concerning-a-stranger` (which is the last chapter)\n\nThen if I click the previous page button, I get an error loading `http://localhost:3000/books/flatland/of-recognition-by-sight?page=last`, but if I remove the `page=last` query parameter, it works. Even hard refreshing on `http://localhost:3000/books/flatland/of-recognition-by-sight?page=last` leads to an error \"Cannot GET /books/flatland/of-recognition-by-sight\"",
-  "The page numbers are screwy, the render all over the page, and also because they are buttons, when they take focus, they cause the page to improperly shift position",
-  "Did we break something on mobile for displaying the bottom footer on tap? I don't see anything showing up anymore on tap, `class=\"pressy-page-footer pressy-page-footer--visible\"` properly gets set, but I don't see the actual content of the footer.",
-  "Why would it jump to the end of the book sometimes when going backwards?",
-  "Something broke with state pretty badly",
-  "Something broke with state pretty badly. Now it doesn't properly restore scroll state or even chapter all the time.",
-  "I see a 500 api error",
-  "i see another 500 error",
-  "Hmm, still a 500 error",
-  "Fix 2 seems to work. But Fix 1 does not. I don't get redirected back. Is there something I need to configure in stripe?"
- ],
- "pushback": [
-  "Does that need to be a full page load, because I don't know if we built out the table of contents to hydrate",
-  "The \"page of\" at the bottom of the screen isn't great. Let's just remove it.",
-  "There always seems to be a slightly overflow on the scroll of the whole page",
-  "is that the right way to do it? Will that mean sometimes content might be clipped?",
-  "If we are at the start of the book (first chapter and first page), going to the previous page should take us to the table of contents.",
-  "The page numbers are screwy, the render all over the page, and also because they are buttons, when they take focus, they cause the page to improperly shift position. Maybe we should just remove them.",
-  "i think the foot note dialogs should be absolutely positioned, so that they don't change content overflow when displayed",
-  "Now I can't focus on them at all, and also trying to click the foot note, the next and preivous page buttons take presedence",
-  "It doesn't seem to take into account the page or scroll level of the current chapter. But it does look like it properly follows the chapters themselves. It just changes all at once the moment I get to a new chapter.",
-  "On mobile, the tap left and right sizes on the screen are way too large",
-  "Maybe reduce it to 15% on each side, and 70% in the middle",
-  "Can we also add the title of the book below the progress, that might make the settings link feel less orphaned"
- ],
- "refine_redirect": [
-  "@packages/@pressy/components/src/Reader.tsx is getting huge, maybe we could break it up into a few files, especially maybe one for CSS. This would keep your context smaller when making logic changes vs styling changes.",
-  "Could we change the github pages deploy action to build and deploy all 3 example books, just in different subdirs"
- ],
- "question": [
-  "what happened?",
-  "What permissions do I need to give the cloudflare_api_token?",
-  "Should tapping the the title of the book at the bottom take you to the table of contents/home page?",
-  "Does the indexdb/localstorage value persist across the different paths on refresh? Or does each path have its own persistance? Is it domain based, or do the paths share?"
- ],
- "interrupt": [
-  "Create a branch, commit where we are at and push to github"
- ]
+ "exemplars": {
+  "approve_proceed": [
+   "Look at the last commit, we made a change that fixed the touch to change pages when on Samsung galaxy phones. It works, touching doesn't move the page, but it does display an icon on each side of the screen when tapped",
+   "Commit the changes we have made so far and push",
+   "Can you rebase this branch with main and help me fix conflicts",
+   "commit this",
+   "commit the changes",
+   "create a branch, commit, and push the branch remotely",
+   "Create a pull request with these changes",
+   "git s",
+   "I'd like the home page to support a large cover image for the book. Can you do some research on what would look good for a cover image layout wise, then give me recommendations on size and aspect ratio?",
+   "Yes",
+   "I'll wait to solve it instead",
+   "write this to a plan document first, so we can track the progress"
+  ],
+  "new_work": [
+   "I'm trying to setup automatic deploys to github pages of the flatland example. It has two requirements:",
+   "I don't have almost any tests in this project. Can you help me setup a plan for how to add test for the most important functionality? Should they all be e2e? Or is there more integration middle ground? I don't see a huge amount of value in fine grain unit tests for it.",
+   "build and test it",
+   "On desktop, when I mouse move over the page, maybe show large icons for next and previous pages on the left and right of the page. Or would there be a better UX? I want it to somehow be obvious how to navigate through pages, but I don't want it to _always_ be visible to the user while reading",
+   "On mobile, could we make a double tap toggle full screen?",
+   "That appeared to work. Another thing that might make the ux a bit better is when at the beginning of a chapter, it would be nice if there is always at least a full screen size before the current page, even if it is empty, so that the swiping appears to move the content.",
+   "Can you use the images inside ~/Downloads/test for the moby dick example?",
+   "The layout of the home page is fine, but it just feels a bit boring. How could we make it more exciting or engaging given the content on it?",
+   "Could we add the ability for people to provide an icon for the installed PWA?",
+   "Could we also have a button on the home page next to start reading that asks the user if they want to install the book, which would then invoke the PWA install for the browser?",
+   "I'm trying to setup automatic deploys to github pages of the flatland example. It has two requirements:\n1. Merging to main, deploys to github pages\n2. An open PR, should also deploy to github pages, but in a directory scoped to the PR\n3. When the PR is closed, the scoped directory on github pages should get removed"
+  ],
+  "bug_report": [
+   "Why does running claude in cursor not allow me to shift+enter to make a new line? Instead shift+enter executes my command. To make a new line I have to use a backslash then enter. How do I fix this in cursor?",
+   "The github action deploy to pages works two ways:\n\n1. On a PR, it deploys to pages with `rossjrw/pr-preview-action` on a pull request\n2. On a push/merge of a pull request, it does a normal deploy.\n\nThe first case appears to deploy all examples, whereas the second one only deploys flatland. Can you help me fix that?",
+   "If I hard refresh the page at `http://localhost:3000/books/flatland/concerning-a-stranger` (which is the last chapter)\n\nThen if I click the previous page button, I get an error loading `http://localhost:3000/books/flatland/of-recognition-by-sight?page=last`, but if I remove the `page=last` query parameter, it works. Even hard refreshing on `http://localhost:3000/books/flatland/of-recognition-by-sight?page=last` leads to an error \"Cannot GET /books/flatland/of-recognition-by-sight\"",
+   "The page numbers are screwy, the render all over the page, and also because they are buttons, when they take focus, they cause the page to improperly shift position",
+   "Did we break something on mobile for displaying the bottom footer on tap? I don't see anything showing up anymore on tap, `class=\"pressy-page-footer pressy-page-footer--visible\"` properly gets set, but I don't see the actual content of the footer.",
+   "Why would it jump to the end of the book sometimes when going backwards?",
+   "Something broke with state pretty badly",
+   "Something broke with state pretty badly. Now it doesn't properly restore scroll state or even chapter all the time.",
+   "I see a 500 api error",
+   "i see another 500 error",
+   "Hmm, still a 500 error",
+   "Fix 2 seems to work. But Fix 1 does not. I don't get redirected back. Is there something I need to configure in stripe?"
+  ],
+  "pushback": [
+   "Does that need to be a full page load, because I don't know if we built out the table of contents to hydrate",
+   "The \"page of\" at the bottom of the screen isn't great. Let's just remove it.",
+   "There always seems to be a slightly overflow on the scroll of the whole page",
+   "is that the right way to do it? Will that mean sometimes content might be clipped?",
+   "If we are at the start of the book (first chapter and first page), going to the previous page should take us to the table of contents.",
+   "The page numbers are screwy, the render all over the page, and also because they are buttons, when they take focus, they cause the page to improperly shift position. Maybe we should just remove them.",
+   "i think the foot note dialogs should be absolutely positioned, so that they don't change content overflow when displayed",
+   "Now I can't focus on them at all, and also trying to click the foot note, the next and preivous page buttons take presedence",
+   "It doesn't seem to take into account the page or scroll level of the current chapter. But it does look like it properly follows the chapters themselves. It just changes all at once the moment I get to a new chapter.",
+   "On mobile, the tap left and right sizes on the screen are way too large",
+   "Maybe reduce it to 15% on each side, and 70% in the middle",
+   "Can we also add the title of the book below the progress, that might make the settings link feel less orphaned"
+  ],
+  "refine_redirect": [
+   "@packages/@pressy/components/src/Reader.tsx is getting huge, maybe we could break it up into a few files, especially maybe one for CSS. This would keep your context smaller when making logic changes vs styling changes.",
+   "Could we change the github pages deploy action to build and deploy all 3 example books, just in different subdirs"
+  ],
+  "question": [
+   "what happened?",
+   "What permissions do I need to give the cloudflare_api_token?",
+   "Should tapping the the title of the book at the bottom take you to the table of contents/home page?",
+   "Does the indexdb/localstorage value persist across the different paths on refresh? Or does each path have its own persistance? Is it domain based, or do the paths share?"
+  ],
+  "interrupt": [
+   "Create a branch, commit where we are at and push to github"
+  ]
+ },
+ "length_median": {
+  "approve_proceed": 6,
+  "new_work": 29,
+  "bug_report": 23,
+  "pushback": 21,
+  "refine_redirect": 26,
+  "question": 14,
+  "interrupt": 12
+ }
 }

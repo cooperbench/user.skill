@@ -1,55 +1,65 @@
 {
- "approve_proceed": [
-  "<environment_context>\n  <cwd>/Users/zchee/src/github.com/zchee/agent</cwd>\n  <shell>zsh</shell>\n  <current_date>2026-04-03</current_date>\n  <timezone>Asia/Tokyo</timezone>\n</environment_context>",
-  "$commit",
-  "<environment_context>\n  <cwd>/Users/zchee/src/github.com/zchee/agentmux</cwd>\n  <shell>zsh</shell>\n  <current_date>2026-04-06</current_date>\n  <timezone>Asia/Tokyo</timezone>\n</environment_context>",
-  "Squash `c509f558217f...447d59e6c487` commits",
-  "<environment_context>\n  <cwd>/Users/zchee/src/github.com/zchee/zmux</cwd>\n  <shell>zsh</shell>\n  <current_date>2026-04-07</current_date>\n  <timezone>Asia/Tokyo</timezone>\n</environment_context>",
-  "Cleanup (or squash) 4e25c18e1a16...7bb2a376ad7a commits. Splits if necessary.",
-  "do 1",
-  "<environment_context>\n  <cwd>/Users/zchee/src/github.com/zchee/zmux</cwd>\n  <shell>zsh</shell>\n  <current_date>2026-04-08</current_date>\n  <timezone>Asia/Tokyo</timezone>\n</environment_context>",
-  "<environment_context>\n  <cwd>/Users/zchee/src/github.com/zchee/zmux</cwd>\n  <shell>zsh</shell>\n  <current_date>2026-04-12</current_date>\n  <timezone>Asia/Tokyo</timezone>\n</environment_context>",
-  "<team_compositions>\nCommon team compositions remain available when explicit team orchestration is warranted, for example feature development, bug investigation, code review, and UX audit.\n</team_compositions>",
-  "[OMX] All 3 workers idle. Team implement-screenshot-driven-om is complete and waiting on leader action. Next: decide whether to reconcile/merge results or gracefully shut down: ... [OMX_TMUX_INJECT]",
-  "Team implement-screenshot-driven-om: worker panes stalled, no progress 3m. Next: omx team status implement-screenshot-driven-om; read worker messages; unblock/reassign or shutdo... [OMX_TMUX_INJECT]"
- ],
- "new_work": [
-  "Convert https://github.com/vercel-labs/agent-browser/tree/main/skills/agent-browser to Codex Skill Style",
-  "$plan \"fully support the startup probe/response protocol zsh expects\""
- ],
- "bug_report": [
-  "do 'I can continue from exactly here and focus only on that live-path instrumentation/debugging loop.'",
-  "Team migrate-gcd-and-io-uring-to-li: worker panes stalled, no progress 4m1s. Next: omx team status migrate-gcd-and-io-uring-to-li; read worker messages; unblock/reassign or shut... [OMX_TMUX_INJECT]",
-  "Team implement-screenshot-driven-om: worker panes stalled, no progress 2m. Next: omx team status implement-screenshot-driven-om; read worker messages; unblock/reassign or shutdo... [OMX_TMUX_INJECT]Team implement-screenshot-driven-om: worker panes stalled, no progress 2m. Next: omx team status implement-screenshot-driven-om; read worker messages; unblock/reassign or shutdo... [OMX_TMUX_INJECT]",
-  "Team implement-omx-plans-prd-status: worker panes stalled, no progress 1m39s. Next: omx team status implement-omx-plans-prd-status; read worker messages; unblock/reassign or shu... [OMX_TMUX_INJECT]",
-  "Team implement-omx-plans-prd-status: worker panes stalled, no progress 1m. Next: omx team status implement-omx-plans-prd-status; read worker messages; unblock/reassign or shutdo... [OMX_TMUX_INJECT]Team implement-omx-plans-prd-status: worker panes stalled, no progress 1m. Next: omx team status implement-omx-plans-prd-status; read worker messages; unblock/reassign or shutdo... [OMX_TMUX_INJECT]",
-  "Team implement-omx-plans-prd-status: worker panes stalled, no progress 1m27s. Next: omx team status implement-omx-plans-prd-status; read worker messages; unblock/reassign or shu... [OMX_TMUX_INJECT]",
-  "Team implement-omx-plans-prd-status: worker panes stalled, no progress 30s. Next: omx team status implement-omx-plans-prd-status; read worker messages; unblock/reassign or shutd... [OMX_TMUX_INJECT]",
-  "Team implement-omx-plans-prd-status: worker panes stalled, no progress 3m30s. Next: omx team status implement-omx-plans-prd-status; read worker messages; unblock/reassign or shu... [OMX_TMUX_INJECT]Team implement-omx-plans-prd-status: worker panes stalled, no progress 3m30s. Next: omx team status implement-omx-plans-prd-status; read worker messages; unblock/reassign or shu... [OMX_TMUX_INJECT]",
-  "$autopilot \"The padding on the status line is incorrect. /Users/zchee/Documents/Screenshots/Screenshot 2026-04-07 at 7.22.44.png. Fix it.\"",
-  "Team read-only-parallel-investigati: worker panes stalled, no progress 2m30s. Next: omx team status read-only-parallel-investigati; read worker messages; unblock/reassign or shu... [OMX_TMUX_INJECT]",
-  "Team read-only-parallel-investigati: worker panes stalled, no progress 2m. Next: omx team status read-only-parallel-investigati; read worker messages; unblock/reassign or shutdown. [OMX_TMUX_INJECT]",
-  "Team implement-the-startup-only-zsh: worker-3 said \"ACK: worker-3 initialized\" but has no start evidence (status: unknown). Next: check worker-3 msg/output, confirm task in omx ... [OMX_TMUX_INJECT]"
- ],
- "pushback": [
-  "When `./zig-out/bin/agentmux new -s test`, the cursor style is shape. Fix to use the block style",
-  "$deep-interview --deep \"statusline is not drawn as defined in `~/.config/zmux/zmux.conf`\"",
-  "$ultrawork \"do work both of 'make status-bar #(...) expansion non-blocking / cached / deferred' and 'bypass/skip expensive composed status rendering during the early attach/startup window' using Zig's `std.Io`\"\n- Zig source code: https://codeberg.org/ziglang/zig",
-  "Do we need the uncommitted file changes?",
-  "Do we need the uncommitted files?",
-  "No. In `tmux`, will open the new window. Current `agentmux` nothing work.",
-  "continue to high priorityp",
-  "$autopilot Replace to `agentmux` repository name to `zmux`",
-  "Replace to `agentmux` repository name to `zmux`",
-  "Cleanup `c509f558217f...447d59e6c487` commits",
-  "Cleanup `c509f558217f...b2d65f10ca93` commits",
-  "$cancel"
- ],
- "question": [
-  "<skills>\nSkills are workflow commands.\nCore workflows include `autopilot`, `ralph`, `ultrawork`, `visual-verdict`, `web-clone`, `ecomode`, `team`, `swarm`, `ultraqa`, `plan`, `deep-interview` (Socratic deep interview, Ouroboros-inspired), and `ralplan`.\nUtilities include `cancel`, `note`, `doctor`, `help`, and `trace`.\n</skills>",
-  "Read /Users/zchee/src/github.com/zchee/zmux/.omx/state/team/implement-the-startup-only-zsh/mailbox/leader-fixed.json; new msg from worker-1. Review it; decide next step."
- ],
- "refine_redirect": [
-  "$ultrawork \"Normalize all words that are conventionally capitalized in Go (such as IDs).\""
- ]
+ "exemplars": {
+  "approve_proceed": [
+   "<environment_context>\n  <cwd>/Users/zchee/src/github.com/zchee/agent</cwd>\n  <shell>zsh</shell>\n  <current_date>2026-04-03</current_date>\n  <timezone>Asia/Tokyo</timezone>\n</environment_context>",
+   "$commit",
+   "<environment_context>\n  <cwd>/Users/zchee/src/github.com/zchee/agentmux</cwd>\n  <shell>zsh</shell>\n  <current_date>2026-04-06</current_date>\n  <timezone>Asia/Tokyo</timezone>\n</environment_context>",
+   "Squash `c509f558217f...447d59e6c487` commits",
+   "<environment_context>\n  <cwd>/Users/zchee/src/github.com/zchee/zmux</cwd>\n  <shell>zsh</shell>\n  <current_date>2026-04-07</current_date>\n  <timezone>Asia/Tokyo</timezone>\n</environment_context>",
+   "Cleanup (or squash) 4e25c18e1a16...7bb2a376ad7a commits. Splits if necessary.",
+   "do 1",
+   "<environment_context>\n  <cwd>/Users/zchee/src/github.com/zchee/zmux</cwd>\n  <shell>zsh</shell>\n  <current_date>2026-04-08</current_date>\n  <timezone>Asia/Tokyo</timezone>\n</environment_context>",
+   "<environment_context>\n  <cwd>/Users/zchee/src/github.com/zchee/zmux</cwd>\n  <shell>zsh</shell>\n  <current_date>2026-04-12</current_date>\n  <timezone>Asia/Tokyo</timezone>\n</environment_context>",
+   "<team_compositions>\nCommon team compositions remain available when explicit team orchestration is warranted, for example feature development, bug investigation, code review, and UX audit.\n</team_compositions>",
+   "[OMX] All 3 workers idle. Team implement-screenshot-driven-om is complete and waiting on leader action. Next: decide whether to reconcile/merge results or gracefully shut down: ... [OMX_TMUX_INJECT]",
+   "Team implement-screenshot-driven-om: worker panes stalled, no progress 3m. Next: omx team status implement-screenshot-driven-om; read worker messages; unblock/reassign or shutdo... [OMX_TMUX_INJECT]"
+  ],
+  "new_work": [
+   "Convert https://github.com/vercel-labs/agent-browser/tree/main/skills/agent-browser to Codex Skill Style",
+   "$plan \"fully support the startup probe/response protocol zsh expects\""
+  ],
+  "bug_report": [
+   "do 'I can continue from exactly here and focus only on that live-path instrumentation/debugging loop.'",
+   "Team migrate-gcd-and-io-uring-to-li: worker panes stalled, no progress 4m1s. Next: omx team status migrate-gcd-and-io-uring-to-li; read worker messages; unblock/reassign or shut... [OMX_TMUX_INJECT]",
+   "Team implement-screenshot-driven-om: worker panes stalled, no progress 2m. Next: omx team status implement-screenshot-driven-om; read worker messages; unblock/reassign or shutdo... [OMX_TMUX_INJECT]Team implement-screenshot-driven-om: worker panes stalled, no progress 2m. Next: omx team status implement-screenshot-driven-om; read worker messages; unblock/reassign or shutdo... [OMX_TMUX_INJECT]",
+   "Team implement-omx-plans-prd-status: worker panes stalled, no progress 1m39s. Next: omx team status implement-omx-plans-prd-status; read worker messages; unblock/reassign or shu... [OMX_TMUX_INJECT]",
+   "Team implement-omx-plans-prd-status: worker panes stalled, no progress 1m. Next: omx team status implement-omx-plans-prd-status; read worker messages; unblock/reassign or shutdo... [OMX_TMUX_INJECT]Team implement-omx-plans-prd-status: worker panes stalled, no progress 1m. Next: omx team status implement-omx-plans-prd-status; read worker messages; unblock/reassign or shutdo... [OMX_TMUX_INJECT]",
+   "Team implement-omx-plans-prd-status: worker panes stalled, no progress 1m27s. Next: omx team status implement-omx-plans-prd-status; read worker messages; unblock/reassign or shu... [OMX_TMUX_INJECT]",
+   "Team implement-omx-plans-prd-status: worker panes stalled, no progress 30s. Next: omx team status implement-omx-plans-prd-status; read worker messages; unblock/reassign or shutd... [OMX_TMUX_INJECT]",
+   "Team implement-omx-plans-prd-status: worker panes stalled, no progress 3m30s. Next: omx team status implement-omx-plans-prd-status; read worker messages; unblock/reassign or shu... [OMX_TMUX_INJECT]Team implement-omx-plans-prd-status: worker panes stalled, no progress 3m30s. Next: omx team status implement-omx-plans-prd-status; read worker messages; unblock/reassign or shu... [OMX_TMUX_INJECT]",
+   "$autopilot \"The padding on the status line is incorrect. /Users/zchee/Documents/Screenshots/Screenshot 2026-04-07 at 7.22.44.png. Fix it.\"",
+   "Team read-only-parallel-investigati: worker panes stalled, no progress 2m30s. Next: omx team status read-only-parallel-investigati; read worker messages; unblock/reassign or shu... [OMX_TMUX_INJECT]",
+   "Team read-only-parallel-investigati: worker panes stalled, no progress 2m. Next: omx team status read-only-parallel-investigati; read worker messages; unblock/reassign or shutdown. [OMX_TMUX_INJECT]",
+   "Team implement-the-startup-only-zsh: worker-3 said \"ACK: worker-3 initialized\" but has no start evidence (status: unknown). Next: check worker-3 msg/output, confirm task in omx ... [OMX_TMUX_INJECT]"
+  ],
+  "pushback": [
+   "When `./zig-out/bin/agentmux new -s test`, the cursor style is shape. Fix to use the block style",
+   "$deep-interview --deep \"statusline is not drawn as defined in `~/.config/zmux/zmux.conf`\"",
+   "$ultrawork \"do work both of 'make status-bar #(...) expansion non-blocking / cached / deferred' and 'bypass/skip expensive composed status rendering during the early attach/startup window' using Zig's `std.Io`\"\n- Zig source code: https://codeberg.org/ziglang/zig",
+   "Do we need the uncommitted file changes?",
+   "Do we need the uncommitted files?",
+   "No. In `tmux`, will open the new window. Current `agentmux` nothing work.",
+   "continue to high priorityp",
+   "$autopilot Replace to `agentmux` repository name to `zmux`",
+   "Replace to `agentmux` repository name to `zmux`",
+   "Cleanup `c509f558217f...447d59e6c487` commits",
+   "Cleanup `c509f558217f...b2d65f10ca93` commits",
+   "$cancel"
+  ],
+  "question": [
+   "<skills>\nSkills are workflow commands.\nCore workflows include `autopilot`, `ralph`, `ultrawork`, `visual-verdict`, `web-clone`, `ecomode`, `team`, `swarm`, `ultraqa`, `plan`, `deep-interview` (Socratic deep interview, Ouroboros-inspired), and `ralplan`.\nUtilities include `cancel`, `note`, `doctor`, `help`, and `trace`.\n</skills>",
+   "Read /Users/zchee/src/github.com/zchee/zmux/.omx/state/team/implement-the-startup-only-zsh/mailbox/leader-fixed.json; new msg from worker-1. Review it; decide next step."
+  ],
+  "refine_redirect": [
+   "$ultrawork \"Normalize all words that are conventionally capitalized in Go (such as IDs).\""
+  ]
+ },
+ "length_median": {
+  "approve_proceed": 6,
+  "new_work": 7,
+  "bug_report": 20,
+  "pushback": 10,
+  "question": 34,
+  "refine_redirect": 13
+ }
 }

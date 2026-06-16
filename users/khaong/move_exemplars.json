@@ -1,81 +1,92 @@
 {
- "approve_proceed": [
-  "update from our parent branch alex/ent-221-better-state-tracking-for-sessions",
-  "our git status has broken, why?",
-  "let's respond to the PR comments - review together",
-  "got merge conflicts from parent alex/ent-221-phase-aware-git-hooks",
-  "commit this, then let's do the other bit",
-  "I'm working on linear ENT-98. keep our working documentation in linear.",
-  "commit and push",
-  "help! soph made a bunch of stacked PRs - help me do them in order",
-  "I just tried to merge origin/main - why did it stop halfway?",
-  "okay, so we were working on ENT-109 (linear) on this branch... I have lost track of where we're up to.",
-  "fix merge conflicts from parent please",
-  "we need to fix some merge conflicts"
- ],
- "bug_report": [
-  "we have some test failures on this dependency update branch, what is the issue? debug",
-  "main branch tests failing - why? https://github.com/entireio/cli/actions/runs/21662191208/job/62449194626https://github.com/entireio/cli/actions/runs/21662191208/job/62449194626",
-  "we're still seeing some E2E failures in CI - see https://github.com/entireio/cli/actions/workflows/e2e.yml?query=is:failure+branch:main",
-  "have a look at linear ENT-260\n\nlet's debug this",
-  "debug: manual commit strategy isn't producing transcript line numbers and token usage - we believe PR#60 should have added this",
-  "lint and test failures :(",
-  "okay - lint and tests are failing -> let's sort this out first, then get to the PR review comments.\n\nthings have moved quite a bit since the PR was raised",
-  "is there a reason the gc is getting invoked more often now?",
-  "I've still got a shadow, no condensation commit",
-  "let's search for that specific error?",
-  "we got blatted by main, launch another please?",
-  "it seems to happen after a condensation commit"
- ],
- "question": [
-  "You are a highly experienced developer, skilled in various developer workflows and adept in using git.\n\nlet's take a critical look at the plan in docs/plans/2026-02-06-session-phase-state-machine.md\n\nhow does it line up with our current implementation? what are the potential pitfalls? Are there scenarios that would break this? Is there anything else we're missing?",
-  "question: what's the behaviour for the entire/sessions full.jsonl agent transcript storage through a claude compaction?",
-  "let's review this branch/PR - https://github.com/entireio/cli/pull/88",
-  "this is PR https://github.com/entireio/cli/pull/104 \n\nLet's review this together",
-  "have a look at linear MCP-108, we will work on that here",
-  "can we check when we fill the first prompt field in sessionState?",
-  "need to confirm a few things for `entire explain`:\n1. when we do entire `explain -c {checkpoint}` - do we return the transcript related to that checkpoint or the whole thing?\n2. is our branch filtering working properly?\n3. when we call `--generate` do we only summarise the related transcript lines or the whole thing?",
-  "is 'Turn' a good word? I guess in the subagent case the 'user' prompt is a misnomer",
-  "<task-notification>\n<task-id>b6bbc87</task-id>\n<output-file>/private/tmp/claude-501/-Users-alex-workspace-cli--worktrees-3/tasks/b6bbc87.output</output-file>\n<status>completed</status>\n<summary>Background command \"Watch PR checks until complete\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-alex-workspace-cli--worktrees-3/tasks/b6bbc87.output",
-  "is that runner used for the whole run?",
-  "\"if staged files overlap with Claude's work\" <- I don't understand what you mean",
-  "and how would the skill interact with other skills, eg. the superpowers stuff?"
- ],
- "new_work": [
-  "have a look at docs/plans/2026-03-04-transcript-parsing-replacement.md - can we implement phase 0 please? (refactor)",
-  "brainstorm:\n- automatically generate checkpoint summaries when creating checkpoints\n- must be controlled by configuration, default to 'off'\n- documented in README, note specific claude-only generation for now",
-  "working on the e2e tests...\n\nthe last run had failures but we don't have the report? /Users/alex/workspace/cli/e2e/artifacts/2026-02-25T12-52-36",
-  "do you have access to linear?",
-  "brainstorm: how do we add tooling in this codebase to detect code duplication?\n\nfollow up: then how do we guard against more being added?\nfollow up: what strategies can we use in claude code (LSP usage?) to get it right the first time?",
-  "need a little patch for `entire explain` that prints the help text if a parameter is passed without any qualifier flags",
-  "ok cool let's go - write the design",
-  "are there any tests that do a git pull/push?",
-  "intentional - keep it local! let's proceed with implementation using superpowers",
-  "run our preflight fmt, lint, test:ci please",
-  "ok cool. let's go.\n\nQ: where should we cover these scenarios? unit, integration, e2e?",
-  "hmmmm not sure; the manual testing I did seems to indicate the fix is working (as well as the automated tests)..."
- ],
- "refine_redirect": [
-  "Goal: \n1. achieve feature parity with /Users/alex/workspace/cli/cmd/entire/cli/e2e_test\n2. move all of this code into the cli repo proper\n3. (take out all the 'exploratory'/pending tests we're not using right now) - or figure out how to package-namespace them better",
-  "brainstorm: linear ent-53 - check the comments for more information. We need to break this up into smaller PR-able chunks.\n\nI also would like to explore explain having a TUI style interface",
-  "let's start working our way through the PR feedback",
-  "let's respond to the PR feedback"
- ],
- "pushback": [
-  "sorry, I didn't specify earlier but this recent error is from worktree 2, and the postcommit is also from there (it's a new operation) - so let's not jump to cross-worktree explanations just yet",
-  "okay, fix is pushed, let's update from parent branch alex/ent-221-phase-aware-git-hooks; there's a merge conflict",
-  "nah let's roll back, they don't really need to exist in the future state",
-  "Q: did we....do this for gemini? 😬",
-  "next one: https://linear.app/entirehq/issue/ENT-259/code-attribution-is-broken-on-the-deferred-condense-at-stop",
-  "looks like the claude code interactive is looking to sign in using oauth",
-  "is there no argument we can pass it to force the auth type?",
-  "ok cool let's give it a go.\n\nwere you looking at run E2E#63? is all that checkpoint_metadata_test json guff noise?",
-  "I've also added the GEMINI_API_KEY, shall we add that to the mix as well?",
-  "ahhh feck\n[Image: image/png]",
-  "15s may not be enough for the interactive on the ci test runner",
-  "can we remove the cancel-in-progress so we can queue a few?"
- ],
- "interrupt": [
-  "I've done it on my end. let's switch back across now"
- ]
+ "exemplars": {
+  "approve_proceed": [
+   "update from our parent branch alex/ent-221-better-state-tracking-for-sessions",
+   "our git status has broken, why?",
+   "let's respond to the PR comments - review together",
+   "got merge conflicts from parent alex/ent-221-phase-aware-git-hooks",
+   "commit this, then let's do the other bit",
+   "I'm working on linear ENT-98. keep our working documentation in linear.",
+   "commit and push",
+   "help! soph made a bunch of stacked PRs - help me do them in order",
+   "I just tried to merge origin/main - why did it stop halfway?",
+   "okay, so we were working on ENT-109 (linear) on this branch... I have lost track of where we're up to.",
+   "fix merge conflicts from parent please",
+   "we need to fix some merge conflicts"
+  ],
+  "bug_report": [
+   "we have some test failures on this dependency update branch, what is the issue? debug",
+   "main branch tests failing - why? https://github.com/entireio/cli/actions/runs/21662191208/job/62449194626https://github.com/entireio/cli/actions/runs/21662191208/job/62449194626",
+   "we're still seeing some E2E failures in CI - see https://github.com/entireio/cli/actions/workflows/e2e.yml?query=is:failure+branch:main",
+   "have a look at linear ENT-260\n\nlet's debug this",
+   "debug: manual commit strategy isn't producing transcript line numbers and token usage - we believe PR#60 should have added this",
+   "lint and test failures :(",
+   "okay - lint and tests are failing -> let's sort this out first, then get to the PR review comments.\n\nthings have moved quite a bit since the PR was raised",
+   "is there a reason the gc is getting invoked more often now?",
+   "I've still got a shadow, no condensation commit",
+   "let's search for that specific error?",
+   "we got blatted by main, launch another please?",
+   "it seems to happen after a condensation commit"
+  ],
+  "question": [
+   "You are a highly experienced developer, skilled in various developer workflows and adept in using git.\n\nlet's take a critical look at the plan in docs/plans/2026-02-06-session-phase-state-machine.md\n\nhow does it line up with our current implementation? what are the potential pitfalls? Are there scenarios that would break this? Is there anything else we're missing?",
+   "question: what's the behaviour for the entire/sessions full.jsonl agent transcript storage through a claude compaction?",
+   "let's review this branch/PR - https://github.com/entireio/cli/pull/88",
+   "this is PR https://github.com/entireio/cli/pull/104 \n\nLet's review this together",
+   "have a look at linear MCP-108, we will work on that here",
+   "can we check when we fill the first prompt field in sessionState?",
+   "need to confirm a few things for `entire explain`:\n1. when we do entire `explain -c {checkpoint}` - do we return the transcript related to that checkpoint or the whole thing?\n2. is our branch filtering working properly?\n3. when we call `--generate` do we only summarise the related transcript lines or the whole thing?",
+   "is 'Turn' a good word? I guess in the subagent case the 'user' prompt is a misnomer",
+   "<task-notification>\n<task-id>b6bbc87</task-id>\n<output-file>/private/tmp/claude-501/-Users-alex-workspace-cli--worktrees-3/tasks/b6bbc87.output</output-file>\n<status>completed</status>\n<summary>Background command \"Watch PR checks until complete\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-alex-workspace-cli--worktrees-3/tasks/b6bbc87.output",
+   "is that runner used for the whole run?",
+   "\"if staged files overlap with Claude's work\" <- I don't understand what you mean",
+   "and how would the skill interact with other skills, eg. the superpowers stuff?"
+  ],
+  "new_work": [
+   "have a look at docs/plans/2026-03-04-transcript-parsing-replacement.md - can we implement phase 0 please? (refactor)",
+   "brainstorm:\n- automatically generate checkpoint summaries when creating checkpoints\n- must be controlled by configuration, default to 'off'\n- documented in README, note specific claude-only generation for now",
+   "working on the e2e tests...\n\nthe last run had failures but we don't have the report? /Users/alex/workspace/cli/e2e/artifacts/2026-02-25T12-52-36",
+   "do you have access to linear?",
+   "brainstorm: how do we add tooling in this codebase to detect code duplication?\n\nfollow up: then how do we guard against more being added?\nfollow up: what strategies can we use in claude code (LSP usage?) to get it right the first time?",
+   "need a little patch for `entire explain` that prints the help text if a parameter is passed without any qualifier flags",
+   "ok cool let's go - write the design",
+   "are there any tests that do a git pull/push?",
+   "intentional - keep it local! let's proceed with implementation using superpowers",
+   "run our preflight fmt, lint, test:ci please",
+   "ok cool. let's go.\n\nQ: where should we cover these scenarios? unit, integration, e2e?",
+   "hmmmm not sure; the manual testing I did seems to indicate the fix is working (as well as the automated tests)..."
+  ],
+  "refine_redirect": [
+   "Goal: \n1. achieve feature parity with /Users/alex/workspace/cli/cmd/entire/cli/e2e_test\n2. move all of this code into the cli repo proper\n3. (take out all the 'exploratory'/pending tests we're not using right now) - or figure out how to package-namespace them better",
+   "brainstorm: linear ent-53 - check the comments for more information. We need to break this up into smaller PR-able chunks.\n\nI also would like to explore explain having a TUI style interface",
+   "let's start working our way through the PR feedback",
+   "let's respond to the PR feedback"
+  ],
+  "pushback": [
+   "sorry, I didn't specify earlier but this recent error is from worktree 2, and the postcommit is also from there (it's a new operation) - so let's not jump to cross-worktree explanations just yet",
+   "okay, fix is pushed, let's update from parent branch alex/ent-221-phase-aware-git-hooks; there's a merge conflict",
+   "nah let's roll back, they don't really need to exist in the future state",
+   "Q: did we....do this for gemini? 😬",
+   "next one: https://linear.app/entirehq/issue/ENT-259/code-attribution-is-broken-on-the-deferred-condense-at-stop",
+   "looks like the claude code interactive is looking to sign in using oauth",
+   "is there no argument we can pass it to force the auth type?",
+   "ok cool let's give it a go.\n\nwere you looking at run E2E#63? is all that checkpoint_metadata_test json guff noise?",
+   "I've also added the GEMINI_API_KEY, shall we add that to the mix as well?",
+   "ahhh feck\n[Image: image/png]",
+   "15s may not be enough for the interactive on the ci test runner",
+   "can we remove the cancel-in-progress so we can queue a few?"
+  ],
+  "interrupt": [
+   "I've done it on my end. let's switch back across now"
+  ]
+ },
+ "length_median": {
+  "approve_proceed": 6,
+  "bug_report": 9,
+  "question": 12,
+  "new_work": 17,
+  "refine_redirect": 32,
+  "pushback": 13,
+  "interrupt": 11
+ }
 }

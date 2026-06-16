@@ -1,74 +1,85 @@
 {
- "question": [
-  "are you running make updater service behind the scenes if so what are the lgos",
-  "claude is stuck at ✽ Bloviating… (3m 16s)\nis it connecting or talking? what's the cuase for the delay",
-  "so where is the oauth otken from?",
-  "wait does ctrol + bP copy to clipboadrd?",
-  "ok; cool does p has to be capital ?",
-  "oh; what are other bindings that are open so that they don't conflict?",
-  "oh so you can do sync for bidirectional?"
- ],
- "bug_report": [
-  "fix make build and github actions fialing",
-  "fix make shell-test and failing github actions",
-  "why is calling `clwxe` takes so long and time",
-  "tmux ctrl+B + P stil lreturns \"Can't write to client\"",
-  "why isn't light mode working for ghostty",
-  "what's causing the cpus to burst",
-  "fix dotfiles on  main [$] is 📦 v0.1.0 via 🥟 v1.3.11 via 🐍 v3.13.12 via 🦀 v1.94.0 on ☁️  <PRESIDIO_ANONYMIZED_EMAIL_ADDRESS>\n❯ bd --version\nError: bd binary not found at /Users/shunkakinoki/.bun/install/global/node_modules/@beads/bd/bin/bd\nThis may indicate that the postinstall script failed to download the binary.\nPlatform: darwin, Architecture: arm64",
-  "how to fix?",
-  "run makefile updater to check if the fix works?",
-  "why is it failing to pull",
-  "also debug why does it take so long to run the stop hook ✳ Fiddle-faddling… (running stop hooks… 1/4 · 57s · ↓ 308 tokens · thinking)",
-  "it raises a popup for every keychain dump"
- ],
- "approve_proceed": [
-  "what's the command to unstage bun.lock",
-  "ok create PR with the current changes and merge with admin priveleges",
-  "hi",
-  "create PR",
-  "continue",
-  "<bash-input>git restore --staged bun.lock</bash-input>",
-  "<bash-input>rm /Users/shunkakinoki/dotfiles/.git/index.lock</bash-input>",
-  "how to upgrade worktrunk to latest version",
-  "run that",
-  "what's .bzr",
-  "run make format too and push",
-  "already"
- ],
- "new_work": [
-  "set up a service to sync the current claude oauth keys to cliproxyapi - also when i upload a new key; does it sync on remote?",
-  "https://github.com/gsd-build/get-shit-done install this w/ package.json and trusted installs w/ bun + claude config deny",
-  "add clrc to @home-manager/programs/fish/default.nix and also add clwrc to do it in workspace git",
-  "add more granular timeouts to claude settings.json for each event?",
-  "verify that the claude token is valid",
-  "check if its working",
-  "ok please do the same to confirm hte functionality is stable",
-  "ok now create tests so `make shell-test` pass",
-  "fix corresponding tests and create pR",
-  "ah; thanks hwo about other ones - also is it possible to run bd to sync w/ linear"
- ],
- "refine_redirect": [
-  "checkout 1272 and go through the home-manager/modules/local-binaries/default.nix portion - it shouldn't contain the inline bash scripts",
-  "no need to have session end notification for claude code",
-  "run `make format`",
-  "is it possible to change the @config/claude/statusline-git.sh so that it indicates when it's wroking?"
- ],
- "pushback": [
-  "also change both to dangerously skip permissions",
-  "should be bypasspermissinos for clrc as well",
-  "can't do that",
-  "yes please and update cargo.lock too",
-  "ok add worktrunk config Copy-ignored exclude patterns: wt step copy-ignored now skips built-in VCS metadata and tool-state directories (.bzr/, .conductor/, .entire/, .hg/, .jj/, .pi/, .pijul/, .sl/, .svn/, .worktrees/) by default. Additional excludes are configurable via [step.copy-ignored] exclude = [...] in user or project config. (#1667, thanks @shunkakinoki for #1653) for custom copy-ignored",
-  "maybe just make it one of the dotdirs that's not in the above from ~/dotfiles",
-  "let's do .serena .cache .devenv",
-  "ok create PR and merge with admin priveleges",
-  "yea but it's so slow",
-  "hmm make 1. serena from cached?",
-  "yea but this is doing this for each `make switch` i don't want to make it do that anymore",
-  "hmm no - make it relative link like all of the other repos - i want to make it ./lua"
- ],
- "interrupt": [
-  "git add; make build and switch and reload to check if it works"
- ]
+ "exemplars": {
+  "question": [
+   "are you running make updater service behind the scenes if so what are the lgos",
+   "claude is stuck at ✽ Bloviating… (3m 16s)\nis it connecting or talking? what's the cuase for the delay",
+   "so where is the oauth otken from?",
+   "wait does ctrol + bP copy to clipboadrd?",
+   "ok; cool does p has to be capital ?",
+   "oh; what are other bindings that are open so that they don't conflict?",
+   "oh so you can do sync for bidirectional?"
+  ],
+  "bug_report": [
+   "fix make build and github actions fialing",
+   "fix make shell-test and failing github actions",
+   "why is calling `clwxe` takes so long and time",
+   "tmux ctrl+B + P stil lreturns \"Can't write to client\"",
+   "why isn't light mode working for ghostty",
+   "what's causing the cpus to burst",
+   "fix dotfiles on  main [$] is 📦 v0.1.0 via 🥟 v1.3.11 via 🐍 v3.13.12 via 🦀 v1.94.0 on ☁️  <PRESIDIO_ANONYMIZED_EMAIL_ADDRESS>\n❯ bd --version\nError: bd binary not found at /Users/shunkakinoki/.bun/install/global/node_modules/@beads/bd/bin/bd\nThis may indicate that the postinstall script failed to download the binary.\nPlatform: darwin, Architecture: arm64",
+   "how to fix?",
+   "run makefile updater to check if the fix works?",
+   "why is it failing to pull",
+   "also debug why does it take so long to run the stop hook ✳ Fiddle-faddling… (running stop hooks… 1/4 · 57s · ↓ 308 tokens · thinking)",
+   "it raises a popup for every keychain dump"
+  ],
+  "approve_proceed": [
+   "what's the command to unstage bun.lock",
+   "ok create PR with the current changes and merge with admin priveleges",
+   "hi",
+   "create PR",
+   "continue",
+   "<bash-input>git restore --staged bun.lock</bash-input>",
+   "<bash-input>rm /Users/shunkakinoki/dotfiles/.git/index.lock</bash-input>",
+   "how to upgrade worktrunk to latest version",
+   "run that",
+   "what's .bzr",
+   "run make format too and push",
+   "already"
+  ],
+  "new_work": [
+   "set up a service to sync the current claude oauth keys to cliproxyapi - also when i upload a new key; does it sync on remote?",
+   "https://github.com/gsd-build/get-shit-done install this w/ package.json and trusted installs w/ bun + claude config deny",
+   "add clrc to @home-manager/programs/fish/default.nix and also add clwrc to do it in workspace git",
+   "add more granular timeouts to claude settings.json for each event?",
+   "verify that the claude token is valid",
+   "check if its working",
+   "ok please do the same to confirm hte functionality is stable",
+   "ok now create tests so `make shell-test` pass",
+   "fix corresponding tests and create pR",
+   "ah; thanks hwo about other ones - also is it possible to run bd to sync w/ linear"
+  ],
+  "refine_redirect": [
+   "checkout 1272 and go through the home-manager/modules/local-binaries/default.nix portion - it shouldn't contain the inline bash scripts",
+   "no need to have session end notification for claude code",
+   "run `make format`",
+   "is it possible to change the @config/claude/statusline-git.sh so that it indicates when it's wroking?"
+  ],
+  "pushback": [
+   "also change both to dangerously skip permissions",
+   "should be bypasspermissinos for clrc as well",
+   "can't do that",
+   "yes please and update cargo.lock too",
+   "ok add worktrunk config Copy-ignored exclude patterns: wt step copy-ignored now skips built-in VCS metadata and tool-state directories (.bzr/, .conductor/, .entire/, .hg/, .jj/, .pi/, .pijul/, .sl/, .svn/, .worktrees/) by default. Additional excludes are configurable via [step.copy-ignored] exclude = [...] in user or project config. (#1667, thanks @shunkakinoki for #1653) for custom copy-ignored",
+   "maybe just make it one of the dotdirs that's not in the above from ~/dotfiles",
+   "let's do .serena .cache .devenv",
+   "ok create PR and merge with admin priveleges",
+   "yea but it's so slow",
+   "hmm make 1. serena from cached?",
+   "yea but this is doing this for each `make switch` i don't want to make it do that anymore",
+   "hmm no - make it relative link like all of the other repos - i want to make it ./lua"
+  ],
+  "interrupt": [
+   "git add; make build and switch and reload to check if it works"
+  ]
+ },
+ "length_median": {
+  "question": 9,
+  "bug_report": 7,
+  "approve_proceed": 2,
+  "new_work": 10,
+  "refine_redirect": 12,
+  "pushback": 8,
+  "interrupt": 13
+ }
 }

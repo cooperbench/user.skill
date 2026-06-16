@@ -1,73 +1,84 @@
 {
- "question": [
-  "Can you look at the code and tell me if we are triggering emails after sending an       \n  invite int he org management page?",
-  "Tokens by model chart in overview looks like this \n[Image: image/png]",
-  "how do i upload historical sessions?",
-  "Can you show me the new query with values please",
-  "and when you upload your sessions, how does the user what org to upload sessions to?",
-  "Can you remind me now what token cost we use for spend/cost calculadtions?",
-  "Is this also hardcoded in the materialised view or we calculate on reads? Just answer the question?",
-  "ok all good I am logged in in the dashboard in local, how do i upload my sessions to the local environment?",
-  "Can you show me the clickhouse schema?",
-  "Did the changes we make will make it easier for other devs to develop in this repo?",
-  "Ok, can you now do an analysis and let me know if it'S safe to open source this way too?"
- ],
- "bug_report": [
-  "I see 500 errors when loading the Project details specifically this endpoint https://app.rudel.ai/rpc/analytics/projects/details",
-  "We have an issue that when groping by User/Developer (X-Axis) we get proper names but when we do it in the  Y-Axis we get the user ids this should be fixed. \n[Image: image/png]",
-  "What is the full query for project details now is it this one?",
-  "I am getting this in clickhouse PROJECT_KEY_EXPR",
-  "Ok I get this now: Error\nAggregate function any(project_path) AS project_path is found in WHERE in query.",
-  "Can you give me the query we are running in clickhouse for this endpoint to see if I can see the error there?",
-  "Ok, nice thanks, moving on. When trying to login in dev environment with google or github I get this \"Provider not found\" and this in the console login-form.tsx:56 \n POST http://localhost:4011/api/auth/sign-in/social 404 (Not Found)\nawait in betterFetch        \nhandleSocialSignIn    @    login-form.tsx:56\nonClick    @    login-form.tsx:111 how can i fixt it",
-  "i get error: Module not found \"src/bin/cli.ts\" - please you run it and figure it out",
-  "[Image: image/png]\ndashboard still empty [Image #1] http://localhost:4011/dashboard?from=2026-02-26&to=2026-03-05",
-  "[Image: image/png]\nOk it seems the rudel.session_analytics aterilaised view has not been triggered, i see data in some charts but not in others like in sessions i see this [Image #1] what's happening",
-  "The stacked areas look off in comparison this second image, the errors stacked areas look smooth there is somethign wrong with the rendering of the token my podel\n[Image: image/png]",
-  "Before we do can you somehow simulate an upload locally simulating windows paths to test if this works? do it for \"rudel\" project."
- ],
- "new_work": [
-  "The session data contains UTC time is there a way for the frontend to adapt to the user's local timezone?\n[Image: image/png]",
-  "What's the new query? want to test it",
-  "Also, we need some sort of tool tip for how the productivity is calculated. Please add a tool tip next to the title of the productivity chart explaining what the formula is.",
-  "Can you implement 1 and 2",
-  "Ok nice! Almost done. Please now add a tooltip everywhere where it says Succes Rate, in charts and in tables describing in one setence how it's calculated"
- ],
- "refine_redirect": [
-  "We are getting really bad latency in some of the pages, for example these are the times for the overview page, over 10 seconds in some cases, can you analyse the queries that take this long, and strategise how to make them quicker? \n[Image: image/png]",
-  "Change the tab title \"ROI & Business Value\" including it's title in the window to \"ROI Calculator\" and set default value Code Percentage (%) to 10",
-  "Ok nice! Can you check all time series charts in the the app and make sure all have this configuration?"
- ],
- "approve_proceed": [
-  "Give me the full query",
-  "Ok seems to work now.",
-  "Can you upload all my sessions to local please",
-  "done please reupload",
-  "Ok commit changes and submit PR",
-  "please upload historical sessions and let me know when done",
-  "did you change branches?",
-  "What's the best practice if we did all these changes in n exisitng branch and we want to open a new pr?",
-  "Ok commit all changes pls"
- ],
- "pushback": [
-  "Ok please add clearer instructions about inviting other membersin the readme this is really crucial - in the getting started, don't overcpmplicate just make sure the step is there.",
-  "When you create an invite the URL shows there but there is no message that says - share this URL with {email address}",
-  "Ok seems to work, now please make the invite field blocked if the user is only a member since this is only possible for Owners.",
-  "Ok perfect. Now in the signup box we have \"By signing up, you agree to our Terms of Service\" but we also need to add privacy policy to it with this url https://obsessiondb.com/privacy",
-  "It shohld also be ther ein the signin modal",
-  "the table in the Projects page does not show the full path for each project, why are we going into the path when clicking on the details. Can we also get all the data for just\"rudel\" when we go into the details too?",
-  "Now move it in the side bar to below \"errors\"",
-  "Ok, can we update these values to the costs of  sonnet 4+?",
-  "Update the comments and put a tool tip in the titel of ROI Calculator and the \"Weekly Cost Trend\" chart in the samge page.",
-  "Set Default rows per page to 10 in the 2 tables of the bottom of the ROI calculator window",
-  "I also have the problem in this table that projects come double this is probably because the paths are different, can we group them here just like we did in the sessions bar charts multi dimension analysis? Or does not make sense?",
-  "Something weird is happening. When I change metrics in these charts the color changes in the legend items. This should not happen! Let's revert thic change completely. I think this needs more though because you can pick a metric then another one and this will change the sorting. Let's revert it pleae."
- ],
- "interrupt": [
-  "ok commit and open pr",
-  "Ok I think we are good. Please commit all changes and submit PR",
-  "ok commit changes and update PR then",
-  "ok can you commit all changes and create a PR",
-  "Ok please do it yourself and call this new branch \"fix/project-paths\""
- ]
+ "exemplars": {
+  "question": [
+   "Can you look at the code and tell me if we are triggering emails after sending an       \n  invite int he org management page?",
+   "Tokens by model chart in overview looks like this \n[Image: image/png]",
+   "how do i upload historical sessions?",
+   "Can you show me the new query with values please",
+   "and when you upload your sessions, how does the user what org to upload sessions to?",
+   "Can you remind me now what token cost we use for spend/cost calculadtions?",
+   "Is this also hardcoded in the materialised view or we calculate on reads? Just answer the question?",
+   "ok all good I am logged in in the dashboard in local, how do i upload my sessions to the local environment?",
+   "Can you show me the clickhouse schema?",
+   "Did the changes we make will make it easier for other devs to develop in this repo?",
+   "Ok, can you now do an analysis and let me know if it'S safe to open source this way too?"
+  ],
+  "bug_report": [
+   "I see 500 errors when loading the Project details specifically this endpoint https://app.rudel.ai/rpc/analytics/projects/details",
+   "We have an issue that when groping by User/Developer (X-Axis) we get proper names but when we do it in the  Y-Axis we get the user ids this should be fixed. \n[Image: image/png]",
+   "What is the full query for project details now is it this one?",
+   "I am getting this in clickhouse PROJECT_KEY_EXPR",
+   "Ok I get this now: Error\nAggregate function any(project_path) AS project_path is found in WHERE in query.",
+   "Can you give me the query we are running in clickhouse for this endpoint to see if I can see the error there?",
+   "Ok, nice thanks, moving on. When trying to login in dev environment with google or github I get this \"Provider not found\" and this in the console login-form.tsx:56 \n POST http://localhost:4011/api/auth/sign-in/social 404 (Not Found)\nawait in betterFetch        \nhandleSocialSignIn    @    login-form.tsx:56\nonClick    @    login-form.tsx:111 how can i fixt it",
+   "i get error: Module not found \"src/bin/cli.ts\" - please you run it and figure it out",
+   "[Image: image/png]\ndashboard still empty [Image #1] http://localhost:4011/dashboard?from=2026-02-26&to=2026-03-05",
+   "[Image: image/png]\nOk it seems the rudel.session_analytics aterilaised view has not been triggered, i see data in some charts but not in others like in sessions i see this [Image #1] what's happening",
+   "The stacked areas look off in comparison this second image, the errors stacked areas look smooth there is somethign wrong with the rendering of the token my podel\n[Image: image/png]",
+   "Before we do can you somehow simulate an upload locally simulating windows paths to test if this works? do it for \"rudel\" project."
+  ],
+  "new_work": [
+   "The session data contains UTC time is there a way for the frontend to adapt to the user's local timezone?\n[Image: image/png]",
+   "What's the new query? want to test it",
+   "Also, we need some sort of tool tip for how the productivity is calculated. Please add a tool tip next to the title of the productivity chart explaining what the formula is.",
+   "Can you implement 1 and 2",
+   "Ok nice! Almost done. Please now add a tooltip everywhere where it says Succes Rate, in charts and in tables describing in one setence how it's calculated"
+  ],
+  "refine_redirect": [
+   "We are getting really bad latency in some of the pages, for example these are the times for the overview page, over 10 seconds in some cases, can you analyse the queries that take this long, and strategise how to make them quicker? \n[Image: image/png]",
+   "Change the tab title \"ROI & Business Value\" including it's title in the window to \"ROI Calculator\" and set default value Code Percentage (%) to 10",
+   "Ok nice! Can you check all time series charts in the the app and make sure all have this configuration?"
+  ],
+  "approve_proceed": [
+   "Give me the full query",
+   "Ok seems to work now.",
+   "Can you upload all my sessions to local please",
+   "done please reupload",
+   "Ok commit changes and submit PR",
+   "please upload historical sessions and let me know when done",
+   "did you change branches?",
+   "What's the best practice if we did all these changes in n exisitng branch and we want to open a new pr?",
+   "Ok commit all changes pls"
+  ],
+  "pushback": [
+   "Ok please add clearer instructions about inviting other membersin the readme this is really crucial - in the getting started, don't overcpmplicate just make sure the step is there.",
+   "When you create an invite the URL shows there but there is no message that says - share this URL with {email address}",
+   "Ok seems to work, now please make the invite field blocked if the user is only a member since this is only possible for Owners.",
+   "Ok perfect. Now in the signup box we have \"By signing up, you agree to our Terms of Service\" but we also need to add privacy policy to it with this url https://obsessiondb.com/privacy",
+   "It shohld also be ther ein the signin modal",
+   "the table in the Projects page does not show the full path for each project, why are we going into the path when clicking on the details. Can we also get all the data for just\"rudel\" when we go into the details too?",
+   "Now move it in the side bar to below \"errors\"",
+   "Ok, can we update these values to the costs of  sonnet 4+?",
+   "Update the comments and put a tool tip in the titel of ROI Calculator and the \"Weekly Cost Trend\" chart in the samge page.",
+   "Set Default rows per page to 10 in the 2 tables of the bottom of the ROI calculator window",
+   "I also have the problem in this table that projects come double this is probably because the paths are different, can we group them here just like we did in the sessions bar charts multi dimension analysis? Or does not make sense?",
+   "Something weird is happening. When I change metrics in these charts the color changes in the legend items. This should not happen! Let's revert thic change completely. I think this needs more though because you can pick a metric then another one and this will change the sorting. Let's revert it pleae."
+  ],
+  "interrupt": [
+   "ok commit and open pr",
+   "Ok I think we are good. Please commit all changes and submit PR",
+   "ok commit changes and update PR then",
+   "ok can you commit all changes and create a PR",
+   "Ok please do it yourself and call this new branch \"fix/project-paths\""
+  ]
+ },
+ "length_median": {
+  "question": 16,
+  "bug_report": 16,
+  "new_work": 22,
+  "refine_redirect": 26,
+  "approve_proceed": 5,
+  "pushback": 31,
+  "interrupt": 8
+ }
 }

@@ -1,23 +1,31 @@
 {
- "pushback": [
-  "マージしたのでissueとdocの状態を更新して",
-  "https://github.com/araitatsuya-code/atena-print/pull/14#discussion_r2875523574\nこちらも対応できる？",
-  "コピペしやすい形式で出して欲しい",
-  "マージしたのでissueやdocsの状態を変更してください",
-  "MUSTとSHOULDのみ対応して",
-  "https://github.com/araitatsuya-code/atena-print/pull/22\n\nレビュー対応お願いします"
- ],
- "new_work": [
-  "動作確認に書いた内容でテストできますか？"
- ],
- "approve_proceed": [
-  "https://github.com/araitatsuya-code/atena-print/pull/15\n\nレビュー対応できますか？",
-  "続きをお願いします",
-  "ghのレビュー対応をskillにするかコメント返信方法などを記憶しておいて",
-  "自己レビューしてください",
-  "以降のissueを作成できますか？"
- ],
- "refine_redirect": [
-  "https://github.com/araitatsuya-code/atena-print/pull/24\n\nレビュー対応をお願いします"
- ]
+ "exemplars": {
+  "pushback": [
+   "マージしたのでissueとdocの状態を更新して",
+   "https://github.com/araitatsuya-code/atena-print/pull/14#discussion_r2875523574\nこちらも対応できる？",
+   "コピペしやすい形式で出して欲しい",
+   "マージしたのでissueやdocsの状態を変更してください",
+   "MUSTとSHOULDのみ対応して",
+   "https://github.com/araitatsuya-code/atena-print/pull/22\n\nレビュー対応お願いします"
+  ],
+  "new_work": [
+   "動作確認に書いた内容でテストできますか？"
+  ],
+  "approve_proceed": [
+   "https://github.com/araitatsuya-code/atena-print/pull/15\n\nレビュー対応できますか？",
+   "続きをお願いします",
+   "ghのレビュー対応をskillにするかコメント返信方法などを記憶しておいて",
+   "自己レビューしてください",
+   "以降のissueを作成できますか？"
+  ],
+  "refine_redirect": [
+   "https://github.com/araitatsuya-code/atena-print/pull/24\n\nレビュー対応をお願いします"
+  ]
+ },
+ "length_median": {
+  "pushback": 1,
+  "new_work": 1,
+  "approve_proceed": 1,
+  "refine_redirect": 2
+ }
 }

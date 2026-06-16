@@ -1,28 +1,37 @@
 {
- "new_work": [
-  "entire.io のローカルビューアです。オンライン版だとGitHub連携が必須ですが、履歴を見るだけならGitだけで良いので、このプロジェクトを作ってみました。このプロジェクトは、entire.ioとは無関係の個人が作成した非公認のものです。それがわかるような感じでREADMEとCLAUDE.mdを作成して。",
-  "@docs/screen1.png これも埋め込んで",
-  "MIT LicenseのLICENSEファイルも置いて"
- ],
- "bug_report": [
-  "transcriptの表示でAgentとUserが混同されています。確認して",
-  "claudeの表示が一瞬おかしくなったのだけど、理由はわかりますか？表示は消えてしまいました",
-  "b18bf58 このコミットのtranscriptのセッションプレビューには、スクショに関するやり取りがあります。しかしながら、実際にtranscriptを開いてみると、それより前のやり取りしか表示されていません。これはどうして？"
- ],
- "approve_proceed": [
-  "commit .claude and .entire directory",
-  "Update README to add feature X description.",
-  "y",
-  "OK, 修正コミットしておいてください。",
-  "commitして",
-  "進めてください",
-  "Continue if you have next steps, or stop and ask for clarification if you are unsure how to proceed."
- ],
- "question": [
-  "entireioの不具合ならしょうがないですね。OpenCode使ってみていたので、おそらくあまり検証されていない組み合わせなのでしょう。\nここまでの修正の概要をまとめてもらえますか？"
- ],
- "pushback": [
-  "READMEを英語にして。日本語版についてはREADME.jp.mdにしてREADMEからリンクするようにして",
-  "2026です"
- ]
+ "exemplars": {
+  "new_work": [
+   "entire.io のローカルビューアです。オンライン版だとGitHub連携が必須ですが、履歴を見るだけならGitだけで良いので、このプロジェクトを作ってみました。このプロジェクトは、entire.ioとは無関係の個人が作成した非公認のものです。それがわかるような感じでREADMEとCLAUDE.mdを作成して。",
+   "@docs/screen1.png これも埋め込んで",
+   "MIT LicenseのLICENSEファイルも置いて"
+  ],
+  "bug_report": [
+   "transcriptの表示でAgentとUserが混同されています。確認して",
+   "claudeの表示が一瞬おかしくなったのだけど、理由はわかりますか？表示は消えてしまいました",
+   "b18bf58 このコミットのtranscriptのセッションプレビューには、スクショに関するやり取りがあります。しかしながら、実際にtranscriptを開いてみると、それより前のやり取りしか表示されていません。これはどうして？"
+  ],
+  "approve_proceed": [
+   "commit .claude and .entire directory",
+   "Update README to add feature X description.",
+   "y",
+   "OK, 修正コミットしておいてください。",
+   "commitして",
+   "進めてください",
+   "Continue if you have next steps, or stop and ask for clarification if you are unsure how to proceed."
+  ],
+  "question": [
+   "entireioの不具合ならしょうがないですね。OpenCode使ってみていたので、おそらくあまり検証されていない組み合わせなのでしょう。\nここまでの修正の概要をまとめてもらえますか？"
+  ],
+  "pushback": [
+   "READMEを英語にして。日本語版についてはREADME.jp.mdにしてREADMEからリンクするようにして",
+   "2026です"
+  ]
+ },
+ "length_median": {
+  "new_work": 2,
+  "bug_report": 1,
+  "approve_proceed": 2,
+  "question": 2,
+  "pushback": 1
+ }
 }

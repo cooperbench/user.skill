@@ -1,70 +1,81 @@
 {
- "approve_proceed": [
-  "hi",
-  "今年是民國幾年？",
-  "/review-loop gemini",
-  "/doc-update README.md",
-  "/simplify last 4 commits",
-  "/simplify recent 3 commits",
-  "/commit --auto",
-  "我剛剛不小心操作失誤，可以幫我 reset 剛剛的 stash pop 嗎？",
-  "最近六個 commit 我們做了些什麼事情？你可以整理一下嗎？",
-  "/simplify staged changes",
-  "好像 OK",
-  "commit"
- ],
- "new_work": [
-  "幫 codex agent 也新增 pane title 功能\n可供參考的 codex session id: 019cc73c-edc5-79b3-9f87-344f6b8bdcd5\n\n整理一下，跟我討論下一步動作\n\n/explore -n 3\n[Image: image/jpeg]",
-  "macos app 怎麼做多語言？",
-  "/auto-impl @specs/plan/plan-2026-03-09_23-00-28_continuous-scroll-zoom.md \n\nact as one work-unit, start from plan-review phase",
-  "Codex 我們最近做了 subagent 的支援。因為 Codex 的 subagent 是平面的，也就是它沒有層級之分，所以如果我們 Codex 那邊有開啟 Auto Switch 的話，它會被我們的 Auto Switch 捕捉到，導致 Codex 跳到 subagent 那邊去。\n\n平常我們其實只需要看主介面，不需要看 subagent，所以可能要把 subagent 從 Auto Switch 裡面排除掉。\n\n/explore",
-  "@specs/brainstorm/brainstorm-continuous-scroll.md\n\n/auto-impl phase 3.4-3.5",
-  "@specs/plan/plan-continuous-scroll-zoom-flicker-fix.md \n\nreview the plan until all pass, then implement it\nbefore imeplementation, gather proper context with Explore agents (run in parallel)",
-  "run validation step in doc update skill",
-  "- 使用 @agent-Explore (haiku, run in foreground) 來做廣泛的程式碼探索與資料蒐集\\\n- IMPORTANT: run subagents in parallel\\\n- First, use the TaskList tool to plan tasks in the user's best interest. Organize parallelization effectively for optimal results.",
-  "整理到 spec 檔案"
- ],
- "bug_report": [
-  "plan on fixing these\n\n   - 縮放行為 (cursor card 應該要保持在 viewport 內) #todo\n   - 在邊界移動 cursor card 造成的抖動 #todo\n     - 因為 cursor card 的 border 擠壓到邊界的 scollbar",
-  "@specs/brainstorm/brainstorm-continuous-scroll.md\n\n有一個問題就是在連續捲動模式下，如果我是透過拖拉視窗的寬度來做 resize 的話，因為圖片會自動 zoom 來貼合視窗寬度，這種情況下圖片就會滑走。\n\n因為放大縮小的關係，比如我原本瀏覽的位置是第 10 張圖，在放大後位置可能就會往上或往下移動。這個問題應該要怎麼解決？我有什麼辦法可以讓圖片保持在同一個位置？\n\nuse explore skill with -n 3",
-  "修正一個問題：進入連續捲動模式（continuous scroll mode）時，程式會自動跳到最後一頁。\n\n理論上，它應該要維持在進入模式前的那一頁。例如：我原本已經瀏覽到第五頁，那進入連續捲動模式後，應該要維持在這一頁才對，而不是跳到最後一頁。\n\n- 使用 agent Explore (haiku, run in foreground) 來做廣泛的程式碼探索與資料蒐集\\\n- IMPORTANT: run subagents in parallel\\\n- First, use the TaskList tool to plan tasks in the user's best interest. Organize parallelization effectively for optimal results.",
-  "現在 trackpad 換頁的動量鎖幾乎沒有了？\n我很容易一換頁就滑到下一頁的底部",
-  "我現在用 low 設定\n圖片比視窗大",
-  "64天安門事件是怎麼一回事",
-  "呼叫方沒有辦法特別控制完整的 title string 吧\n你說 pane 的 title 已經有資料流，可是我剛剛實際用的時候沒有看到 pane title，是我 tmux 設定的關係嗎？\n應該不是啊，因為我用 Claude Code 的 agent team 功能是有看到 pane title 的",
-  "我測試完全沒解決？",
-  "log 在 logs/2027.txt\n可以用 subagent 分析",
-  "- 使用 適合的subagent 或 agent general-purpose (run in foreground) 來做程式碼的分析\\\n- 使用 agent Explore (haiku, run in foreground) 來做廣泛的程式碼探索與資料蒐集\\\n- IMPORTANT: run subagents in parallel\\\n- First, use the TaskList tool to plan tasks in the user's best interest. Organize parallelization effectively for optimal results.",
-  "好了  你可以看 log",
-  "好了，這次 log 比較大，建議用 subagent 處理"
- ],
- "pushback": [
-  "你覺得應該修嗎",
-  "修正吧",
-  "好像沒什麼差欸\n你幫我把靈敏度的 theshold 整體都上調看看",
-  "有部分功能你的更新角度是以後續更新的角度，但是像是「視窗重用」的功能，其實你可以直接把那個句子改寫，而不是在後面附加括號說明。\n\n因為你現在這樣寫起來怪怪的，既然可以共用同一個視窗，為什麼還要括號註明可以取消？",
-  "你把它整合成可選擇在同一視窗開啟，或在不同視窗開啟",
-  "你現在這樣改，原本那個在邊緣要再多滑一次的鎖就沒了。\n\n目前是這個感覺：它現在滑到邊緣非常快，我可以直接滑到邊緣就自動換位。",
-  "你現在這樣改，原本那個在邊緣要再多滑一次的鎖就沒了。\n\n目前是這個感覺：它現在滑到邊緣非常快，我可以直接滑到邊緣就自動換頁。\n\n/silennai:debug",
-  "有了  修正了",
-  "先幫我取用 nickname 好了",
-  "不用寫 uuid 了",
-  "claude 跟 codex 都不需要 prefix，也就是不顯示 uuid 或 agentid",
-  "另外你現在修這個是不是已經造成 regression 了？\n\n因為我感覺我們之前在「非連續捲動模式」下，也修過類似的問題（在 Zoom 的時候有沒有維持在同樣位置），結果現在好像都跑掉了。\n\n你是不是沒有判定只有「連續捲動」才適用？"
- ],
- "refine_redirect": [
-  "幫我把視窗最小寬高改為 300 x 300\n然後確保 auto-fitting 不會因此在縮放時發生飄移",
-  "直接動手改吧",
-  "also update @specs/brainstorm/brainstorm-continuous-scroll.md"
- ],
- "question": [
-  "我確認一下 claude 那邊有在用短 id 嗎? pane title",
-  "我想確認我們處理的是 grid view 的問題對吧",
-  "MSLong 要怎麼看？",
-  "console 的指令貼給我",
-  "- 縮放行為 (cursor card 應該要保持在 viewport 內) #todo\n   - 在邊界移動 cursor card 造成的抖動 #todo\n     - 因為 cursor card 的 border 擠壓到邊界的 scollbar\n\n整理一下，跟我討論下一步動作\n\n/explore",
-  "你可以對比一下英文版嗎",
-  "我其實還是不太懂 fit to Window 的功能到底是什麼？實際操作的時候，到底在什麼樣的情況下會需要按這個功能？",
-  "log 在 logs/1736.txt"
- ]
+ "exemplars": {
+  "approve_proceed": [
+   "hi",
+   "今年是民國幾年？",
+   "/review-loop gemini",
+   "/doc-update README.md",
+   "/simplify last 4 commits",
+   "/simplify recent 3 commits",
+   "/commit --auto",
+   "我剛剛不小心操作失誤，可以幫我 reset 剛剛的 stash pop 嗎？",
+   "最近六個 commit 我們做了些什麼事情？你可以整理一下嗎？",
+   "/simplify staged changes",
+   "好像 OK",
+   "commit"
+  ],
+  "new_work": [
+   "幫 codex agent 也新增 pane title 功能\n可供參考的 codex session id: 019cc73c-edc5-79b3-9f87-344f6b8bdcd5\n\n整理一下，跟我討論下一步動作\n\n/explore -n 3\n[Image: image/jpeg]",
+   "macos app 怎麼做多語言？",
+   "/auto-impl @specs/plan/plan-2026-03-09_23-00-28_continuous-scroll-zoom.md \n\nact as one work-unit, start from plan-review phase",
+   "Codex 我們最近做了 subagent 的支援。因為 Codex 的 subagent 是平面的，也就是它沒有層級之分，所以如果我們 Codex 那邊有開啟 Auto Switch 的話，它會被我們的 Auto Switch 捕捉到，導致 Codex 跳到 subagent 那邊去。\n\n平常我們其實只需要看主介面，不需要看 subagent，所以可能要把 subagent 從 Auto Switch 裡面排除掉。\n\n/explore",
+   "@specs/brainstorm/brainstorm-continuous-scroll.md\n\n/auto-impl phase 3.4-3.5",
+   "@specs/plan/plan-continuous-scroll-zoom-flicker-fix.md \n\nreview the plan until all pass, then implement it\nbefore imeplementation, gather proper context with Explore agents (run in parallel)",
+   "run validation step in doc update skill",
+   "- 使用 @agent-Explore (haiku, run in foreground) 來做廣泛的程式碼探索與資料蒐集\\\n- IMPORTANT: run subagents in parallel\\\n- First, use the TaskList tool to plan tasks in the user's best interest. Organize parallelization effectively for optimal results.",
+   "整理到 spec 檔案"
+  ],
+  "bug_report": [
+   "plan on fixing these\n\n   - 縮放行為 (cursor card 應該要保持在 viewport 內) #todo\n   - 在邊界移動 cursor card 造成的抖動 #todo\n     - 因為 cursor card 的 border 擠壓到邊界的 scollbar",
+   "@specs/brainstorm/brainstorm-continuous-scroll.md\n\n有一個問題就是在連續捲動模式下，如果我是透過拖拉視窗的寬度來做 resize 的話，因為圖片會自動 zoom 來貼合視窗寬度，這種情況下圖片就會滑走。\n\n因為放大縮小的關係，比如我原本瀏覽的位置是第 10 張圖，在放大後位置可能就會往上或往下移動。這個問題應該要怎麼解決？我有什麼辦法可以讓圖片保持在同一個位置？\n\nuse explore skill with -n 3",
+   "修正一個問題：進入連續捲動模式（continuous scroll mode）時，程式會自動跳到最後一頁。\n\n理論上，它應該要維持在進入模式前的那一頁。例如：我原本已經瀏覽到第五頁，那進入連續捲動模式後，應該要維持在這一頁才對，而不是跳到最後一頁。\n\n- 使用 agent Explore (haiku, run in foreground) 來做廣泛的程式碼探索與資料蒐集\\\n- IMPORTANT: run subagents in parallel\\\n- First, use the TaskList tool to plan tasks in the user's best interest. Organize parallelization effectively for optimal results.",
+   "現在 trackpad 換頁的動量鎖幾乎沒有了？\n我很容易一換頁就滑到下一頁的底部",
+   "我現在用 low 設定\n圖片比視窗大",
+   "64天安門事件是怎麼一回事",
+   "呼叫方沒有辦法特別控制完整的 title string 吧\n你說 pane 的 title 已經有資料流，可是我剛剛實際用的時候沒有看到 pane title，是我 tmux 設定的關係嗎？\n應該不是啊，因為我用 Claude Code 的 agent team 功能是有看到 pane title 的",
+   "我測試完全沒解決？",
+   "log 在 logs/2027.txt\n可以用 subagent 分析",
+   "- 使用 適合的subagent 或 agent general-purpose (run in foreground) 來做程式碼的分析\\\n- 使用 agent Explore (haiku, run in foreground) 來做廣泛的程式碼探索與資料蒐集\\\n- IMPORTANT: run subagents in parallel\\\n- First, use the TaskList tool to plan tasks in the user's best interest. Organize parallelization effectively for optimal results.",
+   "好了  你可以看 log",
+   "好了，這次 log 比較大，建議用 subagent 處理"
+  ],
+  "pushback": [
+   "你覺得應該修嗎",
+   "修正吧",
+   "好像沒什麼差欸\n你幫我把靈敏度的 theshold 整體都上調看看",
+   "有部分功能你的更新角度是以後續更新的角度，但是像是「視窗重用」的功能，其實你可以直接把那個句子改寫，而不是在後面附加括號說明。\n\n因為你現在這樣寫起來怪怪的，既然可以共用同一個視窗，為什麼還要括號註明可以取消？",
+   "你把它整合成可選擇在同一視窗開啟，或在不同視窗開啟",
+   "你現在這樣改，原本那個在邊緣要再多滑一次的鎖就沒了。\n\n目前是這個感覺：它現在滑到邊緣非常快，我可以直接滑到邊緣就自動換位。",
+   "你現在這樣改，原本那個在邊緣要再多滑一次的鎖就沒了。\n\n目前是這個感覺：它現在滑到邊緣非常快，我可以直接滑到邊緣就自動換頁。\n\n/silennai:debug",
+   "有了  修正了",
+   "先幫我取用 nickname 好了",
+   "不用寫 uuid 了",
+   "claude 跟 codex 都不需要 prefix，也就是不顯示 uuid 或 agentid",
+   "另外你現在修這個是不是已經造成 regression 了？\n\n因為我感覺我們之前在「非連續捲動模式」下，也修過類似的問題（在 Zoom 的時候有沒有維持在同樣位置），結果現在好像都跑掉了。\n\n你是不是沒有判定只有「連續捲動」才適用？"
+  ],
+  "refine_redirect": [
+   "幫我把視窗最小寬高改為 300 x 300\n然後確保 auto-fitting 不會因此在縮放時發生飄移",
+   "直接動手改吧",
+   "also update @specs/brainstorm/brainstorm-continuous-scroll.md"
+  ],
+  "question": [
+   "我確認一下 claude 那邊有在用短 id 嗎? pane title",
+   "我想確認我們處理的是 grid view 的問題對吧",
+   "MSLong 要怎麼看？",
+   "console 的指令貼給我",
+   "- 縮放行為 (cursor card 應該要保持在 viewport 內) #todo\n   - 在邊界移動 cursor card 造成的抖動 #todo\n     - 因為 cursor card 的 border 擠壓到邊界的 scollbar\n\n整理一下，跟我討論下一步動作\n\n/explore",
+   "你可以對比一下英文版嗎",
+   "我其實還是不太懂 fit to Window 的功能到底是什麼？實際操作的時候，到底在什麼樣的情況下會需要按這個功能？",
+   "log 在 logs/1736.txt"
+  ]
+ },
+ "length_median": {
+  "approve_proceed": 2,
+  "new_work": 10,
+  "bug_report": 4,
+  "pushback": 3,
+  "refine_redirect": 3,
+  "question": 3,
+  "interrupt": 2
+ }
 }

@@ -1,50 +1,60 @@
 {
- "refine_redirect": [
-  "make minor aesthetic change on the widget terminal that as it grows because of text the icon on the left hand side stays vertically centered"
- ],
- "bug_report": [
-  "see the recent changes made? Having issues with agent console not being able to scroll",
-  "Something in the recent changes has broken the build version of the app and now server won't start. Don't make any edits but investigate what happened that broke server. It's probably a change that has to do with analytics",
-  "I sent a simple message \"Hi\" and\nmarlin@Marlins-MacBook-Pro agent-command-center % sqlite3 ~/.acc/threads.db \"SELECT COUNT(*) FROM console_lines;\"\n0\nseeing no console lines, do I need to have it message way more?",
-  "same error still\n  security: SecItemCopyMatching: The specified item could not be found in the keychain."
- ],
- "new_work": [
-  "how can we update this electron app to allow for multiple windows so that I can work on different folders at the same time",
-  "start implementing",
-  "how can I test phase 1?",
-  "how can I get a list of claude sessions, grep for console-line-persistence.md, get the ID and then resume that session?"
- ],
- "approve_proceed": [
-  "auth",
-  "config",
-  "can you access a previous session where we were working on console-line-persistence",
-  "perfect can you commit these changes with an accurate commit message following proper standard",
-  "git commit with proper message (following standard)",
-  "cool cool commit and push these chanegs",
-  "can you run the queries",
-  "yes go ahead",
-  "create a commit with a proper message of all changes done",
-  "commit separately as documentation",
-  "yes and push the changes so I can test"
- ],
- "pushback": [
-  "no this was incorrect, I wanted the change to be in ChatInput as the chat textbox grows because of text",
-  "rework the title/head bar of the electron app. Can't have any content on the top left because the mac minimize, close and expand buttons overlap. So rework the layout of those and we should think about a better name for this for now. Maybe something a bit non obvious but obvious and cool (e.g. nightmarket -> agentic service marketplace)",
-  "instead of a lobster icon, use something that makes more sense",
-  "double check that the same env variables are used / needed for github action as the bun run sign:mac command because that command works",
-  "Now the consoles seem to be infinitely glitching when scrolled to the bottom \nLet's go back to the drawing board - look at the commit that limits the lines in console and let's rethink if we should keep it and if we should how to build it without beraking the frontend",
-  "look into how this project https://github.com/pingdotgg/t3code does memory management with their threads that can grow and see what we can pull / use on our side\nI'm leaning towards some kind of lazy load",
-  "let's go with option 1 but yes I do think we need persistence so let's plan to implement that next",
-  "start planning",
-  "1. seems ok for now\n2. keep indefinitely for now\n3. why do we need an export functions?\n4. not yet, not seeing a reason to\n5. yes need to be able to search for a few reasons like resuming a session or turning it into memory\n6. yes",
-  "yes update the plan",
-  "where's the plan so I can review",
-  "start with option 1"
- ],
- "question": [
-  "so what happens if I try to scroll past the limit?",
-  "let me review the plan for",
-  "wait what's the difference between agent consoles and regular chats? The only way to interact with an agent / claude code in this app is through agent consoles",
-  "is there any updates needed on env variables?"
- ]
+ "exemplars": {
+  "refine_redirect": [
+   "make minor aesthetic change on the widget terminal that as it grows because of text the icon on the left hand side stays vertically centered"
+  ],
+  "bug_report": [
+   "see the recent changes made? Having issues with agent console not being able to scroll",
+   "Something in the recent changes has broken the build version of the app and now server won't start. Don't make any edits but investigate what happened that broke server. It's probably a change that has to do with analytics",
+   "I sent a simple message \"Hi\" and\nmarlin@Marlins-MacBook-Pro agent-command-center % sqlite3 ~/.acc/threads.db \"SELECT COUNT(*) FROM console_lines;\"\n0\nseeing no console lines, do I need to have it message way more?",
+   "same error still\n  security: SecItemCopyMatching: The specified item could not be found in the keychain."
+  ],
+  "new_work": [
+   "how can we update this electron app to allow for multiple windows so that I can work on different folders at the same time",
+   "start implementing",
+   "how can I test phase 1?",
+   "how can I get a list of claude sessions, grep for console-line-persistence.md, get the ID and then resume that session?"
+  ],
+  "approve_proceed": [
+   "auth",
+   "config",
+   "can you access a previous session where we were working on console-line-persistence",
+   "perfect can you commit these changes with an accurate commit message following proper standard",
+   "git commit with proper message (following standard)",
+   "cool cool commit and push these chanegs",
+   "can you run the queries",
+   "yes go ahead",
+   "create a commit with a proper message of all changes done",
+   "commit separately as documentation",
+   "yes and push the changes so I can test"
+  ],
+  "pushback": [
+   "no this was incorrect, I wanted the change to be in ChatInput as the chat textbox grows because of text",
+   "rework the title/head bar of the electron app. Can't have any content on the top left because the mac minimize, close and expand buttons overlap. So rework the layout of those and we should think about a better name for this for now. Maybe something a bit non obvious but obvious and cool (e.g. nightmarket -> agentic service marketplace)",
+   "instead of a lobster icon, use something that makes more sense",
+   "double check that the same env variables are used / needed for github action as the bun run sign:mac command because that command works",
+   "Now the consoles seem to be infinitely glitching when scrolled to the bottom \nLet's go back to the drawing board - look at the commit that limits the lines in console and let's rethink if we should keep it and if we should how to build it without beraking the frontend",
+   "look into how this project https://github.com/pingdotgg/t3code does memory management with their threads that can grow and see what we can pull / use on our side\nI'm leaning towards some kind of lazy load",
+   "let's go with option 1 but yes I do think we need persistence so let's plan to implement that next",
+   "start planning",
+   "1. seems ok for now\n2. keep indefinitely for now\n3. why do we need an export functions?\n4. not yet, not seeing a reason to\n5. yes need to be able to search for a few reasons like resuming a session or turning it into memory\n6. yes",
+   "yes update the plan",
+   "where's the plan so I can review",
+   "start with option 1"
+  ],
+  "question": [
+   "so what happens if I try to scroll past the limit?",
+   "let me review the plan for",
+   "wait what's the difference between agent consoles and regular chats? The only way to interact with an agent / claude code in this app is through agent consoles",
+   "is there any updates needed on env variables?"
+  ]
+ },
+ "length_median": {
+  "refine_redirect": 25,
+  "bug_report": 22,
+  "new_work": 13,
+  "approve_proceed": 7,
+  "pushback": 11,
+  "question": 9
+ }
 }

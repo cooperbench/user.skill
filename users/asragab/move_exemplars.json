@@ -1,53 +1,64 @@
 {
- "new_work": [
-  "Made some refactors to the project, want to do a live RED-GREEN-OBSERVER test with the code plugin, let's set that up",
-  "https://github.com/trufflesecurity/trufflehog we recently installed this tool and ran it, but if you check out the reppo there is a pre-commit hook and yaml file we should install trufflehog as a pre commit hook",
-  "claude plugin add https://github.com/ASRagab/optimize-anything <- this doesn't make sense there needs to be a marketplace and then a plugin installation also this command doesn't exist, can we please update the repo so that this works consult skills for building plugins and marketplaces",
-  "finish batch 1 verify state (might be inconsistent as api key became invalid in mid session) and if consistent with docs and plans continue to batch 2",
-  "Let's run the RED-GREEN-Observer cycle on the evaluator-cookbook.md",
-  "what would slightly more robust integration suite look like"
- ],
- "question": [
-  "it seems the generate-evaluator is both a skill and a slash command, confirm this is true and offer proposals for consildation or if valuable having distinct names",
-  "After gaining context of the project and doing a review of the code, answer this question we have skill clarity evaluator yes? Do we have a evaluator effectiveness evaluator (meta, I know) if not, would that genuinely help the overall project. If not what's next",
-  "Do we need to update any metadata in the marketplace or plugin json and also address all README or documentation like AGENTS/CLAUDE that might make reference to the command",
-  "just checking are background aagents still alive."
- ],
- "bug_report": [
-  "Are they supposed to be there or not supposed to be there? What is the deal is the test doc contract wrong, creating a plugin can't be that difficult Error: Failed to install: Plugin has an invalid manifest file at /Users/aragab/.claude/plugins/cache/temp_local_1772173211117_7dawlo/.claude-plugin/plugin.json. Validation errors: commands: Invalid input, skills: Invalid input",
-  "hmmm the trigger wasn't changed"
- ],
- "interrupt": [
-  "commit changes, merge locally back to main, create handoff document for next batch",
-  "use the skill finish the branch"
- ],
- "pushback": [
-  "clear",
-  "let's adjust the skill content directly this time",
-  "Option A",
-  "they all if I am being honest, in order though 3, 1, 2, 4",
-  "did you update the HANDOFF.md to point to the latest doc",
-  "can you updaate any other documentation or code references to GOOGLE_API_KEY",
-  "update handoff doc, will full context for running the observer and a summary of session work, direct session to any key details to validate that RED-GREEN-OBSERVER will be successful",
-  "Can we change the workflow for github actions in ci.yml to do the following trigger on pull requests from other branches but only run the integration job on push to main",
-  "commit to main (repo is local only)"
- ],
- "approve_proceed": [
-  "accept the improvement",
-  "can we bump the version of the plugin so we can update it",
-  "yes",
-  "batch 2",
-  "For detailed examples and advanced patterns, see files in `references/` and `examples/` directories.",
-  "1",
-  "looks good whats next",
-  "next",
-  "can you create private repo and push code",
-  "continue until fished with remaining tasks",
-  "commit and push please",
-  "**Begin with Phase 1: Discovery**"
- ],
- "refine_redirect": [
-  "Alright let's do one more pass for syntactic issues, irrelevant comments, badly named variables, branching logic that could be simplified, overly verbose docstrings",
-  "Can you perform the same check over the whole repo, I would stay away from the SKILL files since they have been optimized, but let's take a loook with a similar eye to the rest of the repo"
- ]
+ "exemplars": {
+  "new_work": [
+   "Made some refactors to the project, want to do a live RED-GREEN-OBSERVER test with the code plugin, let's set that up",
+   "https://github.com/trufflesecurity/trufflehog we recently installed this tool and ran it, but if you check out the reppo there is a pre-commit hook and yaml file we should install trufflehog as a pre commit hook",
+   "claude plugin add https://github.com/ASRagab/optimize-anything <- this doesn't make sense there needs to be a marketplace and then a plugin installation also this command doesn't exist, can we please update the repo so that this works consult skills for building plugins and marketplaces",
+   "finish batch 1 verify state (might be inconsistent as api key became invalid in mid session) and if consistent with docs and plans continue to batch 2",
+   "Let's run the RED-GREEN-Observer cycle on the evaluator-cookbook.md",
+   "what would slightly more robust integration suite look like"
+  ],
+  "question": [
+   "it seems the generate-evaluator is both a skill and a slash command, confirm this is true and offer proposals for consildation or if valuable having distinct names",
+   "After gaining context of the project and doing a review of the code, answer this question we have skill clarity evaluator yes? Do we have a evaluator effectiveness evaluator (meta, I know) if not, would that genuinely help the overall project. If not what's next",
+   "Do we need to update any metadata in the marketplace or plugin json and also address all README or documentation like AGENTS/CLAUDE that might make reference to the command",
+   "just checking are background aagents still alive."
+  ],
+  "bug_report": [
+   "Are they supposed to be there or not supposed to be there? What is the deal is the test doc contract wrong, creating a plugin can't be that difficult Error: Failed to install: Plugin has an invalid manifest file at /Users/aragab/.claude/plugins/cache/temp_local_1772173211117_7dawlo/.claude-plugin/plugin.json. Validation errors: commands: Invalid input, skills: Invalid input",
+   "hmmm the trigger wasn't changed"
+  ],
+  "interrupt": [
+   "commit changes, merge locally back to main, create handoff document for next batch",
+   "use the skill finish the branch"
+  ],
+  "pushback": [
+   "clear",
+   "let's adjust the skill content directly this time",
+   "Option A",
+   "they all if I am being honest, in order though 3, 1, 2, 4",
+   "did you update the HANDOFF.md to point to the latest doc",
+   "can you updaate any other documentation or code references to GOOGLE_API_KEY",
+   "update handoff doc, will full context for running the observer and a summary of session work, direct session to any key details to validate that RED-GREEN-OBSERVER will be successful",
+   "Can we change the workflow for github actions in ci.yml to do the following trigger on pull requests from other branches but only run the integration job on push to main",
+   "commit to main (repo is local only)"
+  ],
+  "approve_proceed": [
+   "accept the improvement",
+   "can we bump the version of the plugin so we can update it",
+   "yes",
+   "batch 2",
+   "For detailed examples and advanced patterns, see files in `references/` and `examples/` directories.",
+   "1",
+   "looks good whats next",
+   "next",
+   "can you create private repo and push code",
+   "continue until fished with remaining tasks",
+   "commit and push please",
+   "**Begin with Phase 1: Discovery**"
+  ],
+  "refine_redirect": [
+   "Alright let's do one more pass for syntactic issues, irrelevant comments, badly named variables, branching logic that could be simplified, overly verbose docstrings",
+   "Can you perform the same check over the whole repo, I would stay away from the SKILL files since they have been optimized, but let's take a loook with a similar eye to the rest of the repo"
+  ]
+ },
+ "length_median": {
+  "new_work": 21,
+  "question": 27,
+  "bug_report": 27,
+  "interrupt": 9,
+  "pushback": 11,
+  "approve_proceed": 3,
+  "refine_redirect": 30
+ }
 }

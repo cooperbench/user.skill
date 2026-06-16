@@ -1,65 +1,75 @@
 {
- "new_work": [
-  "okay, the website landing page and blog  is deployed, add link to readme, somewhere on top https://4gray.github.io/iptvnator/",
-  "use electron skill and agent-browser cli to test the app, click around, create screenshots, the app  is running",
-  "investigate what are other good candidates to add to command pallete to provide good user experience, like add new playlist, switch to eisting playlists, open multi epg view, settings etc use /plan mode",
-  "nice. anothe feature to add: in @libs/portal/downloads/feature/src/lib/downloads.component.html add new button or something what is good ux/ui to make it possible to copy the download url of item",
-  "still nothing, use agent-browser cli to connect to running map and click around, create screenshots etc",
-  "ue agent-browser cli with npx and connect to existing app session which is running",
-  "we also need to adapt the adding of new playists in e2e tests now",
-  "yes, don't forget to add readme file and documents mac adresses, but also implementation details in docs folder or readme file. and would it be also possible to use that server together with playwright tests? to start it in parallel and then test the app against the stalker portals served by the mock app?",
-  "can you create a skill that explains how to use it and puit this instruction for first start to a md file, i will remove it later on",
-  "continue, use electron skill with agent-browser to verify and test, the app is already running",
-  "in some vies, maybe @libs/portal/shared/ui/src/lib/components/grid-list/ we use skeletons/ghosts when ites are loading, can you find it in project and reuse the same style, maybe extract the style if needed for favorites and recently-viewed view, to replace the mat-progress bar by skeletons, create a plan how to implement it"
- ],
- "approve_proceed": [
-  "@/Users/4gray/Downloads/iptvnator-website-plan (1).md i have attached  a plan what i want to do, check and enrich the plan if needed",
-  "i have restarted and rebuild the app. what are next steps?",
-  "[Image: source: /Users/4gray/.claude/image-cache/4f2f2cab-a227-46e8-a4c4-d8793ea5a92c/1.png]",
-  "[Image: source: /Users/4gray/.claude/image-cache/6864ff97-5db6-4c77-9d56-2e75e89488a0/2.png]",
-  "do not stash, just lint",
-  "yes, do all three things",
-  "select your favorite",
-  "Please commit all of my changes so we can make a PR.",
-  "yes",
-  "what left?"
- ],
- "refine_redirect": [
-  "the deisgn and look&feel of the @libs/portal/xtream/data-access/src/lib/account-info/ component looks a bit inconsistent to the app design, color, gradients, density. can you use frontend-design skill and improve that"
- ],
- "bug_report": [
-  "in mobile version of website app @apps/website   there is a horizontal scroll visible, but nothing visually recognizable what could be the reason, could you check? i noticed, that scroll i snot there in blog, blog is fine. use frontend-design skill and chrome extension to check",
-  "i think the border radius was not changed, or? see screenshot [Image #2]\n[Image: image/png]",
-  "[Image: source: /Users/4gray/.claude/image-cache/03864394-1085-432c-a261-484b3547126b/3.png]",
-  "still no effect",
-  "[Image: source: /Users/4gray/.claude/image-cache/03864394-1085-432c-a261-484b3547126b/5.png]",
-  "oh the settings icon in the rail is not visible anymore, can you check?",
-  "can not see the button in videojs player, where should it be, can you maybe add logs to see if audio tracks are available for live tv channel",
-  "i can jsut see the pulse, but no spinning progress ring, can you check and fix?",
-  "it's still not visible, download icon is just pulsing and nothing else",
-  "the dow element is there i see it's rotating when i hover it from the dom, but visually it's absolutelly not visible, see screenshot [Image #3]\n[Image: image/png]",
-  "the placeholder are not there any more and the button position in footer looks weird, user electron skill and agent-browser to check, create sscreenshots what i mean",
-  "@apps/web/src/app/home/xtream-code-import/xtream-code-import.component.ts for xtream-mock-server when i try to do the status check, use testConnection method, the api is responding with error, or api is just missing, can you double check @libs/services/src/lib/portal-status.service.ts what exaxtly is expected here checkPortalStatus, and whether it's missing in xtream mock"
- ],
- "question": [
-  "does this PR makes sense? does it fix any issue? if yes, explain what exactly? https://github.com/4gray/iptvnator/pull/803",
-  "perfect, are there any other issues left from our initial plan? what do you think about playlist-switcher @libs/playlist/shared/ui/src/lib/playlist-switcher/ component and consistency of it, use agent-browser to open it and check the layout style, items, etc",
-  "[Image: source: /Users/4gray/.claude/image-cache/6864ff97-5db6-4c77-9d56-2e75e89488a0/1.png]",
-  "[Image: source: /Users/4gray/.claude/image-cache/6864ff97-5db6-4c77-9d56-2e75e89488a0/3.png]",
-  "what do you think as deisgning it as a little horizonal progress bar and not circle below the icon?"
- ],
- "pushback": [
-  "what do you think about border-radius of the playlist item elements? can we reduce them? also as you can see the element is a bit cut off on the right side [Image #1] . is the scroll bar layout cutting it off, so that border radius is not visible?\n[Image: image/png]",
-  "[Image: source: /Users/4gray/.claude/image-cache/03864394-1085-432c-a261-484b3547126b/1.png]",
-  "[Image: source: /Users/4gray/.claude/image-cache/03864394-1085-432c-a261-484b3547126b/2.png]",
-  "is way more better. as you can see, the text in the icon, text, meta icons/buttons in the mat-list-item are somehow not vertically aligned or? how easy can it be adapted or is it also hardcoded somewhere in material design? [Image #3]\n[Image: image/png]",
-  "the button on the right and title and meta are still not vertically aligned or? check screenshot and highlighted element: [Image #4]\n[Image: image/png]",
-  "[Image: source: /Users/4gray/.claude/image-cache/03864394-1085-432c-a261-484b3547126b/4.png]",
-  "now it's even more sticky to bottom , see [Image #5]\n[Image: image/png]",
-  "still not perfect, maybe we can replace the mat-list-item, what do you think? or would it produce issues with drag&drop?",
-  "look at the screenshot, the icon is not visible in the bottom corner, maybe it's in the dom but outside of visible rail area? [Image #1]\n[Image: image/png]",
-  "remember we have remove the rail border-right, or adapted the color in light theme, but i can still see it in dark theme. what do you think, should we keep it?",
-  "i like your recommendation, do it",
-  "what i have noticed there, the hover effect in navigation rail and in playlist-switcher for items and button at bottom has been disappeared, can we add it?"
- ]
+ "exemplars": {
+  "new_work": [
+   "okay, the website landing page and blog  is deployed, add link to readme, somewhere on top https://4gray.github.io/iptvnator/",
+   "use electron skill and agent-browser cli to test the app, click around, create screenshots, the app  is running",
+   "investigate what are other good candidates to add to command pallete to provide good user experience, like add new playlist, switch to eisting playlists, open multi epg view, settings etc use /plan mode",
+   "nice. anothe feature to add: in @libs/portal/downloads/feature/src/lib/downloads.component.html add new button or something what is good ux/ui to make it possible to copy the download url of item",
+   "still nothing, use agent-browser cli to connect to running map and click around, create screenshots etc",
+   "ue agent-browser cli with npx and connect to existing app session which is running",
+   "we also need to adapt the adding of new playists in e2e tests now",
+   "yes, don't forget to add readme file and documents mac adresses, but also implementation details in docs folder or readme file. and would it be also possible to use that server together with playwright tests? to start it in parallel and then test the app against the stalker portals served by the mock app?",
+   "can you create a skill that explains how to use it and puit this instruction for first start to a md file, i will remove it later on",
+   "continue, use electron skill with agent-browser to verify and test, the app is already running",
+   "in some vies, maybe @libs/portal/shared/ui/src/lib/components/grid-list/ we use skeletons/ghosts when ites are loading, can you find it in project and reuse the same style, maybe extract the style if needed for favorites and recently-viewed view, to replace the mat-progress bar by skeletons, create a plan how to implement it"
+  ],
+  "approve_proceed": [
+   "@/Users/4gray/Downloads/iptvnator-website-plan (1).md i have attached  a plan what i want to do, check and enrich the plan if needed",
+   "i have restarted and rebuild the app. what are next steps?",
+   "[Image: source: /Users/4gray/.claude/image-cache/4f2f2cab-a227-46e8-a4c4-d8793ea5a92c/1.png]",
+   "[Image: source: /Users/4gray/.claude/image-cache/6864ff97-5db6-4c77-9d56-2e75e89488a0/2.png]",
+   "do not stash, just lint",
+   "yes, do all three things",
+   "select your favorite",
+   "Please commit all of my changes so we can make a PR.",
+   "yes",
+   "what left?"
+  ],
+  "refine_redirect": [
+   "the deisgn and look&feel of the @libs/portal/xtream/data-access/src/lib/account-info/ component looks a bit inconsistent to the app design, color, gradients, density. can you use frontend-design skill and improve that"
+  ],
+  "bug_report": [
+   "in mobile version of website app @apps/website   there is a horizontal scroll visible, but nothing visually recognizable what could be the reason, could you check? i noticed, that scroll i snot there in blog, blog is fine. use frontend-design skill and chrome extension to check",
+   "i think the border radius was not changed, or? see screenshot [Image #2]\n[Image: image/png]",
+   "[Image: source: /Users/4gray/.claude/image-cache/03864394-1085-432c-a261-484b3547126b/3.png]",
+   "still no effect",
+   "[Image: source: /Users/4gray/.claude/image-cache/03864394-1085-432c-a261-484b3547126b/5.png]",
+   "oh the settings icon in the rail is not visible anymore, can you check?",
+   "can not see the button in videojs player, where should it be, can you maybe add logs to see if audio tracks are available for live tv channel",
+   "i can jsut see the pulse, but no spinning progress ring, can you check and fix?",
+   "it's still not visible, download icon is just pulsing and nothing else",
+   "the dow element is there i see it's rotating when i hover it from the dom, but visually it's absolutelly not visible, see screenshot [Image #3]\n[Image: image/png]",
+   "the placeholder are not there any more and the button position in footer looks weird, user electron skill and agent-browser to check, create sscreenshots what i mean",
+   "@apps/web/src/app/home/xtream-code-import/xtream-code-import.component.ts for xtream-mock-server when i try to do the status check, use testConnection method, the api is responding with error, or api is just missing, can you double check @libs/services/src/lib/portal-status.service.ts what exaxtly is expected here checkPortalStatus, and whether it's missing in xtream mock"
+  ],
+  "question": [
+   "does this PR makes sense? does it fix any issue? if yes, explain what exactly? https://github.com/4gray/iptvnator/pull/803",
+   "perfect, are there any other issues left from our initial plan? what do you think about playlist-switcher @libs/playlist/shared/ui/src/lib/playlist-switcher/ component and consistency of it, use agent-browser to open it and check the layout style, items, etc",
+   "[Image: source: /Users/4gray/.claude/image-cache/6864ff97-5db6-4c77-9d56-2e75e89488a0/1.png]",
+   "[Image: source: /Users/4gray/.claude/image-cache/6864ff97-5db6-4c77-9d56-2e75e89488a0/3.png]",
+   "what do you think as deisgning it as a little horizonal progress bar and not circle below the icon?"
+  ],
+  "pushback": [
+   "what do you think about border-radius of the playlist item elements? can we reduce them? also as you can see the element is a bit cut off on the right side [Image #1] . is the scroll bar layout cutting it off, so that border radius is not visible?\n[Image: image/png]",
+   "[Image: source: /Users/4gray/.claude/image-cache/03864394-1085-432c-a261-484b3547126b/1.png]",
+   "[Image: source: /Users/4gray/.claude/image-cache/03864394-1085-432c-a261-484b3547126b/2.png]",
+   "is way more better. as you can see, the text in the icon, text, meta icons/buttons in the mat-list-item are somehow not vertically aligned or? how easy can it be adapted or is it also hardcoded somewhere in material design? [Image #3]\n[Image: image/png]",
+   "the button on the right and title and meta are still not vertically aligned or? check screenshot and highlighted element: [Image #4]\n[Image: image/png]",
+   "[Image: source: /Users/4gray/.claude/image-cache/03864394-1085-432c-a261-484b3547126b/4.png]",
+   "now it's even more sticky to bottom , see [Image #5]\n[Image: image/png]",
+   "still not perfect, maybe we can replace the mat-list-item, what do you think? or would it produce issues with drag&drop?",
+   "look at the screenshot, the icon is not visible in the bottom corner, maybe it's in the dom but outside of visible rail area? [Image #1]\n[Image: image/png]",
+   "remember we have remove the rail border-right, or adapted the color in light theme, but i can still see it in dark theme. what do you think, should we keep it?",
+   "i like your recommendation, do it",
+   "what i have noticed there, the hover effect in navigation rail and in playlist-switcher for items and button at bottom has been disappeared, can we add it?"
+  ]
+ },
+ "length_median": {
+  "new_work": 18,
+  "approve_proceed": 3,
+  "refine_redirect": 27,
+  "bug_report": 15,
+  "question": 16,
+  "pushback": 27
+ }
 }

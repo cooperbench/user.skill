@@ -1,63 +1,73 @@
 {
- "bug_report": [
-  "rodei para ver como esta o software com esse historico e olhe so...\n[Image: image/png]",
-  "voce ira me ajudar a desenvolver esse projeto!! olha esse ponto de atençao, o markdown aparentemente nao é renderizado da melhor forma do terminal como o print\n[Image: image/png]",
-  "olha fui testar mas quando digitei @ nao apareceu os itens que deveria! ou seja nao apareceu os arquivos disponiveis para dar o contexto com autocoplete ou select com enter! parecido com o que o claude code faz",
-  "legal! mas quando eu seleciono e clico enter parecer que nao vai, que ele nao roda o comando Agent ──────────────────────────────── 21:29:15\n  [Comando desconhecido: /]\n  Digite /help para ver comandos disponíveis.",
-  "✗ PromptInput > renders input area when enabled [61.00ms]\n✗ ModelSelect > navigate up from first and select last model [132.00ms]\n✗ EngineSelect > arrow down moves selection to next item [95.00ms]\n\n 168 pass\n 3 fail",
-  "uma coisa que percebi é que quando eu digito um prompt os botões home e end nao funcionam para voltar para o começo do texto ou ir para o fim; inclusive o delete tambem nao",
-  "testei e corrigiu a questao do home; end; del etc... mas agr o backspace parou de funcionar?",
-  "com o claude code ele nao conseguiu executar comandos no bash/terminal... o que pode ter acontecido? pesquise bem antes de responder e se necessario use os mcps",
-  "tem algum outro ponto que pode bugar?",
-  "porem estou com um problema! mesmo com a minha variavel de ambiente da openai declarada no projeto; qnd faço o build e rodo em qualquer diretorio diz que nao foi declarada! sendo que no projeto em si buildado ela foi declarada! eu realmente nao queria declarar ela globalmente! como vc resolveria isso?",
-  "eu obtive o seguinte warning! isso nao impacta o funcionamento mas fica o alerta: Cannot update a component (`App`) while rendering a different component (`Chat`). To locate the bad setState() call inside `Chat`, follow the stack trace as described in https://react.dev/link/setstate-in-render",
-  "legal! mas quando eu seleciono e clico enter parecer que nao vai, que ele nao roda o comando Agent ──────────────────────────────── 21:29:15\r  [Comando desconhecido: /]\r  Digite /help para ver comandos disponíveis."
- ],
- "new_work": [
-  "entao ao inves de passar /model <id> se eu passar /model apos isso aparecera outro seletor de modelo",
-  "perfeito funcionou assim perfeitamente agora outra coisa que eu gostaria que você fizesse também é a seguinte tem um ter um comando chamado barra móvel que aí dentro daquela sessão ele consegue alterar o modelo daquela indiana o modelo que está usando mas não muda a indiana apenas o modelo",
-  "escreva para mim usando as tags qualquer coisa para eu validar visualmente",
-  "esta perfeito!! Agora quero aprimorar questoes do comando /switch tem que considerar que isso só é invocado se for na primeira caracter e alem disso só de colcar a barra / deve aparecer um preview dos comandos disponveis caso eu queira selecionar e ao lado uma breve explicação",
-  "its possible get 100% of test coverage?",
-  "ok now run code reviewer agent again",
-  "ok now run again the code reviewer agent!",
-  "vou pedir para vc usar o codereviewer agent para ver se esta tudo certo e verificar build",
-  "legal! deixe as instruções de instalação no README"
- ],
- "question": [
-  "é verdade que meu agente nao tem acesso ao termial?",
-  "so use codereviwer agent to check my full code",
-  "agora as sessoes sao armazenadas em .reef ao inves de .data?"
- ],
- "approve_proceed": [
-  "entire status",
-  "so commit each single test without you as coauthor",
-  "[Image: source: /home/matheus/Pictures/Screenshot from 2026-02-18 10-35-45.png]",
-  "please continye",
-  "qual descrição vc colocaria no about do github para tornar esse produto mais chamativo?",
-  "so commit without u as coauthor",
-  "me de o prompt para criar uma imagem de logo para o projeto",
-  "pode commitar tudo",
-  "ok now uses code review agent to check everything, if everything is right you can commit"
- ],
- "refine_redirect": [
-  "outra coisa que percebi! quando eu estou no menu de sessoes aparece ao lado do id o nome da ultima engine... nao quero isso, nao é necessario",
-  "veja essa modificação em detalhes com o code reviwer agent para ter certeza que está perfeita e funcional",
-  "Faça o Code Review para garantir que está tudo certo.",
-  "pensei numa ideia; e se ao inves do diretorio ser data... ser o .data ?"
- ],
- "pushback": [
-  "you can fix all bugs please and test until and make code reviews until fix all! after this commit every thing without you as coauthor",
-  "yes fix them all and commit each fix without you as coauthor",
-  "yes fix all and commit without coauthor",
-  "make again code review",
-  "so always i send a message the header go down... i want fix it in the top! fixed\n[Image: image/png]",
-  "muito bom!! mas quando eu seleciono o gemini cli por exemplo aparece: \n  Gemini CLI\n\n  Enter model name:\n\n  > gemini-3-flash nao da para selecionar apenas se sera o modelo flash ou pro? veja a documentação e o helpers do gemini cli se necessario",
-  "outra coisa que me irrita é a seguinte: quando eu seleciono um arquivo; diretorio ou imagem apertando enter no nome, o cursor continua onde eu estava digitando, nao faria mais sentido ir para o final do nome do arquivo?",
-  "entendi! mantenha entao apenas a logica do backspace mesmo[",
-  "sim! pode aplicar todas as correções; rodar o coder reviewer agent e commitar sem voce como coauthor",
-  "olhe esses dois links https://github.com/zed-industries/codex-acp https://github.com/zed-industries/claude-agent-acp do codex e do claude code... que usam uma conexao personalizada! eles dizem no acp que o meu agente tem capacidades de visualizar imagens! queria saber se é isso mesmo e se isso esta funcionando atualmente (para todas as engines)",
-  "entendi! vc consegue colocar essa capacidade? no claude code hoje referenciamos passando o diretorio da imagem... e ele consegue ler!",
-  "so i want to check if each executable are installed in my computer on startup @src/types.ts"
- ]
+ "exemplars": {
+  "bug_report": [
+   "rodei para ver como esta o software com esse historico e olhe so...\n[Image: image/png]",
+   "voce ira me ajudar a desenvolver esse projeto!! olha esse ponto de atençao, o markdown aparentemente nao é renderizado da melhor forma do terminal como o print\n[Image: image/png]",
+   "olha fui testar mas quando digitei @ nao apareceu os itens que deveria! ou seja nao apareceu os arquivos disponiveis para dar o contexto com autocoplete ou select com enter! parecido com o que o claude code faz",
+   "legal! mas quando eu seleciono e clico enter parecer que nao vai, que ele nao roda o comando Agent ──────────────────────────────── 21:29:15\n  [Comando desconhecido: /]\n  Digite /help para ver comandos disponíveis.",
+   "✗ PromptInput > renders input area when enabled [61.00ms]\n✗ ModelSelect > navigate up from first and select last model [132.00ms]\n✗ EngineSelect > arrow down moves selection to next item [95.00ms]\n\n 168 pass\n 3 fail",
+   "uma coisa que percebi é que quando eu digito um prompt os botões home e end nao funcionam para voltar para o começo do texto ou ir para o fim; inclusive o delete tambem nao",
+   "testei e corrigiu a questao do home; end; del etc... mas agr o backspace parou de funcionar?",
+   "com o claude code ele nao conseguiu executar comandos no bash/terminal... o que pode ter acontecido? pesquise bem antes de responder e se necessario use os mcps",
+   "tem algum outro ponto que pode bugar?",
+   "porem estou com um problema! mesmo com a minha variavel de ambiente da openai declarada no projeto; qnd faço o build e rodo em qualquer diretorio diz que nao foi declarada! sendo que no projeto em si buildado ela foi declarada! eu realmente nao queria declarar ela globalmente! como vc resolveria isso?",
+   "eu obtive o seguinte warning! isso nao impacta o funcionamento mas fica o alerta: Cannot update a component (`App`) while rendering a different component (`Chat`). To locate the bad setState() call inside `Chat`, follow the stack trace as described in https://react.dev/link/setstate-in-render",
+   "legal! mas quando eu seleciono e clico enter parecer que nao vai, que ele nao roda o comando Agent ──────────────────────────────── 21:29:15\r  [Comando desconhecido: /]\r  Digite /help para ver comandos disponíveis."
+  ],
+  "new_work": [
+   "entao ao inves de passar /model <id> se eu passar /model apos isso aparecera outro seletor de modelo",
+   "perfeito funcionou assim perfeitamente agora outra coisa que eu gostaria que você fizesse também é a seguinte tem um ter um comando chamado barra móvel que aí dentro daquela sessão ele consegue alterar o modelo daquela indiana o modelo que está usando mas não muda a indiana apenas o modelo",
+   "escreva para mim usando as tags qualquer coisa para eu validar visualmente",
+   "esta perfeito!! Agora quero aprimorar questoes do comando /switch tem que considerar que isso só é invocado se for na primeira caracter e alem disso só de colcar a barra / deve aparecer um preview dos comandos disponveis caso eu queira selecionar e ao lado uma breve explicação",
+   "its possible get 100% of test coverage?",
+   "ok now run code reviewer agent again",
+   "ok now run again the code reviewer agent!",
+   "vou pedir para vc usar o codereviewer agent para ver se esta tudo certo e verificar build",
+   "legal! deixe as instruções de instalação no README"
+  ],
+  "question": [
+   "é verdade que meu agente nao tem acesso ao termial?",
+   "so use codereviwer agent to check my full code",
+   "agora as sessoes sao armazenadas em .reef ao inves de .data?"
+  ],
+  "approve_proceed": [
+   "entire status",
+   "so commit each single test without you as coauthor",
+   "[Image: source: /home/matheus/Pictures/Screenshot from 2026-02-18 10-35-45.png]",
+   "please continye",
+   "qual descrição vc colocaria no about do github para tornar esse produto mais chamativo?",
+   "so commit without u as coauthor",
+   "me de o prompt para criar uma imagem de logo para o projeto",
+   "pode commitar tudo",
+   "ok now uses code review agent to check everything, if everything is right you can commit"
+  ],
+  "refine_redirect": [
+   "outra coisa que percebi! quando eu estou no menu de sessoes aparece ao lado do id o nome da ultima engine... nao quero isso, nao é necessario",
+   "veja essa modificação em detalhes com o code reviwer agent para ter certeza que está perfeita e funcional",
+   "Faça o Code Review para garantir que está tudo certo.",
+   "pensei numa ideia; e se ao inves do diretorio ser data... ser o .data ?"
+  ],
+  "pushback": [
+   "you can fix all bugs please and test until and make code reviews until fix all! after this commit every thing without you as coauthor",
+   "yes fix them all and commit each fix without you as coauthor",
+   "yes fix all and commit without coauthor",
+   "make again code review",
+   "so always i send a message the header go down... i want fix it in the top! fixed\n[Image: image/png]",
+   "muito bom!! mas quando eu seleciono o gemini cli por exemplo aparece: \n  Gemini CLI\n\n  Enter model name:\n\n  > gemini-3-flash nao da para selecionar apenas se sera o modelo flash ou pro? veja a documentação e o helpers do gemini cli se necessario",
+   "outra coisa que me irrita é a seguinte: quando eu seleciono um arquivo; diretorio ou imagem apertando enter no nome, o cursor continua onde eu estava digitando, nao faria mais sentido ir para o final do nome do arquivo?",
+   "entendi! mantenha entao apenas a logica do backspace mesmo[",
+   "sim! pode aplicar todas as correções; rodar o coder reviewer agent e commitar sem voce como coauthor",
+   "olhe esses dois links https://github.com/zed-industries/codex-acp https://github.com/zed-industries/claude-agent-acp do codex e do claude code... que usam uma conexao personalizada! eles dizem no acp que o meu agente tem capacidades de visualizar imagens! queria saber se é isso mesmo e se isso esta funcionando atualmente (para todas as engines)",
+   "entendi! vc consegue colocar essa capacidade? no claude code hoje referenciamos passando o diretorio da imagem... e ele consegue ler!",
+   "so i want to check if each executable are installed in my computer on startup @src/types.ts"
+  ]
+ },
+ "length_median": {
+  "bug_report": 30,
+  "new_work": 12,
+  "question": 10,
+  "approve_proceed": 4,
+  "refine_redirect": 15,
+  "pushback": 21
+ }
 }
