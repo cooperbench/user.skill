@@ -25,7 +25,10 @@ VARIANTS = [
     ("folder-v2", "Folder + intent-first prompt", "results/folder_v2_9users.json"),
     ("folder-v3", "Folder + shared scaffold", "results/folder_v3_9users.json"),
     ("folder-v5", "Folder + move-sampling (best)", "results/folder_v5samp_9users.json"),
+    ("folder-v6", "+ per-move few-shot exemplars", "results/folder_v6ex_9users.json"),
+    ("folder-v7", "+ per-move length calibration", "results/folder_v7len_9users.json"),
 ]
+ABLATIONS = {"folder-v6", "folder-v7"}  # tried-and-rejected personalizations
 
 # Speech-act match measured by speech_act_eval.py on the same generations, for the
 # variants scored before the metric was integrated into validate.py.
@@ -88,7 +91,7 @@ def main():
         if not s:
             continue
         d, w = s["distilled"], s["wrong"]
-        opt = " class=opt" if key == "folder-v5" else ""
+        opt = " class=opt" if key == "folder-v5" else (" class=abl" if key in ABLATIONS else "")
         rows.append(
             f"<tr{opt}><td>{html.escape(label)}</td>"
             f"<td class='num'>{fmt(d['content'])}</td><td class='num'>{fmt(w['content'])}</td>"
@@ -158,6 +161,7 @@ def main():
  th {{ background: #f7f3ff; }}
  td.num, th.num {{ text-align: right; font-variant-numeric: tabular-nums; }}
  tr.opt td {{ background: #f0fdf4; font-weight: 600; }}
+ tr.abl td {{ background: #fef2f2; color: #991b1b; }}
  td.barcell {{ width: 26%; }} .bar {{ height: 13px; border-radius: 3px; }}
  .bar.real {{ background: #7c3aed; }} .bar.pred {{ background: #f0883e; }} .bar.v5 {{ background: #16a34a; }}
  .note {{ background: #f5f0ff; border-left: 4px solid #7c3aed; padding: .6rem 1rem; border-radius: 4px; }}
@@ -203,8 +207,17 @@ user's folder.</p>
 <th class='num'>realism own</th><th class='num'>realism wrong</th>
 <th class='num'>act own</th><th class='num'>act wrong</th></tr></thead>
 <tbody>{comp_table}</tbody></table>
-<p class="legend">Green row = the optimized simulator (shared scaffold). Content/realism are
-0–100 judge means; act is speech-act match rate.</p>
+<p class="legend">Green row = best simulator (v5). <span style="color:#991b1b">Red rows = personalization
+ablations that were tried and <b>rejected</b></span>. Content/realism are 0–100 judge means; act is
+speech-act match rate.</p>
+<p class="warn"><b>What didn't work (and why it's informative).</b> Two further personalization methods
+on top of v5 both <em>hurt</em>: (v6) few-shotting the user's own real same-move messages induced
+mimicry (the realism judge penalizes copying) and leaked generic human-ness into the wrong-folder
+condition too, collapsing discriminability; (v7) injecting the user's per-move median length
+over-constrained generation, lowering realism without even improving length-match. The lesson:
+<b>v5's move-sampling is a local optimum</b> — the model already infers length and register from the
+sampled move plus the folder, so additional prompt-level signals make output stilted. Further gains
+need a non-prompt lever (a stronger generation model or fine-tuning), not more prompt content.</p>
 
 <h2>Best simulator: folder-v1 → move-sampling (v5)</h2>
 <p>The biggest fidelity lever isn't voice — it's <em>which move</em> the user makes. The final design
