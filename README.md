@@ -95,7 +95,8 @@ checkpointed repo states; SWE-chat's `checkpoints`/`commits` tables make this po
 .claude/skills/roleplay-user/   the role-play procedure (Claude Code skill)
 scripts/prepare_data.py         SWE-chat -> per-user digests + holdout splits
 scripts/distill.py              batch distillation driver (claude -p)
-scripts/validate.py             next-message prediction + scoring
+scripts/validate.py             next-message prediction + scoring (--ghost adds the baseline below)
+scripts/ghost_predict.py        opencode ghost-text predictor as a baseline condition
 scripts/report.py               HTML report from validation results
 data/                           digests + holdout (gitignored; regenerable)
 users/                          distilled user folders (committed)

@@ -523,10 +523,16 @@ def main():
     ap.add_argument("--length-cal", action="store_true",
                     help="inject the user's median word-count for the sampled move (a number, no "
                          "human text) so Stage-2 matches their per-move message length.")
+    ap.add_argument("--ghost", action="store_true",
+                    help="add a 'ghost' baseline condition: the opencode ghost-text predictor "
+                         "(scripts/ghost_predict.py) — a generic next-message simulator with no user "
+                         "folder. Additive; the distilled/generic/wrong experiment is unchanged.")
     args = ap.parse_args()
     read_folder = args.mode == "folder"
     move_conditioned = args.move_conditioned
     repos_dir = Path(args.repos_dir) if args.repos_dir else None
+    # Conditions to run/score. Ghost is an opt-in extra baseline; default is unchanged.
+    conditions = list(CONDITIONS) + (["ghost"] if args.ghost else [])
 
     RESULTS.mkdir(exist_ok=True)
     manifest = json.loads((ROOT / "data" / "manifest.json").read_text())
@@ -572,7 +578,12 @@ def main():
                 cand = repos_dir / point["repo"]  # repo is "owner/name"
                 if cand.exists():
                     point["repo_path"] = str(cand)
-            for cond in CONDITIONS:
+            for cond in conditions:
+                # Ghost: generic predictor, no folder/move; generated in work() via ghost_predict.
+                if cond == "ghost":
+                    jobs.append({"slug": slug, "point_id": pid, "cond": cond, "point": point,
+                                 "fpath": None, "prior": flat_prior, "ghost": True, "prompt": None})
+                    continue
                 src = {"distilled": slug, "generic": None, "wrong": wrong_of[slug]}[cond]
                 job = {"slug": slug, "point_id": pid, "cond": cond, "point": point,
                        "fpath": folder_path(src) if src else None,
@@ -610,6 +621,16 @@ def main():
     def work(job):
         cond_move = None
         prompt = job["prompt"]
+        if job.get("ghost"):
+            # opencode ghost-text predictor: generic simulate + classify, no folder/move.
+            from ghost_predict import predict_point
+            try:
+                res = predict_point(job["point"], profile=None, model=GEN_MODEL)
+            except subprocess.TimeoutExpired:
+                res = {"text": "", "kind": ""}
+            return {"slug": job["slug"], "point_id": job["point_id"], "cond": job["cond"],
+                    "repo": job["point"]["repo"], "real": job["point"]["real"],
+                    "generated": res["text"], "kind": res["kind"]}
         try:
             if move_conditioned:
                 # Stage 1: choose the move — sample from the user's prior (default) or LLM-predict
@@ -705,7 +726,7 @@ def main():
         return round(sum(v) / len(v), 3) if v else None
 
     JUDGE_AXES = ["judge_content", "judge_style", "judge_realism"]
-    by_cond = {c: [r for r in records if r["cond"] == c] for c in CONDITIONS}
+    by_cond = {c: [r for r in records if r["cond"] == c] for c in conditions}
     summary = {c: {"n": len(rows), "cosine": agg(rows, "cosine"), "len_ratio": agg(rows, "len_ratio"),
                    "act_match": act_match_rate(rows),
                    **{ax: agg(rows, ax) for ax in JUDGE_AXES}}
@@ -714,7 +735,7 @@ def main():
     real_act_dist = dict(Counter(a for a in real_acts.values() if a))
     act_confusion = {c: dict(Counter(f"{r.get('real_act')}>{r.get('pred_act')}"
                                      for r in by_cond[c] if r.get("real_act") and r.get("pred_act")))
-                     for c in CONDITIONS}
+                     for c in conditions}
 
     # paired win rates: distilled vs each baseline, on cosine + each judge axis
     by_key = {}
@@ -787,7 +808,7 @@ def main():
                               "act_match": act_match_rate([r for r in by_cond[c] if r["slug"] == slug]),
                               **{ax: agg([r for r in by_cond[c] if r["slug"] == slug], ax)
                                  for ax in JUDGE_AXES}}
-                          for c in CONDITIONS}
+                          for c in conditions}
 
     out = {"mode": args.mode, "embed_model": EMBED_MODEL, "gen_model": GEN_MODEL,
            "judge_model": JUDGE_MODEL, "users": slugs, "wrong_pairing": wrong_of,
