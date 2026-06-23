@@ -1,0 +1,14 @@
+[
+  {
+    "id": "todo-cli-add-due-dates",
+    "repo": "todo-cli",
+    "repo_dir": "/absolute/path/to/checkouts/todo-cli",
+    "task": "add support for due dates on tasks"
+  },
+  {
+    "id": "flask-api-pagination",
+    "repo": "flask-api",
+    "repo_dir": "/absolute/path/to/checkouts/flask-api",
+    "task": "the /items endpoint returns everything, can you paginate it"
+  }
+]
