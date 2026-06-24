@@ -4,3 +4,5 @@ __pycache__/
 results/generations*.jsonl
 .env
 .DS_Store
+bench/results/*.jsonl
+bench/results/*.log
