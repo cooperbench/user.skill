@@ -3,28 +3,34 @@
   "checkpoint_id": "6308eb715c94",
   "session_id": "da864ebe-6204-4f1a-bc7e-e1ee4da86833",
   "strategy": "manual-commit",
-  "created_at": "2026-06-24T20:38:18.160741Z",
+  "created_at": "2026-06-24T20:38:28.596744Z",
   "branch": "v0-bench",
   "checkpoints_count": 1,
   "files_touched": [
+    "bench/v0.py",
+    ".gitignore",
+    "bench/FINDINGS_v0.md",
+    "bench/README.md",
+    "bench/analyze.py",
+    "bench/orouter.py",
     "bench/results/v0_summary.json"
   ],
   "agent": "Claude Code",
   "turn_id": "92ff7738a7ea",
   "token_usage": {
-    "input_tokens": 6936,
-    "cache_creation_tokens": 261022,
-    "cache_read_tokens": 5898181,
-    "output_tokens": 101380,
-    "api_call_count": 48
+    "input_tokens": 6938,
+    "cache_creation_tokens": 262837,
+    "cache_read_tokens": 6102866,
+    "output_tokens": 103020,
+    "api_call_count": 49
   },
   "initial_attribution": {
-    "calculated_at": "2026-06-24T20:38:17.910803Z",
+    "calculated_at": "2026-06-24T20:38:28.347405Z",
     "agent_lines": 0,
-    "human_added": 1,
-    "human_modified": 0,
+    "human_added": 0,
+    "human_modified": 2,
     "human_removed": 0,
-    "total_committed": 1,
+    "total_committed": 0,
     "agent_percentage": 0
   },
   "transcript_path": ".claude/projects/-Users-kevin-Dev/da864ebe-6204-4f1a-bc7e-e1ee4da86833.jsonl"

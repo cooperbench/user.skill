@@ -5,7 +5,13 @@
   "branch": "v0-bench",
   "checkpoints_count": 1,
   "files_touched": [
-    "bench/results/v0_summary.json"
+    ".gitignore",
+    "bench/FINDINGS_v0.md",
+    "bench/README.md",
+    "bench/analyze.py",
+    "bench/orouter.py",
+    "bench/results/v0_summary.json",
+    "bench/v0.py"
   ],
   "sessions": [
     {
@@ -17,10 +23,10 @@
     }
   ],
   "token_usage": {
-    "input_tokens": 6936,
-    "cache_creation_tokens": 261022,
-    "cache_read_tokens": 5898181,
-    "output_tokens": 101380,
-    "api_call_count": 48
+    "input_tokens": 6938,
+    "cache_creation_tokens": 262837,
+    "cache_read_tokens": 6102866,
+    "output_tokens": 103020,
+    "api_call_count": 49
   }
 }
