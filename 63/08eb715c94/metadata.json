@@ -1,0 +1,31 @@
+{
+  "cli_version": "0.4.5",
+  "checkpoint_id": "6308eb715c94",
+  "strategy": "manual-commit",
+  "branch": "v0-bench",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "bench/README.md",
+    "bench/analyze.py",
+    "bench/orouter.py",
+    "bench/results/v0_raw.jsonl",
+    "bench/results/v0_summary.json",
+    "bench/v0.py"
+  ],
+  "sessions": [
+    {
+      "metadata": "/63/08eb715c94/0/metadata.json",
+      "transcript": "/63/08eb715c94/0/full.jsonl",
+      "context": "/63/08eb715c94/0/context.md",
+      "content_hash": "/63/08eb715c94/0/content_hash.txt",
+      "prompt": "/63/08eb715c94/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 6934,
+    "cache_creation_tokens": 256788,
+    "cache_read_tokens": 5697730,
+    "output_tokens": 100013,
+    "api_call_count": 47
+  }
+}
