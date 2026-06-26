@@ -148,3 +148,7 @@ python3 bench/v0_osim.py &gt; bench/results/v0_osim_run.log 2&gt;&amp;1
 echo "EXIT=$?"" completed (exit code 0)</summary>
 </task-notification>
 
+### Prompt 22
+
+how did you calculate the approval rate and critical rate? is it from a single user being tested or aggregated over many?
+
