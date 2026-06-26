@@ -1,0 +1,1169 @@
+{
+ "n_points": 500,
+ "n_users": 10,
+ "users": [
+  "abiswas-elastio-com",
+  "alienkevin",
+  "gtrrz-victor",
+  "henryph24",
+  "hutusi",
+  "khaong",
+  "melagiri",
+  "oddessentials",
+  "pc035860",
+  "tarasyarema"
+ ],
+ "n_per_user": 50,
+ "real_macro": {
+  "approve": {
+   "mean": 0.205,
+   "std": 0.121,
+   "ci95": 0.086,
+   "n_users": 10
+  },
+  "critical": {
+   "mean": 0.237,
+   "std": 0.083,
+   "ci95": 0.059,
+   "n_users": 10
+  },
+  "sigma2": {
+   "mean": 0.286,
+   "std": 0.182,
+   "ci95": 0.13,
+   "n_users": 10
+  }
+ },
+ "real_per_user": {
+  "abiswas-elastio-com": {
+   "approve": 0.28,
+   "critical": 0.38,
+   "sigma2": 0.16800000000000004,
+   "n": 50
+  },
+  "alienkevin": {
+   "approve": 0.0,
+   "critical": 0.18,
+   "sigma2": 0.5152,
+   "n": 50
+  },
+  "gtrrz-victor": {
+   "approve": 0.04,
+   "critical": 0.12,
+   "sigma2": 0.7143999999999998,
+   "n": 50
+  },
+  "henryph24": {
+   "approve": 0.22,
+   "critical": 0.16,
+   "sigma2": 0.22000000000000003,
+   "n": 50
+  },
+  "hutusi": {
+   "approve": 0.08,
+   "critical": 0.32,
+   "sigma2": 0.2512,
+   "n": 50
+  },
+  "khaong": {
+   "approve": 0.34,
+   "critical": 0.3,
+   "sigma2": 0.2336,
+   "n": 50
+  },
+  "melagiri": {
+   "approve": 0.2708333333333333,
+   "critical": 0.16666666666666666,
+   "sigma2": 0.21006944444444442,
+   "n": 48
+  },
+  "oddessentials": {
+   "approve": 0.22,
+   "critical": 0.28,
+   "sigma2": 0.15360000000000001,
+   "n": 50
+  },
+  "pc035860": {
+   "approve": 0.3,
+   "critical": 0.22,
+   "sigma2": 0.18880000000000002,
+   "n": 50
+  },
+  "tarasyarema": {
+   "approve": 0.3,
+   "critical": 0.24,
+   "sigma2": 0.20800000000000002,
+   "n": 50
+  }
+ },
+ "lucky_guess_macro": 0.286,
+ "models": {
+  "deepseek-v3.1": "deepseek/deepseek-chat-v3.1",
+  "gpt-5": "openai/gpt-5",
+  "gemini-3.1-pro": "google/gemini-3.1-pro-preview",
+  "osim-8b": "cmu-lti/osim-8b",
+  "osim-4b": "cmu-lti/osim-4b"
+ },
+ "results": {
+  "deepseek-v3.1/distilled": {
+   "per_user": {
+    "abiswas-elastio-com": {
+     "MoveFid": 50.42989417989418,
+     "CondAgree": 0.3,
+     "approve": 0.26,
+     "critical": 0.36,
+     "n": 50
+    },
+    "alienkevin": {
+     "MoveFid": 28.09557320465132,
+     "CondAgree": 0.3,
+     "approve": 0.1,
+     "critical": 0.26666666666666666,
+     "n": 30
+    },
+    "gtrrz-victor": {
+     "MoveFid": 21.558833323539208,
+     "CondAgree": 0.18,
+     "approve": 0.22,
+     "critical": 0.24,
+     "n": 50
+    },
+    "henryph24": {
+     "MoveFid": 38.05555555555556,
+     "CondAgree": 0.26,
+     "approve": 0.08,
+     "critical": 0.02,
+     "n": 50
+    },
+    "hutusi": {
+     "MoveFid": 43.56633074685813,
+     "CondAgree": 0.14,
+     "approve": 0.46,
+     "critical": 0.06,
+     "n": 50
+    },
+    "khaong": {
+     "MoveFid": 49.54022988505747,
+     "CondAgree": 0.24,
+     "approve": 0.34,
+     "critical": 0.1,
+     "n": 50
+    },
+    "melagiri": {
+     "MoveFid": 48.58080159748965,
+     "CondAgree": 0.2916666666666667,
+     "approve": 0.5833333333333334,
+     "critical": 0.0,
+     "n": 48
+    },
+    "oddessentials": {
+     "MoveFid": 48.65384615384615,
+     "CondAgree": 0.24,
+     "approve": 0.14,
+     "critical": 0.2,
+     "n": 50
+    },
+    "pc035860": {
+     "MoveFid": 40.945734519104086,
+     "CondAgree": 0.24,
+     "approve": 0.62,
+     "critical": 0.06,
+     "n": 50
+    },
+    "tarasyarema": {
+     "MoveFid": 69.36507936507937,
+     "CondAgree": 0.28,
+     "approve": 0.26,
+     "critical": 0.1,
+     "n": 50
+    }
+   },
+   "macro": {
+    "MoveFid": {
+     "mean": 43.879,
+     "std": 13.163,
+     "ci95": 9.415,
+     "n_users": 10
+    },
+    "CondAgree": {
+     "mean": 0.247,
+     "std": 0.053,
+     "ci95": 0.038,
+     "n_users": 10
+    },
+    "approve": {
+     "mean": 0.306,
+     "std": 0.192,
+     "ci95": 0.138,
+     "n_users": 10
+    },
+    "critical": {
+     "mean": 0.141,
+     "std": 0.119,
+     "ci95": 0.085,
+     "n_users": 10
+    }
+   },
+   "micro": {
+    "MoveFid": 68.1,
+    "CondAgree": 0.245,
+    "approve": 0.314,
+    "critical": 0.136
+   }
+  },
+  "deepseek-v3.1/generic": {
+   "per_user": {
+    "abiswas-elastio-com": {
+     "MoveFid": 51.60380832935181,
+     "CondAgree": 0.2,
+     "approve": 0.18,
+     "critical": 0.32,
+     "n": 50
+    },
+    "alienkevin": {
+     "MoveFid": 27.854596384008147,
+     "CondAgree": 0.18,
+     "approve": 0.14,
+     "critical": 0.02,
+     "n": 50
+    },
+    "gtrrz-victor": {
+     "MoveFid": 25.88325652841782,
+     "CondAgree": 0.3,
+     "approve": 0.08,
+     "critical": 0.06,
+     "n": 50
+    },
+    "henryph24": {
+     "MoveFid": 31.16342469790746,
+     "CondAgree": 0.26,
+     "approve": 0.14,
+     "critical": 0.0,
+     "n": 50
+    },
+    "hutusi": {
+     "MoveFid": 38.46749811035526,
+     "CondAgree": 0.16,
+     "approve": 0.46,
+     "critical": 0.02,
+     "n": 50
+    },
+    "khaong": {
+     "MoveFid": 47.650182329985284,
+     "CondAgree": 0.3,
+     "approve": 0.36,
+     "critical": 0.02,
+     "n": 50
+    },
+    "melagiri": {
+     "MoveFid": 56.08134920634921,
+     "CondAgree": 0.20833333333333334,
+     "approve": 0.3958333333333333,
+     "critical": 0.020833333333333332,
+     "n": 48
+    },
+    "oddessentials": {
+     "MoveFid": 50.68564605329311,
+     "CondAgree": 0.26,
+     "approve": 0.44,
+     "critical": 0.06,
+     "n": 50
+    },
+    "pc035860": {
+     "MoveFid": 39.24026448697502,
+     "CondAgree": 0.22,
+     "approve": 0.46,
+     "critical": 0.02,
+     "n": 50
+    },
+    "tarasyarema": {
+     "MoveFid": 43.106112637362635,
+     "CondAgree": 0.22,
+     "approve": 0.34,
+     "critical": 0.02,
+     "n": 50
+    }
+   },
+   "macro": {
+    "MoveFid": {
+     "mean": 41.174,
+     "std": 10.486,
+     "ci95": 7.501,
+     "n_users": 10
+    },
+    "CondAgree": {
+     "mean": 0.231,
+     "std": 0.048,
+     "ci95": 0.034,
+     "n_users": 10
+    },
+    "approve": {
+     "mean": 0.3,
+     "std": 0.149,
+     "ci95": 0.106,
+     "n_users": 10
+    },
+    "critical": {
+     "mean": 0.056,
+     "std": 0.095,
+     "ci95": 0.068,
+     "n_users": 10
+    }
+   },
+   "micro": {
+    "MoveFid": 58.5,
+    "CondAgree": 0.231,
+    "approve": 0.299,
+    "critical": 0.056
+   }
+  },
+  "gpt-5/distilled": {
+   "per_user": {
+    "abiswas-elastio-com": {
+     "MoveFid": 54.43688586545729,
+     "CondAgree": 0.22,
+     "approve": 0.26,
+     "critical": 0.26,
+     "n": 50
+    },
+    "alienkevin": {
+     "MoveFid": 40.36866359447004,
+     "CondAgree": 0.3,
+     "approve": 0.04,
+     "critical": 0.08,
+     "n": 50
+    },
+    "gtrrz-victor": {
+     "MoveFid": 45.77114427860696,
+     "CondAgree": 0.44,
+     "approve": 0.2,
+     "critical": 0.06,
+     "n": 50
+    },
+    "henryph24": {
+     "MoveFid": 16.826923076923077,
+     "CondAgree": 0.16,
+     "approve": 0.08,
+     "critical": 0.0,
+     "n": 50
+    },
+    "hutusi": {
+     "MoveFid": 32.464678178963894,
+     "CondAgree": 0.16,
+     "approve": 0.62,
+     "critical": 0.0,
+     "n": 50
+    },
+    "khaong": {
+     "MoveFid": 48.970912128806866,
+     "CondAgree": 0.22,
+     "approve": 0.42,
+     "critical": 0.18,
+     "n": 50
+    },
+    "melagiri": {
+     "MoveFid": 50.9404761904762,
+     "CondAgree": 0.3333333333333333,
+     "approve": 0.5625,
+     "critical": 0.0,
+     "n": 48
+    },
+    "oddessentials": {
+     "MoveFid": 37.51608561044556,
+     "CondAgree": 0.2,
+     "approve": 0.16,
+     "critical": 0.3,
+     "n": 50
+    },
+    "pc035860": {
+     "MoveFid": 36.982065553494124,
+     "CondAgree": 0.24,
+     "approve": 0.68,
+     "critical": 0.02,
+     "n": 50
+    },
+    "tarasyarema": {
+     "MoveFid": 42.083040112596755,
+     "CondAgree": 0.34,
+     "approve": 0.26,
+     "critical": 0.02,
+     "n": 50
+    }
+   },
+   "macro": {
+    "MoveFid": {
+     "mean": 40.636,
+     "std": 10.808,
+     "ci95": 7.731,
+     "n_users": 10
+    },
+    "CondAgree": {
+     "mean": 0.261,
+     "std": 0.09,
+     "ci95": 0.064,
+     "n_users": 10
+    },
+    "approve": {
+     "mean": 0.328,
+     "std": 0.229,
+     "ci95": 0.164,
+     "n_users": 10
+    },
+    "critical": {
+     "mean": 0.092,
+     "std": 0.114,
+     "ci95": 0.081,
+     "n_users": 10
+    }
+   },
+   "micro": {
+    "MoveFid": 48.9,
+    "CondAgree": 0.261,
+    "approve": 0.327,
+    "critical": 0.092
+   }
+  },
+  "gpt-5/generic": {
+   "per_user": {
+    "abiswas-elastio-com": {
+     "MoveFid": 46.19472031236737,
+     "CondAgree": 0.24,
+     "approve": 0.12,
+     "critical": 0.42,
+     "n": 50
+    },
+    "alienkevin": {
+     "MoveFid": 35.36821705426356,
+     "CondAgree": 0.16,
+     "approve": 0.02,
+     "critical": 0.04,
+     "n": 50
+    },
+    "gtrrz-victor": {
+     "MoveFid": 32.926829268292686,
+     "CondAgree": 0.68,
+     "approve": 0.0,
+     "critical": 0.02,
+     "n": 50
+    },
+    "henryph24": {
+     "MoveFid": 25.13635852451642,
+     "CondAgree": 0.16,
+     "approve": 0.04,
+     "critical": 0.06,
+     "n": 50
+    },
+    "hutusi": {
+     "MoveFid": 40.174570527511705,
+     "CondAgree": 0.12,
+     "approve": 0.44,
+     "critical": 0.1,
+     "n": 50
+    },
+    "khaong": {
+     "MoveFid": 35.59523809523809,
+     "CondAgree": 0.2,
+     "approve": 0.26,
+     "critical": 0.02,
+     "n": 50
+    },
+    "melagiri": {
+     "MoveFid": 66.08845716440361,
+     "CondAgree": 0.2608695652173913,
+     "approve": 0.34782608695652173,
+     "critical": 0.06521739130434782,
+     "n": 46
+    },
+    "oddessentials": {
+     "MoveFid": 32.0558608058608,
+     "CondAgree": 0.14,
+     "approve": 0.06,
+     "critical": 0.1,
+     "n": 50
+    },
+    "pc035860": {
+     "MoveFid": 31.271367521367523,
+     "CondAgree": 0.18,
+     "approve": 0.22,
+     "critical": 0.02,
+     "n": 50
+    },
+    "tarasyarema": {
+     "MoveFid": 47.19638784154914,
+     "CondAgree": 0.32,
+     "approve": 0.14,
+     "critical": 0.04,
+     "n": 50
+    }
+   },
+   "macro": {
+    "MoveFid": {
+     "mean": 39.201,
+     "std": 11.621,
+     "ci95": 8.313,
+     "n_users": 10
+    },
+    "CondAgree": {
+     "mean": 0.246,
+     "std": 0.164,
+     "ci95": 0.117,
+     "n_users": 10
+    },
+    "approve": {
+     "mean": 0.165,
+     "std": 0.149,
+     "ci95": 0.106,
+     "n_users": 10
+    },
+    "critical": {
+     "mean": 0.089,
+     "std": 0.12,
+     "ci95": 0.086,
+     "n_users": 10
+    }
+   },
+   "micro": {
+    "MoveFid": 48.2,
+    "CondAgree": 0.246,
+    "approve": 0.163,
+    "critical": 0.089
+   }
+  },
+  "gemini-3.1-pro/distilled": {
+   "per_user": {
+    "abiswas-elastio-com": {
+     "MoveFid": 43.38656838656839,
+     "CondAgree": 0.28,
+     "approve": 0.46,
+     "critical": 0.18,
+     "n": 50
+    },
+    "alienkevin": {
+     "MoveFid": 34.3234185169669,
+     "CondAgree": 0.3,
+     "approve": 0.04,
+     "critical": 0.14,
+     "n": 50
+    },
+    "gtrrz-victor": {
+     "MoveFid": 24.03628117913832,
+     "CondAgree": 0.1,
+     "approve": 0.68,
+     "critical": 0.14,
+     "n": 50
+    },
+    "henryph24": {
+     "MoveFid": 39.85715309228438,
+     "CondAgree": 0.18,
+     "approve": 0.12,
+     "critical": 0.0,
+     "n": 50
+    },
+    "hutusi": {
+     "MoveFid": 33.69265654979941,
+     "CondAgree": 0.12,
+     "approve": 0.64,
+     "critical": 0.02,
+     "n": 50
+    },
+    "khaong": {
+     "MoveFid": 47.066326530612244,
+     "CondAgree": 0.36,
+     "approve": 0.64,
+     "critical": 0.08,
+     "n": 50
+    },
+    "melagiri": {
+     "MoveFid": 22.722371967654983,
+     "CondAgree": 0.3333333333333333,
+     "approve": 0.8333333333333334,
+     "critical": 0.0,
+     "n": 48
+    },
+    "oddessentials": {
+     "MoveFid": 47.684659090909086,
+     "CondAgree": 0.2,
+     "approve": 0.42,
+     "critical": 0.2,
+     "n": 50
+    },
+    "pc035860": {
+     "MoveFid": 40.230015082956264,
+     "CondAgree": 0.3,
+     "approve": 0.7,
+     "critical": 0.02,
+     "n": 50
+    },
+    "tarasyarema": {
+     "MoveFid": 48.71673669467786,
+     "CondAgree": 0.24,
+     "approve": 0.5,
+     "critical": 0.04,
+     "n": 50
+    }
+   },
+   "macro": {
+    "MoveFid": {
+     "mean": 38.172,
+     "std": 9.36,
+     "ci95": 6.695,
+     "n_users": 10
+    },
+    "CondAgree": {
+     "mean": 0.241,
+     "std": 0.089,
+     "ci95": 0.064,
+     "n_users": 10
+    },
+    "approve": {
+     "mean": 0.503,
+     "std": 0.255,
+     "ci95": 0.183,
+     "n_users": 10
+    },
+    "critical": {
+     "mean": 0.082,
+     "std": 0.077,
+     "ci95": 0.055,
+     "n_users": 10
+    }
+   },
+   "micro": {
+    "MoveFid": 65.1,
+    "CondAgree": 0.241,
+    "approve": 0.502,
+    "critical": 0.082
+   }
+  },
+  "gemini-3.1-pro/generic": {
+   "per_user": {
+    "abiswas-elastio-com": {
+     "MoveFid": 48.640819964349376,
+     "CondAgree": 0.32,
+     "approve": 0.44,
+     "critical": 0.18,
+     "n": 50
+    },
+    "alienkevin": {
+     "MoveFid": 20.91408481652384,
+     "CondAgree": 0.14,
+     "approve": 0.16,
+     "critical": 0.0,
+     "n": 50
+    },
+    "gtrrz-victor": {
+     "MoveFid": 40.539937527889336,
+     "CondAgree": 0.76,
+     "approve": 0.14,
+     "critical": 0.02,
+     "n": 50
+    },
+    "henryph24": {
+     "MoveFid": 33.60449735449736,
+     "CondAgree": 0.22,
+     "approve": 0.38,
+     "critical": 0.02,
+     "n": 50
+    },
+    "hutusi": {
+     "MoveFid": 45.10727367870224,
+     "CondAgree": 0.18,
+     "approve": 0.7,
+     "critical": 0.04,
+     "n": 50
+    },
+    "khaong": {
+     "MoveFid": 37.53349824778396,
+     "CondAgree": 0.3,
+     "approve": 0.64,
+     "critical": 0.02,
+     "n": 50
+    },
+    "melagiri": {
+     "MoveFid": 28.809523809523807,
+     "CondAgree": 0.3333333333333333,
+     "approve": 0.7291666666666666,
+     "critical": 0.0,
+     "n": 48
+    },
+    "oddessentials": {
+     "MoveFid": 36.41924564796905,
+     "CondAgree": 0.26,
+     "approve": 0.72,
+     "critical": 0.06,
+     "n": 50
+    },
+    "pc035860": {
+     "MoveFid": 50.398490398490395,
+     "CondAgree": 0.26,
+     "approve": 0.58,
+     "critical": 0.02,
+     "n": 50
+    },
+    "tarasyarema": {
+     "MoveFid": 37.08128750681942,
+     "CondAgree": 0.28,
+     "approve": 0.64,
+     "critical": 0.04,
+     "n": 50
+    }
+   },
+   "macro": {
+    "MoveFid": {
+     "mean": 37.905,
+     "std": 8.963,
+     "ci95": 6.412,
+     "n_users": 10
+    },
+    "CondAgree": {
+     "mean": 0.305,
+     "std": 0.171,
+     "ci95": 0.122,
+     "n_users": 10
+    },
+    "approve": {
+     "mean": 0.513,
+     "std": 0.223,
+     "ci95": 0.16,
+     "n_users": 10
+    },
+    "critical": {
+     "mean": 0.04,
+     "std": 0.052,
+     "ci95": 0.038,
+     "n_users": 10
+    }
+   },
+   "micro": {
+    "MoveFid": 56.0,
+    "CondAgree": 0.305,
+    "approve": 0.512,
+    "critical": 0.04
+   }
+  },
+  "osim-8b/distilled": {
+   "per_user": {
+    "abiswas-elastio-com": {
+     "MoveFid": 55.99352240896358,
+     "CondAgree": 0.3,
+     "approve": 0.4,
+     "critical": 0.2,
+     "n": 50
+    },
+    "alienkevin": {
+     "MoveFid": 38.49336455893833,
+     "CondAgree": 0.4,
+     "approve": 0.0,
+     "critical": 0.08,
+     "n": 50
+    },
+    "gtrrz-victor": {
+     "MoveFid": 15.9642094017094,
+     "CondAgree": 0.2,
+     "approve": 0.22,
+     "critical": 0.38,
+     "n": 50
+    },
+    "henryph24": {
+     "MoveFid": 52.331871345029235,
+     "CondAgree": 0.28,
+     "approve": 0.16,
+     "critical": 0.0,
+     "n": 50
+    },
+    "hutusi": {
+     "MoveFid": 50.38140020898641,
+     "CondAgree": 0.12,
+     "approve": 0.56,
+     "critical": 0.08,
+     "n": 50
+    },
+    "khaong": {
+     "MoveFid": 37.9600173063219,
+     "CondAgree": 0.3,
+     "approve": 0.6,
+     "critical": 0.06,
+     "n": 50
+    },
+    "melagiri": {
+     "MoveFid": 58.14397103870788,
+     "CondAgree": 0.3541666666666667,
+     "approve": 0.5416666666666666,
+     "critical": 0.020833333333333332,
+     "n": 48
+    },
+    "oddessentials": {
+     "MoveFid": 50.152939166097056,
+     "CondAgree": 0.14,
+     "approve": 0.34,
+     "critical": 0.24,
+     "n": 50
+    },
+    "pc035860": {
+     "MoveFid": 58.65497076023393,
+     "CondAgree": 0.24,
+     "approve": 0.4,
+     "critical": 0.06,
+     "n": 50
+    },
+    "tarasyarema": {
+     "MoveFid": 53.62545018007203,
+     "CondAgree": 0.24,
+     "approve": 0.38,
+     "critical": 0.06,
+     "n": 50
+    }
+   },
+   "macro": {
+    "MoveFid": {
+     "mean": 47.17,
+     "std": 13.13,
+     "ci95": 9.392,
+     "n_users": 10
+    },
+    "CondAgree": {
+     "mean": 0.257,
+     "std": 0.088,
+     "ci95": 0.063,
+     "n_users": 10
+    },
+    "approve": {
+     "mean": 0.36,
+     "std": 0.19,
+     "ci95": 0.136,
+     "n_users": 10
+    },
+    "critical": {
+     "mean": 0.118,
+     "std": 0.119,
+     "ci95": 0.085,
+     "n_users": 10
+    }
+   },
+   "micro": {
+    "MoveFid": 75.4,
+    "CondAgree": 0.257,
+    "approve": 0.359,
+    "critical": 0.118
+   }
+  },
+  "osim-8b/generic": {
+   "per_user": {
+    "abiswas-elastio-com": {
+     "MoveFid": 51.862720612720615,
+     "CondAgree": 0.2,
+     "approve": 0.24,
+     "critical": 0.28,
+     "n": 50
+    },
+    "alienkevin": {
+     "MoveFid": 38.69701726844584,
+     "CondAgree": 0.54,
+     "approve": 0.04,
+     "critical": 0.06,
+     "n": 50
+    },
+    "gtrrz-victor": {
+     "MoveFid": 8.974358974358974,
+     "CondAgree": 0.18,
+     "approve": 0.0,
+     "critical": 0.1,
+     "n": 50
+    },
+    "henryph24": {
+     "MoveFid": 64.71520221520223,
+     "CondAgree": 0.18,
+     "approve": 0.14,
+     "critical": 0.1,
+     "n": 50
+    },
+    "hutusi": {
+     "MoveFid": 58.18218647711735,
+     "CondAgree": 0.26,
+     "approve": 0.44,
+     "critical": 0.12,
+     "n": 50
+    },
+    "khaong": {
+     "MoveFid": 63.63492063492064,
+     "CondAgree": 0.38,
+     "approve": 0.38,
+     "critical": 0.14,
+     "n": 50
+    },
+    "melagiri": {
+     "MoveFid": 54.65163484748738,
+     "CondAgree": 0.3958333333333333,
+     "approve": 0.375,
+     "critical": 0.08333333333333333,
+     "n": 48
+    },
+    "oddessentials": {
+     "MoveFid": 54.985450404858305,
+     "CondAgree": 0.2,
+     "approve": 0.42,
+     "critical": 0.1,
+     "n": 50
+    },
+    "pc035860": {
+     "MoveFid": 59.68671679197997,
+     "CondAgree": 0.24,
+     "approve": 0.3,
+     "critical": 0.06,
+     "n": 50
+    },
+    "tarasyarema": {
+     "MoveFid": 64.54106280193237,
+     "CondAgree": 0.14,
+     "approve": 0.16,
+     "critical": 0.12,
+     "n": 50
+    }
+   },
+   "macro": {
+    "MoveFid": {
+     "mean": 51.993,
+     "std": 16.983,
+     "ci95": 12.148,
+     "n_users": 10
+    },
+    "CondAgree": {
+     "mean": 0.272,
+     "std": 0.127,
+     "ci95": 0.091,
+     "n_users": 10
+    },
+    "approve": {
+     "mean": 0.249,
+     "std": 0.159,
+     "ci95": 0.114,
+     "n_users": 10
+    },
+    "critical": {
+     "mean": 0.116,
+     "std": 0.063,
+     "ci95": 0.045,
+     "n_users": 10
+    }
+   },
+   "micro": {
+    "MoveFid": 72.0,
+    "CondAgree": 0.271,
+    "approve": 0.249,
+    "critical": 0.116
+   }
+  },
+  "osim-4b/distilled": {
+   "per_user": {
+    "abiswas-elastio-com": {
+     "MoveFid": 61.994071994071994,
+     "CondAgree": 0.18,
+     "approve": 0.46,
+     "critical": 0.3,
+     "n": 50
+    },
+    "alienkevin": {
+     "MoveFid": 42.49433106575964,
+     "CondAgree": 0.4,
+     "approve": 0.06,
+     "critical": 0.06,
+     "n": 50
+    },
+    "gtrrz-victor": {
+     "MoveFid": 20.383151957001836,
+     "CondAgree": 0.34,
+     "approve": 0.22,
+     "critical": 0.28,
+     "n": 50
+    },
+    "henryph24": {
+     "MoveFid": 48.15972222222222,
+     "CondAgree": 0.32,
+     "approve": 0.1,
+     "critical": 0.02,
+     "n": 50
+    },
+    "hutusi": {
+     "MoveFid": 41.5998876039444,
+     "CondAgree": 0.14,
+     "approve": 0.6,
+     "critical": 0.1,
+     "n": 50
+    },
+    "khaong": {
+     "MoveFid": 53.83871336996337,
+     "CondAgree": 0.2,
+     "approve": 0.3,
+     "critical": 0.18,
+     "n": 50
+    },
+    "melagiri": {
+     "MoveFid": 71.9785575048733,
+     "CondAgree": 0.3125,
+     "approve": 0.5208333333333334,
+     "critical": 0.0625,
+     "n": 48
+    },
+    "oddessentials": {
+     "MoveFid": 54.824346405228766,
+     "CondAgree": 0.14,
+     "approve": 0.46,
+     "critical": 0.2,
+     "n": 50
+    },
+    "pc035860": {
+     "MoveFid": 43.59548066875653,
+     "CondAgree": 0.24,
+     "approve": 0.28,
+     "critical": 0.06,
+     "n": 50
+    },
+    "tarasyarema": {
+     "MoveFid": 64.06506568144499,
+     "CondAgree": 0.3,
+     "approve": 0.26,
+     "critical": 0.12,
+     "n": 50
+    }
+   },
+   "macro": {
+    "MoveFid": {
+     "mean": 50.293,
+     "std": 14.569,
+     "ci95": 10.421,
+     "n_users": 10
+    },
+    "CondAgree": {
+     "mean": 0.257,
+     "std": 0.09,
+     "ci95": 0.064,
+     "n_users": 10
+    },
+    "approve": {
+     "mean": 0.326,
+     "std": 0.179,
+     "ci95": 0.128,
+     "n_users": 10
+    },
+    "critical": {
+     "mean": 0.138,
+     "std": 0.098,
+     "ci95": 0.07,
+     "n_users": 10
+    }
+   },
+   "micro": {
+    "MoveFid": 76.5,
+    "CondAgree": 0.257,
+    "approve": 0.325,
+    "critical": 0.139
+   }
+  },
+  "osim-4b/generic": {
+   "per_user": {
+    "abiswas-elastio-com": {
+     "MoveFid": 50.83585858585858,
+     "CondAgree": 0.32,
+     "approve": 0.22,
+     "critical": 0.3,
+     "n": 50
+    },
+    "alienkevin": {
+     "MoveFid": 51.01010101010101,
+     "CondAgree": 0.38,
+     "approve": 0.18,
+     "critical": 0.06,
+     "n": 50
+    },
+    "gtrrz-victor": {
+     "MoveFid": 42.17687074829932,
+     "CondAgree": 0.06,
+     "approve": 0.04,
+     "critical": 0.06,
+     "n": 50
+    },
+    "henryph24": {
+     "MoveFid": 46.83333333333333,
+     "CondAgree": 0.18,
+     "approve": 0.28,
+     "critical": 0.04,
+     "n": 50
+    },
+    "hutusi": {
+     "MoveFid": 54.679962894248604,
+     "CondAgree": 0.24,
+     "approve": 0.4,
+     "critical": 0.12,
+     "n": 50
+    },
+    "khaong": {
+     "MoveFid": 55.7942057942058,
+     "CondAgree": 0.22,
+     "approve": 0.32,
+     "critical": 0.08,
+     "n": 50
+    },
+    "melagiri": {
+     "MoveFid": 89.6641484876779,
+     "CondAgree": 0.2708333333333333,
+     "approve": 0.4166666666666667,
+     "critical": 0.16666666666666666,
+     "n": 48
+    },
+    "oddessentials": {
+     "MoveFid": 48.69047619047619,
+     "CondAgree": 0.16,
+     "approve": 0.5,
+     "critical": 0.06,
+     "n": 50
+    },
+    "pc035860": {
+     "MoveFid": 55.883699633699635,
+     "CondAgree": 0.34,
+     "approve": 0.26,
+     "critical": 0.04,
+     "n": 50
+    },
+    "tarasyarema": {
+     "MoveFid": 60.52109381301926,
+     "CondAgree": 0.22,
+     "approve": 0.2,
+     "critical": 0.12,
+     "n": 50
+    }
+   },
+   "macro": {
+    "MoveFid": {
+     "mean": 55.609,
+     "std": 13.056,
+     "ci95": 9.339,
+     "n_users": 10
+    },
+    "CondAgree": {
+     "mean": 0.239,
+     "std": 0.094,
+     "ci95": 0.067,
+     "n_users": 10
+    },
+    "approve": {
+     "mean": 0.282,
+     "std": 0.134,
+     "ci95": 0.096,
+     "n_users": 10
+    },
+    "critical": {
+     "mean": 0.105,
+     "std": 0.08,
+     "ci95": 0.057,
+     "n_users": 10
+    }
+   },
+   "micro": {
+    "MoveFid": 72.3,
+    "CondAgree": 0.239,
+    "approve": 0.281,
+    "critical": 0.104
+   }
+  }
+ }
+}
