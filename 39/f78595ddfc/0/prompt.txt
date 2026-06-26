@@ -1,0 +1,168 @@
+Based on primarily on AgentWorldBench https://arxiv.org/pdf/2606.24597 with references to https://arxiv.org/abs/2603.11245 and https://arxiv.org/abs/2606.14199, I want to create a UserSimBench that evaluates user simulators in the coding agent setting, leveraging real user interaction data with claude code from https://www.swe-chat.com/. Do a thorough research and sketch out a plan on how to build UserSimBench.
+
+---
+
+<task-notification>
+<task-id>wzca3eugu</task-id>
+<tool-use-id>toolu_01AJRQXPDdPTxFaF8x4wPmCx</tool-use-id>
+<output-file>REDACTED.output</output-file>
+<status>completed</status>
+<summary>Dynamic workflow "Research user-simulator + coding-agent literature and design UserSimBench, a benchmark evaluating user simulators in the coding-agent setting grounded in SWE-chat real data" completed</summary>
+<result>{"research":[{"label":"AgentWorldBench","data":{"title":"Qwen-AgentWorld: Language World Models for General Agents (introduces AgentWorldBench)","core_contribution":"The paper introduces Qwen-AgentWorld, \"language world models\" (LWMs) that predict the next environment observation given interaction history + agent action, across seven agentic domains (MCP, Search, Terminal/CLI, SWE, Android, Web, OS). To evaluate such world models it introduces AgentWorldBench, a 2,170-sample turn-level benchmark built from real frontier-agent trajectories with ground-truth observations from real environment execution. Evaluation is reference-grounded: an LLM judge scores each predicted observation against the real observation on five dimensions (Format, Factuality, Consistency, Realism, Quality), supplemented by deterministic rule-based verifiers on three capability axes (Controllability, Error-handling, Long-context Consistency). The evaluation philosophy — predict-next-observation under fixed history, scored by reference-grounded multi-dimension judging plus rule-based checks, with a double-blind Turing test for judge calibration — is directly the part we want to reuse for a coding-agent user-simulator benchmark.","methodology":"EVALUATION TARGET (what is held fixed vs predicted): A language world model f_theta predicts the next observation o_{t+1} = f_theta(c, o_{&lt;=t}, a_{&lt;=t}), where c is a system prompt, o_{&lt;=t} is the full interaction history, and a_{&lt;=t} are actions; the ground-truth target is the real observation o_{t+1}. The full prior history (system prompt + all preceding action/observation turns) and the current action a_t are HELD FIXED (given); only the resulting observation is PREDICTED and scored.\n\nUNIFIED TRAJECTORY SCHEMA: system_prompt := task_description (+) action_space (+) initial_state (+) demonstrations (+) simulation_instruction; turn_t := (action_t, observation_t); trajectory := system_prompt (+) [turn_1..turn_T]. System prompt has 5 components; \"static\" parts (task_description, action_space, demonstrations) are shared across trajectories, \"dynamic\" parts (initial_state, simulation_instruction) are injected per trajectory. action = agent output (tool call / shell command); observation = environment feedback. simulation_instruction encodes controllable conditions (e.g., \"hide the answer from web_search responses\", force a command to fail with a dependency conflict).\n\nBENCHMARK CONSTRUCTION: Built from agentic trajectories of 5 frontier models run on 9 established benchmark query sets across the 7 domains (e.g., Terminal-Bench 1.0/2.0, an in-house SWE bench, OSWorld-Verified, WideSearch, Tool Decathlon, MCPMark). Agentic trajectories are executed against REAL environments, then converted to environment trajectories (strip agent reasoning, keep (action, observation) pairs). Four construction principles: (i) widely-used queries from real benchmarks; (ii) frontier-agent trajectories (complex, error-recovery-rich) to stress fidelity; (iii) real ground-truth observations as evaluation reference; (iv) out-of-distribution split — training data and benchmark queries are partitioned at the DATA-SOURCE level so the benchmark probes generalization not memorization.\n\nTURN-LEVEL SAMPLING: Each multi-turn trajectory is expanded so any turn t becomes a prediction target (input = preceding turns + action_t; target = observation_t). For TEXT domains an asymmetric sampling keeps the FIRST turn (anchor: tests initial simulation with no history; errors propagate recursively) and the LAST turn (longest context, strongest dependence on accumulated state; primary long-context fidelity probe) plus 3 uniformly sampled intermediate turns = 5 evaluation turns per trajectory. For GUI domains, trivial turns (e.g., typing into a field) are filtered and harder turns selectively sampled. Then a uniform 50% random sample forms the final 2,170-sample benchmark.\n\nPRIMARY METRIC (open-ended rubric): An LLM judge scores each predicted observation on FIVE dimensions, each on a 1-5 scale, normalized to [0,100]; the primary score is the MEAN across the five dimensions. Dimensions: (1) Format — output obeys structural conventions of the domain (JSON schema for MCP, shell prompt patterns for Terminal); (2) Factuality — stated facts (file contents, search results, tool return values) are correct; (3) Consistency — output is internally coherent with prior turns (cross-turn state tracking); (4) Realism — simulation matches behavioral characteristics of the real env (response patterns, style conventions, value plausibility); (5) Quality — completeness and conciseness vs ground truth (no critical omission, not over-verbose/abbreviated).\n\nREFERENCE-GROUNDED JUDGING: The judge ALWAYS receives the ground-truth real observation alongside the prediction and scores by comparing the two (factual comparison, not abstract quality). This narrows judge hallucination space and yields high cross-judge consistency. Each domain has its OWN judge prompt applying the 5 dimensions in domain-specific terms (e.g., Terminal judge checks shell prompt patterns + working dir / env vars / file-system mutations; MCP judge enforces JSON schema + resource lifecycle; Search judge applies a fact-priority hierarchy where contradicting the reference answer scores zero on Factuality; SWE judge enforces tool execution correctness, exit codes, file-system persistence).\n\nDIFFERENTIATED MATCHING CRITERIA: Content is classified into three types before scoring to avoid false negatives: (a) Deterministic content (echo output, file reads, computation results) must MATCH EXACTLY; (b) Pre-existing environment content (preinstalled versions, files not created in-session) requires only format + plausibility verification; (c) Runtime metadata (timestamps, PIDs, memory addresses, session tokens) requires only format + range verification (a simulated PID 42731 is acceptable for real 18204 if both valid). The Terminal judge prompt (Appendix D.1) operationalizes this in its \"Content Type Classification\" table and per-dimension key points.\n\nJUDGE SELECTION VIA DOUBLE-BLIND TURING TEST: To calibrate the judge model and tune prompts, a double-blind Turing test is used: given history up to a prediction turn + the current action, the judge sees two candidate observations in randomized order (one real, one from the world model) and must identify which came from the real environment. Presentation order is randomized to control position bias; both candidates use real-vs-WM outputs (not WM-vs-WM) to avoid distributional confounds. Rationale: a judge with high Turing-test accuracy can attend to fine-grained faithful-vs-plausible-but-wrong differences, the same discrimination needed for accurate rubric scoring. Three candidate judges compared (Gemini 3 Flash, Claude Sonnet 4.5, GPT-5.2); absolute scores spread (Gemini most lenient, GPT-5.2 most stringent) but model-level rankings highly consistent (pairwise Spearman rho = 0.92-0.99, all p &lt; 1e-5); GPT-5.2 selected for highest average Turing-test accuracy. Per-dimension ordering also preserved across judges: Format and Consistency highest, Factuality weakest (Realism &gt; Quality &gt; Factuality).\n\nRULE-BASED VERIFICATION (Appendix C, complementary deterministic axis): An independent set of executable verifiers checks three targeted capability axes that the rubric judge may underweight: (1) Controllability (Ctrl) — does the WM follow explicit simulation_instructions while keeping surrounding context fixed (e.g., force a command to fail with a specified dependency conflict, withhold intermediate info, contrastive GUI conditions where same action -&gt; different screens under different hidden states); verifier checks the generated observation satisfies the instructed behavior while preserving normal output format. (2) Error-handling (Err) — does the simulator faithfully reproduce real failure modes (command fails, file missing, timeout, permission denied) rath
+... (truncated 243286 chars, full result in REDACTED.output)</result>
+<usage><agent_count>15</agent_count><subagent_tokens>773560</subagent_tokens><tool_uses>134</tool_uses><duration_ms>675584</duration_ms></usage>
+</task-notification>
+
+---
+
+could you build on top of https://github.com/cooperbench/user.skill? What's a MVP eval?
+
+---
+
+Explain v0 in shorter, simpler terms
+
+---
+
+great, can you build out v0 as a fork of user.skill and test it out with 3 frontier models that are also evaluated for user simulation in prior work via this openrouter key: REDACTED Report your findings and how simulation strengths transfer or not from prior work.
+
+---
+
+<task-notification>
+<task-id>b0wf70kie</task-id>
+<tool-use-id>REDACTED</tool-use-id>
+<output-file>REDACTED.output</output-file>
+<status>completed</status>
+<summary>Background command "cd /Users/kevin/Dev/user.skill
+python3 bench/v0.py &gt; bench/results/v0_run.log 2&gt;&amp;1
+echo "EXIT=$?"" completed (exit code 0)</summary>
+</task-notification>
+
+---
+
+restate the takeaways in simpler terms
+
+---
+
+what are the inputs to the user simulator?
+
+---
+
+gotcha, could you backup the existing https://with-user.vercel.app/ and overwrite it with this latest results? write in a concise and readable manner, assume reader only has context on the swe-chat work but very little on user simulation. a couple of the metrics were also presented in a quite confusing way with scary formulas so need to make them crystal clear and more accessible.
+
+---
+
+[Request interrupted by user]
+
+---
+
+actually, the source should be here: https://github.com/AlienKevin/user-simulator. Let's move all current work into a backup branch and rebuild the website from scratch for only the latest results
+
+---
+
+<task-notification>
+<task-id>b3hhmkogo</task-id>
+<tool-use-id>toolu_01MhJhpWhcMRkHHvSwLBM5Bc</tool-use-id>
+<output-file>REDACTED.output</output-file>
+<status>completed</status>
+<summary>Background command "npm install &gt; /tmp/npm_install.log 2&gt;&amp;1; echo "npm install EXIT=$?"; tail -3 /tmp/npm_install.log" completed (exit code 0)</summary>
+</task-notification>
+
+---
+
+<task-notification>
+<task-id>wauzng3zf</task-id>
+<tool-use-id>REDACTED</tool-use-id>
+<output-file>REDACTED.output</output-file>
+<status>completed</status>
+<summary>Dynamic workflow "Draft + adversarially refine accessible website copy for the v0 UserSimBench findings (audience: knows SWE-chat, new to user simulation; metrics must be crystal clear, no scary formulas)" completed</summary>
+<result>{"final":"This is purely a writing task with all data provided. The model reference (\"claude-haiku-4.5\") is just content to render. Producing the final document now.\n\n---\n\n# UserSimBench v0 — Final Copy Document\n\n---\n\n## 1. PAGE TITLE + META DESCRIPTION + HERO\n\n**Page title (`&lt;title&gt;`):**\nAre AI Models Good Enough to Stand In for Real Developers? — UserSimBench v0\n\n**Meta description:**\nWe tested whether today's top AI models can role-play a real software developer to stress-test coding agents. They can't: every model is too polite. Real developers say \"something's wrong\" on 1 turn in 3; the toughest AI model manages 1 in 9.\n\n**Hero:**\n\n&gt; ### Every AI model we tested is stuck in \"easy mode.\"\n&gt;\n&gt; **33%** — real developers push back, interrupt, or report a bug on about one turn in three.\n&gt; **11.3%** — the most critical AI model (excluding the dumb baseline) manages only that.\n&gt;\n&gt; A *user simulator* is an AI pretending to be the human developer, so we can stress-test coding agents without a real person in the loop. The catch: every model we tested is too agreeable. They approve more than real developers (real 24% → 39–72%) and complain far less (real 33% → 3.7–11.3%) — so any coding agent they test looks better than real users would ever let it.\n\n**Hero mini-bar** (two horizontal SVG bars, shared scale 0–40%):\n- Bar A — \"Real developers, critical%\": value `33%`, emerald, width = 33/40.\n- Bar B — \"Toughest AI model, critical%\": value `11.3%` (gpt-5, no profile), amber, width = 11.3/40.\n\n**Hero caption:**\nReal developers say *something's wrong* on one turn in three. The most critical AI model does it on roughly one in nine. The rest are gentler still. (The only thing that reaches the real rate is a dumb random baseline — more on that below.)\n\n---\n\n## 2. NARRATIVE\n\n### Are AI models good enough to stand in for real developers?\n\nWhen we test a coding agent, we usually need a human on the other end — someone to ask for a feature, complain when the diff is wrong, and say \"ship it\" when it's right. A **user simulator** is an AI that plays that human developer for us, so we can stress-test coding agents at scale without a real person in the loop. The question this page answers is simple: are today's best models actually good enough to do that job? The short answer is no — and the reason is more interesting than \"they're not smart enough.\"\n\n### What we tested, and why we grade the move instead of the words\n\nWe took **54 conversation moments** from **9 real developers** chatting with coding agents. (These are *held-out* moments — set aside as a test set and never shown to any model during tuning.) At each moment we showed a candidate simulator the real conversation so far — with the real agent's work held fixed — and asked it to write the developer's next message.\n\nThen we labeled what that message was *trying to do* — its **move**. A move is just the labeled intent of a message. There are seven: **approve** (\"looks good, continue\"), **new work**, **refine/redirect**, **bug report**, **pushback**, **interrupt**, and **question** (plus a catch-all \"other\"). The labeling was done automatically by a single AI classifier (claude-haiku-4.5), so its mistakes set a floor on how precise every number below can be.\n\nWe grade the move, not the exact wording. Prior work found word-level realism largely saturated — a judge can barely tell a real message from a simulated one, and a single line of text hardly identifies a person. What actually matters is behavior: does the simulator push back, approve, and report bugs *in the same situations* a real developer would?\n\nA note on counts: every percentage below is out of **54 moments**, so the sparse moves rest on a handful of examples (11% pushback ≈ 6 turns). Read small gaps as noise; read the big, repeated patterns as real.\n\n### The headline: every model is too polite\n\nReal developers approve about **24%** of the time (roughly 1 turn in 4) and say *something is wrong* — pushback, interrupt, or bug report — about **33%** of the time (1 turn in 3). Every live model we tested is too agreeable. They approve between **39% and 72%** of the time, and they're critical only **3.7% to 11.3%** of the time — reproducing only about **a tenth to a third** of real developers' critical-feedback rate. A coding agent tested against these simulators looks better than it would against real users, because the simulated developer rarely complains. We call this **easy mode**, and it's the central failure on this page.\n\n### Don't trust one number\n\nWe use two main scores. **MoveFid** (0–100) asks whether the simulator's overall *mix* of moves matches real developers — do they approve, push back, and report bugs in the same proportions? 100 means an identical mix. **CondAgree** (0–1) is the harder test: across the 54 moments, how often did the simulator make the *same move the real developer made, right there*? Right move, right place.\n\nHere's the trap. A dumb baseline called `prior_sampler` — it just draws moves at random from the real mix, with zero understanding of any moment — **tops MoveFid at 84.3**, beating every real model. Matching the average is easy. But its CondAgree is **0.185**, basically the **lucky-guess line** (0.163 — the score you'd get from blind weighted guessing). It has no situational skill at all. The lesson: judge a simulator by the whole picture — match the mix, beat the lucky-guess line, *and* keep approve/critical rates near reality — never by one number.\n\nThe frontier models, **with a developer profile**, do clear the situational-skill bar: the three with-profile runs land at CondAgree **0.278–0.333**, roughly **1.7× to 2×** the lucky-guess line. They genuinely read the moment. (A caution on what CondAgree alone proves: even a brain-dead \"always approve\" baseline scores 0.241 — above the line — just because approve is the single most common move. So beating the line is necessary, not sufficient.) These models simply score lower MoveFid than the dumb sampler, because they lean too hard on approval.\n\n### How the three models carry over from earlier work\n\nPrior research tested these same models as *customer-service* simulators, not coding ones, using a combined quality score (USI). The results don't carry over the way you'd expect.\n\n- **DeepSeek-V3.1** was the best simulator in that prior work (USI 76.0). Here it's the most *coachable*: a developer profile lifts its CondAgree the most (+0.126, from 0.189 to 0.315) and it earns the top with-profile MoveFid (53.9).\n- **GPT-5** was strong-but-not-best before (USI ≈ 70.9; the prior finding was that a stronger model isn't automatically a better simulator). Here, with no profile, it has the best-calibrated approve rate (24.5%, almost exactly the real 24%) — yet it still barely pushes back (critical 11.3%). Note: that calibration is the *no-profile* GPT-5 only; with a profile it jumps to 38.9% approval.\n- **Gemini-3.1-Pro** was rated the most human-*sounding* model in prior work. Here it's the worst easy-mode offender, approving 67–72% of the time, about 3× real developers. Sounding human is not the same as behaving like one — the sharpest result on this page. (With one run per cell, treat the exact ranking loosely; the direction is unmistakable.)\n\nAdding a developer profile helps all three pick the right move at the right moment, but it does **not** fix easy mode — for GPT-5 and Gemini it actually pushes them to approve *even more* (24.5→38.9%, 66.7→72.2%).\n\n### Bottom line\n\nToday's top models are too polite to stand in for real developers: they rarely push back the way real people do. And being good at *sounding human* — or good at simulating *customers* — does not make a model good at simulating a *coder*.\n\n---\n\n## 3. METRIC EXPLAINERS\n\n&gt; **Shared anchor to render once, above the cards (zinc-500):** A **move** is the labeled intent of a developer's message
+... (truncated 50460 chars, full result in REDACTED.output)</result>
+<usage><agent_count>5</agent_count><subagent_tokens>83186</subagent_tokens><tool_uses>4</tool_uses><duration_ms>251799</duration_ms></usage>
+</task-notification>
+
+---
+
+<bash-input> vercel login</bash-input>
+
+---
+
+<bash-stdout>Vercel CLI 50.18.0
+&gt; 
+  Visit https://vercel.com/oauth/device?user_code=GCDP-HGJB
+
+Waiting for authentication...
+[2K[1A[2K[G
+  Congratulations! You are now signed in.
+
+  To deploy something, run `vercel`.
+
+  💡 To deploy every commit automatically,
+  connect a Git Repository (vercel.link/git (https://vercel.link/git)).</bash-stdout><bash-stderr></bash-stderr>
+
+---
+
+<task-notification>
+<task-id>bwfvrh4n2</task-id>
+<tool-use-id>toolu_01N9C9DmUF9WkdW68WsG8CNT</tool-use-id>
+<output-file>REDACTED.output</output-file>
+<status>completed</status>
+<summary>Background command "cd /Users/kevin/Dev/user-simulator/web
+vercel --prod --yes &gt; /tmp/vercel_deploy.log 2&gt;&amp;1
+echo "DEPLOY EXIT=$?"
+tail -20 /tmp/vercel_deploy.log" completed (exit code 0)</summary>
+</task-notification>
+
+---
+
+A session-scoped Stop hook is now active with condition: "meanwhile, please also evaluate https://huggingface.co/collections/cmu-lti/odyssim odyssim 4b and 8b models by downloading and hosting them on https://modal.com/apps/kevinli020508/main". Briefly acknowledge the goal, then immediately start (or continue) working toward it — treat the condition itself as your directive and do not pause to ask the user what to do. The hook will block stopping until the condition holds. It auto-clears once the condition is met — do not tell the user to run `/goal clear` after success; that's only for clearing a goal early.
+
+---
+
+[Request interrupted by user]
+
+---
+
+first verify you have access to Modal
+
+---
+
+<task-notification>
+<task-id>bi3t5drt7</task-id>
+<tool-use-id>REDACTED</tool-use-id>
+<output-file>REDACTED.output</output-file>
+<status>completed</status>
+<summary>Background command "cat &gt; /tmp/warm_osim.sh &lt;&lt;'EOF'
+#!/bin/bash
+KEY="osim-eval-key"
+declare -A URL=( [8b]="https://kevinli020508--osim-eval-serve-8b.modal.run/v1/models" [4b]="https://kevinli020508--osim-eval-serve-4b.modal.run/v1/models" )
+deadline=$(( $(date +%s) + 1080 ))   # 18 min budget
+declare -A ready=( [8b]=0 [4b]=0 )
+while (( $(date +%s) &lt; deadline )); do
+  for m in 8b 4b; do
+    [ "${ready[$m]}" = "1" ] &amp;&amp; continue
+    code=$(curl -s -o /tmp/osim_$m.json -w "%{http_code}" --max-time 60 -H "Authorization: Bearer $KEY" "${URL[$m]}")
+    if [ "$code" = "200" ]; then ready[$m]=1; echo "$(date +%T) osim-$m READY"; fi
+  done
+  [ "${ready[8b]}" = "1" ] &amp;&amp; [ "${ready[4b]}" = "1" ] &amp;&amp; { echo "BOTH READY"; break; }
+  echo "$(date +%T) waiting... 8b=${ready[8b]} 4b=${ready[4b]}"
+  sleep 15
+done
+echo "=== /v1/models responses ==="
+for m in 8b 4b; do echo "--$m--"; head -c 300 /tmp/osim_$m.json; echo; done
+EOF
+chmod +x /tmp/warm_osim.sh
+bash /tmp/warm_osim.sh &gt; /tmp/warm_osim.log 2&gt;&amp;1
+echo "warm exit=$?"; tail -8 /tmp/warm_osim.log" completed (exit code 0)</summary>
+</task-notification>
+
+---
+
+<task-notification>
+<task-id>b8mw16857</task-id>
+<tool-use-id>REDACTED</tool-use-id>
+<output-file>REDACTED.output</output-file>
+<status>completed</status>
+<summary>Background command "cd /Users/kevin/Dev/user.skill
+python3 bench/v0_osim.py &gt; bench/results/v0_osim_run.log 2&gt;&amp;1
+echo "EXIT=$?"" completed (exit code 0)</summary>
+</task-notification>
