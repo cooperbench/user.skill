@@ -15,8 +15,8 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import validate as V
 
 SESS_PARQUET = Path("/Users/kevin/Dev/swe-chat-scan/from_hf/sessions.parquet")
-MIN_SESS, MIN_HOSESS, MIN_TURNS = 10, 4, 30
-TARGET_FRAC = {"train": 0.45, "test": 0.35, "val": 0.20}  # of qualifying users; train largest
+MIN_SESS, MIN_HOSESS, MIN_TURNS = 6, 2, 8   # relaxed so test & val can each hold >= MIN_TEST_VAL users
+MIN_TEST_VAL = 20  # require >= 20 qualifying users in test and in val
 
 
 def heldout_turns(slug):
@@ -82,18 +82,20 @@ def main():
         c["n_users"] = len(c["users"]); c["n_repos"] = len(c["repos"])
         c["n_qual"] = len(c["qual"])
         c["sessions"] = sum(user_sessions[u] for u in c["users"])
-    # assign whole components; qualifying ones to the split most below its target share (train largest),
-    # non-qualifying components -> train (bulk raw data lives in train, conventional).
+    # assign whole components: fill test then val to >= MIN_TEST_VAL qualifying users, rest -> train
+    # (train ends up largest given the pool). non-qualifying components -> train.
     comps.sort(key=lambda c: (-c["n_qual"], -c["sessions"]))
-    total_q = sum(c["n_qual"] for c in comps) or 1
     splits = {"train": {"comps": []}, "val": {"comps": []}, "test": {"comps": []}}
     qcount = {"train": 0, "val": 0, "test": 0}
     for c in comps:
         if c["n_qual"] == 0:
             tgt = "train"
+        elif qcount["test"] < MIN_TEST_VAL:
+            tgt = "test"
+        elif qcount["val"] < MIN_TEST_VAL:
+            tgt = "val"
         else:
-            deficit = {sp: TARGET_FRAC[sp] * total_q - qcount[sp] for sp in TARGET_FRAC}
-            tgt = max(deficit, key=deficit.get)
+            tgt = "train"
         splits[tgt]["comps"].append(c); qcount[tgt] += c["n_qual"]
 
     out = {"thresholds": {"min_sessions": MIN_SESS, "min_ho_sessions": MIN_HOSESS, "min_ho_turns": MIN_TURNS}}

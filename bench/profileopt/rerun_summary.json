@@ -1,0 +1,154 @@
+{
+ "taxonomy": "v2-4way",
+ "test_users": [
+  "gtrrz-victor",
+  "pc035860",
+  "tarasyarema",
+  "khaong",
+  "135yshr",
+  "tslateman",
+  "dayhaysoos",
+  "jdsingh122918",
+  "armelhbobdad",
+  "robouden",
+  "cyyeh",
+  "pfleidi",
+  "jeevanpillay",
+  "alishakawaguchi",
+  "schmalle",
+  "marcus-sa",
+  "cteyton",
+  "toothbrush",
+  "dipree",
+  "gregszero"
+ ],
+ "n_points": 480,
+ "lucky_guess": 0.419,
+ "real_move_dist": {
+  "directive": 0.518,
+  "critical": 0.278,
+  "approve": 0.121,
+  "inquiry": 0.084
+ },
+ "results": {
+  "deepseek-v3.1/distilled": {
+   "condagree": {
+    "mean": 0.488,
+    "ci95": 0.108,
+    "n_users": 20
+   },
+   "per_user": [
+    0.6,
+    0.667,
+    0.4,
+    0.433,
+    0.643,
+    0.5,
+    0.467,
+    0.862,
+    0.5,
+    0.467,
+    0.533,
+    0.433,
+    0.333,
+    0.389,
+    0.111,
+    0.571,
+    0.769,
+    0.462,
+    0.625,
+    0.0
+   ]
+  },
+  "deepseek-v3.1/generic": {
+   "condagree": {
+    "mean": 0.512,
+    "ci95": 0.088,
+    "n_users": 20
+   },
+   "per_user": [
+    0.567,
+    0.6,
+    0.433,
+    0.533,
+    0.517,
+    0.6,
+    0.567,
+    0.897,
+    0.533,
+    0.367,
+    0.586,
+    0.5,
+    0.333,
+    0.353,
+    0.111,
+    0.643,
+    0.643,
+    0.462,
+    0.625,
+    0.375
+   ]
+  },
+  "osim-4b/distilled": {
+   "condagree": {
+    "mean": 0.461,
+    "ci95": 0.086,
+    "n_users": 20
+   },
+   "per_user": [
+    0.6,
+    0.533,
+    0.4,
+    0.5,
+    0.367,
+    0.533,
+    0.567,
+    0.793,
+    0.3,
+    0.367,
+    0.433,
+    0.333,
+    0.481,
+    0.333,
+    0.389,
+    0.5,
+    0.786,
+    0.385,
+    0.5,
+    0.125
+   ]
+  },
+  "osim-4b/generic": {
+   "condagree": {
+    "mean": 0.388,
+    "ci95": 0.075,
+    "n_users": 20
+   },
+   "per_user": [
+    0.267,
+    0.467,
+    0.367,
+    0.233,
+    0.5,
+    0.333,
+    0.5,
+    0.759,
+    0.467,
+    0.4,
+    0.3,
+    0.3,
+    0.333,
+    0.167,
+    0.222,
+    0.357,
+    0.571,
+    0.462,
+    0.375,
+    0.375
+   ]
+  }
+ },
+ "judges": [
+  "anthropic/claude-haiku-4.5"
+ ]
+}
