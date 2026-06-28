@@ -1,0 +1,842 @@
+[
+ {
+  "id": "real|2f5833ec-423b-47b4-9535-556896507b53#41",
+  "kind": "real",
+  "text": "If we find that there are carry over files, we should not delete the prompt.txt from the metadata",
+  "prev_agent": "",
+  "base_move": "refine_redirect"
+ },
+ {
+  "id": "real|9f36be99-a345-469f-9a29-7450cbf39592#13",
+  "kind": "real",
+  "text": "Yes, add required tests to help cover our edge cases too, and downgrade Issue 2 from “must fix” to “semantics decision.” or something prevent ourselves from tripping on this later.",
+  "prev_agent": "Here's my assessment: --- **Issue 1 (aggregation includes incomplete PRs): Real but low-probability.** The path: A truncated PR has `comments_extracted_at = NULL` but may still have partial `pr_comments` rows. `populate_review_timestamps()` scopes to \"PRs with any pr_comments rows\" (line 57), not \"PRs with complete coverage.\" So it can compute `review_time_minutes` from partial vote data. The aggregation query at line 590-600 then pulls that value without checking `comments_extracted_at`. However, in practice this would only produce a *wrong* value if the earliest approval vote was in a truncated thread. Approval votes are typically early in the PR lifecycle (not thread #50+), and truncation only kicks in when `max_threads_per_pr` is hit. Still — if we already have `comments_extracted_at` as an authoritative completeness signal and we're not using it here, that's a design inconsistency. **The fix is a one-line WHERE clause addition and is worth doing.** **Issue 2 (stale stamp on ExtractionError): Defensible as-is. I'd push back.** The scenario: a previously-complete PR hits a transient `ExtractionError` on refresh. The stored data from the prior successful extraction is unchanged and still valid — no rows were deleted or modified. The `comments_extracted_at` timestamp accurately records when the data was last successfully extracted. Clearing the stamp on every `ExtractionError` would cause **coverage flapping**: a single API timeout or rate-limit hit would downgrade the PR from \"covered\" to \"uncovered,\" causing the dashboard to report \"partial\" coverage. On the next successful run it bounces back. This is noisier and more misleading than the current behavior. The stored `review_time_minutes` is still […truncated, 344 words total]",
+  "base_move": "refine_redirect"
+ },
+ {
+  "id": "sim|a34b6199-9b61-4012-9e65-841a686ad2b1#6",
+  "kind": "sim",
+  "text": "how is everything",
+  "prev_agent": "32 pages, compiled clean. Same 5 pre-existing appendix counter errors, no new issues. Main body fits in 8 pages.",
+  "base_move": "question"
+ },
+ {
+  "id": "sim|95571ac3-2eb9-42f4-9152-5c609f71fc06#13",
+  "kind": "sim",
+  "text": "nice, verify the output now, what does the output show? also, test the e2e test cases. run them yourself without changing anything in the project. just run the scripts you provided in the PR.",
+  "prev_agent": "Push confirmed complete. PR is up at https://github.com/desplega-ai/agent-swarm/pull/206 and ready for your review.",
+  "base_move": "new_work"
+ },
+ {
+  "id": "real|2716a7a1-758b-40c0-9ba5-730f2397973f#22",
+  "kind": "real",
+  "text": "<teammate-message teammate_id=\"ux-designer\" color=\"blue\">\n{\"type\":\"idle_notification\",\"from\":\"ux-designer\",\"timestamp\":\"2026-04-04T12:08:14.225Z\",\"idleReason\":\"available\"}\n</teammate-message>\n\n<teammate-message teammate_id=\"ux-designer\" color=\"blue\">\n{\"type\":\"idle_notification\",\"from\":\"ux-designer\",\"timestamp\":\"2026-04-04T12:08:27.197Z\",\"idleReason\":\"available\"}\n</teammate-message>",
+  "prev_agent": "Phase 2 的 **Devil's Advocate** 已經出發了！他會仔細挑戰所有方案的弱點，包括：\n\n- 需求是否被過度解讀\n- fzf 外部依賴 / Ink 的 bundle 膨脹風險\n- 大量 session 的效能隱患\n- CLI 介面設計的一致性問題\n- 是否有更簡單的替代方案被忽略\n\n等他完成後，瑠瑠會綜合所有意見寫成最終報告～ *認真等待中*",
+  "base_move": "other"
+ },
+ {
+  "id": "sim|788d7bbd-4711-4573-813f-c43d0c290895#7",
+  "kind": "sim",
+  "text": "let's go with #4 and #5 please, though can we stick to the workflow of subagent dev and review?",
+  "prev_agent": "Test analyzer completed — no issues found. Waiting on the other two agents.",
+  "base_move": "refine_redirect"
+ },
+ {
+  "id": "real|dd693f48-c8c7-464a-9721-c339ef9012ee#12",
+  "kind": "real",
+  "text": "GPU utilisation at our RACE VM ? How many experiments are we running ?",
+  "prev_agent": "All 63 checks pass. Here's the summary:\n\n**Appendix fixes:**\n- Consolidated 4 legacy AAS sections (Zero-Cost Proxy, Budget Scaling, Transfer Matrix, Architecture Diagrams) into **B: AAS Supporting Material** (B.1-B.4) — eliminates the empty-looking back-to-back section headers\n- Appendix now enumerates A through V (22 sections, down from 25) with clean subsection nesting\n- No empty or orphaned sections remain\n\n**Page compliance:** Main body ends on page 9 (verified).\n\n**Verification:** All 63 numeric claims pass within tolerance.",
+  "base_move": "question"
+ },
+ {
+  "id": "real|de12801b-3a19-4491-b8f3-a578996dff74#20",
+  "kind": "real",
+  "text": "## Step 5: Cleanup (After PR Merge)\n\nAfter the founder merges the PR:\n\n1. Send shutdown requests to all teammates (pm-agent, ta-agent, dev-agent)\n2. Delete the team: `TeamDelete`\n3. Clean up worktree:\n```bash\ngit worktree remove ../code-insights-<slugified-arguments>\n```\n4. Confirm cleanup is complete",
+  "prev_agent": "`★ Insight ─────────────────────────────────────`\n**The team ceremony in action:** The PM agent is now autonomously reading the design doc, creating a GitHub Issue, building the task dependency graph, and preparing the handoff. It will message me back with SPAWN_REQUESTs when it needs the TA, LLM Expert, and Dev agents. I'll spawn each agent as requested — this is the \"orchestrator as agent factory\" pattern where only the main session can create new agents, preventing recursive spawning.\n`─────────────────────────────────────────────────`\n\nThe feature team is live:\n\n| Component | Status |\n|---|---|\n| Worktree | `../code-insights-reflect-pattern-normalization-weekly/` on branch `feature/reflect-pattern-normalization-weekly` |\n| Team | `feat-reflect-pattern-normalization-weekly` |\n| PM Agent | Spawned, reading design doc and setting up ceremony |\n\nI'm now in supervisor mode — waiting for the PM to complete scoping and send SPAWN_REQUESTs for the TA, LLM Expert, and Dev agents. I'll relay any questions or updates as they come in.",
+  "base_move": "new_work"
+ },
+ {
+  "id": "real|788d7bbd-4711-4573-813f-c43d0c290895#5",
+  "kind": "real",
+  "text": "### 5. Edge Cases in the Retry Logic\n\n**Covered adequately:**\n- Non-ETXTBSY error on first attempt: breaks immediately, reports the real error.\n- ETXTBSY on all 3 attempts: reports the last ETXTBSY error via `t.Fatalf`.\n- ETXTBSY then success: returns the agent on the successful attempt.\n- Success on first attempt: returns immediately, no sleep.\n\n**Not concerning but worth noting:**\n- The `\"text file busy\"` string match is not locale-dependent in Go -- `syscall.ETXTBSY.Error()` always returns the English string on Unix systems. This is safe.\n- On Windows, ETXTBSY does not exist, and the test already has Windows-specific binary naming (`.bat` extension in `testBinaryDir`). The retry logic is harmless on Windows since the error string will never match.\n- The error is checked via `err.Error()` string matching rather than `errors.Is(err, syscall.ETXTBSY)`. This is necessary because the error is wrapped by `exec.Command.Run()` and then further wrapped by the `run()` method (which formats it as `\"info: <stderr or error>\"`), so `errors.Is` would not unwrap through the string formatting. The string match is the pragmatic and correct approach here.",
+  "prev_agent": "Test analyzer completed — no issues found. Waiting on the other two agents.",
+  "base_move": "pushback"
+ },
+ {
+  "id": "real|bbf8618c-5f8c-415a-8371-e82b282ccd93#26",
+  "kind": "real",
+  "text": "2 mobile tests failed: 1) [iPhone SE] › tests/e2e/mobile/mobile-compat.spec.ts:56:11 › Mobile Compatibility › No horizontal overflow › /archive has no horizontal overflow \n\n    Test timeout of 30000ms exceeded.\n\n    Error: page.evaluate: Test timeout of 30000ms exceeded.\n\n       6 | /** Returns true if the page has no horizontal scrollbar (no overflow). */\n       7 | async function hasNoHorizontalOverflow(page: Page): Promise<boolean> {\n    >  8 |   return page.evaluate(\n         |               ^\n       9 |     () => document.documentElement.scrollWidth <= window.innerWidth,\n      10 |   );\n      11 | }\n        at hasNoHorizontalOverflow (/Users/hutusi/workspace/ai/naive/amytis-claude-review/tests/e2e/mobile/mobile-compat.spec.ts:8:15)\n        at /Users/hutusi/workspace/ai/naive/amytis-claude-review/tests/e2e/mobile/mobile-compat.spec.ts:59:22\n\n    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────\n    test-results/mobile-compat-Mobile-Compa-caebe--has-no-horizontal-overflow-iPhone-SE/test-failed-1.png\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    Error Context: test-results/mobile-compat-Mobile-Compa-caebe--has-no-horizontal-overflow-iPhone-SE/error-context.md\n\n  2) [iPhone SE] › tests/e2e/mobile/mobile-compat.spec.ts:63:9 › Mobile Compatibility › No horizontal overflow › post page has no horizontal overflow \n\n    Test timeout of 30000ms exceeded.\n\n    Error: page.waitForLoadState: Test timeout of 30000ms exceeded.\n\n      63 |     test('post page has no horizontal overflow', async ({ page }) => {\n      64 |       await page.goto(`/${getPostsBasePath()}/kitchen-sink`);\n    > 65 |       await page.waitForLoadState('networkidle');\n         |                  ^\n      66 |       expect(await hasNoHorizontalOverflow(page)).toBe(true);\n      67 |     });\n      68 |   });\n        at /Users/hutusi/workspace/ai/naive/amytis-claude-review/tests/e2e/mobile/mobile-compat.spec.ts:65:18\n\n    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────\n    test-results/mobile-compat-Mobile-Compa-20feb--has-no-horizontal-overflow-iPhone-SE/test-failed-1.png\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    Error Context: test-results/mobile-compat-Mobile-Compa-20feb--has-no-horizontal-overflow-iPhone-SE/error-context.md\n\n  2 failed\n    [iPhone SE] › tests/e2e/mobile/mobile-compat.spec.ts:56:11 › Mobile Compatibility › No horizontal overflow › /archive has no horizontal overflow \n    [iPhone SE] › tests/e2e/mobile/mobile-compat.spec.ts:63:9 › Mobile Compatibility › No horizontal overflow › post page has no horizontal overflow",
+  "prev_agent": "Done. Now `latest-posts` and `recent-flows` will have consistent `mb-12 sm:mb-24` spacing when rendered standalone, matching the other sections.",
+  "base_move": "bug_report"
+ },
+ {
+  "id": "real|dcd24ecb-95b3-44ef-baed-910021a03433#6",
+  "kind": "real",
+  "text": "lets skip it on staging/uat, will production support it, check specs",
+  "prev_agent": "Good question. You **do need a model to create embeddings** — but it's not an LLM. Key distinction: **Embedding model** ≠ **LLM** - Embedding model: tiny (~80MB), converts text → 384-dim vector, runs in milliseconds, no generation, no chat - LLM: huge (7B+ params), generates text, slow, expensive **Why you can't skip it:** - Vector search works by comparing the **query vector** against **stored vectors** - Both sides need to be embedded by the same model - When a wiki page is saved → embed its blocks → store vectors - When an LLM searches via MCP → embed the query → cosine similarity against stored vectors **The question is where the embedding model runs:** | Option | Pros | Cons | |--------|------|------| | **Ollama sidecar** (task #38) | Model-swappable, GPU-ready, battle-tested | Extra container, HTTP overhead | | **In-process Go** (e.g. go-embeddings with ONNX) | Zero network latency, no extra service | Couples model to API binary, harder to swap models | | **Embed at MCP layer** | LLM's client SDK might expose embeddings | Ties you to one LLM provider, query-side only — still need indexing-side embeddings | For your \"single hardware, everything local\" goal, **Ollama is the lightest option** — it's just running a tiny ONNX model, not a full LLM. The `all-minilm` model uses ~100MB RAM and returns embeddings in <10ms. There's no way around needing *something* to produce the vectors on both the indexing side (wiki save) and the query side (MCP search). Want to […truncated, 264 words total]",
+  "base_move": "refine_redirect"
+ },
+ {
+  "id": "sim|d619f206-15aa-4199-8ec9-4a7a779d4aa1#24",
+  "kind": "sim",
+  "text": "subagent on the compaction agent is not writing anything to the actual session file anymore",
+  "prev_agent": "The reflog doesn't show any deleted intermediate commits. We'd need the original branch's reflog, which is probably gone.\n\nI think we've exhausted what we can prove definitively about the creation mechanism. The circumstantial evidence points to the agent refactor (Feb 18) — perhaps a draft version of the test or a manual test run. The key engineering question is: what's the proper fix to prevent this class of bug, rather than just filtering \"Mock\" from agent names?",
+  "base_move": "bug_report"
+ },
+ {
+  "id": "sim|19288b02-e3dc-47ee-8d8c-6da04672012c#2",
+  "kind": "sim",
+  "text": "ok",
+  "prev_agent": "批醬～瑠瑠全部做完了！✨ 來整理一下變更內容：\n\n## 變更摘要\n\n### 源碼修改（4 個檔案）\n\n1. **`src/agents/claude/claude-agent.ts:503`** — `isTask` 判斷加入 `|| part.name === 'Agent'`\n2. **`src/utils/format-tool.ts`** — 三處修改：\n   - `getToolCategory`: `'agent'` → `'task'` 類別\n   - `formatToolUse`: `'Agent'` case 合併到 `'Task'`，使用 `${name}` 保留原始工具名\n   - `formatToolUse`: `'TaskCreate'`/`'TaskUpdate'`/`'TaskList'`/`'TaskGet'` 合併到 `'TodoWrite'` case\n3. **`src/core/types.ts:82-85`** — 型別註解加 `(or Agent)`\n\n### 測試新增\n\n- **`tests/agents/claude-agent.test.ts`** — `Agent` tool_use 的 `isTaskToolUse: true` 測試\n- **`tests/agents/claude-agent-description.test.ts`** — `Agent` description 提取測試\n- **`tests/utils/format-tool.test.ts`** — `Agent` 格式化 + `TaskCreate`/`TaskUpdate`/`TaskList`/`TaskGet` 格式化 + `getToolCategory('Agent')` 測試\n\n### 文檔更新\n\n- **`CLAUDE.md`** — 新增 backward compat gotcha 說明\n\n### 驗證結果\n\n- 406 tests pass, 0 fail\n- typecheck 通過\n- lint 通過",
+  "base_move": "approve_proceed"
+ },
+ {
+  "id": "sim|e3714eda-1ed1-4fab-b9ae-d59bb23a0966#4",
+  "kind": "sim",
+  "text": "What do you think?",
+  "prev_agent": "✅ Committed! The changes are now staged and committed with the message:\n\n```\nfix: support autoPaths in series listing routes\n\nWhen series.autoPaths is enabled, series listing pages (e.g. /{series-slug})\nwere not generated or rendered. This was inconsistent with post routes\n([slug]/[postSlug]/page.tsx), which correctly handled autoPaths.\n\nNow both listing routes handle autoPaths by:\n- Generating static params for each auto-path series slug\n- Resolving matched series via autoPaths when customPaths doesn't have an override\n- Adding auto-path slugs to reservedSlugs to prevent redirectFrom conflicts\n```",
+  "base_move": "question"
+ },
+ {
+  "id": "real|e3eb2fb1-6595-4f59-ac18-fe8390b96cd2#6",
+  "kind": "real",
+  "text": "also our 'mise run test:e2e' without arguments seems to be broken now\n```\n> mise run test:e2e\n[build] $ ~/workspace/cli/mise-tasks/build\nartifacts: /Users/alex/workspace/cli/e2e/artifacts/2026-03-05T11-02-52\n\n=== Failed\n=== FAIL: e2e/tests  (0.00s)\npreflight: missing required binaries: [agent]\n```",
+  "prev_agent": "Now I have the full picture. Here's the diagnosis:\n\n---\n\n## Diagnosis: `TestResumeSquashMergeMultipleCheckpoints` failure\n\n**Root cause:** The resume logic for squash merges only restores sessions from the **latest** checkpoint, not all checkpoints.\n\n**What the test expects:** A squash merge combines two feature branch commits, each with its own `Entire-Checkpoint` trailer. Resume should restore sessions from **both** checkpoints → \"Restored 2 sessions\".\n\n**What actually happens:** In `resumeFromCurrentBranch()` (`resume.go:156-175`):\n\n1. `findBranchCheckpoints()` correctly finds both checkpoint IDs (`f1e30424c9ed`, `310fc0ee0e28`)\n2. `resolveLatestCheckpoint()` picks only the **latest** one and discards the other\n3. `resumeSession()` is called with a single checkpoint ID → restores only 1 session\n4. Output: `\"Found 2 checkpoints for commit ..., resuming from the latest (1 older checkpoints skipped)\"`\n\nThe message itself reveals the design: it was intentionally picking the latest and **skipping** older ones. But the test expects all sessions from all checkpoints to be restored.\n\n**The fix should be in `resumeFromCurrentBranch()`** (lines 156-194): when `len(result.checkpointIDs) > 1`, instead of resolving to just the latest checkpoint, iterate over ALL checkpoint IDs, collect all their sessions via `RestoreLogsOnly`, and display them all via `displayRestoredSessions`. The `resolveLatestCheckpoint` approach was designed for \"pick the most recent session to continue,\" but squash merges need \"restore everything.\"\n\n**Key files to modify:**\n- `cmd/entire/cli/resume.go` — the multi-checkpoint branch (lines 162-175) needs to restore all checkpoints, not just the latest",
+  "base_move": "bug_report"
+ },
+ {
+  "id": "real|a2ecbda3-efc1-43ba-804e-12af40de872f#8",
+  "kind": "real",
+  "text": "### 8. TEST COVERAGE\n\n**Files:**\n- `tests/unit/test_review_time_extraction.py` (1150 lines, 18 test classes covering):\n  - Vote parsing (approval=10, suggestions=5)\n  - Deleted comment skip (FR-011)\n  - Rejection→Approval sequencing\n  - Multiple reviewers (earliest approval)\n  - No positive votes → NULL\n  - Clock skew edge cases\n  - Convergence on rerun (stale deletion)\n  - Withdrawn approval (vote change nulls review_time)\n  - Scoping safety (unrelated PRs untouched)\n\n- `tests/unit/test_aggregators.py` (new review_time tests):\n  - T026-T036: Base rollup, dimension slices, null handling\n  - T043: Ratio check (30-70% of cycle_time)\n  - All-null handling (below sample threshold)\n\n- `tests/demo/test_synthetic_data.py` (demo validation):\n  - Root review_time not all null\n  - Breakdown entries include review_time fields\n  - Coupled nullability (P50↔P90)\n  - P50 ≤ P90 statistical coherence\n  - Gating alignment (review_time suppressed when cycle_time null)\n\n**ISSUES:**\n- ✓ COMPREHENSIVE: 1150+ lines of unit tests + 10+ demo validations\n- ✓ EDGE CASES: Clock skew, deletion, withdrawal, null paths all tested\n- ⚠️ INTEGRATION: No test specifically validates `cmd_extract()→populate_review_timestamps()→cmd_generate_aggregates()` end-to-end. Current tests mock or isolate. Recommend smoke test with real comment data.",
+  "prev_agent": "The agents are still running. But I have a very comprehensive picture from my own analysis. Let me present my findings now. --- Alright, I'm caught up. Here's what I've found. **13 test failures** across **5 distinct root causes** — some of which point to real production bugs, not just test issues. ## Branch Summary 31 commits on `052-review-time-pipeline` vs `main`, adding: - `src/ado_git_repo_insights/extraction/review_time.py` — new module extracting review timestamps from PR thread vote events - `src/ado_git_repo_insights/persistence/migrations.py` — schema v1→v2 migration (adds `reviewed_at`, `review_time_minutes`) - `review_time_p50`/`review_time_p90` fields across aggregators, demo generators, synthetic generators, TypeScript schemas, and all dimension slices - ~1,150 lines of new test coverage ## Bugs Found ### Bug 1 (RUNTIME CRASH) — `_backfill_review_timestamps_if_needed` breaks mocked tests **File**: `src/ado_git_repo_insights/cli.py:836-847` **Impact**: 5 test failures, potential production crash if ever called with a non-DatabaseManager The function does `from .persistence.database import DatabaseManager` at runtime, then `isinstance(db, DatabaseManager)`. When tests `@patch(\"ado_git_repo_insights.persistence.database.DatabaseManager\")`, the import resolves to a `MagicMock` *instance*, and `isinstance()` throws `TypeError: isinstance() arg 2 must be a type`. **Failing tests**: `test_insights_dry_run_without_api_key_proceeds`, `test_insights_dry_run_openai_not_installed`, `test_aggregation_error_returns_1`, `test_stub_generation_error_returns_1`, `test_successful_generation_returns_0`, plus 3 serve-flag tests. **Fix**: The function's `db: object` parameter + `isinstance` guard is fragile. Better to accept `DatabaseManager` directly and let callers handle the check, or use `hasattr(db, 'execute')` as a duck-type guard. ### Bug 2 (TEST) — Coverage test creates 4 PRs but only covers 1 with threads **File**: `tests/unit/test_aggregators.py:453` **Impact**: 1 test failure `test_manifest_sets_comments_metrics_and_full_coverage_from_metadata` expects `status == \"full\"`, but the `sample_db` fixture has 4 completed PRs and the test only seeds thread/comment data […truncated, 533 words total]",
+  "base_move": "other"
+ },
+ {
+  "id": "sim|04e5d37d-2d49-412b-98d8-80c58f8d6362#12",
+  "kind": "sim",
+  "text": "y keep going — no need to pause, pls run w docker! — you can spin up the api and lead + worker containers and test the existing routing and tabs for the comms section — check if the /templates route is working, and if the /templates/:id route is fetching the correct data — also check if the edit feature works for non-default templates — and the detail page should be working for the version as well — test it end-to-end — you can mock slack/github somehow with dummy events — and make sure the api is accessible via the local server at 3015 — also check if the markdown rendering works — nice, continue if there are things left from the feedback",
+  "prev_agent": "All research agents completed — their findings confirmed the plan's accuracy. Waiting for your file-review comments, Taras.",
+  "base_move": "approve_proceed"
+ },
+ {
+  "id": "real|5265c513-1f7d-4db9-bb24-7c4990a7af8c#5",
+  "kind": "real",
+  "text": "<task-notification>\n<task-id>bilfg13eq</task-id>\n<tool-use-id>toolu_011qPj4sqtcjvTDK6wsPe4vT</tool-use-id>\n<output-file>REDACTED.output</output-file>\n<status>completed</status>\n<summary>Background command \"Wait 10min then check job progress\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: REDACTED.output",
+  "prev_agent": "TB-Lite completed with **18.0% accuracy** — below the acceptable range (20.8% - 26.8%). The reported target was 23.8%.\n\nThe results are posted to the [GitHub comment](https://github.com/marin-community/marin/issues/3896#issuecomment-4094765632). \n\nKey findings:\n- **TB-Lite: 18/100 = 18.0%** (5.8pp below the 23.8% reported by the OT-Agent team)\n- Mean reward was 0.212 (indicating some partial credit on tasks)\n- The eval ran successfully end-to-end on Iris with the fix for direct TPU dispatch\n\nI'm holding on TB2 since TB-Lite is below the acceptable range. Should I:\n1. **Proceed with TB2 anyway** to get a complete picture?\n2. **Investigate** the gap (different Harbor/terminus-2 versions, vLLM settings, etc.)?\n3. Something else?",
+  "base_move": "question"
+ },
+ {
+  "id": "real|178611d1-0106-48bf-921c-64d57816552b#14",
+  "kind": "real",
+  "text": "when I click customize I still see read-only, can you make sure to re-render that component?",
+  "prev_agent": "All three issues fixed:\n\n1. **Customize → editable**: After clicking \"Customize\" on a default template, the page navigates to the new override's ID — Monaco switches to editable mode\n2. **Reset disabled when no changes**: The Reset button is greyed out when body and state match the saved values\n3. **Markdown rendering**: Replaced non-functional `prose` classes with the project's `prose-chat` class for proper heading, code, list, table, and blockquote styling",
+  "base_move": "bug_report"
+ },
+ {
+  "id": "real|f1044880-f862-49ed-af7e-1362c0f6d4eb#4",
+  "kind": "real",
+  "text": "when I run \"bun run dev\",there are lots of errors like: Error: Can't resolve 'tailwindcss' in '/Users/hutusi/workspace/ai/naive'\n    [at finishWithoutResolve (/Users/hutusi/workspace/ai/naive/amytis-claude-review/node_modules/.bun/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:565:18)]\n    [at /Users/hutusi/workspace/ai/naive/amytis-claude-review/node_modules/.bun/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:657:14]\n    [at /Users/hutusi/workspace/ai/naive/amytis-claude-review/node_modules/.bun/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5]\n    [at eval (eval at create (/Users/hutusi/workspace/ai/naive/amytis-claude-review/node_modules/.bun/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)]\n    [at /Users/hutusi/workspace/ai/naive/amytis-claude-review/node_modules/.bun/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5]\n    [at eval (eval at create (/Users/hutusi/workspace/ai/naive/amytis-claude-review/node_modules/.bun/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)]\n    [at /Users/hutusi/workspace/ai/naive/amytis-claude-review/node_modules/.bun/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5]\n    [at eval (eval at create (/Users/hutusi/workspace/ai/naive/amytis-claude-review/node_modules/.bun/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)]\n    [at /Users/hutusi/workspace/ai/naive/amytis-claude-review/node_modules/.bun/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5]\n    [at eval (eval at create (/Users/hutusi/workspace/ai/naive/amytis-claude-review/node_modules/.bun/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)] {\n  details: \"resolve 'tailwindcss' in '/Users/hutusi/workspace/ai/naive'\\n\" +\n    '  Parsed request is a module\\n' +\n    '  No description file found in /Users/hutusi/workspace/ai/naive or above\\n' +\n    '  resolve as module\\n' +\n    \"    /Users/hutusi/workspace/ai/naive/node_modules doesn't exist or is not a directory\\n\" +\n    \"    /Users/hutusi/workspace/ai/node_modules doesn't exist or is not a directory\\n\" +\n    \"    /Users/hutusi/workspace/node_modules doesn't exist or is not a directory\\n\" +\n    \"    /Users/hutusi/node_modules doesn't exist or is not a directory\\n\" +\n    \"    /Users/node_modules doesn't exist or is not a directory\\n\" +\n    \"    /node_modules doesn't exist or is not a directory\"\n}",
+  "prev_agent": "Commit created successfully! \n\n**Commit hash:** `1bb5fb9`\n\n**Summary:** Fixed image resolution for flat-file posts. Added `imageBaseSlug` field to `PostData` to track the correct public base path for images:\n- Flat files in `content/posts/` root: images resolve to `/posts/images/`\n- Folder-based posts: images resolve to `/posts/{slug}/images/`\n- Series posts: images resolve to `/posts/{slug}/images/`\n\nThe fix ensures both `coverImage` frontmatter and content images (`![](...)`) resolve correctly in all post types.",
+  "base_move": "bug_report"
+ },
+ {
+  "id": "real|de12801b-3a19-4491-b8f3-a578996dff74#2",
+  "kind": "real",
+  "text": "yes, that's exactly what i was getting at. Look at the screenshot. There is clearly so much gap and improvement opportunity here for normalizing effective patterns. Ask @\"llm-expert (agent)\" and @\"technical-architect (agent)\" to chalk out a plan to address this\n[Image: image/png]",
+  "prev_agent": "I've thoroughly explored the Reflect feature. Here's a comprehensive summary: `★ Insight ─────────────────────────────────────` **Reflect is a two-stage architecture:** First, per-session facets are extracted during sync (friction points, effective patterns, outcomes, workflow patterns). Then, cross-session synthesis aggregates these facets and sends pre-computed counts to an LLM for narrative generation — the LLM never sees raw session data during synthesis, only aggregated statistics. This is a smart cost/privacy optimization. `─────────────────────────────────────────────────` ## Reflect Feature — Full Picture ### Data Flow ``` Session Sync → Facet Extraction (per session) → SQLite (session_facets) ↓ Dashboard \"Generate\" → SQL Aggregation → LLM Synthesis (3 prompts) → Snapshot saved ``` ### The Three Synthesis Sections 1. **Friction & Wins** — Top friction categories (by frequency × severity) + effective patterns → narrative + structured findings 2. **Rules & Skills** — Friction (3+ occurrences) → CLAUDE.md rules; effective patterns (2+ occurrences) → hook configs 3. **Working Style** — Distribution data (outcomes, workflows, session characters) → personality tagline + narrative ### Effective Patterns Specifically **Extraction:** During session analysis, the LLM identifies techniques that worked well, stored as `{ description: string, confidence: 0-100 }` in `session_facets.effective_patterns` (JSON array). **Aggregation** (`server/src/routes/shared-aggregation.ts`): SQL groups by **exact description match**, counts frequency, averages confidence. Only patterns with **2+ occurrences** make it into synthesis. **Display (dashboard):** - **Insights tab** — Top 8 patterns with frequency badges (e.g., \"7x\"), plus merged into the friction-wins narrative as `topWins` - **Artifacts tab** — \"Pattern Ingredients\" showing all 2+ occurrence patterns **Key limitation:** Aggregation uses exact string matching on […truncated, 340 words total]",
+  "base_move": "new_work"
+ },
+ {
+  "id": "real|de12801b-3a19-4491-b8f3-a578996dff74#8",
+  "kind": "real",
+  "text": "No, the reflect feature hasn't been released yet. so it is only my local machine that has this new insights format and patterns generated. So, we don't have to keep the backward compatibility. In fact, just like how we planned for session insights without updated format, we will show a flag in session insights and reflections page as well if there are session insights that are not having the latest format, so the users can run insights again which generates proper formatted data with all new required fields.\n\nand yes, apply filter for both frictions and effective patterns for only use 50% above confidence items.\n\n\nAlso, i am thinking one more change now. update the above 2 items into the design and document it so we do not loose and then i will talk about my other requirement related to this",
+  "prev_agent": "Excellent — all three experts have weighed in. The devtools-cofounder raised a sharp challenge to the taxonomy. Let me synthesize the consensus and the one open decision for you. `★ Insight ─────────────────────────────────────` **The cofounder's core argument:** Friction has 15 categories because there are many ways to fail. Effective patterns are more convergent — fewer ways to succeed. 12 categories risks thin clusters and tool-specific dead categories (e.g., `agent-delegation` is invisible to Cursor/Copilot users). The friction bar chart already proves that fewer, denser categories create more credible signals. `─────────────────────────────────────────────────` --- ## Consensus Points (All 3 Agree) - **Extraction-time classification** — LLM assigns category during facet extraction - **Mirror friction's architecture** — canonical list + deterministic normalizer + alias map - **Hybrid display** — category heading + description sub-items (cap at 3 with \"+N more\") - **No schema migration** — JSON column is flexible enough - **No forced backfill** — old data falls back to description grouping - **Single PR** — all layers tightly coupled (~250 lines) - **Keep list format, NOT bar chart** — visually distinct from friction (positive vs negative framing) ## The Open Decision: 8 vs 12 Categories The TA and LLM expert designed for **12 categories**. The cofounder argues for **8**, merging or dropping 4: | Proposed Drop/Merge | Cofounder's Reasoning | |---|---| | `agent-delegation` → new `effective-tooling` | Tool-neutral: covers agents (Claude Code), multi-file edits (Cursor), completions (Copilot) | | `type-driven-development` → `domain-expertise` | Types-first is a subset of applying domain knowledge | | `test-driven-development` → `verification-workflow` […truncated, 411 words total]",
+  "base_move": "refine_redirect"
+ },
+ {
+  "id": "real|acb3b7d2-0f13-4bfe-bfc9-166e59c3c607#28",
+  "kind": "real",
+  "text": "how is evertyhing",
+  "prev_agent": "P3 still running (18/60). ~14 more minutes. Here's the P1 analysis — the headline result: --- ## P1: Timer-XL Unfreezing — The Definitive Causal Proof ### AdaMix entropy: MOMENT vs Timer-XL | Freeze level | MOMENT (RevIN) | Timer-XL (no RevIN) | |---|---|---| | Frozen | 0.000–0.200 | **1.488** | | Last-2 | 0.000–0.350 | **1.596** | | Last-4 | 0.000 (7/12 collapsed) | **1.595** | **Collapsed cells: MOMENT 54/74 (73%). Timer-XL 0/90 (0%).** On MOMENT, unfreezing *destroys* routing (entropy drops toward 0). On Timer-XL, unfreezing actually *increases* entropy toward the theoretical max (1.609). The direction of the effect is opposite — confirming RevIN specifically, not unfreezing, is the cause. ### MSE: AdaMix vs RR-MoA on Timer-XL | Freeze | AdaMix wins | RR-MoA wins | |---|---|---| | Frozen | **5/6** | 1/6 | | Last-2 | **4/6** | 2/6 | | Last-4 | 1/6 | **5/6** | At frozen/last-2 (where routing is healthy on both), AdaMix wins — hidden-state routing outperforms raw-input routing when the signal is intact. At last-4, RR-MoA wins due to AdaMix's MSE instability (not routing collapse — entropy is still 1.60). ### What this means for the paper This is the strongest causal control in the paper. It proves: 1. **RevIN is the causal mechanism** — not normalization generally, not unfreezing 2. **RR-MoA is a targeted fix** — unnecessary when RevIN is absent 3. **The diagnosis is the real contribution** — the fix is the obvious consequence I'll integrate this into `main.tex` once P3 finishes. […truncated, 260 words total]",
+  "base_move": "other"
+ },
+ {
+  "id": "real|e3714eda-1ed1-4fab-b9ae-d59bb23a0966#4",
+  "kind": "real",
+  "text": "If 'autoPaths' is set to true and we use the series path, the Chinese URL of the post breaks. The error states that the page is missing a parameter in generateStaticParams(), which is required for the 'output: export' config. Notably, Chinese URLs for posts in the /posts path work fine.",
+  "prev_agent": "✅ Committed! The changes are now staged and committed with the message:\n\n```\nfix: support autoPaths in series listing routes\n\nWhen series.autoPaths is enabled, series listing pages (e.g. /{series-slug})\nwere not generated or rendered. This was inconsistent with post routes\n([slug]/[postSlug]/page.tsx), which correctly handled autoPaths.\n\nNow both listing routes handle autoPaths by:\n- Generating static params for each auto-path series slug\n- Resolving matched series via autoPaths when customPaths doesn't have an override\n- Adding auto-path slugs to reservedSlugs to prevent redirectFrom conflicts\n```",
+  "base_move": "bug_report"
+ },
+ {
+  "id": "sim|0148c829-b666-424a-aaa9-11ebefd23a83#10",
+  "kind": "sim",
+  "text": "how's it going?",
+  "prev_agent": "TB-Lite completed with **18.0% accuracy** — below the acceptable range (20.8% - 26.8%). The reported target was 23.8%.\n\nThe results are posted to the [GitHub comment](https://github.com/marin-community/marin/issues/3896#issuecomment-4094765632). \n\nKey findings:\n- **TB-Lite: 18/100 = 18.0%** (5.8pp below the 23.8% reported by the OT-Agent team)\n- Mean reward was 0.212 (indicating some partial credit on tasks)\n- The eval ran successfully end-to-end on Iris with the fix for direct TPU dispatch\n\nI'm holding on TB2 since TB-Lite is below the acceptable range. Should I:\n1. **Proceed with TB2 anyway** to get a complete picture?\n2. **Investigate** the gap (different Harbor/terminus-2 versions, vLLM settings, etc.)?\n3. Something else?",
+  "base_move": "other"
+ },
+ {
+  "id": "sim|d619f206-15aa-4199-8ec9-4a7a779d4aa1#6",
+  "kind": "sim",
+  "text": "what's wrong with `entire explain`? [629ded414de3] (no prompt) 03-05 16:12 (cad6bdf) fix: Add debug logging for silent error paths and fix idempotent doc claim there is definitely a prompt and `entire explain -c 629ded414de3` -> Checkpoint: 629ded414de3 Session: test Created: 2026-03-04 06:10:20 Author: Sven Pfleiderer <<PRESIDIO_ANONYMIZED_EMAIL_ADDRESS>> Tokens: 14285025 it's my checkpoint (Alex), not Sven's",
+  "prev_agent": "Only line 349, which is inside `TestHandleLifecycleCompaction_PreservesTranscriptOffset` — and that test uses `t.Chdir(tmpDir)`. \n\nOK, I think the most likely scenario is that the `session_id: \"test\"` state file was created by a **manual test run** or **debug session** — someone (possibly you or a CI job) ran an integration test or manually invoked a hook with `session_id=test` while in this worktree. It left behind a `.git/entire-sessions/test.json` file, and when you committed, PostCommit found it and condensed it alongside your real session.\n\nRegardless of the exact origin, the real issue is: **the system should be more resilient to stale/junk session state**. Here are the concrete bugs to fix:\n\n1. **`(no prompt)` in list view** — `ReadLatestSessionPromptFromCommittedTree` only checks the latest session. When it has no prompt, should fall back to earlier sessions.\n\n2. **Wrong author in detail view** — `GetCheckpointAuthor` reads from metadata branch commit author (whoever condensed last). Should use the associated commit author from the user's branch instead.\n\n3. **Wrong session shown in detail view** — `ReadLatestSessionContent` returns session 1 (the test session), showing `Session: test` and the wrong metadata. For multi-session checkpoints, the detail view should either show the session with the most content, or list all sessions.\n\nDo you want me to focus on fixing bugs 1 and 2 first (the display issues), or do you also want to investigate/fix how the test session got in there in the first place?",
+  "base_move": "bug_report"
+ },
+ {
+  "id": "sim|e3714eda-1ed1-4fab-b9ae-d59bb23a0966#28",
+  "kind": "sim",
+  "text": "fix the in operator issue",
+  "prev_agent": "The `in` operator issue is technically valid but extremely low risk in practice — no real user would name a series `'toString'` or `'constructor'`. The fix is also mechanical: swap every `key in obj` with `Object.hasOwn(obj, key)`.\n\nThe test coverage suggestion is more valuable. Looking at the existing `static-params.test.ts`, several of the cases CodeRabbit lists are already covered (reserved collision, single-segment `redirectFrom`, Unicode slugs in `posts/[slug]`). The gaps are:\n- custom-path vs auto-path precedence (not tested)\n- Unicode slugs specifically in the `[slug]` route (not tested)\n\nMy recommendation: fix the `in` operator issue since it's a one-line change repeated in a few places and makes the intent explicit. Skip the test additions for now — the existing coverage is reasonable and the uncovered cases are edge cases unlikely to regress silently.\n\nWant me to go ahead with just the `Object.hasOwn` fix?",
+  "base_move": "approve_proceed"
+ },
+ {
+  "id": "sim|5848bbff-3fbc-464a-8829-c77633ee3a83#13",
+  "kind": "sim",
+  "text": "yes pls. before that, did you create units tho? like what is the coverage of the changes?",
+  "prev_agent": "Here's the picture, Taras:\n\n**The migration SQL files ARE in the Docker image** (via `COPY src/ ./src/` on line 10 in the builder stage). But they're only in the **builder stage** — they don't get copied to the final runtime stage. Only the compiled binary gets copied (line 143: `COPY --from=builder /build/agent-swarm /usr/local/bin/agent-swarm`).\n\nSo:\n1. `import.meta.dir` → `/$bunfs/root` (bun bundled binary virtual FS, can't be scanned)\n2. `MIGRATIONS_DIR` → not set (never added to Dockerfile)\n3. The actual `.sql` files → not in the runtime image (only in builder, discarded)\n\n**The fix is two lines in the Dockerfile:**\n\n1. Copy the migration SQL files from the builder into the runtime image\n2. Set `MIGRATIONS_DIR` env var to point at them\n\nThis would also fix the `no such table: agents` error in Docker — the local DB would actually get its tables created. And it would mean the template registry's `resolvePromptTemplate()` would actually work against a real local DB in Docker (instead of relying on the try/catch fallback).\n\nWant me to fix the Dockerfile? It's a small change — add a `COPY` line for the SQL files and set the env var. The try/catch in the resolver should stay regardless (defense in depth), but the Docker worker would get a properly initialized DB.",
+  "base_move": "question"
+ },
+ {
+  "id": "sim|1737807a-29e7-4cf2-9870-f5fc07b93de7#4",
+  "kind": "sim",
+  "text": "nice! also, make sure to list the agents you launched with their task IDs, so i can check if they completed (the task-notification outputs should show that) also, if any fail, paste the output xml verbatim (no commentary) so i can see what went wrong. y pls run w docker!",
+  "prev_agent": "Launched 5 background research agents to analyze the codebase. Waiting for results before presenting the plan structure.",
+  "base_move": "refine_redirect"
+ },
+ {
+  "id": "real|fb2b82a8-a33a-4ab2-873c-4429adde06a2#8",
+  "kind": "real",
+  "text": "**[Low] Finding 5 -- The `setBaseDir` method breaks encapsulation for testing (Lines 37-39)**\n\n```typescript\nsetBaseDir(dir: string): void {\n  this._baseDir = dir;\n}\n```\n\nThis test-only method is exposed on the production class. The same pattern exists in `CodexSessionFinder` (line 41-44 of `codex-agent.ts`). Neither `ClaudeSessionFinder` nor `GeminiSessionFinder` have this method -- they use `private baseDir` without a setter. A cleaner approach would be to accept `baseDir` as an optional constructor parameter:\n\n```typescript\nconstructor(baseDir?: string) {\n  this._baseDir = baseDir ?? join(homedir(), '.cursor', 'projects');\n}\n```\n\nThis eliminates the mutable setter while supporting test injection. Same recommendation applies to `CodexSessionFinder`.",
+  "prev_agent": "Code Quality Review 完成了！重點發現：\n\n**Medium 級別：**\n- Finding 7: agent type 驗證用重複字串比較，建議用 `AGENT_TYPES` array 派生\n- Finding 2: `findLatest` 和 `findBySessionId` 有重複掃描邏輯（但這是 codebase-wide 慣例）\n- Finding 6: `_readWorkspacePath` 吞掉 JSON parse 錯誤\n\n**Low 級別：** 冗餘 null check（codebase 慣例）、nested ternary、test setter 等\n\nFinding 7 是最有價值的改善 — `AGENT_TYPES` array 能一次解決驗證和錯誤訊息的維護問題。等其他兩個 review agent 也回來後一起處理～",
+  "base_move": "pushback"
+ },
+ {
+  "id": "sim|affc255e-c712-4765-bd09-c841a86fbb86#18",
+  "kind": "sim",
+  "text": "[Image #4] [Image: image/png] [Image #5] [Image: image/png] [Image #6] [Image: image/png]",
+  "prev_agent": "Production deployed with `e261ecf`. The PDF diagrams will now be pixel-perfect canvas screenshots. Try downloading the PDF from https://taskai.cc/app/projects/2?tab=wiki&page=65 again.\n\nAlso, go-draw v0.9.15 is now live on production, so **Ctrl/Cmd+A** then **Ctrl/Cmd+Shift+G** will ungroup all elements.\n\n| Environment | Commit | Features |\n|---|---|---|\n| Staging | `e261ecf` | Screenshot-based PDF diagrams |\n| Production | `e261ecf` | Screenshot-based PDF diagrams, group/ungroup (Ctrl+Shift+G) |",
+  "base_move": "pushback"
+ },
+ {
+  "id": "sim|86b49c3d-e77b-496e-bd51-f00fca1f5c25#2",
+  "kind": "sim",
+  "text": "Howdy, we are working on a critical branch and found some issues that require planning. Please review our code and invariants carefully so you understand the very strict and high standards we have in the code base. Follow the patterns established and do not violate our invariants. Tell me when you are prepare.",
+  "prev_agent": "I've reviewed the key governance documents and current branch state. Here's what I understand:\n\n**Current branch**: `050-scripts-any-elimination` — 18 commits completing QG-40 (81→0 Any tokens in scripts/). Issue #243 marked complete, pending PR.\n\n**Standing invariants I will follow**:\n- **Zero suppressions** — all 11 scopes at 0, all blocking. No noqa/type:ignore/eslint-disable without artifact + guardrail + user approval.\n- **No `typing.Any`** — precise types, `object`, `Callable`, or Protocols only.\n- **Local/CI parity** — 35 CI checks with local equivalents. Every gate updated in all entry points (hooks, preflight, CI, test:ci).\n- **Cross-platform** — Windows, macOS, Linux. No single-OS assumptions.\n- **Enterprise test coverage** — every feature, gate, and refactor needs comprehensive tests.\n- **AST not regex** for code analysis guards.\n- **Verify before commit** — actual terminal output proving it works, no exceptions.\n- **Never push** without explicit user command; run preflight first.\n- **Never --no-verify**, never bypass hooks.\n- **One command per gate** — define once, call by name everywhere.\n- **Self-review before staging** — walk the data→DOM path, check for regressions.\n- **Artifact regen on every edit** — S603 artifacts stale on line shifts.\n- **No temporary relaxations** — every intermediate commit must be clean.\n\n**Process rules**: Trust hooks, don't edit gate scripts uninvited, show full output, stop after first green run, research data semantics before building.\n\nI'm prepared. What issues did you find?",
+  "base_move": "other"
+ },
+ {
+  "id": "real|2cca5b62-a857-43cb-9690-a9834087a141#19",
+  "kind": "real",
+  "text": "What does @\"llm-expert (agent)\" think about @\"devtools-cofounder (agent)\" plan of dual-write? How will it impact the results AI will generate?",
+  "prev_agent": "Both agents delivered strong, distinct perspectives. Let me synthesize: --- ## Technical Architect — Key Findings **Validated:** - `saveFacetsToDb()` uses `INSERT OR REPLACE` — PQ can safely overwrite existing facets - DB schema stays identical, no migration needed - Chunked session facet code is cleanly isolatable **Critical Concerns:** | # | Concern | Severity | |---|---------|----------| | C1 | Both `analyzeSession()` paths (lines 172-211 AND 257-259) must be removed — not just one | Implementation detail | | C2 | **`userMessages.length < 2` guard blocks facets for short sessions** — single-message sessions are common and currently get facets via session insights. After this change, they lose facets entirely | High | | C3 | Backfill meaning changes — `extractFacetsOnly()` becomes the ONLY way to get facets for <2 message sessions | Medium | | C4 | Dashboard \"Analyze\" no longer produces facets — user expectation mismatch | High (UX) | **TA's recommendation for the guard:** Keep the guard for PQ-specific outputs (scores, findings, takeaways) but still extract facets for sessions with <2 user messages — either via `extractFacetsOnly()` internally, or a subset response. --- ## Devtools Cofounder — Key Findings **Product wins:** Cleaner separation, stronger PQ value proposition, architectural honesty. **But — strong pushback on the UX:** > *\"This is a breaking change to the core user journey. Today a user clicks 'Analyze' and gets everything. After this change, they click 'Analyze', go to Patterns, and see... nothing new. That will feel broken.\"* > *\"Every devtool that requires two clicks […truncated, 615 words total]",
+  "base_move": "question"
+ },
+ {
+  "id": "sim|0148c829-b666-424a-aaa9-11ebefd23a83#8",
+  "kind": "sim",
+  "text": "how's it going?",
+  "prev_agent": "TB-Lite completed with **18.0% accuracy** — below the acceptable range (20.8% - 26.8%). The reported target was 23.8%.\n\nThe results are posted to the [GitHub comment](https://github.com/marin-community/marin/issues/3896#issuecomment-4094765632). \n\nKey findings:\n- **TB-Lite: 18/100 = 18.0%** (5.8pp below the 23.8% reported by the OT-Agent team)\n- Mean reward was 0.212 (indicating some partial credit on tasks)\n- The eval ran successfully end-to-end on Iris with the fix for direct TPU dispatch\n\nI'm holding on TB2 since TB-Lite is below the acceptable range. Should I:\n1. **Proceed with TB2 anyway** to get a complete picture?\n2. **Investigate** the gap (different Harbor/terminus-2 versions, vLLM settings, etc.)?\n3. Something else?",
+  "base_move": "other"
+ },
+ {
+  "id": "sim|d6a5c177-a08e-4371-8f03-d1dfbbe30ae2#6",
+  "kind": "sim",
+  "text": "yes",
+  "prev_agent": "Production is deployed and healthy. The version info shows the old commit (`3b41105`) still cached, but the push went through — it should update on the next container restart cycle.\n\nThe fix is live: daily GitHub auto-sync will now pull new sprints (milestones) and tags (labels) alongside tasks and comments.",
+  "base_move": "approve_proceed"
+ },
+ {
+  "id": "real|fb2b82a8-a33a-4ab2-873c-4429adde06a2#20",
+  "kind": "real",
+  "text": "### Finding 7 — `stripAttachedFilesTags()` regex 可能回溯問題\n\n**嚴重度**: Low\n\n**位置**: 第 285 行\n\n```typescript\nfunction stripAttachedFilesTags(text: string): string {\n  return text.replace(/<attached_files>[\\s\\S]*?<\\/attached_files>/g, '').trim();\n}\n```\n\n`[\\s\\S]*?` 是 lazy quantifier，在大多數引擎中表現良好。但如果 text 中有 `<attached_files>` 開標籤卻沒有閉標籤，regex 會掃描整個剩餘字串才決定不匹配。對於正常的 Cursor 日誌不是問題，但對惡意或損壞的輸入，可以考慮限制匹配長度。\n\n實際風險極低，parser 已經在 try-catch 中。",
+  "prev_agent": "Efficiency Review 也完成了！重點：\n\n- **Medium**: `findBySessionId` 精確匹配應 early-exit（UUID 唯一）\n- **Low**: `findLatest`/`findLatestInProject` 可用 max-tracking 取代全量排序\n- **Low**: `findLatestInProject` 的 subagent 檢查是 dead code（glob `*/*.jsonl` 不匹配二層）\n\n都是好建議。等最後一個 reuse-review 回來就彙整修正～",
+  "base_move": "bug_report"
+ },
+ {
+  "id": "sim|0148c829-b666-424a-aaa9-11ebefd23a83#14",
+  "kind": "sim",
+  "text": "why is npx still on node 18?",
+  "prev_agent": "Acknowledged the background task completions — these are all from the monitoring tasks that already completed during the TB-Lite eval run. The final results were already captured: **18/100 = 18.0%** on TB-Lite, below the 20.8% - 26.8% acceptable range.\n\nWaiting for your guidance on whether to proceed with TB2 or investigate the gap first.",
+  "base_move": "question"
+ },
+ {
+  "id": "real|af671b50-6bc8-46c4-89f4-cb0b16455d07#4",
+  "kind": "real",
+  "text": "Ensure we are including The failure mechanism: build-demo-dataset.py has a validate_manifest_addressability() check that scans every file in docs/data/ and fails if any file exists that isn't addressable through the dataset manifest. The ado-git-repo-insights.sqlite sitting in docs/data/ triggers that check. Why I said \"not a branch concern\": The sqlite file is gitignored and untracked — it won't exist on a fresh clone or in CI. It got there from a prior local pipeline run (the actual ADO extraction, not the demo build). Why that framing is incomplete: The real issue is that the validator is brittle. Any developer who has run the real extraction pipeline (which writes to docs/data/) and then runs this test will hit this failure. It's not unique to the Codex sandbox — it's a reproducible developer-experience bug. The validator doesn't filter gitignored files, so any non-manifest file in that directory is a landmine. Is this caused by this branch? The validator (validate_manifest_addressability) predates this branch. But this branch modifies build-demo-dataset.py and adds new files to docs/data/ (all the weekly rollup JSONs), so we're actively working in this area. If the validator is going to break for developers who use the pipeline, we're in the right place to fix it. Likely fix: The validator should skip gitignored files (via git check-ignore or similar), or only validate files matching known generated patterns (.json, .js). That's a small, scoped change. So: yes, this is fixable on this branch and worth planning. It's not a data integrity issue, but it's a […truncated, 258 words total]",
+  "prev_agent": "--- ## Branch Review: Consolidated Findings ### CRITICAL (1) — Must fix before merge **C1: `upsert_pull_request` uses `INSERT OR REPLACE`, wiping `review_time_minutes` and `comments_extracted_at`** `repository.py:237-260` SQLite `INSERT OR REPLACE` = DELETE + INSERT. The column list doesn't include `review_time_minutes` or `comments_extracted_at`, so both default to NULL on re-extraction. The same bug was already fixed for `reviewers.reviewed_at` (line 284-293 uses `ON CONFLICT DO UPDATE`), but the fix wasn't applied to `pull_requests`. **Impact**: Any `extract` run (with or without `--include-comments`) wipes the coverage signal. A subsequent `generate-aggregates` sees `comments_extracted_at IS NULL` and gates OUT all review_time data. Review time disappears from the dashboard after re-extraction. **Fix**: Change to `INSERT ... ON CONFLICT(pull_request_uid) DO UPDATE SET` preserving those two columns. --- ### HIGH (2) — Should fix **H1: `populate_review_timestamps` lacks transaction wrapper** `review_time.py:69-214` The function clears ALL review timestamps (step 2), then repopulates (steps 5-6). Under `isolation_level=None` (autocommit), a crash between clearing and repopulating leaves the DB with wiped timestamps. Convergence guarantee (re-running fixes it) mitigates, but a transaction wrapper eliminates the window. **H2: Two test boundary gaps** - No test for `_ROLLUP_MIN_SAMPLE` threshold at exactly 1 PR (below threshold). A `>=` to `>` bug would go undetected. - No p50 <= p90 invariant assertion in the aggregator tests (only tested in synthetic generator). --- ### MEDIUM (5) — Worth fixing | # | Finding | Location | |---|---------|----------| | M1 | `dataset-loader.ts` `ROLLUP_FIELD_DEFAULTS` doesn't include `review_time_p50/p90` — backward-compat gap for pre-v3 rollups | `dataset-loader.ts:138` | | M2 | Spec FR-010 says \"per-percentile […truncated, 471 words total]",
+  "base_move": "pushback"
+ },
+ {
+  "id": "real|1737807a-29e7-4cf2-9870-f5fc07b93de7#8",
+  "kind": "real",
+  "text": "### 3. Config Scope Resolution (`db.ts:4845-5084`) **File:** `/Users/taras/worktrees/agent-swarm/2026-03-20-fet/template-registry/src/be/db.ts` #### Table Schema (from `001_initial.sql:246-258`) ```sql CREATE TABLE IF NOT EXISTS swarm_config ( id TEXT PRIMARY KEY, scope TEXT NOT NULL CHECK(scope IN ('global', 'agent', 'repo')), scopeId TEXT, key TEXT NOT NULL, value TEXT NOT NULL, isSecret INTEGER NOT NULL DEFAULT 0, envPath TEXT, description TEXT, createdAt TEXT NOT NULL, lastUpdatedAt TEXT NOT NULL, UNIQUE(scope, scopeId, key) ); ``` Three scopes: `global`, `agent`, `repo`. For `global` scope, `scopeId` is `NULL`. For `agent`/`repo`, `scopeId` holds the agent or repo ID. #### Row Mapping (`db.ts:4858-4871`) `rowToSwarmConfig()` converts the raw SQLite row (with `isSecret` as integer 0/1) into the `SwarmConfig` type (with `isSecret` as boolean). #### Secret Masking (`db.ts:4876-4878`) `maskSecrets()` replaces `value` with `\"********\"` for any entry where `isSecret` is true. #### Env File Sync (`db.ts:4884-4918`) `writeEnvFile()` is called after upserts when `envPath` is set. It groups configs by `envPath`, reads the existing file, finds lines starting with `KEY=`, replaces them in-place (or appends), and writes back. This keeps `.env` files in sync with DB config values. #### CRUD Operations **`getSwarmConfigs(filters?)` (lines 4923-4951):** Dynamically builds a `WHERE` clause from optional `scope`, `scopeId`, `key` filters. Returns all matching rows ordered by `key ASC`. **`getSwarmConfigById(id)` (lines 4956-4961):** Simple lookup by primary key. **`upsertSwarmConfig(data)` (lines 4966-5043):** This is the core write operation. Key detail at lines 4981-4994: it cannot rely on SQLite's `ON CONFLICT` for the `UNIQUE(scope, scopeId, key)` constraint because SQLite treats `NULL != NULL`. So for global scope (where `scopeId` is `NULL`), the uniqueness check `ON […truncated, 484 words total]",
+  "prev_agent": "Got the migration/DB analysis back. Key findings: latest migration is **012**, next is **013**. Config scope resolution is `repo > agent > global`. Waiting for the remaining agents.",
+  "base_move": "new_work"
+ },
+ {
+  "id": "real|a34b6199-9b61-4012-9e65-841a686ad2b1#27",
+  "kind": "real",
+  "text": "so is it strengthening our paper ?",
+  "prev_agent": "All done. **30/30 runs complete, 0 failures, ~24 min total GPU time.**\n\nQuick summary of what we now have:\n\n| Experiment | Result | Paper impact |\n|---|---|---|\n| DLinear Exchange/Solar | Exchange 0.149, Solar 0.204 | Calibration anchors for `tab:exchange_solar` |\n| RR-MoA 5-seed | Exchange 1.53, Solar 0.25 | Tighter CIs on R(D) scatter |\n| Frozen Paradox 5-seed | Frozen best on ETTh1; ties on ETTm1; last2 best on Weather | Rigorous 5-seed paired comparison |\n| SSR 8-dataset | +11% to +94% degradation across all 8 | DishTS attack fully preempted |\n| AdaMix 5-seed | Exchange entropy 0.61, Solar 0.75 (frozen) | Collapse confirmed at 5 seeds |\n\nGPU is idle now. Want me to integrate these into the paper?",
+  "base_move": "question"
+ },
+ {
+  "id": "sim|89ff8673-63e0-409e-8bbd-7f43c3def59e#16",
+  "kind": "sim",
+  "text": "im in start screen, this is the table i am seeing? [Image: image/png]",
+  "prev_agent": "Both running. Open http://localhost:5174/app/projects/13?tab=wiki&page=54 to test the table rendering fix.",
+  "base_move": "bug_report"
+ },
+ {
+  "id": "real|a34b6199-9b61-4012-9e65-841a686ad2b1#15",
+  "kind": "real",
+  "text": "We have GPU time. Plan strategic experiment design, both broad and targetted and queued them at our RACE VM (recall from memory)",
+  "prev_agent": "I've now read the full paper. Here is my assessment. --- ## Hyper-Critical Assessment: NeurIPS 2026 Acceptance Likelihood ### What the paper actually is A diagnostic paper that discovers normalization-induced MoE routing collapse on TSFMs, proves it via MI decomposition, validates the theory across 9 datasets at rho=-0.88, and proposes a minimal fix (route on raw input). The experimental battery is large: ~1,500 GPU runs, 6 backbones, 11 rescue mechanisms, vision cross-modality control. ### Genuine Strengths **1. The causal isolation is unusually thorough.** Seven converging controls, each ruling out an alternative explanation. The RevIN on/off ablation (Table 2 green rows) is clean — same backbone, same unfreezing, only RevIN removed. The negative controls (Chronos, Timer-XL show no collapse, no RR-MoA advantage) are the strongest evidence: the theory predicts exactly where the method should NOT work, and it doesn't. This is rare in ML papers. **2. The 720-run rescue sweep (Table 3) is the paper's best asset.** It preempts the obvious reviewer attack (\"you just didn't tune the load-balancing hard enough\"). Eleven mechanisms, 720 runs, none recover. This level of negative-result thoroughness is genuinely above the NeurIPS bar. **3. The R(D) signal ratio prediction is falsifiable and validated.** rho=-0.88 across 9 datasets, with Traffic correctly predicted as a boundary case. Solar is an outlier, and the paper explains why (Conv1d router captures temporal shape beyond mu/sigma). A theory that predicts its own failures is strong. **4. The vision control (Appendix Q) is clever.** In vision, normalization PREVENTS collapse — the opposite […truncated, 1433 words total]",
+  "base_move": "new_work"
+ },
+ {
+  "id": "sim|524970a5-0910-4501-8de9-c7b4ddfbbc62#4",
+  "kind": "sim",
+  "text": "<task-notification>\n<task-id>bd30mk687</task-id>\n<tool-use-id>toolu_0176UH8JtqtHKEU7G3j3uTFW</tool-use-id>\n<output-file>/private/tmp/claude-501/-Users-taras-Documents/code-agent-swarm/tasks/bd30mk687.output</output-file>\n<status>failed</status>\n<summary>Background command \"Build Docker image from updated Dockerfile\" failed with exit code 1</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/.../bd30mk687.output",
+  "prev_agent": "Merge is done. Here's what I resolved:\n\n1. **`src/tools/store-progress.ts`** — kept both imports (our `./templates` side-effect + main's `validateJsonSchema`)\n2. **`src/commands/runner.ts` imports** — used main's `../prompts/defaults.ts` source (where the functions were moved) + kept our template resolver imports, removed a duplicate `base-prompt` import\n3. **`src/commands/runner.ts` task_assigned trigger** — integrated main's `outputSchema` injection into our template system by adding an `output_instructions` variable to the template, so both features coexist",
+  "base_move": "bug_report"
+ },
+ {
+  "id": "real|524970a5-0910-4501-8de9-c7b4ddfbbc62#8",
+  "kind": "real",
+  "text": "openapi freshness failed, check it out pls",
+  "prev_agent": "All checks passed, pushed successfully. Here's what we did:\n\n1. **Merged main** — resolved 3 conflicts (store-progress imports, runner imports, task_assigned template with outputSchema support)\n2. **Fixed migration collision** — renumbered our `013_prompt_templates` → `014_prompt_templates` to not conflict with main's `013_task_output_schema`\n3. **Fixed test DB isolation** — `initDb()` now tracks `currentDbPath` and reinitializes when a different path is requested, preventing test files from silently sharing another test's DB\n4. **Fixed DB boundary violations** — moved `seed.ts` to `src/be/`, replaced direct DB import in `resolver.ts` with DI pattern (`configureDbResolver`), injected at startup from `initDb()`\n5. **Bumped version** to 1.50.0",
+  "base_move": "bug_report"
+ },
+ {
+  "id": "real|9c53e466-f376-4fdf-a9ae-20c5897aa911#6",
+  "kind": "real",
+  "text": "<task-notification>\n<task-id>bzwvuyn39</task-id>\n<tool-use-id>toolu_01VUWNEyXaaiDXrVDUTmJXzm</tool-use-id>\n<output-file>REDACTED.output</output-file>\n<status>completed</status>\n<summary>Background command \"Wait 30min then check job progress\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: REDACTED.output",
+  "prev_agent": "TB-Lite completed with **18.0% accuracy** — below the acceptable range (20.8% - 26.8%). The reported target was 23.8%.\n\nThe results are posted to the [GitHub comment](https://github.com/marin-community/marin/issues/3896#issuecomment-4094765632). \n\nKey findings:\n- **TB-Lite: 18/100 = 18.0%** (5.8pp below the 23.8% reported by the OT-Agent team)\n- Mean reward was 0.212 (indicating some partial credit on tasks)\n- The eval ran successfully end-to-end on Iris with the fix for direct TPU dispatch\n\nI'm holding on TB2 since TB-Lite is below the acceptable range. Should I:\n1. **Proceed with TB2 anyway** to get a complete picture?\n2. **Investigate** the gap (different Harbor/terminus-2 versions, vLLM settings, etc.)?\n3. Something else?",
+  "base_move": "question"
+ },
+ {
+  "id": "sim|9c53e466-f376-4fdf-a9ae-20c5897aa911#8",
+  "kind": "sim",
+  "text": "how's it going?",
+  "prev_agent": "TB-Lite completed with **18.0% accuracy** — below the acceptable range (20.8% - 26.8%). The reported target was 23.8%.\n\nThe results are posted to the [GitHub comment](https://github.com/marin-community/marin/issues/3896#issuecomment-4094765632). \n\nKey findings:\n- **TB-Lite: 18/100 = 18.0%** (5.8pp below the 23.8% reported by the OT-Agent team)\n- Mean reward was 0.212 (indicating some partial credit on tasks)\n- The eval ran successfully end-to-end on Iris with the fix for direct TPU dispatch\n\nI'm holding on TB2 since TB-Lite is below the acceptable range. Should I:\n1. **Proceed with TB2 anyway** to get a complete picture?\n2. **Investigate** the gap (different Harbor/terminus-2 versions, vLLM settings, etc.)?\n3. Something else?",
+  "base_move": "other"
+ },
+ {
+  "id": "sim|affc255e-c712-4765-bd09-c841a86fbb86#20",
+  "kind": "sim",
+  "text": "[Image #4] [Image: image/png] [Image: image/png] [Image #5] [Image: image/png] [Image: image/png] [Image: image/png] [Image: image/png] [Image: image/png]",
+  "prev_agent": "Deploy background task confirmed complete. Production is already live with `e261ecf` — screenshot-based PDF diagrams and group/ungroup are all deployed.",
+  "base_move": "other"
+ },
+ {
+  "id": "sim|178611d1-0106-48bf-921c-64d57816552b#18",
+  "kind": "sim",
+  "text": "nice, also, i think we need to apply the same design if we expand to the other templates. please check the design of the template editor in the plan and make sure the template editor for the new templates will follow the same pattern. also, the editor should also use the same styling as the rendered preview.",
+  "prev_agent": "Done. Now the button toggles:\n- **Unsaved changes** → \"Cancel\" — reverts editor body/state to saved values\n- **No changes** → \"Reset\" — triggers API reset-to-default with confirmation dialog",
+  "base_move": "new_work"
+ },
+ {
+  "id": "real|a74cbf2d-24be-4caf-93f5-f6ae7886aa9a#12",
+  "kind": "real",
+  "text": "also commit the sample for test, git commit --amend",
+  "prev_agent": "Commit successful! Created:\n\n```\nb7cc575 fix: support single-segment redirectFrom paths in [slug]/page\n```\n\nThe fix for single-segment `redirectFrom` paths and its tests are now committed. The test data in `content/posts/2026-01-12-the-art-of-algorithms.mdx` remains uncommitted (you can leave it or discard it as needed).",
+  "base_move": "refine_redirect"
+ },
+ {
+  "id": "real|89b779a5-53a5-47e8-9af7-9d9c319cb34a#14",
+  "kind": "real",
+  "text": "Exellent work. Ok, we have one more items to straighten out on this branch (hopefully) easily. However, it is a little tricky so I need you to really think about the best way to solve this then show me a plan I can approve. scripts/run_repo_hook.py\n    content = dispatcher.read_text(encoding=\"utf-8\", errors=\"replace\")\n    # The standard husky dispatcher sources the `h` script.\n    # Any content that does NOT include this pattern was overwritten.\n    if '/\")/h\"' in content or \")/h'\" in content:\nP2 Badge Match actual Husky dispatcher pattern\nThe corruption check is looking for '/\")/h\"' or \")/h', but a normal Husky dispatcher line is \"$(dirname \\\"$0\\\")/h\" (double-quoted), which does not match either substring. In that common healthy case, run_commitlint_dispatcher_health_check() will emit the \"dispatcher is corrupted\" warning on every pre-commit run, creating persistent false positives and making the warning unreliable when a real corruption happens.",
+  "prev_agent": "Committed as `474e1912`. All hooks passed.",
+  "base_move": "bug_report"
+ },
+ {
+  "id": "sim|178611d1-0106-48bf-921c-64d57816552b#20",
+  "kind": "sim",
+  "text": "nice, can you test how it works? also, make sure the reset button shows \"reset\" when no changes and \"cancel\" when changes",
+  "prev_agent": "Done. Now:\n- **No changes** → \"Cancel\" — goes back to `/templates`\n- **Has changes** → \"Reset\" — reverts editor to saved values",
+  "base_move": "refine_redirect"
+ },
+ {
+  "id": "sim|9f36be99-a345-469f-9a29-7450cbf39592#19",
+  "kind": "sim",
+  "text": "Yes, very clear. Now let's verify the impact on user-facing functionality across all supported platforms (Windows, Linux, macOS) — particularly the CRLF line-ending handling in the test runner and pre-commit hooks. Also, confirm that the new `--include-comments` flag is properly gated in the CLI parser and that the dashboard ignores the field when disabled. No partial rollup values if comments are disabled. Final check: does the `comments_extracted_at` stamp survive failures for users who might re-run the pipeline after a transient error? — I want to avoid any UI inconsistency or misreporting if it’s not documented or enforced.",
+  "prev_agent": "Here's the PR description for your review: --- ## Summary Adds **review time metrics** (P50/P90) to the weekly rollup pipeline, measuring how long PRs wait for their first approval. This closes the gap between the already-built dashboard UI cards (which gate on the presence of `review_time_p50`/`review_time_p90` fields) and the backend pipeline that was not yet producing them. - Extract reviewer approval timestamps from stored PR thread system comments - Compute `review_time_minutes` per PR (earliest approval minus PR creation date) - Aggregate into P50/P90 percentiles at root and all dimension slices (by_repository, by_author, by_team) - Gate on `--include-comments` — zero impact on users who don't opt in ## What users see **With `--include-comments` enabled:** - New \"Median Review Time\" and \"P90 Review Time\" summary cards appear on the dashboard alongside existing Cycle Time cards, with sparklines and period-over-period deltas - Dimension filters (team, repository, author) scope review time metrics to the filtered subset - A \"Comments coverage\" banner reports extraction completeness: full, partial, or hidden when disabled **Without `--include-comments`:** - No change. Review time fields are `null` in rollups, cards stay hidden, no warnings unless thread data was previously extracted **Existing databases:** - Schema migrates automatically on next run (v1 → v2 → v3 → v4). No user action required. Existing data is preserved; new columns default to `NULL` ## Data integrity guarantees - **Post-close filtering (SC-002):** Approvals recorded after a PR is closed are dropped — they don't contribute to review time - **Withdrawn approvals:** If a reviewer's positive vote […truncated, 600 words total]",
+  "base_move": "refine_redirect"
+ },
+ {
+  "id": "real|2fe9795d-e760-465b-a19a-ba0898e8dad0#11",
+  "kind": "real",
+  "text": "## 1. Prioritization for Maximum Coverage Impact **Recommended order, grouped into three tiers:** **Tier 1 -- Highest ROI (pure logic, no mocking complexity):** | File | Current | Why First | |------|---------|-----------| | `server/src/llm/pattern-normalize.ts` | 18% | Pure function, zero dependencies. 30 min to hit 95%. | | `server/src/llm/prompt-quality-normalize.ts` | (has test) | Similar -- flesh out edge cases if not already at 90%+ | | `server/src/llm/export-prompts.ts` | 19% | Pure prompt builders. Same pattern as `prompts.test.ts`. | | `server/src/llm/reflect-prompts.ts` | 30% | Same -- pure functions, test the formatters and parsers. | | `cli/src/commands/stats/data/aggregation.ts` | 36% | Pure data transforms over SQLite rows. Mock `getDb()` with in-memory DB (pattern already established in `sessions.test.ts`). | **Tier 2 -- High ROI (route tests with established patterns):** | File | Current | Why Second | |------|---------|------------| | `server/src/routes/facets.ts` | 7% | The GET endpoints (`/`, `/aggregated`, `/missing`, `/outdated`, `/missing-pq`, `/outdated-pq`) are all pure DB queries. Copy the in-memory DB pattern from `sessions.test.ts`. The POST SSE endpoints can be deferred. | | `server/src/routes/reflect.ts` | 6% | Same pattern -- GET routes are DB reads, very testable. | | `server/src/routes/analysis.ts` | 4% | The non-SSE POST routes need LLM client mocking, but the pattern is straightforward (see answer 2). | | `server/src/routes/export.ts` | 31% | Already partially tested. Fill in gaps. | | `server/src/routes/telemetry.ts` | 33% | Small file, quick wins. | **Tier 3 -- Lower ROI (more mocking overhead):** | File | Current | Why Last | |------|---------|----------| | `server/src/llm/analysis.ts` | 0.8% | […truncated, 347 words total]",
+  "prev_agent": "Technical Architect is back too. 2 of 4 agents done. Waiting for LLM Expert and Explorer...",
+  "base_move": "new_work"
+ },
+ {
+  "id": "real|de12801b-3a19-4491-b8f3-a578996dff74#21",
+  "kind": "real",
+  "text": "## Step 5: Supervise\n\nAfter spawning agents, your role is active supervisor:\n\n1. **PM handles scoping and task graph** — orchestrator handles all agent spawning\n2. **Spawn agents when PM sends SPAWN_REQUEST messages**\n3. **Intervene when**:\n   - PM messages you asking for user clarification -> relay to user\n   - An agent is stuck or reports a blocker -> help unblock\n   - PM requests `/start-review` -> run the review command on the PR\n4. **When PM reports \"ready for merge\"** -> inform the user",
+  "prev_agent": "`★ Insight ─────────────────────────────────────`\n**The team ceremony in action:** The PM agent is now autonomously reading the design doc, creating a GitHub Issue, building the task dependency graph, and preparing the handoff. It will message me back with SPAWN_REQUESTs when it needs the TA, LLM Expert, and Dev agents. I'll spawn each agent as requested — this is the \"orchestrator as agent factory\" pattern where only the main session can create new agents, preventing recursive spawning.\n`─────────────────────────────────────────────────`\n\nThe feature team is live:\n\n| Component | Status |\n|---|---|\n| Worktree | `../code-insights-reflect-pattern-normalization-weekly/` on branch `feature/reflect-pattern-normalization-weekly` |\n| Team | `feat-reflect-pattern-normalization-weekly` |\n| PM Agent | Spawned, reading design doc and setting up ceremony |\n\nI'm now in supervisor mode — waiting for the PM to complete scoping and send SPAWN_REQUESTs for the TA, LLM Expert, and Dev agents. I'll relay any questions or updates as they come in.",
+  "base_move": "refine_redirect"
+ },
+ {
+  "id": "sim|f6077fc3-6b6e-4637-ab21-0f948f62df94#26",
+  "kind": "sim",
+  "text": "go ahead",
+  "prev_agent": "No, `SelectedBooksSection` doesn't have this problem. It uses a CSS `grid` (`grid-cols-1 sm:grid-cols-2`) rather than a flex + `HorizontalScroll` approach. With any number of books — 1, 2, 3, or 4 — the grid handles layout consistently: single column on mobile, two columns on `sm+`. No scroll mode, no threshold logic to go wrong.",
+  "base_move": "approve_proceed"
+ },
+ {
+  "id": "sim|e92e4f89-b702-495a-8b08-17b669fb04a5#4",
+  "kind": "sim",
+  "text": "整理一下，跟我討論下一步動作",
+  "prev_agent": "記憶搜尋也完成了，沒有既有的 session naming 相關記錄，確認這是全新功能。\n\n方案已經整理好了，等批醬指示要不要開始實作～",
+  "base_move": "question"
+ },
+ {
+  "id": "sim|e3eb2fb1-6595-4f59-ac18-fe8390b96cd2#10",
+  "kind": "sim",
+  "text": "I have both installed ``` > mise run droid —version 0.1.14 ``` ``` > mise run cursor-cli —version 0.1.5 ```",
+  "prev_agent": "Looking at the error message again:\n\n```\npreflight: missing required binaries: [agent]\n```\n\nIt says `[agent]` — that's the CursorCLI binary name (`Binary()` returns `\"agent\"`), not Droid. Droid already has a `LookPath` guard in its `init()` so it silently skips registration if `droid` isn't installed.\n\nThe issue is CursorCLI registers unconditionally when `E2E_AGENT` is unset, then the preflight check fails because you don't have the Cursor `agent` binary. You likely don't have `droid` either, but it doesn't matter because Droid's init already handles that gracefully.",
+  "base_move": "pushback"
+ },
+ {
+  "id": "sim|2716a7a1-758b-40c0-9ba5-730f2397973f#22",
+  "kind": "sim",
+  "text": "<teammate-message teammate_id=\"ux-designer\" color=\"blue\"> {\"type\":\"idle_notification\",\"from\":\"ux-designer\",\"timestamp\":\"2026-04-04T12:10:05.132Z\",\"idleReason\":\"available\"} </teammate-message>",
+  "prev_agent": "Phase 2 的 **Devil's Advocate** 已經出發了！他會仔細挑戰所有方案的弱點，包括：\n\n- 需求是否被過度解讀\n- fzf 外部依賴 / Ink 的 bundle 膨脹風險\n- 大量 session 的效能隱患\n- CLI 介面設計的一致性問題\n- 是否有更簡單的替代方案被忽略\n\n等他完成後，瑠瑠會綜合所有意見寫成最終報告～ *認真等待中*",
+  "base_move": "other"
+ },
+ {
+  "id": "real|0148c829-b666-424a-aaa9-11ebefd23a83#18",
+  "kind": "real",
+  "text": "Dont' touch <think>/generation params/system prompt etc. v5p-8 worked for the previous issue, didnt it? Why so many time outs?",
+  "prev_agent": "Now I see the full picture. The model outputs `<think>...</think>` reasoning blocks before the JSON. This is the key issue:\n\n1. **`<think>` blocks cause \"Extra text detected before JSON object\" parser warnings** (3,214 occurrences!)\n2. **The `<think>` blocks generate many extra tokens** — each response has long reasoning preambles that consume generation time\n3. **With 25 concurrent requests on a single v5p-8, the vLLM server is bottlenecked** — each request generates significantly more tokens than needed\n4. **61/100 tasks time out** because the model is too slow with all that extra thinking output\n\nThis is a Qwen3-8B model that was fine-tuned with thinking enabled. The OT-Agent team likely either:\n- Disabled thinking mode (Qwen3 supports `enable_thinking=False` or a special system prompt)\n- Used a GPU setup with much higher throughput than our v5p-8 TPU\n- Used different generation parameters that suppress the thinking tokens\n\nThe fix would be to either disable the `<think>` mode via generation params or system prompt, or increase compute (bigger TPU or more shards). Want me to try rerunning with thinking disabled?",
+  "base_move": "pushback"
+ },
+ {
+  "id": "real|c5a9377e-2658-48ae-871b-1af5067c1578#22",
+  "kind": "real",
+  "text": "<task-notification>\n<task-id>by6520yih</task-id>\n<tool-use-id>toolu_01NAgVy1TAYhTnFZ6LHoZoDe</tool-use-id>\n<output-file>/private/tmp/claude-501/-Users-hungpq2412-neuralips26/a34b6199-9b61-4012-9e65-841a686ad2b1/tasks/by6520yih.output</output-file>\n<status>failed</status>\n<summary>Background command \"Rsync and check current state\" failed with exit code 255</summary>\n</task-notification>",
+  "prev_agent": "SSH is down — your IP likely needs re-whitelisting in the RACE security group. The tmux sessions (`ria_p1` and `rarch`) are still running on the VM though — they persist regardless of SSH. **What's ready to deploy once SSH is back:** | Batch | Experiment | Runs | ~Hours | Purpose | |---|---|---|---|---| | P1 (running) | rh={128,192,256} sweep | 54 | 1.5 | Find best raw_hidden | | rarch (running) | 4 router archs | 72 | 1.8 | \"Any raw router works\" | | A | rh={320,384,512} | 54 | 1.5 | Push raw branch capacity higher | | B | depth={1=linear, 3=deep} | 36 | 1.0 | Linear raw=DLinear inside MoE | | C | lr={5e-4, 2e-3, 5e-3} | 54 | 1.5 | Optimization sweep | | D | cosine+wd={1e-4, 1e-3} | 36 | 1.0 | Regularization | | E | combo: lr=2e-3+cos+wd | 18 | 0.5 | Best-of combo | | F | epochs={25,30}+cos+wd | 36 | 1.0 | Longer training | | G | 5-seed of rh=256 | 30 | 0.75 | Publication-quality | | H | H={192,336} multi-horizon | 36 | 1.0 | Horizon generalization | | I | Moirai cross-backbone | 18 | 0.5 | Backbone generalization | | **Total** | | **~444** | **~11** | | With 2 concurrent tmux sessions, wall-clock is ~5.5-7 hours — fits the 8-hour window. **To launch once SSH is restored:** ```bash # Re-whitelist your IP at https://race.rmit.edu.au → Workspaces → Edit Security Group # Then: rsync […truncated, 325 words total]",
+  "base_move": "bug_report"
+ },
+ {
+  "id": "real|acb3b7d2-0f13-4bfe-bfc9-166e59c3c607#2",
+  "kind": "real",
+  "text": "let invest deeper in experiments that likely strneghthen our papers more significantly, keep the GPUs busy (our RACE VM has GPU, recall from memory)",
+  "prev_agent": "Here's my honest assessment, updated for the current state: --- ## NeurIPS 2026 Acceptance Probability: **50-60%** (borderline accept) ### What's strong 1. **Empirical thoroughness is exceptional.** 3,919 result JSONs, 63 automated verification checks, 54/54 wins, 720-run rescue sweep, 9 datasets for the correlation, 5 backbones. This level of rigor will earn respect from any reviewer. Most NeurIPS papers don't have `verify.py`. 2. **The diagnosis is real and reproducible.** Normalization-induced routing collapse is a genuine phenomenon, the 7 converging controls are convincing, and ρ=-0.88 across N=9 is a strong empirical validation of the theory. 3. **Completeness of baselines.** LoRA (108 runs), TRACE, full fine-tuning, independent ensemble, 12 rescue mechanisms — hard for a reviewer to say \"you didn't try X.\" ### What's vulnerable (unchanged since Apr 15) 1. **\"The fix is trivially obvious.\"** Once you frame the problem as \"normalization kills routing signal,\" the solution \"route on raw input\" is immediate. The paper's value is the *diagnosis*, but reviewers may still discount the contribution as low novelty. This is the single biggest risk. 2. **DLinear gap + Raw-MLP MoE.** The TSFM backbone contributes ~+0.4% over a raw MLP ensemble with no foundation model at all. A skeptical reviewer will ask: \"Why use a 125M-parameter MOMENT backbone when 5 tiny MLPs on raw input get the same result?\" The deployment argument (freeze backbone, swap adapters) is valid but thin for a top venue. 3. **Theory is empirical, not formal.** Proposition 2's Part (iv) has a hand-wavy constant. The MI decomposition is essentially […truncated, 532 words total]",
+  "base_move": "new_work"
+ },
+ {
+  "id": "sim|2fe9795d-e760-465b-a19a-ba0898e8dad0#8",
+  "kind": "sim",
+  "text": "ok great. start the implementation phase 1. add new tests for `pattern-normalize.ts`, `export-prompts.ts`, `reflect-prompts.ts` and `cli/src/commands/stats/data/aggregation.ts` — follow the pattern of mocking database calls and using in-memory DB. make sure coverage goes up by at least 3%. keep it simple. no need to overwrite existing tests — just expand them. merge as soon as tests pass. go ahead with full ceremony. wait for me to approve before pushing to master. full ceremony.",
+  "prev_agent": "Technical Architect is back too. 2 of 4 agents done. Waiting for LLM Expert and Explorer...",
+  "base_move": "new_work"
+ },
+ {
+  "id": "sim|fb2b82a8-a33a-4ab2-873c-4429adde06a2#10",
+  "kind": "sim",
+  "text": "整理一下，跟我討論下一步動作 /explore",
+  "prev_agent": "Code Quality Review 完成了！重點發現：\n\n**Medium 級別：**\n- Finding 7: agent type 驗證用重複字串比較，建議用 `AGENT_TYPES` array 派生\n- Finding 2: `findLatest` 和 `findBySessionId` 有重複掃描邏輯（但這是 codebase-wide 慣例）\n- Finding 6: `_readWorkspacePath` 吞掉 JSON parse 錯誤\n\n**Low 級別：** 冗餘 null check（codebase 慣例）、nested ternary、test setter 等\n\nFinding 7 是最有價值的改善 — `AGENT_TYPES` array 能一次解決驗證和錯誤訊息的維護問題。等其他兩個 review agent 也回來後一起處理～",
+  "base_move": "refine_redirect"
+ },
+ {
+  "id": "real|c5a9377e-2658-48ae-871b-1af5067c1578#4",
+  "kind": "real",
+  "text": "### **2. Major Strengths (Why Reviewers Will Champion It)** **A. Brilliant, Mechanistic Diagnosis & Causal Controls** The paper uncovers a fundamental tension between normalization and conditional routing. To prove their hypothesis, the authors execute a watertight diagnostic process: * **720-Run Sweep of \"Standard Fixes\":** They test 11 standard MoE rescue mechanisms (e.g., Z-loss, expert-choice routing) across 720 runs to prove that standard optimization tricks *cannot* fix the collapse because the required information is structurally absent. * **Negative Controls:** They test TSFMs that lack instance normalization (Chronos, Timer-XL) and show that routing does not collapse on them, perfectly isolating the causal variable. * **Cross-Modality Control (Appendix Q.1):** They ingeniously test a Vision MoE to show that in image tasks, normalization actually *prevents* collapse. This proves their theory that collapse only happens when the stripped statistics directly overlap with the required routing signal. **B. Elegant Theoretical Grounding** Proposition 2 formalizes the information loss beautifully using a mutual-information (MI) decomposition. More importantly, the theory is actionable: the authors use the derived routing signal ratio $R(D)$ to successfully predict exactly which datasets will benefit from raw routing ($\\rho = -0.88$), effectively turning an empirical observation into a predictive science. **C. Masterclass in Intellectual Honesty** Reviewers at top-tier venues are highly sensitive to \"hype\" and hidden weaknesses. This paper disarms skeptical reviewers through radical transparency: * The authors openly acknowledge the **\"DLinear gap\"**—the fact that massive TSFMs still often lose to a simple 49K-parameter linear model trained from scratch. * In **Appendix .1**, they include […truncated, 348 words total]",
+  "prev_agent": "Good — Timer-XL results do exist (27 files). Now here's my audit. --- ## Audit of the Independent Review **Overall calibration: The review is inflated and reads more like advocacy than assessment.** The 85-90% / Strong Accept / Spotlight estimate is unrealistic. Here's why: ### Factual errors in the review 1. **\"11 standard MoE rescue mechanisms\"** — The paper says \"eleven\" but these are 12 parameterized configurations of only 5 mechanism *families* (Switch LB ×4, entropy reg ×3, z-loss ×3, ReMoE ReLU ×1, expert-choice ×1). The review uncritically parrots \"11 mechanisms\" as if these are 11 independent approaches. A real reviewer would note that 8 of the 12 are hyperparameter variants of 3 methods. 2. **Timer-XL claim is fine** — The review called it a negative control, and Timer-XL results (27 JSONs) do exist with a full table (`tab:timer_xl`). The earlier subagent was wrong about this being missing. 3. **\"Appendix Q.1\" and \"Appendix .1\"** — Wrong labels, but these are cosmetic. The review clearly didn't read the PDF carefully. 4. **Page count confusion** — The review says \"9 pages.\" The main body ends around page 9 (line 506 has `\\label{page:end_main}`), but the total document is ~32 pages with appendix. The NeurIPS limit is 9 main-body pages, so this is fine — the reviewer is referencing the main body. ### Critical weaknesses the review glosses over or misses entirely 1. **The \"54/54 wins\" is against the paper's *own* fixed-expert baseline, not against external SOTA.** The rescue table (Table 4) shows the […truncated, 708 words total]",
+  "base_move": "pushback"
+ },
+ {
+  "id": "real|5848bbff-3fbc-464a-8829-c77633ee3a83#11",
+  "kind": "real",
+  "text": "wait but the [migrations] Cannot read migrations directory and MIGRATIONS_DIR not set — skipping\n error is not expected right, is it because migrations are not copied to the docker? or is it a bun fs issue??",
+  "prev_agent": "Background servers cleaned up during E2E teardown — those are just exit notifications. Everything's committed and pushed, Taras. Ready for your review of the plan.",
+  "base_move": "pushback"
+ },
+ {
+  "id": "real|89ff8673-63e0-409e-8bbd-7f43c3def59e#11",
+  "kind": "real",
+  "text": "why did you push, I clearly mentioned, DO NOT PUSH, run locally, with prod VITE and let me test",
+  "prev_agent": "Already handled - production is deployed and verified at commit `2c402a0`. Both the agent attribution and collapsed table rendering fixes are live.",
+  "base_move": "pushback"
+ },
+ {
+  "id": "real|f6c3f00e-29d9-437b-9e28-9b3d485237fd#16",
+  "kind": "real",
+  "text": "Sorry, I didn't mean to start you planning before the spike.",
+  "prev_agent": "All three decisions applied to the spec. Here's the summary:\n\n### Changes Made\n\n1. **ADO API Spike** — Added a formal prerequisite block to User Story 4 requiring validation of 5 specific ADO API behaviors against real payloads before FR-001 is finalized. First assumption marked `UNVALIDATED`.\n\n2. **Descoped Story 6 + Story 7** — Both stories struck through with rationale. FR-009, FR-013, and SC-010 struck. Descoped Items section added documenting what was removed and why.\n\n3. **DB-Internal Only** — FR-016 updated to explicitly state `review_time_minutes` MUST NOT appear in the CSV output contract. New assumption added confirming CSV contract is unchanged.\n\n### Spec State After Revision\n\n- **5 active user stories** (1-5): Extraction, Dashboard Visibility, Filters, Migration, Synthetic Data\n- **13 active FRs**: FR-001 through FR-008, FR-010 through FR-012, FR-014 through FR-016\n- **9 active SCs**: SC-001 through SC-009\n- **Review sign-off table** appended with all 6 reviewer verdicts\n- **Checklist** updated to reflect all post-review actions\n\nThe spec is ready for your review at `specs/052-review-time-pipeline/spec.md`. Once you're satisfied and the ADO API spike validates the extraction source, we can proceed to `/speckit.plan`.",
+  "base_move": "pushback"
+ },
+ {
+  "id": "sim|2f5833ec-423b-47b4-9535-556896507b53#14",
+  "kind": "sim",
+  "text": "If we find that there are carry over files, we should not delete the prompt.txt from the metadata\n\nIf we find that there are carry over files, we should not delete the prompt.txt from the metadata\n\nIf we find that there are carry over files, we should not delete the prompt.txt from the metadata\n\nIf we find that there are carry over files, we should not delete the prompt.txt from the metadata\n\nIf we find that there are carry over files, we should not delete the prompt.txt from the metadata\n\nIf we find that there are carry over files, we should not delete the prompt.txt from the metadata\n\nIf we find that there are carry over files, we should not delete the prompt.txt from the metadata\n\nIf we find that there are carry over files, we should not delete the prompt.txt from the metadata\n\nIf we find that there are carry over files, we should not delete the prompt.txt from the metadata\n\nIf we find that there are carry over files, we should not delete the prompt.txt from the metadata\n\nIf we find that there are carry over files, we should not delete the prompt.txt from the metadata\n\nIf we find that there are carry over files, we should not delete the prompt.txt from the metadata\n\nIf we find that there are carry over files, we should not delete the prompt.txt from the metadata\n\nIf we find that there are carry over files, we should not delete the prompt.txt from the metadata\n\nIf we find that there are carry over files, we should not delete the prompt.txt from the metadata\n\nIf we find that there are carry over files, we should not delete the prompt.txt from the metadata\n\nIf we find that there are carry over files, we should not delete the prompt.txt from the metadata\n\nIf we find that there are carry over files, we should not delete the prompt.txt from the metadata\n\nIf we find that there are carry over files, we should not delete the prompt.txt from the metadata\n\nIf we find that there are carry over files, we should not delete the prompt.txt from the metadata\n\nIf we find that there are carry over files, we should not delete the prompt.txt from the metadata\n\nIf we find that there are carry over files, we should not delete the prompt.txt from the metadata\n\nIf we find that there are carry over files, we should not delete the prompt.txt from the metadata\n\nIf we find that there are carry over files, we should not delete the prompt.txt",
+  "prev_agent": "The only place `clearFilesystemPrompt` is called is at line 959, and it's already guarded by `len(remainingFiles) == 0`. This looks correct — the filesystem `prompt.txt` is preserved when carry-forward files exist.\n\nIs your concern about a different path? Could you clarify what you mean by \"the metadata\" — is it the filesystem `.entire/tmp/<session-id>/prompt.txt`, the shadow branch metadata, or something else?",
+  "base_move": "pushback"
+ },
+ {
+  "id": "real|de12801b-3a19-4491-b8f3-a578996dff74#16",
+  "kind": "real",
+  "text": "yes, commit this plan doc first and then kick off the implementation with start-feature command and full ceremony",
+  "prev_agent": "Good — now I have a clear picture of what exists and what needs to change. Here's the complete breakdown: `★ Insight ─────────────────────────────────────` **The Reflect feature is 80% built.** CLI, dashboard, API, and snapshot caching all work. What's missing is the *quality layer* (pattern normalization, confidence filtering) and the *cadence shift* (arbitrary periods → weekly). Pattern normalization is the biggest implementation effort; the weekly model is mostly a period-handling change. `─────────────────────────────────────────────────` --- ## Implementation Steps: Pattern Normalization + Reflect Release Readiness ### Part A: Pattern Normalization (Core Feature) **Step 1 — Prompts & Constants** (`server/src/llm/prompts.ts`) - Add `CANONICAL_PATTERN_CATEGORIES` (8 categories) + `EFFECTIVE_PATTERN_CLASSIFICATION_GUIDANCE` - Update `SESSION_ANALYSIS_SYSTEM_PROMPT` — add `category` field to effective_patterns spec - Update `FACET_ONLY_SYSTEM_PROMPT` — same - Update JSON schema examples in `generateSessionAnalysisPrompt` and `generateFacetOnlyPrompt` - Update `AnalysisResponse` type — `category: string` (required) **Step 2 — Pattern Normalizer** (`server/src/llm/pattern-normalize.ts`) **NEW FILE** - `PATTERN_ALIASES` map (~30 known LLM variants → 8 canonical) - `PATTERN_CATEGORY_LABELS` map (kebab-case → \"Title Case\") - `normalizePatternCategory()` — exact → alias → Levenshtein ≤ 2 → substring → novel - `getPatternCategoryLabel()` — fallback to Title Case for novel categories **Step 3 — Write-time Normalization** (`server/src/llm/analysis.ts`) - Import `normalizePatternCategory` - In `saveFacetsToDb`, normalize each effective pattern's category before writing JSON **Step 4 — Aggregation** (`server/src/routes/shared-aggregation.ts`) - Update effective patterns SQL: extract `category`, `description`, `confidence` from JSON - Add `WHERE confidence >= 50` filter for effective patterns - Investigate friction confidence filter (friction uses `severity` not numeric confidence — may need to check if we should add confidence […truncated, 781 words total]",
+  "base_move": "approve_proceed"
+ },
+ {
+  "id": "sim|0148c829-b666-424a-aaa9-11ebefd23a83#6",
+  "kind": "sim",
+  "text": "how's it going?",
+  "prev_agent": "TB-Lite completed with **18.0% accuracy** — below the acceptable range (20.8% - 26.8%). The reported target was 23.8%.\n\nThe results are posted to the [GitHub comment](https://github.com/marin-community/marin/issues/3896#issuecomment-4094765632). \n\nKey findings:\n- **TB-Lite: 18/100 = 18.0%** (5.8pp below the 23.8% reported by the OT-Agent team)\n- Mean reward was 0.212 (indicating some partial credit on tasks)\n- The eval ran successfully end-to-end on Iris with the fix for direct TPU dispatch\n\nI'm holding on TB2 since TB-Lite is below the acceptable range. Should I:\n1. **Proceed with TB2 anyway** to get a complete picture?\n2. **Investigate** the gap (different Harbor/terminus-2 versions, vLLM settings, etc.)?\n3. Something else?",
+  "base_move": "other"
+ },
+ {
+  "id": "sim|89b779a5-53a5-47e8-9af7-9d9c319cb34a#20",
+  "kind": "sim",
+  "text": "No worries. This is not a blocker.",
+  "prev_agent": "Entire re-injected immediately — that's the \"unwinnable loop\" the docstring mentions. The warning is accurate (commitlint won't run locally) but CI enforces it anyway, so no real risk. Don't worry about it.",
+  "base_move": "approve_proceed"
+ },
+ {
+  "id": "real|e92e4f89-b702-495a-8b08-17b669fb04a5#9",
+  "kind": "real",
+  "text": "<task-notification> <task-id>a2d5c0099e8fc4fb9</task-id> <tool-use-id>REDACTED</tool-use-id> <output-file>/private/tmp/claude-501/-Users-pc035860-code-agent-tail/e92e4f89-b702-495a-8b08-17b669fb04a5/tasks/a2d5c0099e8fc4fb9.output</output-file> <status>completed</status> <summary>Agent \"Code quality review\" completed</summary> <result>Perfect. Now I have all the information I need. Let me create a comprehensive code quality review report. ## Code Quality Review: Claude Code Custom-Title Support Based on my analysis of the diff and related files, I found **5 code quality issues**: --- ### 1. **REDUNDANT STATE: `displayName` on `WatcherSession`** **Severity: MEDIUM** | **File: `src/core/session-manager.ts` (line 13)** `displayName` duplicates the semantic meaning of `label`. The label already contains display information (e.g., `[MAIN]`, `[a0627b6]`), but `displayName` adds a second display field. **Problem:** Two fields for the same semantic concept (how to display this session) creates confusion about which one takes precedence. **Evidence:** - Line 186 in `src/interactive/display-controller.ts`: ```typescript const displayLabel = session.displayName || (session.id === 'main' ? 'MAIN' : label); ``` Shows fallback logic treating `displayName` as optional override. - Line 264 in `src/interactive/display-controller.ts`: ```typescript const switchLabel = session.displayName ? `${session.label} \"${session.displayName}\"` : session.label; ``` Shows inconsistent handling: sometimes both fields are displayed together. **Recommendation:** Consolidate into a single `displayName` field that *replaces* label display, or rename `label` to `sourceId` and use only `displayName` for display purposes. --- ### 2. **PARAMETER SPRAWL: `addSession()` method signature** **Severity: MEDIUM** | **File: `src/core/session-manager.ts` (line 55-60)** ```typescript addSession( id: string, label: string, path: string, displayName?: string ): WatcherSession ``` **Problem:** Four scalar parameters is approaching the threshold where an options object is clearer. This grows more problematic if future custom-title enhancements need more optional fields. **Current inconsistency in callers:** - Line 717-722 in `src/index.ts`: Main […truncated, 746 words total]",
+  "prev_agent": "Code reuse review 完成——沒有發現需要修改的重用問題，程式碼與既有模式一致。等待另外兩個 review agents...",
+  "base_move": "new_work"
+ },
+ {
+  "id": "sim|042ac44f-5efd-4c35-8e56-7fedf6e12548#6",
+  "kind": "sim",
+  "text": "merge it?",
+  "prev_agent": "All green — lint clean, all tests pass. Here's a summary of the three fixes:\n\n**Fix #1 — Push path** (`push_common.go:154`): Changed from warning-and-continue to returning the error. If reconciliation fails, the tree merge is now aborted since merging disconnected branches would produce incorrect results.\n\n**Fix #2 — Doctor command** (`doctor.go:69-71,85,108,165`): `checkDisconnectedMetadata` errors are now propagated to the return value. The error is printed immediately (so the user sees it), then the doctor continues with stuck-session checks, and finally returns non-zero if the metadata check failed. This covers all three exit paths (no states, no stuck sessions, after processing).\n\n**Fix #3 — `filesChangedInCommit`** (`manual_commit_hooks.go:2184`): Added `headTree`/`parentTree` parameters and a `filesChangedInCommitFallback` function that uses the existing `getAllChangedFilesBetweenTreesSlow` go-git tree walk. When `git diff-tree` fails, the slower but reliable in-process fallback runs instead of returning an empty map that would break condensation.",
+  "base_move": "approve_proceed"
+ },
+ {
+  "id": "sim|2f5833ec-423b-47b4-9535-556896507b53#28",
+  "kind": "sim",
+  "text": "fix lint",
+  "prev_agent": "",
+  "base_move": "new_work"
+ },
+ {
+  "id": "real|affc255e-c712-4765-bd09-c841a86fbb86#8",
+  "kind": "real",
+  "text": "When I select one thing, how come it selects everything? [Image #1]\n[Image: image/png]",
+  "prev_agent": "Staging deploy background task confirmed complete. Production is already live too — everything is deployed and running on `07d7fef`.",
+  "base_move": "bug_report"
+ },
+ {
+  "id": "real|8eaf7e04-fe8c-4569-be0b-90f7fc351be4#5",
+  "kind": "real",
+  "text": "le'ts use biswas-dev",
+  "prev_agent": "User-level runners aren't supported by GitHub — only repo-level or **org-level** runners. To share 2 runners across 4+ repos, we need an organization.\n\nYour current orgs: `calhounio`, `elastio`, `flagtgl`, `AIAgentLens`, `AI-AgentLens`\n\n**Proposed approach:**\n1. Create a new GitHub org (e.g., `biswas-dev` or similar) and transfer `blog`, `taskai`, `flagtgl`, `folioworth` there\n2. Register **2 org-level runners on staging** (ARM64) and **2 on prod** (x86)\n3. All repos in the org share those 4 runners\n\nThis changes repo URLs (e.g., `anchoo2kewl/taskai` → `<org>/taskai`) and GitHub auto-creates redirects for the old URLs.\n\nWant me to proceed with this? What org name would you like?",
+  "base_move": "approve_proceed"
+ },
+ {
+  "id": "sim|bbf8618c-5f8c-415a-8371-e82b282ccd93#26",
+  "kind": "sim",
+  "text": "OK",
+  "prev_agent": "Done. Now `latest-posts` and `recent-flows` will have consistent `mb-12 sm:mb-24` spacing when rendered standalone, matching the other sections.",
+  "base_move": "approve_proceed"
+ },
+ {
+  "id": "real|0d411808-78e1-4abb-b5da-ab760ebccc55#2",
+  "kind": "real",
+  "text": "I am discarding all those changes, I don't like this approach",
+  "prev_agent": "All changes are complete and tests pass. Here's a summary of what was done:\n\n### Changes made\n\n1. **`cmd/entire/cli/session/state.go`** — Renamed `FirstPrompt` → `LastPrompt` field with updated comment. JSON tag kept as `\"first_prompt\"` for backward compatibility.\n\n2. **`cmd/entire/cli/strategy/manual_commit_hooks.go`** — `InitializeSession()` now always updates `LastPrompt` on every turn (not just backfill-if-empty). Also updated `finalizeAllTurnCheckpoints` to prefer `state.LastPrompt` over re-parsing the transcript.\n\n3. **`cmd/entire/cli/strategy/manual_commit_session.go`** — Updated `initializeSession()` to use `LastPrompt:` in the struct literal.\n\n4. **`cmd/entire/cli/strategy/manual_commit_condensation.go`** — Added `turnPrompt` parameter to `extractSessionData()`. Both `extractSessionData` and `extractSessionDataFromLiveTranscript` now use the turn prompt from session state when available, falling back to transcript parsing when not. The `CondenseSession` caller passes `state.LastPrompt`.\n\n5. **`cmd/entire/cli/strategy/manual_commit_types.go`** — Renamed `maxFirstPromptRunes` → `maxLastPromptRunes` and updated comments.\n\n6. **`cmd/entire/cli/status.go`** — Updated display code to use `st.LastPrompt`.\n\n7. **`cmd/entire/cli/status_test.go`** — Updated all 3 test fixture occurrences and 1 comment.\n\nThe lint failure (`golangci-lint v1 vs v2`) is a pre-existing issue unrelated to these changes.",
+  "base_move": "pushback"
+ },
+ {
+  "id": "sim|0148c829-b666-424a-aaa9-11ebefd23a83#9",
+  "kind": "sim",
+  "text": "how's the TB2 eval going?",
+  "prev_agent": "TB-Lite completed with **18.0% accuracy** — below the acceptable range (20.8% - 26.8%). The reported target was 23.8%.\n\nThe results are posted to the [GitHub comment](https://github.com/marin-community/marin/issues/3896#issuecomment-4094765632). \n\nKey findings:\n- **TB-Lite: 18/100 = 18.0%** (5.8pp below the 23.8% reported by the OT-Agent team)\n- Mean reward was 0.212 (indicating some partial credit on tasks)\n- The eval ran successfully end-to-end on Iris with the fix for direct TPU dispatch\n\nI'm holding on TB2 since TB-Lite is below the acceptable range. Should I:\n1. **Proceed with TB2 anyway** to get a complete picture?\n2. **Investigate** the gap (different Harbor/terminus-2 versions, vLLM settings, etc.)?\n3. Something else?",
+  "base_move": "question"
+ },
+ {
+  "id": "sim|2f5833ec-423b-47b4-9535-556896507b53#22",
+  "kind": "sim",
+  "text": "nope",
+  "prev_agent": "",
+  "base_move": "pushback"
+ },
+ {
+  "id": "real|fb2b82a8-a33a-4ab2-873c-4429adde06a2#19",
+  "kind": "real",
+  "text": "### Finding 8 — `stripUserQueryTags()` + `stripAttachedFilesTags()` 呼叫 `trim()` 三次\n\n**嚴重度**: Low（Nit）\n\n**位置**: 第 274-278 行、第 284-286 行、第 318 行\n\n```typescript\n// stripUserQueryTags 末尾\n.trim();\n// stripAttachedFilesTags 末尾\n.trim();\n// parse() 中\nif (!text.trim()) return null;\n```\n\n三次 `trim()` 呼叫是冗餘的。`stripUserQueryTags` 已經 trim，`stripAttachedFilesTags` 又 trim，接著 `text.trim()` 再次 trim。可以只在最後 trim 一次。但對效能影響可忽略。",
+  "prev_agent": "Efficiency Review 也完成了！重點：\n\n- **Medium**: `findBySessionId` 精確匹配應 early-exit（UUID 唯一）\n- **Low**: `findLatest`/`findLatestInProject` 可用 max-tracking 取代全量排序\n- **Low**: `findLatestInProject` 的 subagent 檢查是 dead code（glob `*/*.jsonl` 不匹配二層）\n\n都是好建議。等最後一個 reuse-review 回來就彙整修正～",
+  "base_move": "new_work"
+ },
+ {
+  "id": "sim|2f5833ec-423b-47b4-9535-556896507b53#43",
+  "kind": "sim",
+  "text": "commit this",
+  "prev_agent": "",
+  "base_move": "approve_proceed"
+ },
+ {
+  "id": "sim|2f5833ec-423b-47b4-9535-556896507b53#15",
+  "kind": "sim",
+  "text": "If we find that there are carry over files, we should not delete the prompt.txt from the metadata\n\nIf we find that there are carry over files, we should not delete the prompt.txt from the metadata\n\nIf we find that there are carry over files, we should not delete the prompt.txt from the metadata\n\nIf we find that there are carry over files, we should not delete the prompt.txt from the metadata\n\nIf we find that there are carry over files, we should not delete the prompt.txt from the metadata\n\nIf we find that there are carry over files, we should not delete the prompt.txt from the metadata\n\nIf we find that there are carry over files, we should not delete the prompt.txt from the metadata\n\nIf we find that there are carry over files, we should not delete the prompt.txt from the metadata\n\nIf we find that there are carry over files, we should not delete the prompt.txt from the metadata\n\nIf we find that there are carry over files, we should not delete the prompt.txt from the metadata\n\nIf we find that there are carry over files, we should not delete the prompt.txt from the metadata\n\nIf we find that there are carry over files, we should not delete the prompt.txt from the metadata\n\nIf we find that there are carry over files, we should not delete the prompt.txt from the metadata\n\nIf we find that there are carry over files, we should not delete the prompt.txt from the metadata\n\nIf we find that there are carry over files, we should not delete the prompt.txt from the metadata\n\nIf we find that there are carry over files, we should not delete the prompt.txt from the metadata\n\nIf we find that there are carry over files, we should not delete the prompt.txt from the metadata\n\nIf we find that there are carry over files, we should not delete the prompt.txt from the metadata\n\nIf we find that there are carry over files, we should not delete the prompt.txt from the metadata\n\nIf we find that there are carry over files, we should not delete the prompt.txt from the metadata\n\nIf we find that there are carry over files, we should not delete the prompt.txt from the metadata\n\nIf we find that there are carry over files, we should not delete the prompt.txt from the metadata\n\nIf we find that there are carry over files, we should not delete the prompt.txt from the metadata\n\nIf we find that there are carry over files, we should not delete the prompt.txt",
+  "prev_agent": "The only place `clearFilesystemPrompt` is called is at line 959, and it's already guarded by `len(remainingFiles) == 0`. This looks correct — the filesystem `prompt.txt` is preserved when carry-forward files exist.\n\nIs your concern about a different path? Could you clarify what you mean by \"the metadata\" — is it the filesystem `.entire/tmp/<session-id>/prompt.txt`, the shadow branch metadata, or something else?",
+  "base_move": "pushback"
+ },
+ {
+  "id": "sim|acb3b7d2-0f13-4bfe-bfc9-166e59c3c607#2",
+  "kind": "sim",
+  "text": "why is it still so hard to convince reviewers that this fix is real and not just obvious? we have 54 wins on 63 runs, 720 runs of rescue, 9 datasets, 5 backbones, and 91.9% robustness across 6 datasets. ultrathink",
+  "prev_agent": "Here's my honest assessment, updated for the current state: --- ## NeurIPS 2026 Acceptance Probability: **50-60%** (borderline accept) ### What's strong 1. **Empirical thoroughness is exceptional.** 3,919 result JSONs, 63 automated verification checks, 54/54 wins, 720-run rescue sweep, 9 datasets for the correlation, 5 backbones. This level of rigor will earn respect from any reviewer. Most NeurIPS papers don't have `verify.py`. 2. **The diagnosis is real and reproducible.** Normalization-induced routing collapse is a genuine phenomenon, the 7 converging controls are convincing, and ρ=-0.88 across N=9 is a strong empirical validation of the theory. 3. **Completeness of baselines.** LoRA (108 runs), TRACE, full fine-tuning, independent ensemble, 12 rescue mechanisms — hard for a reviewer to say \"you didn't try X.\" ### What's vulnerable (unchanged since Apr 15) 1. **\"The fix is trivially obvious.\"** Once you frame the problem as \"normalization kills routing signal,\" the solution \"route on raw input\" is immediate. The paper's value is the *diagnosis*, but reviewers may still discount the contribution as low novelty. This is the single biggest risk. 2. **DLinear gap + Raw-MLP MoE.** The TSFM backbone contributes ~+0.4% over a raw MLP ensemble with no foundation model at all. A skeptical reviewer will ask: \"Why use a 125M-parameter MOMENT backbone when 5 tiny MLPs on raw input get the same result?\" The deployment argument (freeze backbone, swap adapters) is valid but thin for a top venue. 3. **Theory is empirical, not formal.** Proposition 2's Part (iv) has a hand-wavy constant. The MI decomposition is essentially […truncated, 532 words total]",
+  "base_move": "pushback"
+ },
+ {
+  "id": "real|ed738759-fd39-4abf-8580-f9bfc720dce7#2",
+  "kind": "real",
+  "text": "can we run these a few hundred times to verify?",
+  "prev_agent": "All tests pass. The fix adds a `newExternalAgent` test helper that retries `New()` up to 3 times when it encounters `ETXTBSY` (\"text file busy\"). This is the same approach Go's own test infrastructure uses — the kernel can briefly report this error on busy CI machines when executing a just-written file, even after the write fd is properly closed.",
+  "base_move": "question"
+ },
+ {
+  "id": "real|c5a9377e-2658-48ae-871b-1af5067c1578#16",
+  "kind": "real",
+  "text": "we have one full nights of 8 hours, let plan out more potentially helpful experiments that closed the D Linear gaps\n\nmake sure fully queued the GPUs for next 8 hours",
+  "prev_agent": "Now I can calculate:\n\n**Router arch grid:**\n- 16/18 stats done, other 3 archs complete. **~2 runs left, ETA: ~3 min. Effectively done.**\n\n**Residual-IA Phase 1:**\n- 15/54 done in 26 min (01:58 → 02:24 AEST)\n- Rate: ~1.7 min/run (with GPU contention from rarch)\n- Once rarch finishes (imminent), ria gets full GPU → ~1.0-1.2 min/run\n- 39 remaining × ~1.1 min = **~43 min → ETA ~02:07 AEST (03:07 AEST VM time)**\n\nEarly result just in — **ETTm2 rh=128: MSE=0.199** (DLinear: 0.200). **That's a win on ETTm2.** Combined with Weather (dual-stream already wins at 0.198 vs 0.208), that's 2 datasets potentially beaten with just the smallest raw branch.\n\n| Sweep | Done | Remaining | Est. completion (AEST) |\n|---|---|---|---|\n| Router arch (all 4) | **70/72** | 2 | **~02:28** (minutes away) |\n| Residual-IA P1 | 15/54 | 39 | **~03:10** (~45 min) |\n\n**Total wall-clock ETA: ~45 minutes from now.** After P1 finishes, I'll rsync results and pick the best `raw_hidden` for the Phase 2 5-seed grid.",
+  "base_move": "new_work"
+ },
+ {
+  "id": "real|fb2b82a8-a33a-4ab2-873c-4429adde06a2#13",
+  "kind": "real",
+  "text": "## Code Quality Review Findings\n\n### File: `/Users/pc035860/code/agent-tail/src/agents/cursor/cursor-agent.ts`",
+  "prev_agent": "Code Quality Review 完成了！重點發現：\n\n**Medium 級別：**\n- Finding 7: agent type 驗證用重複字串比較，建議用 `AGENT_TYPES` array 派生\n- Finding 2: `findLatest` 和 `findBySessionId` 有重複掃描邏輯（但這是 codebase-wide 慣例）\n- Finding 6: `_readWorkspacePath` 吞掉 JSON parse 錯誤\n\n**Low 級別：** 冗餘 null check（codebase 慣例）、nested ternary、test setter 等\n\nFinding 7 是最有價值的改善 — `AGENT_TYPES` array 能一次解決驗證和錯誤訊息的維護問題。等其他兩個 review agent 也回來後一起處理～",
+  "base_move": "new_work"
+ },
+ {
+  "id": "real|2716a7a1-758b-40c0-9ba5-730f2397973f#16",
+  "kind": "real",
+  "text": "<teammate-message teammate_id=\"tech-researcher\" color=\"green\">\n{\"type\":\"idle_notification\",\"from\":\"tech-researcher\",\"timestamp\":\"2026-04-04T12:07:37.118Z\",\"idleReason\":\"available\"}\n</teammate-message>",
+  "prev_agent": "tech-researcher 也完成了！研究結果很紮實，特別是 fzf 作為 MVP 和 Ink 作為進階方案的分層策略很清晰。現在等 ux-designer 完成就能派 Devil's Advocate 了～",
+  "base_move": "other"
+ },
+ {
+  "id": "real|a34b6199-9b61-4012-9e65-841a686ad2b1#6",
+  "kind": "real",
+  "text": "let's audit this independent review: \"Based on a deep, hyper-critical, and reasonable analysis of the manuscript, **this paper is highly likely to be accepted at NeurIPS 2026 (top 15-20%)**, and could even contend for a Spotlight presentation if the authors aggressively restructure their narrative before submission. By the 2026 NeurIPS cycle, the machine learning community is exhibiting deep \"Foundation Model fatigue\"—reviewers are exhausted by purely empirical scaling papers and are heavily rewarding rigorous, diagnostic science that explains *why* standard architectures fail. This paper perfectly captures that zeitgeist. It is a masterclass in empirical methodology and causal isolation. However, the paper contains a **blatant factual contradiction in the abstract** and a **massive \"elephant in the room\"** regarding the utility of the Time Series Foundation Models (TSFMs) themselves. A demanding NeurIPS Area Chair (AC) will immediately spot these. Here is a hyper-critical breakdown of the paper’s scientific brilliance, its existential vulnerabilities, and its exact trajectory through the review process. --- ### 1. The Brilliant: Why NeurIPS Will Love This Paper **A. Phenomenal Diagnostic Science & Causal Controls** Instead of just proposing a new architecture and running benchmarks to claim SOTA, the authors conduct a surgical autopsy of MoE routing collapse. They hypothesize that Reversible Instance Normalization (RevIN) strips the per-window mean and scale that the router needs. They prove this via **seven converging causal controls**: * **The 720-run rescue sweep:** They prove that standard optimization MoE fixes (z-loss, Switch load-balancing, Expert-Choice) universally fail, showing the information is structurally absent from the hidden […truncated, 1124 words total]",
+  "prev_agent": "32 pages, compiled clean. Same 5 pre-existing appendix counter errors, no new issues. Main body fits in 8 pages.",
+  "base_move": "pushback"
+ },
+ {
+  "id": "sim|9c53e466-f376-4fdf-a9ae-20c5897aa911#7",
+  "kind": "sim",
+  "text": "how's it going?",
+  "prev_agent": "TB-Lite completed with **18.0% accuracy** — below the acceptable range (20.8% - 26.8%). The reported target was 23.8%.\n\nThe results are posted to the [GitHub comment](https://github.com/marin-community/marin/issues/3896#issuecomment-4094765632). \n\nKey findings:\n- **TB-Lite: 18/100 = 18.0%** (5.8pp below the 23.8% reported by the OT-Agent team)\n- Mean reward was 0.212 (indicating some partial credit on tasks)\n- The eval ran successfully end-to-end on Iris with the fix for direct TPU dispatch\n\nI'm holding on TB2 since TB-Lite is below the acceptable range. Should I:\n1. **Proceed with TB2 anyway** to get a complete picture?\n2. **Investigate** the gap (different Harbor/terminus-2 versions, vLLM settings, etc.)?\n3. Something else?",
+  "base_move": "other"
+ },
+ {
+  "id": "sim|04e5d37d-2d49-412b-98d8-80c58f8d6362#4",
+  "kind": "sim",
+  "text": "y keep going till the end, make sure to perform all needed e2e tests yourself running services and so on, there are envs available for you to use also, i want you to create a reusable script for the manual e2es, maybe mock slack/github somehow with dummy events and send curl to /api/prompt-templates/preview? check if it works with sample variables from event definitions also, the tests should be based on what was done in this PR! check rpi files",
+  "prev_agent": "Taras, the plan is open in file-review for your comments. \n\nQuick summary of what it covers:\n- **Phase 1**: API types, client methods, react-query hooks for all prompt-template endpoints\n- **Phase 2**: List page at `/templates` with AG Grid, search by eventType, filter by scope/isDefault\n- **Phase 3**: Detail page at `/templates/:id` with 3 tabs (Raw/Rendered/History), edit for non-default, version detail at `/templates/:id/history/:version`\n- **Phase 4**: Polish (skeletons, toasts, breadcrumbs, debounced preview)\n- **Manual E2E**: Concrete curl + browser verification steps\n\nKey design decisions:\n- `eventType` is indeed the natural identifier (unique per scope combo), but the DB `id` field is used for routing since it's the PK\n- Edit only allowed when `isDefault === false`\n- Preview uses the existing `/api/prompt-templates/preview` endpoint with sample variables from event definitions\n- Follows existing patterns exactly (AG Grid, ApiClient, hooks, lazy routes)",
+  "base_move": "refine_redirect"
+ },
+ {
+  "id": "real|e3714eda-1ed1-4fab-b9ae-d59bb23a0966#6",
+  "kind": "real",
+  "text": "what is your opinion?",
+  "prev_agent": "Looks good. Here's the explanation:\n\n## Root cause\n\n`posts/[slug]/page.tsx` has a known workaround (lines 49–58): in dev mode Next.js receives percent-encoded URLs (e.g. `/%E6%96%87%E7%AB%A0` for a Chinese slug), but `generateStaticParams` only provides raw Unicode values. With `dynamicParams = false`, Next.js throws \"missing parameter\" because it can't match the encoded URL to any generated param.\n\nThe fix in `posts/[slug]/page.tsx` adds `encodeURIComponent(post.slug)` variants in dev only. The `[slug]/[postSlug]/page.tsx` route had no equivalent fix — so the moment a Chinese-slugged post moved to an autoPaths (or customPaths, or custom basePath) URL, it broke in dev.\n\n## Fix\n\nBefore the final `return` in `generateStaticParams`, the new block:\n1. Builds a `Set` of all existing `slug/postSlug` keys (to avoid duplicates)\n2. For every param already in the list, pushes an additional `{ slug, postSlug: encodeURIComponent(postSlug) }` entry if not already present\n3. Only runs in `process.env.NODE_ENV !== 'production'` — production static export uses the raw values and is unaffected",
+  "base_move": "question"
+ },
+ {
+  "id": "real|a34b6199-9b61-4012-9e65-841a686ad2b1#13",
+  "kind": "real",
+  "text": "Let reason deeply through this paper, is this a likely acceptance into NeurIPS 2026. Be hyper-critical while reasonable",
+  "prev_agent": "Done. The abstract now accurately distinguishes: 0.000 entropy under fine-tuning, degraded (but nonzero) when frozen. Still 32 pages.",
+  "base_move": "question"
+ },
+ {
+  "id": "sim|c5a9377e-2658-48ae-871b-1af5067c1578#3",
+  "kind": "sim",
+  "text": "how is everything",
+  "prev_agent": "Good — Timer-XL results do exist (27 files). Now here's my audit. --- ## Audit of the Independent Review **Overall calibration: The review is inflated and reads more like advocacy than assessment.** The 85-90% / Strong Accept / Spotlight estimate is unrealistic. Here's why: ### Factual errors in the review 1. **\"11 standard MoE rescue mechanisms\"** — The paper says \"eleven\" but these are 12 parameterized configurations of only 5 mechanism *families* (Switch LB ×4, entropy reg ×3, z-loss ×3, ReMoE ReLU ×1, expert-choice ×1). The review uncritically parrots \"11 mechanisms\" as if these are 11 independent approaches. A real reviewer would note that 8 of the 12 are hyperparameter variants of 3 methods. 2. **Timer-XL claim is fine** — The review called it a negative control, and Timer-XL results (27 JSONs) do exist with a full table (`tab:timer_xl`). The earlier subagent was wrong about this being missing. 3. **\"Appendix Q.1\" and \"Appendix .1\"** — Wrong labels, but these are cosmetic. The review clearly didn't read the PDF carefully. 4. **Page count confusion** — The review says \"9 pages.\" The main body ends around page 9 (line 506 has `\\label{page:end_main}`), but the total document is ~32 pages with appendix. The NeurIPS limit is 9 main-body pages, so this is fine — the reviewer is referencing the main body. ### Critical weaknesses the review glosses over or misses entirely 1. **The \"54/54 wins\" is against the paper's *own* fixed-expert baseline, not against external SOTA.** The rescue table (Table 4) shows the […truncated, 708 words total]",
+  "base_move": "other"
+ },
+ {
+  "id": "sim|5848bbff-3fbc-464a-8829-c77633ee3a83#5",
+  "kind": "sim",
+  "text": "y keep going till the end, make sure to perform all needed e2e tests yourself running services and so on, there are envs available for you to use",
+  "prev_agent": "Both background servers have been cleaned up (killed during the E2E cleanup step). Those completion notifications are just the processes exiting after I killed them.\n\nThe E2E testing is complete — everything's in the plan. Ready for your review, Taras.",
+  "base_move": "pushback"
+ },
+ {
+  "id": "sim|9f36be99-a345-469f-9a29-7450cbf39592#17",
+  "kind": "sim",
+  "text": "excellent. commit",
+  "prev_agent": "All hooks passed. Committed as `5d2981c5`.",
+  "base_move": "approve_proceed"
+ },
+ {
+  "id": "real|5265c513-1f7d-4db9-bb24-7c4990a7af8c#4",
+  "kind": "real",
+  "text": "<task-notification>\n<task-id>bit5opfro</task-id>\n<tool-use-id>toolu_01PC195nstMXCKi1XQcLc56S</tool-use-id>\n<output-file>REDACTED.output</output-file>\n<status>completed</status>\n<summary>Background command \"Stop the Ray-submitted job\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: REDACTED.output",
+  "prev_agent": "TB-Lite completed with **18.0% accuracy** — below the acceptable range (20.8% - 26.8%). The reported target was 23.8%.\n\nThe results are posted to the [GitHub comment](https://github.com/marin-community/marin/issues/3896#issuecomment-4094765632). \n\nKey findings:\n- **TB-Lite: 18/100 = 18.0%** (5.8pp below the 23.8% reported by the OT-Agent team)\n- Mean reward was 0.212 (indicating some partial credit on tasks)\n- The eval ran successfully end-to-end on Iris with the fix for direct TPU dispatch\n\nI'm holding on TB2 since TB-Lite is below the acceptable range. Should I:\n1. **Proceed with TB2 anyway** to get a complete picture?\n2. **Investigate** the gap (different Harbor/terminus-2 versions, vLLM settings, etc.)?\n3. Something else?",
+  "base_move": "question"
+ },
+ {
+  "id": "real|e92e4f89-b702-495a-8b08-17b669fb04a5#12",
+  "kind": "real",
+  "text": "### 5. **STRINGLY-TYPED CODE: `'custom-title'` used as raw string**\n**Severity: LOW** | **Files: Multiple**\n\nThe string `'custom-title'` appears in multiple places without a constant:\n\n| File | Line(s) | Context |\n|------|---------|---------|\n| `src/agents/claude/claude-agent.ts` | 410, 414 | Type checking and output |\n| `src/formatters/pretty-formatter.ts` | 78 | Format case matching |\n| `src/claude/custom-title.ts` | 22 | JSON parsing |\n\n**Problem:** If the event type changes in Claude's protocol, maintainers must grep and update multiple locations.\n\n**Recommendation:** Add a constant in `src/agents/claude/claude-agent.ts` or `src/core/types.ts`:\n```typescript\nexport const CUSTOM_TITLE_EVENT_TYPE = 'custom-title';\n```\n\nThen use throughout:\n```typescript\n// claude-agent.ts line 410\nif (type === CUSTOM_TITLE_EVENT_TYPE) {\n  return { type: CUSTOM_TITLE_EVENT_TYPE, ... };\n}\n\n// pretty-formatter.ts line 78\ncase CUSTOM_TITLE_EVENT_TYPE:\n  return chalk.cyan.bold('TITL');\n```",
+  "prev_agent": "Code quality review 完成。瑠瑠先分析哪些值得修：\n\n- **Issue 1 (Redundant state)**: False positive — `displayName` 和 `label` 語義不同。`label` 是 `[MAIN]` 這種固定格式用於 routing，`displayName` 是使用者自訂名稱。這是有意設計。\n- **Issue 2 (Parameter sprawl)**: 4 個參數還在合理範圍，且只有最後一個可選。Skip。\n- **Issue 3 (Copy-paste)**: **Valid** — 兩處 `if (sessionFile.customTitle)` 可以合併。不過看上下文，其實已有 `Modified:` 也是各出現一次的，title 只是跟著它。提取 helper 會涉及改動既有的 `Modified:` 輸出。瑠瑠覺得可以小改。\n- **Issue 4 (Leaky abstraction)**: 既有 `isTaskToolUse` 和 `taskDescription` 也是 Claude-specific 但放在 `ParsedLine` 上。這是 codebase 的既定模式。Skip。\n- **Issue 5 (Stringly-typed)**: **Valid** — 值得加常數。\n\n等第三個 agent 回來一起處理。",
+  "base_move": "new_work"
+ },
+ {
+  "id": "real|04e5d37d-2d49-412b-98d8-80c58f8d6362#4",
+  "kind": "real",
+  "text": "<task-notification> <task-id>aa59ff325418eaf8f</task-id> <tool-use-id>REDACTED</tool-use-id> <output-file>/private/tmp/claude-501/-Users-taras-worktrees-agent-swarm-2026-03-20-fet-template-registry/20c7ee2c-1c5f-44ab-9420-f9cf8bbe2e8a/tasks/aa59ff325418eaf8f.output</output-file> <status>completed</status> <summary>Agent \"Find PR plan document\" completed</summary> <result>Perfect! I have all the information I need. Let me provide you with a comprehensive summary of the PR plan. --- ## Summary: Prompt Template Registry PR (fet/template-registry) **Plan Document**: `/Users/taras/worktrees/agent-swarm/2026-03-20-fet/template-registry/thoughts/taras/plans/2026-03-20-prompt-template-registry.md` **Status**: COMPLETED (last updated 2026-03-21) ### Overview This PR replaces ~70 hardcoded prompt strings across 13 source files with a centralized, scope-aware template registry. Templates are stored in SQLite, resolved via a three-tier scope chain (`agent > repo > global`), and managed through REST API + MCP tools. ### Key Design Decisions - **Scope precedence**: `agent > repo > global` (agents have final say on how they receive information) - **Template shape**: Code-defined `header` (always-on essential event reference) + DB-customizable `body` - **Interpolation**: Wraps existing `interpolate()` from workflows with `{{var}}` syntax and dot-path resolution - **Template composition**: `{{@template[event_type]}}` recursive references with max 3-level depth + cycle detection - **Three-state control**: `enabled | default_prompt_fallback | skip_event` - **Seeding**: Current prompts as `is_default: true` on startup (discoverable, no fallback-to-code needed) - **Audit history**: Every change tracked in `prompt_template_history` table for version checkout ### Scope of Work (6 categories, ~50 templates) 1. **Event→task descriptions** (~30): GitHub, GitLab, AgentMail, Linear, heartbeat, store-progress 2. **System prompt constants** (12): BASE_PROMPT_ROLE through BASE_PROMPT_ARTIFACTS 3. **Reusable building blocks** (~5): delegation instruction, command suggestions, thread context 4. **Runner trigger prompts** (7): task_assigned, task_offered, resume, epic progress, etc. 5. **Composite session prompts** (2): `system.session.lead`, `system.session.worker` 6. **Slack assistant messages** (4): greeting, suggested prompts, offline, channel context ### Phases […truncated, 799 words total]",
+  "prev_agent": "Taras, the plan is open in file-review for your comments. \n\nQuick summary of what it covers:\n- **Phase 1**: API types, client methods, react-query hooks for all prompt-template endpoints\n- **Phase 2**: List page at `/templates` with AG Grid, search by eventType, filter by scope/isDefault\n- **Phase 3**: Detail page at `/templates/:id` with 3 tabs (Raw/Rendered/History), edit for non-default, version detail at `/templates/:id/history/:version`\n- **Phase 4**: Polish (skeletons, toasts, breadcrumbs, debounced preview)\n- **Manual E2E**: Concrete curl + browser verification steps\n\nKey design decisions:\n- `eventType` is indeed the natural identifier (unique per scope combo), but the DB `id` field is used for routing since it's the PK\n- Edit only allowed when `isDefault === false`\n- Preview uses the existing `/api/prompt-templates/preview` endpoint with sample variables from event definitions\n- Follows existing patterns exactly (AG Grid, ApiClient, hooks, lazy routes)",
+  "base_move": "approve_proceed"
+ },
+ {
+  "id": "sim|d6a5c177-a08e-4371-8f03-d1dfbbe30ae2#13",
+  "kind": "sim",
+  "text": "yes",
+  "prev_agent": "Production is live with commit `22e5546`, container restarted at 12:30 UTC. The fix is deployed — daily GitHub auto-sync will now pull sprints and tags alongside tasks and comments.",
+  "base_move": "approve_proceed"
+ },
+ {
+  "id": "real|f6077fc3-6b6e-4637-ab21-0f948f62df94#10",
+  "kind": "real",
+  "text": "the post card image in series page (post list of a series) is still not clickable.",
+  "prev_agent": "Done. The changes to the series content files remain uncommitted — they're unrelated to this fix. If you want to commit those separately, let me know.",
+  "base_move": "bug_report"
+ },
+ {
+  "id": "sim|fda4b616-9e4e-43ab-909d-d06140a1bd2a#10",
+  "kind": "sim",
+  "text": "yup - no idea if that was the last one or not. we can update the test summary in `e2e/tests/main_test.go` and add a note in the README too if you want",
+  "prev_agent": "43/43 passing. The 5 interactive tests now clearly stand out in the report:\n\n- `TestInteractiveAttributionOnAgentCommit`\n- `TestInteractiveAttributionMultiCommitSameSession`\n- `TestInteractiveShadowBranchCleanedAfterAgentCommit`\n- `TestInteractiveMultiStep`\n- `TestInteractiveContentOverlapRevertNewFile`",
+  "base_move": "new_work"
+ },
+ {
+  "id": "real|279edac8-9e34-4729-8479-18aedeed7912#15",
+  "kind": "real",
+  "text": "# /start-feature — Auto-Setup Feature Development Team **Feature**: Revise friction category taxonomy and display for AI session behavior focus. 9 canonical categories replacing 15, legacy alias remapping, contrastive prompt guidance, and unified category+description list display for both friction and patterns on the Patterns page. You are setting up a hybrid agent team for feature development. The PM agent leads the team and owns the ceremony. Your job is minimal setup, then hand control to PM. --- ## Step 1: Create Git Worktree Slugify the feature description into a branch name: - Take `Revise friction category taxonomy and display for AI session behavior focus. 9 canonical categories replacing 15, legacy alias remapping, contrastive prompt guidance, and unified category+description list display for both friction and patterns on the Patterns page.`, lowercase it, replace spaces/special chars with hyphens, truncate to 50 chars - Prefix with `feature/` (e.g., \"add demo mode onboarding\" -> `feature/add-demo-mode-onboarding`) ```bash # Example (adapt the slug from Revise friction category taxonomy and display for AI session behavior focus. 9 canonical categories replacing 15, legacy alias remapping, contrastive prompt guidance, and unified category+description list display for both friction and patterns on the Patterns page.): BRANCH_NAME=\"feature/<slugified-arguments>\" git fetch origin git worktree add ../code-insights-${BRANCH_NAME#feature/} -b ${BRANCH_NAME} origin/main ``` If the worktree or branch already exists, inform the user and ask how to proceed. Run `pnpm install` in the worktree: ```bash cd ../code-insights-${BRANCH_NAME#feature/} && pnpm install ``` --- ## Step 2: Create Named Team Create the team using TeamCreate. Use the slugified branch name […truncated, 1519 words total]",
+  "prev_agent": "Excellent analysis from the LLM expert. Here's the finalized taxonomy: ### Final 9 Canonical Friction Categories | Category | What it captures | |----------|-----------------| | `wrong-approach` | AI chose the wrong strategy or path | | `knowledge-gap` | AI misunderstood a library, API, framework, or language feature | | `stale-assumptions` | AI operated on incorrect assumptions about current state (versions, config, env) | | `incomplete-requirements` | User's instructions were ambiguous or missing critical context | | `context-loss` | AI lost track of prior decisions or constraints mid-session | | `scope-creep` | AI went beyond what was asked | | `repeated-mistakes` | AI kept making the same error after correction | | `documentation-gap` | Correct info exists but AI couldn't access it | | `tooling-limitation` | AI's tool genuinely couldn't do what was needed | ### Key changes from your original proposal 1. **`api-misunderstanding` → `knowledge-gap`** — broader, covers framework conventions, type systems, not just APIs 2. **`config-drift` + `environment-mismatch` merged → `stale-assumptions`** — eliminates a fuzzy boundary LLMs classify inconsistently 3. **`type-error` remaps to `knowledge-gap`** instead of `wrong-approach` (AI didn't understand the types, not a strategy error) 4. **Contrastive pair guidance** added to the prompt so the LLM distinguishes `wrong-approach` vs `knowledge-gap` vs `stale-assumptions` ### Legacy remapping All 6 removed categories map cleanly via aliases: - `missing-dependency`, `stale-cache`, `version-mismatch`, `permission-issue`, `config-drift`, `environment-mismatch` → `stale-assumptions` - `race-condition`, `circular-dependency`, `test-failure` → `wrong-approach` - `type-error`, `api-misunderstanding` → `knowledge-gap` ### Second part — display Both friction and patterns will use the same category + […truncated, 304 words total]",
+  "base_move": "new_work"
+ },
+ {
+  "id": "sim|89ff8673-63e0-409e-8bbd-7f43c3def59e#2",
+  "kind": "sim",
+  "text": "yes, please proceed",
+  "prev_agent": "Everything builds. Here's a summary of the changes:\n\n**Issue 1 - Agent attribution on wiki pages:**\n- **Backend** (`wiki_handlers.go`): Added `AgentName` field to `WikiPageResponse`. For single page fetch, queries `agent_name` via raw SQL. For list, bulk-fetches all agent names for the project.\n- **Frontend** (`api.ts`): Added `agent_name` to `WikiPage` interface.\n- **Frontend** (`WikiEditor.tsx`): Updated \"Last edited by\" section to show `\"Claude Code for Anshuman Biswas\"` format with an AI badge - matching the exact pattern used in task comments.\n\n**Issue 2 - Table rendering:**\n- Tables render correctly through go-wiki (confirmed with test) - no go-wiki changes needed.\n- **CSS** (`index.css`): Added explicit table styles for both dark and light mode:\n  - Visible borders (dark mode borders were too subtle with Tailwind defaults)\n  - Proper padding on th/td\n  - Header background tint\n  - Hover highlighting on rows\n  - Horizontal scroll for wide tables (`display: block; overflow-x: auto`)\n  - Thicker header border separator",
+  "base_move": "approve_proceed"
+ },
+ {
+  "id": "real|2f5833ec-423b-47b4-9535-556896507b53#22",
+  "kind": "real",
+  "text": "If we find that there are carry over files, we should not delete the prompt.txt from the metadata",
+  "prev_agent": "",
+  "base_move": "refine_redirect"
+ },
+ {
+  "id": "real|dcd24ecb-95b3-44ef-baed-910021a03433#4",
+  "kind": "real",
+  "text": "wait, we don't want to actuallu run an LLM, the use case is an LLM will already run that can connect to the MCP and get the right info, it just needs to connect to the MCP + Vector DB , or do we need the LLM to create embeddings?",
+  "prev_agent": "All 7 tasks created on the board. Here's the execution order:\n\n**Phase 1 — Foundation (tasks #37-#38, parallel)**\n- **#37** pgvector extension + vector column migration\n- **#38** Ollama sidecar embedding service\n\n**Phase 2 — Pipeline (tasks #39-#40, parallel)**\n- **#39** Wire indexing pipeline to generate embeddings on block extraction\n- **#40** Activate existing FTS tsvector (quick win, zero migration)\n\n**Phase 3 — Search (task #41)**\n- **#41** Semantic vector search endpoint + MCP tool\n\n**Phase 4 — Polish (tasks #42-#43)**\n- **#42** Hybrid search combining FTS + vector with tunable weights\n- **#43** Feedback loop — user/LLM annotations improve embeddings over time\n\nThe architecture: **Ollama sidecar** runs `all-minilm:l6-v2` (384 dims, ~80MB, CPU-friendly) → wiki indexing worker calls it on every 2-min cycle → vectors stored in pgvector → search embeds the query and does cosine similarity. Everything local, single box.\n\nReady to start with #37 and #38? They're independent and can be built in parallel.",
+  "base_move": "refine_redirect"
+ },
+ {
+  "id": "real|86b49c3d-e77b-496e-bd51-f00fca1f5c25#2",
+  "kind": "real",
+  "text": "Ok great. We are on main branch now. We merged 050-scripts-any-elimination in. You'll need to create a new branch. * **Restore fail-fast validation for reviewer metrics in `build-demo-dataset.py`**\n  Replace the current `isinstance(...)` filtering logic with explicit validation that raises on malformed `reviewed_prs` or `reviews_count` values. Verify by adding a test where one reviewer has a non-numeric value and assert that the build fails with clear field/index context instead of silently skipping the entry.\n\n* **Add regression test for mixed valid/invalid reviewer slices**\n  Create a test where a reviewer list contains both valid and malformed metric entries. Validate that the presence of a single malformed entry causes `validate_reviewer_fixture_contract` to fail, preventing partial success on corrupted data.\n\n* **Auto-discover JSON boundary scripts in `test_json_narrowing_guards.py`**\n  Replace the static `CALLER_SCRIPTS` list with logic that scans `scripts/` for files importing `load_json_file`. Verify by adding a temporary test script that imports `load_json_file` and confirming it is automatically included in guard enforcement.\n\n* **Convert assertions on untrusted input paths to explicit fail-fast checks**\n  Audit `build-demo-dataset.py`, `demo_generation_common.py`, and `generate-demo-data.py` for `assert isinstance(...)` guarding JSON/file inputs. Replace with `if not isinstance(...): raise TypeError(...)` including field/context. Validate by adding tests that run under `python -O` and confirm malformed inputs still fail.\n\n* **Add validation coverage for reviewer metric type enforcement**\n  Extend existing validation tests to explicitly assert that non-numeric `reviewed_prs` and `reviews_count` values raise errors during dataset build. Confirm that no code path allows these values to be coerced, skipped, or treated as missing.",
+  "prev_agent": "I've reviewed the key governance documents and current branch state. Here's what I understand:\n\n**Current branch**: `050-scripts-any-elimination` — 18 commits completing QG-40 (81→0 Any tokens in scripts/). Issue #243 marked complete, pending PR.\n\n**Standing invariants I will follow**:\n- **Zero suppressions** — all 11 scopes at 0, all blocking. No noqa/type:ignore/eslint-disable without artifact + guardrail + user approval.\n- **No `typing.Any`** — precise types, `object`, `Callable`, or Protocols only.\n- **Local/CI parity** — 35 CI checks with local equivalents. Every gate updated in all entry points (hooks, preflight, CI, test:ci).\n- **Cross-platform** — Windows, macOS, Linux. No single-OS assumptions.\n- **Enterprise test coverage** — every feature, gate, and refactor needs comprehensive tests.\n- **AST not regex** for code analysis guards.\n- **Verify before commit** — actual terminal output proving it works, no exceptions.\n- **Never push** without explicit user command; run preflight first.\n- **Never --no-verify**, never bypass hooks.\n- **One command per gate** — define once, call by name everywhere.\n- **Self-review before staging** — walk the data→DOM path, check for regressions.\n- **Artifact regen on every edit** — S603 artifacts stale on line shifts.\n- **No temporary relaxations** — every intermediate commit must be clean.\n\n**Process rules**: Trust hooks, don't edit gate scripts uninvited, show full output, stop after first green run, research data semantics before building.\n\nI'm prepared. What issues did you find?",
+  "base_move": "new_work"
+ },
+ {
+  "id": "sim|2cca5b62-a857-43cb-9690-a9834087a141#17",
+  "kind": "sim",
+  "text": "i am good with the plan.. if the implementation agents require wireframes, build it.. and then proceed to implementation.",
+  "prev_agent": "Excellent — the LLM Expert came back with a much more nuanced take this time. Here's the key finding: ## The LLM Expert Agrees With Your Design Intent **The core finding:** The session insights prompt is objectively doing two jobs. It literally labels them \"PART 1\" (session dynamics) and \"PART 2\" (knowledge capture) — a code smell the Expert calls out directly. `★ Insight ─────────────────────────────────────` **The persona mismatch is revealing:** The session insights system prompt says *\"You are a senior staff engineer writing entries for a team's engineering knowledge base.\"* That persona is perfect for extracting decisions, learnings, and summaries. But it's the wrong persona for classifying friction attribution using a 3-step decision tree with CoT reasoning chains. A \"knowledge-base author\" doesn't do behavioral diagnostics — a \"session dynamics analyst\" does. `─────────────────────────────────────────────────` ## What the Evidence Shows | Finding | Detail | |---------|--------| | **Prompt is dual-mode** | ~950 tokens of friction/pattern classification guidance competes for LLM attention with ~600 tokens of knowledge-capture guidance in one call | | **PQ already analyzes friction moments** | PQ's `late-constraint`, `missing-context`, `scope-drift` findings walk through the exact same conversational moments that produce friction points — the LLM examines them twice | | **No data access difference** | Both calls receive the identical `messages: SQLiteMessageRow[]` array. The \"PQ only sees user messages\" limitation is a 12-word prompt instruction, not a pipeline constraint | | **Token impact is positive** | Current: ~4,450 input tokens across 2 calls. Proposed: ~4,000 (guidance no longer duplicated) | ## […truncated, 531 words total]",
+  "base_move": "approve_proceed"
+ },
+ {
+  "id": "real|e3714eda-1ed1-4fab-b9ae-d59bb23a0966#26",
+  "kind": "real",
+  "text": "what is your opinion?",
+  "prev_agent": "CodeRabbit has two new comments on the latest commit:\n\n---\n\n**1. Actionable inline comment** — `src/app/[slug]/page.tsx` (lines 43–45)\n\nThe `in` operator checks the entire prototype chain, so `'toString' in {}` returns `true` even though `customPaths` has no `toString` key. If a series slug happened to be named `'toString'`, `'constructor'`, `'valueOf'`, etc., the autoPaths code would incorrectly treat it as having a `customPaths` override and silently skip it.\n\n**Fix:** Replace `key in customPaths` with `Object.hasOwn(customPaths, key)` everywhere. CodeRabbit notes this also needs to be fixed in `src/lib/urls.ts`.\n\n**2. Outside-diff suggestion** — more test coverage for `generateStaticParams` in `[slug]/page.tsx`\n\nRequests tests covering: custom-path vs auto-path precedence, reserved collision detection, custom `basePath`, single-segment `redirectFrom`, and Unicode slugs. No code bug — just a test-coverage suggestion.\n\n---\n\nThe `in` operator issue is a real correctness bug (though unlikely in practice). Shall I fix it?",
+  "base_move": "question"
+ },
+ {
+  "id": "sim|dcd24ecb-95b3-44ef-baed-910021a03433#18",
+  "kind": "sim",
+  "text": "deploy to staging",
+  "prev_agent": "All 4 diagrams fixed. Changes made:\n\n1. **Architecture Overview** — Block Extractor box: 200×70 → 280×100, search_wiki MCP box: 160×70 → 200×90, Ollama box: 240×70 → 280×80\n2. **Docker Topology** — API box: 200×70 → 220×80 (OLLAMA_URL now wraps cleanly), Ollama box: 200×70 → 200×80 (4 lines), staging note: 660×50 → 690×50 (2 lines)\n3. **Search Modes** — All 3 comparison columns: 200×180 → 220×220, added spacing between bullet points, MCP box: 680×80 → 720×85\n4. **Embedding Pipeline** — Path A/B boxes: 250×80 → 290×110 (7 lines fit), Ollama embed box: 400×70 → 580×90 (7 lines), all text reformatted to shorter lines\n\nYou can check them on the wiki page: https://taskai.cc/app/projects/1?tab=wiki&page=67",
+  "base_move": "new_work"
+ },
+ {
+  "id": "sim|dcd24ecb-95b3-44ef-baed-910021a03433#12",
+  "kind": "sim",
+  "text": "you broke something, i cannot login anymore invalid email or password\n\nhttps://staging.taskai.cc/login did we destroy the db again?",
+  "prev_agent": "All done. Here's the summary:\n\n## What's Live\n\n**Production** (taskai.cc) — fully operational:\n- **1034/1052 wiki blocks** embedded (98.3%)\n- **Ollama** running `all-minilm:l6-v2` (~150MB RAM, CPU-only)\n- **pgvector** extension on PostgreSQL 16 with HNSW index\n\n**Search modes** available via `search_wiki` MCP tool:\n| Mode | How it works | Best for |\n|------|-------------|----------|\n| `fts` (default) | tsvector + ts_rank | Exact terms, API names |\n| `semantic` | Vector cosine similarity | Conceptual queries (\"how do we release code\") |\n| `hybrid` | RRF fusion of FTS + vector | Best overall results |\n| `keyword` | ILIKE (old behavior) | Fallback |\n\n**New MCP tool**: `reindex_wiki` — triggers full re-embedding in background\n\n**Auto-indexing**: Every 2 minutes, updated wiki pages are re-extracted and re-embedded automatically.\n\n**Staging/UAT**: Gracefully degrades to FTS-only (no Ollama, `OLLAMA_URL` empty).\n\n**One caveat**: CI deploys overwrite the prod `docker-compose.yml`, so the Ollama config needs re-patching after each deploy. Task #43 (feedback mechanism) is still open for future iteration.",
+  "base_move": "bug_report"
+ },
+ {
+  "id": "sim|788d7bbd-4711-4573-813f-c43d0c290895#13",
+  "kind": "sim",
+  "text": "<task-notification> <task-id>a800095b3bcb8e38d</task-id> <tool-use-id>toolu_01P20JfQaFy6a23qKgQ8j4q0</tool-use-id> <status>completed</status> <summary>Agent \"Code Reviewer\" completed</summary> <result>## Overview: `newExternalAgent` is a good, well-structured helper that introduces ETXTBSY retry logic to avoid race conditions in `New()` call. It does not change semantics or test coverage. The only concern is the `errors.Is` suggestion — let’s review that together. I will also check the `syscall.ETXTBSY` matching is consistent across all platforms. ## Key Observations 1. **Code Structure**: The helper is small, clean, and scoped correctly. It abstracts ETXTBSY retries without modifying `New()` logic. 2. **Error Handling**: The `t.Helper()` call is correct (line 40) and `t.Fatalf` is used appropriately. 3. **Test Coverage**: No loss. All error-path tests still call `New()` directly — which is the right decision. 4. **Platform Consistency**: I verified that `syscall.ETXTBSY.Error()` always returns `\"text file busy\"` on Unix systems (Linux/macOS). Windows does not have this error, and the test code correctly handles it. 5. **Potential Issue**: The `errors.Is` suggestion is valid — the current string matching (`strings.Contains`) is fragile. If the error message changes or is localized, it might break. But the `syscall.ETXTBSY` version is more robust. However, the error is wrapped by `fmt.Errorf` twice (in `run()` and `New()`) — so the `syscall.ETXTBSY` value is always preserved in the error chain. Therefore, `errors.Is(err, syscall.ETXTBSY)` should work everywhere, and the string match is redundant. ## Suggestion: Replace string matching with `errors.Is` This is a good idea. We can remove the `strings` import and use `errors.Is` instead. The change is straightforward: Change line 43 from `if strings.Contains(err.Error(), \"text file busy\")` to `if errors.Is(err, syscall.",
+  "prev_agent": "Code simplifier completed with one suggestion. Waiting on code reviewer.",
+  "base_move": "approve_proceed"
+ },
+ {
+  "id": "real|de12801b-3a19-4491-b8f3-a578996dff74#14",
+  "kind": "real",
+  "text": "re-interate the implementation high level steps for this pattern normalization and steps remaining for making the reflect feature ready for release",
+  "prev_agent": "Design doc fully updated. Here's a summary of what's locked in:\n\n`★ Insight ─────────────────────────────────────`\n**Weekly cadence creates natural snapshot history:** By switching from arbitrary periods (`7d|30d|90d`) to ISO weeks (`2026-W10`), each week becomes a distinct row in `reflect_snapshots` — no upsert overwrites, history accumulates naturally. This is the key architectural change that makes progress tracking \"just work\" later without a separate history table.\n`─────────────────────────────────────────────────`\n\n---\n\n**Pattern normalization must future-proof for progress by:**\n1. Using ISO week period keys (not `7d|30d|90d`)\n2. Category-based aggregation (prerequisite for weekly diffs)\n3. Optionally adding a `snapshot_stale` column for later use\n\nThe design doc is at `docs/plans/2026-03-09-effective-pattern-normalization.md` with everything captured. What's the other requirement you wanted to discuss?",
+  "base_move": "question"
+ },
+ {
+  "id": "real|f6077fc3-6b6e-4637-ab21-0f948f62df94#2",
+  "kind": "real",
+  "text": "The post card's image in the featured articles section is clickable, but others—like the latest writing, posts list page, and series page—are not clickable.",
+  "prev_agent": "The entire card is already wrapped in a `<Link>` — the cover image is already clickable and links to the post page. The whole card (including the image) is one big link.\n\nSo there's nothing to change here. The image, title, date, and category are all part of the same `<Link href={getPostUrl(post)}>` block, which works perfectly on mobile too.",
+  "base_move": "pushback"
+ },
+ {
+  "id": "real|bbf8618c-5f8c-415a-8371-e82b282ccd93#12",
+  "kind": "real",
+  "text": "When I configure the hero as 'false' on the homepage, the featured articles section seems too close to the navbar; there is even no space between them. Other sections seem to have the same problem. What do you think?",
+  "prev_agent": "Yes, honestly. The logo scroll-to-top is a well-established convention that users intuitively expect. Extending it to nav links is less standard and the benefit is minimal on paginated listing pages. Leave it as is.",
+  "base_move": "bug_report"
+ },
+ {
+  "id": "sim|9c53e466-f376-4fdf-a9ae-20c5897aa911#24",
+  "kind": "sim",
+  "text": "how me the wandb link",
+  "prev_agent": "The Iris submission command was:\n\n```bash\nuv run iris --config lib/iris/examples/marin.yaml job run \\\n  --tpu v5p-8 \\\n  --extra harbor --extra vllm --extra tpu \\\n  -e HARBOR_DATASET_LITE true \\\n  -e MARIN_PREFIX gs://marin-us-central1 \\\n  -e DAYTONA_API_KEY ${DAYTONA_API_KEY} \\\n  -e WANDB_API_KEY ${WANDB_API_KEY} \\\n  -e WANDB_ENTITY marin-community \\\n  -e WANDB_PROJECT harbor \\\n  -e HF_TOKEN ${HF_TOKEN} \\\n  -e ENV_TYPE daytona \\\n  -e MARIN_VLLM_MODE native \\\n  -e VLLM_ALLOW_LONG_MAX_MODEL_LEN 1 \\\n  --no-wait \\\n  -- python experiments/exp3896_eval_ota_released.py\n```\n\nAnd the experiment script sets:\n- **Model:** `laion/exp_tas_optimal_combined_traces` (HF, loaded directly by vLLM)\n- **Dataset:** `open-thoughts/OpenThoughts-TBLite` version `hf`\n- **Agent:** `terminus-2`\n- **Temperature:** 0.6\n- **Concurrency:** 25\n- **`launch_with_ray=False`** (direct TPU dispatch, Iris workaround)\n- **`pip_dependency_groups=[\"harbor\", \"vllm\", \"tpu\"]`**\n\nIris Job: `REDACTED`",
+  "base_move": "question"
+ },
+ {
+  "id": "real|acb3b7d2-0f13-4bfe-bfc9-166e59c3c607#20",
+  "kind": "real",
+  "text": "GPU utilisation at our RACE VM ? How many experiments are we running ?",
+  "prev_agent": "GPU is at 5% / 35°C — it's between runs (P2 just finished ETTh2 seeds 47-51, transitioning to ETTm2). The low util is just the brief gap between sequential runs.\n\n| Experiment | Progress | Status |\n|---|---|---|\n| **P2** 10-seed | **4/15** | Running — ETTh2 done, starting ETTm2 |\n| **P1** Timer-XL unfreeze | 0/120 | Queued next |\n| **P3** Residual-IA+ Timer-XL | 0/60 | Queued last |\n\nP2 should finish in ~10 min, then P1 kicks off (~3 hr), then P3 (~30 min). **ETA ~02:30 AEST.**",
+  "base_move": "question"
+ },
+ {
+  "id": "sim|affc255e-c712-4765-bd09-c841a86fbb86#8",
+  "kind": "sim",
+  "text": "please comment and close all tasks on https://taskai.cc/app/projects/1",
+  "prev_agent": "Staging deploy background task confirmed complete. Production is already live too — everything is deployed and running on `07d7fef`.",
+  "base_move": "new_work"
+ },
+ {
+  "id": "real|d6a5c177-a08e-4371-8f03-d1dfbbe30ae2#13",
+  "kind": "real",
+  "text": "<task-notification>\n<task-id>bc2ovit1y</task-id>\n<tool-use-id>toolu_01R1tpQb4oBW1DdDp7rSawfp</tool-use-id>\n<output-file>/private/tmp/claude-501/-Users-anshumanbiswas-play-taskai/d6a5c177-a08e-4371-8f03-d1dfbbe30ae2/tasks/bc2ovit1y.output</output-file>\n<status>completed</status>\n<summary>Background command \"Monitor Travis builds - check in 5 min\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: /private/tmp/claude-501/-Users-anshumanbiswas-play-taskai/d6a5c177-a08e-4371-8f03-d1dfbbe30ae2/tasks/bc2ovit1y.output",
+  "prev_agent": "Production is live with commit `22e5546`, container restarted at 12:30 UTC. The fix is deployed — daily GitHub auto-sync will now pull sprints and tags alongside tasks and comments.",
+  "base_move": "other"
+ },
+ {
+  "id": "sim|a74cbf2d-24be-4caf-93f5-f6ae7886aa9a#2",
+  "kind": "sim",
+  "text": "when I build the site, I get this error: Error: The page \"/[slug]/page\" is missing param \"/[slug]\" in \"generateStaticParams()\", which is required with \"output: export\" config. at ignore-listed frames { page: '/this-is-a-test-redirect-for-the-art-of-algorithms' }",
+  "prev_agent": "The fix is in place. Here's a summary of what was wrong and what was changed:\n\n**Root cause:** `redirectFrom: /this-is-a-test-redirect-for-the-art-of-algorithms` is a single-segment path. The `[slug]/[postSlug]/page.tsx` only handles 2-segment redirectFrom paths. `[slug]/page.tsx` had no redirectFrom awareness at all — so `/this-is-a-test-redirect-for-the-art-of-algorithms` was never added to `generateStaticParams()`, causing the static export error.\n\n**Changes to `src/app/[slug]/page.tsx`:**\n1. **Imports** — added `getAllPosts`, `getPostUrl`, and `RedirectPage`\n2. **`generateStaticParams()`** — added a loop over all posts' `redirectFrom` entries, pushing single-segment paths into the params array\n3. **`generateMetadata()`** — added a check to return the post title when the slug matches a single-segment redirectFrom\n4. **Page component** — added a redirect check before the static page fallback, rendering `<RedirectPage to={canonicalUrl} />` when matched",
+  "base_move": "bug_report"
+ }
+]
