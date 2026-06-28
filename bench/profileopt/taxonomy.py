@@ -1,18 +1,20 @@
 """FINAL move taxonomy (v2) — optimized for inter-judge agreement.
 
 Replaces the 7-way (new_work, refine_redirect, pushback, bug_report, approve_proceed,
-question, +other; interrupt via regex) — mean inter-judge κ ≈ 0.65-0.69 — with a 4-way
-taxonomy chosen by a κ-search over candidate taxonomies + classifier prompts:
+question, +other; interrupt via regex) with a 4-way taxonomy chosen by a κ-search over
+candidate taxonomies + classifier prompts and confirmed on a cross-family judge panel.
 
-  approve   — pure acceptance / go-ahead, no instruction, no complaint
-  critical  — explicitly states the work is defective (bug/error/failure/wrong/reject/revert)
-  directive — tells the agent to build/add/change/proceed-with-changes (forward work), no defect
-  inquiry   — asks for information/explanation/options, no defect asserted
+  approve   — acceptance/permission, no new content, no complaint (incl. thanks/greetings)
+  critical  — asserts something is WRONG (bug/failure/wrong output/unwanted approach)
+  directive — tells the agent what to DO next, no fault asserted (new task / forward steer)
+  inquiry   — asks for information/explanation, expecting an ANSWER
 
-Mean inter-judge κ (Haiku-4.5 / Sonnet-4.6 / Opus-4.8, via CLI): 0.789, balanced across pairs,
-vs 0.647 for the 7-way on the same judges (+0.14). The key was NOT merging alone (that just
-relocates confusion) but the ordered "a defect must be explicitly asserted to be critical;
-mere direction-change is directive" decision rule.
+Mean pairwise inter-judge κ on a 120-item sample:
+  CROSS-FAMILY (Haiku-4.5 / Opus-4.8 / GPT-5): 0.681 (7-way) -> 0.805 (this 4-way), +0.12,
+    balanced (h-o 0.78, h-g 0.77, o-g 0.86), crossing the 0.80 "reliable" bar.
+  Claude-family (Haiku/Sonnet/Opus): 0.647 -> ~0.79.
+Key: NOT merging alone (that relocates confusion) but the ordered decision rule whose first
+test is "is a fault/defect asserted?" — a neutral change of approach is directive, not critical.
 
 Downstream continuity (the site's approve%/critical% are preserved):
   approve%  = approve
@@ -38,29 +40,29 @@ OLD_TO_NEW = {
     "other": None,
 }
 
-BODY = (
-    "Classify the developer's MOVE about the agent's previous turn by one OBSERVABLE test each. "
-    "Choose exactly one (check in order):\n"
-    "1. critical — the message explicitly states the work is defective: names a bug/error/failure, says it's "
-    "wrong/broken, rejects it, or says 'no/revert/undo'. The mere act of changing direction is NOT critical "
-    "unless a defect is asserted.\n"
-    "2. inquiry — the message's main act is asking for information/explanation/options and waiting for an "
-    "answer (a '?' seeking knowledge), with no defect asserted.\n"
-    "3. directive — the message tells the agent to build, add, change, or proceed-with-changes (forward work), "
-    "with no defect asserted. Approval plus an instruction is directive.\n"
-    "4. approve — the message only accepts or says go ahead, with no instruction and no defect.\n\n"
-    "Key tie-breaks: 'fix the failing test' / 'this crashes' -> critical (defect asserted). "
-    "'change it to use PUT' / 'also add caching' -> directive (no defect asserted). "
-    "'why did you do X?' -> inquiry. 'lgtm' -> approve. 'looks good, now add tests' -> directive.\n\n"
-    "EXAMPLES:\n"
-    "agent 'Added the endpoint.' -> dev 'it returns 500' -> critical\n"
-    "agent 'Added the endpoint.' -> dev 'now add auth to it' -> directive\n"
-    "agent 'Refactored to async.' -> dev 'revert that, it deadlocks' -> critical\n"
-    "agent 'Refactored to async.' -> dev 'is async safe here?' -> inquiry\n"
-    "agent 'Done.' -> dev 'ship it' -> approve"
-)
+BODY = """Classify the developer's MOVE by the observable function of their message toward the agent's previous turn. Judge what the message DOES, not its topic. Choose exactly one:
 
-# CLI (subscription) judges by default; OpenRouter ids available when the account has credits.
+- approve: Signals acceptance or permission with no new content and no complaint — praise, agreement, 'yes/ok/lgtm/go ahead/perfect', a bare go-ahead, or standalone thanks/greetings. The message could be deleted and the agent would just continue.
+- critical: Asserts something is WRONG — reports a bug, failure, or wrong output, or says the approach/answer is mistaken or unwanted ('no/that's wrong/you misunderstood/this is broken').
+- directive: Tells the agent what to DO next without asserting prior work was wrong — a new task, an addition, or a forward steer/refinement. Imperative or action request with no fault stated.
+- inquiry: Primarily asks for information or explanation, expecting an ANSWER rather than an action ('why/how/what/can it...?').
+
+DECISION RULE (top-down, first match wins):
+1. States or implies a fault/error/dissatisfaction, or calls the result wrong/unwanted -> critical (even if it also says what to do, and even if phrased as a question like 'why is this still broken?'). NOTE: 'instead/rather/don't' alone do NOT make it critical — a neutral swap of approach with no stated problem is directive.
+2. Else asks for information and expects an answer -> inquiry.
+3. Else requests/commands any action, new task, or change -> directive.
+4. Else (only acceptance/permission/praise/thanks/greeting) -> approve.
+
+EXAMPLES:
+Agent: 'I refactored auth into a service.' -> Dev: 'Now also add rate limiting.' -> directive
+Agent: 'Switched the parser to regex.' -> Dev: 'Use the AST approach instead.' -> directive (swap, no defect stated)
+Agent: 'Switched the parser to regex.' -> Dev: 'Regex misses nested cases — use AST.' -> critical (defect named)
+Agent: 'Returns the sorted list.' -> Dev: 'It still returns them unsorted.' -> critical
+Agent: 'I added retries with backoff.' -> Dev: 'Why exponential over fixed?' -> inquiry
+Agent: 'Tests pass.' -> Dev: 'Great, ship it.' -> approve
+Agent: 'Done.' -> Dev: 'Thanks!' -> approve"""
+
+# CLI (subscription) judges by default; OpenRouter ids for the cross-family panel.
 CLI_JUDGES = {"haiku": "claude-haiku-4-5-20251001", "sonnet": "claude-sonnet-4-6", "opus": "claude-opus-4-8"}
 OR_JUDGES = {"haiku": "anthropic/claude-haiku-4.5", "opus": "anthropic/claude-opus-4.8", "gpt5": "openai/gpt-5"}
 
@@ -75,13 +77,12 @@ def _prompt(text, prev_agent):
 
 
 def _strip_interrupt(text):
-    s = (text or "").strip()
-    return re.sub(r'^\[INTERRUPT\]\s*', '', s, flags=re.I).strip()
+    return re.sub(r'^\[INTERRUPT\]\s*', '', (text or "").strip(), flags=re.I).strip()
 
 
 def classify(text, prev_agent, model="claude-haiku-4-5-20251001", backend="cli"):
-    """Classify one message into the v2 4-way taxonomy. Interrupts: classify the text after the
-    marker; a bare interrupt (no text) is 'critical' (a corrective cut-off)."""
+    """Classify one message into the v2 4-way. Interrupts: classify the text after the marker;
+    a bare interrupt (no text) is 'critical' (a corrective cut-off)."""
     if V.is_interrupt(text):
         rest = _strip_interrupt(text)
         if not rest:
