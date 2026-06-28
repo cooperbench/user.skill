@@ -8,3 +8,4 @@ bench/results/*.jsonl
 bench/results/*.log
 bench/profileopt/*cache*.jsonl
 bench/profileopt/*.log
+bench/profileopt/rerun_raw.jsonl
