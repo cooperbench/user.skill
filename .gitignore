@@ -6,3 +6,5 @@ results/generations*.jsonl
 .DS_Store
 bench/results/*.jsonl
 bench/results/*.log
+bench/profileopt/*cache*.jsonl
+bench/profileopt/*.log

@@ -1,0 +1,66 @@
+{
+ "OPT": [
+  "135yshr",
+  "tslateman",
+  "shunkakinoki",
+  "soph",
+  "dayhaysoos",
+  "jdsingh122918",
+  "armelhbobdad",
+  "kurtn718"
+ ],
+ "EVAL": [
+  "gtrrz-victor",
+  "alienkevin",
+  "oddessentials",
+  "abiswas-elastio-com",
+  "pc035860",
+  "melagiri",
+  "henryph24",
+  "tarasyarema",
+  "khaong",
+  "hutusi"
+ ],
+ "opt_stats": {
+  "135yshr": {
+   "sessions": 41,
+   "heldout_sessions": 8,
+   "heldout_turns": 72
+  },
+  "tslateman": {
+   "sessions": 41,
+   "heldout_sessions": 8,
+   "heldout_turns": 69
+  },
+  "shunkakinoki": {
+   "sessions": 26,
+   "heldout_sessions": 5,
+   "heldout_turns": 66
+  },
+  "soph": {
+   "sessions": 167,
+   "heldout_sessions": 8,
+   "heldout_turns": 62
+  },
+  "dayhaysoos": {
+   "sessions": 415,
+   "heldout_sessions": 8,
+   "heldout_turns": 61
+  },
+  "jdsingh122918": {
+   "sessions": 59,
+   "heldout_sessions": 8,
+   "heldout_turns": 54
+  },
+  "armelhbobdad": {
+   "sessions": 51,
+   "heldout_sessions": 8,
+   "heldout_turns": 52
+  },
+  "kurtn718": {
+   "sessions": 27,
+   "heldout_sessions": 5,
+   "heldout_turns": 47
+  }
+ }
+}
