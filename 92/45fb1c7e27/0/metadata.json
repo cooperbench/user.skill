@@ -1,0 +1,31 @@
+{
+  "cli_version": "0.4.5",
+  "checkpoint_id": "9245fb1c7e27",
+  "session_id": "da864ebe-6204-4f1a-bc7e-e1ee4da86833",
+  "strategy": "manual-commit",
+  "created_at": "2026-06-28T23:56:11.025182Z",
+  "branch": "v0-bench",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "bench/profileopt/experiments/condagree_multi/taxonomy.json"
+  ],
+  "agent": "Claude Code",
+  "turn_id": "f29049a0ff56",
+  "token_usage": {
+    "input_tokens": 30960,
+    "cache_creation_tokens": 3037524,
+    "cache_read_tokens": 218767354,
+    "output_tokens": 720875,
+    "api_call_count": 398
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-06-28T23:56:09.675103Z",
+    "agent_lines": 0,
+    "human_added": 26,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 26,
+    "agent_percentage": 0
+  },
+  "transcript_path": ".claude/projects/-Users-kevin-Dev/da864ebe-6204-4f1a-bc7e-e1ee4da86833.jsonl"
+}
