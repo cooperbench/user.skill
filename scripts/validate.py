@@ -347,32 +347,13 @@ SPEECH_ACTS = ["new_work", "refine_redirect", "pushback", "bug_report",
 
 
 def speech_act(text, prev_agent):
-    """Classify the developer's conversational MOVE (speech act), ignoring specific details.
-    Interrupts are detected without an API call; everything else is LLM-classified."""
-    if is_interrupt(text):
-        return "interrupt"
-    if not (text or "").strip():
-        return None
-    prompt = (
-        "A developer is using an AI coding agent. The agent just said:\n"
-        f"<agent>{truncate_words(prev_agent, 120)}</agent>\n\n"
-        "The developer's next message was:\n"
-        f"<message>{truncate_words(text, 150)}</message>\n\n"
-        "Classify the developer's conversational MOVE (speech act), ignoring the specific "
-        "details/topic. Choose exactly one:\n"
-        "- new_work: introduces a NEW feature/task/requirement to build or document\n"
-        "- refine_redirect: steers or adjusts the CURRENT task; changes requirements\n"
-        "- pushback: corrects, rejects, or complains about the agent's output/approach\n"
-        "- bug_report: reports something broken or not behaving as expected\n"
-        "- approve_proceed: approves, says continue, commit/push, or moves on\n"
-        "- question: asks for information or clarification\n"
-        "- other\n"
-        'Respond with ONLY JSON: {"act": "<one of the above>"}'
-    )
-    out = run_claude(prompt, JUDGE_MODEL, timeout=120)
-    m = re.search(r'"act"\s*:\s*"(\w+)"', out)
-    act = m.group(1) if m else None
-    return act if act in SPEECH_ACTS else ("other" if act else None)
+    """Canonical move classifier — the v2 4-way taxonomy (approve/critical/directive/inquiry).
+    Delegates to bench/profileopt/taxonomy.py (the single source of truth for all evals).
+    Lazy import avoids a load-time cycle (taxonomy imports this module)."""
+    import sys as _sys
+    _sys.path.insert(0, str(ROOT / "bench" / "profileopt"))
+    import taxonomy as _TAX
+    return _TAX.classify(text, prev_agent, model=JUDGE_MODEL, backend="cli")
 
 
 _INTENT_MOVE = {"create new code": "new_work", "refactor": "refine_redirect",
