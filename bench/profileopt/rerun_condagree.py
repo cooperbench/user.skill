@@ -17,7 +17,7 @@ import taxonomy as TAX
 
 TEST = json.loads((HERE / "splits.json").read_text())["test"]["qualifying_users"]
 N_PER_USER = 30
-MODELS = {"deepseek-v3.1": "deepseek/deepseek-chat-v3.1", "osim-4b": "osim-4b"}
+MODELS = {"deepseek-v3.1": "deepseek/deepseek-chat-v3.1", "deepseek-v4-flash": "deepseek/deepseek-v4-flash", "deepseek-v4-pro": "deepseek/deepseek-v4-pro", "osim-4b": "osim-4b"}
 CONDS = ["distilled", "generic"]
 RAW = HERE / "rerun_raw.jsonl"
 JUDGE = "anthropic/claude-haiku-4.5"  # single cheapest judge — the 4-way taxonomy is reliable enough (κ≈0.80)
@@ -97,7 +97,7 @@ def main():
     print(f"generations: {len(gj)} to run")
     def rg(j):
         p,m,c=j; return {"key":f"gen|{p['point_id']}|{m}|{c}","kind":"gen","point_id":p["point_id"],"slug":p["slug"],"model":m,"cond":c,"text":gen(p,m,c)}
-    with ThreadPoolExecutor(max_workers=32) as ex:
+    with ThreadPoolExecutor(max_workers=64) as ex:
         for i,f in enumerate(as_completed([ex.submit(rg,j) for j in gj]),1):
             put(f.result())
             if i%50==0: print(f"  gen {i}/{len(gj)}")
@@ -115,7 +115,7 @@ def main():
         kind,p,text=it
         return (kind,p["point_id"], label(text, p["prev_agent"]))
     moves={}
-    with ThreadPoolExecutor(max_workers=32) as ex:
+    with ThreadPoolExecutor(max_workers=64) as ex:
         for i,f in enumerate(as_completed([ex.submit(rl,it) for it in items]),1):
             kind,pid,mv=f.result(); moves[(kind,pid)]=mv
             if i%100==0: print(f"  label {i}/{len(items)}")
