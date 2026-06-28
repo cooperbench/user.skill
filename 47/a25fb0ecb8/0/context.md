@@ -561,3 +561,13 @@ python3 - &lt;&lt;'PY'
 p='bench/profileopt/exp_condagree.py'; s=open(p).read()
 s=s.replace('    mv = TAX.classify(tex...
 
+### Prompt 91
+
+This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
+
+Summary:
+1. Primary Request and Intent:
+
+The conversation built "UserSimBench" — a benchmark evaluating user simulators in the coding-agent setting, grounded in real SWE-chat data. The CURRENT (most recent) goal, set via /goal, is:
+   - "this latest 4-way taxonomy looks great, please document this in our code base and set it as the taxonomy fo...
+
