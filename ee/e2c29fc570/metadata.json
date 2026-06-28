@@ -1,0 +1,26 @@
+{
+  "cli_version": "0.4.5",
+  "checkpoint_id": "eee2c29fc570",
+  "strategy": "manual-commit",
+  "branch": "v0-bench",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "bench/profileopt/rerun_condagree.py"
+  ],
+  "sessions": [
+    {
+      "metadata": "/ee/e2c29fc570/0/metadata.json",
+      "transcript": "/ee/e2c29fc570/0/full.jsonl",
+      "context": "/ee/e2c29fc570/0/context.md",
+      "content_hash": "/ee/e2c29fc570/0/content_hash.txt",
+      "prompt": "/ee/e2c29fc570/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 30960,
+    "cache_creation_tokens": 3037524,
+    "cache_read_tokens": 218767354,
+    "output_tokens": 720875,
+    "api_call_count": 398
+  }
+}
