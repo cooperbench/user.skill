@@ -61,8 +61,10 @@ MODELS = {
 }
 CONDS = ["distilled", "generic"]   # own user folder (inline) vs no folder
 JUDGE = "anthropic/claude-haiku-4.5"   # move classifier (matches repo JUDGE_MODEL family)
-ACTIVE = {"new_work", "refine_redirect", "pushback", "bug_report", "question", "interrupt"}
-CRITICAL = {"pushback", "interrupt", "bug_report"}
+# v2 4-way taxonomy (approve/critical/directive/inquiry). critical = old pushback+interrupt+bug_report.
+ACTIVE = {"critical", "directive", "inquiry"}
+CRITICAL = {"critical"}
+APPROVE = {"approve"}
 GEN_WORKERS = 8
 LABEL_WORKERS = 8
 
@@ -103,31 +105,13 @@ def gen_message(point, model_id, cond):
 # ---------------- move classifier (OpenRouter Haiku; same prompt as validate.speech_act) ----------------
 
 def classify_move(text, prev_agent):
-    if V.is_interrupt(text):
-        return "interrupt"
-    if not (text or "").strip() or V.is_cli_failure(text):
-        return None
-    prompt = (
-        "A developer is using an AI coding agent. The agent just said:\n"
-        f"<agent>{V.truncate_words(prev_agent, 120)}</agent>\n\n"
-        "The developer's next message was:\n"
-        f"<message>{V.truncate_words(text, 150)}</message>\n\n"
-        "Classify the developer's conversational MOVE (speech act), ignoring the specific "
-        "details/topic. Choose exactly one:\n"
-        "- new_work: introduces a NEW feature/task/requirement to build or document\n"
-        "- refine_redirect: steers or adjusts the CURRENT task; changes requirements\n"
-        "- pushback: corrects, rejects, or complains about the agent's output/approach\n"
-        "- bug_report: reports something broken or not behaving as expected\n"
-        "- approve_proceed: approves, says continue, commit/push, or moves on\n"
-        "- question: asks for information or clarification\n"
-        "- other\n"
-        'Respond with ONLY JSON: {"act": "<one of the above>"}'
-    )
-    out = orouter.chat(JUDGE, prompt, max_tokens=600, temperature=0, reasoning_effort=None)
-    import re
-    m = re.search(r'"act"\s*:\s*"(\w+)"', out)
-    act = m.group(1) if m else None
-    return act if act in V.SPEECH_ACTS else ("other" if act else None)
+    """Canonical move classifier — the v2 4-way taxonomy (approve/critical/directive/inquiry).
+    Delegates to bench/profileopt/taxonomy.py (single Haiku judge via OpenRouter). For the
+    higher-agreement 3-judge majority label, use taxonomy.majority_label."""
+    import sys as _sys
+    _sys.path.insert(0, str(ROOT / "bench" / "profileopt"))
+    import taxonomy as _TAX
+    return _TAX.classify(text, prev_agent, model="anthropic/claude-haiku-4.5", backend="or")
 
 
 # ---------------- caching ----------------
@@ -191,7 +175,7 @@ def score_block(real_moves, sim_moves, paired):
         "MoveFid": movefid(real_moves, sim_moves),
         "1-TVD": round(1 - tvd(real_moves, sim_moves), 3),
         "CondAgree": cond_agree(paired),
-        "approve%": rate(sim_moves, {"approve_proceed"}),
+        "approve%": rate(sim_moves, APPROVE),
         "critical%": rate(sim_moves, CRITICAL),
         "active%": rate(sim_moves, ACTIVE),
     }
@@ -296,7 +280,7 @@ def main():
         return items[-1][0]
 
     refs = {
-        "always_approve": ["approve_proceed"] * len(valid),
+        "always_approve": ["approve"] * len(valid),
         "majority":       [pmax] * len(valid),
         "prior_sampler":  [sample_from_real(pid) for pid in valid],
     }
@@ -308,7 +292,7 @@ def main():
     out = {
         "n_points": len(valid),
         "real_move_distribution": {k: round(v, 3) for k, v in sorted(rd.items(), key=lambda x: -x[1])},
-        "real_approve%": rate(real_moves, {"approve_proceed"}),
+        "real_approve%": rate(real_moves, APPROVE),
         "real_critical%": rate(real_moves, CRITICAL),
         "real_active%": rate(real_moves, ACTIVE),
         "condagree_marginal_ceiling": collision,
