@@ -1,0 +1,34 @@
+{
+  "cli_version": "0.4.5",
+  "checkpoint_id": "97f772723995",
+  "strategy": "manual-commit",
+  "branch": "v0-bench",
+  "checkpoints_count": 6,
+  "files_touched": [
+    "bench/profileopt/candidates.json",
+    "bench/profileopt/run_candidates.py",
+    "bench/profileopt/run_refine.py",
+    "bench/profileopt/tax_eval.py",
+    "bench/profileopt/tax_eval_cli.py",
+    "bench/profileopt/tax_results.jsonl",
+    "bench/profileopt/tax_sample.json",
+    "bench/profileopt/tax_sample.py",
+    "bench/profileopt/taxonomy.py"
+  ],
+  "sessions": [
+    {
+      "metadata": "/97/f772723995/0/metadata.json",
+      "transcript": "/97/f772723995/0/full.jsonl",
+      "context": "/97/f772723995/0/context.md",
+      "content_hash": "/97/f772723995/0/content_hash.txt",
+      "prompt": "/97/f772723995/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 16171,
+    "cache_creation_tokens": 2048609,
+    "cache_read_tokens": 122432840,
+    "output_tokens": 558009,
+    "api_call_count": 286
+  }
+}

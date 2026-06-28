@@ -1,0 +1,39 @@
+{
+  "cli_version": "0.4.5",
+  "checkpoint_id": "97f772723995",
+  "session_id": "da864ebe-6204-4f1a-bc7e-e1ee4da86833",
+  "strategy": "manual-commit",
+  "created_at": "2026-06-28T20:22:23.661498Z",
+  "branch": "v0-bench",
+  "checkpoints_count": 6,
+  "files_touched": [
+    "bench/profileopt/candidates.json",
+    "bench/profileopt/run_candidates.py",
+    "bench/profileopt/run_refine.py",
+    "bench/profileopt/tax_eval.py",
+    "bench/profileopt/tax_eval_cli.py",
+    "bench/profileopt/tax_results.jsonl",
+    "bench/profileopt/tax_sample.json",
+    "bench/profileopt/tax_sample.py",
+    "bench/profileopt/taxonomy.py"
+  ],
+  "agent": "Claude Code",
+  "turn_id": "5b0cd21090c9",
+  "token_usage": {
+    "input_tokens": 16171,
+    "cache_creation_tokens": 2048609,
+    "cache_read_tokens": 122432840,
+    "output_tokens": 558009,
+    "api_call_count": 286
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-06-28T20:22:22.661036Z",
+    "agent_lines": 1401,
+    "human_added": 941,
+    "human_modified": 4,
+    "human_removed": 0,
+    "total_committed": 2345,
+    "agent_percentage": 59.74413646055437
+  },
+  "transcript_path": ".claude/projects/-Users-kevin-Dev/da864ebe-6204-4f1a-bc7e-e1ee4da86833.jsonl"
+}
