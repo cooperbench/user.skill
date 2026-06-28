@@ -2914,3 +2914,4 @@
 {"type":"mode","mode":"normal","sessionId":"da864ebe-6204-4f1a-bc7e-e1ee4da86833"}
 {"type":"permission-mode","permissionMode":"bypassPermissions","sessionId":"da864ebe-6204-4f1a-bc7e-e1ee4da86833"}
 {"type":"bridge-session","sessionId":"da864ebe-6204-4f1a-bc7e-e1ee4da86833","bridgeSessionId":"cse_01NQUgj6BeDsKMr5WcDB8YwB","lastSequenceNum":0}
+{"type":"queue-operation","operation":"enqueue","timestamp":"2026-06-28T23:56:45.479Z","sessionId":"da864ebe-6204-4f1a-bc7e-e1ee4da86833","content":"please hide deepseek-v4-flash and deepseek-v3.1 by default in the main chart to save space but allow view by selecting which models to see"}
