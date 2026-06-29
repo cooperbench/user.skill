@@ -52,7 +52,7 @@
    "name": "deepseek-v4-pro",
    "backend": "or",
    "id": "deepseek/deepseek-v4-pro",
-   "effort": "low",
+   "effort": "max",
    "conc": 64
   },
   {

@@ -34,7 +34,7 @@ CONDS = ["distilled", "generic"]
 MODELS = [
     {"name": "deepseek-v3.1",     "backend": "or",    "id": "deepseek/deepseek-chat-v3.1", "effort": "low",   "conc": 64},
     {"name": "deepseek-v4-flash", "backend": "or",    "id": "deepseek/deepseek-v4-flash",  "effort": "low",   "conc": 64},
-    {"name": "deepseek-v4-pro",   "backend": "or",    "id": "deepseek/deepseek-v4-pro",    "effort": "low",   "conc": 64},
+    {"name": "deepseek-v4-pro",   "backend": "or",    "id": "deepseek/deepseek-v4-pro",    "effort": "max",   "conc": 64},
     {"name": "gpt-5.5",           "backend": "or",    "id": "openai/gpt-5.5",              "effort": "xhigh", "conc": 64},
     {"name": "claude-opus-4.8",   "backend": "or",    "id": "anthropic/claude-opus-4.8",   "effort": "xhigh", "conc": 64},
     {"name": "glm-5.2",           "backend": "or",    "id": "z-ai/glm-5.2",                "effort": "max",   "conc": 64},

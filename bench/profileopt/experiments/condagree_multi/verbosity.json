@@ -54,13 +54,13 @@
    "id": "deepseek-v4-pro",
    "label": "DeepSeek-V4-Pro",
    "kind": "general",
-   "np": 17.1,
-   "wp": 9.3,
+   "np": 16.9,
+   "wp": 7.9,
    "np_med": 10,
    "wp_med": 3,
-   "ca_np": 0.497,
-   "ca_wp": 0.514,
-   "d": 0.017
+   "ca_np": 0.502,
+   "ca_wp": 0.532,
+   "d": 0.03
   },
   {
    "id": "deepseek-v4-flash",

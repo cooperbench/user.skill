@@ -91,6 +91,30 @@
    }
   },
   {
+   "id": "deepseek-v4-pro",
+   "label": "DeepSeek-V4-Pro",
+   "kind": "general",
+   "overall_d": 0.031,
+   "generic": {
+    "approve": 0.328,
+    "critical": 0.295,
+    "directive": 0.73,
+    "inquiry": 0.025
+   },
+   "distilled": {
+    "approve": 0.397,
+    "critical": 0.248,
+    "directive": 0.782,
+    "inquiry": 0.125
+   },
+   "delta": {
+    "approve": 0.069,
+    "critical": -0.047,
+    "directive": 0.052,
+    "inquiry": 0.1
+   }
+  },
+  {
    "id": "claude-opus-4.8",
    "label": "Claude-Opus-4.8",
    "kind": "general",
@@ -112,30 +136,6 @@
     "critical": -0.026,
     "directive": 0.064,
     "inquiry": -0.023
-   }
-  },
-  {
-   "id": "deepseek-v4-pro",
-   "label": "DeepSeek-V4-Pro",
-   "kind": "general",
-   "overall_d": 0.019,
-   "generic": {
-    "approve": 0.276,
-    "critical": 0.293,
-    "directive": 0.726,
-    "inquiry": 0.053
-   },
-   "distilled": {
-    "approve": 0.379,
-    "critical": 0.256,
-    "directive": 0.754,
-    "inquiry": 0.075
-   },
-   "delta": {
-    "approve": 0.103,
-    "critical": -0.037,
-    "directive": 0.028,
-    "inquiry": 0.022
    }
   },
   {
