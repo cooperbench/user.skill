@@ -26,6 +26,7 @@ EXP = HERE / "experiments" / "condagree_multi"
 EXP.mkdir(parents=True, exist_ok=True)
 RAW = HERE / "rerun_raw.jsonl"        # shared resumable cache (already holds deepseek-v3.1, osim-4b, v4*)
 JUDGE = "anthropic/claude-haiku-4.5"  # single cheapest judge
+GEN_RETRIES = 4  # retry transient API failures (rate-limit / 5xx / cap) in-call before giving up
 N_PER_USER = 30
 TEST = json.loads((HERE / "splits.json").read_text())["test"]["qualifying_users"]
 CONDS = ["distilled", "generic"]
@@ -46,8 +47,11 @@ MCFG = {m["name"]: m for m in MODELS}
 _cache = {}
 if RAW.exists():
     for l in RAW.read_text().splitlines():
-        if l.strip():
-            r = json.loads(l); _cache[r["key"]] = r
+        if not l.strip(): continue
+        r = json.loads(l); t = r.get("text")
+        if r.get("kind") == "gen" and (not str(t).strip() or str(t).startswith("Error:")):
+            continue  # treat failed gens as absent -> todo() regenerates (backfills) them this run
+        _cache[r["key"]] = r
 _lock = __import__("threading").Lock()
 def put(rec):
     with _lock:
@@ -106,6 +110,9 @@ def run_gens(jobs, conc, tag):
     def rg(j):
         p,mname,c = j
         txt, meta = gen(p, mname, c)
+        for _ in range(GEN_RETRIES):
+            if str(txt).strip() and not str(txt).startswith("Error:"): break
+            txt, meta = gen(p, mname, c)  # retry transient failures before caching
         cfg = MCFG[mname]
         return {"key": f"gen|{p['point_id']}|{mname}|{c}", "kind": "gen", "point_id": p["point_id"], "slug": p["slug"],
                 "model": mname, "model_id": cfg["id"], "backend": cfg["backend"], "effort": cfg["effort"],
@@ -113,7 +120,9 @@ def run_gens(jobs, conc, tag):
     done = 0
     with ThreadPoolExecutor(max_workers=conc) as ex:
         for f in as_completed([ex.submit(rg, j) for j in jobs]):
-            put(f.result()); done += 1
+            r = f.result(); t = str(r.get("text", ""))
+            if t.strip() and not t.startswith("Error:"): put(r)  # never cache failures -> they retry on the next run
+            done += 1
             if done % 100 == 0: print(f"    [{tag}] {done}/{len(jobs)}")
 
 def main():

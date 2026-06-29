@@ -1,7 +1,7 @@
 {
  "experiment": "condagree_multi",
- "timestamp": 1782690438.940002,
- "git_sha": "5e0862f79d654e70862bbc91304f46f3a221e4d5",
+ "timestamp": 1782705287.019351,
+ "git_sha": "840743a7fbe7b67ea7620e0b053d0b6ed745561b",
  "taxonomy": "v2-4way (bench/profileopt/taxonomy.py)",
  "judge_model": "anthropic/claude-haiku-4.5",
  "split_file": "bench/profileopt/splits.json",

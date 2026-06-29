@@ -22,24 +22,24 @@
    "id": "glm-5.2",
    "label": "GLM-5.2",
    "kind": "general",
-   "overall_d": 0.116,
+   "overall_d": 0.105,
    "generic": {
-    "approve": 0.302,
-    "critical": 0.259,
-    "directive": 0.722,
-    "inquiry": 0.059
+    "approve": 0.259,
+    "critical": 0.242,
+    "directive": 0.714,
+    "inquiry": 0.05
    },
    "distilled": {
-    "approve": 0.465,
-    "critical": 0.383,
-    "directive": 0.834,
+    "approve": 0.414,
+    "critical": 0.328,
+    "directive": 0.826,
     "inquiry": 0.1
    },
    "delta": {
-    "approve": 0.163,
-    "critical": 0.124,
+    "approve": 0.155,
+    "critical": 0.086,
     "directive": 0.112,
-    "inquiry": 0.041
+    "inquiry": 0.05
    }
   },
   {
@@ -96,22 +96,22 @@
    "kind": "general",
    "overall_d": 0.024,
    "generic": {
-    "approve": 0.178,
-    "critical": 0.526,
-    "directive": 0.614,
-    "inquiry": 0.083
+    "approve": 0.155,
+    "critical": 0.477,
+    "directive": 0.617,
+    "inquiry": 0.1
    },
    "distilled": {
-    "approve": 0.163,
-    "critical": 0.474,
-    "directive": 0.69,
-    "inquiry": 0.094
+    "approve": 0.155,
+    "critical": 0.451,
+    "directive": 0.681,
+    "inquiry": 0.077
    },
    "delta": {
-    "approve": -0.015,
-    "critical": -0.052,
-    "directive": 0.076,
-    "inquiry": 0.011
+    "approve": 0.0,
+    "critical": -0.026,
+    "directive": 0.064,
+    "inquiry": -0.023
    }
   },
   {
@@ -163,50 +163,26 @@
    }
   },
   {
-   "id": "gpt-5.5",
-   "label": "GPT-5.5",
-   "kind": "general",
-   "overall_d": -0.01,
-   "generic": {
-    "approve": 0.381,
-    "critical": 0.313,
-    "directive": 0.84,
-    "inquiry": 0.062
-   },
-   "distilled": {
-    "approve": 0.366,
-    "critical": 0.3,
-    "directive": 0.832,
-    "inquiry": 0.061
-   },
-   "delta": {
-    "approve": -0.015,
-    "critical": -0.013,
-    "directive": -0.008,
-    "inquiry": -0.001
-   }
-  },
-  {
    "id": "gemini-3.1-pro",
    "label": "Gemini-3.1-Pro",
    "kind": "general",
-   "overall_d": -0.014,
+   "overall_d": -0.008,
    "generic": {
-    "approve": 0.356,
-    "critical": 0.26,
-    "directive": 0.815,
-    "inquiry": 0.029
+    "approve": 0.328,
+    "critical": 0.263,
+    "directive": 0.81,
+    "inquiry": 0.025
    },
    "distilled": {
-    "approve": 0.354,
-    "critical": 0.215,
-    "directive": 0.813,
-    "inquiry": 0.029
+    "approve": 0.362,
+    "critical": 0.226,
+    "directive": 0.806,
+    "inquiry": 0.025
    },
    "delta": {
-    "approve": -0.002,
-    "critical": -0.045,
-    "directive": -0.002,
+    "approve": 0.034,
+    "critical": -0.037,
+    "directive": -0.004,
     "inquiry": 0.0
    }
   },
@@ -214,24 +190,48 @@
    "id": "deepseek-v3.1",
    "label": "DeepSeek-V3.1",
    "kind": "general",
-   "overall_d": -0.016,
+   "overall_d": -0.017,
    "generic": {
-    "approve": 0.211,
-    "critical": 0.159,
-    "directive": 0.854,
+    "approve": 0.207,
+    "critical": 0.158,
+    "directive": 0.855,
     "inquiry": 0.1
    },
    "distilled": {
     "approve": 0.328,
-    "critical": 0.212,
-    "directive": 0.772,
+    "critical": 0.211,
+    "directive": 0.77,
     "inquiry": 0.075
    },
    "delta": {
-    "approve": 0.117,
+    "approve": 0.121,
     "critical": 0.053,
-    "directive": -0.082,
+    "directive": -0.085,
     "inquiry": -0.025
+   }
+  },
+  {
+   "id": "gpt-5.5",
+   "label": "GPT-5.5",
+   "kind": "general",
+   "overall_d": -0.021,
+   "generic": {
+    "approve": 0.345,
+    "critical": 0.346,
+    "directive": 0.819,
+    "inquiry": 0.05
+   },
+   "distilled": {
+    "approve": 0.328,
+    "critical": 0.286,
+    "directive": 0.81,
+    "inquiry": 0.075
+   },
+   "delta": {
+    "approve": -0.017,
+    "critical": -0.06,
+    "directive": -0.009,
+    "inquiry": 0.025
    }
   }
  ]

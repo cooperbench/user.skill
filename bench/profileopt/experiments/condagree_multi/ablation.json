@@ -1,0 +1,103 @@
+{
+ "style_prefix": "Style only. The developer is a busy senior engineer. They reply tersely and directly, usually in under 12 words. They rarely ask clarifying questions; they prefer to give a quick instruction, a blunt correction, or a one-word yes/no. They do not explain themselves or restate the task. (No other information about this developer is known.)",
+ "models": {
+  "glm-5.2": {
+   "generic": {
+    "mean": 0.46,
+    "ci": 0.075,
+    "n_users": 20,
+    "micro": 0.473,
+    "spurious_inquiry": 0.112,
+    "avg_words": 34.8,
+    "recall": {
+     "approve": 0.259,
+     "critical": 0.242,
+     "directive": 0.714,
+     "inquiry": 0.05
+    }
+   },
+   "distilled": {
+    "mean": 0.559,
+    "ci": 0.075,
+    "n_users": 20,
+    "micro": 0.578,
+    "spurious_inquiry": 0.032,
+    "avg_words": 12.9,
+    "recall": {
+     "approve": 0.414,
+     "critical": 0.328,
+     "directive": 0.826,
+     "inquiry": 0.1
+    }
+   },
+   "styleonly": {
+    "mean": 0.484,
+    "ci": 0.091,
+    "n_users": 20,
+    "micro": 0.494,
+    "spurious_inquiry": 0.034,
+    "avg_words": 4.7,
+    "recall": {
+     "approve": 0.362,
+     "critical": 0.173,
+     "directive": 0.774,
+     "inquiry": 0.0
+    }
+   },
+   "summary": {
+    "persona_gain": 0.099,
+    "style_gain": 0.024,
+    "style_recovers_frac": 0.24
+   }
+  },
+  "gpt-5.5": {
+   "generic": {
+    "mean": 0.546,
+    "ci": 0.077,
+    "n_users": 20,
+    "micro": 0.566,
+    "spurious_inquiry": 0.027,
+    "avg_words": 21.4,
+    "recall": {
+     "approve": 0.345,
+     "critical": 0.346,
+     "directive": 0.819,
+     "inquiry": 0.05
+    }
+   },
+   "distilled": {
+    "mean": 0.53,
+    "ci": 0.101,
+    "n_users": 20,
+    "micro": 0.545,
+    "spurious_inquiry": 0.039,
+    "avg_words": 11.0,
+    "recall": {
+     "approve": 0.328,
+     "critical": 0.286,
+     "directive": 0.81,
+     "inquiry": 0.075
+    }
+   },
+   "styleonly": {
+    "mean": 0.463,
+    "ci": 0.089,
+    "n_users": 20,
+    "micro": 0.497,
+    "spurious_inquiry": 0.027,
+    "avg_words": 4.8,
+    "recall": {
+     "approve": 0.259,
+     "critical": 0.18,
+     "directive": 0.794,
+     "inquiry": 0.05
+    }
+   },
+   "summary": {
+    "persona_gain": -0.016,
+    "style_gain": -0.083,
+    "style_recovers_frac": 5.19
+   }
+  }
+ }
+}
