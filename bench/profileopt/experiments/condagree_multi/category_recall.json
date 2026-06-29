@@ -1,0 +1,238 @@
+{
+ "real_freq": {
+  "approve": 0.121,
+  "critical": 0.278,
+  "directive": 0.518,
+  "inquiry": 0.084
+ },
+ "support": {
+  "approve": 58,
+  "critical": 133,
+  "directive": 248,
+  "inquiry": 40
+ },
+ "cats": [
+  "approve",
+  "critical",
+  "directive",
+  "inquiry"
+ ],
+ "models": [
+  {
+   "id": "glm-5.2",
+   "label": "GLM-5.2",
+   "kind": "general",
+   "overall_d": 0.116,
+   "generic": {
+    "approve": 0.302,
+    "critical": 0.259,
+    "directive": 0.722,
+    "inquiry": 0.059
+   },
+   "distilled": {
+    "approve": 0.465,
+    "critical": 0.383,
+    "directive": 0.834,
+    "inquiry": 0.1
+   },
+   "delta": {
+    "approve": 0.163,
+    "critical": 0.124,
+    "directive": 0.112,
+    "inquiry": 0.041
+   }
+  },
+  {
+   "id": "osim-4b",
+   "label": "OSim-4B",
+   "kind": "specialized",
+   "overall_d": 0.079,
+   "generic": {
+    "approve": 0.172,
+    "critical": 0.248,
+    "directive": 0.552,
+    "inquiry": 0.175
+   },
+   "distilled": {
+    "approve": 0.259,
+    "critical": 0.338,
+    "directive": 0.657,
+    "inquiry": 0.05
+   },
+   "delta": {
+    "approve": 0.087,
+    "critical": 0.09,
+    "directive": 0.105,
+    "inquiry": -0.125
+   }
+  },
+  {
+   "id": "osim-8b",
+   "label": "OSim-8B",
+   "kind": "specialized",
+   "overall_d": 0.052,
+   "generic": {
+    "approve": 0.207,
+    "critical": 0.195,
+    "directive": 0.653,
+    "inquiry": 0.3
+   },
+   "distilled": {
+    "approve": 0.345,
+    "critical": 0.331,
+    "directive": 0.681,
+    "inquiry": 0.1
+   },
+   "delta": {
+    "approve": 0.138,
+    "critical": 0.136,
+    "directive": 0.028,
+    "inquiry": -0.2
+   }
+  },
+  {
+   "id": "claude-opus-4.8",
+   "label": "Claude-Opus-4.8",
+   "kind": "general",
+   "overall_d": 0.024,
+   "generic": {
+    "approve": 0.178,
+    "critical": 0.526,
+    "directive": 0.614,
+    "inquiry": 0.083
+   },
+   "distilled": {
+    "approve": 0.163,
+    "critical": 0.474,
+    "directive": 0.69,
+    "inquiry": 0.094
+   },
+   "delta": {
+    "approve": -0.015,
+    "critical": -0.052,
+    "directive": 0.076,
+    "inquiry": 0.011
+   }
+  },
+  {
+   "id": "deepseek-v4-pro",
+   "label": "DeepSeek-V4-Pro",
+   "kind": "general",
+   "overall_d": 0.019,
+   "generic": {
+    "approve": 0.276,
+    "critical": 0.293,
+    "directive": 0.726,
+    "inquiry": 0.053
+   },
+   "distilled": {
+    "approve": 0.379,
+    "critical": 0.256,
+    "directive": 0.754,
+    "inquiry": 0.075
+   },
+   "delta": {
+    "approve": 0.103,
+    "critical": -0.037,
+    "directive": 0.028,
+    "inquiry": 0.022
+   }
+  },
+  {
+   "id": "deepseek-v4-flash",
+   "label": "DeepSeek-V4-Flash",
+   "kind": "general",
+   "overall_d": 0.007,
+   "generic": {
+    "approve": 0.207,
+    "critical": 0.241,
+    "directive": 0.782,
+    "inquiry": 0.1
+   },
+   "distilled": {
+    "approve": 0.345,
+    "critical": 0.271,
+    "directive": 0.742,
+    "inquiry": 0.128
+   },
+   "delta": {
+    "approve": 0.138,
+    "critical": 0.03,
+    "directive": -0.04,
+    "inquiry": 0.028
+   }
+  },
+  {
+   "id": "gpt-5.5",
+   "label": "GPT-5.5",
+   "kind": "general",
+   "overall_d": -0.01,
+   "generic": {
+    "approve": 0.381,
+    "critical": 0.313,
+    "directive": 0.84,
+    "inquiry": 0.062
+   },
+   "distilled": {
+    "approve": 0.366,
+    "critical": 0.3,
+    "directive": 0.832,
+    "inquiry": 0.061
+   },
+   "delta": {
+    "approve": -0.015,
+    "critical": -0.013,
+    "directive": -0.008,
+    "inquiry": -0.001
+   }
+  },
+  {
+   "id": "gemini-3.1-pro",
+   "label": "Gemini-3.1-Pro",
+   "kind": "general",
+   "overall_d": -0.014,
+   "generic": {
+    "approve": 0.356,
+    "critical": 0.26,
+    "directive": 0.815,
+    "inquiry": 0.029
+   },
+   "distilled": {
+    "approve": 0.354,
+    "critical": 0.215,
+    "directive": 0.813,
+    "inquiry": 0.029
+   },
+   "delta": {
+    "approve": -0.002,
+    "critical": -0.045,
+    "directive": -0.002,
+    "inquiry": 0.0
+   }
+  },
+  {
+   "id": "deepseek-v3.1",
+   "label": "DeepSeek-V3.1",
+   "kind": "general",
+   "overall_d": -0.016,
+   "generic": {
+    "approve": 0.211,
+    "critical": 0.159,
+    "directive": 0.854,
+    "inquiry": 0.1
+   },
+   "distilled": {
+    "approve": 0.328,
+    "critical": 0.212,
+    "directive": 0.772,
+    "inquiry": 0.075
+   },
+   "delta": {
+    "approve": 0.117,
+    "critical": 0.053,
+    "directive": -0.082,
+    "inquiry": -0.025
+   }
+  }
+ ]
+}
