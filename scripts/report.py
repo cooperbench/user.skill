@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Generate results/report.html — the user-simulator fidelity study.
 
-Computes content/realism (and speech-act match where present) on FILTERED user-action
-targets from the saved result files. Speech-act numbers for the variants scored before
+Computes content/realism (and next-action prediction accuracy where present) on FILTERED user-action
+targets from the saved result files. Accuracy numbers for the variants scored before
 the metric existed are taken from the speech_act_eval.py run (documented constants).
 """
 
@@ -30,7 +30,7 @@ VARIANTS = [
 ]
 ABLATIONS = {"folder-v6", "folder-v7"}  # tried-and-rejected personalizations
 
-# Speech-act match measured by speech_act_eval.py on the same generations, for the
+# Next-action prediction accuracy measured by speech_act_eval.py on the same generations, for the
 # variants scored before the metric was integrated into validate.py.
 SPEECH_ACT_CONST = {
     "inline-v1": {"distilled": 0.294, "generic": 0.098, "wrong": 0.255},
@@ -178,7 +178,7 @@ def main():
         if not ex:
             return ""
         return (f"<h4>{title} <span style='font-weight:400;color:#666'>· {html.escape(ex['repo'])} · "
-                f"move agreement {ex['agreement']}</span></h4><p>{blurb}</p>"
+                f"accuracy {ex['agreement']}</span></h4><p>{blurb}</p>"
                 f"<div class='hdr'><div class='l'>◀ REAL developer</div>"
                 f"<div class='r'>SIMULATED developer ▶</div></div>"
                 f"<table class='sess'><tbody>{transcript_rows(ex)}</tbody></table>")
@@ -232,7 +232,7 @@ def main():
 <p>We distil each SWE-chat user (≥6 sessions) into a role-playable folder, then a Claude-Code agent
 role-plays them and we score the next message it produces against the real held-out one. The report
 traces the arc from a plain folder-reading simulator to the best one: <b>filtering targets to genuine
-user actions</b>, scoring on <b>content</b>, <b>realism</b> and <b>speech-act match</b>, a
+user actions</b>, scoring on <b>content</b>, <b>realism</b> and <b>next-action prediction accuracy</b>, a
 <b>shared scaffold</b>, and finally <b>per-user move-sampling</b> — which gives the most realistic and
 correctly user-specific simulator. 9 users; the distillation itself ran for all 99.</p>
 
@@ -246,13 +246,13 @@ measure three complementary things, and we only score turns the user <em>actuall
 substance is predictable; modest ceiling otherwise.</li>
 <li><b>Realism</b> (0–100) — is the message a plausible, in-character thing this user would send,
 judged by intent/substance and <em>not</em> catchphrase mimicry?</li>
-<li><b>Speech-act match</b> — did the simulator make the right <em>move</em>
+<li><b>Next-action prediction accuracy</b> (<em>accuracy</em> for short) — did the simulator make the right <em>move</em>
 (new_work / refine_redirect / pushback / bug_report / approve_proceed / question / interrupt)? This
 is the fidelity a persona can fairly be held to when exact content is unknowable.</li>
 </ul>
 <p class="note">The clean test for user-specific signal is <b>own folder vs. wrong folder</b>: it holds
 "has a folder" constant, so any gap is genuinely about <em>which</em> user. Across content, realism
-and speech-act, the distilled folder beats a wrong user's folder for the v1 simulators — the
+and accuracy, the distilled folder beats a wrong user's folder for the v1 simulators — the
 distillation encodes real user-specific behaviour.</p>
 
 <h2>Simulator variants compared</h2>
@@ -261,11 +261,11 @@ user's folder.</p>
 <table><thead><tr><th>Simulator</th>
 <th class='num'>content own</th><th class='num'>content wrong</th>
 <th class='num'>realism own</th><th class='num'>realism wrong</th>
-<th class='num'>act own</th><th class='num'>act wrong</th></tr></thead>
+<th class='num'>accuracy own</th><th class='num'>accuracy wrong</th></tr></thead>
 <tbody>{comp_table}</tbody></table>
 <p class="legend">Green row = best simulator (v5). <span style="color:#991b1b">Red rows = personalization
-ablations that were tried and <b>rejected</b></span>. Content/realism are 0–100 judge means; act is
-speech-act match rate.</p>
+ablations that were tried and <b>rejected</b></span>. Content/realism are 0–100 judge means; accuracy is
+the next-action prediction rate.</p>
 <p class="warn"><b>What didn't work (and why it's informative).</b> Two further personalization methods
 on top of v5 both <em>hurt</em>: (v6) few-shotting the user's own real same-move messages induced
 mimicry (the realism judge penalizes copying) and leaked generic human-ness into the wrong-folder
@@ -283,7 +283,7 @@ intent/pushback rates in <code>stats.json</code>) that sets the move-mix; and th
 folder</b> for voice. Effect of the best simulator (folder-v1 → v5) on the distilled condition:</p>
 <div class="twin">
   <div class="stat up"><div class="bn">{fmt(a_d, plus=True)}</div><div class="bl">realism ({fmt(a_r)} → {fmt(a_v)}), highest of any variant</div></div>
-  <div class="stat up"><div class="bn">{fmt(m_d, pct=True, plus=True)}</div><div class="bl">speech-act match ({fmt(m_r, pct=True)} → {fmt(m_v, pct=True)})</div></div>
+  <div class="stat up"><div class="bn">{fmt(m_d, pct=True, plus=True)}</div><div class="bl">accuracy ({fmt(m_r, pct=True)} → {fmt(m_v, pct=True)})</div></div>
   <div class="stat"><div class="bn">{fmt(c_d, plus=True)}</div><div class="bl">content ({fmt(c_r)} → {fmt(c_v)})</div></div>
 </div>
 <p>Getting there took two iterations past the shared scaffold (v3), which raised absolute realism but
@@ -313,7 +313,7 @@ discriminability returns across all axes:</p>
 <div class="twin">
   <div class="stat up"><div class="bn">{fmt(v5_cgap, plus=True)}</div><div class="bl">content own−wrong (was {fmt(v3_cgap, plus=True)} in v3)</div></div>
   <div class="stat up"><div class="bn">{fmt(v5_rgap, plus=True)}</div><div class="bl">realism own−wrong</div></div>
-  <div class="stat up"><div class="bn">{fmt(v5_agap, pct=True, plus=True)}</div><div class="bl">speech-act own−wrong</div></div>
+  <div class="stat up"><div class="bn">{fmt(v5_agap, pct=True, plus=True)}</div><div class="bl">accuracy own−wrong</div></div>
 </div>
 
 <h2>The real frontier: whole-session simulation</h2>
@@ -338,11 +338,11 @@ reproducing that session's agent trajectory.</p>
 
 <h3>2. Agent-replay — hold the real agent fixed</h3>
 <p>To isolate the simulator from agent divergence, we replayed the <em>real</em> agent's actual turns
-and asked the simulator for the user's reaction at each real point. Per-turn move agreement
+and asked the simulator for the user's reaction at each real point. Per-turn accuracy
 <b>{ar['per_turn_move_agreement'] if ar else '–'}</b>, conditional TVD
 <b>{ar['move_distribution_TVD_conditional'] if ar else '–'}</b>. Below are <b>two complete sessions</b>,
 real developer (left) vs simulated developer (right), with the real agent turns shared between them
-(grey) so both columns face identical context. Move tags are the labelled speech act; green = the
+(grey) so both columns face identical context. Move tags are the labelled next action; green = the
 simulator made the same move as the real user.</p>
 
 {session_block(ex, "Example 1 — pavel401 (a session that turns into a crisis)",
@@ -358,7 +358,7 @@ concern — but the model's even-tempered prior makes it <b>more rational than t
   "A terse, professional user on a normal build session. With no provocation, the simulator tracks the "
   "real developer far more closely — the affect gap only opens under provocation.")}
 <p class="note">The two examples bound the behaviour: on a <b>calm</b> session the simulator follows the
-real developer closely (higher move agreement, same terse register); on a <b>crisis</b> session it
+real developer closely (higher accuracy, same terse register); on a <b>crisis</b> session it
 keeps the voice but flattens the emotional escalation. The simulator transfers <em>voice</em> robustly;
 it under-reproduces <em>affect/volatility</em> specifically under provocation. Modelling a user's
 emotional reactivity is the open frontier and the next personalization axis.</p>
@@ -366,7 +366,7 @@ emotional reactivity is the open frontier and the next personalization axis.</p>
 <h2>Where it stands</h2>
 <ul>
 <li><b>The distillation captures real user signal</b> — the own folder beats a wrong user's folder on
-content, realism and speech-act, restored and strongest in v5.</li>
+content, realism and accuracy, restored and strongest in v5.</li>
 <li><b>v5 is the best simulator</b>: highest realism ({fmt(a_v)}), move-mix that tracks reality
 (TVD {tvd_v5}, interrupts included), and correctly user-specific.</li>
 <li><b>Architecture:</b> shared scaffold = competence; per-user sampled prior = move-mix;
@@ -380,7 +380,7 @@ next axis.</li>
 </ul>
 
 <footer style="margin-top:3rem;font-size:.8rem;color:#888">Generated by scripts/report.py —
-github.com/cooperbench/user.skill. Speech-act for pre-metric variants measured by
+github.com/cooperbench/user.skill. Accuracy for pre-metric variants measured by
 scripts/speech_act_eval.py on the same generations.</footer>
 </body></html>"""
     out = RESULTS / "report.html"
