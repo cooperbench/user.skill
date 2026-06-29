@@ -133,7 +133,7 @@ first verify you have access to Modal
 <status>completed</status>
 <summary>Background command "cat &gt; /tmp/warm_osim.sh &lt;&lt;'EOF'
 #!/bin/bash
-KEY="REDACTED"
+KEY="osim-eval-key"
 declare -A URL=( [8b]="https://kevinli020508--osim-eval-serve-8b.modal.run/v1/models" [4b]="https://kevinli020508--osim-eval-serve-4b.modal.run/v1/models" )
 deadline=$(( $(date +%s) + 1080 ))   # 18 min budget
 declare -A ready=( [8b]=0 [4b]=0 )
@@ -1125,3 +1125,40 @@ gotcha, please fork user.skill and create a branch called swesimbench to host be
 ---
 
 continue
+
+---
+
+<task-notification>
+<task-id>awhy-is-deepseek-v4-pro-168def2be611b897</task-id>
+<output-file>REDACTED.output</output-file>
+<status>completed</status>
+<summary>Agent "why is DeepSeek-V4-Pro only [low]?" finished</summary>
+<note>A task-notification fires each time this agent stops with no live background children of its own. The user can send it another message and resume it, so the same task-id may notify more than once.</note>
+<result>Done. The change scope is exactly right — the only numeric diffs in the result JSONs are deepseek-v4-pro's two rows (0.509→0.526, 0.486→0.487), the effort tag flipped, and the one-line config. Note: `results/report.html` + `scripts/report.py` show as modified but those are **pre-existing uncommitted changes in your working tree** — I never touched them. I committed nothing.
+
+---
+
+## Report
+
+**Directive:** rerun deepseek-v4-pro at max effort + update the website (then report the low-vs-max delta here, not in the artifacts).
+
+**What "max effort" resolved to:** `effort="max"`, verified objectively — average reasoning tokens by tier: low/med/high ≈ 180–230, **xhigh ≈ 381, max ≈ 412**. So `max` is the genuine ceiling this model honors (my first single-sample probe suggesting otherwise was just noise/truncation).
+
+**Rerun:** regenerated all 480 points × 2 conditions at max effort (957/960 succeeded; **3 failed** — at max effort the model occasionally spends the whole token budget on reasoning and emits no reply). Cached under a separate key/file so the low-effort baseline was preserved for a clean A/B. Same points, seeds, judge (Haiku), and metric as the original run — my recomputed *low* numbers reproduced the published ones exactly (0.509 / 0.486), so the swap is apples-to-apples.
+
+**low → max changes (the part you wanted, kept out of the artifacts):**
+
+| condition | CondAgree (low) | CondAgree (max) | Δ | avg reply words |
+|---|---|---|---|---|
+| distilled (with profile) | 0.509 ±0.081 | **0.526 ±0.076** | +0.017 | 9.3 → 7.8 |
+| generic (no profile) | 0.486 ±0.065 | **0.487 ±0.089** | +0.001 | 17.1 → 17.0 |
+
+Takeaway: **max effort roughly doubles hidden reasoning (~210→~410 tokens) but does not meaningfully move CondAgree** — both deltas sit far inside the ±0.07–0.09 CIs, i.e. statistical noise. It only slightly shortened the with-profile replies. Profile-lift (distilled − generic) nudged from +0.023 to +0.039, still small. Practically: keeping deepseek-v4-pro at `low` was costing you almost nothing in accuracy.
+
+**Website updated** (the condagree result JSONs you chose): `experiments/condagree_multi/summary.json` + `rerun_summary.json` now carry the max numbers (mean/ci95/per_user); `manifest.json` effort tag flipped `low → max` (so the label is no longer `[low]`); `exp_condagree.py` config line flipped to match.
+
+**New files (provenance/reproducibility, deletable):** `rerun_v4pro_maxeffort.py`, `finalize_v4pro_ab.py`, `v4pro_effort_ab.json`, `rerun_raw_v4pro_max.jsonl`.
+
+**One caveat worth knowing:** the experiment's gen-cache key omits effort (`gen|{point}|{model}|{cond}`), so a *future* `python exp_condagree.py` run would silently reuse the old low-effort gens for deepseek-v4-pro rather than regenerate at max — which is exactly why I ran it through a dedicated script with an `@max` key. If you want max to be the durable default end-to-end, that cache key needs `effort` added (small fix; say the word and I'll do it).</result>
+<usage><subagent_tokens>114230</subagent_tokens><tool_uses>28</tool_uses><duration_ms>1744945</duration_ms></usage>
+</task-notification>
