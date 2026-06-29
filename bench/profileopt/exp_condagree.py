@@ -114,7 +114,7 @@ def run_gens(jobs, conc, tag):
             if str(txt).strip() and not str(txt).startswith("Error:"): break
             txt, meta = gen(p, mname, c)  # retry transient failures before caching
         cfg = MCFG[mname]
-        return {"key": f"gen|{p['point_id']}|{mname}|{c}", "kind": "gen", "point_id": p["point_id"], "slug": p["slug"],
+        return {"key": f"gen|{p['point_id']}|{mname}|{c}|{cfg['effort']}", "kind": "gen", "point_id": p["point_id"], "slug": p["slug"],
                 "model": mname, "model_id": cfg["id"], "backend": cfg["backend"], "effort": cfg["effort"],
                 "cond": c, "text": txt, "ts": time.time(), **meta}
     done = 0
@@ -146,7 +146,7 @@ def main():
 
     # ---- generate: every model in its OWN pool, all models concurrently (different providers,
     #      no shared rate limits), each at its configured concurrency ----
-    todo = lambda mn: [(p,mn,c) for p in pts for c in CONDS if f"gen|{p['point_id']}|{mn}|{c}" not in _cache]
+    todo = lambda mn: [(p,mn,c) for p in pts for c in CONDS if f"gen|{p['point_id']}|{mn}|{c}|{MCFG[mn]['effort']}" not in _cache]
     def gen_one_model(m):
         jobs = todo(m["name"])
         if jobs: run_gens(jobs, m["conc"], m["name"])
@@ -159,7 +159,7 @@ def main():
     for p in pts:
         for m in MODELS:
             for c in CONDS:
-                g = _cache.get(f"gen|{p['point_id']}|{m['name']}|{c}")
+                g = _cache.get(f"gen|{p['point_id']}|{m['name']}|{c}|{m['effort']}")
                 if g: items.append((f"{m['name']}|{c}", p, g["text"]))
     print(f"labeling {len(items)} items (single Haiku, cached)")
     moves = {}

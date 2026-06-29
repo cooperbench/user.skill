@@ -18,6 +18,7 @@ import taxonomy as TAX
 TEST = json.loads((HERE / "splits.json").read_text())["test"]["qualifying_users"]
 N_PER_USER = 30
 MODELS = {"deepseek-v3.1": "deepseek/deepseek-chat-v3.1", "deepseek-v4-flash": "deepseek/deepseek-v4-flash", "deepseek-v4-pro": "deepseek/deepseek-v4-pro", "osim-4b": "osim-4b"}
+KEY_EFFORT = {m: (None if m == "osim-4b" else "low") for m in MODELS}  # gen() runs orouter models at 'low', osim has none; mirror into the effort-suffixed cache key (matches exp_condagree.py)
 CONDS = ["distilled", "generic"]
 RAW = HERE / "rerun_raw.jsonl"
 JUDGE = "anthropic/claude-haiku-4.5"  # single cheapest judge — the 4-way taxonomy is reliable enough (κ≈0.80)
@@ -93,10 +94,10 @@ def main():
     print(f"TOTAL {len(pts)} points\n")
 
     # 1. generate
-    gj = [(p,m,c) for p in pts for m in MODELS for c in CONDS if f"gen|{p['point_id']}|{m}|{c}" not in _cache]
+    gj = [(p,m,c) for p in pts for m in MODELS for c in CONDS if f"gen|{p['point_id']}|{m}|{c}|{KEY_EFFORT[m]}" not in _cache]
     print(f"generations: {len(gj)} to run")
     def rg(j):
-        p,m,c=j; return {"key":f"gen|{p['point_id']}|{m}|{c}","kind":"gen","point_id":p["point_id"],"slug":p["slug"],"model":m,"cond":c,"text":gen(p,m,c)}
+        p,m,c=j; return {"key":f"gen|{p['point_id']}|{m}|{c}|{KEY_EFFORT[m]}","kind":"gen","point_id":p["point_id"],"slug":p["slug"],"model":m,"cond":c,"effort":KEY_EFFORT[m],"text":gen(p,m,c)}
     with ThreadPoolExecutor(max_workers=64) as ex:
         for i,f in enumerate(as_completed([ex.submit(rg,j) for j in gj]),1):
             put(f.result())
@@ -108,7 +109,7 @@ def main():
         items.append(("real", p, p["real"]))
         for m in MODELS:
             for c in CONDS:
-                g=_cache.get(f"gen|{p['point_id']}|{m}|{c}")
+                g=_cache.get(f"gen|{p['point_id']}|{m}|{c}|{KEY_EFFORT[m]}")
                 if g: items.append((f"{m}|{c}", p, g["text"]))
     print(f"labeling {len(items)} items (single Haiku judge, cached)")
     def rl(it):
