@@ -708,3 +708,16 @@ yes please run the ablation and then update the website's narrative to illustrat
 python3 bench/profileopt/ablation_style.py &gt; bench/profileopt/ablation.log 2&gt;&amp;1
 echo "EXIT=$?"; sed -n '/ABLATION/,$p' bench/profileopt/ablation.log" completed (exit co...
 
+### Prompt 114
+
+<task-notification>
+<task-id>acondagree-feels-like-adde14bdbfafb190</task-id>
+<output-file>REDACTED.output</output-file>
+<status>completed</status>
+<summary>Agent "CondAgree feels like a non-standard metric that I…" finished</summary>
+<note>A task-notification fires each time this agent stops with no live background children of its own. The user can send it another message and resu...
+
+### Prompt 115
+
+are all the code stored in https://github.com/AlienKevin/user-simulator?
+

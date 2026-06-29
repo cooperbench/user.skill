@@ -133,7 +133,7 @@ first verify you have access to Modal
 <status>completed</status>
 <summary>Background command "cat &gt; /tmp/warm_osim.sh &lt;&lt;'EOF'
 #!/bin/bash
-KEY="REDACTED"
+KEY="osim-eval-key"
 declare -A URL=( [8b]="https://kevinli020508--osim-eval-serve-8b.modal.run/v1/models" [4b]="https://kevinli020508--osim-eval-serve-4b.modal.run/v1/models" )
 deadline=$(( $(date +%s) + 1080 ))   # 18 min budget
 declare -A ready=( [8b]=0 [4b]=0 )
@@ -1084,3 +1084,32 @@ I did **not** run the backfill: it appends to the same `raw.jsonl` / `summary.js
 python3 bench/profileopt/ablation_style.py &gt; bench/profileopt/ablation.log 2&gt;&amp;1
 echo "EXIT=$?"; sed -n '/ABLATION/,$p' bench/profileopt/ablation.log" completed (exit code 0)</summary>
 </task-notification>
+
+---
+
+<task-notification>
+<task-id>acondagree-feels-like-adde14bdbfafb190</task-id>
+<output-file>REDACTED.output</output-file>
+<status>completed</status>
+<summary>Agent "CondAgree feels like a non-standard metric that I…" finished</summary>
+<note>A task-notification fires each time this agent stops with no live background children of its own. The user can send it another message and resume it, so the same task-id may notify more than once.</note>
+<result>Task: identify a more standard name for "CondAgree."
+
+CondAgree isn't really made-up — it's a standard quantity under a coined name. Per held-out turn you compare the simulator's move (4-way speech-act) to the real developer's move and score the match rate, macro-averaged over developers. That is **per-turn classification accuracy of the next move**, i.e. **next-action (dialogue-act) prediction accuracy**, where "ground truth" is the real developer's act at the same conversation state.
+
+Standard names, closest first:
+- **Per-turn / conditional move-prediction accuracy** — plainest; the "Cond" = conditioned on the actual conversation state (vs. matching the overall move *distribution*).
+- **Next-action / dialogue-act prediction accuracy** — the recognized task name in dialogue &amp; user-simulation work, restricted to a 4-way act taxonomy.
+- **Observed agreement (pₒ)** — treating real developer and simulator as two raters, this is their raw observed agreement.
+
+Key nuance: raw accuracy is inflated under class imbalance (~52% directive), which is why the work carries a chance baseline (Σpᵢ², the lucky-guess line). That chance-correction is exactly **Cohen's κ**: κ = (pₒ − pₑ)/(1 − pₑ). So **CondAgree ≈ observed agreement pₒ**, and **CondAgree minus the lucky-guess line ≈ the numerator of Cohen's κ** between simulator and developer.
+
+Most reviewer-legible rename: **"per-turn move-prediction accuracy"** (report the chance line beside it), or fold the baseline in and report a **simulator-vs-developer Cohen's κ** as a single self-contained number.
+
+Note (out of scope): I only answered; I didn't change the site, which still labels the metric "CondAgree."</result>
+<usage><subagent_tokens>668663</subagent_tokens><tool_uses>0</tool_uses><duration_ms>14048</duration_ms></usage>
+</task-notification>
+
+---
+
+are all the code stored in https://github.com/AlienKevin/user-simulator?
