@@ -1,0 +1,38 @@
+{
+  "cli_version": "0.4.5",
+  "checkpoint_id": "0311a64029f8",
+  "strategy": "manual-commit",
+  "branch": "v0-bench",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "modal_app/build_serve_image.py",
+    "modal_app/common.py",
+    "modal_app/data_prep.py",
+    "modal_app/eval.py",
+    "modal_app/export_traces.py",
+    "modal_app/inspect_data.py",
+    "modal_app/serve.py",
+    "modal_app/serve_base.py",
+    "modal_app/serve_both.py",
+    "modal_app/serve_osim.py",
+    "modal_app/smoke_test.py",
+    "modal_app/template_check.py",
+    "modal_app/train.py"
+  ],
+  "sessions": [
+    {
+      "metadata": "/03/11a64029f8/0/metadata.json",
+      "transcript": "/03/11a64029f8/0/full.jsonl",
+      "context": "/03/11a64029f8/0/context.md",
+      "content_hash": "/03/11a64029f8/0/content_hash.txt",
+      "prompt": "/03/11a64029f8/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 105487,
+    "cache_creation_tokens": 4461328,
+    "cache_read_tokens": 328108445,
+    "output_tokens": 1130661,
+    "api_call_count": 626
+  }
+}
