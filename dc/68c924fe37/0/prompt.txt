@@ -133,7 +133,7 @@ first verify you have access to Modal
 <status>completed</status>
 <summary>Background command "cat &gt; /tmp/warm_osim.sh &lt;&lt;'EOF'
 #!/bin/bash
-KEY="REDACTED"
+KEY="osim-eval-key"
 declare -A URL=( [8b]="https://kevinli020508--osim-eval-serve-8b.modal.run/v1/models" [4b]="https://kevinli020508--osim-eval-serve-4b.modal.run/v1/models" )
 deadline=$(( $(date +%s) + 1080 ))   # 18 min budget
 declare -A ready=( [8b]=0 [4b]=0 )
@@ -926,3 +926,94 @@ please (c)
 ---
 
 additionally after the chart, go into a case study on GLM-5.2, Gemini-3.1-Pro, and OSim-4B on how with profile differently affected those 3 models. Show concrete examples for users/sessions that benefited from profile vs not.
+
+---
+
+<task-notification>
+<task-id>whok9ccg3</task-id>
+<tool-use-id>toolu_01KYbVS31pWy16LjKZMKkk66</tool-use-id>
+<output-file>REDACTED.output</output-file>
+<status>completed</status>
+<summary>Dynamic workflow "Write a 5-section explanatory walkthrough + a 3-model profile case study for the UserSimBench CondAgree page, grounded in real data, then fact-check &amp; unify voice" completed</summary>
+<result>{"sections":[{"heading":"the split","dek":"no developer and no repo crosses the train/val/test line, so a simulator can't have seen the style or codebase it's scored on","paragraphs":["We split developers into train, val, and test so that no developer and no repository appears in more than one split. If a model tuned on a developer's earlier sessions, or on their repo, then scoring it on that same developer or repo would measure recall, not simulation. To enforce this we build the bipartite user&lt;-&gt;repo graph (an edge wherever a developer touched a repo) and take its connected components: one developer, every repo they touched, and every other developer on those repos collapse into a single component. Whole components go to one split, so no shared developer or repo can leak across the line. There are 162 components and they are small -- the largest is only 16 developers across 3 repos -- which keeps the split clean. The result is train 135 developers / 140 repos / 1232 sessions, val 23 / 21 / 436, and test 31 / 26 / 2240. 20 developers qualify for eval in val and test (&gt;=6 sessions, &gt;=2 held-out sessions, &gt;=8 held-out turns).","A second, orthogonal split runs per developer and is time-ordered. For each developer we distill the user profile (the persona prefix) only from their earlier sessions, and we score only on their later, held-out turns. So the model never sees the turns it is graded on, and the profile is never built from those turns. The two splits guard different leaks: the component split stops a developer's repo or style leaking across splits; the time split stops a developer's own future leaking into their profile."],"visual":{"type":"diagram","description":"Two stacked panels. TOP panel 'component split': a bipartite graph with developer nodes (circles) on the left and repo nodes (squares) on the right; edges mean 'developer touched repo'. Shade three connected components in three colors and box each; annotate one box 'a component = developer + every repo they touched + every other developer on those repos'. Below, three bins labeled train / val / test, with whole colored components dropping into separate bins to show no node is shared. Caption with totals: train 135 developers / 140 repos / 1232 sessions; val 23 / 21 / 436; test 31 / 26 / 2240; 162 components, largest = 16 developers / 3 repos; 20 qualifying eval-developers. BOTTOM panel 'per-developer time split': a single horizontal timeline of one developer's sessions, left = earlier, right = later; bracket the left portion 'earlier sessions -&gt; distill profile' and the right portion 'later held-out turns -&gt; scored here', with an arrow showing the profile only feeds forward into the held-out region, never the reverse."},"key_numbers":["train 135 / val 23 / test 31 developers","162 components; largest only 16 developers / 3 repos","0 shared developers and 0 shared repos across splits","20 qualifying eval-developers (&gt;=6 sessions, &gt;=2 held-out sessions, &gt;=8 held-out turns)"]},{"heading":"the eval","dek":"20 test developers, 480 held-out moments, each simulator writes the developer's next message -- with and without a profile.","paragraphs":["We run the eval on the 20 test developers. For each one we pick up to 30 held-out moments -- points in a real session where the developer actually spoke next -- for 480 prediction points total. At each moment the simulator sees the real conversation up to that point: the coding agent's latest turn plus the history. Its job is to write what the developer says next. It never sees the message it is scored against.","The prompt is [optional user profile] + conversation so far + task framing, and we run it two ways. WITH profile prepends a distilled persona prefix for that developer; WITHOUT uses a generic developer prompt. We freeze 9 simulators and have each generate all 480 moments in both conditions -- 480 x 2 x 9 = 8640 generations, one trial per cell, no resampling. Seven are general models served via OpenRouter at fixed reasoning efforts (deepseek-v3.1, deepseek-v4-flash, deepseek-v4-pro, gpt-5.5, claude-opus-4.8, glm-5.2, gemini-3.1-pro); two are small purpose-built simulators, osim-4b and osim-8b, served via Modal. The next sections cover how we grade what comes back."],"visual":{"type":"diagram","description":"A flow showing how one cell is produced, then how it scales. TOP (single cell): a 'MOMENT' box = 'conversation so far (agent's latest turn + history)'. Two prompt variants branch from it: (A) WITH profile = [user profile prefix] + conversation so far + task framing; (B) WITHOUT profile = [generic developer prompt] + conversation so far + task framing. Both feed a 'frozen simulator' box, which outputs 'developer's next message (1 generation, no resampling)'. BOTTOM (counting strip): 20 test developers x up to 30 moments = 480 held-out moments; x 2 conditions (WITH / WITHOUT profile) x 9 simulators = 8640 generations. List the 9 simulators in two groups: 7 general via OpenRouter (deepseek-v3.1, deepseek-v4-flash, deepseek-v4-pro, gpt-5.5, claude-opus-4.8, glm-5.2, gemini-3.1-pro) and 2 purpose-built via Modal (osim-4b, osim-8b)."},"key_numbers":["20 test developers","480 held-out moments (up to 30 per developer)","2 conditions: with vs without profile","9 frozen simulators (7 general via OpenRouter + 2 purpose-built via Modal)","8640 generations, one trial per cell"]},{"heading":"the moves","dek":"we grade the speech-act, not the wording -- four moves under a fault-first rule","paragraphs":["A developer can say \"fix the null check\" or \"this crashes on empty input -- handle it\" and mean roughly the same thing: stop, something is wrong, change course. Grading the exact words punishes a simulator for picking a different but valid phrasing, and at the single-message level wording saturates -- too many surface forms map to the same intent for the words to discriminate. So we grade the MOVE: the speech-act behind the message. There are four. approve accepts or permits, with no new content and no complaint. critical asserts that something is WRONG -- a bug, a failure, or an unwanted approach. directive tells the agent what to do next without asserting any fault. inquiry asks for information and expects an answer. Interrupts (the developer cutting in mid-turn) are a separate marker, detected by a regex, not one of the four.","We started with a 7-way taxonomy (new_work, refine_redirect, pushback, bug_report, approve_proceed, question, other), but two pairs were inherently confusable. new_work vs refine_redirect both just tell the agent what to do next; pushback vs bug_report both assert a fault. Even strong judges disagreed on which side of each pair a message fell. Collapsing new_work + refine_redirect into directive, and pushback + bug_report into critical, erases the lines nobody could draw reliably. We pair this with a fault-first ordered rule: if a message asserts something is wrong, it is critical, even if it also says what to do next -- so \"this is broken, revert it\" lands as critical, not directive. That change raised cross-family inter-judge agreement (Cohen's kappa across Haiku-4.5, Opus-4.8, and GPT-5) from 0.681 to 0.805. At kappa around 0.80 a single cheap judge (Haiku-4.5) is reliable enough to label everything, so we skip expensive multi-judge voting."],"visual":{"type":"table","description":"A 4-row table titled 'the four moves', columns: Move | one-line test. Rows: (1) approve -- 'accepts or permits; no new content, no complaint'; (2) critical -- 'asserts something is WRONG: a bug, a failure, or an unwanted approach'; (3) directive -- 'tells the agent what to do next, no fault asserted'; (4) inquiry -- 'asks for information, expecting an answer'. Footnote: fault-first rule -- if any fault is asserted, it is critical even when a directive is also present; interrupts are a separate regex-detected marker, not one of the four. Side note on the merge: 7-way (new_work, refine_redirect, pushback, bug_rep
+... (truncated 13315 chars, full result in REDACTED.output)</result>
+<usage><agent_count>7</agent_count><subagent_tokens>97305</subagent_tokens><tool_uses>13</tool_uses><duration_ms>128262</duration_ms></usage>
+</task-notification>
+
+---
+
+get rid of em dashes in the website to make it sound less AI
+
+---
+
+<task-notification>
+<task-id>awhats-the-motivation-6ab9acd9eba75953</task-id>
+<output-file>REDACTED.output</output-file>
+<status>completed</status>
+<summary>Agent "what's the motivation for "(≥6 sessions, ≥2 held-…" finished</summary>
+<note>A task-notification fires each time this agent stops with no live background children of its own. The user can send it another message and resume it, so the same task-id may notify more than once.</note>
+<result>Task: explain the motivation for the qualifying thresholds (≥6 sessions, ≥2 held-out sessions, ≥8 held-out turns).
+
+Each threshold guards a distinct requirement for a user to be a usable eval point:
+
+- **≥6 sessions** — enough material to *build a profile from*. The profile is distilled from the user's earlier (train) sessions; one or two sessions give too thin a behavioral record to characterize. ~6 is the floor at which `prepare_data.py` yields a meaningful digest.
+
+- **≥2 held-out sessions** — makes the per-user *temporal* split real. The split is chronological (earlier sessions → profile, later sessions → scored), so a user needs sessions reserved on the held-out side that weren't used to build their profile. This is the within-user no-leakage guard.
+
+- **≥8 held-out turns** — keeps each per-user CondAgree estimate from being pure noise. CondAgree is a per-user macro (each user contributes one fraction, averaged across users); with only 2–3 turns a user's fraction swings wildly (0/3, 3/3) and adds variance without signal. 8 is a minimum for a marginally stable per-user rate.
+
+**Why these specific (relaxed) values:** they were lowered from a stricter earlier bar (≥10 sessions / ≥4 held-out sessions / more turns) that yielded only ~20 qualifying users total — too few to meet the "≥20 users in *each* of test and val" requirement. Relaxing to (6, 2, 8) widens the pool to ~40 so test and val each get 20. The trade-off favors more users because the cross-user macro CI (the actual ± error bars) tightens with user count, while the resulting noisier per-user estimates average out.
+
+Caveat: these are pragmatic round thresholds picked to satisfy the ≥20-per-split constraint on a small pool, not products of a formal power analysis.
+
+No files changed (read-only question).</result>
+<usage><subagent_tokens>367242</subagent_tokens><tool_uses>135</tool_uses><duration_ms>12523</duration_ms></usage>
+</task-notification>
+
+---
+
+keep the rebrand site-only
+
+---
+
+<task-notification>
+<task-id>awhats-the-motivation-6ab9acd9eba75953</task-id>
+<output-file>REDACTED.output</output-file>
+<status>completed</status>
+<summary>Agent "what's the motivation for "(≥6 sessions, ≥2 held-…" finished</summary>
+<note>A task-notification fires each time this agent stops with no live background children of its own. The user can send it another message and resume it, so the same task-id may notify more than once.</note>
+<result>Done. Added the threshold rationale to **section 01** of the site, live at with-user.vercel.app.
+
+The new paragraph (right after the thresholds are introduced, in the site's voice, no em dashes):
+
+&gt; Each cutoff guards a different need. A developer needs enough sessions to distill a profile from (≥6), at least a couple of sessions held out so there is something to score that the profile was not built on (≥2), and enough held-out turns that their score is not pure noise (≥8), since each developer contributes a single averaged number to the headline metric. These are looser than an earlier, stricter bar that left too few qualifying developers to put 20 in both val and test. The looser bar trades noisier per-developer estimates for more developers, and it is the number of developers, not the turns per developer, that sets the width of the error bars on the headline number.
+
+Build clean (0 em dashes), committed `cd47a29`, deployed and verified live.</result>
+<usage><subagent_tokens>375786</subagent_tokens><tool_uses>140</tool_uses><duration_ms>131798</duration_ms></usage>
+</task-notification>
+
+---
+
+make each section linkable. also move section 5 to be the first section and title it SWESimBench Leaderboard without the paragraph explanation, just the clean chart and without the SHOW
+GLM-5.2
+GPT-5.5
+DeepSeek-V4-Pro
+DeepSeek-V4-Flash
+Gemini-3.1-Pro
+DeepSeek-V3.1
+OSim-8B
+Claude-Opus-4.8
+OSim-4B
+show all 9 bottom bar. Then keep the long paragraph at section 5 and connect it to the case study section that follows. Change the graphics in the results section to illustrate the point "profile helps the small purpose-built simulators and GLM-5.2, but does little for the strongest general models.". btw rewrite this sentence to be "profile helps the small purpose-built simulators, but does little for the strongest general models, except for GLM-5.2."
+
+---
+
+Exclude "DeepSeek-V3.1" data point in the results section
+
+---
+
+Remove " These are looser than an earlier, stricter bar that left too few qualifying developers to put 20 in both val and test. The looser bar trades noisier per-developer estimates for more developers, and it is the number of developers, not the turns per developer, that sets the width of the error bars on the headline number."
+
+---
+
+my persistent question is how come with profile helped glm-5.2 sooo much compared to the other frontier models like gpt, gemini, and opus?

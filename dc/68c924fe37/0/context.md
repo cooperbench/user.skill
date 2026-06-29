@@ -605,3 +605,65 @@ please (c)
 
 additionally after the chart, go into a case study on GLM-5.2, Gemini-3.1-Pro, and OSim-4B on how with profile differently affected those 3 models. Show concrete examples for users/sessions that benefited from profile vs not.
 
+### Prompt 98
+
+<task-notification>
+<task-id>whok9ccg3</task-id>
+<tool-use-id>toolu_01KYbVS31pWy16LjKZMKkk66</tool-use-id>
+<output-file>REDACTED.output</output-file>
+<status>completed</status>
+<summary>Dynamic workflow "Write a 5-section explanatory walkthrough + a 3-model profile case study for the UserSimBench CondAgree page, grounded in real data, then fact-check &amp; unify voice" completed</summary>
+<result>{"sections":[{"...
+
+### Prompt 99
+
+get rid of em dashes in the website to make it sound less AI
+
+### Prompt 100
+
+<task-notification>
+<task-id>awhats-the-motivation-6ab9acd9eba75953</task-id>
+<output-file>REDACTED.output</output-file>
+<status>completed</status>
+<summary>Agent "what's the motivation for "(≥6 sessions, ≥2 held-…" finished</summary>
+<note>A task-notification fires each time this agent stops with no live background children of its own. The user can send it another message and ...
+
+### Prompt 101
+
+keep the rebrand site-only
+
+### Prompt 102
+
+<task-notification>
+<task-id>awhats-the-motivation-6ab9acd9eba75953</task-id>
+<output-file>REDACTED.output</output-file>
+<status>completed</status>
+<summary>Agent "what's the motivation for "(≥6 sessions, ≥2 held-…" finished</summary>
+<note>A task-notification fires each time this agent stops with no live background children of its own. The user can send it another message and ...
+
+### Prompt 103
+
+make each section linkable. also move section 5 to be the first section and title it SWESimBench Leaderboard without the paragraph explanation, just the clean chart and without the SHOW
+GLM-5.2
+GPT-5.5
+DeepSeek-V4-Pro
+DeepSeek-V4-Flash
+Gemini-3.1-Pro
+DeepSeek-V3.1
+OSim-8B
+Claude-Opus-4.8
+OSim-4B
+show all 9 bottom bar. Then keep the long paragraph at section 5 and connect it to the case study section that follows. Change the graphics in the results section to illustrate the point "profile helps t...
+
+### Prompt 104
+
+Exclude "DeepSeek-V3.1" data point in the results section
+
+### Prompt 105
+
+Remove " These are looser than an earlier, stricter bar that left too few qualifying developers to put 20 in both val and test. The looser bar trades noisier per-developer estimates for more developers, and it is the number of developers, not the turns per developer, that sets the width of the error bars on the headline number."
+
+### Prompt 106
+
+my persistent question is how come with profile helped glm-5.2 sooo much compared to the other frontier models like gpt, gemini, and opus?
+
