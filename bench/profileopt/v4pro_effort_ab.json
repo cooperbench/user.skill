@@ -1,0 +1,154 @@
+{
+ "model": "deepseek-v4-pro",
+ "low_effort": "low",
+ "high_effort": "max",
+ "judge": "anthropic/claude-haiku-4.5",
+ "n_points": 480,
+ "max_gens_missing": 3,
+ "test_users": [
+  "gtrrz-victor",
+  "pc035860",
+  "tarasyarema",
+  "khaong",
+  "135yshr",
+  "tslateman",
+  "dayhaysoos",
+  "jdsingh122918",
+  "armelhbobdad",
+  "robouden",
+  "cyyeh",
+  "pfleidi",
+  "jeevanpillay",
+  "alishakawaguchi",
+  "schmalle",
+  "marcus-sa",
+  "cteyton",
+  "toothbrush",
+  "dipree",
+  "gregszero"
+ ],
+ "condagree": {
+  "low/distilled": {
+   "condagree": {
+    "mean": 0.509,
+    "ci95": 0.081,
+    "n_users": 20
+   },
+   "per_user": [
+    0.633,
+    0.467,
+    0.4,
+    0.6,
+    0.633,
+    0.5,
+    0.433,
+    0.862,
+    0.433,
+    0.3,
+    0.533,
+    0.467,
+    0.444,
+    0.5,
+    0.333,
+    0.714,
+    0.786,
+    0.385,
+    0.625,
+    0.125
+   ]
+  },
+  "low/generic": {
+   "condagree": {
+    "mean": 0.486,
+    "ci95": 0.065,
+    "n_users": 20
+   },
+   "per_user": [
+    0.7,
+    0.567,
+    0.467,
+    0.467,
+    0.5,
+    0.5,
+    0.464,
+    0.828,
+    0.5,
+    0.4,
+    0.5,
+    0.3,
+    0.481,
+    0.333,
+    0.278,
+    0.571,
+    0.643,
+    0.462,
+    0.5,
+    0.25
+   ]
+  },
+  "max/distilled": {
+   "condagree": {
+    "mean": 0.526,
+    "ci95": 0.076,
+    "n_users": 20
+   },
+   "per_user": [
+    0.633,
+    0.533,
+    0.448,
+    0.533,
+    0.633,
+    0.533,
+    0.5,
+    0.862,
+    0.567,
+    0.4,
+    0.533,
+    0.4,
+    0.481,
+    0.5,
+    0.278,
+    0.714,
+    0.643,
+    0.462,
+    0.75,
+    0.125
+   ]
+  },
+  "max/generic": {
+   "condagree": {
+    "mean": 0.487,
+    "ci95": 0.089,
+    "n_users": 20
+   },
+   "per_user": [
+    0.767,
+    0.6,
+    0.567,
+    0.467,
+    0.655,
+    0.433,
+    0.379,
+    0.862,
+    0.4,
+    0.433,
+    0.433,
+    0.433,
+    0.333,
+    0.389,
+    0.222,
+    0.857,
+    0.5,
+    0.5,
+    0.125,
+    0.375
+   ]
+  }
+ },
+ "avg_words": {
+  "low/distilled": 9.3,
+  "low/generic": 17.1,
+  "max/distilled": 7.8,
+  "max/generic": 17.0
+ }
+}
