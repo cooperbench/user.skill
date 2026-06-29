@@ -1,0 +1,32 @@
+{
+  "cli_version": "0.4.5",
+  "checkpoint_id": "a8221a736735",
+  "session_id": "da864ebe-6204-4f1a-bc7e-e1ee4da86833",
+  "strategy": "manual-commit",
+  "created_at": "2026-06-29T03:24:59.902189Z",
+  "branch": "v0-bench",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "bench/profileopt/analyze_verbosity.py",
+    "bench/profileopt/experiments/condagree_multi/verbosity.json"
+  ],
+  "agent": "Claude Code",
+  "turn_id": "ffca0b666789",
+  "token_usage": {
+    "input_tokens": 62120,
+    "cache_creation_tokens": 4209793,
+    "cache_read_tokens": 261439039,
+    "output_tokens": 941369,
+    "api_call_count": 522
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-06-29T03:24:58.118802Z",
+    "agent_lines": 0,
+    "human_added": 206,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 206,
+    "agent_percentage": 0
+  },
+  "transcript_path": ".claude/projects/-Users-kevin-Dev/da864ebe-6204-4f1a-bc7e-e1ee4da86833.jsonl"
+}
