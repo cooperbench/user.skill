@@ -1,0 +1,26 @@
+{
+  "cli_version": "0.4.5",
+  "checkpoint_id": "1c103643d91a",
+  "strategy": "manual-commit",
+  "branch": "v0-bench",
+  "checkpoints_count": 2,
+  "files_touched": [
+    "bench/profileopt/analyze_glm.py"
+  ],
+  "sessions": [
+    {
+      "metadata": "/1c/103643d91a/0/metadata.json",
+      "transcript": "/1c/103643d91a/0/full.jsonl",
+      "context": "/1c/103643d91a/0/context.md",
+      "content_hash": "/1c/103643d91a/0/content_hash.txt",
+      "prompt": "/1c/103643d91a/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 61818,
+    "cache_creation_tokens": 3702641,
+    "cache_read_tokens": 255086601,
+    "output_tokens": 911425,
+    "api_call_count": 508
+  }
+}

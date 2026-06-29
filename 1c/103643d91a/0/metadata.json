@@ -1,0 +1,31 @@
+{
+  "cli_version": "0.4.5",
+  "checkpoint_id": "1c103643d91a",
+  "session_id": "da864ebe-6204-4f1a-bc7e-e1ee4da86833",
+  "strategy": "manual-commit",
+  "created_at": "2026-06-29T01:59:22.823735Z",
+  "branch": "v0-bench",
+  "checkpoints_count": 2,
+  "files_touched": [
+    "bench/profileopt/analyze_glm.py"
+  ],
+  "agent": "Claude Code",
+  "turn_id": "35665861d212",
+  "token_usage": {
+    "input_tokens": 61818,
+    "cache_creation_tokens": 3702641,
+    "cache_read_tokens": 255086601,
+    "output_tokens": 911425,
+    "api_call_count": 508
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-06-29T01:59:21.06899Z",
+    "agent_lines": 80,
+    "human_added": 307,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 387,
+    "agent_percentage": 20.671834625322997
+  },
+  "transcript_path": ".claude/projects/-Users-kevin-Dev/da864ebe-6204-4f1a-bc7e-e1ee4da86833.jsonl"
+}
