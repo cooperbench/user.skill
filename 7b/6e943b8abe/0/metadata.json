@@ -1,0 +1,33 @@
+{
+  "cli_version": "0.4.5",
+  "checkpoint_id": "7b6e943b8abe",
+  "session_id": "da864ebe-6204-4f1a-bc7e-e1ee4da86833",
+  "strategy": "manual-commit",
+  "created_at": "2026-06-29T03:58:50.583338Z",
+  "branch": "v0-bench",
+  "checkpoints_count": 3,
+  "files_touched": [
+    "bench/profileopt/ablation_style.py",
+    "bench/profileopt/exp_condagree.py",
+    "bench/profileopt/experiments/condagree_multi/manifest.json"
+  ],
+  "agent": "Claude Code",
+  "turn_id": "042b99b7fa40",
+  "token_usage": {
+    "input_tokens": 85127,
+    "cache_creation_tokens": 4310532,
+    "cache_read_tokens": 283473002,
+    "output_tokens": 1014328,
+    "api_call_count": 561
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-06-29T03:58:48.657164Z",
+    "agent_lines": 129,
+    "human_added": 1214,
+    "human_modified": 4,
+    "human_removed": 0,
+    "total_committed": 1347,
+    "agent_percentage": 9.57683741648107
+  },
+  "transcript_path": ".claude/projects/-Users-kevin-Dev/da864ebe-6204-4f1a-bc7e-e1ee4da86833.jsonl"
+}

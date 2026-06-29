@@ -1,0 +1,28 @@
+{
+  "cli_version": "0.4.5",
+  "checkpoint_id": "7b6e943b8abe",
+  "strategy": "manual-commit",
+  "branch": "v0-bench",
+  "checkpoints_count": 3,
+  "files_touched": [
+    "bench/profileopt/ablation_style.py",
+    "bench/profileopt/exp_condagree.py",
+    "bench/profileopt/experiments/condagree_multi/manifest.json"
+  ],
+  "sessions": [
+    {
+      "metadata": "/7b/6e943b8abe/0/metadata.json",
+      "transcript": "/7b/6e943b8abe/0/full.jsonl",
+      "context": "/7b/6e943b8abe/0/context.md",
+      "content_hash": "/7b/6e943b8abe/0/content_hash.txt",
+      "prompt": "/7b/6e943b8abe/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 85127,
+    "cache_creation_tokens": 4310532,
+    "cache_read_tokens": 283473002,
+    "output_tokens": 1014328,
+    "api_call_count": 561
+  }
+}
