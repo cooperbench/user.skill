@@ -801,3 +801,11 @@ the code feels super messy and I don't see docs? could you tidy the PR up?
 
 continue?
 
+### Prompt 131
+
+are the v0.py and v0_1.py both necessary?
+
+### Prompt 132
+
+sure, prune and tidy up code as long as you can ensure that all results in swesimbench can be fully reproduced with this PR
+
