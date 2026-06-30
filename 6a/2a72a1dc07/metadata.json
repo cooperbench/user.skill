@@ -1,0 +1,62 @@
+{
+  "cli_version": "0.4.5",
+  "checkpoint_id": "6a2a72a1dc07",
+  "strategy": "manual-commit",
+  "branch": "swesimbench-pr",
+  "checkpoints_count": 1,
+  "files_touched": [
+    ".gitignore",
+    "bench/TAXONOMY.md",
+    "bench/orouter.py",
+    "bench/osim_backend.py",
+    "bench/profileopt/FINDINGS_taxonomy.md",
+    "bench/profileopt/README.md",
+    "bench/profileopt/ablation_style.py",
+    "bench/profileopt/analyze_categories.py",
+    "bench/profileopt/analyze_verbosity.py",
+    "bench/profileopt/crossfamily_confirm.json",
+    "bench/profileopt/experiments/accuracy/ablation.json",
+    "bench/profileopt/experiments/accuracy/category_recall.json",
+    "bench/profileopt/experiments/accuracy/manifest.json",
+    "bench/profileopt/experiments/accuracy/summary.json",
+    "bench/profileopt/experiments/accuracy/taxonomy.json",
+    "bench/profileopt/experiments/accuracy/verbosity.json",
+    "bench/profileopt/mine_cases.py",
+    "bench/profileopt/run_eval.py",
+    "bench/profileopt/split_data.py",
+    "bench/profileopt/splits.json",
+    "bench/profileopt/taxonomy.py",
+    "bench/v0.py",
+    "bench/v0_1.py",
+    "modal_app/build_serve_image.py",
+    "modal_app/common.py",
+    "modal_app/data_prep.py",
+    "modal_app/eval.py",
+    "modal_app/export_traces.py",
+    "modal_app/inspect_data.py",
+    "modal_app/serve.py",
+    "modal_app/serve_base.py",
+    "modal_app/serve_both.py",
+    "modal_app/serve_osim.py",
+    "modal_app/smoke_test.py",
+    "modal_app/template_check.py",
+    "modal_app/train.py",
+    "scripts/validate.py"
+  ],
+  "sessions": [
+    {
+      "metadata": "/6a/2a72a1dc07/0/metadata.json",
+      "transcript": "/6a/2a72a1dc07/0/full.jsonl",
+      "context": "/6a/2a72a1dc07/0/context.md",
+      "content_hash": "/6a/2a72a1dc07/0/content_hash.txt",
+      "prompt": "/6a/2a72a1dc07/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 113043,
+    "cache_creation_tokens": 8183969,
+    "cache_read_tokens": 381744982,
+    "output_tokens": 1311502,
+    "api_call_count": 694
+  }
+}
