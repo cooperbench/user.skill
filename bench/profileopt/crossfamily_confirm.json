@@ -1,0 +1,199 @@
+{
+ "baseline-7way": {
+  "name": "baseline-7way",
+  "n_categories": 7,
+  "mean_kappa": 0.681,
+  "pairwise": {
+   "haiku-opus": {
+    "kappa": 0.717,
+    "raw": 0.758,
+    "n": 120
+   },
+   "haiku-gpt5": {
+    "kappa": 0.628,
+    "raw": 0.683,
+    "n": 120
+   },
+   "opus-gpt5": {
+    "kappa": 0.697,
+    "raw": 0.742,
+    "n": 120
+   }
+  },
+  "label_dist": {
+   "haiku": {
+    "refine_redirect": 14,
+    "question": 26,
+    "new_work": 20,
+    "other": 7,
+    "pushback": 18,
+    "bug_report": 17,
+    "approve_proceed": 18
+   },
+   "opus": {
+    "refine_redirect": 15,
+    "question": 22,
+    "approve_proceed": 21,
+    "other": 17,
+    "bug_report": 19,
+    "new_work": 12,
+    "pushback": 14
+   },
+   "gpt5": {
+    "refine_redirect": 33,
+    "question": 26,
+    "other": 9,
+    "approve_proceed": 17,
+    "bug_report": 16,
+    "new_work": 10,
+    "pushback": 9
+   }
+  },
+  "top_confusions": [
+   {
+    "pair": [
+     "new_work",
+     "refine_redirect"
+    ],
+    "n": 15
+   },
+   {
+    "pair": [
+     "pushback",
+     "refine_redirect"
+    ],
+    "n": 11
+   },
+   {
+    "pair": [
+     "new_work",
+     "other"
+    ],
+    "n": 9
+   },
+   {
+    "pair": [
+     "approve_proceed",
+     "refine_redirect"
+    ],
+    "n": 8
+   },
+   {
+    "pair": [
+     "other",
+     "refine_redirect"
+    ],
+    "n": 8
+   },
+   {
+    "pair": [
+     "bug_report",
+     "pushback"
+    ],
+    "n": 7
+   },
+   {
+    "pair": [
+     "approve_proceed",
+     "new_work"
+    ],
+    "n": 6
+   },
+   {
+    "pair": [
+     "other",
+     "question"
+    ],
+    "n": 6
+   }
+  ],
+  "n_items": 120
+ },
+ "axes4-defect-test (v2)": {
+  "name": "axes4-defect-test (v2)",
+  "n_categories": 4,
+  "mean_kappa": 0.73,
+  "pairwise": {
+   "haiku-opus": {
+    "kappa": 0.675,
+    "raw": 0.767,
+    "n": 120
+   },
+   "haiku-gpt5": {
+    "kappa": 0.673,
+    "raw": 0.767,
+    "n": 120
+   },
+   "opus-gpt5": {
+    "kappa": 0.842,
+    "raw": 0.892,
+    "n": 120
+   }
+  },
+  "label_dist": {
+   "haiku": {
+    "directive": 41,
+    "inquiry": 38,
+    "approve": 16,
+    "critical": 25
+   },
+   "opus": {
+    "directive": 55,
+    "inquiry": 24,
+    "approve": 14,
+    "critical": 27
+   },
+   "gpt5": {
+    "directive": 55,
+    "inquiry": 29,
+    "approve": 13,
+    "critical": 23
+   }
+  },
+  "top_confusions": [
+   {
+    "pair": [
+     "directive",
+     "inquiry"
+    ],
+    "n": 22
+   },
+   {
+    "pair": [
+     "critical",
+     "inquiry"
+    ],
+    "n": 15
+   },
+   {
+    "pair": [
+     "critical",
+     "directive"
+    ],
+    "n": 14
+   },
+   {
+    "pair": [
+     "approve",
+     "directive"
+    ],
+    "n": 12
+   },
+   {
+    "pair": [
+     "approve",
+     "critical"
+    ],
+    "n": 3
+   },
+   {
+    "pair": [
+     "approve",
+     "inquiry"
+    ],
+    "n": 3
+   }
+  ],
+  "n_items": 120
+ }
+}

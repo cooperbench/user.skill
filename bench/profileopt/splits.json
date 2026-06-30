@@ -1,0 +1,516 @@
+{
+ "thresholds": {
+  "min_sessions": 6,
+  "min_ho_sessions": 2,
+  "min_ho_turns": 8
+ },
+ "train": {
+  "n_users": 135,
+  "n_repos": 140,
+  "n_sessions": 1232,
+  "n_qualifying": 0,
+  "qualifying_users": [],
+  "qualifying_detail": [],
+  "all_users": [
+   "1natsu172",
+   "A-5ingh",
+   "ASRagab",
+   "AbrahamGeorge8547",
+   "AlienKevin",
+   "AndreaPT1",
+   "ChetanReddyC",
+   "Copilot",
+   "DanielButler1",
+   "Diogenesoftoronto",
+   "DrDonik",
+   "FSM1",
+   "GaetanJuvin",
+   "Guibibi",
+   "InfernapeXavier",
+   "KTC-HirokiNomura",
+   "KeKs0r",
+   "KhanShaheb34",
+   "LitMc",
+   "Mathews-Tom",
+   "Nagi-ovo",
+   "Neo-sk01",
+   "Pavel401",
+   "ProjectAI00",
+   "Riggd",
+   "Sagit-chu",
+   "SnowingFox",
+   "Tiryoh",
+   "Whiteknight07",
+   "YoungY620",
+   "abiswas@elastio.com",
+   "adhishthite",
+   "adrinorosario",
+   "alvarogar4",
+   "ananas-block",
+   "andrefurt",
+   "annrie",
+   "anweiss",
+   "aohri@redhat.com",
+   "araitatsuya-code",
+   "ashish1099",
+   "asinomasimple",
+   "baotoq",
+   "bas",
+   "basher83",
+   "beauwilliams",
+   "bravegeek",
+   "by.andrefurt@significa.co",
+   "christso",
+   "dev@outbid.ai",
+   "dipasqualew",
+   "dr-yst",
+   "dwenzel",
+   "eneakllomollari",
+   "f",
+   "femto",
+   "foxytanuki",
+   "gagan114662",
+   "galexy",
+   "hansbak",
+   "heath0xFF",
+   "heddendorp",
+   "hirakiuc",
+   "iamngoni",
+   "iqbalmineraltown",
+   "ishaan812",
+   "itsmaleen",
+   "jalehman",
+   "jamesdanielwhitford",
+   "jbouder",
+   "jcleira",
+   "jdblackstar",
+   "jfmoe",
+   "jk-pmi",
+   "jmf-pobox",
+   "jobinlawrance",
+   "junjiezhou1122",
+   "kairi@kairis-macbook-pro.local",
+   "kaitas",
+   "kgcrom",
+   "kozo2",
+   "kubokawa-dev",
+   "m0nhawk",
+   "m@havelock.co.uk",
+   "mager",
+   "malkoG",
+   "maoxiaoke",
+   "mbalkhaev@fun.co",
+   "mheers",
+   "minion[bot]",
+   "moebiusband73",
+   "moven0831",
+   "musicofhel",
+   "ngngardner",
+   "nicksu@polyv.net",
+   "nsega",
+   "nuri428",
+   "nuttycc",
+   "nylanalyn",
+   "oozoofrog",
+   "otomarukanta",
+   "pambrose",
+   "panthrocorp",
+   "penso",
+   "petercr",
+   "pnodet",
+   "pskoett",
+   "rail-ka",
+   "raman325",
+   "ravwojdyla",
+   "reflexdemon",
+   "restinnotes",
+   "robertDurst",
+   "roo-oliv",
+   "ryderstorm",
+   "s4lly",
+   "savekirk",
+   "sintezcs",
+   "snhryt-neo",
+   "symonbaikov",
+   "sztwiorok",
+   "ta93abe",
+   "therealpixelverse",
+   "timelabsad-dot",
+   "twilwa",
+   "ujuc",
+   "unknown@local",
+   "upamune",
+   "vaayne",
+   "vancityAyush",
+   "vfaraji89",
+   "vladzima",
+   "xiaosha007",
+   "yonyon-web",
+   "zchee"
+  ]
+ },
+ "val": {
+  "n_users": 23,
+  "n_repos": 21,
+  "n_sessions": 436,
+  "n_qualifying": 20,
+  "qualifying_users": [
+   "jukellam",
+   "oddessentials",
+   "melagiri",
+   "henryph24",
+   "hutusi",
+   "shunkakinoki",
+   "kurtn718",
+   "nosman",
+   "thomasdavis",
+   "blittle",
+   "4gray",
+   "zacjones93",
+   "yorrick",
+   "chuhemiao",
+   "camkeith",
+   "adrientaudiere",
+   "ronnnnn",
+   "tominaga-h",
+   "yarikoptic",
+   "matthsena"
+  ],
+  "qualifying_detail": [
+   {
+    "slug": "jukellam",
+    "sessions": 15,
+    "ho_sessions": 3,
+    "ho_turns": 275
+   },
+   {
+    "slug": "oddessentials",
+    "sessions": 33,
+    "ho_sessions": 6,
+    "ho_turns": 187
+   },
+   {
+    "slug": "melagiri",
+    "sessions": 29,
+    "ho_sessions": 5,
+    "ho_turns": 128
+   },
+   {
+    "slug": "henryph24",
+    "sessions": 20,
+    "ho_sessions": 4,
+    "ho_turns": 104
+   },
+   {
+    "slug": "hutusi",
+    "sessions": 31,
+    "ho_sessions": 6,
+    "ho_turns": 86
+   },
+   {
+    "slug": "shunkakinoki",
+    "sessions": 26,
+    "ho_sessions": 5,
+    "ho_turns": 66
+   },
+   {
+    "slug": "kurtn718",
+    "sessions": 27,
+    "ho_sessions": 5,
+    "ho_turns": 47
+   },
+   {
+    "slug": "nosman",
+    "sessions": 29,
+    "ho_sessions": 5,
+    "ho_turns": 42
+   },
+   {
+    "slug": "thomasdavis",
+    "sessions": 27,
+    "ho_sessions": 5,
+    "ho_turns": 38
+   },
+   {
+    "slug": "blittle",
+    "sessions": 22,
+    "ho_sessions": 4,
+    "ho_turns": 31
+   },
+   {
+    "slug": "4gray",
+    "sessions": 21,
+    "ho_sessions": 4,
+    "ho_turns": 16
+   },
+   {
+    "slug": "zacjones93",
+    "sessions": 22,
+    "ho_sessions": 4,
+    "ho_turns": 15
+   },
+   {
+    "slug": "yorrick",
+    "sessions": 17,
+    "ho_sessions": 3,
+    "ho_turns": 15
+   },
+   {
+    "slug": "chuhemiao",
+    "sessions": 22,
+    "ho_sessions": 4,
+    "ho_turns": 14
+   },
+   {
+    "slug": "camkeith",
+    "sessions": 12,
+    "ho_sessions": 2,
+    "ho_turns": 12
+   },
+   {
+    "slug": "adrientaudiere",
+    "sessions": 14,
+    "ho_sessions": 2,
+    "ho_turns": 11
+   },
+   {
+    "slug": "ronnnnn",
+    "sessions": 16,
+    "ho_sessions": 3,
+    "ho_turns": 10
+   },
+   {
+    "slug": "tominaga-h",
+    "sessions": 13,
+    "ho_sessions": 2,
+    "ho_turns": 10
+   },
+   {
+    "slug": "yarikoptic",
+    "sessions": 13,
+    "ho_sessions": 2,
+    "ho_turns": 10
+   },
+   {
+    "slug": "matthsena",
+    "sessions": 20,
+    "ho_sessions": 4,
+    "ho_turns": 8
+   }
+  ],
+  "all_users": [
+   "4gray",
+   "adrientaudiere",
+   "blittle",
+   "camkeith",
+   "chuhemiao",
+   "ckeith26",
+   "henryph24",
+   "hutusi",
+   "jukellam",
+   "kurtn718",
+   "matthsena",
+   "melagiri",
+   "nosman",
+   "oddessentials",
+   "renovate[bot]",
+   "ronnnnn",
+   "shunkakinoki",
+   "stephanos@cosmos.so",
+   "thomasdavis",
+   "tominaga-h",
+   "yarikoptic",
+   "yorrick",
+   "zacjones93"
+  ]
+ },
+ "test": {
+  "n_users": 31,
+  "n_repos": 26,
+  "n_sessions": 2240,
+  "n_qualifying": 20,
+  "qualifying_users": [
+   "gtrrz-victor",
+   "pc035860",
+   "tarasyarema",
+   "khaong",
+   "135yshr",
+   "tslateman",
+   "dayhaysoos",
+   "jdsingh122918",
+   "armelhbobdad",
+   "robouden",
+   "cyyeh",
+   "pfleidi",
+   "jeevanpillay",
+   "alishakawaguchi",
+   "schmalle",
+   "marcus-sa",
+   "cteyton",
+   "toothbrush",
+   "dipree",
+   "gregszero"
+  ],
+  "qualifying_detail": [
+   {
+    "slug": "gtrrz-victor",
+    "sessions": 77,
+    "ho_sessions": 8,
+    "ho_turns": 531
+   },
+   {
+    "slug": "pc035860",
+    "sessions": 44,
+    "ho_sessions": 8,
+    "ho_turns": 132
+   },
+   {
+    "slug": "tarasyarema",
+    "sessions": 40,
+    "ho_sessions": 8,
+    "ho_turns": 93
+   },
+   {
+    "slug": "khaong",
+    "sessions": 94,
+    "ho_sessions": 8,
+    "ho_turns": 92
+   },
+   {
+    "slug": "135yshr",
+    "sessions": 41,
+    "ho_sessions": 8,
+    "ho_turns": 72
+   },
+   {
+    "slug": "tslateman",
+    "sessions": 41,
+    "ho_sessions": 8,
+    "ho_turns": 69
+   },
+   {
+    "slug": "dayhaysoos",
+    "sessions": 415,
+    "ho_sessions": 8,
+    "ho_turns": 61
+   },
+   {
+    "slug": "jdsingh122918",
+    "sessions": 59,
+    "ho_sessions": 8,
+    "ho_turns": 54
+   },
+   {
+    "slug": "armelhbobdad",
+    "sessions": 51,
+    "ho_sessions": 8,
+    "ho_turns": 52
+   },
+   {
+    "slug": "robouden",
+    "sessions": 42,
+    "ho_sessions": 8,
+    "ho_turns": 35
+   },
+   {
+    "slug": "cyyeh",
+    "sessions": 265,
+    "ho_sessions": 8,
+    "ho_turns": 34
+   },
+   {
+    "slug": "pfleidi",
+    "sessions": 16,
+    "ho_sessions": 3,
+    "ho_turns": 31
+   },
+   {
+    "slug": "jeevanpillay",
+    "sessions": 77,
+    "ho_sessions": 8,
+    "ho_turns": 27
+   },
+   {
+    "slug": "alishakawaguchi",
+    "sessions": 48,
+    "ho_sessions": 8,
+    "ho_turns": 18
+   },
+   {
+    "slug": "schmalle",
+    "sessions": 55,
+    "ho_sessions": 8,
+    "ho_turns": 18
+   },
+   {
+    "slug": "marcus-sa",
+    "sessions": 450,
+    "ho_sessions": 8,
+    "ho_turns": 14
+   },
+   {
+    "slug": "cteyton",
+    "sessions": 93,
+    "ho_sessions": 8,
+    "ho_turns": 14
+   },
+   {
+    "slug": "toothbrush",
+    "sessions": 28,
+    "ho_sessions": 5,
+    "ho_turns": 13
+   },
+   {
+    "slug": "dipree",
+    "sessions": 22,
+    "ho_sessions": 4,
+    "ho_turns": 8
+   },
+   {
+    "slug": "gregszero",
+    "sessions": 45,
+    "ho_sessions": 5,
+    "ho_turns": 8
+   }
+  ],
+  "all_users": [
+   "135yshr",
+   "Soph",
+   "alishakawaguchi",
+   "armelhbobdad",
+   "claude",
+   "computermode",
+   "cteyton",
+   "cyyeh",
+   "dayhaysoos",
+   "dipree",
+   "dvydra",
+   "evisdren",
+   "georg",
+   "gregszero",
+   "gtrrz-victor",
+   "jdsingh122918",
+   "jeevanpillay",
+   "khaong",
+   "marcus-sa",
+   "matthiaswenz",
+   "nodo",
+   "pc035860",
+   "peyton-alt",
+   "pfleidi",
+   "pjbgf",
+   "robouden",
+   "schmalle",
+   "squishykid",
+   "tarasyarema",
+   "toothbrush",
+   "tslateman"
+  ]
+ },
+ "disjoint_users": true,
+ "disjoint_repos": true,
+ "largest_component": {
+  "n_users": 16,
+  "n_repos": 3
+ }
+}

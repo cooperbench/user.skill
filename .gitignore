@@ -4,3 +4,10 @@ __pycache__/
 results/generations*.jsonl
 .env
 .DS_Store
+bench/results/*.jsonl
+bench/results/*.log
+bench/profileopt/*cache*.jsonl
+bench/profileopt/*.log
+bench/profileopt/rerun_raw.jsonl
+.entire/
+bench/profileopt/rerun_raw.jsonl.bak
