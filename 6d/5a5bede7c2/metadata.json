@@ -1,0 +1,26 @@
+{
+  "cli_version": "0.4.5",
+  "checkpoint_id": "6d5a5bede7c2",
+  "strategy": "manual-commit",
+  "branch": "swesimbench",
+  "checkpoints_count": 2,
+  "files_touched": [
+    "bench/profileopt/scaling_context.py"
+  ],
+  "sessions": [
+    {
+      "metadata": "/6d/5a5bede7c2/0/metadata.json",
+      "transcript": "/6d/5a5bede7c2/0/full.jsonl",
+      "context": "/6d/5a5bede7c2/0/context.md",
+      "content_hash": "/6d/5a5bede7c2/0/content_hash.txt",
+      "prompt": "/6d/5a5bede7c2/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 137012,
+    "cache_creation_tokens": 10533400,
+    "cache_read_tokens": 422334855,
+    "output_tokens": 1493935,
+    "api_call_count": 847
+  }
+}

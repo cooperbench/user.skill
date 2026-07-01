@@ -1,0 +1,31 @@
+{
+  "cli_version": "0.4.5",
+  "checkpoint_id": "6d5a5bede7c2",
+  "session_id": "da864ebe-6204-4f1a-bc7e-e1ee4da86833",
+  "strategy": "manual-commit",
+  "created_at": "2026-07-01T23:26:30.139421Z",
+  "branch": "swesimbench",
+  "checkpoints_count": 2,
+  "files_touched": [
+    "bench/profileopt/scaling_context.py"
+  ],
+  "agent": "Claude Code",
+  "turn_id": "5460d492112a",
+  "token_usage": {
+    "input_tokens": 137012,
+    "cache_creation_tokens": 10533400,
+    "cache_read_tokens": 422334855,
+    "output_tokens": 1493935,
+    "api_call_count": 847
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-07-01T23:26:27.344794Z",
+    "agent_lines": 153,
+    "human_added": 623,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 776,
+    "agent_percentage": 19.716494845360824
+  },
+  "transcript_path": ".claude/projects/-Users-kevin-Dev/da864ebe-6204-4f1a-bc7e-e1ee4da86833.jsonl"
+}
