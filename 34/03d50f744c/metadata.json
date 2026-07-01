@@ -1,0 +1,28 @@
+{
+  "cli_version": "0.4.5",
+  "checkpoint_id": "3403d50f744c",
+  "strategy": "manual-commit",
+  "branch": "swesimbench",
+  "checkpoints_count": 5,
+  "files_touched": [
+    "bench/profileopt/exp_condagree.py",
+    "bench/profileopt/experiments/condagree_multi/manifest.json",
+    "bench/profileopt/gemini_api.py"
+  ],
+  "sessions": [
+    {
+      "metadata": "/34/03d50f744c/0/metadata.json",
+      "transcript": "/34/03d50f744c/0/full.jsonl",
+      "context": "/34/03d50f744c/0/context.md",
+      "content_hash": "/34/03d50f744c/0/content_hash.txt",
+      "prompt": "/34/03d50f744c/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 134722,
+    "cache_creation_tokens": 10482030,
+    "cache_read_tokens": 410549886,
+    "output_tokens": 1456926,
+    "api_call_count": 801
+  }
+}

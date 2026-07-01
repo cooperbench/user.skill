@@ -1,0 +1,33 @@
+{
+  "cli_version": "0.4.5",
+  "checkpoint_id": "3403d50f744c",
+  "session_id": "da864ebe-6204-4f1a-bc7e-e1ee4da86833",
+  "strategy": "manual-commit",
+  "created_at": "2026-07-01T21:11:42.665887Z",
+  "branch": "swesimbench",
+  "checkpoints_count": 5,
+  "files_touched": [
+    "bench/profileopt/exp_condagree.py",
+    "bench/profileopt/experiments/condagree_multi/manifest.json",
+    "bench/profileopt/gemini_api.py"
+  ],
+  "agent": "Claude Code",
+  "turn_id": "2103e80a62bb",
+  "token_usage": {
+    "input_tokens": 134722,
+    "cache_creation_tokens": 10482030,
+    "cache_read_tokens": 410549886,
+    "output_tokens": 1456926,
+    "api_call_count": 801
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-07-01T21:11:39.805475Z",
+    "agent_lines": 0,
+    "human_added": 38834,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 38834,
+    "agent_percentage": 0
+  },
+  "transcript_path": ".claude/projects/-Users-kevin-Dev/da864ebe-6204-4f1a-bc7e-e1ee4da86833.jsonl"
+}
