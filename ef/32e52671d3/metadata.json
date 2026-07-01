@@ -1,0 +1,28 @@
+{
+  "cli_version": "0.4.5",
+  "checkpoint_id": "ef32e52671d3",
+  "strategy": "manual-commit",
+  "branch": "swesimbench",
+  "checkpoints_count": 2,
+  "files_touched": [
+    "bench/profileopt/distill_atK.py",
+    "bench/profileopt/scaling_history.py",
+    "bench/profileopt/train_turns.py"
+  ],
+  "sessions": [
+    {
+      "metadata": "/ef/32e52671d3/0/metadata.json",
+      "transcript": "/ef/32e52671d3/0/full.jsonl",
+      "context": "/ef/32e52671d3/0/context.md",
+      "content_hash": "/ef/32e52671d3/0/content_hash.txt",
+      "prompt": "/ef/32e52671d3/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 135076,
+    "cache_creation_tokens": 10495876,
+    "cache_read_tokens": 413850215,
+    "output_tokens": 1467769,
+    "api_call_count": 815
+  }
+}
