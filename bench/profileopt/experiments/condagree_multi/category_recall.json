@@ -139,6 +139,30 @@
    }
   },
   {
+   "id": "gemini-3.5-flash",
+   "label": "Gemini-3.5-Flash",
+   "kind": "general",
+   "overall_d": 0.023,
+   "generic": {
+    "approve": 0.431,
+    "critical": 0.195,
+    "directive": 0.746,
+    "inquiry": 0.075
+   },
+   "distilled": {
+    "approve": 0.241,
+    "critical": 0.248,
+    "directive": 0.806,
+    "inquiry": 0.075
+   },
+   "delta": {
+    "approve": -0.19,
+    "critical": 0.053,
+    "directive": 0.06,
+    "inquiry": 0.0
+   }
+  },
+  {
    "id": "deepseek-v4-flash",
    "label": "DeepSeek-V4-Flash",
    "kind": "general",

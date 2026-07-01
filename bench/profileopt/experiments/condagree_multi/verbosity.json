@@ -39,6 +39,18 @@
    "d": -0.008
   },
   {
+   "id": "gemini-3.5-flash",
+   "label": "Gemini-3.5-Flash",
+   "kind": "general",
+   "np": 16.4,
+   "wp": 12.1,
+   "np_med": 12,
+   "wp_med": 8,
+   "ca_np": 0.499,
+   "ca_wp": 0.522,
+   "d": 0.023
+  },
+  {
    "id": "claude-opus-4.8",
    "label": "Claude-Opus-4.8",
    "kind": "general",

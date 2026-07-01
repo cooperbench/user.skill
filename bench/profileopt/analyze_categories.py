@@ -10,12 +10,12 @@ sys.path.insert(0, str(ROOT / "scripts")); sys.path.insert(0, str(HERE))
 import validate as V, taxonomy as TAX
 EXP = HERE / "experiments" / "condagree_multi"
 CATS = ["approve", "critical", "directive", "inquiry"]
-MODELS = [("deepseek-v3.1","general"),("deepseek-v4-flash","general"),("deepseek-v4-pro","general"),
+MODELS = [("gemini-3.5-flash","general"),("deepseek-v3.1","general"),("deepseek-v4-flash","general"),("deepseek-v4-pro","general"),
           ("gpt-5.5","general"),("claude-opus-4.8","general"),("glm-5.2","general"),
           ("gemini-3.1-pro","general"),("osim-4b","specialized"),("osim-8b","specialized")]
 LABEL = {"deepseek-v3.1":"DeepSeek-V3.1","deepseek-v4-flash":"DeepSeek-V4-Flash","deepseek-v4-pro":"DeepSeek-V4-Pro",
          "gpt-5.5":"GPT-5.5","claude-opus-4.8":"Claude-Opus-4.8","glm-5.2":"GLM-5.2",
-         "gemini-3.1-pro":"Gemini-3.1-Pro","osim-4b":"OSim-4B","osim-8b":"OSim-8B"}
+         "gemini-3.1-pro":"Gemini-3.1-Pro","gemini-3.5-flash":"Gemini-3.5-Flash","osim-4b":"OSim-4B","osim-8b":"OSim-8B"}
 
 points = {}
 for l in (EXP/"points.jsonl").read_text().splitlines():
