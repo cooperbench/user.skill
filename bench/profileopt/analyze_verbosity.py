@@ -13,8 +13,8 @@ sys.path.insert(0, str(ROOT / "scripts")); sys.path.insert(0, str(HERE))
 import validate as V, taxonomy as TAX
 EXP = HERE / "experiments" / "condagree_multi"
 CATS = ["approve", "critical", "directive", "inquiry"]
-MODELS = ["glm-5.2","gpt-5.5","gemini-3.1-pro","claude-opus-4.8","deepseek-v4-pro","deepseek-v4-flash","deepseek-v3.1","osim-4b","osim-8b"]
-LABEL = {"glm-5.2":"GLM-5.2","gpt-5.5":"GPT-5.5","gemini-3.1-pro":"Gemini-3.1-Pro","claude-opus-4.8":"Claude-Opus-4.8",
+MODELS = ["glm-5.2","gpt-5.5","gemini-3.1-pro","gemini-3.5-flash","claude-opus-4.8","deepseek-v4-pro","deepseek-v4-flash","deepseek-v3.1","osim-4b","osim-8b"]
+LABEL = {"glm-5.2":"GLM-5.2","gpt-5.5":"GPT-5.5","gemini-3.1-pro":"Gemini-3.1-Pro","gemini-3.5-flash":"Gemini-3.5-Flash","claude-opus-4.8":"Claude-Opus-4.8",
          "deepseek-v4-pro":"DeepSeek-V4-Pro","deepseek-v4-flash":"DeepSeek-V4-Flash","deepseek-v3.1":"DeepSeek-V3.1","osim-4b":"OSim-4B","osim-8b":"OSim-8B"}
 KIND = {m:("specialized" if m.startswith("osim") else "general") for m in MODELS}
 
