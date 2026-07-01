@@ -21,11 +21,13 @@ sys.path.insert(0, str(ROOT / "scripts")); sys.path.insert(0, str(ROOT / "bench"
 import validate as V, v0_1, orouter
 import osim_backend as OB
 import taxonomy as TAX
+import gemini_api
 
 EXP = HERE / "experiments" / "condagree_multi"
 EXP.mkdir(parents=True, exist_ok=True)
 RAW = HERE / "rerun_raw.jsonl"        # shared resumable cache (already holds deepseek-v3.1, osim-4b, v4*)
 JUDGE = "anthropic/claude-haiku-4.5"  # single cheapest judge
+JUDGE_BACKEND = "or"  # "cli" = same Haiku judge via the claude CLI (fallback when OpenRouter is unavailable)
 GEN_RETRIES = 4  # retry transient API failures (rate-limit / 5xx / cap) in-call before giving up
 N_PER_USER = 30
 TEST = json.loads((HERE / "splits.json").read_text())["test"]["qualifying_users"]
@@ -39,6 +41,7 @@ MODELS = [
     {"name": "claude-opus-4.8",   "backend": "or",    "id": "anthropic/claude-opus-4.8",   "effort": "xhigh", "conc": 64},
     {"name": "glm-5.2",           "backend": "or",    "id": "z-ai/glm-5.2",                "effort": "max",   "conc": 64},
     {"name": "gemini-3.1-pro",    "backend": "or",    "id": "google/gemini-3.1-pro-preview","effort": "high", "conc": 64},
+    {"name": "gemini-3.5-flash",  "backend": "gemini","id": "gemini-3.5-flash",            "effort": "high", "conc": 16},
     {"name": "osim-4b",           "backend": "modal", "id": "osim-4b",                     "effort": None,    "conc": 32},
     {"name": "osim-8b",           "backend": "modal", "id": "osim-8b",                     "effort": None,    "conc": 32},
 ]
@@ -79,6 +82,10 @@ def gen(point, mname, cond):
         return OB.chat(cfg["id"], OB.build_osim_messages(point, folder, V.truncate_words), max_tokens=500), {}
     prompt = V.build_prompt(point, folder)
     seed = int(hashlib.sha256(f"{point['point_id']}|{mname}|{cond}".encode()).hexdigest(), 16) % (2**31)
+    if cfg["backend"] == "gemini":  # direct Gemini API (thinkingLevel maps from effort)
+        txt = v0_1.v0.clean_msg(gemini_api.chat(cfg["id"], prompt, max_tokens=1200, temperature=0.7,
+                                                seed=seed, thinking=cfg["effort"].upper()))
+        return txt, {"seed": seed, "temperature": 0.7}
     txt = v0_1.v0.clean_msg(orouter.chat(cfg["id"], prompt, max_tokens=1200, temperature=0.7,
                                          reasoning_effort=cfg["effort"], seed=seed))
     return txt, {"seed": seed, "temperature": 0.7}
@@ -94,7 +101,8 @@ def label(text, prev_agent):
     if _api_err(text): return None
     k = "lab:haiku:" + hashlib.sha256((V.truncate_words(prev_agent,120)+"|"+V.truncate_words(text,150)).encode()).hexdigest()[:24]
     if k in _cache: return _cache[k]["move"]
-    mv = TAX.classify(text, prev_agent, model=JUDGE, backend="or")
+    jm = JUDGE if JUDGE_BACKEND == "or" else "claude-haiku-4-5-20251001"
+    mv = TAX.classify(text, prev_agent, model=jm, backend=JUDGE_BACKEND)
     if mv is not None: put({"key": k, "move": mv})
     return mv
 
