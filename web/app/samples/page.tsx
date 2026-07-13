@@ -40,6 +40,17 @@ type Payload = {
 
 const data = raw as Payload;
 
+function displayName(user: string) {
+  if (user.startsWith("dc:")) {
+    const n = user.replace(/^dc:dc_/, "");
+    return { title: `DataClaw donor ${n}`, mono: user, showMono: true };
+  }
+  if (user.startsWith("gh:")) {
+    return { title: user.slice(3), mono: user, showMono: false };
+  }
+  return { title: user, mono: user, showMono: false };
+}
+
 function roleStyle(role: string, focal: boolean) {
   if (focal) return "border-emerald-300 bg-emerald-50/80";
   if (role === "user") return "border-zinc-200 bg-white";
@@ -92,10 +103,14 @@ export default function SamplesPage() {
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     if (!q) return developers;
-    return developers.filter((d) => d.user.toLowerCase().includes(q));
+    return developers.filter((d) => {
+      const { title, mono } = displayName(d.user);
+      return d.user.toLowerCase().includes(q) || title.toLowerCase().includes(q) || mono.toLowerCase().includes(q);
+    });
   }, [developers, query]);
 
   const current = developers.find((d) => d.user === user) ?? filtered[0] ?? developers[0];
+  const currentLabel = current ? displayName(current.user) : null;
 
   return (
     <div className="min-h-screen">
@@ -127,7 +142,10 @@ export default function SamplesPage() {
           <h2 className="mt-1 text-lg font-semibold tracking-tight text-zinc-900">
             {data.n_samples_per_developer} messages × {data.n_developers} developers
           </h2>
-          <p className="mt-2 text-xs leading-relaxed text-zinc-500">{data.note}</p>
+          <p className="mt-2 text-xs leading-relaxed text-zinc-500">
+            {data.note} IDs prefixed <span className="font-mono">gh:</span> are public GitHub handles;{" "}
+            <span className="font-mono">dc:</span> are anonymized DataClaw HF donors.
+          </p>
 
           <label className="mt-4 block">
             <span className="sr-only">Filter developers</span>
@@ -142,6 +160,7 @@ export default function SamplesPage() {
           <div className="mt-3 max-h-[28rem] overflow-y-auto rounded-xl border border-zinc-200 bg-white">
             {filtered.map((d) => {
               const active = d.user === current?.user;
+              const label = displayName(d.user);
               return (
                 <button
                   key={d.user}
@@ -151,7 +170,12 @@ export default function SamplesPage() {
                     active ? "bg-emerald-50 text-emerald-900" : "text-zinc-700 hover:bg-zinc-50"
                   }`}
                 >
-                  <span className="truncate font-mono text-xs">{d.user}</span>
+                  <span className="min-w-0">
+                    <span className="block truncate text-sm font-medium">{label.title}</span>
+                    {label.showMono && (
+                      <span className="block truncate font-mono text-[10px] text-zinc-400">{label.mono}</span>
+                    )}
+                  </span>
                   <span className="shrink-0 font-mono text-[10px] text-zinc-400">{d.samples.length}</span>
                 </button>
               );
@@ -167,7 +191,10 @@ export default function SamplesPage() {
             <>
               <div className="mb-5">
                 <div className="font-mono text-[11px] uppercase tracking-wider text-zinc-400">developer</div>
-                <h3 className="mt-1 font-mono text-xl font-semibold text-zinc-900">{current.user}</h3>
+                <h3 className="mt-1 text-xl font-semibold text-zinc-900">{currentLabel?.title}</h3>
+                {currentLabel?.showMono && (
+                  <div className="mt-0.5 font-mono text-xs text-zinc-400">{currentLabel.mono}</div>
+                )}
                 <p className="mt-1 text-sm text-zinc-500">
                   Showing {current.samples.length} sampled user messages
                   {current.n_available > current.samples.length && (
