@@ -442,14 +442,63 @@ export default function V2Page() {
         </a>
       </Section>
 
-      <footer className="mt-16 border-t border-zinc-200 pt-6 text-sm text-zinc-400">
-        SWESimBench v2 clean cohort · {fmt(s.n_users)} developers · {fmt(data.eval_dist.n_points)} eval points · Claude Code + Codex
-        full traces · leakage-verified train/held-out split. See the{" "}
-        <a href="/samples" className="text-zinc-600 hover:text-zinc-900">message samples</a>
-        {" · "}
-        <a href="/v1" className="text-zinc-600 hover:text-zinc-900">v1 leaderboard</a>{" "}
-        for the next-action-prediction benchmark.
-      </footer>
+      <Section kicker="how it was built" title="From raw traces to the clean cohort">
+        <p className="mb-5 max-w-2xl text-sm text-zinc-600">
+          The public numbers above are the end of a three-stage pipeline: harvest full-fidelity coding-agent
+          traces, filter to a comparable Opus-4.6-era slice, then curate a leakage-safe train/held-out cohort.
+        </p>
+        <ol className="space-y-4">
+          <li className="rounded-xl border border-zinc-200 bg-white p-4">
+            <div className="flex items-baseline gap-3">
+              <span className="font-mono text-xs font-semibold text-indigo-500">01 · source</span>
+              <h3 className="text-sm font-semibold text-zinc-900">Harvest three full-trace channels</h3>
+            </div>
+            <p className="mt-2 text-sm leading-relaxed text-zinc-600">
+              Every retained session is a native Claude Code or Codex transcript — not lossy IDE markdown.
+              Traces come from <strong>Entire checkpoints</strong> (incl. SWE-chat overlap), a{" "}
+              <strong>GitHub ~/.claude / .codex crawl</strong>, and <strong>DataClaw HF donors</strong>.
+              SpecStory dumps and non-CC/Codex agents are excluded up front.
+            </p>
+          </li>
+          <li className="rounded-xl border border-zinc-200 bg-white p-4">
+            <div className="flex items-baseline gap-3">
+              <span className="font-mono text-xs font-semibold text-indigo-500">02 · filter</span>
+              <h3 className="text-sm font-semibold text-zinc-900">Keep a comparable Opus-4.6-era slice</h3>
+            </div>
+            <p className="mt-2 text-sm leading-relaxed text-zinc-600">
+              Sessions are restricted to on/after <strong>2026-02-05</strong>. Developers must clear{" "}
+              <strong>≥400</strong> training and <strong>≥100</strong> held-out user turns, with every training
+              session strictly earlier than every held-out session. The source manifest started at{" "}
+              <strong>{fmt((data as { notes?: { source_manifest_users?: number } }).notes?.source_manifest_users ?? 80)}</strong>{" "}
+              developers / <strong>{fmt((data as { notes?: { source_manifest_sessions?: number } }).notes?.source_manifest_sessions ?? 21933)}</strong> sessions before cleaning.
+            </p>
+          </li>
+          <li className="rounded-xl border border-zinc-200 bg-white p-4">
+            <div className="flex items-baseline gap-3">
+              <span className="font-mono text-xs font-semibold text-indigo-500">03 · curate</span>
+              <h3 className="text-sm font-semibold text-zinc-900">Dedup, drop, then freeze the eval set</h3>
+            </div>
+            <p className="mt-2 text-sm leading-relaxed text-zinc-600">
+              Cross-source session dedup collapses the harvest to <strong>{fmt(s.n_sessions)}</strong> clean
+              sessions. <strong>{fmt((data as { notes?: { dropped?: number } }).notes?.dropped ?? 22)}</strong>{" "}
+              developers are dropped (almost all below the clean-turn floor; one for extreme session
+              fragmentation), leaving <strong>{fmt(s.n_users)}</strong>. From their held-out tails we freeze{" "}
+              <strong>{fmt(data.eval_dist.n_points)}</strong> prediction points — the moments the benchmark scores.
+            </p>
+          </li>
+        </ol>
+        <div className="mt-5 flex flex-wrap gap-3 text-sm">
+          <a href="/samples" className="font-semibold text-zinc-800 underline-offset-2 hover:underline">
+            message samples →
+          </a>
+          <a href="/v1" className="font-semibold text-zinc-800 underline-offset-2 hover:underline">
+            v1 CondAgree leaderboard →
+          </a>
+          <a href="/data" className="font-semibold text-zinc-800 underline-offset-2 hover:underline">
+            downloadable data →
+          </a>
+        </div>
+      </Section>
     </main>
   );
 }

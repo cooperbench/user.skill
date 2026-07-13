@@ -401,6 +401,7 @@ def main() -> None:
             "cohort": "Authoritative clean v2 harbor cohort (57 developers / 1216 points).",
             "tokens": "Token counts are approximate (chars/4); raw cl100k + harness/model tags need scrapes.",
             "source_manifest_users": build.get("source_manifest_users"),
+            "source_manifest_sessions": build.get("source_manifest_sessions"),
             "retained_users": build.get("retained_users"),
             "dropped": len(build.get("dropped_below_clean_threshold") or []),
         },
