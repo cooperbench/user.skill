@@ -10,6 +10,8 @@
 
 Primary Cloud Agent repo: **`cooperbench/user.skill`** branch **`kevin`** (shows in the Cloud Agents picker). The AlienKevin copy is a personal remote mirror only.
 
+Seoul scrape/cohort scripts live under `pipelines/` (`claude-crawl/`, `swesimbench-v2-harbor/` including `build_clean_cohort.py`). Private session corpora stay in S3, not git.
+
 ### Secrets (dashboard)
 
 Set environment-scoped Runtime Secrets:
