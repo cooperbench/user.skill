@@ -16,16 +16,18 @@ Set environment-scoped Runtime Secrets:
 |---|---|
 | `OPENROUTER_API_KEY` | OpenRouter for bench / generation |
 | `GEMINI_API_KEY` | Gemini API profileopt paths (if used) |
-| `CURSOR_AWS_ASSUME_IAM_ROLE_ARN` | `arn:aws:iam::999404134598:role/swe-sim-cursor-cloud-readonly` |
+| `AWS_ACCESS_KEY_ID` | IAM user `swe-sim-cloud-agent` (S3 R/W on private bucket) |
+| `AWS_SECRET_ACCESS_KEY` | Matching secret for that user |
+| `AWS_DEFAULT_REGION` | `us-east-1` |
 
-Rotate any keys that previously lived in `.env` on Seoul/Mac before relying on them in Cloud.
+Personal/Ultra plans do **not** get Cursor assume-role External ID; use the scoped IAM user keys above. Rotate keys that previously lived in `.env` on Seoul/Mac, and rotate the IAM access key if it leaks.
 
 ### AWS / S3
 
 - Bucket: `swe-sim-private-use1-999404134598`
 - Region: `us-east-1`
 - Exact host allowlist (no `*.s3` wildcard): `swe-sim-private-use1-999404134598.s3.us-east-1.amazonaws.com`
-- Role trust must use Cursor `roleAssumer` + team External ID (Dashboard → Settings → Advanced).
+- IAM user: `swe-sim-cloud-agent` (read/write on this bucket + KMS for SSE)
 
 `environment.json` `install` runs `scripts/hydrate_private_data.sh`, which syncs:
 
