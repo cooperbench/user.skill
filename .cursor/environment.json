@@ -1,0 +1,12 @@
+{
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "install": "pip install -r requirements.txt && chmod +x scripts/hydrate_private_data.sh && ./scripts/hydrate_private_data.sh",
+  "env": {
+    "AWS_DEFAULT_REGION": "us-east-1",
+    "SWE_SIM_S3_BUCKET": "swe-sim-private-use1-999404134598",
+    "SWE_SIM_S3_PREFIX": "derived/v2-58"
+  }
+}
