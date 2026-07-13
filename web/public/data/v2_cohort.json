@@ -1,0 +1,516 @@
+{
+ "dataset": "SWESimBench v2 harbor cohort",
+ "policy_version": "swesimbench-v2-cohort-policy-2026-07-13.8",
+ "policy_fingerprint": "8ded6d0a40d12912f24ad06f50c398f002753c05485cb1852697bae51625332e",
+ "cohort_fingerprint": "30aba24eb46b1cc2dce61b3843eb00eeb82c9ecb75476eb2aa245effaf8e3cac",
+ "developers": 57,
+ "points": 1216,
+ "sources": {
+  "dc": 4,
+  "gh": 53
+ },
+ "note": "Authoritative v2 cohort is 57 developers (plan said 58). Aggregate metadata only; session text and distilled personas are private.",
+ "related_eval": {
+  "name": "CondAgree next-action prediction accuracy (published leaderboard)",
+  "status": "still the June 2026 SWE-chat 20-developer / 480-moment split",
+  "path": "bench/profileopt/experiments/condagree_multi"
+ },
+ "build": {
+  "policy_version": "swesimbench-v2-cohort-policy-2026-07-13.8",
+  "policy_fingerprint": "8ded6d0a40d12912f24ad06f50c398f002753c05485cb1852697bae51625332e",
+  "cohort_fingerprint": "30aba24eb46b1cc2dce61b3843eb00eeb82c9ecb75476eb2aa245effaf8e3cac",
+  "source_manifest_users": 80,
+  "excluded_users": [
+   "gh:mhaitana"
+  ],
+  "retained_users": 57,
+  "dropped_below_clean_threshold": [
+   {
+    "user": "gh:ryantuck",
+    "train_turns": 6562,
+    "held_turns": 59,
+    "reason": "below_clean_threshold"
+   },
+   {
+    "user": "gh:jhoetter",
+    "train_turns": 1665,
+    "held_turns": 91,
+    "reason": "below_clean_threshold"
+   },
+   {
+    "user": "gh:marcus-sa",
+    "train_turns": 2444,
+    "held_turns": 72,
+    "reason": "below_clean_threshold"
+   },
+   {
+    "user": "gh:FSM1",
+    "train_turns": 2835,
+    "held_turns": 95,
+    "reason": "below_clean_threshold"
+   },
+   {
+    "user": "gh:SkogBackup",
+    "train_turns": 1381,
+    "held_turns": 100,
+    "sessions": 1206,
+    "mean_human_turns_per_session": 1.228,
+    "reason": "extreme_session_fragmentation"
+   },
+   {
+    "user": "gh:cyyeh",
+    "train_turns": 1101,
+    "held_turns": 76,
+    "reason": "below_clean_threshold"
+   },
+   {
+    "user": "gh:lyston11",
+    "train_turns": 1034,
+    "held_turns": 88,
+    "reason": "below_clean_threshold"
+   },
+   {
+    "user": "gh:AlienKevin",
+    "train_turns": 1081,
+    "held_turns": 95,
+    "reason": "below_clean_threshold"
+   },
+   {
+    "user": "gh:khaong",
+    "train_turns": 1061,
+    "held_turns": 95,
+    "reason": "below_clean_threshold"
+   },
+   {
+    "user": "gh:carles444",
+    "train_turns": 782,
+    "held_turns": 81,
+    "reason": "below_clean_threshold"
+   },
+   {
+    "user": "gh:blackgirlbytes",
+    "train_turns": 926,
+    "held_turns": 98,
+    "reason": "below_clean_threshold"
+   },
+   {
+    "user": "gh:KeKs0r",
+    "train_turns": 489,
+    "held_turns": 66,
+    "reason": "below_clean_threshold"
+   },
+   {
+    "user": "gh:yyovil",
+    "train_turns": 562,
+    "held_turns": 83,
+    "reason": "below_clean_threshold"
+   },
+   {
+    "user": "gh:NguyenDoCong",
+    "train_turns": 538,
+    "held_turns": 78,
+    "reason": "below_clean_threshold"
+   },
+   {
+    "user": "gh:fcamblor",
+    "train_turns": 540,
+    "held_turns": 66,
+    "reason": "below_clean_threshold"
+   },
+   {
+    "user": "gh:PJensen",
+    "train_turns": 446,
+    "held_turns": 72,
+    "reason": "below_clean_threshold"
+   },
+   {
+    "user": "gh:PhantomMenace222",
+    "train_turns": 458,
+    "held_turns": 62,
+    "reason": "below_clean_threshold"
+   },
+   {
+    "user": "gh:onsails",
+    "train_turns": 453,
+    "held_turns": 45,
+    "reason": "below_clean_threshold"
+   },
+   {
+    "user": "gh:tarasyarema",
+    "train_turns": 427,
+    "held_turns": 99,
+    "reason": "below_clean_threshold"
+   },
+   {
+    "user": "gh:jakobtfaber",
+    "train_turns": 459,
+    "held_turns": 97,
+    "reason": "below_clean_threshold"
+   },
+   {
+    "user": "gh:Dhruv2mars",
+    "train_turns": 387,
+    "held_turns": 81,
+    "reason": "below_clean_threshold"
+   },
+   {
+    "user": "gh:Nagi-ovo",
+    "train_turns": 390,
+    "held_turns": 98,
+    "reason": "below_clean_threshold"
+   }
+  ],
+  "source_manifest_sessions": 21933,
+  "clean_sessions": 9719,
+  "dedup_events": 853,
+  "cross_split_dedup_events": 1
+ },
+ "users": [
+  {
+   "user": "dc:dc_000",
+   "train_turns": 16788,
+   "held_turns": 100,
+   "n_points": 28
+  },
+  {
+   "user": "dc:dc_001",
+   "train_turns": 12737,
+   "held_turns": 171,
+   "n_points": 23
+  },
+  {
+   "user": "dc:dc_004",
+   "train_turns": 1983,
+   "held_turns": 110,
+   "n_points": 27
+  },
+  {
+   "user": "dc:dc_010",
+   "train_turns": 1211,
+   "held_turns": 116,
+   "n_points": 10
+  },
+  {
+   "user": "gh:135yshr",
+   "train_turns": 698,
+   "held_turns": 102,
+   "n_points": 30
+  },
+  {
+   "user": "gh:4thwithme",
+   "train_turns": 1369,
+   "held_turns": 171,
+   "n_points": 15
+  },
+  {
+   "user": "gh:ALRubinger",
+   "train_turns": 661,
+   "held_turns": 178,
+   "n_points": 4
+  },
+  {
+   "user": "gh:ET-NoahDolev",
+   "train_turns": 493,
+   "held_turns": 100,
+   "n_points": 30
+  },
+  {
+   "user": "gh:MohammedMqat",
+   "train_turns": 411,
+   "held_turns": 106,
+   "n_points": 19
+  },
+  {
+   "user": "gh:Poytr1",
+   "train_turns": 620,
+   "held_turns": 130,
+   "n_points": 30
+  },
+  {
+   "user": "gh:Soph",
+   "train_turns": 1225,
+   "held_turns": 148,
+   "n_points": 30
+  },
+  {
+   "user": "gh:Stark-Industries0417",
+   "train_turns": 1106,
+   "held_turns": 102,
+   "n_points": 30
+  },
+  {
+   "user": "gh:TheurgicDuke771",
+   "train_turns": 819,
+   "held_turns": 106,
+   "n_points": 30
+  },
+  {
+   "user": "gh:ababushkin",
+   "train_turns": 672,
+   "held_turns": 104,
+   "n_points": 30
+  },
+  {
+   "user": "gh:achildrenmile",
+   "train_turns": 524,
+   "held_turns": 108,
+   "n_points": 30
+  },
+  {
+   "user": "gh:admarble",
+   "train_turns": 766,
+   "held_turns": 108,
+   "n_points": 30
+  },
+  {
+   "user": "gh:alishakawaguchi",
+   "train_turns": 560,
+   "held_turns": 102,
+   "n_points": 15
+  },
+  {
+   "user": "gh:armelhbobdad",
+   "train_turns": 2180,
+   "held_turns": 100,
+   "n_points": 16
+  },
+  {
+   "user": "gh:barbogast",
+   "train_turns": 418,
+   "held_turns": 101,
+   "n_points": 20
+  },
+  {
+   "user": "gh:bradleygibsongit",
+   "train_turns": 591,
+   "held_turns": 107,
+   "n_points": 7
+  },
+  {
+   "user": "gh:christso",
+   "train_turns": 459,
+   "held_turns": 130,
+   "n_points": 12
+  },
+  {
+   "user": "gh:cjrfoto",
+   "train_turns": 879,
+   "held_turns": 158,
+   "n_points": 4
+  },
+  {
+   "user": "gh:dayhaysoos",
+   "train_turns": 577,
+   "held_turns": 104,
+   "n_points": 7
+  },
+  {
+   "user": "gh:dcambria",
+   "train_turns": 1185,
+   "held_turns": 101,
+   "n_points": 17
+  },
+  {
+   "user": "gh:fogodev",
+   "train_turns": 715,
+   "held_turns": 109,
+   "n_points": 7
+  },
+  {
+   "user": "gh:gabadi",
+   "train_turns": 825,
+   "held_turns": 112,
+   "n_points": 14
+  },
+  {
+   "user": "gh:gopeace88",
+   "train_turns": 521,
+   "held_turns": 234,
+   "n_points": 8
+  },
+  {
+   "user": "gh:heddendorp",
+   "train_turns": 540,
+   "held_turns": 150,
+   "n_points": 30
+  },
+  {
+   "user": "gh:henryph24",
+   "train_turns": 1481,
+   "held_turns": 102,
+   "n_points": 30
+  },
+  {
+   "user": "gh:hutusi",
+   "train_turns": 1694,
+   "held_turns": 111,
+   "n_points": 30
+  },
+  {
+   "user": "gh:jdsingh122918",
+   "train_turns": 509,
+   "held_turns": 232,
+   "n_points": 19
+  },
+  {
+   "user": "gh:jeevanpillay",
+   "train_turns": 1283,
+   "held_turns": 102,
+   "n_points": 30
+  },
+  {
+   "user": "gh:jobinlawrance",
+   "train_turns": 1657,
+   "held_turns": 124,
+   "n_points": 14
+  },
+  {
+   "user": "gh:johyunduk",
+   "train_turns": 1134,
+   "held_turns": 120,
+   "n_points": 18
+  },
+  {
+   "user": "gh:jskswamy",
+   "train_turns": 723,
+   "held_turns": 108,
+   "n_points": 14
+  },
+  {
+   "user": "gh:junaid-appointy",
+   "train_turns": 526,
+   "held_turns": 129,
+   "n_points": 14
+  },
+  {
+   "user": "gh:kmiki0",
+   "train_turns": 703,
+   "held_turns": 208,
+   "n_points": 11
+  },
+  {
+   "user": "gh:kohaku500",
+   "train_turns": 2783,
+   "held_turns": 457,
+   "n_points": 17
+  },
+  {
+   "user": "gh:kungfusaini",
+   "train_turns": 2979,
+   "held_turns": 129,
+   "n_points": 22
+  },
+  {
+   "user": "gh:malkoG",
+   "train_turns": 492,
+   "held_turns": 101,
+   "n_points": 30
+  },
+  {
+   "user": "gh:manderson240",
+   "train_turns": 956,
+   "held_turns": 113,
+   "n_points": 25
+  },
+  {
+   "user": "gh:melagiri",
+   "train_turns": 2055,
+   "held_turns": 101,
+   "n_points": 30
+  },
+  {
+   "user": "gh:mvanhorn",
+   "train_turns": 556,
+   "held_turns": 100,
+   "n_points": 30
+  },
+  {
+   "user": "gh:nathanbooth-konecta",
+   "train_turns": 894,
+   "held_turns": 102,
+   "n_points": 23
+  },
+  {
+   "user": "gh:nosman",
+   "train_turns": 533,
+   "held_turns": 131,
+   "n_points": 17
+  },
+  {
+   "user": "gh:oddessentials",
+   "train_turns": 1043,
+   "held_turns": 130,
+   "n_points": 23
+  },
+  {
+   "user": "gh:penso",
+   "train_turns": 1323,
+   "held_turns": 119,
+   "n_points": 23
+  },
+  {
+   "user": "gh:raman325",
+   "train_turns": 1743,
+   "held_turns": 112,
+   "n_points": 30
+  },
+  {
+   "user": "gh:robouden",
+   "train_turns": 1045,
+   "held_turns": 114,
+   "n_points": 30
+  },
+  {
+   "user": "gh:scottdensmore",
+   "train_turns": 427,
+   "held_turns": 106,
+   "n_points": 11
+  },
+  {
+   "user": "gh:singampalliveerendra",
+   "train_turns": 743,
+   "held_turns": 100,
+   "n_points": 30
+  },
+  {
+   "user": "gh:ta93abe",
+   "train_turns": 897,
+   "held_turns": 250,
+   "n_points": 30
+  },
+  {
+   "user": "gh:thieso2",
+   "train_turns": 1121,
+   "held_turns": 102,
+   "n_points": 30
+  },
+  {
+   "user": "gh:toyamarinyon",
+   "train_turns": 1231,
+   "held_turns": 101,
+   "n_points": 6
+  },
+  {
+   "user": "gh:wildlily1021",
+   "train_turns": 675,
+   "held_turns": 110,
+   "n_points": 30
+  },
+  {
+   "user": "gh:winksaville",
+   "train_turns": 6645,
+   "held_turns": 111,
+   "n_points": 16
+  },
+  {
+   "user": "gh:yutakobayashidev",
+   "train_turns": 1159,
+   "held_turns": 138,
+   "n_points": 30
+  }
+ ],
+ "created_from": {
+  "manifest_created_at": "2026-07-13T18:38:30.182365+00:00",
+  "s3_prefix": "derived/v2-58/"
+ }
+}

@@ -1,5 +1,5 @@
-// SWESimBench v2 — exploratory data analysis of the 100-developer dataset.
-// Data: app/v2data.json (computed from the harvested Claude Code / Codex full-trace corpus).
+// SWESimBench v2 — exploratory data analysis of the authoritative clean harbor cohort.
+// Data: app/v2data.json (regenerated via scripts/export_v2data.py from .private/v2-58/).
 import data from "./v2data.json";
 
 const fmt = (n: number) => n.toLocaleString("en-US");
@@ -97,11 +97,11 @@ function Section({ title, kicker, children }: { title: string; kicker?: string; 
 
 export default function V2Page() {
   const s = data.summary;
-  const h = data.harness as Record<string, { sessions: number; user_turns: number }>;
-  const cc = h["claude-code"];
-  const cx = h["codex"];
-  const totTurns = cc.user_turns + cx.user_turns;
-  const totSess = cc.sessions + cx.sessions;
+  const h = (data.harness ?? {}) as Record<string, { sessions: number; user_turns: number }>;
+  const cc = h["claude-code"] ?? { sessions: 0, user_turns: 0 };
+  const cx = h["codex"] ?? { sessions: 0, user_turns: 0 };
+  const totTurns = cc.user_turns + cx.user_turns || 1;
+  const totSess = cc.sessions + cx.sessions || 1;
 
   // model families: consolidate into a clean set
   const mfRaw = data.model_families as Record<string, number>;
@@ -150,20 +150,22 @@ export default function V2Page() {
 
       <header className="mt-8">
         <h1 className="text-3xl font-semibold tracking-tight text-zinc-900">
-          SWESimBench v2 — the {s.n_users}-developer dataset
+          SWESimBench v2 — the {s.n_users}-developer harbor cohort
         </h1>
         <p className="mt-3 max-w-2xl text-zinc-600">
-          {fmt(s.n_users)} real software developers, each with a deep <strong>training</strong> history and a
-          strictly-later, non-overlapping <strong>held-out</strong> set, harvested as full-fidelity{" "}
-          <strong>Claude Code</strong> and <strong>Codex</strong> session traces (no lossy IDE-markdown).
-          Every developer clears ≥400 training and ≥100 held-out user turns; the split is leakage-verified
-          (every training session strictly precedes every held-out session). Restricted to the{" "}
-          <strong>Opus 4.6 era</strong> — only sessions on or after its 2026-02-05 release.
+          Authoritative clean cohort: <strong>{fmt(s.n_users)}</strong> developers /{" "}
+          <strong>{fmt(data.eval_dist.n_points)}</strong> held-out prediction points
+          {("policy_version" in s) && <> under <code className="text-xs">{(s as { policy_version?: string }).policy_version}</code></>}.
+          Each developer has a deep <strong>training</strong> history and a strictly-later, non-overlapping{" "}
+          <strong>held-out</strong> set from full-fidelity <strong>Claude Code</strong> / <strong>Codex</strong> traces.
+          Admission clears ≥400 training and ≥100 held-out user turns; the split is leakage-verified.
+          Opus 4.6 era only (sessions on/after 2026-02-05). Source manifest had 80 developers; 22 were dropped in cleaning.
         </p>
       </header>
 
-      <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
-        <StatCard label="developers" value={fmt(s.n_users)} />
+      <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-5">
+        <StatCard label="developers" value={fmt(s.n_users)} sub="clean cohort" />
+        <StatCard label="eval points" value={fmt(data.eval_dist.n_points)} sub="held-out moments" />
         <StatCard label="sessions" value={fmt(s.n_sessions)} sub="full traces" />
         <StatCard label="user turns" value={fmt(s.n_user_turns)} />
         <StatCard label="assistant turns" value={fmt(s.n_assistant_turns)} />
@@ -234,13 +236,11 @@ export default function V2Page() {
       <Section kicker="side by side" title="How the sources differ">
         {(() => {
           const sc = data.source_compare as Record<string, Record<string, string | number>>;
-          const cols = ["Entire checkpoints", "GitHub .claude/.codex crawl", "DataClaw"];
-          const short: Record<string, string> = { "Entire checkpoints": "Entire", "GitHub .claude/.codex crawl": "GitHub crawl", DataClaw: "DataClaw" };
+          const cols = ["Entire checkpoints", "GitHub .claude/.codex crawl", "DataClaw (HF donors)"];
+          const short: Record<string, string> = { "Entire checkpoints": "Entire", "GitHub .claude/.codex crawl": "GitHub crawl", "DataClaw (HF donors)": "DataClaw" };
           const order = ["developers (dominant)", "sessions", "user turns", "assistant turns",
-            "user turns / session (mean)", "user turns / session (median)", "assistant / user turn",
-            "tokens/user turn (median)", "tokens/user turn (mean)", "Claude Code % of turns",
-            "Codex % of turns", "train:eval turn %", "time span"];
-          const num = (x: string | number) => (typeof x === "number" ? fmt(x) : x);
+            "user turns / session (mean)", "assistant / user turn", "train:eval turn %"].filter((m) => !!sc[m]);
+          const num = (x: string | number | undefined) => (x == null ? "—" : typeof x === "number" ? fmt(x) : x);
           return (
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
@@ -265,16 +265,13 @@ export default function V2Page() {
           );
         })()}
         <p className="mt-3 text-sm text-zinc-500">
-          Three distinct signatures. <strong>Entire</strong> captures the deepest, most agentic
-          sessions (median 4 user turns, 6 assistant turns each) — it fires on real git activity.
-          <strong> The crawl</strong> is a whole <code>~/.claude/projects</code> dump, so it's a sea of
-          shallow one-shots (median 1 user turn) but with the longest pasted prompts (mean 340 tokens)
-          and the widest time range (back to mid-2025). <strong>DataClaw</strong> is the most
-          Codex-heavy (38% of turns) and the most train-heavy (98:2). All three are tool-dense
-          (4–6 assistant turns per user turn) — genuine full traces.
+          Source mix for the retained {fmt(s.n_users)}-developer cohort. Entire dominates developer count;
+          DataClaw still contributes a large share of sessions/turns. Figures above are recomputed from the
+          clean cohort (not the pre-clean 80-developer harvest).
         </p>
       </Section>
 
+      {Object.keys((data as { harness?: Record<string, unknown> }).harness ?? {}).length > 0 && (
       <Section kicker="agent harness" title="Claude Code vs Codex">
         <div className="grid gap-6 sm:grid-cols-2">
           <div>
@@ -296,12 +293,8 @@ export default function V2Page() {
             />
           </div>
         </div>
-        <p className="mt-3 text-sm text-zinc-500">
-          Claude Code dominates (~81% of user turns). Codex sessions are far more tool-dense
-          (~320 tool/shell calls per session vs ~63 for Claude Code), reflecting Codex's
-          many-small-commands style.
-        </p>
       </Section>
+      )}
 
       <Section kicker="the split" title="Train vs held-out (eval)">
         <div className="overflow-x-auto">
@@ -323,9 +316,10 @@ export default function V2Page() {
           </table>
         </div>
         <p className="mt-3 text-sm text-zinc-500">
-          The split is deliberately train-heavy: ~92% of user turns and ~95% of sessions are training
-          material (rich developer profiles), with a lean-but-sufficient held-out tail (median 11 sessions
-          / 108 user turns) that just clears the ≥100 floor.
+          The split is deliberately train-heavy for rich developer profiles, with a lean held-out tail
+          (median {r0(d.sessions.eval.median)} sessions / {r0(d.user_turns.eval.median)} user turns) that clears the ≥100 floor.
+          Eval scoring uses <strong>{fmt(data.eval_dist.n_points)}</strong> held-out prediction points across{" "}
+          <strong>{fmt(data.eval_dist.n_devs)}</strong> developers.
         </p>
       </Section>
 
@@ -414,76 +408,15 @@ export default function V2Page() {
           Heavily right-skewed: median <strong>{fmt(d.tok_per_turn.pooled_median)}</strong> tokens
           (short commands like "run it", "fix the test"), mean <strong>{fmt(d.tok_per_turn.pooled_mean)}</strong>{" "}
           (p90 {fmt(d.tok_per_turn.p90)}, p99 {fmt(d.tok_per_turn.p99)}) — the tail is pasted logs, errors,
-          and file dumps. cl100k tokenizer, {fmt(s.n_user_turns)} user turns.
+          and file dumps. Token lengths are approximate (chars/4) on the clean cohort; {fmt(s.n_user_turns)} user turns.
         </p>
       </Section>
 
+      {Object.keys((data as { model_families?: Record<string, number> }).model_families ?? {}).length > 0 && (
       <Section kicker="models" title="Backing model families">
         <Bars rows={famRows} />
-        <p className="mt-3 text-sm text-zinc-500">
-          The harness (Claude Code / Codex) is always known; the <em>model</em> behind it varies. Most
-          sessions run Claude (Opus / Sonnet / Haiku) or Codex (gpt-5.x); a minority route Claude Code
-          through proxied backends (GLM, MiniMax, Kimi, DeepSeek, Gemini). "Model not recorded" (~27%)
-          means the committed trace didn't preserve a model string — either the Entire checkpoint
-          metadata omitted it, or only Claude Code's <code>&lt;synthetic&gt;</code> auto-compaction
-          label survived. These are genuine sessions; only the model tag is missing.
-        </p>
       </Section>
-
-      <Section kicker="harness versions" title="Which Claude Code / Codex versions, over time">
-        {(() => {
-          const v = data.versions;
-          const ccM = v.cc_by_month as Record<string, { n: number; modal: string }>;
-          const cxM = v.cx_by_month as Record<string, { n: number; modal: string }>;
-          const months = Array.from(new Set([...Object.keys(ccM), ...Object.keys(cxM)]))
-            .filter((m) => m >= "2025-06" && m <= "2026-07")
-            .sort();
-          const ccMax = Math.max(...months.map((m) => ccM[m]?.n ?? 0), 1);
-          const cxMax = Math.max(...months.map((m) => cxM[m]?.n ?? 0), 1);
-          const ccColor = (mod: string) =>
-            mod.startsWith("2.1") ? "bg-orange-500" : mod.startsWith("2.0") ? "bg-orange-300" : mod.startsWith("1.") ? "bg-amber-200" : "bg-zinc-200";
-          const Cell = ({ mod, n, max, color }: { mod?: string; n: number; max: number; color: string }) => (
-            <div className="flex flex-col items-center gap-1">
-              <div className="text-[10px] font-medium tabular-nums text-zinc-600">{mod ?? "–"}</div>
-              <div className="h-10 w-full self-stretch overflow-hidden rounded bg-zinc-100">
-                {mod && <div className={color} style={{ height: "100%", opacity: 0.35 + 0.65 * (n / max) }} />}
-              </div>
-            </div>
-          );
-          const cols = `56px repeat(${months.length}, minmax(46px, 1fr))`;
-          return (
-            <div className="overflow-x-auto">
-              <div className="grid items-center gap-1.5" style={{ gridTemplateColumns: cols }}>
-                {/* month header */}
-                <div />
-                {months.map((m) => (
-                  <div key={m} className="text-center text-[10px] text-zinc-400">{m.slice(2)}</div>
-                ))}
-                {/* Claude Code row */}
-                <div className="pr-1 text-right text-xs font-semibold text-orange-600">Claude<br />Code</div>
-                {months.map((m) => (
-                  <Cell key={m} mod={ccM[m]?.modal} n={ccM[m]?.n ?? 0} max={ccMax} color={ccColor(ccM[m]?.modal ?? "")} />
-                ))}
-                {/* Codex row */}
-                <div className="pr-1 text-right text-xs font-semibold text-sky-600">Codex</div>
-                {months.map((m) => (
-                  <Cell key={m} mod={cxM[m]?.modal?.replace(/-.*/, "")} n={cxM[m]?.n ?? 0} max={cxMax} color="bg-sky-500" />
-                ))}
-              </div>
-              <div className="mt-2 text-[11px] text-zinc-400">
-                modal (most-common) CLI version per month · bar shade ∝ session volume that month
-              </div>
-            </div>
-          );
-        })()}
-        <p className="mt-3 text-sm text-zinc-500">
-          Over the Feb–Jul 2026 window both harnesses march cleanly up their release lines. Claude Code
-          stays on the <strong>2.1.x</strong> series throughout, climbing month over month from{" "}
-          <strong>2.1.62</strong> to <strong>2.1.198</strong>; Codex climbs <strong>~0.104 → 0.142</strong>.
-          Versions read from the raw traces — all current Opus-4.6-era releases, so the dataset is
-          contemporary, not legacy.
-        </p>
-      </Section>
+      )}
 
       <Section kicker="recency" title="Sessions over time">
         <Bars rows={monthRows} max={monthMax} />
@@ -493,8 +426,8 @@ export default function V2Page() {
       </Section>
 
       <footer className="mt-16 border-t border-zinc-200 pt-6 text-sm text-zinc-400">
-        SWESimBench v2 dataset · 100 developers · Claude Code + Codex full traces · leakage-verified
-        train/held-out split. See the{" "}
+        SWESimBench v2 clean cohort · {fmt(s.n_users)} developers · {fmt(data.eval_dist.n_points)} eval points · Claude Code + Codex
+        full traces · leakage-verified train/held-out split. See the{" "}
         <a href="/v1" className="text-zinc-600 hover:text-zinc-900">v1 leaderboard</a>{" "}
         for the next-action-prediction benchmark.
       </footer>

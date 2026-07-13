@@ -2,9 +2,9 @@ import "./globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "SWESimBench v2 — a 100-developer Claude Code / Codex dataset",
+  title: "SWESimBench v2 — a 57-developer Claude Code / Codex cohort",
   description:
-    "SWESimBench measures how faithfully a model can stand in for a software engineer using an AI coding agent. The v2 dataset is 100 real developers with deep training histories and strictly-later held-out sets, harvested as full-fidelity Claude Code and Codex session traces. This site shows the data distribution; the v1 leaderboard (next-action prediction accuracy across simulators) lives at /v1.",
+    "SWESimBench measures how faithfully a model can stand in for a software engineer using an AI coding agent. The authoritative v2 harbor cohort is 57 developers / 1216 held-out points with deep training histories and strictly-later held-out sets, harvested as full-fidelity Claude Code and Codex session traces. This site shows the data distribution; the v1 CondAgree leaderboard lives at /v1.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
