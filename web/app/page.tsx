@@ -144,6 +144,7 @@ export default function V2Page() {
         <span className="font-semibold text-zinc-900">SWESimBench</span>
         <div className="flex gap-4 text-zinc-500">
           <span className="rounded bg-zinc-900 px-2 py-0.5 text-xs font-medium text-white">v2 dataset</span>
+          <a href="/samples" className="hover:text-zinc-900">message samples</a>
           <a href="/v1" className="hover:text-zinc-900">v1 leaderboard →</a>
         </div>
       </nav>
@@ -425,9 +426,26 @@ export default function V2Page() {
         </p>
       </Section>
 
+      <Section kicker="peek inside" title="Read real developer messages">
+        <p className="max-w-2xl text-sm text-zinc-600">
+          For each of the {fmt(s.n_users)} retained developers we publish{" "}
+          <strong>10 randomly sampled user messages</strong> with a few surrounding turns of context
+          (lightly redacted/truncated). Useful for getting a feel for the cohort before downloading
+          anything.
+        </p>
+        <a
+          href="/samples"
+          className="mt-4 inline-flex rounded-lg bg-zinc-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-zinc-700"
+        >
+          Browse message samples →
+        </a>
+      </Section>
+
       <footer className="mt-16 border-t border-zinc-200 pt-6 text-sm text-zinc-400">
         SWESimBench v2 clean cohort · {fmt(s.n_users)} developers · {fmt(data.eval_dist.n_points)} eval points · Claude Code + Codex
         full traces · leakage-verified train/held-out split. See the{" "}
+        <a href="/samples" className="text-zinc-600 hover:text-zinc-900">message samples</a>
+        {" · "}
         <a href="/v1" className="text-zinc-600 hover:text-zinc-900">v1 leaderboard</a>{" "}
         for the next-action-prediction benchmark.
       </footer>
