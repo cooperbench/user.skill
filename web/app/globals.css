@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+}
+.font-mono {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+}
+
+/* Scrollbar that only appears on actual horizontal overflow and stays subtle.
+   `overflow-x: auto` already hides the bar when not needed; this just makes
+   the bar itself thinner and less visually intrusive when it does appear,
+   and removes the macOS "always show" persistent-bar appearance. */
+.diff-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: #e4e4e7 transparent;
+}
+.diff-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+.diff-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.diff-scroll::-webkit-scrollbar-thumb {
+  background: #e4e4e7;
+  border-radius: 3px;
+}
+.diff-scroll::-webkit-scrollbar-thumb:hover {
+  background: #d4d4d8;
+}
+
+/* react-diff-viewer-continued's inner table sets min-width that can trigger
+   the scrollbar even when the lines themselves fit. Force it to fit the
+   container so the bar only appears on lines that actually overflow. */
+.diff-scroll table[class*="diff-container"],
+.diff-scroll table.diff-container {
+  min-width: 0 !important;
+  width: 100%;
+}

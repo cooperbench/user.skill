@@ -1,4 +1,4 @@
-data/
+/data/
 __pycache__/
 *.pyc
 results/generations*.jsonl
@@ -15,3 +15,8 @@ bench/profileopt/experiments/condagree_multi/train_turns.json
 
 .private/
 users_atK/
+web/node_modules/
+web/.next/
+web/out/
+.vercel
+
