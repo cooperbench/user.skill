@@ -19,6 +19,7 @@ export default function DataPage() {
           <h1 className="text-sm font-semibold tracking-tight"><a href="/" className="hover:text-zinc-600">SWESimBench</a> · <span className="text-zinc-400">Data</span></h1>
           <div className="flex items-center gap-3 text-xs text-zinc-500">
             <a href="/" className="hover:text-zinc-900">v2 cohort</a>
+            <a href="/samples" className="hover:text-zinc-900">samples</a>
             <a href="/v1" className="hover:text-zinc-900">v1 leaderboard</a>
             <a href="https://github.com/cooperbench/user.skill" target="_blank" rel="noreferrer" className="hover:text-zinc-900">github</a>
           </div>
