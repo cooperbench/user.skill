@@ -66,6 +66,18 @@
    "url": "https://wykde3bdnvkojpef.public.blob.vercel-storage.com/data/condagree_multi/scaling_context.json",
    "bytes": 12819,
    "description": "Context-window ablation for gemini-3.5-flash (no profile): accuracy per N=1..10 prior session turns plus the full 14-turn anchor, per-developer values, on all 480 moments and the 166-moment constant-dose (>=10 prior turns) subset. Drives the context-window chart."
+  },
+  {
+   "name": "scaling_flash_k.json",
+   "url": "https://wykde3bdnvkojpef.public.blob.vercel-storage.com/data/condagree_multi/scaling_flash_k.json",
+   "bytes": 6000,
+   "description": "Cross-session history sweep for gemini-3.5-flash (no profile): accuracy per K in {0,2,4,8,16,32,64} most recent train turns prepended at the full 14-turn live window (K=0 = the leaderboard generic run), plus K in {8,64} at a 1-turn live window (substitution test), per-developer values and paired tests. Drives the cross-session chart."
+  },
+  {
+   "name": "scaling_grid.json",
+   "url": "https://wykde3bdnvkojpef.public.blob.vercel-storage.com/data/condagree_multi/scaling_grid.json",
+   "bytes": 12231,
+   "description": "The completed coarse N x K surface for gemini-3.5-flash (no profile): accuracy at every (N in {1,2,4,8,14} live turns) x (K in {0,4,16,64} history turns) cell, per-developer values, paired K-effect tests at each N and the N1-vs-N14 interaction test. Drives the grid table."
   }
  ],
  "models": [
