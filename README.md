@@ -102,6 +102,11 @@ users/                          distilled user folders (committed)
 results/                        validation outputs (committed)
 ```
 
+## Website
+
+The SWESimBench site (https://swesimbench.vercel.app) lives under `web/` on branch
+`benchmark-website`. See [`web/README.md`](web/README.md).
+
 ## Data & ethics
 
 Source data is the public SWE-chat dataset (ODC-BY, PII-redacted by the dataset authors).

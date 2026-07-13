@@ -1,0 +1,242 @@
+{
+ "n_users": 7,
+ "users": [
+  "dipree",
+  "jeevanpillay",
+  "marcus-sa",
+  "melagiri",
+  "pavel401",
+  "robouden",
+  "roo-oliv"
+ ],
+ "real": {
+  "approve": [
+   0.274,
+   0.187
+  ],
+  "critical": [
+   0.379,
+   0.172
+  ],
+  "sigma2": [
+   0.302,
+   0.105
+  ]
+ },
+ "deepseek-v3.1/distilled": {
+  "MoveFid": [
+   34.877,
+   21.146
+  ],
+  "CondAgree": [
+   0.276,
+   0.15
+  ],
+  "approve": [
+   0.399,
+   0.248
+  ],
+  "critical": [
+   0.105,
+   0.113
+  ]
+ },
+ "deepseek-v3.1/generic": {
+  "MoveFid": [
+   22.453,
+   12.35
+  ],
+  "CondAgree": [
+   0.174,
+   0.111
+  ],
+  "approve": [
+   0.428,
+   0.216
+  ],
+  "critical": [
+   0.053,
+   0.064
+  ]
+ },
+ "gpt-5/distilled": {
+  "MoveFid": [
+   28.918,
+   15.926
+  ],
+  "CondAgree": [
+   0.22,
+   0.217
+  ],
+  "approve": [
+   0.351,
+   0.283
+  ],
+  "critical": [
+   0.04,
+   0.064
+  ]
+ },
+ "gpt-5/generic": {
+  "MoveFid": [
+   30.116,
+   12.82
+  ],
+  "CondAgree": [
+   0.167,
+   0.159
+  ],
+  "approve": [
+   0.218,
+   0.131
+  ],
+  "critical": [
+   0.177,
+   0.228
+  ]
+ },
+ "gemini-3.1-pro/distilled": {
+  "MoveFid": [
+   25.493,
+   12.074
+  ],
+  "CondAgree": [
+   0.351,
+   0.169
+  ],
+  "approve": [
+   0.752,
+   0.157
+  ],
+  "critical": [
+   0.042,
+   0.067
+  ]
+ },
+ "gemini-3.1-pro/generic": {
+  "MoveFid": [
+   32.404,
+   5.994
+  ],
+  "CondAgree": [
+   0.302,
+   0.196
+  ],
+  "approve": [
+   0.685,
+   0.147
+  ],
+  "critical": [
+   0.129,
+   0.164
+  ]
+ },
+ "osim-8b/distilled": {
+  "MoveFid": [
+   42.814,
+   26.75
+  ],
+  "CondAgree": [
+   0.22,
+   0.173
+  ],
+  "approve": [
+   0.464,
+   0.127
+  ],
+  "critical": [
+   0.185,
+   0.117
+  ]
+ },
+ "osim-8b/generic": {
+  "MoveFid": [
+   28.606,
+   13.423
+  ],
+  "CondAgree": [
+   0.173,
+   0.169
+  ],
+  "approve": [
+   0.101,
+   0.113
+  ],
+  "critical": [
+   0.101,
+   0.113
+  ]
+ },
+ "osim-4b/distilled": {
+  "MoveFid": [
+   31.429,
+   12.096
+  ],
+  "CondAgree": [
+   0.26,
+   0.22
+  ],
+  "approve": [
+   0.643,
+   0.254
+  ],
+  "critical": [
+   0.111,
+   0.123
+  ]
+ },
+ "osim-4b/generic": {
+  "MoveFid": [
+   23.6,
+   14.674
+  ],
+  "CondAgree": [
+   0.079,
+   0.103
+  ],
+  "approve": [
+   0.228,
+   0.222
+  ],
+  "critical": [
+   0.093,
+   0.09
+  ]
+ },
+ "prior_sampler": {
+  "MoveFid": [
+   58.901,
+   24.807
+  ],
+  "CondAgree": [
+   0.29,
+   0.195
+  ],
+  "approve": [
+   0.131,
+   0.105
+  ],
+  "critical": [
+   0.397,
+   0.308
+  ]
+ },
+ "always_approve": {
+  "MoveFid": [
+   11.949,
+   11.939
+  ],
+  "CondAgree": [
+   0.274,
+   0.187
+  ],
+  "approve": [
+   1.0,
+   0.0
+  ],
+  "critical": [
+   0.0,
+   0.0
+  ]
+ }
+}
