@@ -8,7 +8,7 @@
 
 ## Cursor Cloud specific instructions
 
-Primary Cloud Agent repo: **`cooperbench/user.skill`** branch **`swesimbench`** (shows in the Cloud Agents picker). The AlienKevin copy is a personal remote mirror only.
+Primary Cloud Agent repo: **`cooperbench/user.skill`** branch **`kevin`** (shows in the Cloud Agents picker). The AlienKevin copy is a personal remote mirror only.
 
 ### Secrets (dashboard)
 
