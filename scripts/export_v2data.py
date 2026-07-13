@@ -22,7 +22,6 @@ SOURCE_LABEL = {
     "entire": "Entire checkpoints",
     "crawl": "GitHub .claude/.codex crawl",
     "dataclaw": "DataClaw (HF donors)",
-    "swechat": "SWE-chat (overlapping)",
 }
 
 TOK_BINS = [0, 10, 25, 50, 100, 200, 400, 800, 1600, 3200, 10**9]
@@ -39,6 +38,13 @@ TOK_LABELS = [
     "3200+",
 ]
 PREV_BINS = [0, 5, 10, 20, 40, 80, 160, 10**9]
+
+
+def normalize_source(source: str) -> str:
+    # SWE-chat is the packaged HF parquet of the Entire stream — fold into Entire.
+    if source == "swechat":
+        return "entire"
+    return source if source in SOURCE_LABEL else source
 
 
 def approx_tokens(text: str) -> int:
@@ -82,11 +88,12 @@ def hist(values: list[float], bins: list[int]) -> list[int]:
 
 
 def dominant_source(sources: list[str]) -> str:
-    # Prefer primary harvest channel; swechat is an overlap tag.
+    # Prefer primary harvest channel; swechat is an Entire overlap tag.
+    normed = [normalize_source(s) for s in sources]
     for key in ("entire", "crawl", "dataclaw"):
-        if key in sources:
+        if key in normed:
             return key
-    return sources[0] if sources else "entire"
+    return normed[0] if normed else "entire"
 
 
 def main() -> None:
@@ -155,7 +162,9 @@ def main() -> None:
             if user not in per:
                 continue
             sid = row["session_id"]
-            source = row.get("source") or dominant_source(row.get("source_aliases") or ["entire"])
+            source = normalize_source(
+                row.get("source") or dominant_source(row.get("source_aliases") or ["entire"])
+            )
             turns = row.get("turns") or []
             n_user = sum(1 for t in turns if t.get("role") == "user")
             n_asst = sum(1 for t in turns if t.get("role") == "assistant")

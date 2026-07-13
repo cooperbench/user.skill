@@ -160,7 +160,9 @@ export default function V2Page() {
           Each developer has a deep <strong>training</strong> history and a strictly-later, non-overlapping{" "}
           <strong>held-out</strong> set from full-fidelity <strong>Claude Code</strong> / <strong>Codex</strong> traces.
           Admission clears ≥400 training and ≥100 held-out user turns; the split is leakage-verified.
-          Opus 4.6 era only (sessions on/after 2026-02-05). Source manifest had 80 developers; 22 were dropped in cleaning.
+          Opus 4.6 era only (sessions on/after 2026-02-05). Source manifest had{" "}
+          <strong>{fmt((data as { notes?: { source_manifest_users?: number } }).notes?.source_manifest_users ?? 80)}</strong> developers;{" "}
+          <strong>{fmt((data as { notes?: { dropped?: number } }).notes?.dropped ?? 22)}</strong> were dropped in cleaning.
         </p>
       </header>
 
@@ -188,7 +190,7 @@ export default function V2Page() {
           const turns = merge(p.turns_by_source as Record<string, number>);
           const meta: Record<string, { color: string; how: string }> = {
             "Entire checkpoints": { color: "bg-violet-400", how: "Entire CLI pushes each agent session to an entire/checkpoints branch; discovered via GH-Archive push events, harvested by cloning the branch. SWE-chat (the packaged HF parquet of the same stream) is merged and deduped by session id." },
-            "GitHub .claude/.codex crawl": { color: "bg-teal-400", how: "developers who committed their ~/.claude/projects or .codex/sessions dumps to public repos; found by tree-probing ~4,600 candidate repos for session-dense trees, harvested with preserved sparse clones." },
+            "GitHub .claude/.codex crawl": { color: "bg-teal-400", how: "Developers who committed their ~/.claude/projects or .codex/sessions dumps to public repos; found by tree-probing public GitHub for session-dense trees, then harvested with preserved sparse clones." },
             "DataClaw (HF donors)": { color: "bg-amber-400", how: "per-donor conversations.jsonl on HuggingFace; filtered to Claude / Codex sessions only." },
           };
           const order = ["Entire checkpoints", "GitHub .claude/.codex crawl", "DataClaw (HF donors)"];
@@ -226,10 +228,10 @@ export default function V2Page() {
           );
         })()}
         <p className="mt-3 text-sm text-zinc-500">
-          Three full-trace Claude Code / Codex sources, one shared native-JSONL parser. The crawl
-          contributes the most <em>sessions</em> (many shallow committed dumps); Entire and DataClaw are
-          turn-denser. Lossy IDE-markdown (SpecStory) and non-CC/Codex agents (pi, Cursor, WildChat) are
-          excluded. Every session id is deduped across sources, and the train/held split is
+          Three full-trace Claude Code / Codex sources, one shared native-JSONL parser. In this clean cohort,
+          DataClaw contributes the most <em>sessions</em>; Entire (including SWE-chat overlap) and DataClaw
+          dominate user turns. Lossy IDE-markdown (SpecStory) and non-CC/Codex agents (pi, Cursor, WildChat)
+          are excluded. Every session id is deduped across sources, and the train/held split is
           leakage-verified.
         </p>
       </Section>
