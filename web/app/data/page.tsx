@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import type { ReactNode } from "react";
 import blobs from "./blobs.json";
 
 export const metadata: Metadata = {
@@ -9,9 +8,6 @@ export const metadata: Metadata = {
 
 function human(b: number) {
   return b > 1e6 ? `${(b / 1e6).toFixed(1)} MB` : b > 1e3 ? `${(b / 1e3).toFixed(0)} KB` : `${b} B`;
-}
-function MonoInline({ children }: { children: ReactNode }) {
-  return <span className="font-mono text-xs text-zinc-800">{children}</span>;
 }
 
 export default function DataPage() {
@@ -23,7 +19,7 @@ export default function DataPage() {
           <h1 className="text-sm font-semibold tracking-tight"><a href="/" className="hover:text-zinc-600">SWESimBench</a> · <span className="text-zinc-400">Data</span></h1>
           <div className="flex items-center gap-3 text-xs text-zinc-500">
             <a href="/" className="hover:text-zinc-900">results</a>
-            <a href="https://github.com/cooperbench/user.skill" target="_blank" rel="noreferrer" className="hover:text-zinc-900">github</a>
+            <a href="https://github.com/AlienKevin/user-simulator" target="_blank" rel="noreferrer" className="hover:text-zinc-900">github</a>
           </div>
         </div>
       </header>
@@ -36,13 +32,6 @@ export default function DataPage() {
             Every artifact behind the <a href="/" className="text-blue-700 underline-offset-2 hover:underline">accuracy results</a> is
             here: the 7 leaderboard simulators × ±profile on a 20-developer, user- and repo-disjoint SWE-chat test split (the raw files also include 3 off-leaderboard runs: 2 DeepSeek variants and gemini-3.1-pro, which gemini-3.5-flash replaced on the leaderboard; 10 model conditions in total). Files are public on
             Vercel Blob. Point your agent at the machine-readable index, or download files directly below.
-          </p>
-          <p className="mt-3 max-w-2xl rounded-lg border border-emerald-200 bg-emerald-50/60 px-4 py-3 text-sm leading-relaxed text-zinc-700">
-            <span className="font-semibold text-zinc-900">v2 harbor cohort (July 2026):</span>{" "}
-            <MonoInline>57</MonoInline> developers / <MonoInline>1216</MonoInline> points under policy{" "}
-            <span className="font-mono text-xs text-zinc-600">swesimbench-v2-cohort-policy-2026-07-13.8</span>. Public aggregates only:{" "}
-            <a href="/data/v2_cohort.json" className="font-semibold text-blue-700 underline-offset-2 hover:underline">v2_cohort.json</a>.
-            Session text remains private; CondAgree Blob files below are still the published 20-developer eval.
           </p>
         </div>
 
@@ -118,18 +107,18 @@ curl -s ${files.find((f) => f.name === "raw.jsonl")?.url} \\   # every generatio
           <h3 className="mb-2 text-sm font-semibold text-zinc-900">Where everything lives</h3>
           <ul className="max-w-3xl space-y-1.5 text-xs leading-relaxed text-zinc-500">
             <li>
-              <span className="font-semibold text-zinc-600">Website:</span> this site, in{" "}
-              <a href="https://github.com/cooperbench/user.skill" className="text-blue-700 hover:underline">github.com/cooperbench/user.skill</a>{" "}
-              under <span className="font-mono">web/</span> (branch <span className="font-mono">benchmark-website</span>).
+              <span className="font-semibold text-zinc-600">Website:</span> this site, open source at{" "}
+              <a href="https://github.com/AlienKevin/user-simulator" className="text-blue-700 hover:underline">github.com/AlienKevin/user-simulator</a>{" "}
+              (a Next.js static export under <span className="font-mono">web/</span>).
             </li>
             <li>
               <span className="font-semibold text-zinc-600">Benchmark code:</span> the eval harness, the 4-way move taxonomy + judge, the
-              analysis and ablation scripts, and the Modal serving for the OSim models — same repo, branch{" "}
-              <span className="font-mono">kevin</span>.
+              analysis and ablation scripts, and the Modal serving for the OSim models. Kept in a private repo
+              (<span className="font-mono">AlienKevin/user.skill</span>, <span className="font-mono">swesimbench</span> branch); available on request.
             </li>
             <li>
-              <span className="font-semibold text-zinc-600">Data:</span> CondAgree trial files on this page (Vercel Blob) plus public v2 cohort
-              aggregates in <span className="font-mono">v2_cohort.json</span>.
+              <span className="font-semibold text-zinc-600">Data:</span> everything on this page, public on Vercel Blob: the files above plus
+              the machine-readable index.
             </li>
           </ul>
           <p className="mt-3 max-w-3xl text-xs leading-relaxed text-zinc-500">

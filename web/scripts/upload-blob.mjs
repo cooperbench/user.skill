@@ -2,16 +2,10 @@
 // Run: BLOB_READ_WRITE_TOKEN=... node scripts/upload-blob.mjs
 import { put } from "@vercel/blob";
 import { readFileSync, writeFileSync, mkdirSync } from "fs";
-import { fileURLToPath } from "url";
-import { dirname, join } from "path";
 
 const token = process.env.BLOB_READ_WRITE_TOKEN;
 if (!token) { console.error("set BLOB_READ_WRITE_TOKEN"); process.exit(1); }
-
-// Resolve against this repo (cooperbench/user.skill), not a machine-local path.
-const HERE = dirname(fileURLToPath(import.meta.url));
-const ROOT = join(HERE, "..", "..");
-const SRC = join(ROOT, "bench", "profileopt");
+const SRC = process.env.BENCH_SRC || "/Users/kevin/Dev/user.skill/bench/profileopt";
 const PFX = "data/condagree_multi";
 
 const files = [
@@ -37,6 +31,10 @@ const files = [
     desc: "Contrastive-prefix ablation for glm-5.2 + gpt-5.5: accuracy under no-profile vs the real persona vs a content-free terse style prefix, with spurious-inquiry rate, word count, and per-move recall." },
   { local: `${SRC}/experiments/condagree_multi/scaling_context.json`, name: "scaling_context.json", ct: "application/json",
     desc: "Context-window ablation for gemini-3.5-flash (no profile): accuracy per N=1..10 prior session turns plus the full 14-turn anchor, per-developer values, on all 480 moments and the 166-moment constant-dose (>=10 prior turns) subset. Drives the context-window chart." },
+  { local: `${SRC}/experiments/condagree_multi/scaling_flash_k.json`, name: "scaling_flash_k.json", ct: "application/json",
+    desc: "Cross-session history sweep for gemini-3.5-flash (no profile): accuracy per K in {0,2,4,8,16,32,64} most recent train turns prepended at the full 14-turn live window (K=0 = the leaderboard generic run), plus K in {8,64} at a 1-turn live window (substitution test), per-developer values and paired tests. Drives the cross-session chart." },
+  { local: `${SRC}/experiments/condagree_multi/scaling_grid.json`, name: "scaling_grid.json", ct: "application/json",
+    desc: "The completed coarse N x K surface for gemini-3.5-flash (no profile): accuracy at every (N in {1,2,4,8,14} live turns) x (K in {0,4,16,64} history turns) cell, per-developer values, paired K-effect tests at each N and the N1-vs-N14 interaction test. Drives the grid table." },
 ];
 
 const uploaded = [];
@@ -49,10 +47,10 @@ for (const f of files) {
 
 const index = {
   dataset: "SWESimBench — next-action prediction accuracy; 7 leaderboard simulators (raw includes 2 hidden DeepSeek variants + gemini-3.5-flash, 10 model conditions), repo-disjoint SWE-chat test split",
-  generated_from: "website + benchmark code: github.com/cooperbench/user.skill (web/ + bench/). Authoritative v2 harbor cohort metadata: web/public/data/v2_cohort.json (57 developers / 1216 points).",
+  generated_from: "website: github.com/AlienKevin/user-simulator (web/) · benchmark code: private repo AlienKevin/user.skill @ swesimbench (available on request)",
   metric: "next-action prediction accuracy = per-developer fraction of held-out moments where the simulator made the same 4-way next action (approve/critical/directive/inquiry) the real developer took, averaged across 20 developers (macro, 95% CI). Chance baseline = lucky_guess (per-developer Sigma p^2), here 0.419.",
   taxonomy: "v2 4-way; single Haiku-4.5 judge (inter-judge kappa ~0.80).",
-  split: "20-user test split, user- AND repo-disjoint from train/val. Separate from the v2 harbor cohort (57 developers / 1216 points).",
+  split: "20-user test split, user- AND repo-disjoint from train/val.",
   models: ["deepseek-v3.1", "deepseek-v4-flash", "deepseek-v4-pro", "gpt-5.5", "claude-opus-4.8", "glm-5.2", "gemini-3.1-pro", "osim-4b", "osim-8b"],
   conditions: ["generic (no profile)", "distilled (with a distilled user profile)"],
   files: uploaded,
