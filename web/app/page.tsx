@@ -127,6 +127,7 @@ export default function V2Page() {
 
   const pu = data.per_user as { train_sess: number; eval_sess: number; train_turns: number; eval_turns: number; tok_mean: number }[];
   const d = data.dist;
+  const curation = data.notes.curation;
 
   const r0 = (n: number) => fmt(Math.round(n));
   const distRow = (name: string, o: { train: Split; eval: Split; total?: Split }) => (
@@ -442,51 +443,129 @@ export default function V2Page() {
         </a>
       </Section>
 
-      <Section kicker="how it was built" title="From raw traces to the clean cohort">
-        <p className="mb-5 max-w-2xl text-sm text-zinc-600">
-          The public numbers above are the end of a three-stage pipeline: harvest full-fidelity coding-agent
-          traces, filter to a comparable Opus-4.6-era slice, then curate a leakage-safe train/held-out cohort.
+      <Section kicker="the work that makes the benchmark" title="Curation, not just collection">
+        <p className="max-w-2xl text-sm leading-relaxed text-zinc-600">
+          Raw volume is not the benchmark. The hard part is recognizing the same session across sources,
+          rejecting developers without a reliable held-out tail, and making sure no trace leaks across the
+          train/eval boundary.
         </p>
-        <ol className="space-y-4">
-          <li className="rounded-xl border border-zinc-200 bg-white p-4">
-            <div className="flex items-baseline gap-3">
-              <span className="font-mono text-xs font-semibold text-indigo-500">01 · source</span>
-              <h3 className="text-sm font-semibold text-zinc-900">Harvest three full-trace channels</h3>
+
+        <div className="mt-6 grid gap-2 sm:grid-cols-[1fr_auto_1fr_auto_1fr] sm:items-center">
+          <div className="rounded-xl border border-zinc-200 bg-white p-4">
+            <div className="font-mono text-[10px] uppercase tracking-wider text-zinc-400">source manifest</div>
+            <div className="mt-1 text-2xl font-semibold text-zinc-900">
+              {fmt(data.notes.source_manifest_users)} <span className="text-sm font-normal text-zinc-500">developers</span>
             </div>
-            <p className="mt-2 text-sm leading-relaxed text-zinc-600">
-              Every retained session is a native Claude Code or Codex transcript — not lossy IDE markdown.
-              Traces come from <strong>Entire checkpoints</strong> (incl. SWE-chat overlap), a{" "}
-              <strong>GitHub ~/.claude / .codex crawl</strong>, and <strong>DataClaw HF donors</strong>.
-              SpecStory dumps and non-CC/Codex agents are excluded up front.
-            </p>
-          </li>
-          <li className="rounded-xl border border-zinc-200 bg-white p-4">
-            <div className="flex items-baseline gap-3">
-              <span className="font-mono text-xs font-semibold text-indigo-500">02 · filter</span>
-              <h3 className="text-sm font-semibold text-zinc-900">Keep a comparable Opus-4.6-era slice</h3>
+            <div className="mt-1 font-mono text-xs text-zinc-500">
+              {fmt(data.notes.source_manifest_sessions)} sessions
             </div>
-            <p className="mt-2 text-sm leading-relaxed text-zinc-600">
-              Sessions are restricted to on/after <strong>2026-02-05</strong>. Developers must clear{" "}
-              <strong>≥400</strong> training and <strong>≥100</strong> held-out user turns, with every training
-              session strictly earlier than every held-out session. The source manifest started at{" "}
-              <strong>{fmt((data as { notes?: { source_manifest_users?: number } }).notes?.source_manifest_users ?? 80)}</strong>{" "}
-              developers / <strong>{fmt((data as { notes?: { source_manifest_sessions?: number } }).notes?.source_manifest_sessions ?? 21933)}</strong> sessions before cleaning.
-            </p>
-          </li>
-          <li className="rounded-xl border border-zinc-200 bg-white p-4">
-            <div className="flex items-baseline gap-3">
-              <span className="font-mono text-xs font-semibold text-indigo-500">03 · curate</span>
-              <h3 className="text-sm font-semibold text-zinc-900">Dedup, drop, then freeze the eval set</h3>
+          </div>
+          <div className="hidden font-mono text-zinc-300 sm:block">→</div>
+          <div className="rounded-xl border border-indigo-200 bg-indigo-50/40 p-4">
+            <div className="font-mono text-[10px] uppercase tracking-wider text-indigo-500">filter + dedup + audit</div>
+            <div className="mt-1 text-2xl font-semibold text-zinc-900">
+              {fmt(curation.dedup_events)} <span className="text-sm font-normal text-zinc-500">dedup events</span>
             </div>
-            <p className="mt-2 text-sm leading-relaxed text-zinc-600">
-              Cross-source session dedup collapses the harvest to <strong>{fmt(s.n_sessions)}</strong> clean
-              sessions. <strong>{fmt((data as { notes?: { dropped?: number } }).notes?.dropped ?? 22)}</strong>{" "}
-              developers are dropped (almost all below the clean-turn floor; one for extreme session
-              fragmentation), leaving <strong>{fmt(s.n_users)}</strong>. From their held-out tails we freeze{" "}
-              <strong>{fmt(data.eval_dist.n_points)}</strong> prediction points — the moments the benchmark scores.
+            <div className="mt-1 font-mono text-xs text-zinc-500">{fmt(data.notes.dropped)} developers dropped</div>
+          </div>
+          <div className="hidden font-mono text-zinc-300 sm:block">→</div>
+          <div className="rounded-xl border border-emerald-200 bg-emerald-50/40 p-4">
+            <div className="font-mono text-[10px] uppercase tracking-wider text-emerald-600">frozen cohort</div>
+            <div className="mt-1 text-2xl font-semibold text-zinc-900">
+              {fmt(s.n_users)} <span className="text-sm font-normal text-zinc-500">developers</span>
+            </div>
+            <div className="mt-1 font-mono text-xs text-zinc-500">{fmt(data.eval_dist.n_points)} eval points</div>
+          </div>
+        </div>
+
+        <div className="mt-6 space-y-4">
+          <div className="overflow-hidden rounded-xl border border-zinc-200 bg-white">
+            <div className="border-b border-zinc-100 px-4 py-3">
+              <div className="font-mono text-[10px] font-semibold uppercase tracking-wider text-indigo-500">01 · deduplicate</div>
+              <h3 className="mt-0.5 text-base font-semibold text-zinc-900">One real session should count once</h3>
+              <p className="mt-1 text-sm text-zinc-600">
+                The same trace can arrive through Entire and SWE-chat, or as overlapping fragments. We compare
+                hashes and session structure, then keep one canonical copy.
+              </p>
+            </div>
+            <div className="grid gap-px bg-zinc-100 sm:grid-cols-2">
+              <div className="bg-white p-4">
+                <div className="flex items-center gap-2 font-mono text-[11px] text-zinc-500">
+                  <span className="rounded bg-violet-50 px-2 py-1">Entire trace</span>
+                  <span>=</span>
+                  <span className="rounded bg-amber-50 px-2 py-1">SWE-chat copy</span>
+                  <span>→ one</span>
+                </div>
+                <div className="mt-3 text-2xl font-semibold text-zinc-900">
+                  {fmt(curation.exact_transcript_dedups)}
+                </div>
+                <div className="text-xs text-zinc-500">exact-transcript duplicates removed</div>
+              </div>
+              <div className="bg-white p-4">
+                <div className="flex items-center gap-2 font-mono text-[11px] text-zinc-500">
+                  <span className="rounded bg-zinc-100 px-2 py-1">fragment A</span>
+                  <span>+</span>
+                  <span className="rounded bg-zinc-100 px-2 py-1">overlap B</span>
+                  <span>→ rebuilt</span>
+                </div>
+                <div className="mt-3 text-2xl font-semibold text-zinc-900">
+                  {fmt(curation.reconstructed_session_dedups)}
+                </div>
+                <div className="text-xs text-zinc-500">
+                  reconstructed sessions · {fmt(curation.reconstruction_pairs_checked)} candidate pairs checked
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="overflow-hidden rounded-xl border border-zinc-200 bg-white">
+            <div className="border-b border-zinc-100 px-4 py-3">
+              <div className="font-mono text-[10px] font-semibold uppercase tracking-wider text-indigo-500">02 · drop weak cohort members</div>
+              <h3 className="mt-0.5 text-base font-semibold text-zinc-900">A lot of history is not enough; the held-out tail must be usable</h3>
+              <p className="mt-1 text-sm text-zinc-600">
+                Every retained developer needs ≥400 train turns and ≥100 held-out turns. We also reject pathological
+                session structure that would make the evaluation unrepresentative.
+              </p>
+            </div>
+            <div className="grid gap-px bg-zinc-100 sm:grid-cols-2">
+              <div className="bg-white p-4">
+                <div className="font-mono text-[10px] uppercase tracking-wider text-rose-500">below eval floor · drop</div>
+                <div className="mt-2 flex items-end gap-5">
+                  <div><div className="text-xl font-semibold text-zinc-900">6,562</div><div className="text-xs text-zinc-500">train turns</div></div>
+                  <div><div className="text-xl font-semibold text-rose-600">59</div><div className="text-xs text-zinc-500">held-out turns</div></div>
+                </div>
+                <p className="mt-3 text-xs leading-relaxed text-zinc-500">
+                  Deep history, but too little independent evaluation data. This is one of{" "}
+                  <strong>{fmt(curation.below_threshold_drops)}</strong> threshold drops.
+                </p>
+              </div>
+              <div className="bg-white p-4">
+                <div className="font-mono text-[10px] uppercase tracking-wider text-rose-500">extreme fragmentation · drop</div>
+                <div className="mt-2 flex items-end gap-5">
+                  <div><div className="text-xl font-semibold text-zinc-900">1,206</div><div className="text-xs text-zinc-500">sessions</div></div>
+                  <div><div className="text-xl font-semibold text-rose-600">1.23</div><div className="text-xs text-zinc-500">human turns / session</div></div>
+                </div>
+                <p className="mt-3 text-xs leading-relaxed text-zinc-500">
+                  It clears the numeric turn floor, but the history is almost entirely one-turn fragments — not
+                  comparable to normal coding-agent sessions.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-xl border border-emerald-200 bg-emerald-50/40 p-4">
+            <div className="font-mono text-[10px] font-semibold uppercase tracking-wider text-emerald-600">03 · enforce the boundary, then freeze</div>
+            <h3 className="mt-0.5 text-base font-semibold text-zinc-900">No session gets to teach and test the simulator</h3>
+            <p className="mt-1 text-sm leading-relaxed text-zinc-600">
+              Training is strictly earlier than held-out data. The audit caught and removed{" "}
+              <strong>{fmt(curation.cross_split_dedups)} cross-split duplicate</strong>. Only then did we freeze{" "}
+              <strong>{fmt(data.eval_dist.n_points)} prediction points</strong> (median{" "}
+              <strong>{fmt(data.eval_dist.points_per_dev.median)}</strong> per developer, max{" "}
+              <strong>{fmt(data.eval_dist.points_per_dev.max)}</strong>) so every model sees the same evaluation.
             </p>
-          </li>
-        </ol>
+          </div>
+        </div>
+
         <div className="mt-5 flex flex-wrap gap-3 text-sm">
           <a href="/samples" className="font-semibold text-zinc-800 underline-offset-2 hover:underline">
             message samples →

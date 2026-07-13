@@ -404,6 +404,37 @@ def main() -> None:
             "source_manifest_sessions": build.get("source_manifest_sessions"),
             "retained_users": build.get("retained_users"),
             "dropped": len(build.get("dropped_below_clean_threshold") or []),
+            "curation": {
+                "dedup_events": build.get("dedup_events"),
+                "exact_transcript_dedups": (build.get("dedup_rule_counts") or {}).get("exact_transcript"),
+                "reconstructed_session_dedups": (build.get("dedup_rule_counts") or {}).get("reconstructed_session"),
+                "reconstruction_pairs_checked": build.get("reconstruction_candidate_pairs_checked"),
+                "cross_split_dedups": build.get("cross_split_dedup_events"),
+                "below_threshold_drops": sum(
+                    1
+                    for row in build.get("dropped_below_clean_threshold") or []
+                    if row.get("reason") == "below_clean_threshold"
+                ),
+                "fragmentation_drops": sum(
+                    1
+                    for row in build.get("dropped_below_clean_threshold") or []
+                    if row.get("reason") == "extreme_session_fragmentation"
+                ),
+                "drop_examples": [
+                    {
+                        "train_turns": row.get("train_turns"),
+                        "held_turns": row.get("held_turns"),
+                        "reason": row.get("reason"),
+                        "sessions": row.get("sessions"),
+                        "mean_human_turns_per_session": row.get("mean_human_turns_per_session"),
+                    }
+                    for row in (build.get("dropped_below_clean_threshold") or [])
+                    if (
+                        (row.get("train_turns") == 6562 and row.get("held_turns") == 59)
+                        or row.get("reason") == "extreme_session_fragmentation"
+                    )
+                ],
+            },
         },
     }
 
