@@ -155,8 +155,7 @@ export default function V2Page() {
         </h1>
         <p className="mt-3 max-w-2xl text-zinc-600">
           Authoritative clean cohort: <strong>{fmt(s.n_users)}</strong> developers /{" "}
-          <strong>{fmt(data.eval_dist.n_points)}</strong> held-out prediction points
-          {("policy_version" in s) && <> under <code className="text-xs">{(s as { policy_version?: string }).policy_version}</code></>}.
+          <strong>{fmt(data.eval_dist.n_points)}</strong> held-out prediction points.
           Each developer has a deep <strong>training</strong> history and a strictly-later, non-overlapping{" "}
           <strong>held-out</strong> set from full-fidelity <strong>Claude Code</strong> / <strong>Codex</strong> traces.
           Admission clears ≥400 training and ≥100 held-out user turns; the split is leakage-verified.
