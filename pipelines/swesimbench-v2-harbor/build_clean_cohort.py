@@ -8,7 +8,9 @@ import json
 import os
 import pickle
 import re
+import sqlite3
 import sys
+import tempfile
 from collections import defaultdict
 from pathlib import Path
 
@@ -46,7 +48,7 @@ CLEAN_MANIFEST = ROOT / "clean_manifest.json"
 CLEAN_SESSIONS = ROOT / "clean_sessions.jsonl"
 BUILD_REPORT = ROOT / "clean_build_report.json"
 CANDIDATE_CACHE = ROOT / ".clean_candidates.cache.pkl"
-CANDIDATE_CACHE_VERSION = 4
+CANDIDATE_CACHE_VERSION = 5
 ENTIRE_CORPUS_GLOB = os.environ.get(
     "ENTIRE_CORPUS_GLOB",
     "/data/entire-backfill/corpus-full-v4/*.jsonl",
@@ -105,6 +107,57 @@ SOURCE_PRIORITY = {
     "specstory": 1,
 }
 
+FULL_TURN_DB: sqlite3.Connection | None = None
+FULL_TURN_DB_PATH: Path | None = None
+
+
+def open_full_turn_store() -> sqlite3.Connection:
+    global FULL_TURN_DB, FULL_TURN_DB_PATH
+    if FULL_TURN_DB is not None:
+        return FULL_TURN_DB
+    base = ROOT if ROOT.exists() else Path(tempfile.gettempdir())
+    temporary = Path(tempfile.mkdtemp(prefix="clean-full-turns-", dir=str(base)))
+    FULL_TURN_DB_PATH = temporary / "full_turns.sqlite"
+    FULL_TURN_DB = sqlite3.connect(FULL_TURN_DB_PATH)
+    FULL_TURN_DB.execute(
+        "CREATE TABLE turns (key TEXT PRIMARY KEY, payload BLOB NOT NULL)"
+    )
+    return FULL_TURN_DB
+
+
+def store_full_turns(key: str, turns: list[dict]) -> None:
+    open_full_turn_store().execute(
+        "INSERT OR REPLACE INTO turns VALUES (?, ?)",
+        (
+            key,
+            json.dumps(turns, ensure_ascii=False)
+            .encode("utf-8", "surrogatepass"),
+        ),
+    )
+
+
+def load_full_turns(key: str | None) -> list[dict] | None:
+    if not key or FULL_TURN_DB is None:
+        return None
+    row = FULL_TURN_DB.execute(
+        "SELECT payload FROM turns WHERE key = ?", (key,)
+    ).fetchone()
+    if row is None:
+        return None
+    return json.loads(row[0].decode("utf-8"))
+
+
+def memory_turns(turns: list[dict]) -> list[dict]:
+    """Keep policy-relevant rows; omit bulky tool payloads from RAM."""
+    compact = []
+    for turn in turns:
+        role = turn.get("role")
+        text = turn.get("text") or ""
+        if role in {"tool", "metadata"} and len(text) > 240:
+            text = text[:240] + " [omitted-for-candidate-memory]"
+        compact.append({**turn, "text": text})
+    return compact
+
 
 def candidate(session: dict, source: str, owner: str | None = None) -> dict:
     sid = session.get("session_id")
@@ -117,6 +170,8 @@ def candidate(session: dict, source: str, owner: str | None = None) -> dict:
             fidelity = "lossy"
         else:
             fidelity = "legacy_unknown"
+    full_key = f"{source}:{owner}:{sid}"
+    store_full_turns(full_key, turns)
     return {
         "sid": sid,
         "canonical": canonical_session_id(sid),
@@ -124,7 +179,8 @@ def candidate(session: dict, source: str, owner: str | None = None) -> dict:
         "owner": owner,
         "repo": session.get("repo") or "?",
         "ts": str(session.get("created_at") or session.get("start_time") or ""),
-        "turns": turns,
+        "turns": memory_turns(turns),
+        "turn_count": len(turns),
         "trace_hash": transcript_hash(turns),
         "sequence": ordered_trace_sequence(turns),
         "human_turns": human_turn_count(turns),
@@ -132,6 +188,7 @@ def candidate(session: dict, source: str, owner: str | None = None) -> dict:
         "content_chars": sum(len(turn.get("text") or "") for turn in turns),
         "text_fidelity": fidelity,
         "parser_version": session.get("parser_version"),
+        "full_key": full_key,
     }
 
 
@@ -166,7 +223,7 @@ def apply_command_expansion_policy(records: list[dict]) -> tuple[set[str], int]:
 def richness(record: dict) -> tuple:
     return (
         record["human_turns"],
-        len(record["turns"]),
+        record.get("turn_count", len(record["turns"])),
         record["content_chars"],
         SOURCE_PRIORITY.get(record["source"], 0),
         record["sid"],
@@ -175,7 +232,7 @@ def richness(record: dict) -> tuple:
 
 def reconstruction_richness(record: dict) -> tuple:
     return (
-        len(record["turns"]),
+        record.get("turn_count", len(record["turns"])),
         record["content_chars"],
         record["human_turns"],
         SOURCE_PRIORITY.get(record["source"], 0),
@@ -209,6 +266,7 @@ def load_candidates(target_ids: set[str], target_canonical: set[str]) -> list[di
                     continue
                 if wanted(session.get("session_id")):
                     result.append(candidate(session, "entire", "gh:" + session.get("actor", "?")))
+    open_full_turn_store().commit()
 
     print("indexing Crawl candidates...", flush=True)
     for filename in glob.glob(CRAWL_CORPUS_GLOB):
@@ -220,6 +278,7 @@ def load_candidates(target_ids: set[str], target_canonical: set[str]) -> list[di
                     continue
                 if wanted(session.get("session_id")):
                     result.append(candidate(session, "crawl", session.get("user")))
+    open_full_turn_store().commit()
 
     print("indexing DataClaw candidates...", flush=True)
     dataclaw_path = Path(
@@ -236,6 +295,7 @@ def load_candidates(target_ids: set[str], target_canonical: set[str]) -> list[di
                     continue
                 if wanted(session.get("session_id")):
                     result.append(candidate(session, "dataclaw", "dc:" + session.get("donor", "?")))
+        open_full_turn_store().commit()
 
     # Census includes SWE-chat, so preparation must index it as well.
     import pyarrow.parquet as pq
@@ -304,6 +364,7 @@ def load_candidates(target_ids: set[str], target_canonical: set[str]) -> list[di
         for turn in session["turns"]:
             turn.pop("_order", None)
         result.append(candidate(session, "swechat", "gh:" + str(session["user_id"] or "?")))
+    open_full_turn_store().commit()
 
     print("indexing SpecStory candidates...", flush=True)
     specstory_path = SPECSTORY_CORPUS
@@ -325,9 +386,25 @@ def load_candidates(target_ids: set[str], target_canonical: set[str]) -> list[di
                     "turns": session.get("turns") or [],
                 }
                 result.append(candidate(normalized, "specstory", "gh:" + owner))
+        open_full_turn_store().commit()
 
     print(f"indexed {len(result)} candidate records", flush=True)
     return result
+
+
+def materialize_turns(record: dict, command_payloads: set[str]) -> list[dict]:
+    """Restore full-fidelity turns and re-apply command-expansion labels."""
+    turns = load_full_turns(record.get("full_key")) or record["turns"]
+    materialized = []
+    for turn in turns:
+        item = dict(turn)
+        if (
+            item.get("role") == "user"
+            and normalize_text(item.get("text") or "") in command_payloads
+        ):
+            item["role"] = "system"
+        materialized.append(item)
+    return materialized
 
 
 def choose_candidate(candidates: list[dict]) -> dict:
@@ -608,24 +685,13 @@ def main() -> None:
     }
     target_canonical = {canonical_session_id(sid) for sid in target_ids}
     cache_key = candidate_cache_key(target_ids)
-    candidates = None
+    # Candidate turns are externalized to SQLite; skip pickle caches that would
+    # otherwise lose the full-fidelity payloads across process restarts.
     if CANDIDATE_CACHE.exists():
-        try:
-            with CANDIDATE_CACHE.open("rb") as handle:
-                cached_key, cached_candidates = pickle.load(handle)
-            if cached_key == cache_key:
-                candidates = cached_candidates
-                print(f"loaded {len(candidates)} candidate records from cache", flush=True)
-        except Exception:
-            candidates = None
-    if candidates is None:
-        candidates = load_candidates(target_ids, target_canonical)
-        command_payloads, command_turns = apply_command_expansion_policy(candidates)
-        with CANDIDATE_CACHE.open("wb") as handle:
-            pickle.dump((cache_key, candidates), handle, protocol=pickle.HIGHEST_PROTOCOL)
-        print(f"cached {len(candidates)} candidate records", flush=True)
-    else:
-        command_payloads, command_turns = apply_command_expansion_policy(candidates)
+        CANDIDATE_CACHE.unlink()
+    candidates = load_candidates(target_ids, target_canonical)
+    command_payloads, command_turns = apply_command_expansion_policy(candidates)
+    print(f"indexed cache key {cache_key[:12]}", flush=True)
     print(
         f"classified {command_turns} command-expansion turns "
         f"from {len(command_payloads)} proven payloads",
@@ -785,7 +851,8 @@ def main() -> None:
         }
         for split_name, output_key in (("train", "train_sessions"), ("held", "held_sessions")):
             for record in sorted(split_records[split_name], key=lambda item: (item["ts"], item["sid"])):
-                clean = [clean_turn(turn) for turn in record["turns"]]
+                full_turns = materialize_turns(record, command_payloads)
+                clean = [clean_turn(turn) for turn in full_turns]
                 stored = {
                     "session_id": record["sid"],
                     "user": dev,
@@ -795,7 +862,7 @@ def main() -> None:
                     "start_time": record["ts"],
                     "original_ids": record["original_ids"],
                     "dedup_rules": record["dedup_rules"],
-                    "trace_hash": record["trace_hash"],
+                    "trace_hash": transcript_hash(full_turns),
                     "text_fidelity": record["text_fidelity"],
                     "parser_version": record.get("parser_version"),
                     "turns": clean,
@@ -814,7 +881,7 @@ def main() -> None:
                         "source_aliases": record.get("source_aliases", [record["source"]]),
                         "original_ids": record["original_ids"],
                         "dedup_rules": record["dedup_rules"],
-                        "trace_hash": record["trace_hash"],
+                        "trace_hash": stored["trace_hash"],
                         "text_fidelity": record["text_fidelity"],
                         "parser_version": record.get("parser_version"),
                     }
