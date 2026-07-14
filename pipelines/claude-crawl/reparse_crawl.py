@@ -20,6 +20,23 @@ UUID_RE = re.compile(
     r"(?![0-9a-f])",
     re.I,
 )
+SESSION_ROOT_MARKERS = (
+    "/.claude/",
+    "/.codex/",
+    "/projects/",
+    "/sessions/",
+    "/conversations/",
+    "/conversation-archive/",
+)
+SKIP_MARKERS = (
+    "/tests/",
+    "/test/",
+    "/fixtures/",
+    "/experiments/",
+    "/evals/",
+    "/mock-data/",
+    "/.git/",
+)
 
 
 def _lookup_keys(session_id: str | None) -> set[str]:
@@ -61,6 +78,17 @@ def _existing_sessions(pattern: str) -> dict[str, dict]:
     return sessions
 
 
+def _normalized_path(path: Path) -> str:
+    return "/" + str(path).replace("\\", "/").lower().strip("/") + "/"
+
+
+def _should_scan_content(path: Path) -> bool:
+    normalized = _normalized_path(path)
+    if any(marker in normalized for marker in SKIP_MARKERS):
+        return False
+    return any(marker in normalized for marker in SESSION_ROOT_MARKERS)
+
+
 def _candidate_ids(filename: Path, data: bytes | None = None) -> set[str]:
     identifiers = set(UUID_RE.findall(str(filename)))
     if data is not None:
@@ -98,11 +126,13 @@ def build(clones: Path, existing_pattern: str, output: Path) -> tuple[int, int]:
                 if not matches:
                     continue
                 data = filename.read_bytes()
-            else:
+            elif _should_scan_content(filename):
                 data = filename.read_bytes()
                 matches = _candidate_ids(filename, data) & existing_keys
                 if not matches:
                     continue
+            else:
+                continue
             human_turns, turns = parse_full_jsonl(data)
             if human_turns == 0:
                 continue
