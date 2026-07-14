@@ -31,7 +31,7 @@ class NativeTranscriptTest(unittest.TestCase):
                 },
             )
         )
-        self.assertEqual(PARSER_VERSION, "swesimbench-native-transcript-2026-07-14.3")
+        self.assertEqual(PARSER_VERSION, "swesimbench-native-transcript-2026-07-14.4")
         self.assertEqual(count, 1)
         self.assertEqual(turns[0]["text"], user_text)
         self.assertEqual(turns[1]["text"], assistant_text)
@@ -107,6 +107,11 @@ class NativeTranscriptTest(unittest.TestCase):
                 "type": "user",
                 "uuid": "human",
                 "message": {"content": "please fix the parser"},
+            },
+            {
+                "type": "progress",
+                "uuid": "transport-only",
+                "message": {"content": "repeated transport telemetry"},
             },
         )
         count, turns = parse_full_jsonl(source)

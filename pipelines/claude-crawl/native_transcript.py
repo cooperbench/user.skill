@@ -14,7 +14,7 @@ import json
 from collections.abc import Iterable
 from typing import Any
 
-PARSER_VERSION = "swesimbench-native-transcript-2026-07-14.3"
+PARSER_VERSION = "swesimbench-native-transcript-2026-07-14.4"
 
 CODEX_ENVELOPES = {"response_item", "session_meta", "event_msg", "turn_context"}
 TEXT_BLOCK_TYPES = {"text", "input_text", "output_text"}
@@ -140,11 +140,9 @@ def _parse_claude(records: Iterable[dict]) -> list[dict]:
             continue
 
         if event_type in {"queue-operation", "progress"}:
-            payload = record.get("content") or record.get("message") or record
-            put(
-                f"{event_type}:{record.get('uuid')}" if record.get("uuid") else None,
-                [{"role": "metadata", "ts": timestamp, "text": _json_text(payload)}],
-            )
+            # Transport telemetry is preserved in the raw checkpoint object.
+            # It is not a transcript message and often repeats the complete
+            # evolving state hundreds of times.
             continue
 
         # Some exports use bare role/message records without a top-level type.
