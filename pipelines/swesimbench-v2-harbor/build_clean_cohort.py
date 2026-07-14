@@ -129,15 +129,18 @@ SOURCE_PRIORITY = {
 
 FULL_TURN_DB: sqlite3.Connection | None = None
 FULL_TURN_DB_PATH: Path | None = None
+SESSION_SPILL_DIR: Path | None = None
 
 
 def open_full_turn_store() -> sqlite3.Connection:
-    global FULL_TURN_DB, FULL_TURN_DB_PATH
+    global FULL_TURN_DB, FULL_TURN_DB_PATH, SESSION_SPILL_DIR
     if FULL_TURN_DB is not None:
         return FULL_TURN_DB
     base = ROOT if ROOT.exists() else Path(tempfile.gettempdir())
     temporary = Path(tempfile.mkdtemp(prefix="clean-full-turns-", dir=str(base)))
     FULL_TURN_DB_PATH = temporary / "full_turns.sqlite"
+    SESSION_SPILL_DIR = temporary / "sessions"
+    SESSION_SPILL_DIR.mkdir(parents=True, exist_ok=True)
     FULL_TURN_DB = sqlite3.connect(FULL_TURN_DB_PATH)
     FULL_TURN_DB.execute(
         "CREATE TABLE turns (key TEXT PRIMARY KEY, payload BLOB NOT NULL)"
@@ -167,6 +170,23 @@ def load_full_turns(key: str | None) -> list[dict] | None:
     return json.loads(row[0].decode("utf-8"))
 
 
+def spill_clean_session(session: dict) -> Path:
+    """Persist the full-fidelity clean session outside the in-memory store."""
+    if SESSION_SPILL_DIR is None:
+        open_full_turn_store()
+    assert SESSION_SPILL_DIR is not None
+    path = SESSION_SPILL_DIR / f"{session['session_id']}.json"
+    path.write_text(json.dumps(session, ensure_ascii=False), encoding="utf-8")
+    return path
+
+
+def load_spilled_session(session_id: str) -> dict:
+    assert SESSION_SPILL_DIR is not None
+    return json.loads(
+        (SESSION_SPILL_DIR / f"{session_id}.json").read_text(encoding="utf-8")
+    )
+
+
 def memory_turns(turns: list[dict]) -> list[dict]:
     """Keep dialogue rows used by policy checks; omit bulky tool/metadata text."""
     return [
@@ -174,6 +194,13 @@ def memory_turns(turns: list[dict]) -> list[dict]:
         for turn in turns
         if turn.get("role") in {"user", "assistant", "system"}
     ]
+
+
+def memory_session_view(session: dict) -> dict:
+    """Dialogue-only view for reconstruction / substantial-turn checks."""
+    light = dict(session)
+    light["turns"] = memory_turns(session.get("turns") or [])
+    return light
 
 
 def compact_trace_sequence(turns: list[dict]) -> tuple[str, ...]:
@@ -748,6 +775,12 @@ def main() -> None:
         for alias in session_aliases(record["sid"]):
             by_exact[alias].append(record)
         by_canonical[record["canonical"]].append(record)
+    candidate_count = len(candidates)
+    # Candidate objects remain reachable via by_exact; drop the dense list handle.
+    del candidates
+    import gc
+
+    gc.collect()
 
     missing = sorted(
         sid for sid in target_ids if not lookup_candidates(sid, by_exact)
@@ -953,7 +986,9 @@ def main() -> None:
                 existing = session_store.get(record["sid"])
                 if existing and existing["user"] != dev:
                     raise RuntimeError(f"session store collision: {record['sid']}")
-                session_store[record["sid"]] = stored
+                spill_clean_session(stored)
+                # Keep dialogue-only rows in RAM; full tool context stays on disk.
+                session_store[record["sid"]] = memory_session_view(stored)
                 manifest_record[output_key].append(
                     {
                         "sid": record["sid"],
@@ -1037,7 +1072,9 @@ def main() -> None:
     CLEAN_MANIFEST.write_text(json.dumps(cohort_payload, indent=2, ensure_ascii=False))
     with CLEAN_SESSIONS.open("w") as handle:
         for sid in sorted(session_store):
-            handle.write(json.dumps(session_store[sid], ensure_ascii=False) + "\n")
+            handle.write(
+                json.dumps(load_spilled_session(sid), ensure_ascii=False) + "\n"
+            )
     report = {
         "policy_version": POLICY_VERSION,
         "policy_fingerprint": policy_fingerprint(),
@@ -1049,7 +1086,7 @@ def main() -> None:
         "dropped_incomplete_dialogue_sessions": len(dropped_incomplete_dialogue),
         "dropped_incomplete_dialogue": dropped_incomplete_dialogue,
         "source_manifest_sessions": len(target_ids),
-        "candidate_records": len(candidates),
+        "candidate_records": candidate_count,
         "resolved_manifest_sessions": len(target_ids) - len(missing),
         "dropped_unhydrated_sessions": len(dropped_unhydrated),
         "dropped_unhydrated": dropped_unhydrated[:200],
