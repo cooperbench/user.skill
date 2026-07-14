@@ -5,6 +5,7 @@ from __future__ import annotations
 import glob
 import hashlib
 import json
+import os
 import pickle
 import sys
 from collections import defaultdict
@@ -38,6 +39,7 @@ CLEAN_MANIFEST = ROOT / "clean_manifest.json"
 CLEAN_SESSIONS = ROOT / "clean_sessions.jsonl"
 BUILD_REPORT = ROOT / "clean_build_report.json"
 CANDIDATE_CACHE = ROOT / ".clean_candidates.cache.pkl"
+CANDIDATE_CACHE_VERSION = 2
 MIN_TRAIN = 400
 MIN_HELD = 100
 # Prefer native full-trace sources over SpecStory markdown exports when aliases collide.
@@ -53,6 +55,14 @@ SOURCE_PRIORITY = {
 def candidate(session: dict, source: str, owner: str | None = None) -> dict:
     sid = session.get("session_id")
     turns = session.get("turns") or []
+    fidelity = session.get("text_fidelity")
+    if fidelity is None:
+        if source in {"crawl", "swechat"}:
+            fidelity = "full"
+        elif source == "specstory":
+            fidelity = "lossy"
+        else:
+            fidelity = "legacy_unknown"
     return {
         "sid": sid,
         "canonical": canonical_session_id(sid),
@@ -66,6 +76,8 @@ def candidate(session: dict, source: str, owner: str | None = None) -> dict:
         "human_turns": human_turn_count(turns),
         "substantial_human_turns": substantial_human_count(turns),
         "content_chars": sum(len(turn.get("text") or "") for turn in turns),
+        "text_fidelity": fidelity,
+        "parser_version": session.get("parser_version"),
     }
 
 
@@ -146,7 +158,11 @@ def load_candidates(target_ids: set[str], target_canonical: set[str]) -> list[di
                     result.append(candidate(session, "crawl", session.get("user")))
 
     print("indexing DataClaw candidates...", flush=True)
-    dataclaw_path = Path("/data/dataclaw/meta/corpus.jsonl")
+    dataclaw_path = Path(
+        os.environ.get(
+            "DATACLAW_CORPUS", "/data/dataclaw/meta/corpus.full.jsonl"
+        )
+    )
     if dataclaw_path.exists():
         with dataclaw_path.open(errors="replace") as handle:
             for line in handle:
@@ -194,6 +210,8 @@ def load_candidates(target_ids: set[str], target_canonical: set[str]) -> list[di
                     "user_id": uid,
                     "start_time": timestamp,
                     "turns": [],
+                    "text_fidelity": "full",
+                    "parser_version": "SALT-NLP/SWE-chat@f66cca95",
                 },
             )
             record["turns"].append(
@@ -239,14 +257,27 @@ def load_candidates(target_ids: set[str], target_canonical: set[str]) -> list[di
 
 
 def choose_candidate(candidates: list[dict]) -> dict:
-    return max(candidates, key=richness)
+    full_fidelity = [
+        record for record in candidates if record.get("text_fidelity") == "full"
+    ]
+    if not full_fidelity:
+        sources = sorted({record["source"] for record in candidates})
+        raise RuntimeError(
+            "session has no full-fidelity candidate; refresh source parsers first "
+            f"(sources={sources})"
+        )
+    return max(full_fidelity, key=richness)
 
 
 def candidate_cache_key(target_ids: set[str]) -> str:
     files = (
         glob.glob("/data/entire-backfill/corpus/*.jsonl")
         + glob.glob("/data/claude-crawl/corpus/*.jsonl")
-        + ["/data/dataclaw/meta/corpus.jsonl"]
+        + [
+            os.environ.get(
+                "DATACLAW_CORPUS", "/data/dataclaw/meta/corpus.full.jsonl"
+            )
+        ]
         + [
             "/data/with-user/data_cache/hf/"
             "datasets--SALT-NLP--SWE-chat/snapshots/"
@@ -262,6 +293,7 @@ def candidate_cache_key(target_ids: set[str]) -> str:
             stat = path.stat()
             source_state.append((filename, stat.st_size, stat.st_mtime_ns))
     payload = {
+        "cache_version": CANDIDATE_CACHE_VERSION,
         "targets": sorted(target_ids),
         "sources": source_state,
         "policy": policy_fingerprint(),
@@ -694,6 +726,8 @@ def main() -> None:
                     "original_ids": record["original_ids"],
                     "dedup_rules": record["dedup_rules"],
                     "trace_hash": record["trace_hash"],
+                    "text_fidelity": record["text_fidelity"],
+                    "parser_version": record.get("parser_version"),
                     "turns": clean,
                 }
                 existing = session_store.get(record["sid"])
@@ -711,6 +745,8 @@ def main() -> None:
                         "original_ids": record["original_ids"],
                         "dedup_rules": record["dedup_rules"],
                         "trace_hash": record["trace_hash"],
+                        "text_fidelity": record["text_fidelity"],
+                        "parser_version": record.get("parser_version"),
                     }
                 )
         clean_users.append(manifest_record)

@@ -19,15 +19,13 @@ if any(not record.get("gold_move") for record in recs):
 
 AGENT_TIMEOUT, VERIFIER_TIMEOUT = 600, 300
 
-def render_transcript(traj, cap=1200):
+def render_transcript(traj):
     out = []
     labels = {"user": "DEVELOPER", "assistant": "AGENT", "system": "SYSTEM",
               "tool": "TOOL", "metadata": "METADATA"}
     for s in traj["steps"]:
         who = labels.get(s["source"], "METADATA")
         txt = "".join(b.get("text", "") for b in s["message"]["content"])
-        w = txt.split()
-        txt = " ".join(w[:cap]) + (" […]" if len(w) > cap else "")
         out.append(f"[{who}]: {txt}")
     return "\n\n".join(out)
 
@@ -73,7 +71,7 @@ Their ENTIRE conversation so far is stored as an ATIF trajectory at /sim/history
 `steps` array; each step has `source` ("user" = the developer, "assistant" = the agent, while
 "system", "tool", and "metadata" are non-developer context) and `message.content[].text`.
 Imitate ONLY source="user". Read the trajectory EXACTLY ONCE with this command:
-    python3 -c "import json;[print(s['source'].upper(),':',''.join(b.get('text','') for b in s['message']['content'])[:800]) for s in json.load(open('/sim/history.atif.json'))['steps']]"
+    python3 -c "import json;[print(s['source'].upper(),':',''.join(b.get('text','') for b in s['message']['content'])) for s in json.load(open('/sim/history.atif.json'))['steps']]"
 
 The last step is the agent's most recent turn. Predict the SINGLE next message THIS developer would type
 next — their exact language, length, casing, terseness, typos and all.

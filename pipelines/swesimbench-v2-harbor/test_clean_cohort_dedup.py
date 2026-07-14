@@ -2,6 +2,7 @@ import unittest
 
 from build_clean_cohort import (
     apply_command_expansion_policy,
+    choose_candidate,
     collapse_reconstructed_sessions,
 )
 
@@ -26,10 +27,30 @@ def record(sid, split, source, turns):
         "original_ids": [sid],
         "dedup_rules": [],
         "split": split,
+        "text_fidelity": "full",
+        "parser_version": "test-parser",
     }
 
 
 class CleanCohortDedupTest(unittest.TestCase):
+    def test_candidate_selection_rejects_legacy_truncated_sources(self):
+        legacy = record(
+            "same",
+            "held",
+            "entire",
+            [{"role": "user", "text": "legacy copy with more apparent rows"}] * 3,
+        )
+        legacy["text_fidelity"] = "legacy_unknown"
+        full = record(
+            "same",
+            "held",
+            "swechat",
+            [{"role": "user", "text": "full copy"}],
+        )
+        self.assertIs(choose_candidate([legacy, full]), full)
+        with self.assertRaisesRegex(RuntimeError, "no full-fidelity candidate"):
+            choose_candidate([legacy])
+
     def test_command_payload_is_reclassified_across_source_copies(self):
         payload = "# Comprehensive PR Review\nRun all configured review agents."
         marked = record(

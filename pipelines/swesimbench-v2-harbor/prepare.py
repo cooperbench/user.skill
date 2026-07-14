@@ -12,11 +12,10 @@ from cohort_policy import (
 )
 
 OUT = "/data/swesimbench-v2-harbor"
-CTX_WORDS, MAX_PTS, PROFILE_TURNS = 200, 30, 40   # context = ALL prior turns in the session
-KEY = next(l.split("=",1)[1].strip() for l in open("/data/harbor-adapters-experiments/.env") if l.startswith("GEMINI_API_KEY="))
+MAX_PTS, PROFILE_TURNS = 30, 40   # context = ALL prior turns in the session
 MODEL = "gemini-3.5-flash"
 
-def tw(t,n): 
+def judge_excerpt(t,n):
     w=scrub_text(t or "").split(); return " ".join(w[:n])+(" […]" if len(w)>n else "")
 def is_action(t):
     return t.get("role")=="user" and is_human_target(t)
@@ -43,8 +42,15 @@ BODY=(
 "- inquiry: primarily asks for information/explanation, expecting an ANSWER.\n"
 "DECISION RULE (first match): 1 fault/error/dissatisfaction -> critical; 2 asks for info -> inquiry; 3 requests any action/change -> directive; 4 else -> approve.")
 def gemini(prompt,temp=0,mx=1200):
+    key=os.environ.get("GEMINI_API_KEY")
+    if not key:
+        env_path="/data/harbor-adapters-experiments/.env"
+        if os.path.exists(env_path):
+            key=next((l.split("=",1)[1].strip() for l in open(env_path) if l.startswith("GEMINI_API_KEY=")),None)
+    if not key:
+        raise RuntimeError("GEMINI_API_KEY is required when RUN_GOLD=1")
     body=json.dumps({"contents":[{"parts":[{"text":prompt}]}],"generationConfig":{"temperature":temp,"maxOutputTokens":mx}}).encode()
-    url=f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent?key={KEY}"
+    url=f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent?key={key}"
     for a in range(4):
         try:
             d=json.load(urllib.request.urlopen(urllib.request.Request(url,data=body,headers={"Content-Type":"application/json"}),timeout=60))
@@ -53,7 +59,7 @@ def gemini(prompt,temp=0,mx=1200):
             time.sleep(3)
     return ""
 def classify(text,prev):
-    out=gemini(f"A developer is using an AI coding agent. The agent just said:\n<agent>{tw(prev,120)}</agent>\n\nThe developer's next message was:\n<message>{tw(text,150)}</message>\n\n{BODY}\n\nRespond with ONLY JSON: {{\"act\":\"<one label>\"}}")
+    out=gemini(f"A developer is using an AI coding agent. The agent just said:\n<agent>{judge_excerpt(prev,120)}</agent>\n\nThe developer's next message was:\n<message>{judge_excerpt(text,150)}</message>\n\n{BODY}\n\nRespond with ONLY JSON: {{\"act\":\"<one label>\"}}")
     m=re.search(r'"act"\s*:\s*"(\w+)"',out); a=m.group(1) if m else None
     return a if a in CATS else None
 
@@ -61,7 +67,7 @@ def classify(text,prev):
 records=[]
 for u in man:
     train=sorted([x for x in u["train_sessions"] if x["sid"] in IDX], key=lambda x:x["ts"])
-    tp=[tw(t["text"],60) for x in train for t in IDX[x["sid"]] if is_action(t)]
+    tp=[scrub_text(t["text"]) for x in train for t in IDX[x["sid"]] if is_action(t)]
     profile="\n".join(f"- {p}" for p in tp[-PROFILE_TURNS:])
     held=sorted([x for x in u["held_sessions"] if x["sid"] in IDX], key=lambda x:x["ts"])
     pts=[]
@@ -74,7 +80,7 @@ for u in man:
             ctx=turns[:i]   # ALL previous turns in the session up to the tested turn
             prev=next((t["text"] for t in reversed(ctx) if t.get("role")=="assistant"),"")
             labels={"user":"DEVELOPER","assistant":"AGENT","system":"SYSTEM","tool":"TOOL","metadata":"METADATA"}
-            block="\n\n".join(f"[{labels.get(t.get('role'),'METADATA')}]: {tw(t['text'],CTX_WORDS)}" for t in ctx)
+            block="\n\n".join(f"[{labels.get(t.get('role'),'METADATA')}]: {scrub_text(t['text'])}" for t in ctx)
             pts.append({"point_id":f"{x['sid']}#{i}","repo":x.get("repo") or "?","context":block,
                         "prev_agent":scrub_text(prev),"real":scrub_text(turns[i]["text"])})
         if len(pts)>=MAX_PTS: break
@@ -94,6 +100,7 @@ json.dump({"policy_version":POLICY_VERSION,
            "policy_fingerprint":clean_manifest["policy_fingerprint"],
            "cohort_fingerprint":clean_manifest["cohort_fingerprint"],
            "developers":len(records),
-           "points":sum(len(r["points"]) for r in records)},
+           "points":sum(len(r["points"]) for r in records),
+           "message_fidelity":"full"},
           open(f"{OUT}/cohort.meta.json","w"),indent=2)
 print(f"prepared {len(records)} developers, {sum(len(r['points']) for r in records)} points -> cohort.json")

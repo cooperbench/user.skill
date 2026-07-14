@@ -36,6 +36,9 @@ with (ROOT / "clean_sessions.jsonl").open(encoding="utf-8") as handle:
         sid = session["session_id"]
         assert sid not in sessions, f"duplicate canonical session: {sid}"
         assert session["user"] not in EXCLUDED_USERS
+        assert session.get("text_fidelity") == "full", (
+            f"non-full-fidelity source retained in clean cohort: {sid}"
+        )
         for turn in session["turns"]:
             assert turn["role"] in {"user", "assistant", "system", "tool", "metadata"}
             assert scrub_text(turn.get("text") or "") == (turn.get("text") or ""), (
@@ -109,6 +112,7 @@ cohort_path = ROOT / "cohort.json"
 if cohort_path.exists() and (ROOT / "cohort.meta.json").exists():
     cohort_meta = json.loads((ROOT / "cohort.meta.json").read_text())
     if cohort_meta.get("cohort_fingerprint") == manifest["cohort_fingerprint"]:
+        assert cohort_meta.get("message_fidelity") == "full"
         cohort = json.loads(cohort_path.read_text())
         assert {record["user"] for record in cohort} == {
             record["user"] for record in manifest["users"]
@@ -120,6 +124,21 @@ if cohort_path.exists() and (ROOT / "cohort.meta.json").exists():
                 assert turn["role"] == "user" and is_human_target(turn)
                 assert scrub_text(point["real"]) == point["real"]
                 assert scrub_text(point["context"]) == point["context"]
+                labels = {
+                    "user": "DEVELOPER",
+                    "assistant": "AGENT",
+                    "system": "SYSTEM",
+                    "tool": "TOOL",
+                    "metadata": "METADATA",
+                }
+                expected_context = "\n\n".join(
+                    f"[{labels.get(item.get('role'), 'METADATA')}]: "
+                    f"{scrub_text(item.get('text') or '')}"
+                    for item in sessions[sid]["turns"][: int(turn_index)]
+                )
+                assert point["context"] == expected_context, (
+                    f"truncated or altered cohort context: {point['point_id']}"
+                )
 
         cohort_points = {
             (record["user"], point["point_id"])
@@ -176,6 +195,7 @@ if sample_meta_path.exists():
     sample_meta = json.loads(sample_meta_path.read_text())
     if sample_meta.get("cohort_fingerprint") == manifest["cohort_fingerprint"]:
         assert sample_meta["policy_fingerprint"] == manifest["policy_fingerprint"]
+        assert sample_meta.get("message_fidelity") == "full"
         sample_points = [
             json.loads(line)
             for line in (ROOT / "sample100" / "points.jsonl").read_text().splitlines()

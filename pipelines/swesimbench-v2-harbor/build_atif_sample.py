@@ -21,15 +21,10 @@ from cohort_policy import (
 OUT = "/data/swesimbench-v2-harbor/sample100"
 os.makedirs(f"{OUT}/atif", exist_ok=True)
 N_POINTS = int(os.environ.get("N_POINTS", "100"))
-STEP_CHARS = 4000   # per-step text cap in ATIF (keeps files sane)
 MODEL = "gemini-3.5-flash"
 
 def scrub(t):
     return scrub_text(t or "")
-
-def cap(t):
-    t = scrub(t or "")
-    return t[:STEP_CHARS] + (" […truncated]" if len(t) > STEP_CHARS else "")
 
 def is_action(t):
     return t.get("role") == "user" and is_human_target(t)
@@ -110,7 +105,7 @@ def atif_of(sid, i):
         txt = t.get("text") or ""
         steps.append({
             "step_id": k, "source": role,
-            "message": {"role": role, "content": [{"type": "text", "text": cap(txt)}]},
+            "message": {"role": role, "content": [{"type": "text", "text": scrub(txt)}]},
             "is_copied_context": txt.strip().startswith(COMPACT),
         })
     return {
@@ -143,7 +138,8 @@ with open(f"{OUT}/points.jsonl", "w") as f:
 json.dump({"policy_version":POLICY_VERSION,
            "policy_fingerprint":clean_manifest["policy_fingerprint"],
            "cohort_fingerprint":clean_manifest["cohort_fingerprint"],
-           "points":len(records)},
+           "points":len(records),
+           "message_fidelity":"full"},
           open(f"{OUT}/meta.json","w"),indent=2)
 
 from collections import Counter
