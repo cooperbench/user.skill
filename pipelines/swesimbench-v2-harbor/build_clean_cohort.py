@@ -94,7 +94,7 @@ def candidate(session: dict, source: str, owner: str | None = None) -> dict:
     turns = session.get("turns") or []
     fidelity = session.get("text_fidelity")
     if fidelity is None:
-        if source in {"crawl", "swechat"}:
+        if source == "swechat":
             fidelity = "full"
         elif source == "specstory":
             fidelity = "lossy"

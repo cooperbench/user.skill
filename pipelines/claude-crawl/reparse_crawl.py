@@ -1,0 +1,166 @@
+#!/usr/bin/env python3
+"""Reparse hydrated crawl clones with the shared full-context parser."""
+from __future__ import annotations
+
+import argparse
+import glob
+import json
+import re
+import sqlite3
+import tempfile
+from pathlib import Path
+
+from cohort_policy import canonical_session_id
+from native_transcript import PARSER_VERSION, parse_full_jsonl
+
+
+UUID_RE = re.compile(
+    r"(?<![0-9a-f])"
+    r"([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})"
+    r"(?![0-9a-f])",
+    re.I,
+)
+
+
+def _existing_sessions(pattern: str) -> dict[str, dict]:
+    sessions = {}
+    for filename in glob.glob(pattern):
+        with open(filename, errors="replace") as source:
+            for line in source:
+                try:
+                    document = json.loads(line)
+                except json.JSONDecodeError:
+                    continue
+                session_id = document.get("session_id")
+                canonical = canonical_session_id(session_id)
+                if not canonical:
+                    continue
+                score = (
+                    sum(
+                        turn.get("role") == "user"
+                        for turn in document.get("turns") or []
+                    ),
+                    len(document.get("turns") or []),
+                )
+                current = sessions.get(canonical)
+                if current is None or score > current["_score"]:
+                    sessions[canonical] = {**document, "_score": score}
+    return sessions
+
+
+def _candidate_ids(filename: Path, data: bytes) -> set[str]:
+    identifiers = set(UUID_RE.findall(str(filename)))
+    identifiers.update(
+        UUID_RE.findall(data[: 1024 * 1024].decode("utf-8", "replace"))
+    )
+    return {canonical_session_id(identifier) for identifier in identifiers}
+
+
+def _score(turns: list[dict]) -> tuple[int, int, int]:
+    return (
+        sum(turn["role"] == "user" for turn in turns),
+        len(turns),
+        sum(len(turn["text"]) for turn in turns),
+    )
+
+
+def build(clones: Path, existing_pattern: str, output: Path) -> tuple[int, int]:
+    existing = _existing_sessions(existing_pattern)
+    output.parent.mkdir(parents=True, exist_ok=True)
+    with tempfile.TemporaryDirectory(prefix="crawl-full-") as temporary:
+        connection = sqlite3.connect(Path(temporary) / "sessions.sqlite")
+        connection.execute(
+            "CREATE TABLE sessions ("
+            "session_id TEXT PRIMARY KEY, human_turns INTEGER, turn_count INTEGER, "
+            "content_chars INTEGER, payload TEXT)"
+        )
+        for filename in clones.glob("**/*.jsonl"):
+            if ".git" in filename.parts:
+                continue
+            data = filename.read_bytes()
+            matches = _candidate_ids(filename, data) & existing.keys()
+            if not matches:
+                continue
+            human_turns, turns = parse_full_jsonl(data)
+            if human_turns == 0:
+                continue
+            score = _score(turns)
+            for session_id in matches:
+                prior = existing[session_id]
+                timestamps = [
+                    str(turn["ts"])
+                    for turn in turns
+                    if turn.get("ts") is not None
+                ]
+                session = {
+                    "user": prior.get("user"),
+                    "repo": prior.get("repo") or "?",
+                    "session_id": session_id,
+                    "start_time": (
+                        min(timestamps)
+                        if timestamps
+                        else prior.get("start_time")
+                    ),
+                    "harness": prior.get("harness"),
+                    "n_user_turns": human_turns,
+                    "turns": turns,
+                    "text_fidelity": "full",
+                    "parser_version": PARSER_VERSION,
+                }
+                connection.execute(
+                    "INSERT INTO sessions VALUES (?, ?, ?, ?, ?) "
+                    "ON CONFLICT(session_id) DO UPDATE SET "
+                    "human_turns=excluded.human_turns, "
+                    "turn_count=excluded.turn_count, "
+                    "content_chars=excluded.content_chars, "
+                    "payload=excluded.payload "
+                    "WHERE (excluded.human_turns, excluded.turn_count, "
+                    "excluded.content_chars) > "
+                    "(sessions.human_turns, sessions.turn_count, "
+                    "sessions.content_chars)",
+                    (
+                        session_id,
+                        *score,
+                        json.dumps(session, ensure_ascii=False),
+                    ),
+                )
+            connection.commit()
+        sessions = 0
+        human_turns = 0
+        with output.open("w") as destination:
+            for count, payload in connection.execute(
+                "SELECT human_turns, payload FROM sessions ORDER BY session_id"
+            ):
+                destination.write(payload + "\n")
+                sessions += 1
+                human_turns += count
+        connection.close()
+    return sessions, human_turns
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--clones", type=Path, default=Path("/data/claude-crawl/clones")
+    )
+    parser.add_argument(
+        "--existing-corpus-glob",
+        default="/data/claude-crawl/corpus/*.jsonl",
+    )
+    parser.add_argument(
+        "--output",
+        type=Path,
+        default=Path("/data/claude-crawl/corpus.full.jsonl"),
+    )
+    args = parser.parse_args()
+    sessions, human_turns = build(
+        args.clones, args.existing_corpus_glob, args.output
+    )
+    print(
+        f"wrote {sessions} full-fidelity crawl sessions / "
+        f"{human_turns} human turns to {args.output}"
+    )
+
+
+if __name__ == "__main__":
+    main()

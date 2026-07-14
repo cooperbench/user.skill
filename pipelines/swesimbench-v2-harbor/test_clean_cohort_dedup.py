@@ -3,6 +3,7 @@ import unittest
 from build_clean_cohort import (
     SWECHAT_ROLES,
     apply_command_expansion_policy,
+    candidate,
     choose_candidate,
     collapse_reconstructed_sessions,
 )
@@ -41,6 +42,16 @@ class CleanCohortDedupTest(unittest.TestCase):
         self.assertEqual(SWECHAT_ROLES["assistant_thinking"], "metadata")
         self.assertNotIn("progress", SWECHAT_ROLES)
         self.assertNotIn("queue_operation", SWECHAT_ROLES)
+
+    def test_legacy_crawl_requires_full_reparse(self):
+        record = candidate(
+            {
+                "session_id": "session-1",
+                "turns": [{"role": "user", "text": "question"}],
+            },
+            "crawl",
+        )
+        self.assertEqual(record["text_fidelity"], "legacy_unknown")
 
     def test_candidate_selection_rejects_legacy_truncated_sources(self):
         legacy = record(

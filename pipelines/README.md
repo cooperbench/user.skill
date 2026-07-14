@@ -12,7 +12,9 @@ Many scripts hardcode `/data/...` paths; adjust before running off Seoul.
 
 Before refreshing v2, rebuild Entire shards with
 `entire-backfill/harvest.py` and DataClaw with
-`claude-crawl/reparse_dataclaw.py`. The clean builder rejects legacy
+`claude-crawl/reparse_dataclaw.py`. Rebuild committed crawl transcripts with
+`claude-crawl/reparse_crawl.py`; its existing compact corpus is used only to
+recover session ownership and repository metadata. The clean builder rejects legacy
 300/400-word source records that do not declare `text_fidelity: full`.
 
 The validated live-ref Entire rebuild is stored privately at
