@@ -4,9 +4,9 @@
 The parser intentionally keeps every text byte from user and assistant messages.
 Filtering injected/system content and scrubbing secrets happen later in
 ``cohort_policy.py``.  This module only normalizes source-specific event shapes
-into ordered ``{role, ts, text}`` records. By default only user/assistant
-conversation rows are returned, matching the SWE-chat cohort reader. Explicit
-system/tool/metadata events can be retained with ``include_context=True``.
+into ordered ``{role, ts, text}`` records. Full system, user, assistant, tool,
+and metadata context is retained by default. Derived consumers may request a
+user/assistant-only view with ``conversation_only=True``.
 """
 from __future__ import annotations
 
@@ -14,7 +14,7 @@ import json
 from collections.abc import Iterable
 from typing import Any
 
-PARSER_VERSION = "swesimbench-native-transcript-2026-07-14.2"
+PARSER_VERSION = "swesimbench-native-transcript-2026-07-14.3"
 
 CODEX_ENVELOPES = {"response_item", "session_meta", "event_msg", "turn_context"}
 TEXT_BLOCK_TYPES = {"text", "input_text", "output_text"}
@@ -149,7 +149,7 @@ def _parse_claude(records: Iterable[dict]) -> list[dict]:
 
         # Some exports use bare role/message records without a top-level type.
         role = record.get("role")
-        if role in {"user", "assistant"}:
+        if role in {"system", "user", "assistant"}:
             content = message.get("content") if isinstance(message, dict) else message
             put(
                 f"bare:{record.get('uuid')}" if record.get("uuid") else None,
@@ -211,7 +211,9 @@ def _parse_codex(records: Iterable[dict]) -> list[dict]:
             continue
         if payload_type == "message":
             role = payload.get("role")
-            if role not in {"user", "assistant"} or (role == "user" and use_event_users):
+            if role not in {"system", "user", "assistant"} or (
+                role == "user" and use_event_users
+            ):
                 continue
             text = _codex_text(payload.get("content"))
             if text:
@@ -239,7 +241,7 @@ def _parse_document(document: dict) -> list[dict]:
         role = info.get("role") or item.get("role") or item.get("type")
         if role in {"gemini", "model"}:
             role = "assistant"
-        if role not in {"user", "assistant"}:
+        if role not in {"system", "user", "assistant"}:
             continue
         timestamp = item.get("timestamp") or (info.get("time") or {}).get("created")
         content = item.get("content")
@@ -250,7 +252,7 @@ def _parse_document(document: dict) -> list[dict]:
 
 
 def parse_full_jsonl(
-    data: bytes | str, *, include_context: bool = False
+    data: bytes | str, *, conversation_only: bool = False
 ) -> tuple[int, list[dict]]:
     """Return ``(human-role turn count, full-fidelity normalized turns)``."""
     text = data.decode("utf-8", "replace") if isinstance(data, bytes) else data
@@ -260,7 +262,7 @@ def parse_full_jsonl(
         document = None
     if isinstance(document, dict) and isinstance(document.get("messages"), list):
         turns = _parse_document(document)
-        if not include_context:
+        if conversation_only:
             turns = [turn for turn in turns if turn["role"] in {"user", "assistant"}]
         return sum(turn["role"] == "user" for turn in turns), turns
 
@@ -278,6 +280,6 @@ def parse_full_jsonl(
         for record in records
     )
     turns = _parse_codex(records) if is_codex else _parse_claude(records)
-    if not include_context:
+    if conversation_only:
         turns = [turn for turn in turns if turn["role"] in {"user", "assistant"}]
     return sum(turn["role"] == "user" for turn in turns), turns

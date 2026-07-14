@@ -36,13 +36,18 @@ class DataClawReparseTest(unittest.TestCase):
         self.assertEqual(len(session["turns"][0]["text"].split()), 700)
         self.assertEqual(session["turns"][1]["text"], assistant_text)
         self.assertEqual(
-            [turn["role"] for turn in session["turns"]], ["user", "assistant"]
+            [turn["role"] for turn in session["turns"]],
+            ["user", "assistant", "metadata", "tool"],
         )
+        self.assertIn(tool_output, session["turns"][-1]["text"])
 
-        with_context = normalized_session(
-            document, "donor-1", include_context=True
+        conversation_only = normalized_session(
+            document, "donor-1", include_context=False
         )
-        self.assertIn(tool_output, with_context["turns"][-1]["text"])
+        self.assertEqual(
+            [turn["role"] for turn in conversation_only["turns"]],
+            ["user", "assistant"],
+        )
 
 
 if __name__ == "__main__":

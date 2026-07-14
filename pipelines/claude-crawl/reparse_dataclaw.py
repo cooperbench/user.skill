@@ -10,7 +10,7 @@ from native_transcript import PARSER_VERSION
 
 
 def normalized_session(
-    document: dict, donor: str, *, include_context: bool = False
+    document: dict, donor: str, *, include_context: bool = True
 ) -> dict | None:
     session_id = document.get("session_id")
     messages = document.get("messages")
@@ -23,7 +23,11 @@ def normalized_session(
         role = message.get("role")
         timestamp = message.get("timestamp")
         content = message.get("content")
-        if role in {"user", "assistant"} and isinstance(content, str) and content.strip():
+        if (
+            role in {"system", "user", "assistant"}
+            and isinstance(content, str)
+            and content.strip()
+        ):
             turns.append({"role": role, "ts": timestamp, "text": content.strip()})
         if include_context:
             thinking = message.get("thinking")

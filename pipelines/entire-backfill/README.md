@@ -11,7 +11,7 @@ Message text is never length-truncated. Source records written by the current
 harvester include:
 
 ```json
-{"text_fidelity": "full", "parser_version": "swesimbench-native-transcript-2026-07-14.2"}
+{"text_fidelity": "full", "parser_version": "swesimbench-native-transcript-2026-07-14.3"}
 ```
 
 Rebuild the corpus before rebuilding v2; old shards produced by the previous

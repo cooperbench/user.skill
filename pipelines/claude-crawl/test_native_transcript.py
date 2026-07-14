@@ -31,7 +31,7 @@ class NativeTranscriptTest(unittest.TestCase):
                 },
             )
         )
-        self.assertEqual(PARSER_VERSION, "swesimbench-native-transcript-2026-07-14.2")
+        self.assertEqual(PARSER_VERSION, "swesimbench-native-transcript-2026-07-14.3")
         self.assertEqual(count, 1)
         self.assertEqual(turns[0]["text"], user_text)
         self.assertEqual(turns[1]["text"], assistant_text)
@@ -76,9 +76,12 @@ class NativeTranscriptTest(unittest.TestCase):
             )
         )
         self.assertEqual(count, 1)
-        self.assertEqual([turn["role"] for turn in turns], ["user", "assistant"])
+        self.assertEqual(
+            [turn["role"] for turn in turns], ["user", "assistant", "tool"]
+        )
         self.assertEqual(turns[0]["text"], "final exact prompt")
         self.assertEqual(turns[1]["text"], "complete response")
+        self.assertIn("/workspace/large.py", turns[2]["text"])
 
     def test_metadata_sidechains_and_tool_results_are_retained_as_context(self):
         source = jsonl(
@@ -108,17 +111,17 @@ class NativeTranscriptTest(unittest.TestCase):
         )
         count, turns = parse_full_jsonl(source)
         self.assertEqual(count, 1)
-        self.assertEqual([turn["role"] for turn in turns], ["user"])
-
-        count, turns = parse_full_jsonl(
-            source,
-            include_context=True,
-        )
-        self.assertEqual(count, 1)
         self.assertEqual(
             [turn["role"] for turn in turns], ["system", "tool", "user"]
         )
         self.assertEqual(turns[1]["text"], "full tool output")
+
+        count, turns = parse_full_jsonl(
+            source,
+            conversation_only=True,
+        )
+        self.assertEqual(count, 1)
+        self.assertEqual([turn["role"] for turn in turns], ["user"])
 
     def test_codex_prefers_exact_event_user_messages_without_duplication(self):
         long_text = " ".join(f"codex-{index}" for index in range(550))
@@ -159,19 +162,22 @@ class NativeTranscriptTest(unittest.TestCase):
     def test_bare_role_and_whole_document_formats_are_supported(self):
         bare_count, bare_turns = parse_full_jsonl(
             jsonl(
+                {"role": "system", "message": {"content": "bare system"}},
                 {"role": "user", "message": {"content": "bare user"}},
                 {"role": "assistant", "message": {"content": "bare assistant"}},
             )
         )
         self.assertEqual(bare_count, 1)
         self.assertEqual(
-            [turn["text"] for turn in bare_turns], ["bare user", "bare assistant"]
+            [turn["text"] for turn in bare_turns],
+            ["bare system", "bare user", "bare assistant"],
         )
 
         document_count, document_turns = parse_full_jsonl(
             json.dumps(
                 {
                     "messages": [
+                        {"role": "system", "content": "OpenCode system"},
                         {
                             "info": {
                                 "role": "user",
@@ -189,7 +195,8 @@ class NativeTranscriptTest(unittest.TestCase):
         )
         self.assertEqual(document_count, 1)
         self.assertEqual(
-            [turn["role"] for turn in document_turns], ["user", "assistant"]
+            [turn["role"] for turn in document_turns],
+            ["system", "user", "assistant"],
         )
 
 
