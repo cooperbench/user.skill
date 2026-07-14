@@ -40,8 +40,9 @@ Codex) plus the DataClaw JSONL and SWE-chat parquet readers.
 
 ## Cohort shape
 Train turns: min 385 · median ~907 · max 17,539. Held turns: min 100 · median ~108 · max 465.
-Full traces available for all 100 (Entire/crawl/SWE-chat native; DataClaw is 400-word-truncated but
-both-role, with full fidelity in `/data/dataclaw/raw/`).
+Full traces must be used for every retained source. Rebuild DataClaw from
+`/data/dataclaw/raw/` with `reparse_dataclaw.py`; the clean cohort builder rejects the legacy
+400-word-truncated corpus.
 
 ## Note on the ceiling
 Committed public Claude Code/Codex agent dumps are a genuinely thin slice of GitHub (publishing raw
