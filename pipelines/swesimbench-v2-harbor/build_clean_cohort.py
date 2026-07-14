@@ -96,6 +96,26 @@ def session_aliases(session_id: str | None) -> set[str]:
     aliases = {value, canonical_session_id(value)}
     aliases.update(match.lower() for match in UUID_ALIAS_RE.findall(value))
     return {alias for alias in aliases if alias}
+
+
+def embedded_uuids(session_id: str | None) -> set[str]:
+    return {match.lower() for match in UUID_ALIAS_RE.findall(session_id or "")}
+
+
+def lookup_candidates(session_id: str, by_alias: dict[str, list[dict]]) -> list[dict]:
+    """Resolve manifest IDs against corpus records via exact, canonical, and UUID aliases."""
+    seen: set[int] = set()
+    found: list[dict] = []
+    for alias in session_aliases(session_id):
+        for record in by_alias.get(alias, []):
+            marker = id(record)
+            if marker in seen:
+                continue
+            seen.add(marker)
+            found.append(record)
+    return found
+
+
 MIN_TRAIN = 400
 MIN_HELD = 100
 # Prefer native full-trace sources over SpecStory markdown exports when aliases collide.
@@ -258,8 +278,13 @@ def reconstruction_richness(record: dict) -> tuple:
     )
 
 
-def load_candidates(target_ids: set[str], target_canonical: set[str]) -> list[dict]:
+def load_candidates(
+    target_ids: set[str],
+    target_canonical: set[str],
+    target_uuids: set[str] | None = None,
+) -> list[dict]:
     result = []
+    uuid_targets = target_uuids or set()
 
     def wanted(sid: str | None) -> bool:
         aliases = session_aliases(sid)
@@ -267,6 +292,7 @@ def load_candidates(target_ids: set[str], target_canonical: set[str]) -> list[di
             aliases
             and (
                 aliases & target_ids
+                or aliases & uuid_targets
                 or any(
                     canonical_session_id(alias) in target_canonical
                     for alias in aliases
@@ -702,12 +728,13 @@ def main() -> None:
         for session in user[split]
     }
     target_canonical = {canonical_session_id(sid) for sid in target_ids}
+    target_uuids = {uuid for sid in target_ids for uuid in embedded_uuids(sid)}
     cache_key = candidate_cache_key(target_ids)
     # Candidate turns are externalized to SQLite; skip pickle caches that would
     # otherwise lose the full-fidelity payloads across process restarts.
     if CANDIDATE_CACHE.exists():
         CANDIDATE_CACHE.unlink()
-    candidates = load_candidates(target_ids, target_canonical)
+    candidates = load_candidates(target_ids, target_canonical, target_uuids)
     command_payloads, command_turns = apply_command_expansion_policy(candidates)
     print(f"indexed cache key {cache_key[:12]}", flush=True)
     print(
@@ -722,19 +749,30 @@ def main() -> None:
             by_exact[alias].append(record)
         by_canonical[record["canonical"]].append(record)
 
-    missing = sorted(sid for sid in target_ids if sid not in by_exact)
-    if missing:
-        raise RuntimeError(
-            f"{len(missing)} manifest sessions remain missing after SWE-chat indexing; "
-            f"first: {missing[:10]}"
-        )
+    missing = sorted(
+        sid for sid in target_ids if not lookup_candidates(sid, by_exact)
+    )
+    missing_set = set(missing)
+    print(
+        f"resolved {len(target_ids) - len(missing)}/{len(target_ids)} manifest sessions; "
+        f"{len(missing)} unhydrated (SpecStory/harvest gaps tolerated)",
+        flush=True,
+    )
 
     canonical_owners: dict[str, set[str]] = defaultdict(set)
     for user in users:
         for split in ("train_sessions", "held_sessions"):
             for session in user[split]:
-                canonical_owners[canonical_session_id(session["sid"])].add(user["user"])
-    cross_user = {key: sorted(value) for key, value in canonical_owners.items() if len(value) > 1}
+                if session["sid"] in missing_set:
+                    continue
+                canonical_owners[canonical_session_id(session["sid"])].add(
+                    user["user"]
+                )
+    cross_user = {
+        key: sorted(value)
+        for key, value in canonical_owners.items()
+        if len(value) > 1
+    }
     if cross_user:
         raise RuntimeError(f"canonical session IDs cross developers: {cross_user}")
 
@@ -743,6 +781,8 @@ def main() -> None:
     provenance = []
     dropped_threshold = []
     dropped_incomplete_dialogue = []
+    dropped_unhydrated = []
+    dropped_no_full_fidelity = []
     reconstruction_candidate_pairs_checked = 0
     for user in users:
         dev = user["user"]
@@ -751,13 +791,38 @@ def main() -> None:
         for split_name, source_key in (("train", "train_sessions"), ("held", "held_sessions")):
             for session in user[source_key]:
                 key = canonical_session_id(session["sid"])
-                grouped[key].extend(by_exact[session["sid"]])
+                found = lookup_candidates(session["sid"], by_exact)
+                if not found:
+                    dropped_unhydrated.append(
+                        {
+                            "user": dev,
+                            "sid": session["sid"],
+                            "split": split_name,
+                            "sources": user.get("sources", []),
+                            "reason": "unhydrated_source",
+                        }
+                    )
+                    continue
+                grouped[key].extend(found)
                 manifest_entries[key].append((split_name, session))
 
         records = []
         for key, group in grouped.items():
             entries = manifest_entries[key]
-            selected = dict(choose_candidate(group))
+            try:
+                selected = dict(choose_candidate(group))
+            except RuntimeError as exc:
+                if "no full-fidelity candidate" not in str(exc):
+                    raise
+                dropped_no_full_fidelity.append(
+                    {
+                        "user": dev,
+                        "sid": key,
+                        "sources": sorted({record["source"] for record in group}),
+                        "reason": "no_full_fidelity_candidate",
+                    }
+                )
+                continue
             aliases = sorted(
                 {entry["sid"] for _, entry in entries}
                 | {record["sid"] for record in group}
@@ -985,6 +1050,11 @@ def main() -> None:
         "dropped_incomplete_dialogue": dropped_incomplete_dialogue,
         "source_manifest_sessions": len(target_ids),
         "candidate_records": len(candidates),
+        "resolved_manifest_sessions": len(target_ids) - len(missing),
+        "dropped_unhydrated_sessions": len(dropped_unhydrated),
+        "dropped_unhydrated": dropped_unhydrated[:200],
+        "dropped_no_full_fidelity_sessions": len(dropped_no_full_fidelity),
+        "dropped_no_full_fidelity": dropped_no_full_fidelity,
         "command_expansion_payloads": len(command_payloads),
         "command_expansion_turns": command_turns,
         "command_expansion_payload_hashes": sorted(
@@ -1018,7 +1088,13 @@ def main() -> None:
             {
                 key: value
                 for key, value in report.items()
-                if key not in {"provenance", "dropped_incomplete_dialogue"}
+                if key
+                not in {
+                    "provenance",
+                    "dropped_incomplete_dialogue",
+                    "dropped_unhydrated",
+                    "dropped_no_full_fidelity",
+                }
             },
             indent=2,
         )

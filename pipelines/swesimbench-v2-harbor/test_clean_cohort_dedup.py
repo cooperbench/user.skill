@@ -6,6 +6,7 @@ from build_clean_cohort import (
     candidate,
     choose_candidate,
     collapse_reconstructed_sessions,
+    lookup_candidates,
     session_aliases,
 )
 
@@ -59,6 +60,16 @@ class CleanCohortDedupTest(unittest.TestCase):
         aliases = session_aliases(f"owner/repo|{uuid}")
         self.assertIn(uuid, aliases)
         self.assertIn(f"owner/repo|{uuid}", aliases)
+
+    def test_lookup_candidates_matches_reparse_manifest_to_repo_corpus_id(self):
+        uuid = "00690083-466a-4e7f-b883-e5e53c04ab72"
+        corpus = record(f"owner/repo|{uuid}", "train", "crawl", [{"role": "user", "text": "hi"}])
+        by_alias = {}
+        for alias in session_aliases(corpus["sid"]):
+            by_alias.setdefault(alias, []).append(corpus)
+        found = lookup_candidates(f"reparse|owner|{uuid}", by_alias)
+        self.assertEqual(found, [corpus])
+        self.assertEqual(lookup_candidates(uuid, by_alias), [corpus])
     def test_candidate_selection_rejects_legacy_truncated_sources(self):
         legacy = record(
             "same",
