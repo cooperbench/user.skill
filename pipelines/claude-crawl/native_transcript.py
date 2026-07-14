@@ -4,7 +4,9 @@
 The parser intentionally keeps every text byte from user and assistant messages.
 Filtering injected/system content and scrubbing secrets happen later in
 ``cohort_policy.py``.  This module only normalizes source-specific event shapes
-into ordered ``{role, ts, text}`` records.
+into ordered ``{role, ts, text}`` records. By default only user/assistant
+conversation rows are returned, matching the SWE-chat cohort reader. Explicit
+system/tool/metadata events can be retained with ``include_context=True``.
 """
 from __future__ import annotations
 
@@ -12,7 +14,7 @@ import json
 from collections.abc import Iterable
 from typing import Any
 
-PARSER_VERSION = "swesimbench-native-transcript-2026-07-14.1"
+PARSER_VERSION = "swesimbench-native-transcript-2026-07-14.2"
 
 CODEX_ENVELOPES = {"response_item", "session_meta", "event_msg", "turn_context"}
 TEXT_BLOCK_TYPES = {"text", "input_text", "output_text"}
@@ -247,7 +249,9 @@ def _parse_document(document: dict) -> list[dict]:
     return turns
 
 
-def parse_full_jsonl(data: bytes | str) -> tuple[int, list[dict]]:
+def parse_full_jsonl(
+    data: bytes | str, *, include_context: bool = False
+) -> tuple[int, list[dict]]:
     """Return ``(human-role turn count, full-fidelity normalized turns)``."""
     text = data.decode("utf-8", "replace") if isinstance(data, bytes) else data
     try:
@@ -256,6 +260,8 @@ def parse_full_jsonl(data: bytes | str) -> tuple[int, list[dict]]:
         document = None
     if isinstance(document, dict) and isinstance(document.get("messages"), list):
         turns = _parse_document(document)
+        if not include_context:
+            turns = [turn for turn in turns if turn["role"] in {"user", "assistant"}]
         return sum(turn["role"] == "user" for turn in turns), turns
 
     records: list[dict] = []
@@ -272,4 +278,6 @@ def parse_full_jsonl(data: bytes | str) -> tuple[int, list[dict]]:
         for record in records
     )
     turns = _parse_codex(records) if is_codex else _parse_claude(records)
+    if not include_context:
+        turns = [turn for turn in turns if turn["role"] in {"user", "assistant"}]
     return sum(turn["role"] == "user" for turn in turns), turns

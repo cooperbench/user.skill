@@ -9,7 +9,9 @@ from pathlib import Path
 from native_transcript import PARSER_VERSION
 
 
-def normalized_session(document: dict, donor: str) -> dict | None:
+def normalized_session(
+    document: dict, donor: str, *, include_context: bool = False
+) -> dict | None:
     session_id = document.get("session_id")
     messages = document.get("messages")
     if not session_id or not isinstance(messages, list):
@@ -23,22 +25,27 @@ def normalized_session(document: dict, donor: str) -> dict | None:
         content = message.get("content")
         if role in {"user", "assistant"} and isinstance(content, str) and content.strip():
             turns.append({"role": role, "ts": timestamp, "text": content.strip()})
-        thinking = message.get("thinking")
-        if isinstance(thinking, str) and thinking.strip():
-            turns.append(
-                {"role": "metadata", "ts": timestamp, "text": thinking.strip()}
-            )
-        for tool_use in message.get("tool_uses") or []:
-            if isinstance(tool_use, dict):
+        if include_context:
+            thinking = message.get("thinking")
+            if isinstance(thinking, str) and thinking.strip():
                 turns.append(
                     {
-                        "role": "tool",
+                        "role": "metadata",
                         "ts": timestamp,
-                        "text": json.dumps(
-                            tool_use, ensure_ascii=False, sort_keys=True
-                        ),
+                        "text": thinking.strip(),
                     }
                 )
+            for tool_use in message.get("tool_uses") or []:
+                if isinstance(tool_use, dict):
+                    turns.append(
+                        {
+                            "role": "tool",
+                            "ts": timestamp,
+                            "text": json.dumps(
+                                tool_use, ensure_ascii=False, sort_keys=True
+                            ),
+                        }
+                    )
     if not any(turn["role"] == "user" for turn in turns):
         return None
     return {

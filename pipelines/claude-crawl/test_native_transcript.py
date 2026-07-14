@@ -31,7 +31,7 @@ class NativeTranscriptTest(unittest.TestCase):
                 },
             )
         )
-        self.assertEqual(PARSER_VERSION, "swesimbench-native-transcript-2026-07-14.1")
+        self.assertEqual(PARSER_VERSION, "swesimbench-native-transcript-2026-07-14.2")
         self.assertEqual(count, 1)
         self.assertEqual(turns[0]["text"], user_text)
         self.assertEqual(turns[1]["text"], assistant_text)
@@ -76,40 +76,43 @@ class NativeTranscriptTest(unittest.TestCase):
             )
         )
         self.assertEqual(count, 1)
-        self.assertEqual(
-            [turn["role"] for turn in turns], ["user", "assistant", "tool"]
-        )
+        self.assertEqual([turn["role"] for turn in turns], ["user", "assistant"])
         self.assertEqual(turns[0]["text"], "final exact prompt")
         self.assertEqual(turns[1]["text"], "complete response")
-        self.assertIn("/workspace/large.py", turns[2]["text"])
 
     def test_metadata_sidechains_and_tool_results_are_retained_as_context(self):
+        source = jsonl(
+            {
+                "type": "user",
+                "uuid": "meta",
+                "isMeta": True,
+                "message": {"content": "system-injected context"},
+            },
+            {
+                "type": "user",
+                "uuid": "tool-result",
+                "message": {
+                    "content": [
+                        {
+                            "type": "tool_result",
+                            "content": "full tool output",
+                        }
+                    ]
+                },
+            },
+            {
+                "type": "user",
+                "uuid": "human",
+                "message": {"content": "please fix the parser"},
+            },
+        )
+        count, turns = parse_full_jsonl(source)
+        self.assertEqual(count, 1)
+        self.assertEqual([turn["role"] for turn in turns], ["user"])
+
         count, turns = parse_full_jsonl(
-            jsonl(
-                {
-                    "type": "user",
-                    "uuid": "meta",
-                    "isMeta": True,
-                    "message": {"content": "system-injected context"},
-                },
-                {
-                    "type": "user",
-                    "uuid": "tool-result",
-                    "message": {
-                        "content": [
-                            {
-                                "type": "tool_result",
-                                "content": "full tool output",
-                            }
-                        ]
-                    },
-                },
-                {
-                    "type": "user",
-                    "uuid": "human",
-                    "message": {"content": "please fix the parser"},
-                },
-            )
+            source,
+            include_context=True,
         )
         self.assertEqual(count, 1)
         self.assertEqual(
