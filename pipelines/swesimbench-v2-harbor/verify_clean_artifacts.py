@@ -2,6 +2,7 @@
 """Hard integrity assertions for rebuilt SWESimBench v2 artifacts."""
 import json
 import hashlib
+import os
 import sys
 from pathlib import Path
 
@@ -20,7 +21,7 @@ from build_clean_cohort import (
     record_reconstruction_evidence,
 )
 
-ROOT = Path("/data/swesimbench-v2-harbor")
+ROOT = Path(os.environ.get("SWESIMBENCH_V2_ROOT", "/data/swesimbench-v2-harbor"))
 manifest = json.loads((ROOT / "clean_manifest.json").read_text())
 assert manifest["policy_version"] == POLICY_VERSION
 assert manifest["policy_fingerprint"] == policy_fingerprint()

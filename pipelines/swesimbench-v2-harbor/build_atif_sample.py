@@ -18,7 +18,8 @@ from cohort_policy import (
     scrub_text,
 )
 
-OUT = "/data/swesimbench-v2-harbor/sample100"
+ROOT = os.environ.get("SWESIMBENCH_V2_ROOT", "/data/swesimbench-v2-harbor")
+OUT = f"{ROOT}/sample100"
 os.makedirs(f"{OUT}/atif", exist_ok=True)
 N_POINTS = int(os.environ.get("N_POINTS", "100"))
 MODEL = "gemini-3.5-flash"
@@ -58,11 +59,11 @@ def classify(text, prev):
 
 # ---- canonical clean index sid -> turns; sid -> source ----
 IDX, SRC = {}, {}
-for line in open("/data/swesimbench-v2-harbor/clean_sessions.jsonl"):
+for line in open(f"{ROOT}/clean_sessions.jsonl"):
     session=json.loads(line)
     IDX[session["session_id"]]=session["turns"]
     SRC[session["session_id"]]=session["source"]
-clean_manifest=json.load(open("/data/swesimbench-v2-harbor/clean_manifest.json"))
+clean_manifest=json.load(open(f"{ROOT}/clean_manifest.json"))
 assert clean_manifest["policy_version"]==POLICY_VERSION
 assert clean_manifest["policy_fingerprint"]==policy_fingerprint()
 man=clean_manifest["users"]

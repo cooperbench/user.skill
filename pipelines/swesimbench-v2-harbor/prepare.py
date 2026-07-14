@@ -11,7 +11,7 @@ from cohort_policy import (
     scrub_text,
 )
 
-OUT = "/data/swesimbench-v2-harbor"
+OUT = os.environ.get("SWESIMBENCH_V2_ROOT", "/data/swesimbench-v2-harbor")
 MAX_PTS, PROFILE_TURNS = 30, 40   # context = ALL prior turns in the session
 MODEL = "gemini-3.5-flash"
 
@@ -23,16 +23,16 @@ def is_action(t):
 # Canonical clean index: metadata remains in the trace with system/tool roles,
 # while secrets are already scrubbed and targets are genuine user turns only.
 IDX={}
-for line in open("/data/swesimbench-v2-harbor/clean_sessions.jsonl"):
+for line in open(f"{OUT}/clean_sessions.jsonl"):
     s=json.loads(line)
     IDX[s["session_id"]]=s["turns"]
-clean_manifest=json.load(open("/data/swesimbench-v2-harbor/clean_manifest.json"))
+clean_manifest=json.load(open(f"{OUT}/clean_manifest.json"))
 assert clean_manifest["policy_version"]==POLICY_VERSION
 assert clean_manifest["policy_fingerprint"]==policy_fingerprint()
 man=clean_manifest["users"]
 
 # --- gemini 4-way move classifier (gold labels) ---
-TAX_BODY=open("/data/swesimbench-v2-harbor/taxonomy_body.txt").read() if os.path.exists("/data/swesimbench-v2-harbor/taxonomy_body.txt") else None
+TAX_BODY=open(f"{OUT}/taxonomy_body.txt").read() if os.path.exists(f"{OUT}/taxonomy_body.txt") else None
 CATS=["approve","critical","directive","inquiry"]
 BODY=(
 "Classify the developer's MOVE by the observable function of their message toward the agent's previous turn. Choose exactly one:\n"

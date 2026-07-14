@@ -99,7 +99,7 @@ def _candidate_ids(filename: Path, data: bytes | None = None) -> set[str]:
 
 
 def _safe_text(value: str) -> str:
-    return value.encode("utf-8", "surrogateescape").decode("utf-8", "replace")
+    return value.encode("utf-8", "surrogatepass").decode("utf-8", "replace")
 
 
 def _safe_turns(turns: list[dict]) -> list[dict]:
