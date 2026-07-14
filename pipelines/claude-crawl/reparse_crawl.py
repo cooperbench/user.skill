@@ -22,6 +22,18 @@ UUID_RE = re.compile(
 )
 
 
+def _lookup_keys(session_id: str | None) -> set[str]:
+    """Map harvest wrappers like ``owner/repo|uuid`` onto bare UUID keys."""
+    value = (session_id or "").strip()
+    if not value:
+        return set()
+    keys = {canonical_session_id(value), value}
+    for match in UUID_RE.findall(value):
+        keys.add(match.lower())
+        keys.add(canonical_session_id(match))
+    return {key for key in keys if key}
+
+
 def _existing_sessions(pattern: str) -> dict[str, dict]:
     sessions = {}
     for filename in glob.glob(pattern):
@@ -32,8 +44,8 @@ def _existing_sessions(pattern: str) -> dict[str, dict]:
                 except json.JSONDecodeError:
                     continue
                 session_id = document.get("session_id")
-                canonical = canonical_session_id(session_id)
-                if not canonical:
+                keys = _lookup_keys(session_id)
+                if not keys:
                     continue
                 score = (
                     sum(
@@ -42,9 +54,10 @@ def _existing_sessions(pattern: str) -> dict[str, dict]:
                     ),
                     len(document.get("turns") or []),
                 )
-                current = sessions.get(canonical)
-                if current is None or score > current["_score"]:
-                    sessions[canonical] = {**document, "_score": score}
+                for key in keys:
+                    current = sessions.get(key)
+                    if current is None or score > current["_score"]:
+                        sessions[key] = {**document, "_score": score}
     return sessions
 
 
@@ -85,45 +98,46 @@ def build(clones: Path, existing_pattern: str, output: Path) -> tuple[int, int]:
             if human_turns == 0:
                 continue
             score = _score(turns)
-            for session_id in matches:
-                prior = existing[session_id]
-                timestamps = [
-                    str(turn["ts"])
-                    for turn in turns
-                    if turn.get("ts") is not None
-                ]
-                session = {
-                    "user": prior.get("user"),
-                    "repo": prior.get("repo") or "?",
-                    "session_id": session_id,
-                    "start_time": (
-                        min(timestamps)
-                        if timestamps
-                        else prior.get("start_time")
-                    ),
-                    "harness": prior.get("harness"),
-                    "n_user_turns": human_turns,
-                    "turns": turns,
-                    "text_fidelity": "full",
-                    "parser_version": PARSER_VERSION,
-                }
-                connection.execute(
-                    "INSERT INTO sessions VALUES (?, ?, ?, ?, ?) "
-                    "ON CONFLICT(session_id) DO UPDATE SET "
-                    "human_turns=excluded.human_turns, "
-                    "turn_count=excluded.turn_count, "
-                    "content_chars=excluded.content_chars, "
-                    "payload=excluded.payload "
-                    "WHERE (excluded.human_turns, excluded.turn_count, "
-                    "excluded.content_chars) > "
-                    "(sessions.human_turns, sessions.turn_count, "
-                    "sessions.content_chars)",
-                    (
-                        session_id,
-                        *score,
-                        json.dumps(session, ensure_ascii=False),
-                    ),
-                )
+            # Prefer the original harvest identifier; UUID aliases only locate the
+            # matching compact-corpus metadata.
+            prior = max(
+                (existing[key] for key in matches),
+                key=lambda document: document["_score"],
+            )
+            session_id = prior.get("session_id") or next(iter(matches))
+            timestamps = [
+                str(turn["ts"]) for turn in turns if turn.get("ts") is not None
+            ]
+            session = {
+                "user": prior.get("user"),
+                "repo": prior.get("repo") or "?",
+                "session_id": session_id,
+                "start_time": (
+                    min(timestamps) if timestamps else prior.get("start_time")
+                ),
+                "harness": prior.get("harness"),
+                "n_user_turns": human_turns,
+                "turns": turns,
+                "text_fidelity": "full",
+                "parser_version": PARSER_VERSION,
+            }
+            connection.execute(
+                "INSERT INTO sessions VALUES (?, ?, ?, ?, ?) "
+                "ON CONFLICT(session_id) DO UPDATE SET "
+                "human_turns=excluded.human_turns, "
+                "turn_count=excluded.turn_count, "
+                "content_chars=excluded.content_chars, "
+                "payload=excluded.payload "
+                "WHERE (excluded.human_turns, excluded.turn_count, "
+                "excluded.content_chars) > "
+                "(sessions.human_turns, sessions.turn_count, "
+                "sessions.content_chars)",
+                (
+                    session_id,
+                    *score,
+                    json.dumps(session, ensure_ascii=False),
+                ),
+            )
             connection.commit()
         sessions = 0
         human_turns = 0

@@ -79,7 +79,9 @@ class CrawlReparseTest(unittest.TestCase):
 
             self.assertEqual((sessions, human_turns), (1, 1))
             rebuilt = json.loads(output.read_text())
-            self.assertEqual(rebuilt["session_id"], session_id)
+            self.assertEqual(
+                rebuilt["session_id"], f"owner/repo|{session_id}"
+            )
             self.assertEqual(
                 [turn["role"] for turn in rebuilt["turns"]],
                 ["system", "user", "assistant", "tool", "tool"],

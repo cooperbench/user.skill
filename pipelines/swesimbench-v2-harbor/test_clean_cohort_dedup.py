@@ -6,6 +6,7 @@ from build_clean_cohort import (
     candidate,
     choose_candidate,
     collapse_reconstructed_sessions,
+    session_aliases,
 )
 
 
@@ -53,6 +54,11 @@ class CleanCohortDedupTest(unittest.TestCase):
         )
         self.assertEqual(record["text_fidelity"], "legacy_unknown")
 
+    def test_crawl_wrapper_ids_expose_uuid_aliases(self):
+        uuid = "00690083-466a-4e7f-b883-e5e53c04ab72"
+        aliases = session_aliases(f"owner/repo|{uuid}")
+        self.assertIn(uuid, aliases)
+        self.assertIn(f"owner/repo|{uuid}", aliases)
     def test_candidate_selection_rejects_legacy_truncated_sources(self):
         legacy = record(
             "same",

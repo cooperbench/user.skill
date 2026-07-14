@@ -7,6 +7,7 @@ import hashlib
 import json
 import os
 import pickle
+import re
 import sys
 from collections import defaultdict
 from pathlib import Path
@@ -45,7 +46,7 @@ CLEAN_MANIFEST = ROOT / "clean_manifest.json"
 CLEAN_SESSIONS = ROOT / "clean_sessions.jsonl"
 BUILD_REPORT = ROOT / "clean_build_report.json"
 CANDIDATE_CACHE = ROOT / ".clean_candidates.cache.pkl"
-CANDIDATE_CACHE_VERSION = 3
+CANDIDATE_CACHE_VERSION = 4
 ENTIRE_CORPUS_GLOB = os.environ.get(
     "ENTIRE_CORPUS_GLOB",
     "/data/entire-backfill/corpus-full-v4/*.jsonl",
@@ -77,6 +78,22 @@ SWECHAT_ROLES = {
     "system_injected": "system",
     "summary": "system",
 }
+UUID_ALIAS_RE = re.compile(
+    r"(?<![0-9a-f])"
+    r"([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})"
+    r"(?![0-9a-f])",
+    re.I,
+)
+
+
+def session_aliases(session_id: str | None) -> set[str]:
+    """Exact ID plus any embedded native UUID aliases used by crawl wrappers."""
+    value = (session_id or "").strip()
+    if not value:
+        return set()
+    aliases = {value, canonical_session_id(value)}
+    aliases.update(match.lower() for match in UUID_ALIAS_RE.findall(value))
+    return {alias for alias in aliases if alias}
 MIN_TRAIN = 400
 MIN_HELD = 100
 # Prefer native full-trace sources over SpecStory markdown exports when aliases collide.
@@ -170,7 +187,17 @@ def load_candidates(target_ids: set[str], target_canonical: set[str]) -> list[di
     result = []
 
     def wanted(sid: str | None) -> bool:
-        return bool(sid and (sid in target_ids or canonical_session_id(sid) in target_canonical))
+        aliases = session_aliases(sid)
+        return bool(
+            aliases
+            and (
+                aliases & target_ids
+                or any(
+                    canonical_session_id(alias) in target_canonical
+                    for alias in aliases
+                )
+            )
+        )
 
     print("indexing Entire candidates...", flush=True)
     for filename in glob.glob(ENTIRE_CORPUS_GLOB):
@@ -607,7 +634,8 @@ def main() -> None:
     by_exact: dict[str, list[dict]] = defaultdict(list)
     by_canonical: dict[str, list[dict]] = defaultdict(list)
     for record in candidates:
-        by_exact[record["sid"]].append(record)
+        for alias in session_aliases(record["sid"]):
+            by_exact[alias].append(record)
         by_canonical[record["canonical"]].append(record)
 
     missing = sorted(sid for sid in target_ids if sid not in by_exact)
