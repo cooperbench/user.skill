@@ -1,13 +1,19 @@
 #!/usr/bin/env python3
 """Cross-source comparison of the 100-user cohort: session depth, Claude Code vs Codex mix,
 tokens, models, time span, train/eval split — per data source (Entire / GitHub crawl / DataClaw)."""
-import json, glob, statistics as st
+import json, glob, os, statistics as st
 from collections import defaultdict, Counter
 import tiktoken
 enc = tiktoken.get_encoding("cl100k_base")
 def tok(s): return len(enc.encode(s or "", disallowed_special=()))
 
 man = json.load(open("/data/claude-crawl/meta/final_100.json"))
+ENTIRE_CORPUS_GLOB = os.environ.get(
+    "ENTIRE_CORPUS_GLOB", "/data/entire-backfill/corpus-full-v4/*.jsonl"
+)
+DATACLAW_CORPUS = os.environ.get(
+    "DATACLAW_CORPUS", "/data/dataclaw/meta/corpus.full.jsonl"
+)
 msids = {}
 split_of = {}
 for u in man:
@@ -16,12 +22,12 @@ for u in man:
 
 # sid -> source
 src = {}
-for f in glob.glob("/data/entire-backfill/corpus/*.jsonl"):
+for f in glob.glob(ENTIRE_CORPUS_GLOB):
     for line in open(f):
         try: s = json.loads(line)
         except: continue
         if s.get("session_id") in msids: src[s["session_id"]] = "entire"
-for line in open("/data/dataclaw/meta/corpus.jsonl"):
+for line in open(DATACLAW_CORPUS):
     try: s = json.loads(line)
     except: continue
     if s.get("session_id") in msids and s["session_id"] not in src: src[s["session_id"]] = "dataclaw"
@@ -41,13 +47,13 @@ hm = {}
 def norm_h(agent, model=None):
     a = (agent or "").lower(); m = (model or "").lower()
     return "codex" if ("codex" in a or "codex" in m or a == "codex") else "claude-code"
-for f in glob.glob("/data/entire-backfill/corpus/*.jsonl"):
+for f in glob.glob(ENTIRE_CORPUS_GLOB):
     for line in open(f):
         try: s = json.loads(line)
         except: continue
         if s.get("session_id") in msids:
             hm[s["session_id"]] = (norm_h(s.get("agent"), s.get("model")), s.get("model") or "?", s.get("created_at"))
-for line in open("/data/dataclaw/meta/corpus.jsonl"):
+for line in open(DATACLAW_CORPUS):
     try: s = json.loads(line)
     except: continue
     sid = s.get("session_id")
@@ -67,12 +73,12 @@ sid_turns = {}
 def put(sid, turns):
     if sid in msids and turns and (sid not in sid_turns or len(turns) > len(sid_turns[sid])):
         sid_turns[sid] = turns
-for f in glob.glob("/data/entire-backfill/corpus/*.jsonl") + glob.glob("/data/claude-crawl/corpus/*.jsonl"):
+for f in glob.glob(ENTIRE_CORPUS_GLOB) + glob.glob("/data/claude-crawl/corpus/*.jsonl"):
     for line in open(f):
         try: s = json.loads(line)
         except: continue
         put(s.get("session_id"), s.get("turns", []))
-for line in open("/data/dataclaw/meta/corpus.jsonl"):
+for line in open(DATACLAW_CORPUS):
     try: s = json.loads(line)
     except: continue
     put(s.get("session_id"), s.get("turns", []))

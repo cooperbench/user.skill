@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Unified census over FULL-TRACE coding-agent sources, at >=400 train + >=100 held.
 Sources:
-  entire    /data/entire-backfill/corpus/*.jsonl   (Claude Code + Codex + Cursor; user = gh:actor)
+  entire    /data/entire-backfill/corpus-full-v4/*.jsonl (full native traces; user = gh:actor)
   dataclaw  /data/dataclaw/meta/corpus.full.jsonl   (full-fidelity donor traces)
   crawl     /data/claude-crawl/corpus/*.jsonl       (committed .claude/.codex; user = gh:owner)
   swechat   SWE-chat parquet                        (native agents; dedups vs entire by sid)
@@ -26,6 +26,9 @@ EXCLUDE = set(EXCLUDED_USERS)
 MERGE = {"gh:skogai": "gh:SkogBackup"}
 MINTRAIN = int(os.environ.get("MINTRAIN", "400"))
 CUTOFF = os.environ.get("CUTOFF", "")   # e.g. "2026-02-01": drop sessions before this (Opus 4.6 era)
+ENTIRE_CORPUS_GLOB = os.environ.get(
+    "ENTIRE_CORPUS_GLOB", "/data/entire-backfill/corpus-full-v4/*.jsonl"
+)
 
 def normp(t): return normalize_text(developer_text(t)).lower()
 
@@ -84,7 +87,7 @@ def add(user, sid, ts, turns, source):
     usrc[user].add(source)
 
 # entire
-for f in glob.glob("/data/entire-backfill/corpus/*.jsonl"):
+for f in glob.glob(ENTIRE_CORPUS_GLOB):
     for line in open(f):
         try: s = json.loads(line)
         except: continue

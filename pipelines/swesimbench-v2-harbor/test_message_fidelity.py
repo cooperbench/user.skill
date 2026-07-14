@@ -24,6 +24,13 @@ class MessageFidelityTest(unittest.TestCase):
         self.assertIn("for session in iter_ref(repo_path, ref):", entire)
         self.assertNotIn("sessions = parse_ref(repo_path, ref)", entire)
 
+    def test_analysis_scripts_use_full_fidelity_sources(self):
+        for name in ("census_cc.py", "stats.py", "compare_sources.py", "analysis.py"):
+            source = (PIPELINES / "claude-crawl" / name).read_text()
+            self.assertIn("corpus-full-v4/*.jsonl", source)
+            self.assertNotIn("/data/entire-backfill/corpus/*.jsonl", source)
+            self.assertNotIn("/data/dataclaw/meta/corpus.jsonl", source)
+
     def test_refresh_requires_explicit_full_fidelity_candidates(self):
         builder = (ROOT / "build_clean_cohort.py").read_text()
         self.assertIn('"text_fidelity": fidelity', builder)

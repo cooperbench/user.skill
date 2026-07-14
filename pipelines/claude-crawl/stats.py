@@ -4,12 +4,18 @@ Sessions + user-turns come from the manifest; assistant-turns + tokens/user-turn
 corpora (matched by session id); tool calls come from raw sources (SWE-chat parquet exact; a
 raw-clone sample for Claude Code/Codex). Reports mean & median per user.
 """
-import json, glob, statistics as st
+import json, glob, os, statistics as st
 import tiktoken
 enc = tiktoken.get_encoding("cl100k_base")
 def toklen(s): return len(enc.encode(s or "", disallowed_special=()))
 
 man = json.load(open("/data/claude-crawl/meta/final_100.json"))
+ENTIRE_CORPUS_GLOB = os.environ.get(
+    "ENTIRE_CORPUS_GLOB", "/data/entire-backfill/corpus-full-v4/*.jsonl"
+)
+DATACLAW_CORPUS = os.environ.get(
+    "DATACLAW_CORPUS", "/data/dataclaw/meta/corpus.full.jsonl"
+)
 
 # --- session_id -> turns index, matching the census's ids (same loaders) ---
 NOISE = ("<command-", "<local-command", "Caveat:", "[Request interrupted", "<task-notification",
@@ -25,7 +31,7 @@ sid_turns = {}   # sid -> list[{role,text}]
 def put(sid, turns):
     if sid and turns and (sid not in sid_turns or len(turns) > len(sid_turns[sid])):
         sid_turns[sid] = turns
-for f in glob.glob("/data/entire-backfill/corpus/*.jsonl"):
+for f in glob.glob(ENTIRE_CORPUS_GLOB):
     for line in open(f):
         try: s = json.loads(line)
         except: continue
@@ -35,7 +41,7 @@ for f in glob.glob("/data/claude-crawl/corpus/*.jsonl"):
         try: s = json.loads(line)
         except: continue
         put(s.get("session_id"), s.get("turns", []))
-for line in open("/data/dataclaw/meta/corpus.jsonl"):
+for line in open(DATACLAW_CORPUS):
     try: s = json.loads(line)
     except: continue
     put(s.get("session_id"), s.get("turns", []))

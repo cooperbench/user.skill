@@ -5,6 +5,12 @@ import json, glob, re, os, statistics as st
 from collections import defaultdict, Counter
 
 man = json.load(open("/data/claude-crawl/meta/final_100.json"))
+ENTIRE_CORPUS_GLOB = os.environ.get(
+    "ENTIRE_CORPUS_GLOB", "/data/entire-backfill/corpus-full-v4/*.jsonl"
+)
+DATACLAW_CORPUS = os.environ.get(
+    "DATACLAW_CORPUS", "/data/dataclaw/meta/corpus.full.jsonl"
+)
 manifest_sids = {x["sid"]: x["n"] for u in man for x in u["train_sessions"] + u["held_sessions"]}
 split_of = {}
 for u in man:
@@ -20,7 +26,7 @@ def norm_harness(agent, model=None):
 # sid -> {harness, model, ts}
 info = {}
 # entire (has agent + model + created_at)
-for f in glob.glob("/data/entire-backfill/corpus/*.jsonl"):
+for f in glob.glob(ENTIRE_CORPUS_GLOB):
     for line in open(f):
         try: s = json.loads(line)
         except: continue
@@ -29,7 +35,7 @@ for f in glob.glob("/data/entire-backfill/corpus/*.jsonl"):
             info[sid] = {"harness": norm_harness(s.get("agent"), s.get("model")),
                          "model": s.get("model") or "?", "ts": s.get("created_at")}
 # dataclaw (source = model/agent)
-for line in open("/data/dataclaw/meta/corpus.jsonl"):
+for line in open(DATACLAW_CORPUS):
     try: s = json.loads(line)
     except: continue
     sid = s.get("session_id")
