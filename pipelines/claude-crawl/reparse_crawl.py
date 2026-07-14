@@ -61,11 +61,12 @@ def _existing_sessions(pattern: str) -> dict[str, dict]:
     return sessions
 
 
-def _candidate_ids(filename: Path, data: bytes) -> set[str]:
+def _candidate_ids(filename: Path, data: bytes | None = None) -> set[str]:
     identifiers = set(UUID_RE.findall(str(filename)))
-    identifiers.update(
-        UUID_RE.findall(data[: 1024 * 1024].decode("utf-8", "replace"))
-    )
+    if data is not None:
+        identifiers.update(
+            UUID_RE.findall(data[: 1024 * 1024].decode("utf-8", "replace"))
+        )
     return {canonical_session_id(identifier) for identifier in identifiers}
 
 
@@ -79,6 +80,7 @@ def _score(turns: list[dict]) -> tuple[int, int, int]:
 
 def build(clones: Path, existing_pattern: str, output: Path) -> tuple[int, int]:
     existing = _existing_sessions(existing_pattern)
+    existing_keys = set(existing)
     output.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix="crawl-full-") as temporary:
         connection = sqlite3.connect(Path(temporary) / "sessions.sqlite")
@@ -90,10 +92,17 @@ def build(clones: Path, existing_pattern: str, output: Path) -> tuple[int, int]:
         for filename in clones.glob("**/*.jsonl"):
             if ".git" in filename.parts:
                 continue
-            data = filename.read_bytes()
-            matches = _candidate_ids(filename, data) & existing.keys()
-            if not matches:
-                continue
+            path_ids = _candidate_ids(filename)
+            if path_ids:
+                matches = path_ids & existing_keys
+                if not matches:
+                    continue
+                data = filename.read_bytes()
+            else:
+                data = filename.read_bytes()
+                matches = _candidate_ids(filename, data) & existing_keys
+                if not matches:
+                    continue
             human_turns, turns = parse_full_jsonl(data)
             if human_turns == 0:
                 continue
@@ -138,7 +147,7 @@ def build(clones: Path, existing_pattern: str, output: Path) -> tuple[int, int]:
                     json.dumps(session, ensure_ascii=False),
                 ),
             )
-            connection.commit()
+        connection.commit()
         sessions = 0
         human_turns = 0
         with output.open("w") as destination:
