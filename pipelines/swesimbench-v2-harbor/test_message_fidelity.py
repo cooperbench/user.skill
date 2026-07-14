@@ -19,6 +19,11 @@ class MessageFidelityTest(unittest.TestCase):
         self.assertNotIn("[:800]", tasks)
         self.assertNotIn("def truncate_words(s, n=300)", entire)
 
+    def test_entire_refresh_streams_large_shards_to_disk(self):
+        entire = (PIPELINES / "entire-backfill" / "harvest.py").read_text()
+        self.assertIn("for session in iter_ref(repo_path, ref):", entire)
+        self.assertNotIn("sessions = parse_ref(repo_path, ref)", entire)
+
     def test_refresh_requires_explicit_full_fidelity_candidates(self):
         builder = (ROOT / "build_clean_cohort.py").read_text()
         self.assertIn('"text_fidelity": fidelity', builder)

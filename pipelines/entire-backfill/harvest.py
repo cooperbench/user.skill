@@ -154,37 +154,35 @@ def _select_sessions(repo_path: Path, metadata: dict[tuple[str, int], str]):
     return selected
 
 
-def parse_ref(repo_path: Path, ref: str) -> list[dict]:
+def iter_ref(repo_path: Path, ref: str):
     metadata, transcript_parts = _enumerate_checkpoints(repo_path, ref)
     selected = _select_sessions(repo_path, metadata)
-    wanted_ids = [
-        object_id
-        for _, _, key, _ in selected.values()
-        for _, object_id in sorted(transcript_parts.get(key) or [])
-    ]
-    blobs = _read_git_objects(repo_path, wanted_ids)
-    sessions = []
     for session_id, (_, created_at, key, document) in selected.items():
         parts = sorted(transcript_parts.get(key) or [])
         if not parts:
             continue
+        blobs = _read_git_objects(
+            repo_path, [object_id for _, object_id in parts]
+        )
         transcript = b"".join(blobs.get(object_id, b"") for _, object_id in parts)
         human_turns, turns = parse_full_jsonl(transcript)
         if human_turns == 0:
             continue
-        sessions.append(
-            {
-                "session_id": session_id,
-                "created_at": created_at,
-                "agent": document.get("agent"),
-                "model": document.get("model"),
-                "n_user_turns": human_turns,
-                "turns": turns,
-                "text_fidelity": "full",
-                "parser_version": PARSER_VERSION,
-            }
-        )
-    return sessions
+        yield {
+            "session_id": session_id,
+            "created_at": created_at,
+            "agent": document.get("agent"),
+            "model": document.get("model"),
+            "n_user_turns": human_turns,
+            "turns": turns,
+            "text_fidelity": "full",
+            "parser_version": PARSER_VERSION,
+        }
+
+
+def parse_ref(repo_path: Path, ref: str) -> list[dict]:
+    """Compatibility wrapper for callers that need an in-memory result."""
+    return list(iter_ref(repo_path, ref))
 
 
 def process(repo: str, ref: str, actor: str, done: set[tuple[str, str]], status):
@@ -227,20 +225,24 @@ def process(repo: str, ref: str, actor: str, done: set[tuple[str, str]], status)
                 )
                 log(("gone " if terminal else "err ") + error.replace("\n", " ")[:200])
                 return "gone" if terminal else "err"
-        sessions = parse_ref(repo_path, ref)
-        lines = [
-            json.dumps(
-                {**session, "repo": repo, "ref": ref, "actor": actor},
-                ensure_ascii=False,
-            )
-            for session in sessions
-        ]
         temporary = shard.with_suffix(".tmp")
-        temporary.write_text("\n".join(lines) + ("\n" if lines else ""))
+        count = 0
+        with temporary.open("w") as destination:
+            for session in iter_ref(repo_path, ref):
+                destination.write(
+                    json.dumps(
+                        {**session, "repo": repo, "ref": ref, "actor": actor},
+                        ensure_ascii=False,
+                    )
+                    + "\n"
+                )
+                count += 1
         temporary.replace(shard)
-        log(f"ok {len(lines)} sessions parser={PARSER_VERSION}")
+        log(f"ok {count} sessions parser={PARSER_VERSION}")
         return "ok"
     except Exception as error:  # keep the long-running backfill resumable
+        if "temporary" in locals():
+            temporary.unlink(missing_ok=True)
         log(f"err {type(error).__name__} {str(error)[:200]}")
         return "err"
 
