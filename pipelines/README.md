@@ -14,3 +14,9 @@ Before refreshing v2, rebuild Entire shards with
 `entire-backfill/harvest.py` and DataClaw with
 `claude-crawl/reparse_dataclaw.py`. The clean builder rejects legacy
 300/400-word source records that do not declare `text_fidelity: full`.
+
+The validated live-ref Entire rebuild is stored privately at
+`s3://swe-sim-private-use1-999404134598/scrapes/entire-backfill/corpus-full-v4/`.
+Hydrate it to `/data/entire-backfill/corpus-full-v4/`, or set
+`ENTIRE_CORPUS_GLOB` to the hydrated `*.jsonl` path before running the clean
+builder.

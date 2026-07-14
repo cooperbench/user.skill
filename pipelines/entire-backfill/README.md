@@ -8,7 +8,9 @@ session, and parse native transcripts with
 `../claude-crawl/native_transcript.py`.
 
 Message text is never length-truncated. Source records written by the current
-harvester include:
+harvester retain system, user, assistant, tool, and thinking context. Repeated
+transport-only progress and queue snapshots remain in the raw checkpoint but
+are not promoted to transcript messages. Source records include:
 
 ```json
 {"text_fidelity": "full", "parser_version": "swesimbench-native-transcript-2026-07-14.4"}

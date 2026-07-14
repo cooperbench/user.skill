@@ -29,6 +29,8 @@ class MessageFidelityTest(unittest.TestCase):
         self.assertIn('"text_fidelity": fidelity', builder)
         self.assertIn("no full-fidelity candidate", builder)
         self.assertIn("corpus.full.jsonl", builder)
+        self.assertIn("ENTIRE_CORPUS_GLOB", builder)
+        self.assertIn("corpus-full-v4/*.jsonl", builder)
 
 
 if __name__ == "__main__":

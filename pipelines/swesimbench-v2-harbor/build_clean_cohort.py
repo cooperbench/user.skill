@@ -39,7 +39,15 @@ CLEAN_MANIFEST = ROOT / "clean_manifest.json"
 CLEAN_SESSIONS = ROOT / "clean_sessions.jsonl"
 BUILD_REPORT = ROOT / "clean_build_report.json"
 CANDIDATE_CACHE = ROOT / ".clean_candidates.cache.pkl"
-CANDIDATE_CACHE_VERSION = 2
+CANDIDATE_CACHE_VERSION = 3
+ENTIRE_CORPUS_GLOB = os.environ.get(
+    "ENTIRE_CORPUS_GLOB",
+    "/data/entire-backfill/corpus-full-v4/*.jsonl",
+)
+CRAWL_CORPUS_GLOB = os.environ.get(
+    "CRAWL_CORPUS_GLOB",
+    "/data/claude-crawl/corpus/*.jsonl",
+)
 MIN_TRAIN = 400
 MIN_HELD = 100
 # Prefer native full-trace sources over SpecStory markdown exports when aliases collide.
@@ -136,7 +144,7 @@ def load_candidates(target_ids: set[str], target_canonical: set[str]) -> list[di
         return bool(sid and (sid in target_ids or canonical_session_id(sid) in target_canonical))
 
     print("indexing Entire candidates...", flush=True)
-    for filename in glob.glob("/data/entire-backfill/corpus/*.jsonl"):
+    for filename in glob.glob(ENTIRE_CORPUS_GLOB):
         with open(filename, errors="replace") as handle:
             for line in handle:
                 try:
@@ -147,7 +155,7 @@ def load_candidates(target_ids: set[str], target_canonical: set[str]) -> list[di
                     result.append(candidate(session, "entire", "gh:" + session.get("actor", "?")))
 
     print("indexing Crawl candidates...", flush=True)
-    for filename in glob.glob("/data/claude-crawl/corpus/*.jsonl"):
+    for filename in glob.glob(CRAWL_CORPUS_GLOB):
         with open(filename, errors="replace") as handle:
             for line in handle:
                 try:
@@ -271,8 +279,8 @@ def choose_candidate(candidates: list[dict]) -> dict:
 
 def candidate_cache_key(target_ids: set[str]) -> str:
     files = (
-        glob.glob("/data/entire-backfill/corpus/*.jsonl")
-        + glob.glob("/data/claude-crawl/corpus/*.jsonl")
+        glob.glob(ENTIRE_CORPUS_GLOB)
+        + glob.glob(CRAWL_CORPUS_GLOB)
         + [
             os.environ.get(
                 "DATACLAW_CORPUS", "/data/dataclaw/meta/corpus.full.jsonl"
