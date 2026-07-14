@@ -1,6 +1,9 @@
+import json
+import tempfile
 import unittest
+from pathlib import Path
 
-from reparse_dataclaw import normalized_session
+from reparse_dataclaw import build, normalized_session
 
 
 class DataClawReparseTest(unittest.TestCase):
@@ -48,6 +51,48 @@ class DataClawReparseTest(unittest.TestCase):
             [turn["role"] for turn in conversation_only["turns"]],
             ["user", "assistant"],
         )
+
+    def test_flat_forks_are_deduplicated_and_keep_known_donor(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            raw = root / "raw"
+            raw.mkdir()
+            document = {
+                "session_id": "session-1",
+                "messages": [
+                    {"role": "user", "content": "question"},
+                    {"role": "assistant", "content": "answer"},
+                ],
+            }
+            line = json.dumps(document) + "\n"
+            (raw / "fork-a__copy.conversations.jsonl").write_text(line)
+            (raw / "fork-b__copy.conversations.jsonl").write_text(line)
+            richer = {
+                **document,
+                "messages": [
+                    *document["messages"],
+                    {"role": "assistant", "content": "more detail"},
+                ],
+            }
+            (raw / "fork-c__richer.conversations.jsonl").write_text(
+                json.dumps(richer) + "\n"
+            )
+            legacy = root / "legacy.jsonl"
+            legacy.write_text(
+                json.dumps(
+                    {"session_id": "session-1", "donor": "canonical-donor"}
+                )
+                + "\n"
+            )
+            output = root / "corpus.full.jsonl"
+
+            sessions, human_turns = build(raw, output, legacy)
+
+            self.assertEqual((sessions, human_turns), (1, 1))
+            rebuilt = json.loads(output.read_text())
+            self.assertEqual(rebuilt["donor"], "canonical-donor")
+            self.assertEqual(len(rebuilt["turns"]), 3)
+            self.assertEqual(rebuilt["text_fidelity"], "full")
 
 
 if __name__ == "__main__":

@@ -33,8 +33,14 @@ from cohort_policy import (  # noqa: E402
     transcript_hash,
 )
 
-ROOT = Path("/data/swesimbench-v2-harbor")
-SOURCE_MANIFEST = Path("/data/claude-crawl/meta/users_cc.json")
+ROOT = Path(
+    os.environ.get("SWESIMBENCH_V2_ROOT", "/data/swesimbench-v2-harbor")
+)
+SOURCE_MANIFEST = Path(
+    os.environ.get(
+        "SOURCE_MANIFEST", "/data/claude-crawl/meta/users_cc.json"
+    )
+)
 CLEAN_MANIFEST = ROOT / "clean_manifest.json"
 CLEAN_SESSIONS = ROOT / "clean_sessions.jsonl"
 BUILD_REPORT = ROOT / "clean_build_report.json"
@@ -48,6 +54,29 @@ CRAWL_CORPUS_GLOB = os.environ.get(
     "CRAWL_CORPUS_GLOB",
     "/data/claude-crawl/corpus/*.jsonl",
 )
+SWECHAT_PARQUET = os.environ.get(
+    "SWECHAT_PARQUET",
+    "/data/with-user/data_cache/hf/"
+    "datasets--SALT-NLP--SWE-chat/snapshots/"
+    "f66cca95b14caaa4177f7ed5eaa424608dadcffa/"
+    "conversations.parquet",
+)
+SPECSTORY_CORPUS = Path(
+    os.environ.get(
+        "SPECSTORY_CORPUS", "/data/specstory/meta/corpus_redacted.jsonl"
+    )
+)
+SWECHAT_ROLES = {
+    "user_prompt": "user",
+    "assistant_response": "assistant",
+    "assistant_thinking": "metadata",
+    "tool_use": "tool",
+    "tool_result": "tool",
+    "file_snapshot": "metadata",
+    "system_event": "system",
+    "system_injected": "system",
+    "summary": "system",
+}
 MIN_TRAIN = 400
 MIN_HELD = 100
 # Prefer native full-trace sources over SpecStory markdown exports when aliases collide.
@@ -184,32 +213,31 @@ def load_candidates(target_ids: set[str], target_canonical: set[str]) -> list[di
     # Census includes SWE-chat, so preparation must index it as well.
     import pyarrow.parquet as pq
 
-    parquet = (
-        "/data/with-user/data_cache/hf/"
-        "datasets--SALT-NLP--SWE-chat/snapshots/"
-        "f66cca95b14caaa4177f7ed5eaa424608dadcffa/"
-        "conversations.parquet"
-    )
     grouped: dict[str, dict] = {}
     print("streaming SWE-chat candidates...", flush=True)
-    parquet_file = pq.ParquetFile(parquet)
-    columns = ["user_id", "session_id", "turn_type", "content", "timestamp"]
+    parquet_file = pq.ParquetFile(SWECHAT_PARQUET)
+    columns = [
+        "user_id",
+        "session_id",
+        "turn_number",
+        "turn_type",
+        "content",
+        "timestamp",
+    ]
     for batch in parquet_file.iter_batches(batch_size=65_536, columns=columns):
         values = {name: batch.column(name).to_pylist() for name in columns}
-        for uid, sid, turn_type, content, timestamp in zip(
+        for uid, sid, turn_number, turn_type, content, timestamp in zip(
             values["user_id"],
             values["session_id"],
+            values["turn_number"],
             values["turn_type"],
             values["content"],
             values["timestamp"],
         ):
             if not wanted(sid):
                 continue
-            if turn_type == "user_prompt":
-                role = "user"
-            elif turn_type == "assistant_response":
-                role = "assistant"
-            else:
+            role = SWECHAT_ROLES.get(turn_type)
+            if role is None:
                 continue
             record = grouped.setdefault(
                 sid,
@@ -219,7 +247,9 @@ def load_candidates(target_ids: set[str], target_canonical: set[str]) -> list[di
                     "start_time": timestamp,
                     "turns": [],
                     "text_fidelity": "full",
-                    "parser_version": "SALT-NLP/SWE-chat@f66cca95",
+                    "parser_version": (
+                        "SALT-NLP/SWE-chat@f66cca95+full-context"
+                    ),
                 },
             )
             record["turns"].append(
@@ -227,6 +257,7 @@ def load_candidates(target_ids: set[str], target_canonical: set[str]) -> list[di
                     "role": role,
                     "text": content or "",
                     "ts": timestamp.isoformat() if timestamp is not None else None,
+                    "_order": turn_number,
                 }
             )
             if timestamp is not None and (
@@ -236,11 +267,19 @@ def load_candidates(target_ids: set[str], target_canonical: set[str]) -> list[di
     for session in grouped.values():
         if session["start_time"] is not None:
             session["start_time"] = session["start_time"].isoformat()
-        session["turns"].sort(key=lambda turn: turn.get("ts") or "")
+        session["turns"].sort(
+            key=lambda turn: (
+                turn.get("_order") is None,
+                turn.get("_order"),
+                turn.get("ts") or "",
+            )
+        )
+        for turn in session["turns"]:
+            turn.pop("_order", None)
         result.append(candidate(session, "swechat", "gh:" + str(session["user_id"] or "?")))
 
     print("indexing SpecStory candidates...", flush=True)
-    specstory_path = Path("/data/specstory/meta/corpus_redacted.jsonl")
+    specstory_path = SPECSTORY_CORPUS
     if specstory_path.exists():
         with specstory_path.open(errors="replace") as handle:
             for line in handle:
@@ -286,13 +325,8 @@ def candidate_cache_key(target_ids: set[str]) -> str:
                 "DATACLAW_CORPUS", "/data/dataclaw/meta/corpus.full.jsonl"
             )
         ]
-        + [
-            "/data/with-user/data_cache/hf/"
-            "datasets--SALT-NLP--SWE-chat/snapshots/"
-            "f66cca95b14caaa4177f7ed5eaa424608dadcffa/"
-            "conversations.parquet"
-        ]
-        + ["/data/specstory/meta/corpus_redacted.jsonl"]
+        + [SWECHAT_PARQUET]
+        + [str(SPECSTORY_CORPUS)]
     )
     source_state = []
     for filename in sorted(files):

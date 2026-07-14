@@ -1,6 +1,7 @@
 import unittest
 
 from build_clean_cohort import (
+    SWECHAT_ROLES,
     apply_command_expansion_policy,
     choose_candidate,
     collapse_reconstructed_sessions,
@@ -33,6 +34,14 @@ def record(sid, split, source, turns):
 
 
 class CleanCohortDedupTest(unittest.TestCase):
+    def test_swechat_context_roles_are_retained(self):
+        self.assertEqual(SWECHAT_ROLES["tool_result"], "tool")
+        self.assertEqual(SWECHAT_ROLES["tool_use"], "tool")
+        self.assertEqual(SWECHAT_ROLES["system_injected"], "system")
+        self.assertEqual(SWECHAT_ROLES["assistant_thinking"], "metadata")
+        self.assertNotIn("progress", SWECHAT_ROLES)
+        self.assertNotIn("queue_operation", SWECHAT_ROLES)
+
     def test_candidate_selection_rejects_legacy_truncated_sources(self):
         legacy = record(
             "same",
