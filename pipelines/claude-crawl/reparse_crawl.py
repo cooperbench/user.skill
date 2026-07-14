@@ -98,6 +98,21 @@ def _candidate_ids(filename: Path, data: bytes | None = None) -> set[str]:
     return {canonical_session_id(identifier) for identifier in identifiers}
 
 
+def _safe_text(value: str) -> str:
+    return value.encode("utf-8", "surrogateescape").decode("utf-8", "replace")
+
+
+def _safe_turns(turns: list[dict]) -> list[dict]:
+    cleaned = []
+    for turn in turns:
+        item = dict(turn)
+        text = item.get("text")
+        if isinstance(text, str):
+            item["text"] = _safe_text(text)
+        cleaned.append(item)
+    return cleaned
+
+
 def _score(turns: list[dict]) -> tuple[int, int, int]:
     return (
         sum(turn["role"] == "user" for turn in turns),
@@ -136,6 +151,7 @@ def build(clones: Path, existing_pattern: str, output: Path) -> tuple[int, int]:
             human_turns, turns = parse_full_jsonl(data)
             if human_turns == 0:
                 continue
+            turns = _safe_turns(turns)
             score = _score(turns)
             # Prefer the original harvest identifier; UUID aliases only locate the
             # matching compact-corpus metadata.
