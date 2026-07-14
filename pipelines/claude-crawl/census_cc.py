@@ -2,7 +2,7 @@
 """Unified census over FULL-TRACE coding-agent sources, at >=400 train + >=100 held.
 Sources:
   entire    /data/entire-backfill/corpus/*.jsonl   (Claude Code + Codex + Cursor; user = gh:actor)
-  dataclaw  /data/dataclaw/meta/corpus.jsonl        (claude*/codex/cursor; user = dc:donor)
+  dataclaw  /data/dataclaw/meta/corpus.full.jsonl   (full-fidelity donor traces)
   crawl     /data/claude-crawl/corpus/*.jsonl       (committed .claude/.codex; user = gh:owner)
   swechat   SWE-chat parquet                        (native agents; dedups vs entire by sid)
   specstory /data/specstory/meta/corpus_redacted.jsonl  (Cursor history exports; user = gh:owner)
@@ -95,7 +95,10 @@ for f in glob.glob("/data/entire-backfill/corpus/*.jsonl"):
 donor_owner = {}
 dc_lines = []
 votes = defaultdict(lambda: defaultdict(int))
-for line in open("/data/dataclaw/meta/corpus.jsonl"):
+dataclaw_corpus = os.environ.get(
+    "DATACLAW_CORPUS", "/data/dataclaw/meta/corpus.full.jsonl"
+)
+for line in open(dataclaw_corpus):
     try: s = json.loads(line)
     except: continue
     dc_lines.append(s); votes[s["donor"]][s["repo"].split("/")[0]] += 1
