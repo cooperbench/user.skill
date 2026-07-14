@@ -48,7 +48,7 @@ CLEAN_MANIFEST = ROOT / "clean_manifest.json"
 CLEAN_SESSIONS = ROOT / "clean_sessions.jsonl"
 BUILD_REPORT = ROOT / "clean_build_report.json"
 CANDIDATE_CACHE = ROOT / ".clean_candidates.cache.pkl"
-CANDIDATE_CACHE_VERSION = 5
+CANDIDATE_CACHE_VERSION = 6
 ENTIRE_CORPUS_GLOB = os.environ.get(
     "ENTIRE_CORPUS_GLOB",
     "/data/entire-backfill/corpus-full-v4/*.jsonl",
@@ -148,15 +148,23 @@ def load_full_turns(key: str | None) -> list[dict] | None:
 
 
 def memory_turns(turns: list[dict]) -> list[dict]:
-    """Keep policy-relevant rows; omit bulky tool payloads from RAM."""
-    compact = []
-    for turn in turns:
-        role = turn.get("role")
-        text = turn.get("text") or ""
-        if role in {"tool", "metadata"} and len(text) > 240:
-            text = text[:240] + " [omitted-for-candidate-memory]"
-        compact.append({**turn, "text": text})
-    return compact
+    """Keep dialogue rows used by policy checks; omit bulky tool/metadata text."""
+    return [
+        turn
+        for turn in turns
+        if turn.get("role") in {"user", "assistant", "system"}
+    ]
+
+
+def compact_trace_sequence(turns: list[dict]) -> tuple[str, ...]:
+    """Prefix-collapse key that preserves equality without retaining raw tool text."""
+    compacted = []
+    for item in ordered_trace_sequence(turns):
+        role, _, text = item.partition("\0")
+        compacted.append(
+            f"{role}\0{hashlib.sha256(text.encode('utf-8', 'surrogatepass')).hexdigest()}"
+        )
+    return tuple(compacted)
 
 
 def candidate(session: dict, source: str, owner: str | None = None) -> dict:
@@ -182,7 +190,7 @@ def candidate(session: dict, source: str, owner: str | None = None) -> dict:
         "turns": memory_turns(turns),
         "turn_count": len(turns),
         "trace_hash": transcript_hash(turns),
-        "sequence": ordered_trace_sequence(turns),
+        "sequence": compact_trace_sequence(turns),
         "human_turns": human_turn_count(turns),
         "substantial_human_turns": substantial_human_count(turns),
         "content_chars": sum(len(turn.get("text") or "") for turn in turns),
@@ -211,11 +219,21 @@ def apply_command_expansion_policy(records: list[dict]) -> tuple[set[str], int]:
                 reclassified += 1
                 changed = True
         if changed:
-            record["trace_hash"] = transcript_hash(record["turns"])
-            record["sequence"] = ordered_trace_sequence(record["turns"])
-            record["human_turns"] = human_turn_count(record["turns"])
+            full_turns = load_full_turns(record.get("full_key")) or record["turns"]
+            for turn in full_turns:
+                if (
+                    turn.get("role") == "user"
+                    and normalize_text(turn.get("text") or "") in payloads
+                ):
+                    turn["role"] = "system"
+            if record.get("full_key"):
+                store_full_turns(record["full_key"], full_turns)
+                open_full_turn_store().commit()
+            record["trace_hash"] = transcript_hash(full_turns)
+            record["sequence"] = compact_trace_sequence(full_turns)
+            record["human_turns"] = human_turn_count(full_turns)
             record["substantial_human_turns"] = substantial_human_count(
-                record["turns"]
+                full_turns
             )
     return payloads, reclassified
 
