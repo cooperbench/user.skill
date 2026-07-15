@@ -1,0 +1,40 @@
+- I want to follow the TDD, code review, pr then merge pattern for addressing any issues / features. Make sure you remember this across sessions and coding agents.
+- You don't have to wait for copilot. Also before submitting a PR, do a code review using a subagent (if you don't have one.. can you create one?)
+- What else is next that we should do?
+- <ci-monitor-event>CI check "SwiftLint" failed on scottdensmore/MovieSwiftUI PR #21. Run `gh pr checks 21 --repo scottdensmore/MovieSwiftUI` to see details, then fix the failing check.</ci-monitor-event>
+- Ok lets do that next
+- Are you using the code review sub agent before each commit / pt?
+- Ok what should we do next?
+- Yep lets take this on. While we go through all this refactoring we should stop the codeql check since it take so long
+- Assume you are an Apple Developer expert. Look through this app and see what is left to be done. Make sure it follows the latest OS guidance. What would be more killer features?
+- Assume you are an Apple Developer expert. Look through this app and see what is left to be done. Make sure it follows the latest OS guidance. Ensure that the code is human and agent readable. Ensure there are plenty of tests both unit and UI tests so when changes are needed, the app is in a good state to […]
+- Ok lets do that
+- Ok lets do that
+- before we continue with phase 2 lets update the workflow. Add a new subagent that is the verifier. This does the builds, tests linting etc. Any issues are past back to the main agent. This happens in the current flow after the main agent does the work. Make sure that the main agent fixes anything the verifier finds before doing […]
+- Check the pr it failed
+- What is next?
+- Yes continue with the export follow-up
+- Check the PR it looks like it is ready to merge
+- Yep lets do that
+- Yep you can pick up Fan Club
+- You can keep going once you merge PRs you don't have to wait. Continue on until you finish everything you have found
+- Move to Phase 3 and finish all of phase 3 then you can stop before moving on to Phase 4
+- Ok continue at the code reviewer
+- What is in Phase 4
+- Could we write things so we get rid of the dependency on SwiftUIFlux?
+- Ok lets finish up Phase 4 work
+- What do you need my input on?
+- what is the workflow you are following
+- The verifier should be running the lint and format
+- Ok let me run it manually and see if there is anything we need to address before moving on to phase 5 and 6.
+- The app fails on start up (never even see the main screen). How can we debug this?
+- I am running the MacOS version so run that and grab the output
+- The dialog for the create custom list doesn't not fit the design of the app. The layout is poor and doesn't reflect the fit and finish of the application.
+- There seems to be an error that happened... can you find out what it was and continue
+- SHould you do that before things finish?
+- There doesn't seem to be a way to delete a customer list
+- Yes extend that so they have the same delete treatment
+- There is only one movie that shows up in now playing. There should be more than that.
+- We should probably display the region somewhere so it is known in this instance. And a link to take you to the settings to change it
+- Lets make sure that the app has a way to automatically update builds and versions
+- At some point Discover stops showing movies and says undo last dismiss even though I moved it seen list

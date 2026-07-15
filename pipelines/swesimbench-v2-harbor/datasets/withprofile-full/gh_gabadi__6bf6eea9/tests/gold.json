@@ -1,0 +1,1 @@
+{"point_id": "2cd14d14-ebf8-4f85-bb3e-3d700ac03c94#27", "developer": "gh:gabadi", "condition": "withprofile", "real": "Do we need a README/documentation?", "prev_agent": "Works. Once published to PyPI, `uvx crap4py` will work exactly like that \u2014 no `--from` flag needed. Ready to deploy.", "gold_move": null}

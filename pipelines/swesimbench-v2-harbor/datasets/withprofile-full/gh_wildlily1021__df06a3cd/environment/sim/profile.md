@@ -1,0 +1,40 @@
+- 名称按时间排吧？别混了
+- H002-local-tcp-loopback-handoff.md 执行
+- 你看了规范吗？
+- 你觉得该看哪些，就去看
+- 环路端到端验证为什么没法测试？
+- 直接用 Node net 模块绕过 TransportFacade 写个集成测试、用 Electron 环境跑两个哪个好？
+- 可以
+- 可以，不过，这块要测很多东西吧？涉及到所有可能需要的功能、旧版本迁移过来，需要有的功能等等。这都得写全。你这么直接干肯定会漏。你要不更新下日志？我去之前的主对话，让它组织多个新对话，去确定都需要哪些集测？
+- 可以，不过，这块要测很多东西吧？涉及到所有可能需要的功能、旧版本迁移过来，需要有的功能等等。这都得写全。你这么直接干肯定会漏。你要不更新下日志（写一个新的，后续这块测试都往这加）？我去之前的主对话，让它组织多个新对话，去确定都需要哪些集测？
+- /mnt/d/code/frontend/dongfanghong/.sessions/2026-05-19-integration-testing/conversation-plan.md 对话1
+- /mnt/d/code/frontend/dongfanghong/.sessions/2026-05-19-integration-testing/conversation-plan.md 对话2
+- /mnt/d/code/frontend/dongfanghong/.sessions/2026-05-19-integration-testing/conversation-plan.md 对话3
+- /mnt/d/code/frontend/dongfanghong/.sessions/2026-05-19-integration-testing/conversation-plan.md 对话3
+- /mnt/d/code/frontend/dongfanghong/.sessions/2026-05-19-integration-testing/conversation-plan.md 对话4
+- /mnt/d/code/frontend/dongfanghong/.sessions/2026-05-19-integration-testing/conversation-plan.md 对话4
+- .sessions/2026-05-15-paper-evaluation/S013-material-driven-architecture-discussion.md 对话5
+- .sessions/2026-05-19-integration-testing/conversation-plan.md 对话5
+- .sessions/2026-05-19-integration-testing/conversation-plan.md 对话6
+- 你说一说要测啥？我感觉不只这么点吧?
+- 从发生任务到接收没有嘛？
+- 可以。这些是属于基础功能对吧？后续别的功能完善、甲方那堆完善之后，还得加对不对？
+- 那你就写一个新的日志，记下来这些？然后，后续就可以规划后续的对话了？后续对话一定要看规范，然后，对应的日志、feature文档也要看。才能写出正确的集测。这意味着后面也得分多个对话逐步完成
+- Conversation 10 完成。 实施摘要 Direct contract: S006-test-scope-synthesis.md (T003, T002, T016b, T016c, T016e) Boundary guards: quality-rules, target-structure, S005 Changed files: - rewrite/src/__tests__/integration/ta[REDACTED_SK].spec.ts — 新建，T003 端到端 task→send 执行链（8 tests） - rewrite/src/__tests__/integration/fanout-consumer-order.spec.ts — 新建，T002 fanOut 扇出 + T016b 消费者顺序（10 tests） - rewrite/src/__tests__/integration/outbound-routing-multi-source.spec.ts — 新建，T016c 出站路由 + T016e 多源并发（11 tests） - .sessions/2026-05-19-integration-testing/topic-index.md — 更新进展 Verify evidence: - 29 tests passing（新文件） - lint: 0 errors […]
+- 11、12也完事了。目前状况如何？
+- 11、12也完事了。目前状况如何？你觉得接下来怎么规划
+- 线1先修，之后线2，线2我打算先2再3再1再4。至于线2的2、3到底有没有别的，我觉得得有一个对话专门去分析。
+- 给我完整交接文档，后续线1、线2都用。
+- .sessions/2026-05-19-integration-testing/conversation-plan.md 对话7
+- 情况如何？你没堆屎吧？有遵守规范吗？
+- 修吧？然后，你觉得改的过程中有什么值得提出来当规则的
+- 你知道目前的几个规范文档，你找一个写进去
+- .sessions/2026-05-19-integration-testing/conversation-plan.md 对话8，记得一定要看规范
+- 集测做了啥？我最关心的发送任务到接收全链路啥时候测
+- 这一轮改完，你有什么想法？比如有什么足够通用、足够容易犯的问题，可以写进codestable/quality/rewrite-quality-rules.md
+- 加吧
+- .sessions/2026-05-19-integration-testing/conversation-plan.md 对话9，记得一定要看规范
+- 发生、接收整条链路从创建帧到收到参数解析出来显示到表格，这一整条流程通了吗
+- .sessions/2026-05-19-integration-testing/conversation-plan.md 对话10，记得一定要看规范
+- .sessions/2026-05-19-integration-testing/conversation-plan.md 对话11，记得一定要看规范
+- .sessions/2026-05-19-integration-testing/conversation-plan.md 对话12，记得一定要看规范

@@ -1,0 +1,40 @@
+- commit this
+- some of the tests in cursor_test.go test functions which are implemented in other files, such as lifecycle.go. can we refactor those tests into the appropriate test file?
+- make sure the pr description on 392 is up to date
+- lets do some research and see if there's a way to get token usage from cursor hooks
+- how does the claude integration store temporary state between hook invocations?
+- BuildCondensedTranscriptFromBytes treats Cursor transcripts as Claude JSONL, but the condensation logic later switches on line.Type only. Cursor JSONL uses role (and will typically have an empty type), so Cursor summaries will end up with an empty condensed transcript (and error "transcript has no content to summarize"). Consider normalizing role→type during transcript parsing (e.g., set Type = Role when Type is […]
+- commit and push this
+- ` tags, has no `tool_use` blocks, no UUID field, no token usage data - **Claude Code transcript format**: Uses `"type"` for user/assistant, has tool_use blocks, UUIDs, token usage - **Role→Type normalization**: When `Type` is empty but `Role` is set, copy Role into Type during parsing so all downstream consumers work uniformly - **Cursor hooks**: 16 agent hooks available (sessionStart, sessionEnd, […]
+- can you compare AGENT.md CLAUDE.md and GEMINI.md? (Also is GEMINI.md a thing?)
+- Is Gemini even using GEMINI.md or is AGENT.md enouhg?
+- ok, then remove gemini.md and add the update to .gemini/settings.json and then align both AGENT.md and CLAUDE.md to be the same (there isn't anything specific to claude/opencode in them, right?)
+- ok, I'd like to remove the the OpenCode agent details section, I don't think we need this in either CLAUDE.md nor AGENTS.md
+- can you check if OPENCODE.md is something opencode supports or if it's using AGENT.md?
+- rename it to AGENTS.md
+- can you update CHANGELOG.md for 0.4.6 from 0.4.5
+- gtrrz-victor is part of the codeowners, can you check again, also that there isn't any one else contributing this time?
+- @pfleidi and @toothbrush are also internal
+- I edited the changelog, can you go through the list for 0.4.6 again and sort everything by PR id asc?
+- can you update the changelog.md to include this for 0.4.6 at the end: Thanks for this contribution! We've now merged our OpenCode integration. While we went with a our own implementation, your PR was valuable in helping us validate our design choices and ensure we covered the right scenarios. We appreciate the effort you put into this! And start it […]
+- peyton-alt is a contributor, and that's the one we merged
+- every commit I currently do takes 10-20s on this repo, I suspect it's related to our git hooks but can you somehow check where this happens?
+- what is the sentinel?
+- can you check if this was maybe slighty renamed?
+- hmm, is this a new logic then?
+- so what's your proposed fix?
+- and could we handle this better that if the last n message contain a stop hook handler call then we don't need to wait? Like it's unlikely that there are only a few messages between two stop hook handlers, right?
+- just thinking out loud: do we have more indications (maybe on the entire session) what the lest event was we know off? Like for example the session would be IDLE in the manual commit scenario, right?
+- yes
+- can we have some kind of test for this?
+- Implement the following plan: # Test: Skip transcript flush wait for idle/ended sessions ## Context We fixed a performance bug where `waitForTranscriptFlush` (3s timeout) was called during prepare-commit-msg and post-commit hooks for sessions that had already flushed their transcript (IDLE/ENDED phase). The fix guards `PrepareTranscript` calls with `state.Phase.IsActive()`. We need a test that verifies: when a session is IDLE or […]
+- this branch Fix byte-based string slicing that produced garbled text (mojibake) when truncating prompts containing CJK characters or emoji. is there a go linter we can enable to pick these kinds of issues up automatically?
+- Implement the following plan: # Fix: Droid Token Usage Offset Mismatch ## Context `calculateTokenUsage` in `manual_commit_condensation.go` has a bug for Droid transcripts. The `startOffset` parameter is a raw JSONL line count (from `countTranscriptItems`), but it's used as an index into the array returned by `ParseDroidTranscriptFromBytes`, which filters out non-message entries (`session_start`, `session_event`, etc.). This causes incorrect token counting — either […]
+- Implement the following plan: # Remove unused `SerializeTranscript` from factoryaidroid ## Context `SerializeTranscript` in `factoryaidroid/transcript.go:114-126` is exported but never called from production code — only from its own test (`TestSerializeTranscript`). It's dead code that could mislead someone into thinking it produces Droid-envelope format output (it doesn't — it serializes normalized `transcript.Line` JSONL). ## Changes ### 1. Remove `SerializeTranscript` from `cmd/entire/cli/agent/factoryaidroid/transcript.go` […]
+- Implement the following plan: # Remove trivial/redundant droid unit tests ## Context Several droid agent tests add no meaningful value — they test constructors, constants, obvious zero-value behavior, or duplicate coverage already provided by other tests. Removing them reduces noise without losing real regression protection. ## Tests to remove ### 1. `TestNewFactoryAIDroidAgent` — `factoryaidroid_test.go:13-22` Tests that `NewFactoryAIDroidAgent()` returns a non-nil […]
+- Implement the following plan: # Plan: Update Droid E2E Tests to Use Anthropic API Key (BYOK) ## Context Droid E2E tests currently require `FACTORY_API_KEY` for authentication. We're switching to use `ANTHROPIC_API_KEY` via Factory AI's [BYOK feature](https://docs.factory.ai/cli/byok/overview), which configures Droid to call the Anthropic API directly with a custom model entry in `.factory/settings.json`. ## Changes ### 1. `cmd/entire/cli/e2e_test/agent_runner.go` **Update `NewFactoryAIDroidRunner()`** — […]
+- Implement the following plan: # Fix versioncheck_test.go expectations ## Context Commit `98f41bbf` added prerelease skipping logic to `isOutdated()` (line 236-238 of `versioncheck.go`) — if the current version is a prerelease, return `false` immediately. Commit `1f8841bc` updated the test file but introduced two incorrect expectations. ## Changes **File:** `cmd/entire/cli/versioncheck/versioncheck_test.go` Two test case expectations need fixing: 1. **Line 38** — `{"1.0.0-rc1", "1.0.0", […]
+- the test was correct, the code is wrong. Fix the code, no the test
+- update the expectation description to match with the assertions
+- do it again, i did change the expectations
+- now, the selected one

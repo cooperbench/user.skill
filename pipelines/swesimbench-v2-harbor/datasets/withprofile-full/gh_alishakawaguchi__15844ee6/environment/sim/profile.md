@@ -1,0 +1,40 @@
+- how to set entire to local build again?
+- do option 3
+- remove the turn reponse "Joined collaboration a9c6a6c1 as codex. Status is active. Current document path is empty, and the turn order is claude-code, then codex."
+- would this work better as hooks instead of just cli commands
+- yes
+- skill was updated?
+- is this collab feature any different from what using opencode does since you can change model mid session
+- can you setup test repo in /Users/alisha/Projects/test-repos that uses entire at this path /tmp/entire-c so that I can test this new feature
+- can you update the hooks to point at /tmp/entire-c
+- new question. I often am planning and implementing a new feature that spans repos. meaning I plan in one repo then have my agent implenment in all the necesary repos. for example entire frontend and entire cli. could this collab feature be updated to handle that? what would the flow look like. I want to chat about this before you […]
+- could collab support both use cases? the current and this new one
+- for collab across repos it could live in ~/.entire
+- yes and for now always use ~/.entire/collab/
+- skill has been updated?
+- can you setup two repos in /Users/alisha/Projects/test-repos that I can test this cross repo stuff. name one like frontend and one api or something so its clear in demo. then give me steps to test
+- for now update the skill to use /tmp/entire-c instead of entire
+- can you outline the two collab scenarios I asked for
+- give one sentence summary of scenario 2
+- give short summary of what the collab command does underneath
+- I'd still like an option to add a role for each agent
+- yes
+- for the orchestrator mode this only works with codex running in claude why?
+- can claude work inside codex?
+- verify claude and gemini don't have dispatch api like codex
+- I don't see role when I do /tmp/entire-c collab -h
+- if I have a spec that calls out multiple options can we add a collab create poc command. where it does a fast version of it. no tests etc...
+- if I have a spec that calls out multiple options can we add a collab create poc command. where it does a fast version of it. no tests etc...
+- can you read this and tell me whats going on https://github.com/entireio/skills/issues/3
+- please research and verify
+- do the proper fix
+- the name will cause issues with the other agent
+- just do the other chnages first. maybe we don't need to add name
+- how do I test the cursor plugin
+- its hard to test because I already see the skill in cursor even though ~/.cursor/plugins is empty
+- I think its coming from my other agent installs like claude code and codex
+- can you create the test skill
+- nope I don't see it in cursor. ~/Projects $ ln -s ~/src/entire-skills/plugins/entire ~/.cursor/plugins/entire ~/Projects $ rm ~/.cursor/plugins/entire ~/Projects $ ls ~/.cursor/plugins local ~/Projects $ ln -s /Users/alisha/Projects/skills/plugins/entire ~/.cursor/plugins/entire ~/Projects $ ls ~/.cursor/plugins entire local ~/Projects $ ls ~/.cursor/plugins/entire skills ~/Projects $ ls ~/.cursor/plugins/entire/skills cursor-loader-probe search explain session-handoff
+- Can you re-check and see which ones still apply?
+- Do all of them in one batch
+- commit and continue

@@ -1,0 +1,40 @@
+- Do both: - Settle #1 (base v sharedzeta) - Fix #2 (display full window) Use @"astronomy-astrophysics-expert (agent)" , @"scientific-python-development:scientific-docs-architect (agent)" , @"scientific-python-development:scientific-python-expert (agent)" , /ai-research-workflows:implement , /boris , /ponytail:ponytail
+- Proceed.
+- build it!
+- fold the result in, update manuscript
+- You are reviewing a single-commit feature branch in a FLITS (FRB scattering/scintillation) repo. CONTEXT: PRs #54 (pipeline wiring) and #55 (ACF revalidation: compare_lorentzian_components) are now MERGED to origin/main. This branch feat/scint-multicomponent-select is rebased to a CLEAN single commit on top of current origin/main. Its full diff is below. The change wires revalidation.compare_lorentzian_components (BIC ΔBIC>6 AND nested F-test, p<0.05) into scintillation/scint_analysis/analysis.py::analyze_scintillation_from_acfs […]
+- File: docs/rse/specs/handoff-2026-06-24-07-52-manuscript-figures-landed.md — merged to main via PR #50 (15bca07). flits-iso reset to clean detached origin/main. Current Phase: Validate → Complete Status: Manuscript figures shipped (#45, #46), worktree-hygiene rule documented (#48), all merged + CI-green. Quick Summary Took over the h17 figure work and landed the analysis/ pipeline + CHIME-side DM 8/12 grid and the Overleaf sync tool, navigating a […]
+- Decide what to work on next by consulting @"scientific-python-development:scientific-python-expert (agent)" and @"scientific-python-development:scientific-docs-architect (agent)" and @"astronomy-astrophysics-expert (agent)" collectively, and then confirming using Codex.
+- Proceed with gated items, you current have access to `hpcc` and `h17`, depending on which cluster you're referring to. Handle the commit of the code/docs autonomously by consulting your 3 expert agents and Codex.
+- Proceed with gated items, you current have access to `hpcc` and `h17`, depending on which cluster you're referring to. Handle the commit of the code/docs autonomously by consulting your 3 expert agents and Codex.
+- Proceed.
+- What does our timing analysis say about hamilton?
+- Surface the decision-map fix and re-fit campaign plan
+- How long will the re-fit take?
+- Can we make it less than 5 minutes
+- Is Hamilton unconstrained because of the burst complexity in the chime band?
+- And can you confirm that this comes from not knowing which component the DSA single burst corresponds to in the CHIME burst?
+- keep going!
+- yeah write it up
+- yeah write it up --- But carefully, quickly justify or clarify what you mean by "sample exclusion paragraph". It's not being excluded for the entire analysis, is it?
+- For Hamilton, can we, instead of doing a joint fit, just fit each band individually still?
+- yes and yes
+- continue
+- Stop running them on HPCC and run them locally instead. We need this to move faster.
+- Would a run on H17 be faster?
+- Keep a close watch, I need these fits asap
+- push
+- push
+- push yeah, cherry pick your three changes. Push to origin/main.
+- Is the manuscript fully up to date?
+- Don't refit the one component variate. Whitney has two components.
+- Where are the figures With the per-burst association card
+- Where are the figures With the per-burst association cards, Those appear empty in the manuscript right now.
+- push everything, mkae sure the cards render
+- push everything, mkae sure the cards render. currently they are not showing in overleaf.
+- if it's on Faber2026 github we're good
+- are the figures svg's if so maybe try replacing with pdfs
+- and the pdf twin is being called in the .tex files?
+- Do we have figures for the foreground galaxy / galaxy cluster analysis in the manuscript on Github as well?
+- For the Purpose Association cards, can we regenerate them but without sub-figure titles and just leave the descriptive part on that front to the figure captions?
+- We need the figures characterizing the four grand galaxies and four grand galaxy clusters along the sight line inserted into the manuscript and those sections filled in.

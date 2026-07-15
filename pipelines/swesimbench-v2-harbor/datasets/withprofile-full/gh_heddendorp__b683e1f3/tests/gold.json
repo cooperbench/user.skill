@@ -1,0 +1,1 @@
+{"point_id": "019eee04-186b-7b81-9d8d-04cc08e75aff#522", "developer": "gh:heddendorp", "condition": "withprofile", "real": "It seems that the db containers specifically do not delete", "prev_agent": "Docker Desktop has been told to quit. I\u2019m waiting a moment for the backend processes to exit, then I\u2019ll verify before reopening it.", "gold_move": null}

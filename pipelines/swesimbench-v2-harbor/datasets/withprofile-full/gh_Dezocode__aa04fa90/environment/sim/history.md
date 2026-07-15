@@ -1,0 +1,5 @@
+[DEVELOPER]: Prerequisites Python 3.12+ Supabase or any PostgreSQL database (for vector storage of memories) API keys for your chosen LLM provider (OpenAI, OpenRouter, or Ollama) Docker if running the MCP server as a container (recommended) Installation Using uv Install uv if you don't have it: pip install uv Clone this repository: git clone https://github.com/coleam00/mcp-mem0.git cd mcp-mem0 Install dependencies: uv pip install -e . Create a .env file based on .env.example: cp .env.example .env Configure your environment variables in the .env file (see Configuration section) Using Docker (Recommended) Build the Docker image: docker build -t mcp/mem0 --build-arg PORT=8050 . Create a .env file based on .env.example and configure your environment variables
+
+[AGENT]: I'll help you set up the mcp-mem0 memory system. Let me create a comprehensive todo list to track the installation and configuration process.
+
+[AGENT]: Let's start by checking your Python version and cloning the repository:

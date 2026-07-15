@@ -1,0 +1,40 @@
+- commit changes of spec.md
+- start implementing the first item for drive upload mode
+- Do I need to do steps 1 to 4 only for the test, or also for regular usage?
+- But this means that the credentials are stored on my hard drive in plain sight without any protection - right?
+- Well, the file is reasable for all applications that I start, right? So that's most of what runs on this computer. Placing it into the keychain sounds sensible - add this as the last step to the list
+- Why store drive_credentials.json under Library/Application Support/...?
+- commit
+- do step 2
+- step 1b, folder name is "scan"
+- commit
+- do 1c
+- file is example-pdfs-merge/backs.pdf in the git root. drive folder is "scan"
+- commit
+- Why does "go test" run only one test case?
+- yes
+- Wouldn't it be better to start some kind of testutils file?
+- "go test" still runs only one test case (and exists sucessfully)
+- Right now the tests actually modify the Drive by uploading files. What's the best way to avoid this? Skip the test by default and only actually run it when explicitley requested? Or using mocks? Or deleting it?
+- Right now there are several go files in the root folder. What's common practice to organize go files?
+- Is it possible to have all go files in a subfolder? Like `src` or `backend`?
+- How does the code in drive_folders.go and drive_upload.go authenticate against Google Drive?
+- So each go file implicitely imports all exports from the same package?
+- But doesn't that make it hard to see where a symbol came from? From which file it was imported?
+- Ouff, that's quite bad, IMO. I don't like the "use an IDE" argument at all, code should be readable just as is and not need any tooltips. And using grep is also way too cumbersome. I can't see how this scales beyond super small projects.
+- So the logic is: lowercase identifiers are from the same file, uppercase are same file or other file of same package, a.B is from package a. Correct?
+- Horrible. But yeah, got it.
+- Why did you name DriveClient uppercase? It's not imported from a different pacakge, is it?
+- yes
+- read spec.md, don't reply
+- Do a review of the codebase
+- Any comments on the source code?
+- be more critical about the code
+- Write the results of both reviews into a TODO-list in spec.md. Write anything relating to Drive into a separate list as this code isn't finished yet.
+- You did not include the results from the first review
+- Start working on the findings. Add a commit after each one.
+- The rotate functions and the rotateCCW functions are nearly identical. Doesn't it make more sense to pass the direction as a parameter?
+- How can the famous Fable 5 model miss such an easy to spot improvement?
+- go ahead
+- Don't do the drive specific todos right now
+- Instead in PageThumbnail, there is a button repeated 4 times. Extract into component.

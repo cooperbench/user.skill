@@ -1,0 +1,3 @@
+[DEVELOPER]: @Astrum/AstrumProj/Assets/Script/AstrumClient/Managers/GameModes/SinglePlayerGameMode.cs:247-296 创建玩家应该是一个纯逻辑行为，多线程下，单人模式下，玩家需要由客户端自己创建，调用 CreateEntity 之前的逻辑这个函数会返回 ID，设置给 Room。但是逻辑线程分离后，如果采用消息通讯的方式，就不能即时获得 ID，这里应该怎么做？可以用协程来处理吗
+
+[AGENT]: 了解当前架构，重点查看逻辑线程分离的实现、`CreateEntity` 的工作方式，以及消息通信机制。 使用 grep 查找相关代码： 查看 Room.CreateEntity 和 LogicThread 的实现： 查找命令队列或消息机制： 查看事件系统，了解实体创建事件： 检查是否有命令队列或任务队列机制： 确认几个关键点： 查看队列创建的处理逻辑： 确认几个关键点： 确认几个关键点： 基于选择，制定实现方案：

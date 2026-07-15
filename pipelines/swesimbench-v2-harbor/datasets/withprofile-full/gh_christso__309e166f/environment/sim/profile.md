@@ -1,0 +1,40 @@
+- also i don't think we need push_conflict_policy, default is just block and ask user to resolve conflicts
+- check status again
+- also can we merge https://github.com/EntityProcess/agentv/pull/1556
+- is it an issue that index JSONL is inside target folder what is the current directory structure for output artifacts
+- will this be lower performance
+- is the docs row id worker done now and ready to merge
+- also does index.jsonl confuse with summary.json naming. should summary.json be the entry point and reference index.jsonl. they both sound like doing the same thing. should one be simply run_manfiest.jsonl
+- but summary.json is not jsonl so it can represent aggregate level data whereas the run_manifest.jsonl cannot
+- so should we simply call it manifest or will that be ambgouos.
+- so what if we have other manifest.
+- os this is better and more standard namining compared with index?
+- ok lets rename to run_manifest, spawn worker then
+- also should summary.json reference run_manifest.jsonl so basically if we decide to change the manifest name none of the consumers will break since summary.json defines where to look
+- also this means we need to update dashboard to consume it right
+- also same as the compare and trend subcommand
+- window 0 in this tmux session is out of context, polease spawn worker to continue where it left off
+- also we have a number of open PRs are any of them stale or ready to merge.
+- seems like experiment is no longer valid after our latest changes to eval policy config
+- in https://github.com/vercel-labs/agent-eval (also cloned locallly) it has copyFiles: 'changed',. research how agent-eval is able to detect what files are changed, and compare that approach to agentv. spawn worker to update ai-research-wiki with findings. also spawn worker to create beads for agentv and tracking issue in agentv-beads repo.
+- also i think we should add onRunComplete hook to the eval run. should that be under policy or somewhere else. please spawn worker to do research with vercel agent-eval and margin evals, leveraging researh already in ai-research-wiki but pelase ground with actual repo clone and deep wiki mcp
+- maybe we should allow experiment to accept object { onRunComplete, editPrompt } which is from vercel-labs/agent-eval. it doesn't seem to make sense to put it in policy
+- but then if we distinguish between policy and experiment, then shouldn't runs be part of experiment? grill me
+- i think editPrompt is effectively the input field that agentv currently has in eval.yaml. anyway, maybe runs should just be top level
+- i thought we no longer use repeat we just use runs
+- perhaps we should just remove policy and move target, model, runs, early exit and everything under experiment, sorry for the back and forth
+- remove workers. that's not authroing concern. also we should have a bead and worker to remove workers from yaml and only allow it to be specified via cli or env var.
+- or specified via config.yaml
+- when i mean remove workers i mean the field called workers
+- but then we also align with convex evals (https://github.com/get-convex/convex-evals) also cloned locally, which uses experiment differently.
+- i'm taking over the on run complete worker, so ignore that one, continue monitoring the other workers
+- spawn worker to use ai-research-wiki as overall research, and specifi frameworks margin evals, vercel-labs/agent-eval, convex-evals to see whether agentv should remove the target subfolder under the experiment/timestamp folder since now we only support a single target per run. also how should we compare targets/models. how shoudl agentv do this via the dashboard and how can it plot trends effiencielty. i […]
+- do we have anything outstanding in this branch, if not lets delete it and checkout main
+- ask deepwiki mcp whether promptfoo controls concurrent workers and how it defines it
+- we should call ours max_concurrency as well to be consistent.
+- this was done in the dashboard branch or the main branch? did we push to pr
+- can you resolve merge conflicts and if no issues merge
+- we are going to adopt promptfoo eval contract. see https://github.com/EntityProcess/wtg-ai-prompts-experiment/tree/main/framework-parity/promptfoo/pr-679. though the directory structure cna be cleaner. i suggest we remove workspace field in agentv and create workspace and skills extension. agentv should support extensions using sam syntax as promptfoo (cloned locally). if you need to research promptfoo refer to local clone or deepwiki mcp. draft plan.
+- we want promptfoo compatbility but want to structure the example better so its more reusable.
+- i think we can remove workspace from agentv core and use extensions which are more generalized
+- create draft PR with the plan so i can rview

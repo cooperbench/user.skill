@@ -1,0 +1,40 @@
+- wire 4 please
+- exa mcp to research more, specically papers from neurips to drive up citations
+- push toward 70 but make it useful
+- bring it to 90 please. Make sure we search for papers that are relevant, has partially similar framings as well
+- all relevant to our discussion ?
+- I think it is all about the writing, if it pertains, then no things are filler
+- Reverify and Reconcile our mathematical formulation to see they remain accurate and relevant to our narrative
+- so narrative is kept, unhurted ?
+- Reviry: “720 run-cells “ where is this one computed from
+- should we be brief explciit on the arithemtic
+- [Image #4] bring the weighted sum text to front, put them in a label.[Image #5] text color of "mean pool", "max pool", "con1vd",... solid black
+- reduce emdash usage in the checklist
+- review the abstract a little, I find it too detailed now. Propose minimal fixes to cut down length
+- beware of over-generalaisation: " Time series foundation models (TSFMs) pair a frozen backbone with a task-specific head."
+- none of the proposal I want to proceed, analyse again
+- go with A. For E, remove the cell counts
+- this [Image #6] weighted sum text in this figure: "Figure F.1: SR-MoA architecture " should be of color solid black. Brought to front and placed inside a label[Image #7] the text "SELF-ROUTING: PER-EXPERT σk(Xraw)" sould not overlapped with the drawn boxes[Image #8]
+- Can we organize 4.2 (Main Result) even better since this looks too extended
+- yes, more organised, but strictly 9 pages
+- did we lose any intext citation ?
+- recompile
+- fix that minor as well
+- recompile
+- is the @abstract_portal.txt sync
+- rework on the abstract a bit. Start simpler with Pioneering works in time series foundation model (not mention specfici names)
+- sound vague. Start with many tsfms
+- Downstream series ? any better terms for series that are not in the training set ?
+- rework on those first sentence. "task-specific head" <- what wrong with this, what is the link. Rewrite
+- write in a more hedgining way: "that no single head can fit at once"
+- struggle is heavy
+- "for instance-normalised backbones", is this a major class of TSFMs
+- this one: "This upgrade fails on instance-normalized backbones — a dominant TSFM design class that strips each ▎ window's mean and variance before encoding."
+- remove: "(trends, seasonalities, volatility bursts)"
+- regarding the abstract, we showcased our contributions. Are these fully included (even briefly) rather than offloading all to the appendix ? Recite my request first
+- rephrase in your word to see if you understand my request
+- mention in the main text
+- Now what I mean is that because in the abstract we are claiming a lot but maybe in the main Due to the length constraint maybe we defer some of the contribution to the appendix. I want to make sure that in the main body we do at least briefly mention such contribution and refer to the appendix.
+- all but briefly
+- recompile
+- did we sync @abstract_portal.txt

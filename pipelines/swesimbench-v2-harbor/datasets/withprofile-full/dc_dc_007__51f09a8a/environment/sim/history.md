@@ -1,0 +1,21 @@
+[DEVELOPER]: see ADOS Paris 2026 - Action Plan.xlsx - Can you go through the attached CSV and sorry the Excel file and go through all the different sheets in it and can you basically look at all the ones that show up the plan for the event and kind of first of all I want to basically turn this into a kind of a Planner for the event where basically it's two months from now and I want to basically make it so that for each day in the moment event and each week, we have a really clear idea of All the things we need to do in that week and that I can come into my assistance with cloud and Ask it for you know questions About that for to help me kind of like prioritize and what needs to be done for all different parts of the event Can you please? Go through this and let me know what you think And make a thing about how you can do this to make it into a very good assistance And this could be a combination of a skills.md file plus a Plus some tools for parsing it but […]
+
+[AGENT]: Let me start by finding and examining the Excel file.
+
+[AGENT]: Found it. Let me parse the Excel file to understand all the sheets and their contents.
+
+[AGENT]: Now let me dump the full contents of each key sheet.
+
+[AGENT]: Now I have a complete picture. Let me analyze this and share my thinking. --- ## What I Found **ADOS Paris 2026** is a 3-day AI/Art festival: - **Day 1 (Fri Apr 17)** - Art Show at Artifex Lab (12:00-19:00) - **Day 2 (Sat Apr 18)** - Hackathon (09:00-22:00) - **Day 3 (Fri Apr 19)** - Tech Presentations + Closing Dinner (14:00-22:30) The spreadsheet has 11 sheets covering: timeline (13 weeks, Jan 27 → event), day-by-day schedules, budget, sponsors, invitees, competition structure, marketing phases, personnel, and speaker slots. **Current status**: Today is Feb 20 — you're in **Week 4**. Most Week 1-3 items show "Not Started" or "Waiting", with only "Lock dates + venue" marked Done. The event is **~8 weeks away**. --- ## My Recommendation Here's how I'd set this up as an effective Claude assistant: ### 1. Convert Excel → structured Markdown files The Excel is not directly readable by Claude. I'd export each sheet into clean, queryable Markdown files in a project folder (e.g., `ados-paris/`). This gives Claude instant access to everything. ### 2. Create a `CLAUDE.md` project file This would give Claude permanent context about: - What the event is, the 3-day structure, key dates - […]
+
+[AGENT]: Let me build the whole system. I'll create multiple files in parallel where possible.
+
+[AGENT]: Now let me create all the data files and the CLAUDE.md in parallel.
+
+[AGENT]: Data files are done. Now let me create the CLAUDE.md, STATUS.md, and refresh script.
+
+[AGENT]: Now let me run the status generator and verify everything works.
+
+[AGENT]: That's working well. Let me verify the full file structure.
+
+[AGENT]: Everything is built. Here's what you now have: --- ## What's Set Up ### `ados-paris/` project folder ``` ados-paris/ ├── CLAUDE.md ← Project context file (Claude reads this automatically) ├── STATUS.md ← Current week view (regeneratable) ├── data/ │ ├── timeline.md ← 13-week plan, all tasks + statuses │ ├── day1-art-show.md ← Day 1 schedule │ ├── day2-hackathon.md ← Day 2 schedule │ ├── day3-presentations.md ← Day 3 schedule │ ├── budget.md ← Full budget breakdown │ ├── sponsors.md ← Sponsor pipeline + statuses │ ├── competition.md ← ARCA GIDAN Prize structure │ ├── marketing.md ← 7-phase marketing plan │ └── personnel.md ← Team, contacts, speaker slots └── tools/ └── refresh-status.py ← Regenerates STATUS.md with today's date ``` ### How to Use It 1. **Open Claude in the `ados-paris/` directory** -- the `CLAUDE.md` gives Claude full context about the event, who's who, and where all the data lives. 2. **Ask it anything**: - "What's overdue?" - "What should I prioritize this week?" - "Help me write an outreach email to Hugging Face" - "What's blocking the hackathon announcement?" - "Update: we've confirmed FAL as hackathon co-host" - "What speakers do we still need?" 3. **Refresh the status view** anytime with: […]

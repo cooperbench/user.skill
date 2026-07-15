@@ -1,0 +1,3 @@
+[DEVELOPER]: For this repo what is the runnable verification command?
+
+[AGENT]: The runnable verification command is: ```bash uv run pytest ``` Confirmed working — just ran it: **373 passed in ~47s**. Details: - It's a Python project (`drain-cycle`) managed with **uv**; pytest is the dev dependency (`pyproject.toml` `[dependency-groups].dev`). - Tests live in `tests/` with a root `conftest.py`. - There's no Makefile target or mise task defining a custom verify command — `uv run pytest` is the canonical way to run the suite. (Ruff is also present — `.ruff_cache/` — so `uv run ruff check .` would be the lint step if you want it, but it's not wired into a task either.)

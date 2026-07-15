@@ -1,0 +1,40 @@
+- コミットして
+- obsidianのhook,シェルスクリプトに切り出したい。claude/hooks
+- コミットして
+- claude codeのccusage statusline動いてないんだけど、なんでだ
+- まだ出ないっす
+- yuta@M2-MacBook-Air  ~/ghq/github.com/yutakobayashidev/dotnix   main ✚  nix run .#switch warning: Git tree '/Users/yuta/ghq/github.com/yutakobayashidev/dotnix' is dirty Switching to darwin configuration... /run/current-system/sw/bin/darwin-rebuild: system activation must now be run as root Finished at 10:45:29 after 0s ✘ yuta@M2-MacBook-Air  ~/ghq/github.com/yutakobayashidev/dotnix   main ✚  sudo nix run .#switch warning: $HOME ('/Users/yuta') is not owned by you, falling back to the […]
+- きた、コミットして
+- yuta@M2-MacBook-Air  ~/ghq/github.com/yutakobayashidev/dotnix   main ✚  git pull From https://github.com/yutakobayashidev/dotnix - [deleted] (none) -> origin/update-flake-rustowl-flake - [deleted] (none) -> origin/update-flake-ui-ux-pro-max-skill remote: Enumerating objects: 45, done. remote: Counting objects: 100% (25/25), done. remote: Compressing objects: 100% (9/9), done. remote: Total 45 (delta 23), reused 16 (delta 16), pack-reused 20 (from 1) Unpacking objects: 100% (45/45), 18.86 KiB | 301.00 […]
+- moonbit-lsp,nixpkgsにある？調べて
+- https://github.com/moonbit-community/moonbit-overlay/tree/c9ffb3b1f4809132b2f3e9191363d5abfa6ac1ae
+- moonbit本体は入れたくない、direnvでやるので。lspをneovimに入れるだけ
+- いや、moonbit-lspだけは入れておきたい
+- どう？入った？自分の方でも試したけど
+- 入ってる？
+- うん。でもなんか時間かかるなんでだろ、
+- どう？
+- yes
+- ハイライト効かないんだけど
+- 動いてる？確認したい
+- homebrewこれ追加して https://formulae.brew.sh/cask/codex-app
+- コミットして
+- 全部
+- tailwindの予測変換できるようにできる？nvim
+- vite.config.tsも対象にしよ
+- hmm   neo-tree filesyst…   [No Name] ●   main.tsx  src╭─────────────────────────────────────────────────────────────────────────────────────────────────────────────╮ 1│  blink.cmp 18:12:35 │ 1│━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ │ 1│...d-0.11.6/share/nvim/runtime/lua/vim/treesitter/query.lua:906: No handler for set-lang-from-info-string! │ ╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────╯ 8 const [items, setItems] = createSignal<string[]>([]); 7 6 const increment = () => setCount((c) => c + 1); 5 const decrement = () => setCount((c) => c - 1); 4 const […]
+- コミットして、治った
+- zsh-abbrに変えてエイリアス置き換えて押いて
+- yuta@UM790-Pro  ~/ghq/github.com/yutakobayashidev/dotnix   main ±  git add . yuta@UM790-Pro  ~/ghq/github.com/yutakobayashidev/dotnix   main ✚  nix run .#switch warning: Git tree '/home/yuta/ghq/github.com/yutakobayashidev/dotnix' is dirty Switching to NixOS configuration for UM790-Pro... ⏱ 1s ⏱ 2s ⏱ 28s nom hasn‘t detected any input. Have you redirected nix-build stderr into nom? (See -h and the README for det…⏱ 51s […]
+- hmm ✘ yuta@UM790-Pro  ~/ghq/github.com/yutakobayashidev/dotnix   main ✚  sudo nixos-rebuild switch --flake .#UM790-Pro [sudo] yuta のパスワード: warning: Git tree '/home/yuta/ghq/github.com/yutakobayashidev/dotnix' is dirty building the system configuration... warning: Git tree '/home/yuta/ghq/github.com/yutakobayashidev/dotnix' is dirty evaluation warning: nix-index-database: flake output `hmModules` has been renamed to `homeModules` evaluation warning: 'system' has been renamed to/replaced by 'stdenv.hostPlatform.system' Checking switch inhibitors... done stopping the […]
+- networking.nix‎ に使ってるだけdkaらsops消したいな、wifiのパスワード、ハッシュにできないのか
+- network={ ssid="TP-Link_42B4_5G" #psk="50492305" psk=1503c6ce57422a89725114cbf0bd291047d6ac3e80e87c7ed015fb98c2b9d428 }
+- コミットして
+- https://github.com/bit-vcs/bit これオーバーレイあるカ調べて
+- y
+- macにもnixosにも入れて押いて
+- コミットして
+- このプロジェクトはなんですか
+- brew install gnu-tar openssl@3 ldid-procursus sshpass keystone autoconf automake pkg-config libtool git-lfs これ、nixpkgsではいるのはnixpkgs,なければbrewで入れて
+- openssl,@3になッ手艫？
+- コミットして

@@ -1,0 +1,40 @@
+- hm immer noch doppelt
+- Lass die doch einfach unsichtbar? Nachdem alle gelandet sind, gibt es noch ein kurzes Blinken der Avatare.
+- Jetzt verschwinden auch die eingeflogenen Avatare nach Aufbau der Liste
+- Nein werden immer noch gelöscht am Ende
+- Grundsätzlich cool. Wenn man jetzt aber die Liste scrollt, bleiben sie stehen da sie nicht an die Boxen verbunden ind und unten kommen keine neuen. Vermutlich müssen wir doch wieder die Boxenbilder am Ende drüberblenden und danach die eingeflogenen ausblenden so dass aber kein Flackern entsteht.
+- Ok. Gib den Personenkästen dieselben runden Ecken wie die Karten sie haben und dieselben Schlagschatten
+- Ich frage mich, obe wir statt das Ausblenden der Posting-Karten noch etwas organisch wirkendereres finden - etwa ein Zusammenschieben zur Mitte hin, weil dort dann auch die Personenkarten entstehen?
+- ok, jetzt das eigentliche Feature warum wir das alles machen: bitte erst diskutieren. Ich möchte bei jeder Personenkarte einen "+ Follow" Button haben. Nun wird das aber nur mit irgendeiner Art von Authentifizierung gehen. Überlege dir einen Weg, der soniedrigschwellig wie möglich ist, und der vor allem nicht unsere GUI verlässt, also kein starten eines neuen Browserfensters etc. Ich weiß […]
+- Ich möchte es so implementiert haben wie bei den Straterpacks von @https://github.com/anze3db/fedidevs Bitte analysiere den Code dort.
+- Wo könnte/müsste ich so ein micro-backend laufen lassen?
+- das ist doch alles scheußlich. Der bisherige Ansatz der mastowall ist ja gerae, sie mit 0 Aufwand als Github Page laufen zu lassen. Und Cloudflare scheint mir politisch schwer vermittelbar als backend für das Fediverse.
+- Die leute werden doch aber nicht für so ein Feature in die Settings ihrer Mastodon-Instanz gehen um dort einen Token zu erzeugen. Totaler Quatsch so etwas vorzuschlagen. Frage: dein erster Ansatz mit dem Micro-Backend - gibt es im Fediverse nicht längst irgendeinen freien Dienst, der genau das liefert, ohne dass man es selber aufsetzen müsste?
+- Ich habe einen Server bei Netcup und darauf eine Cloudron-Instanz @https://www.cloudron.io - was wäre der einfachste Weg, dort so einen micro-backend aufzubauen?
+- bevor wir das machen letzter Gedanke: im GitHub Universum gibt es keinen Dienst, den man dafür umdeuten könnte?
+- ok dann führe mich durch unseren Cloudron Ansatz. Ich habe wenig Kenntnisse in CLI und Serverbetrieb (daher liebe iich Cloudron)
+- go
+- Mir ist Schritt 2 unklar, wo genau soll ich das in Cloudron konfigurieren
+- hier ist links kein Menüpunkt Environment
+- Vielleicht besser diesen Schritt über die CLI lösen
+- ich meinte die CLI der LAMP app
+- Das ist die Ausgabe: {"getenv":{"ALLOWED_ORIGINS":"https:\/\/rstockm.github.io,http:\/\/127.0.0.1:8000","SESSION_SECRET":"set","COOKIE_NAME":"mw_session","COOKIE_SECURE":"true"},"server":{"ALLOWED_ORIGINS":"https:\/\/rstockm.github.io,http:\/\/127.0.0.1:8000"}}
+- DIe Ausgabe von health.php ist ok
+- STarte nochmal im Projektverzeichnis den Python Webserver
+- Irgendwas ist schief gegangen. Der Webserver funktionioert aber von der Mastowall wird nur der Footer angezeigt, ich habe an den Dateien nichts verändert. Der Footer scheint auch aus dem Cache zu kommen. Prüfe, oder Webserver wirklich im Projektverzeichnis gestartet wurde
+- ?hashtags=fediday&server=https://mastodon.social:1 Access to fetch at 'https://follow.wolkenbar.de/auth_start.php' from origin 'http://127.0.0.1:8000' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: The value of the 'Access-Control-Allow-Credentials' header in the response is 'true, true' which must be 'true' when the request's credentials mode is 'include'.Understand this error VM78:4 POST https://follow.wolkenbar.de/auth_start.php net::ERR_FAILED (anonymous) @ VM78:4Understand this error VM78:4 Uncaught […]
+- ?hashtags=fediday&server=https://mastodon.social:1 Access to fetch at 'https://follow.wolkenbar.de/auth_start.php' from origin 'http://127.0.0.1:8000' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: The value of the 'Access-Control-Allow-Credentials' header in the response is 'true, true' which must be 'true' when the request's credentials mode is 'include'.Understand this error VM78:4 POST https://follow.wolkenbar.de/auth_start.php net::ERR_FAILED (anonymous) @ VM78:4Understand this error VM78:4 Uncaught […]
+- Ein leeres Fenster wird aufgebaut dazu in der Konsole: Refused to load https://mastodon.social/auth/sign_in because it does not appear in the frame-ancestors directive of the Content Security Policy.
+- Das funktioniert, aber die Leute müssen natürlich eine eigene Instanz auswählen können:
+- Das Fenster zur Eingabe der Instanz erscheint. Das dann folgende Popup-Fenster wird von Safari erst einmal blockiert und man muss es manuell freigeben - kann man das nicht im selben Fenster anzeigen? Nach Authentifizierung weiße Seite: <body>Invalid state</body> Mit der URL @https://follow.wolkenbar.de/oauth_callback.php?code=x_zM_hJxMhPCYz5ZXpP6wigVkhtySCc18CaYoqkZwNU&state=80ef8a3299fe9609057fb8f70b0795f5
+- kein Fehler mehr und es bleibt im Fenster, sehr schön. Aber auch keine Erfolgsmeldung irgendeiner Art.
+- Kein Badge und dieser Fehler in der Konsole
+- sed: can't read s#ALLOWED_ORIGINS \"[^\"]*\"#ALLOWED_ORIGINS \"https://rstockm.github.io,http://127.0.0.1:8000,http://localhost:8000\"#: No such file or directory
+- Es soll ja hinterher von der bekannten Github Pages aus laufen.
+- {"authenticated":true,"home":"https:\/\/chaos.social"} Aber kein Badge in der GUI zu sehen. Am EInfachsten wäre, Farbe und TExt des bestehenden Buttons umzustellen? Blau (Connect) zu Grün (Connected)
+- nein bleibt blau mit Text verbinden.
+- immer noch Button unverändert blau
+- Wir probieren mal was anderes. Ich habe dir den ganzen app/data/public ordner des follow Cloudron LAMP Servers hier in das Projekt geladen. Schau gründlich nach, ob alle Dateien dort überhaupt noch im richtigen Zustand sind.
+- < Promise {status: "pending"} [Log] {authenticated: false, home: null}
+- <?php header('Content-Type: application/json'); echo json_encode([ 'getenv' => [ 'ALLOWED_ORIGINS' => getenv('ALLOWED_ORIGINS'), 'SESSION_SECRET' => getenv('SESSION_SECRET') ? 'set' : 'missing', 'COOKIE_NAME' => getenv('COOKIE_NAME'), 'COOKIE_SECURE' => getenv('COOKIE_SECURE'), ], 'server' => [ 'ALLOWED_ORIGINS' => $_SERVER['ALLOWED_ORIGINS'] ?? null ] ]);
+- {"getenv":{"ALLOWED_ORIGINS":"https:\/\/rstockm.github.io,http:\/\/127.0.0.1:8000,http:\/\/localhost:8000","SESSION_SECRET":"set","COOKIE_NAME":"mw_session","COOKIE_SECURE":"false"},"server":{"ALLOWED_ORIGINS":"https:\/\/rstockm.github.io,http:\/\/127.0.0.1:8000,http:\/\/localhost:8000"}}

@@ -1,0 +1,40 @@
+- I've sent the email to anthony.
+- - ive logged into hibiscous gmail - trello mcp has broken. will need to fix
+- (see attached)
+- The day has run away from me. I haven't done the Google form or the QR code. I have pinged my cousin. I have now got access to Gmail, but I do not have access to Acuity, and I don't know why. The agency deck I have, but like already up in below you'll see you my update this is […]
+- You are a senior prompt engineer who turns messy questions into super-clear instructions for AI. Your job is to: - Make questions crystal clear and specific - Break big ideas into smaller, manageable pieces - Make sure answers are practical and usable - Think about who's asking and what they need - Keep making the questions better and better THE […]
+- hi
+- can we now deploy to github pages jus the two pages (see attached convo)
+- @https://github.com/FTFC1/hibiscus-studio
+- media still looks weird (see attached) also @https://ftfc1.github.io/hibiscus-studio/instant-quote-v2.html doesn't load (see attached)
+- @https://ftfc1.github.io/hibiscus-studio/instant-quote-v2.html ( from clicking the CTA on the landing page ) still fails
+- Look at this section in the screenshot. I feel that it's still not there yet.
+- This new one you've done looks too gimmicky. I need to think about the whole style right? Like we're using colour very deliberately, so it's just too much colour and it's too much.
+- Okay, cool. This is better, but now when I look at it and include the element that's just below it, you can see we still have a bit of jarring to the eyes. It's not sleek yet.
+- I like what you've done actually, but the only issue is now on mobile when you land this is all Good, but now I can't even see a CTA So I wonder should we actually bring the sticky CTA? From the very beginning or should we make it that it's like a Carousel I'm not sure. Also on desktop, you […]
+- - book event as the single cta is fine, no need for call now too. - also, there is still the empty container below perfect lcoation
+- What can we do instead of having two "see the space" one after the other (see attached)
+- pls commit so i can share the link with the founder
+- @https://ftfc1.github.io/hibiscus-studio/ still has the "call now" button
+- would it look cleaner if the 4 icons ( like 40 chairs ) are on on row instead of two? (see attached)
+- last one seems like too much text. just say Fast Wifi
+- (see attached) I think the teo tag lines is too much. can we combine the two and have on piffy stagline instead under the title? gimme some options first
+- Something like Our Space, Your Event, etc etc gime 5 variations
+- hmm, 2, 4,5 are the best another round of variation
+- "Our space, your moment, flawlessly delivered" best so far
+- Hibiscous Studio title at top should be one one line not two
+- access hb-gmail and check the outstanding emails ( real need to reply not promo stuff )
+- <name>One-Step Prompt Cleaner</name> Prompt Purpose: Transform any messy or unclear question into a clear, actionable prompt and provide an immediate, high-quality answer in a single step, while ensuring all needed clarifications are gathered up front. Context: You will receive a message that starts with this instruction and is followed by a user's messy or voice-transcribed question. Your job is to […]
+- Who is the founder of Messaging? The founder of Hibiscus Studio, i.e. my cousin. What is a club sheet? No, I think you misheard me. I meant to say that today is Thursday the 19th because you were talking about something on Tuesday but that's already been and gone. What specifically does this refer to? This is what's in your […]
+- I think what might be helpful is that I actually have draught messages, and this thing we use looks like a proper booking needs a quick response. Don't say anything like that, just give me helpful
+- Yeah, I think we should still draught messages if needed so that I can basically do the whole summary for the day, and then I can reply to my own message with the different drafts because you have everything you need or do you have outstanding questions still?
+- I wanna come up with a new architecture where all of my projects are in projects, and all of the summarisations of my projects are in knowledge architecture. Now obviously you're going to need to know exactly where my projects are, and we're going to have to move them. I wonder if it will be too cumbersome.
+- I want you to look at this and ask yourself, "Is this the best clean architecture or is there something that's missing here?" For example, yes we have the output, we have these project summaries. I think project summary is you need to state because each time each project should have like x number of files right? Ambiguities and there […]
+- I think the way in which Taskmaster works is very different now. I don't know if it still uses a task folder. Can you check online and get the latest?
+- see emails today via hb-gmail mcp and draft a reply i can add to the drafts
+- This is actually quite interesting because this shows me one of the issues now. We have labels, and within the label of enquiries, we have some. But obviously you're looking at inbox. I don't know. So if something moves from inbox to a label, does that mean you can't see it?
+- Okay, fantastic! First of all, you should probably make like a instructions.md file so that you know where to look for stuff for this specific project. Secondly, I want a draught for each of them that I will then paste into the draught for these messages.
+- Okay, so first of all this Gmail instructions needs to live inside the Hibiscus Studio because the Hibiscus Gmail is not just a random Gmail. First of all. Then I don't know what that was that would you put it in projects and also you need Hibiscus Studio and Hibiscus Studio pages to be one folder. Oh you've got three […]
+- npx @composio/mcp@latest setup "https://mcp.composio.dev/partner/composio/googlecalendar/mcp?customerId=a84dd4e6-ada0-44b9-9157-6332907e1340&agent=cursor" "googlecalendar-tp06x3-85" --client cursor Okay, quickly let's use the above to install and set up the Google Calendar MCP. That way you will know exactly what the availability is as well for your replies, which will be amazing. Yes, regarding the consolidation, what I was saying is that if I go to the projects folder, you can […]
+- - changed the name to hb-gcal - Will the way that you have changed the folder set up affect my GitHub pages, or is everything fine there? - The next thing is to test the calendar integration and then use the improved draught with accurate calendar data and then updated email flows to check the real calendar availability via Google […]
+- What can you tell me about the doc

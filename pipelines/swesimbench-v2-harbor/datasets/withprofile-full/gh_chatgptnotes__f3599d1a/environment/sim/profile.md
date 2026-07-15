@@ -1,0 +1,40 @@
+- & 'c:\Users\Hp\OneDrive\Pictures\Screenshots 1\Screenshot 2025-12-17 164832.png' find a clinic near you button ko remove kro
+- [Image #1] jaha jaha cross kiya hai usko remoev rkro
+- & 'c:\Users\Hp\OneDrive\Pictures\Screenshots 1\Screenshot 2025-12-17 171916.png' ye page me color match kro logo se
+- dont use yellow color
+- Find Your Clinic/Coach remove this button & 'c:\Users\Hp\OneDrive\Pictures\Screenshots 1\Screenshot 2025-12-17 172635.png' from this page
+- & 'c:\Users\Hp\OneDrive\Pictures\Screenshots 1\Screenshot 2025-12-17 172819.png' ye section me 10000 ko 1000 active user krna hai and 5+ Expert Coaches krna hai
+- & 'c:\Users\Hp\OneDrive\Pictures\Screenshots 1\Screenshot 2025-12-17 173514.png' remoev Evidence Based Research section from technician page
+- & 'c:\Users\Hp\OneDrive\Pictures\Screenshots 1\Screenshot 2025-12-17 180139.png' remove from footer tweeter icon and connect links below to particular https://www.linkedin.com/in/drswetaadatia/ ,https://www.facebook.com/sweta.adatia , https://www.instagram.com/drsweta.adatia/?hl=en https://www.youtube.com/@drsweta.adatia
+- add animation on home page like up and down right left or transitions
+- image me and content card me floating animation remove kro
+- Prompt: "I want to enhance my website (neurosense360.site) with premium 'Bio-Tech' style animations. Please provide the code (CSS and Vanilla JS) to implement the following: Neural Pulse Hero: Create a CSS animation for the hero background called 'pulse' that subtly changes the opacity (from 0.7 to 1) and scale (from 1 to 1.05) over 8 seconds in a smooth loop. […]
+- add transition up down coming content and image left right to center and up adn down come when i scroll one by one
+- add animations jab me scroll krte krte up or down cards coming right and left in center
+- landing page me jitne bhi pages hai example how its work ...etc all page me bhi animation and transition dalo
+- & 'c:\Users\Hp\OneDrive\Pictures\Screenshots 1\Screenshot 2025-12-18 114749.png' ye screenhsort me jo pages hai thres vo pages me bhi animations add kro left right center on scorll like that
+- & 'c:\Users\Hp\OneDrive\Pictures\Screenshots 1\Screenshot 2025-12-18 120225.png' ye page me to content hi gayb ho gya animation dalne k baad
+- & 'c:\Users\Hp\OneDrive\Pictures\Screenshots 1\Screenshot 2025-12-18 120225.png' ye page me to content hi gayb ho gya animation dalne k baad tino page me
+- Our Platform For Clinics page se starting ka content hi gayab hogya hai check kro animation dalte hi
+- & 'c:\Users\Hp\OneDrive\Pictures\Screenshots 1\Screenshot 2025-12-18 120932.png' isko countable animation dalo
+- & 'c:\Users\Hp\OneDrive\Pictures\Screenshots 1\Screenshot 2025-12-18 121302.png' nav bar ka hight km kro
+- & 'c:\Users\Hp\OneDrive\Pictures\Screenshots 1\Screenshot 2025-12-18 121558.png' change this color match with logo color
+- orange color remove kro
+- & 'c:\Users\Hp\OneDrive\Pictures\Screenshots 1\Screenshot 2025-12-18 121558.png'
+- technicians ye page me after & 'c:\Users\Hp\OneDrive\Pictures\Screenshots 1\Screenshot 2025-12-18 122657.png' this content content gayb hai
+- & 'c:\Users\Hp\OneDrive\Pictures\Screenshots 1\Screenshot 2025-12-18 122901.png'& 'c:\Users\Hp\OneDrive\Pictures\Screenshots 1\Screenshot 2025-12-18 122915.png' ye dono image dekho isme dono image me jo after content and befor content k bich me kuch nhi dikh raha hai chekc kro ki yaha kuch animation k vajah se hide to nhi hua
+- What is possible.jpeg add this image on below screenhsort & 'c:\Users\Hp\OneDrive\Pictures\Screenshots 1\Screenshot 2025-12-18 123330.png'
+- http://localhost:3000/guide-to-brainwaves ye page me jo UI hai uska color combination and myndlift k jagah Neurosens add krna hai ky aap kr sakte hai
+- remove kro abhi jo bhi kya http://localhost:3000/guide-to-brainwaves ye page me muje ye page me jo link kiya hai myndlift ka usk hi ui me changes kr sakte hai ky tum? bas color match krna hai logo se and myndlift remoev rkna hai
+- http://localhost:3000/guide-to-brainwaves ye page me jo UI hai uska color combination and myndlift k jagah Neurosens add krna hai ky aap kr sakte hai revert this prompt
+- & 'c:\Users\Hp\OneDrive\Pictures\Screenshots 1\Screenshot 2025-12-18 144842.png' look at theis screenshort isme jaha highlight kiya hai myndlift ko rename kro neurosense
+- [Image #1] isme jo highlight kiya hai name an button usko remove kro
+- nhi hua hi changes
+- & 'c:\Users\Hp\OneDrive\Pictures\Screenshots 1\Screenshot 2025-12-18 150141.png' remove this section from Guide to Brainwaves
+- & 'c:\Users\Hp\OneDrive\Pictures\Screenshots 1\Screenshot 2025-12-18 150141.png' remove this section from Guide to Brainwaves revert
+- give me the summary of all feature of this neurosense project one page
+- parameter stress me condition dalo like agar agar stress me arousal score ,Relaxation Score , Regeneration & Repair (Alpha modulation) ye tino normal score aaya hai stress me to usko green me indicat kro agar score score jada ho to to red me show kro jo highlight kiya hai screenhsort me & 'c:\Users\Hp\OneDrive\Pictures\Screenshots 1\Screenshot 2025-12-18 173223.png'
+- same as burnout & fatigue parameter agar score high hai to red me show kro mtlb 3/3 aaye to red me show kro . and sub parameter also same agar score high hai to red me show kro and low hai to green me
+- Stress या Burnout & Fatigue parameter में score high होगा (3/3) तो पूरा card GREEN दिखेगा - Score low होगा (1/3) तो card RED दिखेगा - Sub-parameters में normal values GREEN और abnormal values RED में highlight होंगे galat kiya hai tumne iska ulta hai krna . dono me agar score low and value normal hai to score ko green […]
+- ✅ सही Logic: - 🟢 GREEN - Score 1/3 = Low stress/burnout (कम है - अच्छा! ✅) - 🟡 YELLOW - Score 2/3 = Medium (मध्यम - सावधान रहें ⚠️) - 🔴 RED - Score 3/3 = High stress/burnout (ज्यादा है - खराब ❌) ye correct hai
+- [Image #1] ye image me dekho jo highlight kiya hai vo green me dikhna chahiye and uska score 1/1 aana hciaye qki normal hai uska value

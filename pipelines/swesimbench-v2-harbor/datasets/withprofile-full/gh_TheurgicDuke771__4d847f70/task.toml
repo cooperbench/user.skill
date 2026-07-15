@@ -1,0 +1,31 @@
+schema_version = "1.1"
+
+[task]
+name = "swesimbench-v2/gh_TheurgicDuke771__4d847f70"
+description = "Predict the developer's next message given the conversation so far (with developer profile)."
+authors = []
+keywords = ["swesimbench", "simulate-user", "user-simulation", "withprofile"]
+
+[metadata]
+author_name = "swesimbench-v2"
+category = "user-simulation"
+tags = ["swesimbench", "simulate-user", "withprofile"]
+developer = "gh:TheurgicDuke771"
+point_id = "6e1e2a08-9361-4b1d-a5da-21ac3c8638cc#5"
+condition = "withprofile"
+
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 900.0
+user = "agent"
+
+[environment]
+build_timeout_sec = 600.0
+cpus = 1
+memory_mb = 2048
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+mcp_servers = []

@@ -1,0 +1,3 @@
+[DEVELOPER]: .sessions/2026-05-19-integration-testing/H001-post-integration-testing-handoff.md 先了解情况。.sessions\2026-04-23-rewrite-main-thread\topic-index.md
+
+[AGENT]: 已读完两份文档。当前状态概览： **集成测试专题**（05-19，已完成）： - 36 条集测项全部实施，28 个 spec，11,479 行测试代码 - 1177 passed / 1 failed（routing-tick.spec.ts fixture 不匹配） - 2 个 bug 已定位未修：onSettled 竞态、errorPolicy stop/pause 不 resolve settle - **32 文件未提交** **主线**（04-23 ~ 05-19，active）： - S001-S015 全覆盖，132 对话已归档 - 当前分叉出集测专题，集测已交付 handoff **Handoff 安排了 3 条线**： - **线 1**（Lane A）：修 2 bug + 1 failing test → 全绿 - **线 2**（Lane B）：task-real Phase 2 + 缺失页面 + northbound 范围分析（不写代码） - **线 C+**：根据分析再规划实施 你想从哪条线开始，还是有别的安排？

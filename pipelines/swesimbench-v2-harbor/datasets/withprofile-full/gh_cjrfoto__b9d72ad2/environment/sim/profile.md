@@ -1,0 +1,40 @@
+- done. Keep track.
+- for @sisuclinicusa
+- done
+- miracle clinic is from indonesia
+- ok
+- done
+- Yes
+- Uninstall raycast
+- y
+- is comfy on the pc
+- no here on the mac
+- rcap the process we did for the video loop
+- '/Users/carlosrestrepo/Downloads/river-flowing-trees-moving-with-gentle-breeze.mp4' would this be a good candidate
+- the content?
+- create a list of ideas for this
+- what would work best on ebay
+- ok the recommend niche. write prompts for images first as a starting point to convert later to video. Prompts for nano banana
+- Available?
+- Can you look for it
+- What did you find?
+- No not yet
+- Read the latest Gmail from Claude and see what you can apply
+- No
+- check in gmail the latest from claude and see what can be applied to us
+- So we are updated
+- but here in code?
+- yes
+- '/var/folders/_j/z60w9mdn1ysbx2hhwf0sr5nr0000gn/T/TemporaryItems/NSIRD_screencaptureui_wmeOcZ/Screenshot 2026-04-16 at 3.27.28 PM.png'
+- what will i loose
+- yes
+- so updated with all the improvements as in the desktop
+- I meand the same skills etc
+- routines too
+- so what was updated to the desktop does not apply to code here?
+- multiple agents?
+- but I am worried about usage
+- pro
+- I should restart now?
+- best way to do that?
+- and then?

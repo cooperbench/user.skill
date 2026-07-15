@@ -1,0 +1,40 @@
+- I think I know why it doesn't work, they don't use them in zed: wink@3900x 26-07-08T17:43:59.363Z:~/data/prgs/clones/zed (main) $ rg -P '\[\d+\]: ' assets/settings/default_semantic_token_rules.json 22:// [1]: https://code.visualstudio.com/api/language-extensions/semantic-highlight-guide#standard-token-types-and-modifiers 23:// [2]: https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/#semanticTokenTypes docs/src/linux.md 184:08:00.0 VGA compatible controller [0300]: NVIDIA Corporation GA104 [GeForce RTX 3070] [10de:2484] (rev a1) crates/lsp/src/lsp.rs 346:// [1]: https://code.visualstudio.com/api/language-extensions/semantic-highlight-guide#standard-token-types-and-modifiers 347:// [2]: https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/#semanticTokenTypes wink@3900x 26-07-08T17:44:24.247Z:~/data/prgs/clones/zed (main) $
+- I can't copy text in the terminal I'm using you on, I think it use to work :(
+- The file comes up but doesn't position at the section
+- (Using shift works, TXS!
+- (Using shift works, TXS!)
+- But back to zed not using them, was my regex wrong you implied so
+- I'm running zed in the zed dir and the "regular" style local and external markdown links work, such as: [Building Zed for Windows](./docs/src/development/windows.md)
+- The zed sources are local here, ./../clones/zed/, see if you can find a link that doesn't work
+- Please draft your suggested issue ~/zed-markdown-link-issue.txt
+- Please draft your suggested issue in ~/zed-markdown-link-issue.txt
+- Actually here is a simpler one on line 204 just above the two on 208 and 209: See [All Settings](./reference/all-settings.md#git-worktree-directory) for examples.
+- Yes it failed it opens the file at the top and the section, Git Worktree Directory, is at line 5467!
+- I see that is just has the path_text, but wouldn't there be a second step which "searched" for the "#" fragment ?
+- Guessitmate the effor to fix it?
+- I searched for markdown links and this was the first hit: https://github.com/zed-industries/zed/issues/58270
+- In ~/zed-markdown-link-issue.txt you say "cross-file anchor link" actually the anchor link it self works it's the fragment(?) "#some-heading" that doesn't.
+- Why call it a "cross-file link", it's an "anchor link"(?) but in issue #58270 j055 called it an "Internal project link" that and in our case we notice that "fragments" are ignored.
+- But it actually the "easy" cases are to the same file so using "cross-file" is narrowing the scope. But also for "external" links the preview has no work, I see it pop up a browser instance.
+- i've created a ~/zed-markdown-link-issue/ with test1.md, test2.md and zed-markdown-link-issue.txt, thoughts
+- I believe your mistaken: line 99 [test 1 line 2](#test-1-line-2), [test 1 line 50](#test-1-line-50), [test 1 line 100](#test-1-line-100), [test 2 line 2](test2.md#test-2-line-2), [test 2 line 50](test2.md#test-2-line-50) [test 2 line 100](test2.md#test-1-line-100)
+- You're correct, fixed :)
+- You're correct, fixed. Maybe :)
+- I now agree, with you; same file links are working, but cross-file links are failing. Interesting though tho that zed opens the raw file not the preview file, which is what I see vscode do. Which I think is better, IMO.
+- yes, apply all three
+- I've created ~/zed-markdown-link-issue/README.md review please
+- fix it please and I moved our issue file to ~/ for now. I'm thinking to try to engage someone on discord before filing an issue.
+- Should we point out the clicking "previous" on the menu renders in the raw file?
+- When you click on "Target section" it scrolls to the bottom of the previewed README. But if you click ont the "<-" back arrow, which is to the left of the window tabs, to jumps/opens the raw README.md file displaying where ever it was.
+- It does "scroll" that raw file to where the cursor is, if you had scrolled away from it.
+- yes, add it
+- I changed "then click" to "then clicking" in line 12 of README.md
+- saved now :)
+- dropped the colon, last review and I'll push the repo
+- Remove it
+- yea, I meant to type "removed" dropped the "d" pushed: https://github.com/winksaville/zed-markdown-link-issue
+- yes, add it
+- Sorry for the distraction, now where are we?
+- Let's put the colons back. Then compare AGENTS.md against ../vc-template-x1/AGENTS.md I want to try to keep AGENTS.md "generic".
+- Personally I don't see alot of value to "Renderer caveat", it's valid detail, but I vote we've said enough in that paragraph above. And the numbers for todo are on purpose, therefore I suggest we just use the vc-template-x1/AGENTS.md as is no changes.
+- `vc-x1 push ..`

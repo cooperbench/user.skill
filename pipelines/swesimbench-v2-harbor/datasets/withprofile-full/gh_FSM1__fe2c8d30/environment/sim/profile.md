@@ -1,0 +1,40 @@
+- please remove those worktrees
+- the commit to main would have failed to push in any case - just make sure that any changes have already been included in this branch
+- ok get a PR for this up please
+- CI typecheck is failing due to `mts` files referencing old code https://github.com/FSM1/cipher-box/actions/runs/28341333876/job/83956322676?pr=578
+- ok, please follow the following steps: - plan and verify plan for phase 63 - execute the plan - finally /ship-phase 63
+- ok, please follow the following steps: - plan and verify plan for phase 64 - execute the plan - finally /ship-phase 64
+- https://github.com/FSM1/cipher-box/actions/runs/28400839205/job/84151493762?pr=582 the CI tests are failing
+- both the coderabbit and greptile reviews are in and theres loads of comments to address
+- why are the questions being skipped?
+- when you're done with the implementation of all waves, please kick off the /ship-phase workflow as well.
+- https://github.com/FSM1/cipher-box/pull/583#issuecomment-4842716702 greptile review still gives a fairly low confidence score of 3/5 since some of the tests that are green are only green because of mocked dependencies
+- Is there any point in keeping that audit record though, especially given that ECIES encrypted key material is unnecessarily stored in the database.
+- add a `/gsd-extract-learnings` to the @.claude/commands/ship-phase.md workflow
+- CI test and SDK-e2e are both failing
+- there's an `outside of diff range` comment in the greptile review: https://github.com/FSM1/cipher-box/pull/584#issuecomment-4846802878
+- sdk-e2e is still failing in CI
+- coderabbit review finally came in - lots of comments to address
+- also a question about the psql in @tests/sdk-e2e/src/suites/ipns-publish-gate.test.ts - is it really necessary for the e2e test to mess with the database directly? Please could the scenario that is being tested be explained to me step by step.
+- yeah I think that removing test 15 from the sdk-e2e is more sensible
+- yeah I think that removing test 15 from the sdk-e2e and ensuring sufficient unit test coverage is more sensible here
+- are the nitpick and `outside of diff range` comments from coderabbit addressed: https://github.com/FSM1/cipher-box/pull/584#pullrequestreview-4603705524?
+- yes please run the extract learnings
+- ok you can close all the background jobs
+- write the learnings
+- lock in the sdk + docker e2e test.
+- why am I doing this when you can execute everything ?
+- ok please stop all api instances and clean up the local docker stack. I reverted the tsconfig.json change I had introduced myself.
+- please remove the named volumes as well - I want the local stack to be clean.
+- DB_DATABASE=cipherbox pnpm --filter @cipherbox/api migration:run
+- please implement the @.planning/todos/pending/2026-07-01-ci-tee-worker-for-tee-republish-e2e.md on the current branch
+- yes please commit and push to remote.
+- sure, please handle the dedupe on a chore branch
+- does this plan include fixing and resolving all web e2e test issues?
+- Please take a look at the @docs/TESTING.md docs - UI is not unit tested - all core logic should be in the sdk and UI is only tested via e2e testing.
+- have you run the full web-e2e suite locally?
+- I would like the full web-e2e suite running and passing locally - not only the rotation suite.
+- ok before we start execution, should the phase 48 code get PR'ed and merged before kicking off the rest of 48.1?
+- ok then switch to the phase 68 branch
+- continue
+- theres a fresh batch of coderabbit comments ready for triage

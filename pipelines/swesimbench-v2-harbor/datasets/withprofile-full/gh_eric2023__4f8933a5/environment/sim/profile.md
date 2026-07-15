@@ -1,0 +1,40 @@
+- 进入执行模式，执行计划
+- 撤销git commit，我需要审一下方案
+- 建议实现go分析器的缓存实现，在 @multi_language_analyzer.cpp 中完善enableCache调用，并新增getCacheStatistics接口实现
+- 清除中间文件
+- @config.h 将GoConfig 里面的enabled和file_extensions两个参数去掉，并修复关联代码
+- 进入研究模式，结合该文件和 main.cpp函数实现，分析其定义的命令行参数是否都生效
+- 分析代码实现，尝试在帮助信息和readme等相关文档中移除对应参数的信息
+- 你太厉害了，继续分析多线程未启用原因
+- @multi_language_analyzer.cpp 分析该文件实现，analyzeAllParallel函数未看到调用，analyzeAutoDetectModeParallel函数实现的意义是什么？
+- 这个修改有问题，analyzeAll 仅AUTO_DETECT模式是串行；建议优化analyzeAll函数的调用，其他不需要的接口移除
+- @multi_language_analyzer.cpp 深入分析该文件，并行参数应该是调用setParallelMode设置了，不需要在该文件的其他函数调用设置，而且getOptimalThreadCount违背了参数配置和命令行参数逻辑，看起来并不合理。建议整体扫描该文件的实现，看是否跟整个项目的机制有冲突，不合理的移除
+- @main.cpp 深入分析该文件，将文件中已有的独立函数实现替换在main函数中冗余的代码实现
+- 进入执行模式，执行计划
+- @config_manager.cpp 根据配置管理代码实现，更新默认json配置文件和readme文档
+- 这部分代码调整，if else if只能进一个条件，修改了报告输出的逻辑
+- 进入研究模式，查看readme和需求文档中的项目进度
+- 进入计划模式，制定阶段二的计划
+- 进入执行模式，执行计划
+- 进入研究模式，readme文档中写的开源协议与引用license文件描述不一致，提权剩余进度任务
+- 进入执行模式，执行计划
+- 进入研究模式，结合代码分析 @dlogcover.log 日志，总结未生成报告原因
+- 之前有总结过参数逻辑，请查看文档确认优先级： 1、命令行设置参数>配置文件参数>代码默认值 2、如果参数未设置，最高优先级为配置文件参数；如果无配置文件参数，采用代码默认值
+- 进入计划模式，综上解决方案，制定修复计划
+- 进入执行模式，执行计划
+- ./build.sh -f存在语法错误
+- 进入审查模式，检查命令行参数是否有效，比如：-d
+- 进入研究模式，分析readme和代码实现，评估恢复 --mode 参数支持可行性
+- 进入计划模式，结合研究分析，制定计划
+- 进入执行模式，执行计划
+- 进入研究模式，熟悉项目代码和文档
+- 进入计划模式，制定执行计划
+- 进入执行模式，执行计划
+- 根据代码总结编译、运行所需环境的最低软件包版本
+- 更新到文档中，并更新具体的编译命令，再进入审查模式检查文档更新
+- 同意
+- 进入研究模式，通过命令 ./build/bin/dlogcover -d ../dde-daemon/ -m go_only 执行 ，分析 dlogcover.log 为什么还是扫描的 . 目录
+- 实际扫描的并不是 include、src、tests 目录，而是tools目录
+- -d 对应的应该是project.directory，而不是scan.directories
+- 进入计划模式，制定整改计划
+- 进入执行模式，执行计划

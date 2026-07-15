@@ -1,0 +1,1 @@
+{"point_id": "c97a65c6-0bc1-4e5e-a4e0-1fcc0cbb3c1d#12", "developer": "gh:KeKs0r", "condition": "noprofile", "real": "actually we are not live yet. just delete the migrations journal and snapshot, regenerate it from current schema. \\ fully delete the datase instaging and prod and generate everything from scratch", "prev_agent": "No response requested.", "gold_move": null}

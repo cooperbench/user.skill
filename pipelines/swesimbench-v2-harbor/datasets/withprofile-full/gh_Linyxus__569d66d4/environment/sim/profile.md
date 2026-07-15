@@ -1,0 +1,40 @@
+- Good. I just proved reduce_ans_eq. Now, prove the eval_val and eval_var case of eval_to_reduce.
+- Very good. Next, complete the next sorry in this theorem in eval_apply case.
+- I just proved Memory.lookup_deterministic. Use it to finish the second sorry in the eval_apply case.
+- Very good. Next, prove eval_invoke case of this theorem. Learn from other cases.
+- Very impressive. Next task: complete the sorry for the tapply case in eval_to_reduce.
+- Impressive. Next, complete the sorry in the eval_capply case.
+- Good. Next task: the eval_letin case.
+- Very excellent. Now, try proving the first `sorry` in this case.
+- Sure. Try step_rename instead. Ultrathink!
+- I added one premise in eval_to_reduce. Fix errors caused by my change.
+- Very good. Now can you complete the sorrys in the step_rename case of eval_letin?
+- Very impressive! Now, complete the sorry in step_lift subcase. Ultrathink! Learn from what you have done. Learn from existing proofs.
+- Good. Now, fix the sorry in eval_apply case in eval_to_reduce.
+- Good. Now, fix the sorry in eval_{invoke,capply} case in eval_to_reduce. Do things step by step.
+- Good. Now, fix the sorry in eval_{invoke,capply} case in eval_to_reduce. Do things step by step.
+- Very impressive. Next, finish the sorry in eval_unpack.
+- I am working on the properties of the semantics of capture calculus in the CC module. I just stated theorem reduce_letin_inv in Semantics/Props.lean, as you can find out in the last commit. Your first task: prove this theorem. Explore related definitions to get yourself onboard.
+- I did the renaming for you. Check my changes and understand it, then continue.
+- I again did the renaming for you. Learn from what I did, and try to understand how renaming works. Before you proceed, tell me: how rename_i works?
+- Actually, it is not like that. rename_i x1 x2 x3 means you want to rename THE LAST THREE unnamed variables in the goal context, in the order they appear in the context.
+- Exactly! Now, read CLAUDE.md and tell me what it said about `rename_i`.
+- Very excellent! Now, use reduce_letin_inv to prove the eval_letin case in eval_to_reduce. Instead of `cases` on `hred`, use this inversion lemma and prove each case in the inversion lemma.
+- Good. I just stated step_preserves_wf, which I think is needed for proving the sorry you left. Your task: prove it.
+- Excellent. So excellent.
+- I am working on the CC module for semantic type soundness for capture calculus. Now, I am updating eval_letin in Semantics/BigStep.lean, as you can see in the last commit. Your first task: fix errors in BigStep.lean caused by my changes. Explore related definitions to get yourself onboard.
+- Very excellent. Now, fix errors in Soundness.lean caused by my change.
+- Hmm. Right. I changed the definition in BigStep.lean again. Now your task: fix errors in BigStep.lean.
+- I tweaked the definition of h_nonstuck. Now, fix all sorrys and errors in BigStep.lean.
+- Excellent! Now, fix errors or sorrys in Soundness.lean caused by my changes.
+- I just tweaked the definition of capturing types denotation, as you can see in the last git commit. Your task: fix all errors caused by my changes in Rebind.lean and Retype.lean.
+- Impressive. Now, fix all errors in Soundness.lean caused by this change. Let us do things step by step.
+- Impressive. Now, fix all errors in Soundness.lean caused by this change. Let us do things step by step.
+- Really impressive. I just tightened eval_unpack for Eval too, as you can see in BigStep.lean. Now your task: fix all errors in BigStep.lean caused by my change.
+- Good. Next, fix all errors in Soundness.lean caused by this change.
+- Very excellent! Now, fix the first sorry.
+- Very excellent. I stated theorem resolve_is_pack. Now your task is to prove it.
+- Very excellent. For the first sorry: you have to show that IsSimpleVal and IsPack cannot be true at the same time. Maybe state it as a lemma and prove it first?
+- Fix the last sorry in Soundness.lean.
+- Very good. Your next task: fix errors in Props.lean.
+- Very nice. I just stated eval_implies_progressive and IsProgressive in Semantics/Props.lean. Now your task: try proving it.

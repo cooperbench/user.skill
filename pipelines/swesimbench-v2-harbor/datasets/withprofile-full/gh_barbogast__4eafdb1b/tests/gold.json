@@ -1,0 +1,1 @@
+{"point_id": "b9f420e5-b46a-4aef-a7f6-ca436ba93f00#20", "developer": "gh:barbogast", "condition": "withprofile", "real": "increase the size of the badge containing the selected folder, and show a tooltip with the full path if it's too long for display", "prev_agent": "Committed as `49700f6`.", "gold_move": null}

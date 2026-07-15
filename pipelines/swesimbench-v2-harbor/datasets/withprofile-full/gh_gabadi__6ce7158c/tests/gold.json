@@ -1,0 +1,1 @@
+{"point_id": "2cd14d14-ebf8-4f85-bb3e-3d700ac03c94#2", "developer": "gh:gabadi", "condition": "withprofile", "real": "We need a full CI and tag based releases, fully understand the project and make a proposal", "prev_agent": "Done. `lcov.info` is gitignored, committed, and pushed to `main`.", "gold_move": null}

@@ -1,0 +1,40 @@
+- wont segoe get used for KR since it technically supoport its
+- I want to set a primary font for EN that has zero KR support, so that Malgun Gothic will be properly fall backed on
+- qdialog still looks like it uses something generic instead of malgun gothic
+- this is clearly not malgun gothic
+- what's the pythonic way to organize global vars, global funcs, and classes
+- ui is starting to look pretty long and cluttered, is there anything we can do about it organizationally
+- whats a standard size for py files in large projs
+- do it, cleanly split up each window/dialog class into its own file, keep the global funcs and main window in ui.py. just dump every new file in src_new, don't use subdirs
+- yes
+- what else can you do to clean up my code a bit without affecting functionality
+- how do I get mentally adjusted to all my classes being in their own file
+- so the modules containing child window classes should never have to import the mainwindow module
+- I think it makes sense to merge install.py into InstallationThread.poy
+- I think it makes sense to merge install.py into installationthread.py, do it for me
+- I want to rename ui.py to MainWindow.py
+- add a button in the button list between the existing first and second buttons and name it "Select StarCraft II Replays Folder"
+- honestly the entire UI setup in mainwindow feels like its getting out of hand
+- the refactoring broke the height of my textbrowsers
+- i wanna reduce the vertical padding between sections
+- is there a way to find the C:/Users folder corresponding to the currently logged in user on a window 11 pc
+- write me a function that does this in other_utils.py
+- bruh. I didn't ask for this
+- i want to recursively search through a folder and find the largest subfolder corresponding to a certain name
+- is there a way to do it faster? for example, ignoring folder size calculation until a folder with the matching name is found, and then relying on metadata rather than summing manually
+- well I know for a fact this is wrong because the result is wrong
+- hmmm. not ideal but it will suffice for the current context of comparing the number of replays across different accounts
+- I want the replay path display to initially use the return value of other_utils.py's find_largest_subfolder, but I want the second button to open a folder dialog that allows the user to change this
+- I want find_largest_subfolder to return "N/A" if the result does not contain any .SC2Replay files
+- program is lagging because every time I switch language, the program runs a search to find the default registry install and replay folders again, I only need them once
+- the text on the buttons look a little squished
+- I think the buttons just need to be bigger
+- I need find_largest_subfolder to only add candidates to the matching_folders list if one of the folders in the path has a name beginning with "1-S2-"
+- explain what `return any(part.startswith("1-S2-") for part in folder_path.split(os.sep))` does
+- verify_americas_replay_folder wont seem to allow me to select this
+- help me do it
+- why doesn't the default folder for replays go all the way down to `.../Replays/Multiplayer` when it seems to work fine in other utils.py
+- this appears when selecting a valid folder for StarCraft II game folder
+- do it
+- I want to write an async function in replay_renamer.py that monitors the americas region folder and automatically performs parsing using import sc2reader on the replay to rename it. add a function prototype for rename_replay() and parse_replay(), as well as helper functions for parse_map() and parse_players()
+- how do I import AliasManager methods from alias.py correctly

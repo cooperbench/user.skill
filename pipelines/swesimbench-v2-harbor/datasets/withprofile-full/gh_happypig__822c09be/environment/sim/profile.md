@@ -1,0 +1,40 @@
+- rebuild the maven project again
+- @workspace /explain
+- please refer the iconsLoader.jaba for a inspiration of solution to load icon correctly
+- is the selection code similar to import in java?
+- rebuild the maven project
+- still having problem in load icon
+- please change the maven project directory then rebuild again
+- still error at the same location
+- no more stuck in methods 1 but still no icon loaded after the whole 3 methods
+- convert below into command prompt: ls -la src/main/resources/images/
+- finally, the icon loaded, thanks
+- please remove the whole 4 methods then following the idea from the link below to get the icon then get thing done https://github.com/oxygenxml/wsaccess-javascript-sample-plugins/blob/master/dmmCustomizeTopicTitlesAndIcons/wsAccess.js especially the keyword "jsDirURL" --use a globally defined field called jsDirURL that points to the folder where the JavaScript file is located -- from the other JS based plugin link: https://www.oxygenxml.com/doc/versions/27.1/ug-editor/topics/workspace-access-plugin-js.html
+- rebuild the maven project with the manually modified js codes
+- rebuild the javen project
+- @workspace /explain
+- @workspace /explain
+- rebuild the maven project
+- please fix since the icon loaded successfully but there's no icon in the menu
+- rebuild the maven project
+- Please explain the following: The application detected an error that is not automatically handled. It is possible that this error is not critical and the application may continue to work normally but our recommendation is to report the error and restart the application. If the application has become unstable and cannot be closed normally, you can use the Force Quit […]
+- is it possible to turn grey scale png icon into different color in javascript?
+- rebuild the maven project
+- build again
+- build the maven project
+- @workspace /fix based on the following and error.log The application detected an error that is not automatically handled. It is possible that this error is not critical and the application may continue to work normally but our recommendation is to report the error and restart the application. If the application has become unstable and cannot be closed normally, you can […]
+- build the maven project
+- build the maven project
+- build the maven project
+- build the maven project
+- build the maven project
+- build the maven project
+- /fix The method getResourceBundle() is undefined for the type PluginWorkspace
+- /fix The method getParentGroupKey() of type DAMAWorkspaceAccessOptionPagePluginExtension must override or implement a supertype method
+- Do we still need this section of codes since there is declaration already in plugin.xml?
+- regex for the selection
+- why regex '<extension[^>]*type="OptionPage"' can not found the selection?
+- how to merge
+- @terminal /explain
+- how to refresh my PATH environment variable for the gh command to be recognized?
+- how to get env PATH?

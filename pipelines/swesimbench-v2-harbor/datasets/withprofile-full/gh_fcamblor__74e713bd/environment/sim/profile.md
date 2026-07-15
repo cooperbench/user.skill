@@ -1,0 +1,40 @@
+- peux-tu m'en dire davantage sur assistant-release et son fonctionnement ? je ne suis pas sûr de comprendre l'intérêt de ce step (et surtout le fait de le coupler à gh release)
+- je ne vais pas systématiquement vouloir release l'app après l'ajout d'un nouveau vendo ... je pourrais vouloir ajouter d'autres fixes / avoir une période de cooldown => je ne pense pas que ce soit dans le scope de l'assistant de s'occuper de la release. Pour moi, la seule chose dont on doit s'assurer c'est que le support du nouveau vendor […]
+- option A, parfait
+- reprends là où tu en étais
+- la page https://status.openai.com/api/v2/incidents/unresolved.json ne semble pas exister Inspire toi de ce qui est fait dans openusage au niveau de l'implémentation (cf ~/projects/third-party-oss/openusage/)
+- pas de filtre composant sur status.anthropic.com ? il faudrait pas filtrer sur "Claude Code" uniquement ? de même sur status.openai.com : il faudrait filtrer sur "Codex" pour moi
+- fix les points 2 et 3
+- 1/ texte par segment, garder le default de ⚠️ 2/ immédiatement après l'icone 3/ on peut supprimer menuBarOutageWarningEnabled complètement. Par contre, on migre: si c'était actif, alors on l'active sur tous les segments actuellement configuré (et on duplique le texte utilisé pour le warning au niveau de chaque segments) 4/ oui on affiche le warning quand même, c'est pas un […]
+- je comprends pas l'intéret d'avoir créé une section dédiée "outage warning" dans les préférences du segment Il y a des arguments pour lesquels ne pas avoir simplement ajouté la checkbox dans la liste des checkboxes existantes ?
+- j'aurais mis la checkbox juste après celle du vendor icon, pour conserver le même ordre que ce qui est affiché
+- oui, commit directement
+- ok avec ca, par contre pour éviter des problèmes de contraste pour les personnes qui auraient une menubar de la même couleur que l'une des pastilles, ca vaudrait le coup de mettre un petit border contrasté autours de cette pastille : permet de s'assurer que même si quelqu'un a une menubar grisse, on voit quand même le tour (dans ce […]
+- par contre, tu n'as pas du tout pris en compte le fait de rajouter un border contrasté autours de la pastille (à la fois dans la menubar et dans les préférences)
+- ca a diminué la taille de la pastille qui devient trop petite ... pourrais-tu augmenter un peu sa taille ?
+- tu peux pas t'en occuper toi-même ?
+- ajoute le logging diagnostique et voyons
+- oui
+- vas-y
+- penses-tu qu'il soit facilement possible de créer un test unitaire permettant de reproduire le problème et s'assurer qu'il ne revient pas un jour ?
+- est-ce que le smoke cpu va fonctionner à l'intérieur de github action (headless je pense ?) ?
+- ok pour A + smoke compteur
+- ok pour moi
+- c'est bon c'est vert
+- oui vas-y
+- il faudrait mentionner les testeurs du nouveau support Github sur la 0.5.0 Et faudrait éviter d'oublier à l'avenir
+- et au niveau de l'ordre d'affichage, il faudrait systématiser le fait d'afficher les outages en premier dans la liste (là, il arrive après les cards de claude code
+- pour le filtrage, il faut filtrer sur tous les composants possibles de Codex, mais : - de manière dynamique (on hardcode pas les ids, parce qu'ils pourraient changer à tout moment et on ne le détecterait pas) - par contre cette liste d'ids peut être rafraichie assez rarement (une fois par jour, c'est pas grave si on a un drift […]
+- 1/ oui regarde (b) plus précisément (doc d'incident.io) et sinon on fallback sur a 2/ au niveau du stockage, prend en compte la typologie de source de données (ici, incident.io, mais d'autres vendors pourraient utiliser d'autres plateformes) mais sinon, ok sur le principe de stocker ca dans les fichiers de cache 5/ précision : on parle bien des composants enfant […]
+- oui, crée l'entrée de roadmap
+- - pour vérifier que le parsing RSC fonctionne, j'aimerais que la seed list soit vide dans un premier temps, afin de valider que le parsing fonctionne bien ... puis lorsque c'est le cas, on peut rajouter le seed (dans un commit séparé) - meme si la clef n'est pas le label, il faut quand même stocker en cache le label […]
+- go
+- Quand j'essaie de refresh les ids, j'ai une erreur : /Users/fcamblor/conductor/workspaces/mac-ai-trackers/sarajevo/.context/attachments/Cursor_and_Status.png
+- prends en compte les changements
+- tu pourrais rajouter un lien vers le repo github de jordan : https://github.com/jordanbaird/Ice
+- l'app affiche des ??? : /Users/fcamblor/conductor/workspaces/mac-ai-trackers/damascus/.context/attachments/image.png
+- voila ses logs: /Users/fcamblor/conductor/workspaces/mac-ai-trackers/damascus/.context/attachments/claude-usages-connector.log
+- oui, pars sur ca, et n'oublie pas de mettre à jour les docs sur le vendor anthropic concernant ces subtilités
+- j'aimerais que tu m'expliques davantage ce que tu as fait quand tu dis: > ClaudeCodeConnector.swift — catch dédié ClaudeAuthError.tokenExpired qui retourne token_expired + vide lastKnownMetrics sans appeler l’API. HTTP 401 mappé à token_expired (au lieu de http_401) + vide aussi lastKnownMetrics. Conséquence : sur le prochain 429, plus rien à “préserver” → l’erreur reste visible. On est d'accords qu'avec un […]
+- oui
+- comment puis-je faire pour partager le build à robin ?

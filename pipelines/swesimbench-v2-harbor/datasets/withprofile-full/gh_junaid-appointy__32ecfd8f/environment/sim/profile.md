@@ -1,0 +1,40 @@
+- one fix, the manage visitor button should disappaer when the extension is open. sometimes the mangame visitor button does not show up when I am creating a new event. also the email template selector will be one for an event, not in each guest card. also since this is our extension we can show email preview and give button below […]
+- one fix, the manage visitor button should disappaer when the extension is open. sometimes the mangame visitor button does not show up when I am creating a new event. also the email template selector will be one for an event, not in each guest card. also since this is our extension we can show email preview and give button below […]
+- continue
+- ❯ also when I click on the manage visitor button, while the calendar event modal is open, the calendar modal closes, that should not happen. can we do something about that?
+- I was thinking of some flows to make the visitor process seamless, what if we scrape the unsaved event compeletely, I think the last time we checked that the temporary id that google gives to unsaved events, become their permananent if saved. so we scrape everything, give user option to edit and configure everything, but instead of send passes, we […]
+- I was thinking of some flows to make the visitor process seamless, what if we scrape the unsaved event compeletely, I think the last time we checked that the temporary id that google gives to unsaved events, become their permananent if saved. so we scrape everything, give user option to edit and configure everything, but instead of send passes, we […]
+- first add all this to a document if we are maintaining for the extension related ideas.
+- do injection with a graceful fallback to the floating button when the injection point isn't found, we will add the back button also and do the Idea 4 — the best idea, and fully buildable This is the strongest one and we already have most of the plumbing (calendar-sync.ts detects saved magic-address events; badge + notifications exist). What you described […]
+- suppose the extension is open, and I open a already saved event, can it not load the visitor details of that event if we have it in our system? or just show usual invite config screen?
+- okay, I accept your recommendation. My recommendation Make the panel auto-follow the open event, with two guards so it's not disruptive: 1. Don't switch mid-action — if you're actively sending or have a preview open, hold the current event until that's done. 2. Edits are safe — guest name/phone/template persist on blur (we already PATCH), so following to another event […]
+- tell me how the nudge flow will work?
+- that flow, that we save and event and get a nudge with button that will open both our extension panel and that event modal?
+- yes, we do not want OS notification, why was the OS notification built by the way? tell me first
+- yes , build that in-page nudge banner, also tell me why was that OS notification flow was created, where it is used.
+- well, first of all the notification is so slow, the user may exit the calendar, what if they exit quickly before the notification arrived and they come back, will the notification show up, also clicking on maange does not open the side panel quickly, it takes a lot of time, and does not open the exact event, it just open […]
+- closing the notification of the nudge, does not closes
+- closing the notification of the nudge, does not closes, is there any memory leak or background process issue?
+- lets do one thing, instead of trying to open the calendar event modal on manage button click, lets open the edit screen of that event.
+- no the edit screeen is not opening, same old behaviour, the extension tries to open modal , refreshes page, nothing happens.
+- continue
+- this is the edit event link I see: https://calendar.google.com/calendar/u/0/r/eventedit/REDACTED
+- the notification for manage passes we are sending, is this the flow, that when we save an event, the backend gets its details via calendar api and then prompts the extension with calendar event info to trigger notifcation?
+- so, if we move things to engine, it will be a lot faster, so user won't have to wait like 10-15 secs for the manage visitor nudge to come?
+- yes implement the client side instant nudge
+- okay the nudge is instant, I click on the manage button, the side panel and the edit event page open, but when I close the side panel, the same nudge comes back at the screen again
+- Can we add a reverse linking, like after passes are sent, we send the user an email with a link, and on click of that link, they will be sent back to chrome where the extension side panel will open and their calendar edit of that event will also open and they can edit, or should we redirect to dashboard? […]
+- download] 100% of 1.93MiB in 00:00:00 at 3.13MiB/s [Metadata] Adding metadata to "./do_i_clench_my_fists [dzAQkrOF9Xg].mp4" ERROR: ffmpeg not found. Please install or provide the path using --ffmpeg-location [ThumbnailsConvertor] Converting thumbnail "./do_i_clench_my_fists [dzAQkrOF9Xg].webp" to png ERROR: ffmpeg not found. Please install or provide the path using --ffmpeg-location Continue? [Y/n] y Setting up ffmpeg (8.1.2) ... CANNOT LINK EXECUTABLE "/data/data/com.termux/files/usr/bin/ffmpeg": cannot locate symbol […]
+- [ThumbnailsConvertor] Converting thumbnail "./do_i_clench_my_fists [dzAQkrOF9Xg].webp" to png ERROR: module mutagen was not found. Please install using `python3 -m pip install mutagen` ~ $ python3 -m pip install mutagen also the file saved by the tool is not being by found by music player app
+- so can we not make some changes in our code, so that issues like these do not appear for users?
+- there was an event with our magic link, but the extension showed this message on homescreen : No upcoming visitor events found. They appear here once an event includes the visitor address.
+- ❯ there is an issue, first I opened the side panel, it showed me : o upcoming visitor events found. They appear here once an event includes the visitor address.. then I opened the event on calendar which had 4 people in it, one was me, one was the magic address, two were guest. It loaded in the side panel, […]
+- what is secondary calendar here?
+- what is secondary calendar here?
+- what is secondary calendar here?
+- continue
+- I am on primary calendar, the bug is on that only
+- where I would find it ? 4. Copy the [auxilio] sync done line and any [auxilio] sync MISS / sync failed / refresh failed lines.
+- { "mode": "incremental", "magicAddress": "findajx@gmail.com", "itemsReturned": 0, "markedTotal": 0, "newMarked": 0 }
+- add this issue in a doc
+- add this issue in a relevant doc
