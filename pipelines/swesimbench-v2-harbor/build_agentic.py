@@ -71,10 +71,9 @@ problem, do not explain, do not add role labels or quotes — just the literal m
 would send.
 
 Write ONLY that literal message to `/sim/answer.txt` (overwrite it). No commentary anywhere else.
-'''
-PROFILE_INSTRUCTION = '''
-This is the with-profile condition. A deterministic profile of this developer's prior training
-messages is available at `/sim/profile.md`; use it as additional style and preference evidence.
+
+Developer style profiles are NOT part of the task. Inject them at job time as Harbor skills
+(`--skill` / `agents[].skills`) in Agent Skills format.
 '''
 
 DOCKERFILE = '''FROM python:3.12-slim
@@ -193,6 +192,12 @@ def point_task_name(dev, point_id):
     return f"{slug(dev)}__{h}"
 
 def emit_point(dataset_dir, dev, cond, p, profile):
+    del profile  # profiles are harness-side Harbor skills, not task payload
+    if cond != "noprofile":
+        raise ValueError(
+            f"unsupported condition {cond!r}: bake noprofile tasks only; "
+            "inject developer profiles via Harbor --skill / agents[].skills"
+        )
     tname = point_task_name(dev, p["point_id"])
     d = os.path.join(dataset_dir, tname)
     shutil.rmtree(d, ignore_errors=True)
@@ -201,17 +206,7 @@ def emit_point(dataset_dir, dev, cond, p, profile):
     # environment: history file
     with open(os.path.join(d, "environment", "sim", "history.md"), "w") as f:
         f.write(p["context"])
-    if cond == "withprofile":
-        with open(os.path.join(d, "environment", "sim", "profile.md"), "w") as f:
-            f.write(profile)
-    dockerfile = DOCKERFILE
-    if cond == "withprofile":
-        dockerfile = dockerfile.replace(
-            "COPY --chown=agent:agent sim/history.md /sim/history.md",
-            "COPY --chown=agent:agent sim/history.md /sim/history.md\n"
-            "COPY --chown=agent:agent sim/profile.md /sim/profile.md",
-        )
-    open(os.path.join(d, "environment", "Dockerfile"), "w").write(dockerfile)
+    open(os.path.join(d, "environment", "Dockerfile"), "w").write(DOCKERFILE)
     # task.toml + instruction
     open(os.path.join(d, "task.toml"), "w").write(
         TASK_TOML.format(
@@ -219,11 +214,9 @@ def emit_point(dataset_dir, dev, cond, p, profile):
             dev=dev,
             point_id=p["point_id"],
             cond=cond,
-            cond_desc="with developer profile" if cond == "withprofile" else "no profile",
+            cond_desc="no baked-in profile; optional profile via Harbor skills",
         ))
-    open(os.path.join(d, "instruction.md"), "w").write(
-        INSTRUCTION + (PROFILE_INSTRUCTION if cond == "withprofile" else "")
-    )
+    open(os.path.join(d, "instruction.md"), "w").write(INSTRUCTION)
     # tests
     open(os.path.join(d, "tests", "test.sh"), "w").write(TEST_SH)
     open(os.path.join(d, "tests", "verify.py"), "w").write(VERIFY_PY)
@@ -240,7 +233,12 @@ def main():
     ap.add_argument("--devs", default="", help="comma-separated dev ids (else use --all)")
     ap.add_argument("--per-dev", type=int, default=0, help="cap points per dev (0=all)")
     ap.add_argument("--all", action="store_true")
-    ap.add_argument("--cond", default="noprofile", choices=["noprofile", "withprofile"])
+    ap.add_argument(
+        "--cond",
+        default="noprofile",
+        choices=["noprofile"],
+        help="Task condition. Profiles are Harbor skills on the agent, not task twins.",
+    )
     a = ap.parse_args()
 
     cohort_meta = json.load(open(os.path.join(HERE, "cohort.meta.json")))
