@@ -1,3 +1,7 @@
-[DEVELOPER]: git ignore lcov.info , commit/push
+> DEVELOPER
 
-[AGENT]: Done. `lcov.info` is gitignored, committed, and pushed to `main`.
+git ignore lcov.info , commit/push
+
+> AGENT
+
+Done. `lcov.info` is gitignored, committed, and pushed to `main`.

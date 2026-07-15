@@ -1,7 +1,15 @@
-[DEVELOPER]: pdfpc入れて
+> DEVELOPER
 
-[AGENT]: pdfpc はPDFプレゼンテーション用のツールですね。どのホストに追加するか確認するため、現在のパッケージ設定を見ます。
+pdfpc入れて
 
-[AGENT]: pdfpc はGUIアプリなのでLinux固有パッケージに追加します。
+> AGENT
 
-[AGENT]: `nix/modules/linux/home-packages.nix` に `pdfpc` を追加しました。Linux側で `rebuild` すれば使えるようになります。
+pdfpc はPDFプレゼンテーション用のツールですね。どのホストに追加するか確認するため、現在のパッケージ設定を見ます。
+
+> AGENT
+
+pdfpc はGUIアプリなのでLinux固有パッケージに追加します。
+
+> AGENT
+
+`nix/modules/linux/home-packages.nix` に `pdfpc` を追加しました。Linux側で `rebuild` すれば使えるようになります。

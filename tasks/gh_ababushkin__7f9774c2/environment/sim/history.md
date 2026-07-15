@@ -1,11 +1,23 @@
-[DEVELOPER]: i'm reviewing the prs open in this repo specifically the stacks from pr 22 up to 28 lets review the handoff process and its verdicts as that's the focus explain to me the handoff API with an example of how to use it and give me human friendly version of the happy path and failure mode tests that have been written
+> DEVELOPER
 
-[AGENT]: I'll dig into the handoff process across PRs 22-28. Let me start by looking at the open PRs and finding the handoff code.
+i'm reviewing the prs open in this repo specifically the stacks from pr 22 up to 28 lets review the handoff process and its verdicts as that's the focus explain to me the handoff API with an example of how to use it and give me human friendly version of the happy path and failure mode tests that have been written
 
-[AGENT]: The stack is linear: `main → #22 → #23 → #24 → #25 → #26 → #27 → #28`. The focus (handoff + verdicts) lives in `drain_cycle/handoff.py` and `tests/test_handoff.py`. Let me read the cumulative tip (PR #28 / branch `ABA-393`).
+> AGENT
 
-[AGENT]: Now let me see how the orchestrator consumes these verdicts and lands them in the run log (PR #22–24), plus the KR2 schema check (PR #23).
+I'll dig into the handoff process across PRs 22-28. Let me start by looking at the open PRs and finding the handoff code.
 
-[AGENT]: I have the core picture. Let me confirm who actually writes the file and check the verdict shapes used downstream.
+> AGENT
 
-[AGENT]: I've got the full picture across the stack. Here's the review of the handoff process and its verdicts. ## What the handoff is `.drain-handoff.json` is the **exit record a stack-mode worker leaves behind** for the orchestrator to read after the worker finishes an issue. It's the one file the supervisor reads to answer three questions on every exit path (Done, halted, or errored): 1. Did the worker actually submit PRs? (`pr_urls`) 2. How did the work self-assess? (`outcome_verdict`, `prep_verdict`) — schema v2 3. If it didn't reach Done, what verdicts did it manage to record before stopping? The module is `drain_cycle/handoff.py`. Note a division of labour: the **`/shape:pr-finishing` skill writes the JSON** (it owns `gt`/`gh` and the file); the Python `write()` is the canonical serializer/test helper. The **orchestrator only reads** — it's the sole reader of `pr_urls`. ## The API Three functions and two dataclasses: ```python @dataclass(frozen=True) class PullRequest: title: str url: str @dataclass(frozen=True) class HandoffData: pr_urls: tuple[PullRequest, ...] outcome_verdict: dict | None = None # the outcome verifier's self-assessment prep_verdict: dict | None = None # the PR-prep routing decision write(worktree: Path, data: HandoffData) -> None read(worktree: Path) -> HandoffData | None # strict: gated on valid pr_urls read_partial(worktree: […]
+The stack is linear: `main → #22 → #23 → #24 → #25 → #26 → #27 → #28`. The focus (handoff + verdicts) lives in `drain_cycle/handoff.py` and `tests/test_handoff.py`. Let me read the cumulative tip (PR #28 / branch `ABA-393`).
+
+> AGENT
+
+Now let me see how the orchestrator consumes these verdicts and lands them in the run log (PR #22–24), plus the KR2 schema check (PR #23).
+
+> AGENT
+
+I have the core picture. Let me confirm who actually writes the file and check the verdict shapes used downstream.
+
+> AGENT
+
+I've got the full picture across the stack. Here's the review of the handoff process and its verdicts. ## What the handoff is `.drain-handoff.json` is the **exit record a stack-mode worker leaves behind** for the orchestrator to read after the worker finishes an issue. It's the one file the supervisor reads to answer three questions on every exit path (Done, halted, or errored): 1. Did the worker actually submit PRs? (`pr_urls`) 2. How did the work self-assess? (`outcome_verdict`, `prep_verdict`) — schema v2 3. If it didn't reach Done, what verdicts did it manage to record before stopping? The module is `drain_cycle/handoff.py`. Note a division of labour: the **`/shape:pr-finishing` skill writes the JSON** (it owns `gt`/`gh` and the file); the Python `write()` is the canonical serializer/test helper. The **orchestrator only reads** — it's the sole reader of `pr_urls`. ## The API Three functions and two dataclasses: ```python @dataclass(frozen=True) class PullRequest: title: str url: str @dataclass(frozen=True) class HandoffData: pr_urls: tuple[PullRequest, ...] outcome_verdict: dict | None = None # the outcome verifier's self-assessment prep_verdict: dict | None = None # the PR-prep routing decision write(worktree: Path, data: HandoffData) -> None read(worktree: Path) -> HandoffData | None # strict: gated on valid pr_urls read_partial(worktree: […]

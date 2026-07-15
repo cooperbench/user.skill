@@ -1,29 +1,59 @@
-[SYSTEM]: # AGENTS.md instructions for /Users/ericson/.codex/worktrees/61ee/ars-ui <INSTRUCTIONS> ## Approach - Read existing files before writing. Don't re-read unless changed. - Thorough in reasoning, concise in output. - Skip files over 100KB unless required. - No sycophantic openers or closing fluff. - No emojis or em-dashes. - Do not guess APIs, versions, flags, commit SHAs, or package names. Verify by reading code or docs before asserting. --- project-doc --- # ars-ui ## Project Overview Rust frontend component library using state machines, framework-agnostic core with Leptos/Dioxus adapters. ## Current Phase The repo is now in active implementation, not spec drafting only. Agents working on implementation should use the GitHub Project roadmap and issue backlog as the execution source of truth: - Use the GitHub Project `ars-ui implementation roadmap` to understand active epics, task breakdown, dependencies, status, and iteration planning. - Prefer picking a single issue-backed task that is unblocked, sized, and scoped for independent delivery. - Do not start work from an epic issue unless the user explicitly asks for planning or further decomposition. - Do not start a task that is blocked by unresolved GitHub issue dependencies. - Treat native GitHub issue dependencies as the blocker graph and the issue body acceptance […]
+> SYSTEM
 
-[DEVELOPER]: Recently we did several improvements on how we design and implement our adapter level components, the first one following those new improvements was the Checkbox one, for both adapters. Now I wanna do an audit of the other components that were already implemented. Starting with the tabs component
+# AGENTS.md instructions for /Users/ericson/.codex/worktrees/61ee/ars-ui <INSTRUCTIONS> ## Approach - Read existing files before writing. Don't re-read unless changed. - Thorough in reasoning, concise in output. - Skip files over 100KB unless required. - No sycophantic openers or closing fluff. - No emojis or em-dashes. - Do not guess APIs, versions, flags, commit SHAs, or package names. Verify by reading code or docs before asserting. --- project-doc --- # ars-ui ## Project Overview Rust frontend component library using state machines, framework-agnostic core with Leptos/Dioxus adapters. ## Current Phase The repo is now in active implementation, not spec drafting only. Agents working on implementation should use the GitHub Project roadmap and issue backlog as the execution source of truth: - Use the GitHub Project `ars-ui implementation roadmap` to understand active epics, task breakdown, dependencies, status, and iteration planning. - Prefer picking a single issue-backed task that is unblocked, sized, and scoped for independent delivery. - Do not start work from an epic issue unless the user explicitly asks for planning or further decomposition. - Do not start a task that is blocked by unresolved GitHub issue dependencies. - Treat native GitHub issue dependencies as the blocker graph and the issue body acceptance […]
 
-[AGENT]: I’ll ground this in the repo first: locate the existing Tabs adapter implementation, the newer Checkbox adapter shape, and the adapter delivery workflow so the audit plan is based on current contracts rather than assumptions.
+> DEVELOPER
 
-[AGENT]: Using `using-superpowers`, `writing-plans`, `leptos`, and `dioxus` here: this is a plan for auditing Leptos/Dioxus adapter components, so I need the repo workflow plus the current framework rules before proposing scope.
+Recently we did several improvements on how we design and implement our adapter level components, the first one following those new improvements was the Checkbox one, for both adapters. Now I wanna do an audit of the other components that were already implemented. Starting with the tabs component
 
-[AGENT]: The repo already has Tabs adapter code, tests, widgets, and E2E harnesses, so this audit is not a blank implementation plan. I’m reading the delivery checklist and comparing Tabs against the newer Checkbox conventions to decide what should be audited and likely repaired.
+> AGENT
 
-[AGENT]: Tabs maps cleanly to `spec/components/navigation/tabs.md` plus both adapter specs. One wrinkle: `cargo xtask spec info tabs` updated/downloaded dependencies before printing metadata, but it only touched build/cache artifacts, not tracked source.
+I’ll ground this in the repo first: locate the existing Tabs adapter implementation, the newer Checkbox adapter shape, and the adapter delivery workflow so the audit plan is based on current contracts rather than assumptions.
 
-[AGENT]: The delivery workflow makes this broader than “compare Tabs files to specs.” The audit has to cover counterpart evidence, adapter semantic boundaries, public part styling, widgets as real consumers, E2E parity, i18n/a11y proof, and the post-implementation audit loop.
+> AGENT
 
-[AGENT]: I’ve got enough to identify the audit shape, but I still need to inspect the actual Tabs implementation and current artifacts before locking a decision-complete plan. Next I’m checking whether Tabs already has a sketch, styled templates, widgets across all six crates, and parity/E2E coverage.
+Using `using-superpowers`, `writing-plans`, `leptos`, and `dioxus` here: this is a plan for auditing Leptos/Dioxus adapter components, so I need the repo workflow plus the current framework rules before proposing scope.
 
-[AGENT]: I’m also checking the Tabs spec and current code size before reading it. If the component files are small enough, I’ll inspect the full public surface; otherwise I’ll read targeted sections and keep the plan focused on audit steps rather than speculative fixes.
+> AGENT
 
-[AGENT]: The docs confirm the audit should produce or update a single Tabs counterpart sketch, not a separate prose report. I’m now reading the checklists and the component files to turn that into exact work items.
+The repo already has Tabs adapter code, tests, widgets, and E2E harnesses, so this audit is not a blank implementation plan. I’m reading the delivery checklist and comparing Tabs against the newer Checkbox conventions to decide what should be audited and likely repaired.
 
-[AGENT]: The main Tabs implementation and specs are under 100KB, so they’re readable for the actual audit. The existing wasm tests are over 100KB each, so I’m not going to read them wholesale in planning; I’ll use targeted test-name and coverage-surface inspection instead.
+> AGENT
 
-[AGENT]: There’s no existing Tabs counterpart sketch under `docs/implementation/sketches/`, and current widgets are present in all six crates. The likely plan will treat the missing sketch and evidence matrix as the audit’s first durable artifact, then use it to drive any fixes.
+Tabs maps cleanly to `spec/components/navigation/tabs.md` plus both adapter specs. One wrinkle: `cargo xtask spec info tabs` updated/downloaded dependencies before printing metadata, but it only touched build/cache artifacts, not tracked source.
 
-[AGENT]: Initial inspection suggests Tabs is an older, monolithic adapter component: it has substantial Leptos/Dioxus code and tests, but no styled-source templates and no checked-in counterpart sketch. That means the audit plan should start by classifying whether monolithic Tabs remains intentional or should be updated to the newer compound/styled-source conventions.
+> AGENT
 
-[AGENT]: I’ll lock the plan around a remediation PR: audit evidence first, then land every concrete finding in the same diff, with Tabs-specific validation and no commit/push until you approve the finished changes.
+The delivery workflow makes this broader than “compare Tabs files to specs.” The audit has to cover counterpart evidence, adapter semantic boundaries, public part styling, widgets as real consumers, E2E parity, i18n/a11y proof, and the post-implementation audit loop.
 
-[AGENT]: <proposed_plan> # Tabs Adapter Audit And Remediation Plan **Summary** - Audit Tabs against the current adapter workflow, using Checkbox as the recent baseline for adapter completeness. - Target a remediation PR, not a report-only pass: every concrete finding from spec drift, parity, widgets, E2E, and coverage lands in the same diff. - Current repo facts: `cargo xtask spec info tabs` maps Tabs to the agnostic spec plus Leptos/Dioxus adapter specs; Tabs already has adapter code, SSR/wasm tests, widgets in all six crates, and E2E harness coverage, but no checked-in counterpart sketch and no styled-source template modules. **Key Changes** - Create `docs/implementation/sketches/tabs-counterpart-audit-sketch.md` from live counterpart review, starting with React Aria / React Spectrum Tabs and recording Ark/Radix fallback status only for missing axes. - Reconcile the Tabs spec and adapters with the current adapter delivery contract: - Keep the monolithic `Tabs` API only for outcomes the sketch proves without widget workarounds. - If styling/customization or anatomy parity requires public primitive parts, add the minimum Leptos/Dioxus part API and update specs/tests/widgets accordingly. - If ready-made visual Tabs are needed for widget parity, add category-first styled templates under `ars-leptos-components` and `ars-dioxus-components`. - Audit and fix adapter boundaries: - Move duplicated renderer-independent helpers from […]
+> AGENT
+
+I’ve got enough to identify the audit shape, but I still need to inspect the actual Tabs implementation and current artifacts before locking a decision-complete plan. Next I’m checking whether Tabs already has a sketch, styled templates, widgets across all six crates, and parity/E2E coverage.
+
+> AGENT
+
+I’m also checking the Tabs spec and current code size before reading it. If the component files are small enough, I’ll inspect the full public surface; otherwise I’ll read targeted sections and keep the plan focused on audit steps rather than speculative fixes.
+
+> AGENT
+
+The docs confirm the audit should produce or update a single Tabs counterpart sketch, not a separate prose report. I’m now reading the checklists and the component files to turn that into exact work items.
+
+> AGENT
+
+The main Tabs implementation and specs are under 100KB, so they’re readable for the actual audit. The existing wasm tests are over 100KB each, so I’m not going to read them wholesale in planning; I’ll use targeted test-name and coverage-surface inspection instead.
+
+> AGENT
+
+There’s no existing Tabs counterpart sketch under `docs/implementation/sketches/`, and current widgets are present in all six crates. The likely plan will treat the missing sketch and evidence matrix as the audit’s first durable artifact, then use it to drive any fixes.
+
+> AGENT
+
+Initial inspection suggests Tabs is an older, monolithic adapter component: it has substantial Leptos/Dioxus code and tests, but no styled-source templates and no checked-in counterpart sketch. That means the audit plan should start by classifying whether monolithic Tabs remains intentional or should be updated to the newer compound/styled-source conventions.
+
+> AGENT
+
+I’ll lock the plan around a remediation PR: audit evidence first, then land every concrete finding in the same diff, with Tabs-specific validation and no commit/push until you approve the finished changes.
+
+> AGENT
+
+<proposed_plan> # Tabs Adapter Audit And Remediation Plan **Summary** - Audit Tabs against the current adapter workflow, using Checkbox as the recent baseline for adapter completeness. - Target a remediation PR, not a report-only pass: every concrete finding from spec drift, parity, widgets, E2E, and coverage lands in the same diff. - Current repo facts: `cargo xtask spec info tabs` maps Tabs to the agnostic spec plus Leptos/Dioxus adapter specs; Tabs already has adapter code, SSR/wasm tests, widgets in all six crates, and E2E harness coverage, but no checked-in counterpart sketch and no styled-source template modules. **Key Changes** - Create `docs/implementation/sketches/tabs-counterpart-audit-sketch.md` from live counterpart review, starting with React Aria / React Spectrum Tabs and recording Ark/Radix fallback status only for missing axes. - Reconcile the Tabs spec and adapters with the current adapter delivery contract: - Keep the monolithic `Tabs` API only for outcomes the sketch proves without widget workarounds. - If styling/customization or anatomy parity requires public primitive parts, add the minimum Leptos/Dioxus part API and update specs/tests/widgets accordingly. - If ready-made visual Tabs are needed for widget parity, add category-first styled templates under `ars-leptos-components` and `ars-dioxus-components`. - Audit and fix adapter boundaries: - Move duplicated renderer-independent helpers from […]

@@ -1,13 +1,96 @@
-[DEVELOPER]: .sessions/2026-05-21-missing-pages/H001-conversation-prompts.md 对话B
+> DEVELOPER
 
-[DEVELOPER]: .sessions/2026-05-21-missing-pages/H001-conversation-prompts.md 对话B
+.sessions/2026-05-21-missing-pages/H001-conversation-prompts.md 对话B
 
-[AGENT]: 好的，这是**对话 B**。让我先读取必读材料。
+> DEVELOPER
 
-[AGENT]: 好的，启动**对话 B：历史分析 — display 扩展设计实施**。 **直接合同：** S001 §历史分析关键发现 + §历史分析补充 **边界护栏：** R7（多图表偏好归 display，数据归 storage）+ R4 ## Phase 1: Wave 1 — 事实收集 开始 Batch 1（3 agent 并行）：B1 display types/defaults、B2 display service/selectors/composables、B3 display design 文档。
+.sessions/2026-05-21-missing-pages/H001-conversation-prompts.md 对话B
 
-[AGENT]: Batch 1 完成。关键发现： - 当前 display 是**单图表多系列**架构，需要扩展为多图表实例 - 设计文档已有完整的多图表规划（1-4 图表、独立配置） - storage→display 转换函数 `storageRecordsToDisplayMaterials()` 已在设计中 启动 Batch 2（3 agent 并行）：B4 旧系统多图表模型、B5 旧系统数据项选择、B6 旧系统时间选择+CSV导出。
+> AGENT
 
-[AGENT]: Batch 2 完成。关键发现： - 旧系统多图表：`MultiChartSettings { chartCount: 1-4, charts: ChartConfig[] }`，每个图表独立配置（title/selectedDataItems/yAxisConfig） - 数据项选择：双层选择（左侧全局选择 + 图表独立选择），分组折叠 + 搜索 - CSV 导出：时间范围选择（预设+自定义），UTF-8 逗号分隔，字段选择 启动 Batch 3（3 agent 并行）：B7 storage 数据层、B8 集测行为基线、B9 UI 规范+现有组件。
+好的，这是**对话 B**。让我先读取必读材料。
 
-[AGENT]: ## Wave 1 全部完成（9/9 agent） ### 事实汇总 | 维度 | 关键发现 | |------|---------| | Display 类型 | **单图表架构**：`chartSeries: ChartSeriesProjection[]`、`preferences.chart` 是单一对象，无多图表支持 | | Display 设计文档 | 已有完整多图表设计规划：1-4 图表、独立配置、QBtnToggle、ChartWidget 纯 props | | 旧系统多图表 | `MultiChartSettings { chartCount: 1-4, charts: ChartConfig[] }`，每个图表独立 selectedDataItems + yAxisConfig | | 旧系统数据项 | 双层选择（全局选择 + 图表独立选择），分组折叠 + 搜索，11 种数据类型 | | Storage 数据层 | API 覆盖 ~70% 历史分析需求，**关键缺失**：channel+key → frameId+fieldId 映射层 | | 集测基线 | 8 项行为：4 已覆盖、2 部分覆盖、2 未覆盖（循环缓冲区、CSV UI） | | UI 组件 | WaveformChart/ScatterChart 可直接复用，语义 class 体系完备 | --- ## Wave 2: 设计 ### 核心设计决策 **DC1: 多图表类型扩展** ``` 当前：preferences.chart: ChartDisplayPreference (单一) projection.chartSeries: ChartSeriesProjection[] (单一图表的多系列) 目标：preferences.charts: ChartInstancePreference[] (1-4 个) projection.charts: ChartInstanceProjection[] (1-4 个投影) ``` 这是对 display feature 的**类型级扩展**。DisplayPage 当前是 skeleton，改 type 不会破坏已有功能。 **DC2: 元数据注册表归属** - 数据项元数据来自 frame 定义（receive/frame feature 的 public API） - display feature 消费 frame 定义的 `frameId + fieldId + fieldName` - 不在 display 或 storage 中新建"元数据注册表"——复用 frame 定义的公共读取模型 - 历史页选择器通过 frame feature 的 selector 获取可用数据项列表 **DC3: Storage→Display 转换层** - 新建 `storage-display-bridge.ts`（纯函数） - `storageRecordsToDisplayMaterials(records, frameDefinitions) → DisplaySourceMaterial` - 映射：channel → frameId（通过 frame 定义查找）、field.key → fieldId **DC4: Y轴配置归属 display preferences** - 每个 ChartInstancePreference 包含可选 yAxisConfig - 统计功能（mean/RMSE）在 UI 组件 computed 中计算，不占 display state **DC5: 颜色策略** - 固定 6 色 CSS token，确定性分配（按 fieldId hash） […]
+> AGENT
+
+好的，启动**对话 B：历史分析 — display 扩展设计实施**。
+
+**直接合同：** S001 §历史分析关键发现 + §历史分析补充
+**边界护栏：** R7（多图表偏好归 display，数据归 storage）+ R4
+
+## Phase 1: Wave 1 — 事实收集
+
+开始 Batch 1（3 agent 并行）：B1 display types/defaults、B2 display service/selectors/composables、B3 display design 文档。
+
+> AGENT
+
+Batch 1 完成。关键发现：
+- 当前 display 是**单图表多系列**架构，需要扩展为多图表实例
+- 设计文档已有完整的多图表规划（1-4 图表、独立配置）
+- storage→display 转换函数 `storageRecordsToDisplayMaterials()` 已在设计中
+
+启动 Batch 2（3 agent 并行）：B4 旧系统多图表模型、B5 旧系统数据项选择、B6 旧系统时间选择+CSV导出。
+
+> AGENT
+
+Batch 2 完成。关键发现：
+- 旧系统多图表：`MultiChartSettings { chartCount: 1-4, charts: ChartConfig[] }`，每个图表独立配置（title/selectedDataItems/yAxisConfig）
+- 数据项选择：双层选择（左侧全局选择 + 图表独立选择），分组折叠 + 搜索
+- CSV 导出：时间范围选择（预设+自定义），UTF-8 逗号分隔，字段选择
+
+启动 Batch 3（3 agent 并行）：B7 storage 数据层、B8 集测行为基线、B9 UI 规范+现有组件。
+
+> AGENT
+
+## Wave 1 全部完成（9/9 agent）
+
+### 事实汇总
+
+| 维度 | 关键发现 |
+|------|---------|
+| Display 类型 | **单图表架构**：`chartSeries: ChartSeriesProjection[]`、`preferences.chart` 是单一对象，无多图表支持 |
+| Display 设计文档 | 已有完整多图表设计规划：1-4 图表、独立配置、QBtnToggle、ChartWidget 纯 props |
+| 旧系统多图表 | `MultiChartSettings { chartCount: 1-4, charts: ChartConfig[] }`，每个图表独立 selectedDataItems + yAxisConfig |
+| 旧系统数据项 | 双层选择（全局选择 + 图表独立选择），分组折叠 + 搜索，11 种数据类型 |
+| Storage 数据层 | API 覆盖 ~70% 历史分析需求，**关键缺失**：channel+key → frameId+fieldId 映射层 |
+| 集测基线 | 8 项行为：4 已覆盖、2 部分覆盖、2 未覆盖（循环缓冲区、CSV UI） |
+| UI 组件 | WaveformChart/ScatterChart 可直接复用，语义 class 体系完备 |
+
+---
+
+## Wave 2: 设计
+
+### 核心设计决策
+
+**DC1: 多图表类型扩展**
+
+```
+当前：preferences.chart: ChartDisplayPreference (单一)
+     projection.chartSeries: ChartSeriesProjection[] (单一图表的多系列)
+
+目标：preferences.charts: ChartInstancePreference[] (1-4 个)
+     projection.charts: ChartInstanceProjection[] (1-4 个投影)
+```
+
+这是对 display feature 的**类型级扩展**。DisplayPage 当前是 skeleton，改 type 不会破坏已有功能。
+
+**DC2: 元数据注册表归属**
+
+- 数据项元数据来自 frame 定义（receive/frame feature 的 public API）
+- display feature 消费 frame 定义的 `frameId + fieldId + fieldName`
+- 不在 display 或 storage 中新建"元数据注册表"——复用 frame 定义的公共读取模型
+- 历史页选择器通过 frame feature 的 selector 获取可用数据项列表
+
+**DC3: Storage→Display 转换层**
+
+- 新建 `storage-display-bridge.ts`（纯函数）
+- `storageRecordsToDisplayMaterials(records, frameDefinitions) → DisplaySourceMaterial`
+- 映射：channel → frameId（通过 frame 定义查找）、field.key → fieldId
+
+**DC4: Y轴配置归属 display preferences**
+
+- 每个 ChartInstancePreference 包含可选 yAxisConfig
+- 统计功能（mean/RMSE）在 UI 组件 computed 中计算，不占 display state
+
+**DC5: 颜色策略**
+
+- 固定 6 色 CSS token，确定性分配（按 fieldId hash） […]

@@ -1,41 +1,103 @@
-[DEVELOPER]: lets remove the model list, they are configured in the UI and stored in the db and configure the following Request/Response Data Not Available To view request and response details, enable prompt storage in your LiteLLM configuration by adding the following to your proxy_config.yaml file: general_settings: store_model_in_db: true store_prompts_in_spend_logs: true Note: This will only affect new requests after the configuration change. make a new branch
+> DEVELOPER
 
-[AGENT]: Let me start by reading the current configuration files.
+lets remove the model list, they are configured in the UI and stored in the db and configure the following
+Request/Response Data Not Available
+To view request and response details, enable prompt storage in your LiteLLM configuration by adding the following to your proxy_config.yaml file:
 
-[AGENT]: Now I have a clear picture. I also need to check if the config.json files have model_list references since the values files are auto-generated from them.
+general_settings:
+  store_model_in_db: true
+  store_prompts_in_spend_logs: true
+Note: This will only affect new requests after the configuration change.
 
-[AGENT]: Branch created. Let me re-read the files that may have changed after the pull.
+make a new branch
 
-[AGENT]: Good, I can see the current state after pull. The dev values-dev.yaml no longer has SSO, ILB, or CIDR ingress sections (those were removed in a recent commit). Now let me make all the changes.
+> AGENT
 
-[AGENT]: Now let me make all the edits in parallel.
+Let me start by reading the current configuration files.
 
-[AGENT]: Now let me also remove the `ai_project` and `region` variables from the script since they were only used for model_list generation. Let me check if they're used elsewhere first.
+> AGENT
 
-[AGENT]: Those variables are only used in the model_list block which we removed. Let me clean them up and then rebase on develop.
+Now I have a clear picture. I also need to check if the config.json files have model_list references since the values files are auto-generated from them.
 
-[AGENT]: Now let me rebase on develop and regenerate the values files.
+> AGENT
 
-[AGENT]: Need to stash first, rebase, then unstash.
+Branch created. Let me re-read the files that may have changed after the pull.
 
-[AGENT]: There's a merge conflict. Let me abort and start fresh from develop instead.
+> AGENT
 
-[AGENT]: Good, now I'm on a clean branch from develop. Let me re-read the files from develop to see their current state and apply the changes fresh.
+Good, I can see the current state after pull. The dev values-dev.yaml no longer has SSO, ILB, or CIDR ingress sections (those were removed in a recent commit). Now let me make all the changes.
 
-[AGENT]: Good, now I can see the develop version. Let me apply all changes again on the clean develop-based branch.
+> AGENT
 
-[AGENT]: Need to re-read the files that failed. The qa values.yaml and both configmap.yaml files need re-reading.
+Now let me make all the edits in parallel.
 
-[AGENT]: Now the config.json files and generate script. Let me re-read and edit them.
+> AGENT
 
-[AGENT]: Now remove the model_list from the heredoc in the generate script.
+Now let me also remove the `ai_project` and `region` variables from the script since they were only used for model_list generation. Let me check if they're used elsewhere first.
 
-[AGENT]: Now let me regenerate the values files and validate.
+> AGENT
 
-[AGENT]: Let me validate the generated files and JSON.
+Those variables are only used in the model_list block which we removed. Let me clean them up and then rebase on develop.
 
-[AGENT]: Everything validates. Let me verify the generated values files no longer have model_list.
+> AGENT
 
-[AGENT]: No more `model_list` references anywhere. Let me also verify `store_prompts_in_spend_logs` is in the right place.
+Now let me rebase on develop and regenerate the values files.
 
-[AGENT]: All done. Here's a summary of changes made on `feature/remove-model-list-enable-prompt-storage` (branched from `develop`): **Removed `model_list`** from: - [values.yaml](environments/dev/helm/litellm/values.yaml) (both dev and qa base charts) - [values-dev.yaml](environments/dev/helm/litellm/values-dev.yaml) and [values-qa.yaml](environments/qa/helm/litellm/values-qa.yaml) (auto-generated) - [configmap.yaml](environments/dev/helm/litellm/templates/configmap.yaml) templates (both envs) - [config.json](environments/dev/config.json) (both envs) - removed the `models` array - [generate-helm-values.sh](scripts/generate-helm-values.sh) - removed model_list YAML generation block and unused `region`/`ai_project` variables **Added `store_prompts_in_spend_logs: true`** to `general_settings` in both base [values.yaml](environments/dev/helm/litellm/values.yaml) files. `store_model_in_db: true` was already present. All JSON validated and `--check` mode passes for both environments. Would you like me to commit?
+> AGENT
+
+Need to stash first, rebase, then unstash.
+
+> AGENT
+
+There's a merge conflict. Let me abort and start fresh from develop instead.
+
+> AGENT
+
+Good, now I'm on a clean branch from develop. Let me re-read the files from develop to see their current state and apply the changes fresh.
+
+> AGENT
+
+Good, now I can see the develop version. Let me apply all changes again on the clean develop-based branch.
+
+> AGENT
+
+Need to re-read the files that failed. The qa values.yaml and both configmap.yaml files need re-reading.
+
+> AGENT
+
+Now the config.json files and generate script. Let me re-read and edit them.
+
+> AGENT
+
+Now remove the model_list from the heredoc in the generate script.
+
+> AGENT
+
+Now let me regenerate the values files and validate.
+
+> AGENT
+
+Let me validate the generated files and JSON.
+
+> AGENT
+
+Everything validates. Let me verify the generated values files no longer have model_list.
+
+> AGENT
+
+No more `model_list` references anywhere. Let me also verify `store_prompts_in_spend_logs` is in the right place.
+
+> AGENT
+
+All done. Here's a summary of changes made on `feature/remove-model-list-enable-prompt-storage` (branched from `develop`):
+
+**Removed `model_list`** from:
+- [values.yaml](environments/dev/helm/litellm/values.yaml) (both dev and qa base charts)
+- [values-dev.yaml](environments/dev/helm/litellm/values-dev.yaml) and [values-qa.yaml](environments/qa/helm/litellm/values-qa.yaml) (auto-generated)
+- [configmap.yaml](environments/dev/helm/litellm/templates/configmap.yaml) templates (both envs)
+- [config.json](environments/dev/config.json) (both envs) - removed the `models` array
+- [generate-helm-values.sh](scripts/generate-helm-values.sh) - removed model_list YAML generation block and unused `region`/`ai_project` variables
+
+**Added `store_prompts_in_spend_logs: true`** to `general_settings` in both base [values.yaml](environments/dev/helm/litellm/values.yaml) files. `store_model_in_db: true` was already present.
+
+All JSON validated and `--check` mode passes for both environments. Would you like me to commit?

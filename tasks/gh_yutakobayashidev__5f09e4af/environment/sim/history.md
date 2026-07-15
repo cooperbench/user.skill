@@ -1,25 +1,51 @@
-[DEVELOPER]: pdfpc入れて
+> DEVELOPER
 
-[AGENT]: pdfpc はPDFプレゼンテーション用のツールですね。どのホストに追加するか確認するため、現在のパッケージ設定を見ます。
+pdfpc入れて
 
-[AGENT]: pdfpc はGUIアプリなのでLinux固有パッケージに追加します。
+> AGENT
 
-[AGENT]: `nix/modules/linux/home-packages.nix` に `pdfpc` を追加しました。Linux側で `rebuild` すれば使えるようになります。
+pdfpc はPDFプレゼンテーション用のツールですね。どのホストに追加するか確認するため、現在のパッケージ設定を見ます。
 
-[DEVELOPER]: brewにもあるはずだけど、ないの?
+> AGENT
 
-[AGENT]: 確認します。
+pdfpc はGUIアプリなのでLinux固有パッケージに追加します。
 
-[AGENT]: Homebrew に `pdfpc` ありますね（formulaとして）。brews に追加します。
+> AGENT
 
-[DEVELOPER]: nixpkgsとしてmacにもない？
+`nix/modules/linux/home-packages.nix` に `pdfpc` を追加しました。Linux側で `rebuild` すれば使えるようになります。
 
-[AGENT]: `aarch64-darwin` で普通にあります。Homebrew のではなく nixpkgs で統一しましょう。 先ほどの homebrew.nix の変更を戻して、macOS の nixpkgs パッケージに追加します。
+> DEVELOPER
 
-[AGENT]: 両OS共通で使えるので、共通パッケージに追加して Linux 側の重複を外します。
+brewにもあるはずだけど、ないの?
 
-[AGENT]: nixpkgs に `aarch64-darwin` 対応の `pdfpc` があったので、共通パッケージ (`nix/modules/home/packages.nix`) に追加しました。Linux/macOS 両方で使えます。`rebuild` で反映されます。
+> AGENT
 
-[DEVELOPER]: vrcxもある？
+確認します。
 
-[AGENT]: ありますね。共通パッケージに移動しますか？それとも macOS では使わないですか？
+> AGENT
+
+Homebrew に `pdfpc` ありますね（formulaとして）。brews に追加します。
+
+> DEVELOPER
+
+nixpkgsとしてmacにもない？
+
+> AGENT
+
+`aarch64-darwin` で普通にあります。Homebrew のではなく nixpkgs で統一しましょう。 先ほどの homebrew.nix の変更を戻して、macOS の nixpkgs パッケージに追加します。
+
+> AGENT
+
+両OS共通で使えるので、共通パッケージに追加して Linux 側の重複を外します。
+
+> AGENT
+
+nixpkgs に `aarch64-darwin` 対応の `pdfpc` があったので、共通パッケージ (`nix/modules/home/packages.nix`) に追加しました。Linux/macOS 両方で使えます。`rebuild` で反映されます。
+
+> DEVELOPER
+
+vrcxもある？
+
+> AGENT
+
+ありますね。共通パッケージに移動しますか？それとも macOS では使わないですか？

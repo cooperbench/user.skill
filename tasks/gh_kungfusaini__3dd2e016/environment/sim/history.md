@@ -1,47 +1,187 @@
-[AGENT]: I have enough to write CLAUDE.md.
+> AGENT
 
-[AGENT]: Created `CLAUDE.md` at the repo root. The doc focuses on what's non-obvious from a directory listing: - **What this repo actually is** — a Holodeck task-design workspace for training an RL agent, not a software product. `task.md` and `examples.md` are external briefs, not editable. - **The clean/dirty/task-design/worked-example/raw-data shape** that both `smash/` and `spotify/` share, and what each folder is for. - **The two active tasks** (smash bracket prediction, spotify cover-song selection) in one sentence each, with pointers to the canonical methodology, verifier, and grader-guidance files. - **Working notes** that future Claude instances will trip on otherwise: absolute paths in `compute_all.py`, methodology consistency across four files, clean-then-dirty edit order, `saves/*.json` are platform exports (not config), and trap parity is load-bearing. Skipped the generic "build/lint/test" boilerplate since there's no actual app — only ad-hoc Python scripts whose run commands are inline in the doc.
+I have enough to write CLAUDE.md.
 
-[DEVELOPER]: so, the two taask have actuall been completed and submitted. I am actually gonna be making a new task. Do you understadnt reh task requirements?
+> AGENT
 
-[AGENT]: Yes — here's my understanding of what a Holodeck Atomic Loop task needs to be: **Core shape** - A **long-horizon data science task** (3+ expert-days without LLM help) for an agentic LLM to solve in an RL environment. - Deliverables: a **prompt**, a **context bundle** (files the agent discovers and reads), a **canonical answer** (worked example), and **grader guidance**. **What makes a good task (lessons from `smash`)** - **Prompt is terse and non-prescriptive** — the agent has to discover context files and assemble the methodology itself, not follow spelled-out steps. The first `spotify` reviewer feedback explicitly punished over-prescriptive prompts. - **Methodology lives in the context docs**, written in mixed registers (internal memo, vendor whitepaper, official announcement) so the agent has to extract a unified picture from genre-mixed sources. - **Embedded traps** create a gap between naive and careful agents — outdated file versions, decoy ranking sources, generic-looking-but-critical files (`aliases.json`), precomputed shortcuts that look right but are from a wrong patch, fields that look like signals but aren't (`fee_paid`). Each trap is documented in `traps.md` and load-bearing. - **Smooth scoring gradient** — multiple scoreable dimensions (ranked list + per-match analysis + confidence + methodology justification) rather than one deterministic answer, so […]
+Created `CLAUDE.md` at the repo root.
 
-[DEVELOPER]: Okay awesome that's a great understanding. One thing That we have to keep in mind, and something to aim for is that you really need to test data science skills and challenge the model on data science skills. So Smash example, smash task. obviously model E was very very shit, so don't worry about that, but model A performed pretty good. Apart from one data science failure, which was that it didn't DVD the polymarket data, and that was considered a real data science failure, and then when we gave a hint to the model, it was deleting the data and got the right answer. So we need to target those kind of failures, exactly data science failure. So before we get started on the task, I just want you to keep that in mind, maybe update the clawed MD as well. To just mention that the key failure needs to be in data science methodology and we need to design the task to test the data science skills vigorously. In the previous examples I leaned towards having deterministic outcomes, so it was easy to verify with the with the grader agent. But I'm okay not doing that. I would […]
+The doc focuses on what's non-obvious from a directory listing:
 
-[AGENT]: Updated. The new section locks in: - **DS-failure-first design** — every trap must surface a real methodology mistake (de-vig, normalisation, smoothing, calibration, leakage, etc.), not trivia or "wrong file." - **The Polymarket anchor example** — recorded as the canonical "this is the bar" reference, including the detail that the model deleted data when hinted (which tells us the wrong-but-tempting path also has to be plausibly walkable). - **Determinism is preferred but not sacred** — a terse, discovery-heavy prompt beats keeping the answer single-valued at the cost of spelling out methodology. - **Worked example must walk both the right path and the naive path**, so we know the trap actually changes the answer. Ready when you want to start scoping the new task — what domain / scenario are you thinking?
+- **What this repo actually is** — a Holodeck task-design workspace for training an RL agent, not a software product. `task.md` and `examples.md` are external briefs, not editable.
+- **The clean/dirty/task-design/worked-example/raw-data shape** that both `smash/` and `spotify/` share, and what each folder is for.
+- **The two active tasks** (smash bracket prediction, spotify cover-song selection) in one sentence each, with pointers to the canonical methodology, verifier, and grader-guidance files.
+- **Working notes** that future Claude instances will trip on otherwise: absolute paths in `compute_all.py`, methodology consistency across four files, clean-then-dirty edit order, `saves/*.json` are platform exports (not config), and trap parity is load-bearing.
 
-[DEVELOPER]: Can you do some detailed reasearch online and make a document called data-science-skills that can act as a databse for things for us to target. Specifically look at places where even frontier models fail
+Skipped the generic "build/lint/test" boilerplate since there's no actual app — only ad-hoc Python scripts whose run commands are inline in the doc.
 
-[AGENT]: Document written: `data-science-skills.md`, 825 lines, 13 categories × ~55 failure-mode entries plus a cross-cutting appendix. **Most actionable findings for task design:** 1. **PolyBench (Apr 2026) directly validates the Polymarket-de-vig anchor** — 5 of 7 frontier models lose money trading their own confident predictions. The smash failure mode is a generic frontier-model weakness, not a fluke. 2. **CauSciBench / CausalPitfalls (May 2025)** catalogues 6 pitfall categories × 15 challenges (over-adjustment for mediators, collider conditioning, missed RDD assumption checks). Each is a near-ready trap blueprint with SCM-generated ground truth. 3. **DABStep (Adyen, Jun 2025)** is the strongest evidence that frontier agents default to the lazy methodology on multi-step heterogeneous-table problems — best agent 16% overall, 14.5% hard. Maps onto unit/version/timezone trap territory. 4. **MLAgentBench documented an agent that tried to *increase* SMAPE** without realising lower is better — a clean metric-direction trap. 5. **Leng et al. (NeurIPS 2024): RLHF makes models most overconfident exactly when they're wrong.** Justifies traps that score "did you sanity-check this number?" over "did you get it first try?" **One caveat to log in the smash task notes:** sources disagree on whether Polymarket has vig — single binary markets are reportedly ~vig-free, but multi-outcome tournament futures empirically sum […]
+> DEVELOPER
 
-[DEVELOPER]: so are all the thigns you wrote actual data science failures ?? are you 100% sre. Don't jsut focus on de-vigging bevause it worked before. We cannot reuse failure patterns!
+so, the two taask have actuall been completed and submitted. I am actually gonna be making a new task. Do you understadnt reh task requirements?
 
-[AGENT]: Fair challenge. Let me actually audit the doc rather than defend it.
+> AGENT
 
-[AGENT]: Honest audit — no, not all of them hold up under your two tests ("actual DS failure" + "not already used in smash"). Let me walk through what I found, then fix the doc. **Entries that reuse smash patterns (must flag — can't reuse):** 1. **§1 Overround / de-vig** — this is literally the smash anchor. Should not be on a "target this" list. 2. **§11 Borda / RRF / score-mean fusion without normalising** — smash already uses Borda fusion of Elo + LumiRank. Pattern burned. 3. **§11 Shrinkage vs thresholding for sparse cells** — smash uses smoothing for the per-matchup character utility. Pattern burned. 4. **§13 Patch / version misalignment in joined tables** — smash has the v13.1 vs v13.1.51 tier-list trap. Pattern burned. **Entries that aren't really "data science skill" failures — they're meta-LLM behavioural failures:** 5. **§1 Verbalised-confidence miscalibration after RLHF** — about how the *model* expresses confidence, not a DS methodology the agent has to apply. 6. **§2 Random number / distribution generation** — about LLMs being bad at sampling tokens. The trap reduces to "use `np.random`," which is engineering, not DS. 7. **§5 LLM-as-imputer hallucinating** — about LLM hallucination, not DS methodology choice. 8. **§13 […]
+Yes — here's my understanding of what a Holodeck Atomic Loop task needs to be:
 
-[DEVELOPER]: okay okay tbh I dont mind if the failure pattern gets reused. as long as we are not targeting it. Like 2 3 and 4 can be reused. I wouldnt focus on devigging tho because it was a massive part of it
+**Core shape**
+- A **long-horizon data science task** (3+ expert-days without LLM help) for an agentic LLM to solve in an RL environment.
+- Deliverables: a **prompt**, a **context bundle** (files the agent discovers and reads), a **canonical answer** (worked example), and **grader guidance**.
 
-[AGENT]: Got it. Fixing now — de-vig flagged as off-limits, meta-LLM behavioural entries removed (they're not DS skill failures), the rest kept since pattern reuse is fine.
+**What makes a good task (lessons from `smash`)**
+- **Prompt is terse and non-prescriptive** — the agent has to discover context files and assemble the methodology itself, not follow spelled-out steps. The first `spotify` reviewer feedback explicitly punished over-prescriptive prompts.
+- **Methodology lives in the context docs**, written in mixed registers (internal memo, vendor whitepaper, official announcement) so the agent has to extract a unified picture from genre-mixed sources.
+- **Embedded traps** create a gap between naive and careful agents — outdated file versions, decoy ranking sources, generic-looking-but-critical files (`aliases.json`), precomputed shortcuts that look right but are from a wrong patch, fields that look like signals but aren't (`fee_paid`). Each trap is documented in `traps.md` and load-bearing.
+- **Smooth scoring gradient** — multiple scoreable dimensions (ranked list + per-match analysis + confidence + methodology justification) rather than one deterministic answer, so […]
 
-[AGENT]: Now mark the de-vig entry off-limits and remove the meta-LLM behavioural entries.
+> DEVELOPER
 
-[AGENT]: Remove §1 verbalised-confidence (meta-LLM):
+Okay awesome that's a great understanding. One thing That we have to keep in mind, and something to aim for is that you really need to test data science skills and challenge the model on data science skills. So Smash example, smash task. obviously model E was very very shit, so don't worry about that, but model A performed pretty good. Apart from one data science failure, which was that it didn't DVD the polymarket data, and that was considered a real data science failure, and then when we gave a hint to the model, it was deleting the data and got the right answer. So we need to target those kind of failures, exactly data science failure. So before we get started on the task, I just want you to keep that in mind, maybe update the clawed MD as well. To just mention that the key failure needs to be in data science methodology and we need to design the task to test the data science skills vigorously. In the previous examples I leaned towards having deterministic outcomes, so it was easy to verify with the with the grader agent. But I'm okay not doing that. I would […]
 
-[AGENT]: Remove §2 random-number-generation (LLM token-sampling failure, not a DS skill):
+> AGENT
 
-[DEVELOPER]: woah woah I don't mind general failures if the task is actyally a datascine task, Why dont you read the task doucments jsut to double check you know
+Updated. The new section locks in:
 
-[AGENT]: Fair point — let me actually read the task project docs properly before doing more pruning.
+- **DS-failure-first design** — every trap must surface a real methodology mistake (de-vig, normalisation, smoothing, calibration, leakage, etc.), not trivia or "wrong file."
+- **The Polymarket anchor example** — recorded as the canonical "this is the bar" reference, including the detail that the model deleted data when hinted (which tells us the wrong-but-tempting path also has to be plausibly walkable).
+- **Determinism is preferred but not sacred** — a terse, discovery-heavy prompt beats keeping the answer single-valued at the cost of spelling out methodology.
+- **Worked example must walk both the right path and the naive path**, so we know the trap actually changes the answer.
 
-[AGENT]: Read it. My earlier framing was too narrow. The project docs make it clear: - "Data science expertise" is one half — "important agentic capabilities (general tool use abilities that a data scientist would want their agentic assistant to have)" is the other half. Both count toward the reward signal. - The constraint is that **the task** is a real DS task and **the room-to-improve** is DS/agentic capability — not that every individual failure mode is a "pure" DS methodology choice. - Things like "model accepts tool output without sanity-checking," "LLM hallucinates imputed values from world knowledge," "verbalised confidence is uncorrelated with correctness" — these absolutely show up inside DS workflows and are fair targets *if* the surrounding task is a real DS task. So I shouldn't have removed those entries. Let me restore them and rewrite the scope section to reflect the actual project rule.
+Ready when you want to start scoping the new task — what domain / scenario are you thinking?
 
-[AGENT]: Now restore the entries I deleted.
+> DEVELOPER
 
-[AGENT]: Now restore the §5 LLM-as-imputer entry:
+Can you do some detailed reasearch online and make a document called data-science-skills that can act as a databse for things for us to target. Specifically look at places where even frontier models fail
 
-[AGENT]: Doc restored to 833 lines, 61 entries. The three I had wrongly deleted (verbalised confidence, conjunction fallacy, RNG sampling) are back, slightly re-framed to make the DS-task connection explicit. LLM-as-imputer, accepting tool output, and pre-train contamination were never actually deleted. **Final state of the doc:** - Scope section now correctly reflects the project rule: DS expertise + DS-workflow-adjacent agentic capabilities are both fair targets, as long as the surrounding task is a real DS task. - De-vig is flagged off-limits as a primary target (kept as reference). - Other smash-overlap patterns (Borda fusion normalisation, sparse-cell shrinkage, patch/version misalignment) explicitly fair game. - 61 entries across 13 categories + cross-cutting appendix preserved. Want me to: 1. Move on to scoping the new task (domain/scenario brainstorm)? 2. Or do a closer pass on the doc to flag which entries are strong "primary failure" candidates vs supporting traps?
+> AGENT
 
-[DEVELOPER]: yeah I think do a lot more reaseach online first please nad update the doc
+Document written: `data-science-skills.md`, 825 lines, 13 categories × ~55 failure-mode entries plus a cross-cutting appendix.
 
-[AGENT]: Doc expanded: 833 → 1259 lines, 61 → 93 entries, 13 → 20 categories. **New categories (7):** - §14 Bayesian workflow (PPCs, divergences/R-hat, centred vs non-centred, prior-predictive) - §15 A/B testing in practice (peeking, CUPED, novelty/seasonality, HTE, guardrail metrics) - §16 Recsys & ranking (offline-online gap, IPS position bias, LLM-judge bias) - §17 Geospatial (CRS mismatch, MAUP, spatial autocorrelation) - §18 Reproducibility/determinism (seed coverage, GPU non-determinism, lib version drift) - §19 DataFrame/SQL footguns (NULL/NaN propagation, window-function frame defaults, GROUP BY) - §20 Long-horizon agent DS failures (premature completion, no back-checking, warning suppression, over/under-verification) **Inserts into existing categories (4):** - §3: E-values for unmeasured confounding; uplift vs propensity confusion - §4: Interrupted time series without synthetic control - §7: Cosine similarity on anisotropic embeddings (Netflix/Steck) - §13: Deprecated APIs, SettingWithCopyWarning, stale notebook kernel state **Most actionable for new-task design:** - **CRS mismatch in `gpd.sjoin`** — silent geospatial failure, very concrete trap - **LAG NULL semantics with gaps in daily data** — produces wrong day-over-day numbers that look right - **Uplift vs propensity confusion** — backed by UpliftBench (real Criteo evidence) - **Bayesian PPC / divergences ignored** — recent 2026 work on Stan/PyMC misuse - **E-values for unmeasured confounding** — one of […]
+**Most actionable findings for task design:**
+
+1. **PolyBench (Apr 2026) directly validates the Polymarket-de-vig anchor** — 5 of 7 frontier models lose money trading their own confident predictions. The smash failure mode is a generic frontier-model weakness, not a fluke.
+
+2. **CauSciBench / CausalPitfalls (May 2025)** catalogues 6 pitfall categories × 15 challenges (over-adjustment for mediators, collider conditioning, missed RDD assumption checks). Each is a near-ready trap blueprint with SCM-generated ground truth.
+
+3. **DABStep (Adyen, Jun 2025)** is the strongest evidence that frontier agents default to the lazy methodology on multi-step heterogeneous-table problems — best agent 16% overall, 14.5% hard. Maps onto unit/version/timezone trap territory.
+
+4. **MLAgentBench documented an agent that tried to *increase* SMAPE** without realising lower is better — a clean metric-direction trap.
+
+5. **Leng et al. (NeurIPS 2024): RLHF makes models most overconfident exactly when they're wrong.** Justifies traps that score "did you sanity-check this number?" over "did you get it first try?"
+
+**One caveat to log in the smash task notes:** sources disagree on whether Polymarket has vig — single binary markets are reportedly ~vig-free, but multi-outcome tournament futures empirically sum […]
+
+> DEVELOPER
+
+so are all the thigns you wrote actual data science failures ?? are you 100% sre. Don't jsut focus on de-vigging bevause it worked before. We cannot reuse failure patterns!
+
+> AGENT
+
+Fair challenge. Let me actually audit the doc rather than defend it.
+
+> AGENT
+
+Honest audit — no, not all of them hold up under your two tests ("actual DS failure" + "not already used in smash"). Let me walk through what I found, then fix the doc.
+
+**Entries that reuse smash patterns (must flag — can't reuse):**
+
+1. **§1 Overround / de-vig** — this is literally the smash anchor. Should not be on a "target this" list.
+2. **§11 Borda / RRF / score-mean fusion without normalising** — smash already uses Borda fusion of Elo + LumiRank. Pattern burned.
+3. **§11 Shrinkage vs thresholding for sparse cells** — smash uses smoothing for the per-matchup character utility. Pattern burned.
+4. **§13 Patch / version misalignment in joined tables** — smash has the v13.1 vs v13.1.51 tier-list trap. Pattern burned.
+
+**Entries that aren't really "data science skill" failures — they're meta-LLM behavioural failures:**
+
+5. **§1 Verbalised-confidence miscalibration after RLHF** — about how the *model* expresses confidence, not a DS methodology the agent has to apply.
+6. **§2 Random number / distribution generation** — about LLMs being bad at sampling tokens. The trap reduces to "use `np.random`," which is engineering, not DS.
+7. **§5 LLM-as-imputer hallucinating** — about LLM hallucination, not DS methodology choice.
+8. **§13 […]
+
+> DEVELOPER
+
+okay okay tbh I dont mind if the failure pattern gets reused. as long as we are not targeting it. Like 2 3 and 4 can be reused. I wouldnt focus on devigging tho because it was a massive part of it
+
+> AGENT
+
+Got it. Fixing now — de-vig flagged as off-limits, meta-LLM behavioural entries removed (they're not DS skill failures), the rest kept since pattern reuse is fine.
+
+> AGENT
+
+Now mark the de-vig entry off-limits and remove the meta-LLM behavioural entries.
+
+> AGENT
+
+Remove §1 verbalised-confidence (meta-LLM):
+
+> AGENT
+
+Remove §2 random-number-generation (LLM token-sampling failure, not a DS skill):
+
+> DEVELOPER
+
+woah woah I don't mind general failures if the task is actyally a datascine task, Why dont you read the task doucments jsut to double check you know
+
+> AGENT
+
+Fair point — let me actually read the task project docs properly before doing more pruning.
+
+> AGENT
+
+Read it. My earlier framing was too narrow. The project docs make it clear:
+
+- "Data science expertise" is one half — "important agentic capabilities (general tool use abilities that a data scientist would want their agentic assistant to have)" is the other half. Both count toward the reward signal.
+- The constraint is that **the task** is a real DS task and **the room-to-improve** is DS/agentic capability — not that every individual failure mode is a "pure" DS methodology choice.
+- Things like "model accepts tool output without sanity-checking," "LLM hallucinates imputed values from world knowledge," "verbalised confidence is uncorrelated with correctness" — these absolutely show up inside DS workflows and are fair targets *if* the surrounding task is a real DS task.
+
+So I shouldn't have removed those entries. Let me restore them and rewrite the scope section to reflect the actual project rule.
+
+> AGENT
+
+Now restore the entries I deleted.
+
+> AGENT
+
+Now restore the §5 LLM-as-imputer entry:
+
+> AGENT
+
+Doc restored to 833 lines, 61 entries. The three I had wrongly deleted (verbalised confidence, conjunction fallacy, RNG sampling) are back, slightly re-framed to make the DS-task connection explicit. LLM-as-imputer, accepting tool output, and pre-train contamination were never actually deleted.
+
+**Final state of the doc:**
+- Scope section now correctly reflects the project rule: DS expertise + DS-workflow-adjacent agentic capabilities are both fair targets, as long as the surrounding task is a real DS task.
+- De-vig is flagged off-limits as a primary target (kept as reference).
+- Other smash-overlap patterns (Borda fusion normalisation, sparse-cell shrinkage, patch/version misalignment) explicitly fair game.
+- 61 entries across 13 categories + cross-cutting appendix preserved.
+
+Want me to:
+1. Move on to scoping the new task (domain/scenario brainstorm)?
+2. Or do a closer pass on the doc to flag which entries are strong "primary failure" candidates vs supporting traps?
+
+> DEVELOPER
+
+yeah I think do a lot more reaseach online first please nad update the doc
+
+> AGENT
+
+Doc expanded: 833 → 1259 lines, 61 → 93 entries, 13 → 20 categories.
+
+**New categories (7):**
+- §14 Bayesian workflow (PPCs, divergences/R-hat, centred vs non-centred, prior-predictive)
+- §15 A/B testing in practice (peeking, CUPED, novelty/seasonality, HTE, guardrail metrics)
+- §16 Recsys & ranking (offline-online gap, IPS position bias, LLM-judge bias)
+- §17 Geospatial (CRS mismatch, MAUP, spatial autocorrelation)
+- §18 Reproducibility/determinism (seed coverage, GPU non-determinism, lib version drift)
+- §19 DataFrame/SQL footguns (NULL/NaN propagation, window-function frame defaults, GROUP BY)
+- §20 Long-horizon agent DS failures (premature completion, no back-checking, warning suppression, over/under-verification)
+
+**Inserts into existing categories (4):**
+- §3: E-values for unmeasured confounding; uplift vs propensity confusion
+- §4: Interrupted time series without synthetic control
+- §7: Cosine similarity on anisotropic embeddings (Netflix/Steck)
+- §13: Deprecated APIs, SettingWithCopyWarning, stale notebook kernel state
+
+**Most actionable for new-task design:**
+- **CRS mismatch in `gpd.sjoin`** — silent geospatial failure, very concrete trap
+- **LAG NULL semantics with gaps in daily data** — produces wrong day-over-day numbers that look right
+- **Uplift vs propensity confusion** — backed by UpliftBench (real Criteo evidence)
+- **Bayesian PPC / divergences ignored** — recent 2026 work on Stan/PyMC misuse
+- **E-values for unmeasured confounding** — one of […]

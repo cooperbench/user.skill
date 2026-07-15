@@ -1,3 +1,22 @@
-[DEVELOPER]: hey man so I wanna add another email and website for babbi.world. The issue is, its for gf and I would want her to be able to edit the site. That's fine because I could jsut have it as a github submodule, but what about the nginx config. RN i have this gateway thing but that's in the aether repo itself which I don't want her to have absolute access to
+> DEVELOPER
 
-[AGENT]: Looked at the setup. Here's the lay of the land and what I'd recommend: **Current pattern:** each site is a folder under `services/`, has its own `Dockerfile.prod`, and ships as an image to `ghcr.io/kungfusaini/<name>:latest`. The gateway (`services/gateway/conf.d/prod/<domain>.conf`) reverse-proxies to it via an upstream defined in `upstreams.conf`. Mailcow handles email independently of all of this. **Recommendation: separate repo, not a submodule.** Give her a brand-new `babbi-world` GitHub repo. She pushes there, CI builds an image to GHCR (e.g. `ghcr.io/<her-user>/babbi-world:latest`). In *your* aether repo you do a one-time setup she never touches: 1. Add a `babbi_world` service to `docker-compose-prod.yml` that pulls her image. 2. Add `upstream babbi_world_prod { server babbi_world:80; }` to `conf.d/prod/upstreams.conf`. 3. Drop a `conf.d/prod/babbi.world.conf` cloned from `reliq.digital.conf` (~30 lines, swap the names). 4. Issue the cert with certbot, add the domain in Mailcow admin UI. After that, the gateway never needs touching again — her pushes just rebuild the image, and on deploy `docker compose pull && up -d babbi_world` picks up new versions. She literally cannot see aether. **Why not a submodule:** submodules give her source-level coupling to aether (she'd need to push a submodule bump here) and you still don't want her commit-access to aether. A separate […]
+hey man so I wanna add another email and website for babbi.world. The issue is, its for gf and I would want her to be able to edit the site. That's fine because I could jsut have it as a github submodule, but what about the nginx config. RN i have this gateway thing but that's in the aether repo itself which I don't want her to have absolute access to
+
+> AGENT
+
+Looked at the setup. Here's the lay of the land and what I'd recommend:
+
+**Current pattern:** each site is a folder under `services/`, has its own `Dockerfile.prod`, and ships as an image to `ghcr.io/kungfusaini/<name>:latest`. The gateway (`services/gateway/conf.d/prod/<domain>.conf`) reverse-proxies to it via an upstream defined in `upstreams.conf`. Mailcow handles email independently of all of this.
+
+**Recommendation: separate repo, not a submodule.**
+
+Give her a brand-new `babbi-world` GitHub repo. She pushes there, CI builds an image to GHCR (e.g. `ghcr.io/<her-user>/babbi-world:latest`). In *your* aether repo you do a one-time setup she never touches:
+
+1. Add a `babbi_world` service to `docker-compose-prod.yml` that pulls her image.
+2. Add `upstream babbi_world_prod { server babbi_world:80; }` to `conf.d/prod/upstreams.conf`.
+3. Drop a `conf.d/prod/babbi.world.conf` cloned from `reliq.digital.conf` (~30 lines, swap the names).
+4. Issue the cert with certbot, add the domain in Mailcow admin UI.
+
+After that, the gateway never needs touching again — her pushes just rebuild the image, and on deploy `docker compose pull && up -d babbi_world` picks up new versions. She literally cannot see aether.
+
+**Why not a submodule:** submodules give her source-level coupling to aether (she'd need to push a submodule bump here) and you still don't want her commit-access to aether. A separate […]

@@ -1,5 +1,11 @@
-[DEVELOPER]: find me the best server for a sandcastle install preis/leistung on https://www.hetzner.com/de/sb/
+> DEVELOPER
 
-[AGENT]: Got the live auction data. Let me rank by price/performance for a Sandcastle workload (cores + RAM + NVMe matter most).
+find me the best server for a sandcastle install preis/leistung on https://www.hetzner.com/de/sb/
 
-[AGENT]: Pulled the live auction inventory (311 servers, EUR pricing) and ranked it for a Sandcastle workload — weighted toward CPU multi-thread (PassMark), RAM, and NVMe (Docker-in-Docker + BTRFS hate spinning rust). ## Top picks by budget **🏆 Best price/performance overall — by a wide margin** - **AMD EPYC 7502P · 1024 GB ECC · 2× 960 GB NVMe · €237/mo** — id `2995921` (HEL1-DC3) 32c/64t, ~49k PassMark, terabyte of ECC RAM, NVMe. Score nearly 2× anything else. **Mid-tier sweet spot (~€100)** - **Intel Xeon W-2145 · 256 GB ECC · 960 GB NVMe · €99/mo** — id `2995295` (FSN1-DC12) 8c/16t, lots of ECC RAM, NVMe. - **Intel Xeon W-2295 · 256 GB ECC · 960 GB SATA · €110/mo** — id `2989137` (HEL1-DC8) — 18c/36t if you need cores over disk speed. **Budget (~€60)** - **Intel Core i7-8700 · 128 GB · 2× 1 TB NVMe · €59/mo** — id `2995028` (HEL1-DC7) 6c/12t, no ECC, but 2 TB NVMe is rare at this price. Several near-identical clones at €60–63. **Cheapest with ECC + NVMe** - **Intel Xeon E3-1275v5/V6 · 64 GB ECC · 2× 512 GB NVMe · €39–41/mo** — ids `2987269`, `2990523`, `2989584` 4c/8t — fine for a small/personal […]
+> AGENT
+
+Got the live auction data. Let me rank by price/performance for a Sandcastle workload (cores + RAM + NVMe matter most).
+
+> AGENT
+
+Pulled the live auction inventory (311 servers, EUR pricing) and ranked it for a Sandcastle workload — weighted toward CPU multi-thread (PassMark), RAM, and NVMe (Docker-in-Docker + BTRFS hate spinning rust). ## Top picks by budget **🏆 Best price/performance overall — by a wide margin** - **AMD EPYC 7502P · 1024 GB ECC · 2× 960 GB NVMe · €237/mo** — id `2995921` (HEL1-DC3) 32c/64t, ~49k PassMark, terabyte of ECC RAM, NVMe. Score nearly 2× anything else. **Mid-tier sweet spot (~€100)** - **Intel Xeon W-2145 · 256 GB ECC · 960 GB NVMe · €99/mo** — id `2995295` (FSN1-DC12) 8c/16t, lots of ECC RAM, NVMe. - **Intel Xeon W-2295 · 256 GB ECC · 960 GB SATA · €110/mo** — id `2989137` (HEL1-DC8) — 18c/36t if you need cores over disk speed. **Budget (~€60)** - **Intel Core i7-8700 · 128 GB · 2× 1 TB NVMe · €59/mo** — id `2995028` (HEL1-DC7) 6c/12t, no ECC, but 2 TB NVMe is rare at this price. Several near-identical clones at €60–63. **Cheapest with ECC + NVMe** - **Intel Xeon E3-1275v5/V6 · 64 GB ECC · 2× 512 GB NVMe · €39–41/mo** — ids `2987269`, `2990523`, `2989584` 4c/8t — fine for a small/personal […]

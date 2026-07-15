@@ -1,23 +1,47 @@
-[DEVELOPER]: # DataQ — session handover (2026-07-05, post v1.1-W1 close) ## Where we are - **v1.1 W1 is COMPLETE** (milestone closed, exit gate MET, tracker + CLAUDE.md §13 updated via PR #616). Shipped: #194/#195 (encrypted Snowflake key-pair + GX kwargs form, live-verified), #587 (scale baseline → docs/perf-baseline-snowflake.md), #461 (PATs phase 1, PR #613, ADR 0026 Accepted), #583 (MCP profile_column run-target default, PR #614). #588 (Snowflake leg retirement) was rehearsed, REVERSED (trial actually runs to ~2026-07-25), and re-homed to W3 — do NOT retire the leg early. - **PATs are live and are the standing headless credential** (az-CLI bearers = minting bootstrap only): KV `dataq-app-kv-aw6laj` → `dataq-pat-w1-admin` (dataq-admin, 10 suites + /admin, exp 2026-08-04) and `dataq-pat-w1-member` (Olivia, 4 suites, /admin 403, exp 2026-10-03). Both verified vs prod REST + /mcp/. Read from KV; never print more than the `dq_live_xxxx` prefix. az CLI is signed in as **royarijit04 (deployer — has KV RBAC)**. - Prod is redeployed from main (run 28735277709) with PATs + #583 included. ## This week: v1.1 W2 — Portability (due 2026-07-18), milestone + epic #597 Suggested order: 1. **#609 dbt lineage project** — RESCOPED to **self-hosted dbt Core** (container; ACA job in the Azure window → local compose post-wind-down). […]
+> DEVELOPER
 
-[AGENT]: Handover absorbed. We're at the top of **v1.1 W2 — Portability** (milestone/epic #597, due 2026-07-18), with W1 closed and PATs live as the standing headless credential. The deadline-driven reality shapes the order: **Snowflake trial and Azure both end ~2026-07-25**, so anything needing live Azure/Snowflake has to land in the next ~3 weeks. That pushes these to the front: 1. **#609** — self-hosted dbt Core project (harness repo, ACA job in the Azure window → local compose after). Produces the runs that #611 observes. 2. **#611** — dbt as a third `OrchestrationProvider` (HMAC webhook + run_results.json poll; needs an ADR). In-repo, depends on #609. 3. **Azure-window seams** — #524/#589 (OTel log export), #372 (`SecretStore.delete`), #532 (dry-run depth), plus #286 Iceberg spike — all want live verification before wind-down. 4. **#584 / #488** — now unblocked by PATs; can slot in cloud-independently. A few things I want to confirm before I start moving, since they change what I do next:
+# DataQ — session handover (2026-07-05, post v1.1-W1 close) ## Where we are - **v1.1 W1 is COMPLETE** (milestone closed, exit gate MET, tracker + CLAUDE.md §13 updated via PR #616). Shipped: #194/#195 (encrypted Snowflake key-pair + GX kwargs form, live-verified), #587 (scale baseline → docs/perf-baseline-snowflake.md), #461 (PATs phase 1, PR #613, ADR 0026 Accepted), #583 (MCP profile_column run-target default, PR #614). #588 (Snowflake leg retirement) was rehearsed, REVERSED (trial actually runs to ~2026-07-25), and re-homed to W3 — do NOT retire the leg early. - **PATs are live and are the standing headless credential** (az-CLI bearers = minting bootstrap only): KV `dataq-app-kv-aw6laj` → `dataq-pat-w1-admin` (dataq-admin, 10 suites + /admin, exp 2026-08-04) and `dataq-pat-w1-member` (Olivia, 4 suites, /admin 403, exp 2026-10-03). Both verified vs prod REST + /mcp/. Read from KV; never print more than the `dq_live_xxxx` prefix. az CLI is signed in as **royarijit04 (deployer — has KV RBAC)**. - Prod is redeployed from main (run 28735277709) with PATs + #583 included. ## This week: v1.1 W2 — Portability (due 2026-07-18), milestone + epic #597 Suggested order: 1. **#609 dbt lineage project** — RESCOPED to **self-hosted dbt Core** (container; ACA job in the Azure window → local compose post-wind-down). […]
 
-[AGENT]: Good — #609 it is. Let me pull the exact acceptance criteria and survey the harness repo before doing anything.
+> AGENT
 
-[AGENT]: Let me understand the existing harness structure — the mockdata/Snowflake setup, the RETAIL base tables, and how the harness window works.
+Handover absorbed. We're at the top of **v1.1 W2 — Portability** (milestone/epic #597, due 2026-07-18), with W1 closed and PATs live as the standing headless credential. The deadline-driven reality shapes the order: **Snowflake trial and Azure both end ~2026-07-25**, so anything needing live Azure/Snowflake has to land in the next ~3 weeks. That pushes these to the front: 1. **#609** — self-hosted dbt Core project (harness repo, ACA job in the Azure window → local compose after). Produces the runs that #611 observes. 2. **#611** — dbt as a third `OrchestrationProvider` (HMAC webhook + run_results.json poll; needs an ADR). In-repo, depends on #609. 3. **Azure-window seams** — #524/#589 (OTel log export), #372 (`SecretStore.delete`), #532 (dry-run depth), plus #286 Iceberg spike — all want live verification before wind-down. 4. **#584 / #488** — now unblocked by PATs; can slot in cloud-independently. A few things I want to confirm before I start moving, since they change what I do next:
 
-[AGENT]: I have the full picture now. RETAIL base tables in `DATAQ_DB` (loaded by Airflow/ADF): `ORDERS_HEADER`, `CUSTOMERS`, `PAYMENTS`, `ORDER_LINES`, `REFUNDS`, `RETURNS`, `PRODUCTS`, `SETTLEMENTS`, `PURCHASE_ORDERS`, `ORDER_FULFILLMENT`, `DISCOUNTS`, `CANCELLATIONS`. Connection is password-auth via `secrets.sh`. This is harness-side work (ADR 0021, not git-tracked, not app code). Here's my plan. Most of it is zero-cost offline authoring; only the live verification touches Snowflake/Azure.
+> AGENT
 
-[AGENT]: ACCOUNTADMIN role available (harness), dbt not yet installed, conda `dataq` env present. Let me look at existing harness conventions (Dockerfile, ADLS upload, the ACA job terraform) so the dbt project matches them before I write anything.
+Good — #609 it is. Let me pull the exact acceptance criteria and survey the harness repo before doing anything.
 
-[AGENT]: Now let me get the actual column names for the base tables I'll build on (order_lines, products) — orders_header and customers I already have from the terraform.
+> AGENT
 
-[AGENT]: All base tables have clean UPPERCASE columns (write_pandas uppercases; ADF tables pre-created uppercase). I have everything needed. Let me scaffold the project.
+Let me understand the existing harness structure — the mockdata/Snowflake setup, the RETAIL base tables, and how the harness window works.
 
-[AGENT]: Now the sources and staging views:
+> AGENT
 
-[AGENT]: Now the container host. Requirements, Dockerfile, entrypoint, and an artifact uploader:
+I have the full picture now. RETAIL base tables in `DATAQ_DB` (loaded by Airflow/ADF): `ORDERS_HEADER`, `CUSTOMERS`, `PAYMENTS`, `ORDER_LINES`, `REFUNDS`, `RETURNS`, `PRODUCTS`, `SETTLEMENTS`, `PURCHASE_ORDERS`, `ORDER_FULFILLMENT`, `DISCOUNTS`, `CANCELLATIONS`. Connection is password-auth via `secrets.sh`. This is harness-side work (ADR 0021, not git-tracked, not app code). Here's my plan. Most of it is zero-cost offline authoring; only the live verification touches Snowflake/Azure.
 
-[AGENT]: Those diagnostics are expected (azure lib is a container dep, `_account` is intentionally unused). Now the entrypoint and Dockerfile:
+> AGENT
 
-[AGENT]: Good questions — and they're exactly the two things the terraform I'm about to write encodes, so let me answer directly. ## Where dbt is hosted Per #609's decision, it's **self-hosted dbt Core, deliberately host-agnostic** — the same container image runs in three places: | Context | Host | When | |---|---|---| | Dev iteration | local `dbt build` (conda/venv) | now, any time | | Azure window | **Container Apps Job on the shared `dataq-cae`** — same pattern as the mockdata jobs (`mockdata_job.tf`), image in the harness ACR | now → ~2026-07-25 | | Post-wind-down | **docker-compose service** locally | after #590/#591 | The whole point (from the issue's rejected-alternatives analysis) is that **the host is irrelevant** — dbt Cloud free has no API/scheduler, dbt-on-Snowflake dies with the trial, Databricks-Jobs-dbt couples you to the Jobs API. A plain container survives all of that, and the provider contract (#611) observes it purely through **artifacts + webhook**, never through a host-specific API. ## Authentication — three distinct edges 1. **dbt → Snowflake (the one you're really asking about):** username/password via env vars — `SNOWFLAKE_ACCOUNT/USER/PASSWORD/WAREHOUSE/DATABASE/ROLE`, the *exact same credentials the Airflow loader already uses* (`_harness.load_to_snowflake`). Role is **ACCOUNTADMIN** in the harness because […]
+ACCOUNTADMIN role available (harness), dbt not yet installed, conda `dataq` env present. Let me look at existing harness conventions (Dockerfile, ADLS upload, the ACA job terraform) so the dbt project matches them before I write anything.
+
+> AGENT
+
+Now let me get the actual column names for the base tables I'll build on (order_lines, products) — orders_header and customers I already have from the terraform.
+
+> AGENT
+
+All base tables have clean UPPERCASE columns (write_pandas uppercases; ADF tables pre-created uppercase). I have everything needed. Let me scaffold the project.
+
+> AGENT
+
+Now the sources and staging views:
+
+> AGENT
+
+Now the container host. Requirements, Dockerfile, entrypoint, and an artifact uploader:
+
+> AGENT
+
+Those diagnostics are expected (azure lib is a container dep, `_account` is intentionally unused). Now the entrypoint and Dockerfile:
+
+> AGENT
+
+Good questions — and they're exactly the two things the terraform I'm about to write encodes, so let me answer directly. ## Where dbt is hosted Per #609's decision, it's **self-hosted dbt Core, deliberately host-agnostic** — the same container image runs in three places: | Context | Host | When | |---|---|---| | Dev iteration | local `dbt build` (conda/venv) | now, any time | | Azure window | **Container Apps Job on the shared `dataq-cae`** — same pattern as the mockdata jobs (`mockdata_job.tf`), image in the harness ACR | now → ~2026-07-25 | | Post-wind-down | **docker-compose service** locally | after #590/#591 | The whole point (from the issue's rejected-alternatives analysis) is that **the host is irrelevant** — dbt Cloud free has no API/scheduler, dbt-on-Snowflake dies with the trial, Databricks-Jobs-dbt couples you to the Jobs API. A plain container survives all of that, and the provider contract (#611) observes it purely through **artifacts + webhook**, never through a host-specific API. ## Authentication — three distinct edges 1. **dbt → Snowflake (the one you're really asking about):** username/password via env vars — `SNOWFLAKE_ACCOUNT/USER/PASSWORD/WAREHOUSE/DATABASE/ROLE`, the *exact same credentials the Airflow loader already uses* (`_harness.load_to_snowflake`). Role is **ACCOUNTADMIN** in the harness because […]

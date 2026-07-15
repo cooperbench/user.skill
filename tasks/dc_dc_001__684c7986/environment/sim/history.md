@@ -1,3 +1,7 @@
-[DEVELOPER]: 安装任何工具调查目前macos的实时充电功率
+> DEVELOPER
 
-[AGENT]: 无需安装额外工具——`ioreg` 已经能给出实时充电功率。 **当前充电状态：** - **适配器输入功率**：`SystemPowerIn` = **42.8 W**（SystemVoltageIn 19.533 V × SystemCurrentIn 2.192 A） - **进入电池的功率**：`BatteryPower` = **22.97 W**（Voltage 11.928 V × Amperage 1.926 A） - **适配器规格**：45 W PD 充电器（20 V / 2.24 A 档位） - **适配器效率损耗**：约 1.18 W - 电池电量 71%，正在充电 差额（42.8 W − 23 W ≈ 20 W）是系统当前的实时负载（SystemLoad ≈ 19.85 W）。 想持续监控可以跑： ```sh while true; do ioreg -rn AppleSmartBattery | awk -F'[ =]+' '/"SystemPowerIn"/{p=$3} /"BatteryPower" /{b=$3} END{printf "Adapter: %.2f W Battery: %.2f W\n", p/1000, b/1000}' sleep 2 done ```
+安装任何工具调查目前macos的实时充电功率
+
+> AGENT
+
+无需安装额外工具——`ioreg` 已经能给出实时充电功率。 **当前充电状态：** - **适配器输入功率**：`SystemPowerIn` = **42.8 W**（SystemVoltageIn 19.533 V × SystemCurrentIn 2.192 A） - **进入电池的功率**：`BatteryPower` = **22.97 W**（Voltage 11.928 V × Amperage 1.926 A） - **适配器规格**：45 W PD 充电器（20 V / 2.24 A 档位） - **适配器效率损耗**：约 1.18 W - 电池电量 71%，正在充电 差额（42.8 W − 23 W ≈ 20 W）是系统当前的实时负载（SystemLoad ≈ 19.85 W）。 想持续监控可以跑： ```sh while true; do ioreg -rn AppleSmartBattery | awk -F'[ =]+' '/"SystemPowerIn"/{p=$3} /"BatteryPower" /{b=$3} END{printf "Adapter: %.2f W Battery: %.2f W\n", p/1000, b/1000}' sleep 2 done ```
