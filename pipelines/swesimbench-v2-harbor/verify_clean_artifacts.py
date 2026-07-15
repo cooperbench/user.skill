@@ -128,10 +128,7 @@ if cohort_path.exists() and (ROOT / "cohort.meta.json").exists():
         }
         dataset_point_sets = {}
         stale_datasets = []
-        for dataset_name, condition in (
-            ("noprofile-full", "noprofile"),
-            ("withprofile-full", "withprofile"),
-        ):
+        for dataset_name, condition in (("noprofile-full", "noprofile"),):
             dataset = ROOT / "datasets" / dataset_name
             if not dataset.exists():
                 continue
@@ -154,23 +151,16 @@ if cohort_path.exists() and (ROOT / "cohort.meta.json").exists():
                 gold = json.loads((task_root / "tests" / "gold.json").read_text())
                 assert gold["developer"] == task["dev"]
                 assert gold["point_id"] == task["point_id"]
-                profile = task_root / "environment" / "sim" / "profile.md"
-                if condition == "withprofile":
-                    assert profile.exists()
-                    assert "/sim/profile.md" in (task_root / "instruction.md").read_text()
-                    assert "sim/profile.md" in (
-                        task_root / "environment" / "Dockerfile"
-                    ).read_text()
-                else:
-                    assert not profile.exists()
+                # Profiles are Harbor skills on the agent harness, never task payload.
+                assert not (task_root / "environment" / "sim" / "profile.md").exists()
         if stale_datasets:
             print(
                 "skipping stale derived datasets (rebuild make_tasks): "
                 + ", ".join(stale_datasets)
             )
-        if len(dataset_point_sets) == 2:
-            assert dataset_point_sets["noprofile-full"] == dataset_point_sets["withprofile-full"]
-
+        assert "withprofile-full" not in {
+            p.name for p in (ROOT / "datasets").iterdir() if p.is_dir()
+        }, "withprofile task twin must not exist; inject profiles via Harbor skills"
 sample_meta_path = ROOT / "sample100" / "meta.json"
 if sample_meta_path.exists():
     sample_meta = json.loads(sample_meta_path.read_text())
