@@ -1,9 +1,0 @@
-[DEVELOPER]: hey man, I've been tasked with cleaning up the linear. It's a mess right now. Get some context for me
-
-[AGENT]: Not really task-tracking work — this is open-ended research. Continuing to pull context.
-
-[AGENT]: Two big lists overflowed (Backlog ~100k chars, Done ~70k). Delegating to a subagent to summarize without burning my context.
-
-[AGENT]: Here's the Linear context — single team **Spire_Elijah** (key SPI), 1 active cycle (none), 2 projects (one started: "Port FS12 Pricing Diagnostics to dev"; one in backlog: "Elijah Pipeline Development"). ## State of the board | Bucket | Count | | --- | --- | | In Progress | 1 (SPI-128, archived‑but‑listed, weird) | | In Review | 0 | | Blocked | 0 | | Todo | 6 | | Backlog | **74** | | Done | 50 | ## The mess — biggest cleanup levers 1. **57 orphan tickets** (36 backlog + 21 done) with no project assigned. The whole `Fx.y` feature spec series (SPI-69, 71, 133, 135–138, 141, 142, 147) belongs under *Elijah Pipeline Development* but isn't linked. 2. **42 unlabelled backlog items** — board can't be filtered usefully. 3. **25 stale backlog items** not touched since before 2026‑04‑30. Oldest: SPI-122 (2026‑04‑12). Frontend dashboard cluster SPI-122/158/162/163/164 looks abandoned. 4. **11 overdue** dueDate items: SPI-21, 24, 25, 26, 71, 79, 90, 98, 99, 100, 101. 5. **SPI-128** is in "In Progress" but `archivedAt` is set — inconsistent state. 6. **SPI-69 vs SPI-71** — both titled "F8.1 —". Likely duplicate or mis-numbered. 7. **Per-user auth/budget cluster** has overlapping scope: […]
-
-[AGENT]: Context delivered above. Memory saved so the cleanup levers persist. Ready to start executing — say the word on which lever first (orphan assignment, overdue triage, stale archive, duplicates, or just "go" and I'll work top-down).

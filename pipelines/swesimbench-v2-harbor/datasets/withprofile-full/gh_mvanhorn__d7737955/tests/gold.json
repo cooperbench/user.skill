@@ -1,1 +1,0 @@
-{"point_id": "3004f890-7b89-45cc-afbf-f83602c08eea#7", "developer": "gh:mvanhorn", "condition": "withprofile", "real": "commit it", "prev_agent": "All clean. Added `//nolint:gosec // G115: uintptr->int is safe for fd` comments to the 3 `uintptr`-to-`int` conversions in `status_style.go`, matching the existing pattern in `explain.go`.", "gold_move": null}

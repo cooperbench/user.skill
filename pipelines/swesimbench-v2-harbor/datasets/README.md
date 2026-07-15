@@ -1,48 +1,39 @@
-# SWESimBench v2 — Harbor task datasets
+# SWESimBench v2 — Harbor task dataset
 
-Canonical Harbor packages for the clean cohort eval, two conditions:
+Canonical Harbor packages for the clean cohort eval (**noprofile** only).
 
-| Dataset | Tasks | Condition |
+| Dataset | Tasks | Notes |
 |---|---:|---|
-| `withprofile-full/` | 2,723 | Agent may read `/sim/profile.md` (distilled developer style) |
-| `noprofile-full/` | 2,723 | Same points, no profile file in the instruction |
+| `noprofile-full/` | 2,723 | Conversation context on disk; no baked-in developer profile |
+
+Developer profiles belong in the **agent harness** (e.g. Harbor `--skill` / `agents[].skills`), not in the task image. Do not reintroduce a `withprofile-*` task twin for the same points.
 
 Each leaf directory is one Harbor task:
 
 ```text
 <task_id>/
-  task.toml              # Harbor task metadata
-  instruction.md         # agent brief
+  task.toml
+  instruction.md
   environment/
     Dockerfile
     sim/
       history.md         # conversation so far ([DEVELOPER]/[AGENT]/…)
-      profile.md         # withprofile only
   tests/
-    gold.json            # hidden gold developer message (+ optional move)
-    test.sh / verify.py  # Harbor verifier
+    gold.json
+    test.sh / verify.py
 ```
 
-Shared manifests at the dataset root:
-
-- `_manifest.json` — `{task, dev, point_id}` for every task
-- `_cohort_meta.json` — policy / cohort fingerprints and counts
+Dataset root also has `_manifest.json` and `_cohort_meta.json`.
 
 ## Run with Harbor
 
-From a Harbor checkout (paths relative to this repo):
-
 ```bash
 harbor run \
-  --path pipelines/swesimbench-v2-harbor/datasets/withprofile-full \
+  --path pipelines/swesimbench-v2-harbor/datasets/noprofile-full \
   --agent <your-agent> \
   --model <your-model>
 ```
 
-Same for `noprofile-full`. Aggregation helpers live one directory up (`aggregate_agentic.py`, `DEFERRED_PAID_WORK.md`).
+To supply a developer profile dynamically, inject it as a Harbor skill at job/trial time (see Harbor `--skill` / `environment.skills_dir`), rather than baking `/sim/profile.md` into the task.
 
-## Notes
-
-- Tasks predict the developer’s **next message** given prior turns on disk (agentic read of `history.md`), not a stuffed single-prompt transcript.
-- Gold move labels may still be pending paid judge labeling; see `../DEFERRED_PAID_WORK.md`.
-- Pipeline builders that emit these trees: `../build_agentic.py`, `../prepare.py`.
+Aggregation helpers live one directory up (`aggregate_agentic.py`, `DEFERRED_PAID_WORK.md`).

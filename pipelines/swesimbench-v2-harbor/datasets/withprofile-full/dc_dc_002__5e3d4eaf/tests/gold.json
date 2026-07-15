@@ -1,1 +1,0 @@
-{"point_id": "019cd5c6-f1ec-7880-959e-0c4ae5942d89#12", "developer": "dc:dc_002", "condition": "withprofile", "real": "Escalate the sandbox to use GPU", "prev_agent": "The test build is running now. Once it either compiles or fails, I\u2019ll inspect the first failure in the extension build or the first bad config and iterate from there.", "gold_move": null}

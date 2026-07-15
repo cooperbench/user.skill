@@ -1,1 +1,0 @@
-{"point_id": "019f1513-0676-73b2-ad56-c9a4e4b0eace#66", "developer": "gh:heddendorp", "condition": "withprofile", "real": "Make a note that we have to move all the scripts back to bun eventually", "prev_agent": "The lint compatibility patch is applied. I\u2019m rerunning lint to see the remaining migration issues after that intentional rule-surface pin.", "gold_move": null}

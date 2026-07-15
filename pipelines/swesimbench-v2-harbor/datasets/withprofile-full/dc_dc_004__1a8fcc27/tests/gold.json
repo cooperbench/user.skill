@@ -1,1 +1,0 @@
-{"point_id": "9c753c77-da0a-4a1c-a4a4-8c8c5967c025#24", "developer": "dc:dc_004", "condition": "withprofile", "real": "Now, please add that now if that's the robust thing to do", "prev_agent": "Pushed. Once you've confirmed it's working, I'll add the log buffer flush-on-exception so crashes like this can't hide from us again.", "gold_move": null}

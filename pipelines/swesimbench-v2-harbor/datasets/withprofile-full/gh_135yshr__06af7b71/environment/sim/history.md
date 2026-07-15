@@ -1,9 +1,0 @@
-[DEVELOPER]: 現在のサイトは、https://135yshr.github.io/meow/ で展開しているのですが、 https://meow.oreha.dev というカスタムドメインを設定して公開することはできますか？
-
-[AGENT]: はい、GitHub Pagesではカスタムドメイン（`meow.oreha.dev`）を設定して公開できます。以下が必要な手順です。 ## 1. DNS設定（`oreha.dev` のDNSプロバイダー側） サブドメインなので **CNAMEレコード** を追加します： | Type | Name | Value | |-------|------|-------| | CNAME | meow | `135yshr.github.io` | ※ apex（`oreha.dev` 自体）の場合はAレコードが必要ですが、今回はサブドメインなのでCNAMEでOKです。 ## 2. リポジトリに `CNAME` ファイルを追加 GitHub Pagesが公開するディレクトリ（このリポジトリだと `playground/` または GitHub Pages の publish source）のルートに、`CNAME` というファイルを作成し、中身を1行で： ``` meow.oreha.dev ``` と書きます。 ## 3. GitHubリポジトリ側の設定 `Settings` → `Pages` → `Custom domain` に `meow.oreha.dev` を入力 → Save。 DNSが伝播したら **Enforce HTTPS** にチェックを入れる（証明書はGitHubが自動発行）。 --- 確認しておきたいのですが： 1. このリポジトリのGitHub Pagesの公開元（publish source）はどこですか？（`gh-pages` ブランチ？ `main` の `/playground` ディレクトリ？）→ `CNAME` ファイルを置く場所が変わります 2. `oreha.dev` のDNSはどこで管理されていますか？（Cloudflare / Route53 / お名前.com など）→ Cloudflareの場合はプロキシをOFF（DNSのみ）にする必要があります 教えていただければ、具体的な手順とファイル配置までお手伝いできます。
-
-[DEVELOPER]: DNSの設定とGitHubの設定を行いました。 ２の作業を行なってください
-
-[AGENT]: GitHub ActionsでHugoをビルドして `website/public` をアーティファクトとしてデプロイする構成ですね。Actionsデプロイ方式では、Pages UIで設定したCustom Domainがデプロイ時に上書きされて消えるケースがあるので、ビルド成果物に `CNAME` を含める必要があります。 Hugoの `static/` の中身は `public/` のルートにコピーされるので、`website/static/CNAME` に置くのが正解です。
-
-[AGENT]: `website/static/CNAME` を作成しました（中身は `meow.oreha.dev`）。 ## 次のステップ 1. **Hugoの `baseURL` の確認** `website/hugo.toml` の `baseURL` も新ドメインに更新しておく必要があります（`https://meow.oreha.dev/`）。確認しましょうか？ 2. **コミット & プッシュ** このファイルを main にプッシュすると `hugo.yml` ワークフローが走り、`website/public/CNAME` として配信されます。GitHub Pages 側がデプロイ後、Custom domain設定とDNSが整合すれば `https://meow.oreha.dev` でアクセス可能になります。 3. **HTTPS有効化** DNSの伝播後、`Settings → Pages` で **Enforce HTTPS** にチェックを入れる（証明書はGitHubが自動発行、伝播完了まで数分〜数時間）。 `baseURL` の確認と更新もまとめてやりますか？

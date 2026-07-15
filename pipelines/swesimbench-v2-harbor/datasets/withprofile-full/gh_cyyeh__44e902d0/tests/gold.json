@@ -1,1 +1,0 @@
-{"point_id": "e8bf05ea-c8a5-41f0-a1cb-439907ebf6d8#38", "developer": "gh:cyyeh", "condition": "withprofile", "real": "also add k8s related command in makefile for kustomize version", "prev_agent": "Added `make k8s-delete` \u2014 uninstalls the Helm release and cleans up any PVCs.", "gold_move": null}

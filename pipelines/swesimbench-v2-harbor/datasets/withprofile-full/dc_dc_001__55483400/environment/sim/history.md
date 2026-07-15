@@ -1,3 +1,0 @@
-[DEVELOPER]: 计算实时充电功率
-
-[AGENT]: **实时充电功率 ≈ 52.3 W** | 量 | 值 | |---|---| | 电池电压 | 10.810 V | | 充电电流（InstantAmperage） | 4.836 A | | **充电功率 = U × I** | **≈ 52.3 W** | 补充信息： - 状态：正在充电（`IsCharging = Yes`），电量 3 % - 适配器：20 V / 5 A，最大 100 W；当前协商档位 20 V/5 A - 这 52 W 只是流入电池的功率；剩下的功率正在被系统本身消耗，所以适配器实际输出会更高。如果想看适配器侧的整机输入功率，可以读 `AdapterDetails.Watts` 协商上限（100 W）或者用 `system_profiler SPPowerDataType` 看 `Wattage (W)` 字段。

@@ -1,7 +1,0 @@
-[DEVELOPER]: now for some reason the dropmenu elements n the retours section , specifically the elements that have the label entrepot next to them dont get deleted if i uncheck them, and maybe only of them gets deleted
-
-[AGENT]: ``` ``` ``` ``` ``` ``` [object Object]
-
-[DEVELOPER]: @agent Continue: "Continue to iterate?"
-
-[AGENT]: ``` ``` ``` ``` ``` ``` The issue was in the logic for identifying dropdown elements in the "retours" section. The code was only checking the immediate previous sibling for section headers, but since there are multiple items under each section header, only the first item (closest to the header) was being correctly identified and hidden when unchecked. I've fixed this by: 1. Adding a `findSectionHeader` function that searches backwards through previous siblings to find the closest section header (identified by containing a `span.badge` element). 2. Updating the retours case in both `content.js` and `temp.js` to use this function instead of just `element.previousElementSibling`. Now all three entrepot items ("A dispatcher", "En transit", and "Historique") should properly get hidden when you uncheck them in the options page, as they'll all correctly identify their section and match the visibility settings.
