@@ -1,3 +1,7 @@
-[DEVELOPER]: seeds (∗/∗∗/∗∗∗ for p<0.05/0.01/0.001). [Image #1] Is this rendering error
+> DEVELOPER
 
-[AGENT]: Not a rendering error. `App.~\ref{app:setup}` correctly resolves to "App. A" because `\label{app:setup}` is attached to the first appendix section (`\section{Experimental Setup Details}` at line 1057, immediately after `\appendix` at line 1045). LaTeX numbers appendix sections with letters, so it renders as **A**. The semicolon after "A" is just punctuation continuing the sentence ("…in App. A; on acceptance we release…"). Both the reference and the punctuation are intentional and correct.
+seeds (∗/∗∗/∗∗∗ for p<0.05/0.01/0.001). [Image #1] Is this rendering error
+
+> AGENT
+
+Not a rendering error. `App.~\ref{app:setup}` correctly resolves to "App. A" because `\label{app:setup}` is attached to the first appendix section (`\section{Experimental Setup Details}` at line 1057, immediately after `\appendix` at line 1045). LaTeX numbers appendix sections with letters, so it renders as **A**. The semicolon after "A" is just punctuation continuing the sentence ("…in App. A; on acceptance we release…"). Both the reference and the punctuation are intentional and correct.

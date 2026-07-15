@@ -1,3 +1,7 @@
-[DEVELOPER]: Hello, checking in before I send the work. A quick all set is fine.
+> DEVELOPER
 
-[AGENT]: All set.
+Hello, checking in before I send the work. A quick all set is fine.
+
+> AGENT
+
+All set.

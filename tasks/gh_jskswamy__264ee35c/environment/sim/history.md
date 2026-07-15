@@ -1,3 +1,7 @@
-[DEVELOPER]: in the README.md there is a example repo called 'github.com/acme/api' what does acme means? i didn't notice it earlier, can we just quote our own repo as reference?
+> DEVELOPER
 
-[AGENT]: "Acme" is a generic placeholder company name (like "Foo" or "Example Corp") — it comes from the fictional Acme Corporation in Looney Tunes cartoons. It's widely used in documentation as a stand-in. Yes, we can replace it with this repo's actual path. Let me find and update the references.
+in the README.md there is a example repo called 'github.com/acme/api' what does acme means? i didn't notice it earlier, can we just quote our own repo as reference?
+
+> AGENT
+
+"Acme" is a generic placeholder company name (like "Foo" or "Example Corp") — it comes from the fictional Acme Corporation in Looney Tunes cartoons. It's widely used in documentation as a stand-in. Yes, we can replace it with this repo's actual path. Let me find and update the references.

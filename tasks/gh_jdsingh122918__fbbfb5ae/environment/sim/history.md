@@ -1,3 +1,7 @@
-[DEVELOPER]: check which files are still unstaged and not commited
+> DEVELOPER
 
-[AGENT]: No staged or modified tracked files. Only **untracked** files/directories: | Path | Notes | |------|-------| | `.claude/` | Claude Code config — likely should stay untracked | | `.entire/` | Unknown | | `.forge/factory.db-*` | SQLite WAL/SHM files — should be gitignored | | `AGENTS.md` | New file | | `ui/.vite/` | Vite cache — should be gitignored | The working tree is clean for tracked files. `AGENTS.md` is the only file that looks intentional to commit. The `.forge/factory.db-*` and `ui/.vite/` entries should probably be added to `.gitignore`.
+check which files are still unstaged and not commited
+
+> AGENT
+
+No staged or modified tracked files. Only **untracked** files/directories: | Path | Notes | |------|-------| | `.claude/` | Claude Code config — likely should stay untracked | | `.entire/` | Unknown | | `.forge/factory.db-*` | SQLite WAL/SHM files — should be gitignored | | `AGENTS.md` | New file | | `ui/.vite/` | Vite cache — should be gitignored | The working tree is clean for tracked files. `AGENTS.md` is the only file that looks intentional to commit. The `.forge/factory.db-*` and `ui/.vite/` entries should probably be added to `.gitignore`.

@@ -1,91 +1,183 @@
-[DEVELOPER]: workflow のスライドのコード例はそれぞれ何をやるもの？
+> DEVELOPER
 
-[AGENT]: workflows ページ (`contents/cloudflare-data-platform/pages/workflows.md`) に2つのコード例があります。 ## 1. TypeScript: `ImageProcessingWorkflow` (pages/workflows.md:14-39) **画像処理パイプライン** を題材に Workflows の核となる 3 機能を見せる例: | ステップ | 役割 | 見せたい機能 | |---|---|---| | `step.do('fetch image')` | R2 から画像を `arrayBuffer()` で取得 | **Workers Bindings 統合** (`this.env.BUCKET`) | | `step.do('generate description')` | Workers AI の LLaVA で「1 文の説明」を生成 | **Workers AI も同じ step で使える** | | `step.waitForEvent('await approval', { timeout: '24 hours' })` | 外部からの `approved` イベントを最大 24 時間待つ | **durable な人間承認待ち** (これが目玉) | | `step.do('publish')` | `public/` プレフィックスで R2 に書き戻す | 承認後の最終ステップ | ★ Insight ───────────────────────────────────── - `step.waitForEvent` の 24h タイムアウトはプロセスが寝てる間も課金されず再開できる — これが「耐久性のある実行エンジン」の象徴で、Lambda + Step Functions 相当の世界を Worker 単体で表現できる - 各 step が冪等な単位として retry されるので、外部 API の重複呼び出しを避けるなら step 境界の切り方が設計上のキモになる ───────────────────────────────────────────────── ## 2. Python: `IngestWorkflow` (pages/workflows.md:126-144) **diamond shape DAG (並列 fan-out → join)** を題材に、TypeScript 版と違う Python SDK 独自の DSL を見せる例: ``` fetch_a ─┐ ├─► merge fetch_b ─┘ ``` - `@step.do()` デコレータで `fetch_a` / `fetch_b` を独立ステップとして宣言 - `merge(fetch_a, fetch_b)` の **引数名がそのまま依存宣言** になる — `fetch_a` という引数があれば `fetch_a` step の完了を待つ - `concurrent=True` で `fetch_a` / `fetch_b` が並列起動 → 両方終わったら `merge` が実行される ★ Insight ───────────────────────────────────── - TypeScript 版は「順序 = `await` の並び」だが、Python 版は「依存 = 引数名」という宣言的 DAG。Airflow / Prefect の世代を経た現代的な書き方で、ML / data pipeline 文脈と相性がいい - 同じ Workflows ランタイムなのに SDK によって DSL が違うのは Cloudflare の典型的なアプローチ (Durable Objects の […]
+workflow のスライドのコード例はそれぞれ何をやるもの？
 
-[DEVELOPER]: 2つとも実際にデプロイしたい。
+> AGENT
 
-[AGENT]: 実デプロイとなるとスライドのコードだけでは足りない要素 (Bindings 作成・依存関数の中身・トリガー方法) があるので、スコープを合わせさせてください。 ★ Insight ───────────────────────────────────── - スライドのコードは **教育用に切り出された抜粋** で、`this.env.BUCKET` (R2 binding) や `get_a()` / `get_b()` (Python 側) など外部依存が前提になっている — そのままでは `wrangler deploy` に通らない - このリポジトリは Slidev 用に `wrangler.jsonc` が Static Assets 配信向けに構成されているので、Workflows は **別プロジェクト** として作るのが素直 ─────────────────────────────────────────────────
+workflows ページ (`contents/cloudflare-data-platform/pages/workflows.md`) に2つのコード例があります。 ## 1. TypeScript: `ImageProcessingWorkflow` (pages/workflows.md:14-39) **画像処理パイプライン** を題材に Workflows の核となる 3 機能を見せる例: | ステップ | 役割 | 見せたい機能 | |---|---|---| | `step.do('fetch image')` | R2 から画像を `arrayBuffer()` で取得 | **Workers Bindings 統合** (`this.env.BUCKET`) | | `step.do('generate description')` | Workers AI の LLaVA で「1 文の説明」を生成 | **Workers AI も同じ step で使える** | | `step.waitForEvent('await approval', { timeout: '24 hours' })` | 外部からの `approved` イベントを最大 24 時間待つ | **durable な人間承認待ち** (これが目玉) | | `step.do('publish')` | `public/` プレフィックスで R2 に書き戻す | 承認後の最終ステップ | ★ Insight ───────────────────────────────────── - `step.waitForEvent` の 24h タイムアウトはプロセスが寝てる間も課金されず再開できる — これが「耐久性のある実行エンジン」の象徴で、Lambda + Step Functions 相当の世界を Worker 単体で表現できる - 各 step が冪等な単位として retry されるので、外部 API の重複呼び出しを避けるなら step 境界の切り方が設計上のキモになる ───────────────────────────────────────────────── ## 2. Python: `IngestWorkflow` (pages/workflows.md:126-144) **diamond shape DAG (並列 fan-out → join)** を題材に、TypeScript 版と違う Python SDK 独自の DSL を見せる例: ``` fetch_a ─┐ ├─► merge fetch_b ─┘ ``` - `@step.do()` デコレータで `fetch_a` / `fetch_b` を独立ステップとして宣言 - `merge(fetch_a, fetch_b)` の **引数名がそのまま依存宣言** になる — `fetch_a` という引数があれば `fetch_a` step の完了を待つ - `concurrent=True` で `fetch_a` / `fetch_b` が並列起動 → 両方終わったら `merge` が実行される ★ Insight ───────────────────────────────────── - TypeScript 版は「順序 = `await` の並び」だが、Python 版は「依存 = 引数名」という宣言的 DAG。Airflow / Prefect の世代を経た現代的な書き方で、ML / data pipeline 文脈と相性がいい - 同じ Workflows ランタイムなのに SDK によって DSL が違うのは Cloudflare の典型的なアプローチ (Durable Objects の […]
 
-[AGENT]: 了解。最後にプロジェクト構造だけ確認させてください。 ★ Insight ───────────────────────────────────── - **1 Worker = 1 言語** という制約があるので TypeScript と Python は物理的に別 Worker = 別ディレクトリ (= 別 `wrangler.jsonc`) になる - スライドの例で `await step.waitForEvent(...)` を使っているので、Worker からそのクラスを **`Workflow` binding として自己参照** する設定 (`wrangler.jsonc` の `workflows[]`) が `deploy` 通過の最小要件 — R2 / AI binding は実行時に必要だが `deploy` だけなら省略可 ─────────────────────────────────────────────────
+> DEVELOPER
 
-[AGENT]: 方針確定。`~/Developer/github.com/ta93abe/cf-workflows-examples/` に `ts/` と `py/` を並べる構成で進めます。まずは環境確認とリポジトリ準備から。
+2つとも実際にデプロイしたい。
 
-[AGENT]: タスクを整理して進めます。
+> AGENT
 
-[AGENT]: docs で要件が固まりました: ★ Insight ───────────────────────────────────── - **TS**: `wrangler.jsonc` に `workflows[]` (name / binding / class_name) を書き、`WorkflowEntrypoint` を export + Worker の fetch handler を default export するだけ。R2 / Workers AI は実行時必要だが deploy 通過には不要 - **Python**: `compatibility_flags: ["python_workers", "python_workflows"]` が必須・`compatibility_date >= 2025-08-01`・Beta 状態。**現行の Python Worker は `Default(WorkerEntrypoint)` クラスに fetch を入れる新仕様** (2025-08-14 以降のデフォルト) なので、スライドの Workflow class とは別に Worker class が必要 - スライドの `step.waitForEvent` / `get_a` 等は deploy 通過に不要 — 残しても良いがダミー実装にする ─────────────────────────────────────────────────
+実デプロイとなるとスライドのコードだけでは足りない要素 (Bindings 作成・依存関数の中身・トリガー方法) があるので、スコープを合わせさせてください。 ★ Insight ───────────────────────────────────── - スライドのコードは **教育用に切り出された抜粋** で、`this.env.BUCKET` (R2 binding) や `get_a()` / `get_b()` (Python 側) など外部依存が前提になっている — そのままでは `wrangler deploy` に通らない - このリポジトリは Slidev 用に `wrangler.jsonc` が Static Assets 配信向けに構成されているので、Workflows は **別プロジェクト** として作るのが素直 ─────────────────────────────────────────────────
 
-[AGENT]: リポジトリ scaffold OK。次は `.gitignore` と README、そして TS Worker から作っていきます。
+> AGENT
 
-[AGENT]: ## TS Worker を組み立て スライドのコードに加えて、`wrangler deploy` を通すために必要な周辺ファイルを用意します。
+了解。最後にプロジェクト構造だけ確認させてください。 ★ Insight ───────────────────────────────────── - **1 Worker = 1 言語** という制約があるので TypeScript と Python は物理的に別 Worker = 別ディレクトリ (= 別 `wrangler.jsonc`) になる - スライドの例で `await step.waitForEvent(...)` を使っているので、Worker からそのクラスを **`Workflow` binding として自己参照** する設定 (`wrangler.jsonc` の `workflows[]`) が `deploy` 通過の最小要件 — R2 / AI binding は実行時に必要だが `deploy` だけなら省略可 ─────────────────────────────────────────────────
 
-[AGENT]: ここでスライドのコードをそのまま使った Workflow class を書きます。`step.waitForEvent` は実行時に必要だが deploy 通過には残しても OK。Worker から trigger するための fetch handler が追加で必要 (スライドには無い)。
+> AGENT
 
-[AGENT]: TS Worker dry-run 成功。`env.IMAGE_PROCESSING (ImageProcessingWorkflow) Workflow` が認識されました。Python に進みます。
+方針確定。`~/Developer/github.com/ta93abe/cf-workflows-examples/` に `ts/` と `py/` を並べる構成で進めます。まずは環境確認とリポジトリ準備から。
 
-[AGENT]: 両方の dry-run が通りました。実際の deploy に進みます。
+> AGENT
 
-[AGENT]: TS デプロイ成功 → `https://image-processing-workflow.ta93abe.workers.dev`。次は Python。
+タスクを整理して進めます。
 
-[AGENT]: Python Worker のデプロイがエラー。`workers` モジュールが見つからない問題で、現代の Python Workers は外部 SDK モードがデフォルトで、ローカルに `workers-py>=1.90` を入れて bundle するか、`disable_python_external_sdk` flag で runtime 内蔵 SDK にフォールバックする必要があります。 ★ Insight ───────────────────────────────────── - Python Workers の最近のアップデート (2025-2026) で SDK が **外部パッケージ化** (workers-py) され、`uv` でローカルに入れて deploy 時に bundle する仕組みに変わった - `disable_python_external_sdk` compatibility flag を付けると、旧来通り **runtime 内蔵の `workers` モジュール** を使える — 最小構成で deploy したいときの逃げ道 ─────────────────────────────────────────────────
+> AGENT
 
-[AGENT]: エラーメッセージそのものが `disable_python_external_sdk` flag を提案してくれているので、それを追加します。
+docs で要件が固まりました: ★ Insight ───────────────────────────────────── - **TS**: `wrangler.jsonc` に `workflows[]` (name / binding / class_name) を書き、`WorkflowEntrypoint` を export + Worker の fetch handler を default export するだけ。R2 / Workers AI は実行時必要だが deploy 通過には不要 - **Python**: `compatibility_flags: ["python_workers", "python_workflows"]` が必須・`compatibility_date >= 2025-08-01`・Beta 状態。**現行の Python Worker は `Default(WorkerEntrypoint)` クラスに fetch を入れる新仕様** (2025-08-14 以降のデフォルト) なので、スライドの Workflow class とは別に Worker class が必要 - スライドの `step.waitForEvent` / `get_a` 等は deploy 通過に不要 — 残しても良いがダミー実装にする ─────────────────────────────────────────────────
 
-[AGENT]: 両方のデプロイが成功しました。
+> AGENT
 
-[AGENT]: TS Worker は実際に応答してます。最終構成と次にやることをまとめます。 ## 完了状況 | | Worker 名 | URL | binding 状態 | |---|---|---|---| | TS | `image-processing-workflow` | https://image-processing-workflow.ta93abe.workers.dev | `IMAGE_PROCESSING (ImageProcessingWorkflow)` 登録済 | | Python | `ingest-workflow-py` | https://ingest-workflow-py.ta93abe.workers.dev | `INGEST (IngestWorkflow)` 登録済 | ★ Insight ───────────────────────────────────── - **R2 / Workers AI binding を `wrangler.jsonc` から省いても deploy は通る** — Cloudflare の検証は「コードが parse できて Workflow class が見つかること」までで、bindings の整合性は実行時チェック。デモを段階的に組み立てやすい設計 - Python は **Beta** ゆえに SDK 配布方式が `workers-py` (uv 経由 bundle) と内蔵 SDK の二系統に分岐していて、`disable_python_external_sdk` が最小デプロイの逃げ道になる。**正式運用なら `uv run pywrangler deploy` パスに移行する** のが推奨 ───────────────────────────────────────────────── ## 実行に進めるには 実際に Workflow を動かすには bindings を追加して再 deploy するだけです。 - **TS の `ImageProcessingWorkflow`**: `wrangler.jsonc` の末尾コメントにある `r2_buckets` と `ai` をアンコメント → R2 バケットを `wrangler r2 bucket create <name>` で作成 → `/start?imageKey=<key>` で trigger → 承認は `instance.sendEvent({ type: 'approved', payload: {} })` を別ルートで実装 - **Python の `IngestWorkflow`**: 現状でも `/` に GET すれば `INGEST.create()` が走る。Workflows ダッシュボードでビジュアライザを確認できる ## ファイル一覧 ``` ~/Developer/github.com/ta93abe/cf-workflows-examples/ ├── .gitignore ├── README.md ├── ts/ │ ├── package.json │ ├── tsconfig.json │ ├── wrangler.jsonc │ └── src/index.ts └── py/ ├── wrangler.jsonc └── src/entry.py ``` リポジトリは git init のみで未コミットです。GitHub に push する or 最初のコミットを作るのが必要なら、その指示ください。
+リポジトリ scaffold OK。次は `.gitignore` と README、そして TS Worker から作っていきます。
 
-[DEVELOPER]: workflow de
+> AGENT
 
-[DEVELOPER]: workflow で loop とか if else がかけたりするよね。ドキュメント確認して
+## TS Worker を組み立て スライドのコードに加えて、`wrangler deploy` を通すために必要な周辺ファイルを用意します。
 
-[AGENT]: 確認します。Workflows での control flow がどう扱われているか docs を引きます。
+> AGENT
 
-[AGENT]: 書けます。ただし「**determinism rule**」が制約条件として明文化されています。 ## 書けるパターン (公式 docs より) **`if / else` (条件分岐)** ✅ ```typescript const config = await step.do("fetch config", async () => { return await this.env.KV.get("feature-flags", { type: "json" }); }); if (config.enableEmailNotifications) { await step.do("send email", async () => { /* ... */ }); } if (event.payload.userType === "premium") { await step.do("premium processing", async () => { /* ... */ }); } ``` **`for` ループ (動的ステップ展開)** ✅ ```typescript const catList = await step.do("get cat list from KV", async () => { return await this.env.KV.get("cat-list"); }); for (const cat of catList) { await step.do(`get cat: ${cat}`, async () => { return await this.env.KV.get(cat); }); } ``` ## やってはいけないパターン 🔴 **非決定的な値を条件にする** ```typescript if (Math.random() > 0.5) { // ❌ 再起動時に経路が変わる await step.do("maybe do something", async () => {}); } ``` ✅ **step.do の中にラップして deterministic に** ```typescript const shouldProcess = await step.do("decide randomly", async () => { return Math.random() > 0.5; // 結果は step として永続化されるので再起動後も同じ }); if (shouldProcess) { await step.do("conditionally do something", async () => {}); } ``` 🔴 **step 名が非決定的** ```typescript await step.do(`step #1 at: ${Date.now()}`, ...) // ❌ 名前が cache key なので毎回ミスする ``` ★ Insight ───────────────────────────────────── - **核となるルール**: control flow は step **の外** に書ける。ただし条件式・ループ対象は `event.payload` か **過去の step の戻り値** […]
+ここでスライドのコードをそのまま使った Workflow class を書きます。`step.waitForEvent` は実行時に必要だが deploy 通過には残しても OK。Worker から trigger するための fetch handler が追加で必要 (スライドには無い)。
 
-[DEVELOPER]: ts の方は loop やif/elseを組み込んでほしい。
+> AGENT
 
-[AGENT]: スライドの「画像処理」文脈を保ちつつ、loop と if/else が自然に登場するパターンに拡張します。 ★ Insight ───────────────────────────────────── - 画像処理に **loop** を入れるなら「複数画像をバッチ処理」が自然 — `event.payload.imageKeys[]` を受けて `for` で展開、step 名に imageKey を埋め込めば各画像ごとに独立した durable step として cache される - **if/else** は「自動承認 vs 人間承認」が現実味のある分岐 — Workers AI の判定結果 (confidence や `safety` スコア) が閾値を超えたら `step.do` で即 publish、超えなければ `step.waitForEvent` で 24h durable に承認待ち - どちらも **deterministic** に基づく分岐: `imageKeys` は `event.payload` 由来、confidence は前段 step の戻り値由来 — 公式 docs の制約をクリアしている ─────────────────────────────────────────────────
+TS Worker dry-run 成功。`env.IMAGE_PROCESSING (ImageProcessingWorkflow) Workflow` が認識されました。Python に進みます。
 
-[AGENT]: dry-run 通りました。loop/if/else 版の deploy を完了させてから、バウンドワーカーの話に答えます。
+> AGENT
 
-[AGENT]: loop/if/else 版の deploy も成功。新しい質問に答えます。
+両方の dry-run が通りました。実際の deploy に進みます。
 
-[AGENT]: ## loop/if/else 版 deploy 完了 ``` Uploaded image-processing-workflow (2.97 sec) Deployed image-processing-workflow triggers (3.20 sec) https://image-processing-workflow.ta93abe.workers.dev workflow: image-processing Current Version ID: 80dff4b8-1cc7-40a4-8599-7d826ef3947d ``` 新しいエンドポイント: - `GET /start?imageKeys=a.jpg,b.jpg&threshold=0.7` — バッチ起動 - `GET /approve?id=<id>&imageKey=<key>` — `step.waitForEvent` を release (人間承認パスのとき) 組み込んだパターン: - **loop**: `for (const imageKey of imageKeys)` で各画像ごとに `step.do` (step 名に `imageKey` を埋めて cache key を deterministic に) - **if/else**: `analysis.confidence >= autoApproveThreshold` で `auto-publish` vs `waitForEvent → 承認後 publish` を分岐 --- ## 「バウンドワーカー (bound worker)」について これは Workflows ダッシュボードでの用語で、**Workflow class を物理的に保持している Worker** のことです。 ★ Insight ───────────────────────────────────── - Cloudflare Workflows は「Workflow という独立リソース」ではなく、**Worker の中で `WorkflowEntrypoint` を継承したクラス** として実装される。だから 1 つの Workflow には必ず「そのクラスが書かれている Worker (= script)」が紐付く - ダッシュボードで Workflow を開いたとき表示される「バウンドワーカー」は、その Workflow の `wrangler.jsonc` で `script_name` が指す Worker (省略時は同じ Worker) — 今回のケースだと `image-processing-workflow` Worker が `image-processing` Workflow の bound worker ───────────────────────────────────────────────── ### 今回の関係図 ``` Worker: image-processing-workflow ├── fetch handler (/start, /status, /approve) ├── class ImageProcessingWorkflow ← Workflow class └── binding: IMAGE_PROCESSING ──┐ ↓ Workflow: image-processing ←─── bound worker: image-processing-workflow ``` `wrangler.jsonc` の対応関係: | `wrangler.jsonc` のフィールド | ダッシュボード上の意味 | |---|---| | `name` (top-level): `image-processing-workflow` | **Worker 名** (= バウンドワーカー名) | | `workflows[].name`: `image-processing` | **Workflow 名** | | `workflows[].class_name`: `ImageProcessingWorkflow` | Worker 内のどのクラスが Workflow か | | `workflows[].binding`: `IMAGE_PROCESSING` | Worker の `env` から参照するときの変数名 | | `workflows[].script_name` (省略) […]
+> AGENT
 
-[AGENT]: No response requested.
+TS デプロイ成功 → `https://image-processing-workflow.ta93abe.workers.dev`。次は Python。
 
-[DEVELOPER]: workflow から workflow を呼べる？
+> AGENT
 
-[AGENT]: docs で確認します。
+Python Worker のデプロイがエラー。`workers` モジュールが見つからない問題で、現代の Python Workers は外部 SDK モードがデフォルトで、ローカルに `workers-py>=1.90` を入れて bundle するか、`disable_python_external_sdk` flag で runtime 内蔵 SDK にフォールバックする必要があります。 ★ Insight ───────────────────────────────────── - Python Workers の最近のアップデート (2025-2026) で SDK が **外部パッケージ化** (workers-py) され、`uv` でローカルに入れて deploy 時に bundle する仕組みに変わった - `disable_python_external_sdk` compatibility flag を付けると、旧来通り **runtime 内蔵の `workers` モジュール** を使える — 最小構成で deploy したいときの逃げ道 ─────────────────────────────────────────────────
 
-[AGENT]: 呼べます。`step.do` の中で **child workflow の `create()` を呼ぶ** のが公式パターンです。 ## 公式パターン (docs より) ```typescript export class ParentWorkflow extends WorkflowEntrypoint<Env, Params> { async run(event, step) { const result = await step.do("initial processing", async () => { return { fileKey: "output.pdf" }; }); // child workflow を起動 const childInstance = await step.do("trigger child workflow", async () => { return await this.env.CHILD_WORKFLOW.create({ id: `child-${event.instanceId}`, params: { fileKey: result.fileKey }, }); }); // 親はここで即進む — 子の完了を待たない await step.do("continue with other work", async () => { console.log(`Started child workflow: ${childInstance.id}`); }); } } ``` ★ Insight ───────────────────────────────────── - **Fire-and-forget セマンティクス**: 親は `create()` が返ってきたらすぐ次へ進む。子は完全に独立して走る。「親が子を待つ」が欲しければ自前で `instance.status()` を polling するか、子から `sendEvent` で親に通知 + 親側で `step.waitForEvent` で受ける durable wait パターンを組む - **必ず step.do で wrap する**: `create()` は副作用 (子インスタンス作成) を持つので、step 外で呼ぶと engine 再起動時に **子が二重起動** する可能性がある。これは [Rules of Workflows](https://developers.cloudflare.com/workflows/build/rules-of-workflows/) の「side effects は step に閉じ込めろ」の原則そのもの - **ID を deterministic にする**: `id: \`child-${event.instanceId}\`` のように親 instance ID から導出すると、create 自体が冪等になる (重複 ID は `create` がエラーを返す = 重複防止になる)。`createBatch` を使うと最大 100 件一気に起動できて fan-out パターンに最適 ───────────────────────────────────────────────── ## 設定上の必要事項 呼びたい子 Workflow への binding を **親 Worker の `wrangler.jsonc`** に追加するだけ: ```jsonc { "name": "parent-worker", "workflows": [ { "name": "parent", "binding": "PARENT", "class_name": "ParentWorkflow" }, { "name": "child", "binding": "CHILD_WORKFLOW", "class_name": "ChildWorkflow" // 別 Worker にある場合は "script_name": "child-worker" を追加 } ] […]
+> AGENT
 
-[DEVELOPER]: Cloudflare ダッシュボードが Workflow コードを parse し、**step / 並列 / 条件分岐 / ループの DAG 図** を自動生成します。 DAGといいきっていいの？
+エラーメッセージそのものが `disable_python_external_sdk` flag を提案してくれているので、それを追加します。
 
-[AGENT]: 良い突っ込み。公式 docs での表現を確認します。
+> AGENT
 
-[AGENT]: 良い指摘です。**厳密には DAG と言い切れません**。Cloudflare 自身も Visualizer を "DAG" とは呼んでいません。 ## 公式 docs での表現 `/workflows/build/visualizer/` を確認すると: > View a visual representation of your parsed Workflow code as a **diagram** on the Cloudflare dashboard. > The **diagram** illustrates your sequenced & parallel steps, conditionals, **loops**, and nested logic. **"diagram"** または **"visual map"** と呼ばれていて、"DAG" という単語は出てきません。Changelog (2026-02-03 リリース) も同様。 ## なぜ Cloudflare は "DAG" を避けているか ★ Insight ───────────────────────────────────── - **DAG = Directed Acyclic Graph** で、定義上 **閉路 (cycle) を持たない**。`for` ループや `while` を含むコードはランタイム的には「同じ step 種が複数回実行される」= 概念的に閉路扱いになる - Cloudflare の Visualizer はループを「折りたたんで 1 ノード ↔ 展開して各イテレーションを別ノード」として描く。**展開後は cycle が無いので描画上は DAG だが、コード構造としては cyclic** という二重性がある - 一方 **Python Workflows SDK では明示的に "DAG Workflows" という章** がある (`/workflows/python/dag/`) — これは `@step.do(concurrent=True)` + 引数名依存で **静的に diamond shape の依存グラフ** を宣言するパターンを指す。**ループが含まれない、純粋に依存グラフだけで完結する書き方**なので DAG と呼べる ───────────────────────────────────────────────── つまり: | | 公式の呼び方 | DAG と呼べるか | |---|---|---| | TS/JS Visualizer (ループ含む) | "diagram" / "visual map" | △ 描画上は acyclic だが、コードは cyclic | | Python `@step.do(concurrent=True)` パターン | "DAG Workflows" (明示) | ◎ ループ無しの純依存グラフ | | スライドの dbt build 例 | (実体は TS/JS Visualizer) | △ Cloudflare は DAG と呼んでない | | Airflow DAG View | "DAG" だが動的タスクは展開時のみ acyclic | △ 同じ二重性あり | ## スライドの該当箇所 `contents/cloudflare-data-platform/pages/workflows.md` を見ると、現状 3 箇所で "DAG" を使っています:
+両方のデプロイが成功しました。
 
-[AGENT]: ビジュアライザのスライドだけ `layout` 未指定なので、`two-cols-header` に揃えます。
+> AGENT
 
-[AGENT]: レイアウトを `two-cols-header` に変更しました。`grid` ベースの自前カラム指定をやめ、テーマの slot 機構 (`::left::` / `::right::`) に統一しています。 ★ Insight ───────────────────────────────────── - `two-cols-header` レイアウトはタイトルとリード文が **header 領域** を占め、`::left::` / `::right::` が **header の下** に左右に並ぶ — 自前 `grid grid-cols-[3fr_2fr]` だとタイトルもグリッド内に巻き込まれて header 領域に揃わない - 他のスライドと同じレイアウト機構を使う利点: テーマ (`slidev-theme-enbu`) 側でタイポグラフィや余白を調整したときに **全スライドに一括反映される** — `grid grid-cols-...` の自前指定は孤島になってメンテ漏れする ───────────────────────────────────────────────── --- ## DAG 表記の修正は別件として残しています 先ほどの「DAG といい切っていいの?」への結論はこの行のままだとまだ Cloudflare 公式の言い回しと食い違っています: ``` 80: ...step / 並列 / 条件分岐 / ループの DAG 図 を自動生成 107: step・並列・条件分岐・ループの DAG を自動描画 111: Airflow の DAG View に相当します。 ← (ノート) ``` Python パートの DAG (`120, 154, 179, 184`) は公式 docs が "DAG Workflows" と章立てしてるので **そのまま残して OK**。問題は **TypeScript Visualizer 側の 2-3 箇所**。 修正候補: - 「DAG 図」→「フロー図」or「ダイアグラム」(Cloudflare 公式の "diagram" に寄せる) - 「Airflow の DAG View に相当」は note なのでそのまま残しても許容範囲 (Airflow も動的タスクは厳密 DAG ではないので類比としては成立) 修正しますか? Python パート (`@step.do(concurrent=True)` の方) は触らず、ビジュアライザの 80 行 + ノート 107 行だけ書き換える形が無難です。
+TS Worker は実際に応答してます。最終構成と次にやることをまとめます。 ## 完了状況 | | Worker 名 | URL | binding 状態 | |---|---|---|---| | TS | `image-processing-workflow` | https://image-processing-workflow.ta93abe.workers.dev | `IMAGE_PROCESSING (ImageProcessingWorkflow)` 登録済 | | Python | `ingest-workflow-py` | https://ingest-workflow-py.ta93abe.workers.dev | `INGEST (IngestWorkflow)` 登録済 | ★ Insight ───────────────────────────────────── - **R2 / Workers AI binding を `wrangler.jsonc` から省いても deploy は通る** — Cloudflare の検証は「コードが parse できて Workflow class が見つかること」までで、bindings の整合性は実行時チェック。デモを段階的に組み立てやすい設計 - Python は **Beta** ゆえに SDK 配布方式が `workers-py` (uv 経由 bundle) と内蔵 SDK の二系統に分岐していて、`disable_python_external_sdk` が最小デプロイの逃げ道になる。**正式運用なら `uv run pywrangler deploy` パスに移行する** のが推奨 ───────────────────────────────────────────────── ## 実行に進めるには 実際に Workflow を動かすには bindings を追加して再 deploy するだけです。 - **TS の `ImageProcessingWorkflow`**: `wrangler.jsonc` の末尾コメントにある `r2_buckets` と `ai` をアンコメント → R2 バケットを `wrangler r2 bucket create <name>` で作成 → `/start?imageKey=<key>` で trigger → 承認は `instance.sendEvent({ type: 'approved', payload: {} })` を別ルートで実装 - **Python の `IngestWorkflow`**: 現状でも `/` に GET すれば `INGEST.create()` が走る。Workflows ダッシュボードでビジュアライザを確認できる ## ファイル一覧 ``` ~/Developer/github.com/ta93abe/cf-workflows-examples/ ├── .gitignore ├── README.md ├── ts/ │ ├── package.json │ ├── tsconfig.json │ ├── wrangler.jsonc │ └── src/index.ts └── py/ ├── wrangler.jsonc └── src/entry.py ``` リポジトリは git init のみで未コミットです。GitHub に push する or 最初のコミットを作るのが必要なら、その指示ください。
 
-[DEVELOPER]: フロー図にしよ
+> DEVELOPER
 
-[AGENT]: ビジュアライザの 2 箇所 (本文 + ノート) だけ「フロー図」に直します。Python パートの "DAG" と Airflow の "DAG View" は固有名詞 / 公式章立てに合わせて残します。
+workflow de
 
-[AGENT]: 修正完了。 ★ Insight ───────────────────────────────────── - ビジュアライザ本文 (156行) とノート (175行) の 2 箇所だけ「フロー図」に変更。Cloudflare 公式の "diagram" 表現に寄り、かつ「ループを含むので厳密には DAG ではない」という突っ込みを回避 - Python パートの DAG (82, 141, 146行) と Airflow DAG View (179行) は意図的に残した — Python SDK の docs が `/workflows/python/dag/` という章を持っていて「DAG Workflows」は固有名詞、Airflow も同じ ───────────────────────────────────────────────── 残り `grep -n "DAG"` するとこうなります: ``` 82: ...DAG 表現が特徴です。引数名による暗黙的依存解決で DAG が宣言的に書けます。 ← Python (公式名称) 141: 特徴的なのは DAG の表現方法です。 ← Python ノート 146: diamond shaped DAG が宣言的に書けます。 ← Python ノート 179: Airflow の DAG View に相当します。 ← Airflow 固有名詞 ``` すべて「Python の DAG Workflows」or「Airflow の DAG View」という固有名詞文脈なので、技術的に正確に残せています。
+> DEVELOPER
 
-[DEVELOPER]: workflowの起動はWorker経由なの？
+workflow で loop とか if else がかけたりするよね。ドキュメント確認して
 
-[AGENT]: 確認します。
+> AGENT
 
-[AGENT]: いえ、**Worker 経由は 3 通りある起動方法のうち 1 つ** です。docs (`/workflows/build/trigger-workflows/`) には明示的に 3 つの経路が並んでいます: ## Workflow を起動する 3 経路 ### 1. Worker 経由 (Workers API / Bindings) — 最も典型 Worker の `wrangler.jsonc` に Workflow binding を持たせて、Worker のいずれかの handler から `env.MY_WORKFLOW.create()` を呼ぶ。Worker 内の起点は 4 種類: | handler | きっかけ | |---|---| | `fetch` | HTTP リクエスト (今回のリポジトリの `/start` 方式) | | `queue` | Cloudflare Queues のメッセージ消費 | | `scheduled` | Cron Trigger (定期実行) | | Durable Object 内 | DO 内のロジックから | ### 2. REST API (HTTP) — Worker を介さない外部呼び出し ```sh POST https://api.cloudflare.com/client/v4/accounts/{account_id}/workflows/{workflow_name}/instances ``` API Token で認証して直接 `instances` リソースに POST する。外部システム (GitHub Actions、AWS Lambda、自社の Backend サーバなど) から Cloudflare Workflows を起動するときに使う経路。 ### 3. Wrangler CLI — 手動オペレーション ```sh npx wrangler workflows trigger image-processing '{"imageKeys":["a.jpg"],"autoApproveThreshold":0.7}' ``` CLI から直接 Workflow をトリガーできる。デバッグや運用時の手動起動、`--id` で固有 ID を渡せばリトライ運用にも使える。 ★ Insight ───────────────────────────────────── - **「Worker は管理面」** という見方が正しい — Workflow class 自体は Worker script に同梱されるが、**起動するだけ** なら REST API や CLI で十分。「Workflow を `class_name` として保持する Worker」と「Workflow を起動する手段」は別の話 - 今回のリポジトリの `image-processing-workflow` Worker は **fetch handler 経由の起動口を提供** しているが、これを消しても `wrangler workflows trigger image-processing ...` で外部から起動可能。バウンドワーカーは **class の置き場として必須** だが、**起動経路としては必須ではない** - 設計上の含意: バックエンドが他社クラウド (AWS / GCP) にあって「処理だけ Cloudflare の durable 実行に流したい」場合、Worker の fetch handler を作らず **REST API で直接 instances を作る** 構成もあり得る。逆に「外部から叩かれたくない、Workers AI / R2 / Queue と密結合」なら Worker handler 経由が自然 […]
+確認します。Workflows での control flow がどう扱われているか docs を引きます。
 
-[DEVELOPER]: Worker 経由ならばEmailトリガーとかで起動できる？
+> AGENT
 
-[AGENT]: 確認します。
+書けます。ただし「**determinism rule**」が制約条件として明文化されています。 ## 書けるパターン (公式 docs より) **`if / else` (条件分岐)** ✅ ```typescript const config = await step.do("fetch config", async () => { return await this.env.KV.get("feature-flags", { type: "json" }); }); if (config.enableEmailNotifications) { await step.do("send email", async () => { /* ... */ }); } if (event.payload.userType === "premium") { await step.do("premium processing", async () => { /* ... */ }); } ``` **`for` ループ (動的ステップ展開)** ✅ ```typescript const catList = await step.do("get cat list from KV", async () => { return await this.env.KV.get("cat-list"); }); for (const cat of catList) { await step.do(`get cat: ${cat}`, async () => { return await this.env.KV.get(cat); }); } ``` ## やってはいけないパターン 🔴 **非決定的な値を条件にする** ```typescript if (Math.random() > 0.5) { // ❌ 再起動時に経路が変わる await step.do("maybe do something", async () => {}); } ``` ✅ **step.do の中にラップして deterministic に** ```typescript const shouldProcess = await step.do("decide randomly", async () => { return Math.random() > 0.5; // 結果は step として永続化されるので再起動後も同じ }); if (shouldProcess) { await step.do("conditionally do something", async () => {}); } ``` 🔴 **step 名が非決定的** ```typescript await step.do(`step #1 at: ${Date.now()}`, ...) // ❌ 名前が cache key なので毎回ミスする ``` ★ Insight ───────────────────────────────────── - **核となるルール**: control flow は step **の外** に書ける。ただし条件式・ループ対象は `event.payload` か **過去の step の戻り値** […]
 
-[AGENT]: できます。Worker には `email()` handler があり、その中から Workflow binding を呼べます。 ## `email()` handler の構造 ```typescript interface Env { MY_WORKFLOW: Workflow; } export default { async email(message, env, ctx): Promise<void> { // メールから抽出 const from = message.from; const subject = message.headers.get("subject"); const raw = new Response(message.raw); const body = await raw.arrayBuffer(); // Workflow を起動 (fire-and-forget) const instance = await env.MY_WORKFLOW.create({ id: message.headers.get("message-id") ?? crypto.randomUUID(), params: { from, subject, body }, }); // 必要なら forward / reject も併用可 await message.forward("archive@example.com"); }, } satisfies ExportedHandler<Env>; ``` `fetch` / `queue` / `scheduled` と同じ handler 一族で、`message` (= `ForwardableEmailMessage`) を受け取る点だけ違います。 ★ Insight ───────────────────────────────────── - **docs の trigger-workflows ページには `email()` handler が明示列挙されていない** (fetch / queue / scheduled / Durable Object の 4 つだけ書かれてる) が、これは網羅の手抜きで、原理的に **どの Worker handler からも Workflow binding を呼べる**。`email()` も Worker handler の一種なので例外ではない - **冪等な ID として `message-id`** を渡せるのが Email トリガーの隠れた強み。SMTP の `Message-ID` ヘッダはメール 1 通につき一意なので、`MY_WORKFLOW.create({ id: messageId, ... })` とすると **同じメールが二度配送されても Workflow が二重起動しない** (create は ID 重複で失敗する)。`fetch` トリガーだと自前で冪等キーを作る必要があるが、Email は無料で手に入る - **Email Routing の route 設定が前提**: Cloudflare ダッシュボードで `support@your-zone.com → このWorker` のような route を切ること、ゾーン側で MX レコードが Cloudflare に向いていることが必要。Workers AI や R2 などの他バインディングと違って **zone レベルの設定** が要る点だけ注意 ───────────────────────────────────────────────── ## 典型ユースケース (durable な Email pipeline) `email()` handler 自体は Worker の通常制限 (CPU 数十 ms 程度) があるので、**重い処理は Workflow に丸投げ** するのが定石です: | パターン […]
+> DEVELOPER
 
-[DEVELOPER]: containerとworkflow no
+ts の方は loop やif/elseを組み込んでほしい。
+
+> AGENT
+
+スライドの「画像処理」文脈を保ちつつ、loop と if/else が自然に登場するパターンに拡張します。 ★ Insight ───────────────────────────────────── - 画像処理に **loop** を入れるなら「複数画像をバッチ処理」が自然 — `event.payload.imageKeys[]` を受けて `for` で展開、step 名に imageKey を埋め込めば各画像ごとに独立した durable step として cache される - **if/else** は「自動承認 vs 人間承認」が現実味のある分岐 — Workers AI の判定結果 (confidence や `safety` スコア) が閾値を超えたら `step.do` で即 publish、超えなければ `step.waitForEvent` で 24h durable に承認待ち - どちらも **deterministic** に基づく分岐: `imageKeys` は `event.payload` 由来、confidence は前段 step の戻り値由来 — 公式 docs の制約をクリアしている ─────────────────────────────────────────────────
+
+> AGENT
+
+dry-run 通りました。loop/if/else 版の deploy を完了させてから、バウンドワーカーの話に答えます。
+
+> AGENT
+
+loop/if/else 版の deploy も成功。新しい質問に答えます。
+
+> AGENT
+
+## loop/if/else 版 deploy 完了 ``` Uploaded image-processing-workflow (2.97 sec) Deployed image-processing-workflow triggers (3.20 sec) https://image-processing-workflow.ta93abe.workers.dev workflow: image-processing Current Version ID: 80dff4b8-1cc7-40a4-8599-7d826ef3947d ``` 新しいエンドポイント: - `GET /start?imageKeys=a.jpg,b.jpg&threshold=0.7` — バッチ起動 - `GET /approve?id=<id>&imageKey=<key>` — `step.waitForEvent` を release (人間承認パスのとき) 組み込んだパターン: - **loop**: `for (const imageKey of imageKeys)` で各画像ごとに `step.do` (step 名に `imageKey` を埋めて cache key を deterministic に) - **if/else**: `analysis.confidence >= autoApproveThreshold` で `auto-publish` vs `waitForEvent → 承認後 publish` を分岐 --- ## 「バウンドワーカー (bound worker)」について これは Workflows ダッシュボードでの用語で、**Workflow class を物理的に保持している Worker** のことです。 ★ Insight ───────────────────────────────────── - Cloudflare Workflows は「Workflow という独立リソース」ではなく、**Worker の中で `WorkflowEntrypoint` を継承したクラス** として実装される。だから 1 つの Workflow には必ず「そのクラスが書かれている Worker (= script)」が紐付く - ダッシュボードで Workflow を開いたとき表示される「バウンドワーカー」は、その Workflow の `wrangler.jsonc` で `script_name` が指す Worker (省略時は同じ Worker) — 今回のケースだと `image-processing-workflow` Worker が `image-processing` Workflow の bound worker ───────────────────────────────────────────────── ### 今回の関係図 ``` Worker: image-processing-workflow ├── fetch handler (/start, /status, /approve) ├── class ImageProcessingWorkflow ← Workflow class └── binding: IMAGE_PROCESSING ──┐ ↓ Workflow: image-processing ←─── bound worker: image-processing-workflow ``` `wrangler.jsonc` の対応関係: | `wrangler.jsonc` のフィールド | ダッシュボード上の意味 | |---|---| | `name` (top-level): `image-processing-workflow` | **Worker 名** (= バウンドワーカー名) | | `workflows[].name`: `image-processing` | **Workflow 名** | | `workflows[].class_name`: `ImageProcessingWorkflow` | Worker 内のどのクラスが Workflow か | | `workflows[].binding`: `IMAGE_PROCESSING` | Worker の `env` から参照するときの変数名 | | `workflows[].script_name` (省略) […]
+
+> AGENT
+
+No response requested.
+
+> DEVELOPER
+
+workflow から workflow を呼べる？
+
+> AGENT
+
+docs で確認します。
+
+> AGENT
+
+呼べます。`step.do` の中で **child workflow の `create()` を呼ぶ** のが公式パターンです。 ## 公式パターン (docs より) ```typescript export class ParentWorkflow extends WorkflowEntrypoint<Env, Params> { async run(event, step) { const result = await step.do("initial processing", async () => { return { fileKey: "output.pdf" }; }); // child workflow を起動 const childInstance = await step.do("trigger child workflow", async () => { return await this.env.CHILD_WORKFLOW.create({ id: `child-${event.instanceId}`, params: { fileKey: result.fileKey }, }); }); // 親はここで即進む — 子の完了を待たない await step.do("continue with other work", async () => { console.log(`Started child workflow: ${childInstance.id}`); }); } } ``` ★ Insight ───────────────────────────────────── - **Fire-and-forget セマンティクス**: 親は `create()` が返ってきたらすぐ次へ進む。子は完全に独立して走る。「親が子を待つ」が欲しければ自前で `instance.status()` を polling するか、子から `sendEvent` で親に通知 + 親側で `step.waitForEvent` で受ける durable wait パターンを組む - **必ず step.do で wrap する**: `create()` は副作用 (子インスタンス作成) を持つので、step 外で呼ぶと engine 再起動時に **子が二重起動** する可能性がある。これは [Rules of Workflows](https://developers.cloudflare.com/workflows/build/rules-of-workflows/) の「side effects は step に閉じ込めろ」の原則そのもの - **ID を deterministic にする**: `id: \`child-${event.instanceId}\`` のように親 instance ID から導出すると、create 自体が冪等になる (重複 ID は `create` がエラーを返す = 重複防止になる)。`createBatch` を使うと最大 100 件一気に起動できて fan-out パターンに最適 ───────────────────────────────────────────────── ## 設定上の必要事項 呼びたい子 Workflow への binding を **親 Worker の `wrangler.jsonc`** に追加するだけ: ```jsonc { "name": "parent-worker", "workflows": [ { "name": "parent", "binding": "PARENT", "class_name": "ParentWorkflow" }, { "name": "child", "binding": "CHILD_WORKFLOW", "class_name": "ChildWorkflow" // 別 Worker にある場合は "script_name": "child-worker" を追加 } ] […]
+
+> DEVELOPER
+
+Cloudflare ダッシュボードが Workflow コードを parse し、**step / 並列 / 条件分岐 / ループの DAG 図** を自動生成します。 DAGといいきっていいの？
+
+> AGENT
+
+良い突っ込み。公式 docs での表現を確認します。
+
+> AGENT
+
+良い指摘です。**厳密には DAG と言い切れません**。Cloudflare 自身も Visualizer を "DAG" とは呼んでいません。 ## 公式 docs での表現 `/workflows/build/visualizer/` を確認すると: > View a visual representation of your parsed Workflow code as a **diagram** on the Cloudflare dashboard. > The **diagram** illustrates your sequenced & parallel steps, conditionals, **loops**, and nested logic. **"diagram"** または **"visual map"** と呼ばれていて、"DAG" という単語は出てきません。Changelog (2026-02-03 リリース) も同様。 ## なぜ Cloudflare は "DAG" を避けているか ★ Insight ───────────────────────────────────── - **DAG = Directed Acyclic Graph** で、定義上 **閉路 (cycle) を持たない**。`for` ループや `while` を含むコードはランタイム的には「同じ step 種が複数回実行される」= 概念的に閉路扱いになる - Cloudflare の Visualizer はループを「折りたたんで 1 ノード ↔ 展開して各イテレーションを別ノード」として描く。**展開後は cycle が無いので描画上は DAG だが、コード構造としては cyclic** という二重性がある - 一方 **Python Workflows SDK では明示的に "DAG Workflows" という章** がある (`/workflows/python/dag/`) — これは `@step.do(concurrent=True)` + 引数名依存で **静的に diamond shape の依存グラフ** を宣言するパターンを指す。**ループが含まれない、純粋に依存グラフだけで完結する書き方**なので DAG と呼べる ───────────────────────────────────────────────── つまり: | | 公式の呼び方 | DAG と呼べるか | |---|---|---| | TS/JS Visualizer (ループ含む) | "diagram" / "visual map" | △ 描画上は acyclic だが、コードは cyclic | | Python `@step.do(concurrent=True)` パターン | "DAG Workflows" (明示) | ◎ ループ無しの純依存グラフ | | スライドの dbt build 例 | (実体は TS/JS Visualizer) | △ Cloudflare は DAG と呼んでない | | Airflow DAG View | "DAG" だが動的タスクは展開時のみ acyclic | △ 同じ二重性あり | ## スライドの該当箇所 `contents/cloudflare-data-platform/pages/workflows.md` を見ると、現状 3 箇所で "DAG" を使っています:
+
+> AGENT
+
+ビジュアライザのスライドだけ `layout` 未指定なので、`two-cols-header` に揃えます。
+
+> AGENT
+
+レイアウトを `two-cols-header` に変更しました。`grid` ベースの自前カラム指定をやめ、テーマの slot 機構 (`::left::` / `::right::`) に統一しています。 ★ Insight ───────────────────────────────────── - `two-cols-header` レイアウトはタイトルとリード文が **header 領域** を占め、`::left::` / `::right::` が **header の下** に左右に並ぶ — 自前 `grid grid-cols-[3fr_2fr]` だとタイトルもグリッド内に巻き込まれて header 領域に揃わない - 他のスライドと同じレイアウト機構を使う利点: テーマ (`slidev-theme-enbu`) 側でタイポグラフィや余白を調整したときに **全スライドに一括反映される** — `grid grid-cols-...` の自前指定は孤島になってメンテ漏れする ───────────────────────────────────────────────── --- ## DAG 表記の修正は別件として残しています 先ほどの「DAG といい切っていいの?」への結論はこの行のままだとまだ Cloudflare 公式の言い回しと食い違っています: ``` 80: ...step / 並列 / 条件分岐 / ループの DAG 図 を自動生成 107: step・並列・条件分岐・ループの DAG を自動描画 111: Airflow の DAG View に相当します。 ← (ノート) ``` Python パートの DAG (`120, 154, 179, 184`) は公式 docs が "DAG Workflows" と章立てしてるので **そのまま残して OK**。問題は **TypeScript Visualizer 側の 2-3 箇所**。 修正候補: - 「DAG 図」→「フロー図」or「ダイアグラム」(Cloudflare 公式の "diagram" に寄せる) - 「Airflow の DAG View に相当」は note なのでそのまま残しても許容範囲 (Airflow も動的タスクは厳密 DAG ではないので類比としては成立) 修正しますか? Python パート (`@step.do(concurrent=True)` の方) は触らず、ビジュアライザの 80 行 + ノート 107 行だけ書き換える形が無難です。
+
+> DEVELOPER
+
+フロー図にしよ
+
+> AGENT
+
+ビジュアライザの 2 箇所 (本文 + ノート) だけ「フロー図」に直します。Python パートの "DAG" と Airflow の "DAG View" は固有名詞 / 公式章立てに合わせて残します。
+
+> AGENT
+
+修正完了。 ★ Insight ───────────────────────────────────── - ビジュアライザ本文 (156行) とノート (175行) の 2 箇所だけ「フロー図」に変更。Cloudflare 公式の "diagram" 表現に寄り、かつ「ループを含むので厳密には DAG ではない」という突っ込みを回避 - Python パートの DAG (82, 141, 146行) と Airflow DAG View (179行) は意図的に残した — Python SDK の docs が `/workflows/python/dag/` という章を持っていて「DAG Workflows」は固有名詞、Airflow も同じ ───────────────────────────────────────────────── 残り `grep -n "DAG"` するとこうなります: ``` 82: ...DAG 表現が特徴です。引数名による暗黙的依存解決で DAG が宣言的に書けます。 ← Python (公式名称) 141: 特徴的なのは DAG の表現方法です。 ← Python ノート 146: diamond shaped DAG が宣言的に書けます。 ← Python ノート 179: Airflow の DAG View に相当します。 ← Airflow 固有名詞 ``` すべて「Python の DAG Workflows」or「Airflow の DAG View」という固有名詞文脈なので、技術的に正確に残せています。
+
+> DEVELOPER
+
+workflowの起動はWorker経由なの？
+
+> AGENT
+
+確認します。
+
+> AGENT
+
+いえ、**Worker 経由は 3 通りある起動方法のうち 1 つ** です。docs (`/workflows/build/trigger-workflows/`) には明示的に 3 つの経路が並んでいます: ## Workflow を起動する 3 経路 ### 1. Worker 経由 (Workers API / Bindings) — 最も典型 Worker の `wrangler.jsonc` に Workflow binding を持たせて、Worker のいずれかの handler から `env.MY_WORKFLOW.create()` を呼ぶ。Worker 内の起点は 4 種類: | handler | きっかけ | |---|---| | `fetch` | HTTP リクエスト (今回のリポジトリの `/start` 方式) | | `queue` | Cloudflare Queues のメッセージ消費 | | `scheduled` | Cron Trigger (定期実行) | | Durable Object 内 | DO 内のロジックから | ### 2. REST API (HTTP) — Worker を介さない外部呼び出し ```sh POST https://api.cloudflare.com/client/v4/accounts/{account_id}/workflows/{workflow_name}/instances ``` API Token で認証して直接 `instances` リソースに POST する。外部システム (GitHub Actions、AWS Lambda、自社の Backend サーバなど) から Cloudflare Workflows を起動するときに使う経路。 ### 3. Wrangler CLI — 手動オペレーション ```sh npx wrangler workflows trigger image-processing '{"imageKeys":["a.jpg"],"autoApproveThreshold":0.7}' ``` CLI から直接 Workflow をトリガーできる。デバッグや運用時の手動起動、`--id` で固有 ID を渡せばリトライ運用にも使える。 ★ Insight ───────────────────────────────────── - **「Worker は管理面」** という見方が正しい — Workflow class 自体は Worker script に同梱されるが、**起動するだけ** なら REST API や CLI で十分。「Workflow を `class_name` として保持する Worker」と「Workflow を起動する手段」は別の話 - 今回のリポジトリの `image-processing-workflow` Worker は **fetch handler 経由の起動口を提供** しているが、これを消しても `wrangler workflows trigger image-processing ...` で外部から起動可能。バウンドワーカーは **class の置き場として必須** だが、**起動経路としては必須ではない** - 設計上の含意: バックエンドが他社クラウド (AWS / GCP) にあって「処理だけ Cloudflare の durable 実行に流したい」場合、Worker の fetch handler を作らず **REST API で直接 instances を作る** 構成もあり得る。逆に「外部から叩かれたくない、Workers AI / R2 / Queue と密結合」なら Worker handler 経由が自然 […]
+
+> DEVELOPER
+
+Worker 経由ならばEmailトリガーとかで起動できる？
+
+> AGENT
+
+確認します。
+
+> AGENT
+
+できます。Worker には `email()` handler があり、その中から Workflow binding を呼べます。 ## `email()` handler の構造 ```typescript interface Env { MY_WORKFLOW: Workflow; } export default { async email(message, env, ctx): Promise<void> { // メールから抽出 const from = message.from; const subject = message.headers.get("subject"); const raw = new Response(message.raw); const body = await raw.arrayBuffer(); // Workflow を起動 (fire-and-forget) const instance = await env.MY_WORKFLOW.create({ id: message.headers.get("message-id") ?? crypto.randomUUID(), params: { from, subject, body }, }); // 必要なら forward / reject も併用可 await message.forward("archive@example.com"); }, } satisfies ExportedHandler<Env>; ``` `fetch` / `queue` / `scheduled` と同じ handler 一族で、`message` (= `ForwardableEmailMessage`) を受け取る点だけ違います。 ★ Insight ───────────────────────────────────── - **docs の trigger-workflows ページには `email()` handler が明示列挙されていない** (fetch / queue / scheduled / Durable Object の 4 つだけ書かれてる) が、これは網羅の手抜きで、原理的に **どの Worker handler からも Workflow binding を呼べる**。`email()` も Worker handler の一種なので例外ではない - **冪等な ID として `message-id`** を渡せるのが Email トリガーの隠れた強み。SMTP の `Message-ID` ヘッダはメール 1 通につき一意なので、`MY_WORKFLOW.create({ id: messageId, ... })` とすると **同じメールが二度配送されても Workflow が二重起動しない** (create は ID 重複で失敗する)。`fetch` トリガーだと自前で冪等キーを作る必要があるが、Email は無料で手に入る - **Email Routing の route 設定が前提**: Cloudflare ダッシュボードで `support@your-zone.com → このWorker` のような route を切ること、ゾーン側で MX レコードが Cloudflare に向いていることが必要。Workers AI や R2 などの他バインディングと違って **zone レベルの設定** が要る点だけ注意 ───────────────────────────────────────────────── ## 典型ユースケース (durable な Email pipeline) `email()` handler 自体は Worker の通常制限 (CPU 数十 ms 程度) があるので、**重い処理は Workflow に丸投げ** するのが定石です: | パターン […]
+
+> DEVELOPER
+
+containerとworkflow no

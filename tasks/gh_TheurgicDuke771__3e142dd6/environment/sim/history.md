@@ -1,69 +1,139 @@
-[DEVELOPER]: Lets check #286
+> DEVELOPER
 
-[AGENT]: This is the Iceberg spike (#286) — deferred to its own session per CLAUDE.md. Let me get grounded on the relevant seams and constraints before proposing how to run it.
+Lets check #286
 
-[AGENT]: I've got the full picture on #286. Here's where it stands: **What it is:** A spike (not the full build) to decide DataQ's Apache Iceberg read path. It's on the **v1.1 Week 2** milestone (due 2026-07-17), P3, and was deliberately deferred to its own session because it needs a `pyiceberg` dependency eval, a new ADR, and it brushes the unsettled two-connection model (ADR 0015 — which is still *unwritten*, status "when reconciliation build starts"). **The concrete spike shape** (from your 2026-07-05 comment) has 3 acceptance criteria: 1. Iceberg v2 table written to harness **ADLS** via PyIceberg (local, no new compute) → readable as a **Snowflake** iceberg table (external volume + object-store catalog) → **DataQ suite runs green** against it 2. **Databricks** read attempted; Free-Edition capability/limitation documented 3. v2-vs-v3 decision recorded; follow-up implementation issues filed **The constraint that matters:** this is a *live-infra* spike, and both the Snowflake trial and Azure subscription wind down ~2026-07-25 (per your wind-down memory; harness compute is currently **stopped**). So the Snowflake/Databricks legs have a hard clock. The good news: the PyIceberg→ADLS write leg is "local, no new compute" and ADLS storage persists even with harness compute stopped — so the dependency eval and read-path decision […]
+> AGENT
 
-[AGENT]: Excellent question — that's actually the crux of the whole spike, and it may collapse most of the scope. Let me verify against the actual runner code rather than assert it.
+This is the Iceberg spike (#286) — deferred to its own session per CLAUDE.md. Let me get grounded on the relevant seams and constraints before proposing how to run it.
 
-[AGENT]: Verified against the runner code — here's the precise answer to your question, because it actually reframes the whole spike. ## Reading Iceberg *through an engine* = **zero new DataQ code** Both existing runners talk **SQL to the engine**, never to the file format: - **Snowflake** ([snowflake.py:214-218](backend/app/datasources/snowflake.py#L214-L218)): `add_table_asset(table_name=table, schema_name=schema)` → GX pushes SQL down to the warehouse. Snowflake resolves the identifier; whether it's a native FDN table or an Iceberg table created via `CATALOG_SOURCE=OBJECT_STORE` is **invisible** to the connector, the DSN, GX, and DataQ. It's just a table name. Same for `run_monitors` (scalar SQL, [:239-250](backend/app/datasources/snowflake.py#L239-L250)) and the profiler. - **Unity Catalog** ([unity_catalog.py:151](backend/app/datasources/unity_catalog.py#L151)): `pd.read_sql_table(table, engine, schema=schema)` against the SQL Warehouse. A Databricks Foreign Catalog / UniForm-Iceberg table is addressed as `catalog.schema.table` — **identical** call. So if the user registers their Iceberg table in Snowflake or Databricks, they just **point a suite target at it today**. No `IcebergConnectionAdapter`, no `IcebergCheckRunner`, no new ADR. It reuses the existing Snowflake/UC connection wholesale. ## What #286 is *actually* deciding The only path that's **different** — and the only thing that justifies the new adapter+runner in the issue — is reading Iceberg **natively via `pyiceberg` directly from object storage (ADLS/S3), with no query engine in the […]
+> AGENT
 
-[AGENT]: Right question again — let me read the flat-file runner so I answer precisely, because the difference is the whole reason Iceberg needs its own runner rather than reusing the parquet path.
+I've got the full picture on #286. Here's where it stands: **What it is:** A spike (not the full build) to decide DataQ's Apache Iceberg read path. It's on the **v1.1 Week 2** milestone (due 2026-07-17), P3, and was deliberately deferred to its own session because it needs a `pyiceberg` dependency eval, a new ADR, and it brushes the unsettled two-connection model (ADR 0015 — which is still *unwritten*, status "when reconciliation build starts"). **The concrete spike shape** (from your 2026-07-05 comment) has 3 acceptance criteria: 1. Iceberg v2 table written to harness **ADLS** via PyIceberg (local, no new compute) → readable as a **Snowflake** iceberg table (external volume + object-store catalog) → **DataQ suite runs green** against it 2. **Databricks** read attempted; Free-Edition capability/limitation documented 3. v2-vs-v3 decision recorded; follow-up implementation issues filed **The constraint that matters:** this is a *live-infra* spike, and both the Snowflake trial and Azure subscription wind down ~2026-07-25 (per your wind-down memory; harness compute is currently **stopped**). So the Snowflake/Databricks legs have a hard clock. The good news: the PyIceberg→ADLS write leg is "local, no new compute" and ADLS storage persists even with harness compute stopped — so the dependency eval and read-path decision […]
 
-[AGENT]: Yes — meaningfully different, and this is the part that determines whether native Iceberg is a real build or a trivial extension. It is **not** trivial. ## Flat-file today reads *one parquet file* [flatfile.py:118](backend/app/datasources/flatfile.py#L118): `pd.read_parquet(raw)` on a **single downloaded blob**. The batch-resolution machinery ([:202-242](backend/app/datasources/flatfile.py#L202-L242)) even exists precisely to pick *one* file path (`orders_2026-06-01.parquet`) out of a prefix. The whole model is "one object → one DataFrame." ## An Iceberg table is a *table*, not a file It's a directory tree: a metadata pointer (`metadata.json`) → manifest list → manifest files → **many** parquet data files across snapshots and partitions. You cannot `read_parquet` it. If you naively globbed and concatenated every `.parquet` under the prefix, you'd get **wrong answers** on all four of these: | Iceberg mechanic | What breaks if you treat it as flat parquet | |---|---| | **Snapshots** | Old/expired snapshots' data files still sit in storage → you'd double-count stale rows. Only the current snapshot's manifest lists the *live* files. | | **Delete files (v2)** | v2 positional/equality delete files logically remove rows. Raw parquet ignores them → you validate rows that no longer exist in the table. | | **Schema evolution** | Iceberg reconciles schema by […]
+> AGENT
 
-[DEVELOPER]: Leave the Snowflake/UC part. Currently for parquet files we are adding ADLS/S3 as connection, how will it change if we add iceberg capability? and how the csv, parquet, and other flat file retrival will look like? will all the parquet be routed to iceberg engine?
+Excellent question — that's actually the crux of the whole spike, and it may collapse most of the scope. Let me verify against the actual runner code rather than assert it.
 
-[AGENT]: Good — this is the connection-model question, which is the other half of the ADR. Let me ground it in how connections and runner dispatch actually work today.
+> AGENT
 
-[AGENT]: Grounded in the dispatch code now. Here's exactly how it changes — and the key answer up front: **no, parquet does not get rerouted to Iceberg.** Routing is by `connection.type`, decided when the connection is created, not by file extension. ## How runner selection works today [registry.py:135-144](backend/app/datasources/registry.py#L135-L144) dispatches purely on `conn_type`: ``` connection.type ──► build_check_runner ──► snowflake → SnowflakeCheckRunner (SQL pushdown) adls_gen2 / s3 → FlatFileCheckRunner (one object → DataFrame) unity_catalog → UnityCatalogCheckRunner (SQL Warehouse) ``` Within flat-file, csv-vs-parquet is chosen by the **path extension** ([format_from_path](backend/app/datasources/flatfile.py#L50-L57)): `.csv`→`read_csv`, `.parquet`/`.pq`→`read_parquet`, anything else → `ValueError`. One object in, one DataFrame out. ## Adding Iceberg = a new connection *type*, parallel to the others Iceberg becomes its own registry entry — exactly how `unity_catalog` is a distinct type even though it also sits on cloud storage underneath. Nothing about `adls_gen2`/`s3` changes: ``` connection.type ──► ... adls_gen2 / s3 → FlatFileCheckRunner ← UNCHANGED (csv + parquet objects) iceberg → IcebergCheckRunner ← NEW (pyiceberg catalog scan → DataFrame) ``` So concretely: - **csv / parquet retrieval: identical to today.** An `adls_gen2` or `s3` connection with a target path `orders_2026-06-01.parquet` still goes single-object → `read_parquet`. No change, no rerouting. - **A plain `.parquet` object is never treated […]
+Verified against the runner code — here's the precise answer to your question, because it actually reframes the whole spike. ## Reading Iceberg *through an engine* = **zero new DataQ code** Both existing runners talk **SQL to the engine**, never to the file format: - **Snowflake** ([snowflake.py:214-218](backend/app/datasources/snowflake.py#L214-L218)): `add_table_asset(table_name=table, schema_name=schema)` → GX pushes SQL down to the warehouse. Snowflake resolves the identifier; whether it's a native FDN table or an Iceberg table created via `CATALOG_SOURCE=OBJECT_STORE` is **invisible** to the connector, the DSN, GX, and DataQ. It's just a table name. Same for `run_monitors` (scalar SQL, [:239-250](backend/app/datasources/snowflake.py#L239-L250)) and the profiler. - **Unity Catalog** ([unity_catalog.py:151](backend/app/datasources/unity_catalog.py#L151)): `pd.read_sql_table(table, engine, schema=schema)` against the SQL Warehouse. A Databricks Foreign Catalog / UniForm-Iceberg table is addressed as `catalog.schema.table` — **identical** call. So if the user registers their Iceberg table in Snowflake or Databricks, they just **point a suite target at it today**. No `IcebergConnectionAdapter`, no `IcebergCheckRunner`, no new ADR. It reuses the existing Snowflake/UC connection wholesale. ## What #286 is *actually* deciding The only path that's **different** — and the only thing that justifies the new adapter+runner in the issue — is reading Iceberg **natively via `pyiceberg` directly from object storage (ADLS/S3), with no query engine in the […]
 
-[DEVELOPER]: Yes write an ADR, mention why we choose iceberg v2, why we are not checking Snoflake Iceberg tables or Databricks foreign catalog. And for Iceberg connection lets go with option A. [example scenario - there might be a situation where user added an ADLS path which has both flat file and iceberg tables, but later user choose to delete the flat file connection and only going to be use the ADLS for iceberg table going forward. In that case, it would be a cleaner approach and we also have a cascade delete on the foreign key. So that scenario might be also in play]. One question will pyiceberg be able to read delta-uniform?
+> AGENT
 
-[AGENT]: Let me answer the Delta-UniForm question, and read the ADR conventions so the new one matches the repo.
+Right question again — let me read the flat-file runner so I answer precisely, because the difference is the whole reason Iceberg needs its own runner rather than reusing the parquet path.
 
-[AGENT]: I have the ADR conventions. Let me verify the Delta-UniForm specifics against current docs before baking them into a durable ADR.
+> AGENT
 
-[AGENT]: Confirmed against Databricks docs — I'll answer the UniForm question, then write the ADR. **Delta UniForm + pyiceberg — yes, read-only, via the Iceberg REST catalog.** When you enable "Iceberg reads" (UniForm) on a Delta table, Databricks *asynchronously generates Iceberg metadata over the same parquet data files* (no data rewrite). An Iceberg client reads it through Unity Catalog's **Iceberg REST Catalog (IRC)**, which the docs list as giving "read-only access to Delta Lake tables with Apache Iceberg reads enabled (UniForm)." Since pyiceberg ships a `RestCatalog`, **pyiceberg can read Delta UniForm tables** — which is a nice bonus: the same native path reaches Delta tables, not just Iceberg-native ones, without a Databricks warehouse running. Three caveats worth recording: - **It's Iceberg v2** (`delta.enableIcebergCompatV2`) — reinforces our v2 baseline. - **Async metadata lag** — the Iceberg snapshot trails the latest Delta commit (`converted_delta_version`/`converted_delta_timestamp` track how far); you may read a slightly stale snapshot. - **No deletion vectors** — UniForm and Delta deletion vectors are mutually exclusive, so this stays inside clean v2 territory. Now the ADR:
+Yes — meaningfully different, and this is the part that determines whether native Iceberg is a real build or a trivial extension. It is **not** trivial. ## Flat-file today reads *one parquet file* [flatfile.py:118](backend/app/datasources/flatfile.py#L118): `pd.read_parquet(raw)` on a **single downloaded blob**. The batch-resolution machinery ([:202-242](backend/app/datasources/flatfile.py#L202-L242)) even exists precisely to pick *one* file path (`orders_2026-06-01.parquet`) out of a prefix. The whole model is "one object → one DataFrame." ## An Iceberg table is a *table*, not a file It's a directory tree: a metadata pointer (`metadata.json`) → manifest list → manifest files → **many** parquet data files across snapshots and partitions. You cannot `read_parquet` it. If you naively globbed and concatenated every `.parquet` under the prefix, you'd get **wrong answers** on all four of these: | Iceberg mechanic | What breaks if you treat it as flat parquet | |---|---| | **Snapshots** | Old/expired snapshots' data files still sit in storage → you'd double-count stale rows. Only the current snapshot's manifest lists the *live* files. | | **Delete files (v2)** | v2 positional/equality delete files logically remove rows. Raw parquet ignores them → you validate rows that no longer exist in the table. | | **Schema evolution** | Iceberg reconciles schema by […]
 
-[AGENT]: Now the index entry:
+> DEVELOPER
 
-[AGENT]: Done. Here's what landed: **[docs/adr/0030-iceberg-native-read-path.md](docs/adr/0030-iceberg-native-read-path.md)** — new ADR, plus the index row in [docs/adr/README.md](docs/adr/README.md). It records everything you asked for: - **Why v2, not v3** — v2 is GA and read everywhere (Snowflake GA, Spark/Databricks, `pyiceberg` mature, Delta UniForm emits v2); v3's deletion-vectors/row-lineage are new and unevenly supported, so v3 goes behind a capability gate later. - **Why we're not testing Snowflake iceberg tables / Databricks foreign catalog** — the SQL runners are format-transparent *by construction* (proven from `add_table_asset`/`read_sql_table` pushing SQL down, not by experiment); standing up an external volume / foreign catalog would only re-confirm what the code guarantees, at real live-infra cost during the wind-down. Engine-level read is documented as the free, zero-code, supported-today path. - **Native `pyiceberg` is the only real new build** — thin `IcebergCheckRunner` (scan → DataFrame → `gx_runner`), and *why* an Iceberg table can't reuse the flat-file parquet read (snapshots / v2 deletes / schema-by-ID). - **Option A (self-contained `iceberg` connection)** — with your independent-lifecycle scenario written into the rationale: register an ADLS path for flat files + Iceberg, later delete the flat-file connection and keep the storage for Iceberg only → clean because the `iceberg` connection owns its own credential and the cascade-delete […]
+Leave the Snowflake/UC part. Currently for parquet files we are adding ADLS/S3 as connection, how will it change if we add iceberg capability? and how the csv, parquet, and other flat file retrival will look like? will all the parquet be routed to iceberg engine?
 
-[DEVELOPER]: do the local pyiceberg proof next + file follow-ups and close the spike out.
+> AGENT
 
-[AGENT]: Let me skip formal todos and just work through it. First, check the GX pin and available env for the proof.
+Good — this is the connection-model question, which is the other half of the ADR. Let me ground it in how connections and runner dispatch actually work today.
 
-[AGENT]: GX 1.17.2 + pyarrow 24 in the `dataq` env. I'll build an isolated venv for the proof so I don't touch the project env. First, check what `gx_runner` pulls in, so I can import it standalone in the proof:
+> AGENT
 
-[AGENT]: `gx_runner` only needs GX + `base` (pydantic). Let me see `run_expectations`'s signature so the proof calls it exactly as the runners do:
+Grounded in the dispatch code now. Here's exactly how it changes — and the key answer up front: **no, parquet does not get rerouted to Iceberg.** Routing is by `connection.type`, decided when the connection is created, not by file extension. ## How runner selection works today [registry.py:135-144](backend/app/datasources/registry.py#L135-L144) dispatches purely on `conn_type`: ``` connection.type ──► build_check_runner ──► snowflake → SnowflakeCheckRunner (SQL pushdown) adls_gen2 / s3 → FlatFileCheckRunner (one object → DataFrame) unity_catalog → UnityCatalogCheckRunner (SQL Warehouse) ``` Within flat-file, csv-vs-parquet is chosen by the **path extension** ([format_from_path](backend/app/datasources/flatfile.py#L50-L57)): `.csv`→`read_csv`, `.parquet`/`.pq`→`read_parquet`, anything else → `ValueError`. One object in, one DataFrame out. ## Adding Iceberg = a new connection *type*, parallel to the others Iceberg becomes its own registry entry — exactly how `unity_catalog` is a distinct type even though it also sits on cloud storage underneath. Nothing about `adls_gen2`/`s3` changes: ``` connection.type ──► ... adls_gen2 / s3 → FlatFileCheckRunner ← UNCHANGED (csv + parquet objects) iceberg → IcebergCheckRunner ← NEW (pyiceberg catalog scan → DataFrame) ``` So concretely: - **csv / parquet retrieval: identical to today.** An `adls_gen2` or `s3` connection with a target path `orders_2026-06-01.parquet` still goes single-object → `read_parquet`. No change, no rerouting. - **A plain `.parquet` object is never treated […]
 
-[AGENT]: Noted the Deciders edit. Now the proof. Writing the script:
+> DEVELOPER
 
-[AGENT]: The import warnings are expected (pyiceberg isn't installed yet). Now build the isolated venv and run the proof:
+Yes write an ADR, mention why we choose iceberg v2, why we are not checking Snoflake Iceberg tables or Databricks foreign catalog. And for Iceberg connection lets go with option A. [example scenario - there might be a situation where user added an ADLS path which has both flat file and iceberg tables, but later user choose to delete the flat file connection and only going to be use the ADLS for iceberg table going forward. In that case, it would be a cleaner approach and we also have a cascade delete on the foreign key. So that scenario might be also in play]. One question will pyiceberg be able to read delta-uniform?
 
-[AGENT]: pyiceberg **0.11.1** resolved cleanly alongside the repo's pinned **pyarrow 24.0.0** and **GX 1.17.2** — no version conflict (a key dependency-eval finding). Now run the proof:
+> AGENT
 
-[AGENT]: `order_id` was declared `required` in Iceberg but pyarrow inferred it nullable — pyiceberg's schema check rejects the mismatch. I'll pin an explicit non-nullable pyarrow schema for the appends:
+Let me answer the Delta-UniForm question, and read the ADR conventions so the new one matches the repo.
 
-[AGENT]: The formatter reflowed the file. Let me read the affected region:
+> AGENT
 
-[AGENT]: Proof is **green**. It demonstrates exactly the three things a naive parquet read would get wrong: only the current snapshot (no double-count), the delete applied (`order_id=2` gone → `[1,3,4,5]`), and schema-by-ID reconciliation (added `channel` column reads null for pre-evolution rows) — then a green DataQ suite through the real `gx_runner`. Now file the follow-ups and post findings. Let me check the milestone/label conventions:
+I have the ADR conventions. Let me verify the Delta-UniForm specifics against current docs before baking them into a durable ADR.
 
-[AGENT]: Milestone 4 (v1.1 Backlog) is the home for deferred follow-ups. Filing the native-build issue and a v3-revisit tracker:
+> AGENT
 
-[AGENT]: Now post the spike findings to #286 and close it:
+Confirmed against Databricks docs — I'll answer the UniForm question, then write the ADR. **Delta UniForm + pyiceberg — yes, read-only, via the Iceberg REST catalog.** When you enable "Iceberg reads" (UniForm) on a Delta table, Databricks *asynchronously generates Iceberg metadata over the same parquet data files* (no data rewrite). An Iceberg client reads it through Unity Catalog's **Iceberg REST Catalog (IRC)**, which the docs list as giving "read-only access to Delta Lake tables with Apache Iceberg reads enabled (UniForm)." Since pyiceberg ships a `RestCatalog`, **pyiceberg can read Delta UniForm tables** — which is a nice bonus: the same native path reaches Delta tables, not just Iceberg-native ones, without a Databricks warehouse running. Three caveats worth recording: - **It's Iceberg v2** (`delta.enableIcebergCompatV2`) — reinforces our v2 baseline. - **Async metadata lag** — the Iceberg snapshot trails the latest Delta commit (`converted_delta_version`/`converted_delta_timestamp` track how far); you may read a slightly stale snapshot. - **No deletion vectors** — UniForm and Delta deletion vectors are mutually exclusive, so this stays inside clean v2 territory. Now the ADR:
 
-[AGENT]: Spike closed. Now update the progress tracker to reflect the closed spike + new ADR + follow-ups:
+> AGENT
 
-[AGENT]: The hook flags snapshot-count consistency. Let me get the real open-issue count and update the header note + count:
+Now the index entry:
 
-[AGENT]: Now the W2 section header and the in-week follow-up note (lines 150/152):
+> AGENT
 
-[AGENT]: Let me check whether the cycle epic #597 tracks #286 in a checklist:
+Done. Here's what landed: **[docs/adr/0030-iceberg-native-read-path.md](docs/adr/0030-iceberg-native-read-path.md)** — new ADR, plus the index row in [docs/adr/README.md](docs/adr/README.md). It records everything you asked for: - **Why v2, not v3** — v2 is GA and read everywhere (Snowflake GA, Spark/Databricks, `pyiceberg` mature, Delta UniForm emits v2); v3's deletion-vectors/row-lineage are new and unevenly supported, so v3 goes behind a capability gate later. - **Why we're not testing Snowflake iceberg tables / Databricks foreign catalog** — the SQL runners are format-transparent *by construction* (proven from `add_table_asset`/`read_sql_table` pushing SQL down, not by experiment); standing up an external volume / foreign catalog would only re-confirm what the code guarantees, at real live-infra cost during the wind-down. Engine-level read is documented as the free, zero-code, supported-today path. - **Native `pyiceberg` is the only real new build** — thin `IcebergCheckRunner` (scan → DataFrame → `gx_runner`), and *why* an Iceberg table can't reuse the flat-file parquet read (snapshots / v2 deletes / schema-by-ID). - **Option A (self-contained `iceberg` connection)** — with your independent-lifecycle scenario written into the rationale: register an ADLS path for flat files + Iceberg, later delete the flat-file connection and keep the storage for Iceberg only → clean because the `iceberg` connection owns its own credential and the cascade-delete […]
 
-[AGENT]: Everything's done. Here's the close-out summary. ## #286 Iceberg spike — DONE, closed **Local pyiceberg proof — green** (isolated scratchpad venv, no cloud, no query engine, project env untouched): - Real **format-version 2** Iceberg table via a local SQL catalog + filesystem warehouse. - Deliberately exercised the three things a naive parquet-glob gets **wrong** — pyiceberg handled all three: two appends → **current snapshot only** (no double-count); `DELETE order_id=2` → scan omits it (`[1,3,4,5]`); schema evolution (add `channel`) → **reconciled by field-ID**, null for pre-evolution rows. - The resulting frame ran through the **real repo code** `gx_runner.run_expectations` (same shape as `FlatFileCheckRunner`/`UnityCatalogCheckRunner`) → **3/3 checks green**. - **Dependency finding:** `pyiceberg==0.11.1` resolves cleanly with the repo's pinned `pyarrow==24.0.0` + `great-expectations==1.17.2` — no conflict. **Follow-ups filed:** - **[#716](https://github.com/TheurgicDuke771/DataQ/issues/716)** — implement native `IcebergCheckRunner` + self-contained `iceberg` connection (the deferred build), v1.1 Backlog. - **[#717](https://github.com/TheurgicDuke771/DataQ/issues/717)** — revisit Iceberg v3 behind a capability gate, v1.1 Backlog. **Closed:** [#286](https://github.com/TheurgicDuke771/DataQ/issues/286) with a full findings comment (decision, proof output, dep finding, Delta-UniForm note). **Docs updated (unstaged):** - [docs/adr/0030-iceberg-native-read-path.md](docs/adr/0030-iceberg-native-read-path.md) + index row in [docs/adr/README.md](docs/adr/README.md) - [docs/progress.md](docs/progress.md) — snapshot count 52→54, W2 section, backlog row all reflect the closed spike - Epic [#597](https://github.com/TheurgicDuke771/DataQ/issues/597) checklist ticked for #286 This is a docs-only […]
+> DEVELOPER
 
-[DEVELOPER]: when we are using `catalog.load_table(...).scan().to_pandas()` we are using pyarrow as engine, right?
+do the local pyiceberg proof next + file follow-ups and close the spike out.
 
-[AGENT]: Yes — for `.to_pandas()`, **PyArrow is the read/compute engine**. Worth being precise about the layering, because it also confirms the ADR's "no query engine" claim isn't contradicted: ## What each layer does in `load_table().scan().to_pandas()` | Step | Who does it | |---|---| | `load_table()` | Catalog resolves the current **metadata.json** → table metadata | | `.scan()` | pyiceberg **planning** — evaluates the snapshot's manifests to pick which data files + delete files to read, prunes by partition/row filter. Pure Python + the Rust `pyiceberg-core` for manifest/delete evaluation. **No data read yet.** | | `.to_arrow()` | **PyArrow** reads the selected parquet data files (`pyarrow.dataset`), applies residual filters, applies positional/equality **deletes**, projects to the current schema → an Arrow table | | `.to_pandas()` | `= to_arrow().to_pandas()` — Arrow→pandas is just a zero-ish-copy container conversion; pandas is **not** the engine | So the actual columnar work — reading parquet, applying deletes, schema projection — is **PyArrow**. That's exactly why the proof installed `pyiceberg[pyarrow]` and why pyarrow-24 compatibility mattered. ## Important: PyArrow ≠ a "query engine" in the ADR's sense The ADR's "no query engine in the loop" means no **remote warehouse service** (Snowflake / Databricks SQL Warehouse) resolving the table and running SQL. […]
+> AGENT
+
+Let me skip formal todos and just work through it. First, check the GX pin and available env for the proof.
+
+> AGENT
+
+GX 1.17.2 + pyarrow 24 in the `dataq` env. I'll build an isolated venv for the proof so I don't touch the project env. First, check what `gx_runner` pulls in, so I can import it standalone in the proof:
+
+> AGENT
+
+`gx_runner` only needs GX + `base` (pydantic). Let me see `run_expectations`'s signature so the proof calls it exactly as the runners do:
+
+> AGENT
+
+Noted the Deciders edit. Now the proof. Writing the script:
+
+> AGENT
+
+The import warnings are expected (pyiceberg isn't installed yet). Now build the isolated venv and run the proof:
+
+> AGENT
+
+pyiceberg **0.11.1** resolved cleanly alongside the repo's pinned **pyarrow 24.0.0** and **GX 1.17.2** — no version conflict (a key dependency-eval finding). Now run the proof:
+
+> AGENT
+
+`order_id` was declared `required` in Iceberg but pyarrow inferred it nullable — pyiceberg's schema check rejects the mismatch. I'll pin an explicit non-nullable pyarrow schema for the appends:
+
+> AGENT
+
+The formatter reflowed the file. Let me read the affected region:
+
+> AGENT
+
+Proof is **green**. It demonstrates exactly the three things a naive parquet read would get wrong: only the current snapshot (no double-count), the delete applied (`order_id=2` gone → `[1,3,4,5]`), and schema-by-ID reconciliation (added `channel` column reads null for pre-evolution rows) — then a green DataQ suite through the real `gx_runner`. Now file the follow-ups and post findings. Let me check the milestone/label conventions:
+
+> AGENT
+
+Milestone 4 (v1.1 Backlog) is the home for deferred follow-ups. Filing the native-build issue and a v3-revisit tracker:
+
+> AGENT
+
+Now post the spike findings to #286 and close it:
+
+> AGENT
+
+Spike closed. Now update the progress tracker to reflect the closed spike + new ADR + follow-ups:
+
+> AGENT
+
+The hook flags snapshot-count consistency. Let me get the real open-issue count and update the header note + count:
+
+> AGENT
+
+Now the W2 section header and the in-week follow-up note (lines 150/152):
+
+> AGENT
+
+Let me check whether the cycle epic #597 tracks #286 in a checklist:
+
+> AGENT
+
+Everything's done. Here's the close-out summary. ## #286 Iceberg spike — DONE, closed **Local pyiceberg proof — green** (isolated scratchpad venv, no cloud, no query engine, project env untouched): - Real **format-version 2** Iceberg table via a local SQL catalog + filesystem warehouse. - Deliberately exercised the three things a naive parquet-glob gets **wrong** — pyiceberg handled all three: two appends → **current snapshot only** (no double-count); `DELETE order_id=2` → scan omits it (`[1,3,4,5]`); schema evolution (add `channel`) → **reconciled by field-ID**, null for pre-evolution rows. - The resulting frame ran through the **real repo code** `gx_runner.run_expectations` (same shape as `FlatFileCheckRunner`/`UnityCatalogCheckRunner`) → **3/3 checks green**. - **Dependency finding:** `pyiceberg==0.11.1` resolves cleanly with the repo's pinned `pyarrow==24.0.0` + `great-expectations==1.17.2` — no conflict. **Follow-ups filed:** - **[#716](https://github.com/TheurgicDuke771/DataQ/issues/716)** — implement native `IcebergCheckRunner` + self-contained `iceberg` connection (the deferred build), v1.1 Backlog. - **[#717](https://github.com/TheurgicDuke771/DataQ/issues/717)** — revisit Iceberg v3 behind a capability gate, v1.1 Backlog. **Closed:** [#286](https://github.com/TheurgicDuke771/DataQ/issues/286) with a full findings comment (decision, proof output, dep finding, Delta-UniForm note). **Docs updated (unstaged):** - [docs/adr/0030-iceberg-native-read-path.md](docs/adr/0030-iceberg-native-read-path.md) + index row in [docs/adr/README.md](docs/adr/README.md) - [docs/progress.md](docs/progress.md) — snapshot count 52→54, W2 section, backlog row all reflect the closed spike - Epic [#597](https://github.com/TheurgicDuke771/DataQ/issues/597) checklist ticked for #286 This is a docs-only […]
+
+> DEVELOPER
+
+when we are using `catalog.load_table(...).scan().to_pandas()` we are using pyarrow as engine, right?
+
+> AGENT
+
+Yes — for `.to_pandas()`, **PyArrow is the read/compute engine**. Worth being precise about the layering, because it also confirms the ADR's "no query engine" claim isn't contradicted: ## What each layer does in `load_table().scan().to_pandas()` | Step | Who does it | |---|---| | `load_table()` | Catalog resolves the current **metadata.json** → table metadata | | `.scan()` | pyiceberg **planning** — evaluates the snapshot's manifests to pick which data files + delete files to read, prunes by partition/row filter. Pure Python + the Rust `pyiceberg-core` for manifest/delete evaluation. **No data read yet.** | | `.to_arrow()` | **PyArrow** reads the selected parquet data files (`pyarrow.dataset`), applies residual filters, applies positional/equality **deletes**, projects to the current schema → an Arrow table | | `.to_pandas()` | `= to_arrow().to_pandas()` — Arrow→pandas is just a zero-ish-copy container conversion; pandas is **not** the engine | So the actual columnar work — reading parquet, applying deletes, schema projection — is **PyArrow**. That's exactly why the proof installed `pyiceberg[pyarrow]` and why pyarrow-24 compatibility mattered. ## Important: PyArrow ≠ a "query engine" in the ADR's sense The ADR's "no query engine in the loop" means no **remote warehouse service** (Snowflake / Databricks SQL Warehouse) resolving the table and running SQL. […]

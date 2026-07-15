@@ -1,37 +1,75 @@
-[DEVELOPER]: my local resolver does has some issues: ~/Projects/GitHub/Sandcastle % ping -c 1 tubu.sc.sandman. [codex/fix-caddy-ca-eperm] PING tubu.sc.sandman (10.206.10.3): 56 data bytes 64 bytes from 10.206.10.3: icmp_seq=0 ttl=63 time=22.932 ms --- tubu.sc.sandman ping statistics --- 1 packets transmitted, 1 packets received, 0.0% packet loss round-trip min/avg/max/stddev = 22.932/22.932/22.932/0.000 ms ~/Projects/GitHub/Sandcastle % ping -c 1 tubu.sc.sandman [codex/fix-caddy-ca-eperm] ping: cannot resolve tubu.sc.sandman: Unknown host ~/Projects/GitHub/Sandcastle % [codex/fix-caddy-ca-eperm]
+> DEVELOPER
 
-[AGENT]: That's an intermittent failure on the same name, not the trailing-dot issue I'd first guess. Let me check what local DNS setup the repo expects, and then we can diagnose your machine.
+my local resolver does has some issues: ~/Projects/GitHub/Sandcastle % ping -c 1 tubu.sc.sandman. [codex/fix-caddy-ca-eperm] PING tubu.sc.sandman (10.206.10.3): 56 data bytes 64 bytes from 10.206.10.3: icmp_seq=0 ttl=63 time=22.932 ms --- tubu.sc.sandman ping statistics --- 1 packets transmitted, 1 packets received, 0.0% packet loss round-trip min/avg/max/stddev = 22.932/22.932/22.932/0.000 ms ~/Projects/GitHub/Sandcastle % ping -c 1 tubu.sc.sandman [codex/fix-caddy-ca-eperm] ping: cannot resolve tubu.sc.sandman: Unknown host ~/Projects/GitHub/Sandcastle % [codex/fix-caddy-ca-eperm]
 
-[AGENT]: The DNS server itself works fine. The clue is in the resolver flags — `reach: Transient Connection`, meaning the route to `10.206.10.4` is over Tailscale (`utun4`), and macOS' resolver framework flickers on transient routes. Let me confirm the failure pattern and the route:
+> AGENT
 
-[AGENT]: Deterministic, not intermittent. Now let me see which resolver macOS actually picks for the dotless name:
+That's an intermittent failure on the same name, not the trailing-dot issue I'd first guess. Let me check what local DNS setup the repo expects, and then we can diagnose your machine.
 
-[AGENT]: ## Diagnosis It's not actually intermittent — your first ping just hit a stale cache or trailing-dot accident. The reproducer is deterministic: - `tubu.sc.sandman.` (FQDN, trailing dot) → always works → goes to resolver #8 (`10.206.10.4`) - `tubu.sc.sandman` (no trailing dot) → always fails with `Unknown host` The upstream DNS at `10.206.10.4` answers both forms correctly when queried directly with `dig`. The failure is on the macOS resolver side. The smoking gun: `/etc/resolver/sandman` is registered with `reach: 0x00000003 (Reachable, Transient Connection)`. "Transient Connection" means the route to `10.206.10.4` is via Tailscale (`utun4`, confirmed by `route get`). For non-FQDN queries, macOS' resolver framework runs through search-domain expansion (`fritz.box`, `tail61f416.ts.net`) on the *primary* resolver first; with the per-domain resolver flagged transient and `order: 1` only honoured on direct match, the search-expansion path NXDOMAINs and the resolver framework gives up before falling back to resolver #8. With the trailing dot, getaddrinfo bypasses search-domain expansion entirely, so it goes straight to resolver #8 and works. ## Fixes A couple of options, ordered by how invasive they are: 1. **Workaround** — keep typing the trailing dot, or add the exact hosts you care about to `/etc/hosts`. 2. **Make the resolver authoritative for the suffix** — […]
+> AGENT
 
-[DEVELOPER]: 2
+The DNS server itself works fine. The clue is in the resolver flags — `reach: Transient Connection`, meaning the route to `10.206.10.4` is over Tailscale (`utun4`), and macOS' resolver framework flickers on transient routes. Let me confirm the failure pattern and the route:
 
-[AGENT]: Found the generator at `vendor/sandcastle-cli/cmd/dns.go:296`. Current content: ``` # Managed by sandcastle dns # Server: sandman nameserver 10.206.10.4 search_order 1 ``` Plan: test the fix live first, then update the Go generator if it works.
+> AGENT
 
-[AGENT]: Adding `domain` explicitly didn't help. The "Transient Connection" flag persists. Let me look at what's actually happening with mDNSResponder:
+Deterministic, not intermittent. Now let me see which resolver macOS actually picks for the dotless name:
 
-[AGENT]: Let me put `search_order 1` back alongside the explicit domain — they may need to coexist:
+> AGENT
 
-[AGENT]: Let me trace what mDNSResponder actually does:
+## Diagnosis It's not actually intermittent — your first ping just hit a stale cache or trailing-dot accident. The reproducer is deterministic: - `tubu.sc.sandman.` (FQDN, trailing dot) → always works → goes to resolver #8 (`10.206.10.4`) - `tubu.sc.sandman` (no trailing dot) → always fails with `Unknown host` The upstream DNS at `10.206.10.4` answers both forms correctly when queried directly with `dig`. The failure is on the macOS resolver side. The smoking gun: `/etc/resolver/sandman` is registered with `reach: 0x00000003 (Reachable, Transient Connection)`. "Transient Connection" means the route to `10.206.10.4` is via Tailscale (`utun4`, confirmed by `route get`). For non-FQDN queries, macOS' resolver framework runs through search-domain expansion (`fritz.box`, `tail61f416.ts.net`) on the *primary* resolver first; with the per-domain resolver flagged transient and `order: 1` only honoured on direct match, the search-expansion path NXDOMAINs and the resolver framework gives up before falling back to resolver #8. With the trailing dot, getaddrinfo bypasses search-domain expansion entirely, so it goes straight to resolver #8 and works. ## Fixes A couple of options, ordered by how invasive they are: 1. **Workaround** — keep typing the trailing dot, or add the exact hosts you care about to `/etc/hosts`. 2. **Make the resolver authoritative for the suffix** — […]
 
-[AGENT]: Good idea — let me do a full mDNSResponder restart, not just SIGHUP:
+> DEVELOPER
 
-[AGENT]: Restoring the resolver file to the original generated form, since the `domain` tweak didn't help:
+2
 
-[AGENT]: ## What we proved The `domain sandman` / `search_order` tweaks don't change anything — I confirmed that. The actual root cause is the reachability flag: - With `nameserver 10.206.10.4` (over Tailscale `utun4`) → `reach: Reachable, Transient Connection` - With `nameserver 127.0.0.1` (loopback) → `reach: Reachable, Local Address, Directly Reachable` When the per-domain resolver is flagged "Transient Connection", macOS' resolver framework still queries the primary fritz.box resolver in parallel for non-FQDN names, accepts its NXDOMAIN, and returns "Unknown host" before resolver #8 wins. With trailing dot (true FQDN) the search-domain-style parallel query is skipped, so resolver #8 is the only one consulted and it works. ## Real fixes (no good /etc/resolver-only workaround) 1. **Local DNS forwarder on loopback** — sandcastle CLI binds a tiny UDP forwarder on `127.0.0.1:<port>` that relays `.sandman` queries to `10.206.10.4`. `/etc/resolver/sandman` then points at `127.0.0.1` with `port <port>`. The resolver loses the Transient flag and works without the trailing dot. This is the right sandcastle-side fix; it's a moderate Go CLI change. 2. **Tailscale Split DNS** — push `sandman` → `10.206.10.4` via tailnet DNS settings instead of `/etc/resolver/`. Tailscale's macOS integration registers the scoped resolver in a way that doesn't get the transient downgrade. Requires admin access […]
+> AGENT
 
-[DEVELOPER]: explain Tailscale Split DNS
+Found the generator at `vendor/sandcastle-cli/cmd/dns.go:296`. Current content: ``` # Managed by sandcastle dns # Server: sandman nameserver 10.206.10.4 search_order 1 ``` Plan: test the fix live first, then update the Go generator if it works.
 
-[AGENT]: ## Tailscale Split DNS — what it is Tailscale ships its own DNS resolver inside the client. "Split DNS" lets you tell the tailnet: *for queries ending in suffix X, forward to nameserver Y instead of the system's default*. The tailnet's coordination server pushes that config to every device on the tailnet. When enabled, the Tailscale macOS client registers itself with the system as a per-domain resolver — same mechanism `/etc/resolver/sandman` uses, but configured through Tailscale rather than a local file. ## Why it fixes your problem Two reasons the tailnet-managed path doesn't have your "Transient Connection" issue: 1. **The DNS query never leaves loopback.** Tailscale's macOS client runs a local DNS proxy on `100.100.100.100` (the MagicDNS anycast IP) that the OS treats as always-reachable. The proxy receives the query, decides the suffix matches your split-DNS rule, and forwards it over the tunnel to `10.206.10.4`. From macOS' point of view, the resolver IP is local, so no Transient flag. 2. **It's pushed as a Tailscale-managed scoped resolver.** It bypasses the `/etc/resolver/*` plumbing entirely and gets registered through SystemConfiguration with stronger authority than search-domain-driven NXDOMAIN merging. You can already see this on your machine — `tailscale dns status` showed: ``` Split […]
+> AGENT
 
-[DEVELOPER]: can i set the tailscale dns via cli?
+Adding `domain` explicitly didn't help. The "Transient Connection" flag persists. Let me look at what's actually happening with mDNSResponder:
 
-[AGENT]: Not via the `tailscale` CLI directly — that one only controls per-device settings (`tailscale set --accept-dns`, `--accept-routes`, etc.). Split DNS lives in the *tailnet* config, which is admin-console / API territory. But you can do it from the shell via the Tailscale REST API. The relevant endpoint: ``` PATCH https://api.tailscale.com/api/v2/tailnet/{tailnet}/dns/split-dns ``` Body is a JSON map of suffix → nameserver list. PATCH merges; PUT replaces. ## Concrete steps 1. Generate an API access token at `login.tailscale.com/admin/settings/keys` (use an OAuth client with `dns` write scope, or a personal API token). 2. Find your tailnet name — for personal accounts it's `-` (literal dash) or your email; for orgs it's the org slug. You already know yours from the MagicDNS suffix `tail61f416.ts.net`, but the tailnet name is separate. Easy way: `curl -u $TOKEN: https://api.tailscale.com/api/v2/tailnet/-/dns/nameservers`. 3. Patch in the route: ```bash TOKEN='tskey-api-...' TAILNET='-' # or your org slug curl -u REDACTED -X PATCH \ "https://api.tailscale.com/api/v2/tailnet/$TAILNET/dns/split-dns" \ -H 'Content-Type: application/json' \ -d '{"sandman": ["10.206.10.4"]}' ``` The suffix is written without leading/trailing dots in the JSON. To remove a route later, PATCH with `{"sandman": []}` (empty array deletes the entry). 4. Verify on this machine after a few seconds: ```bash /Applications/Tailscale.app/Contents/MacOS/Tailscale dns status | grep […]
+> AGENT
 
-[DEVELOPER]: that sucks!
+Let me put `search_order 1` back alongside the explicit domain — they may need to coexist:
 
-[AGENT]: Yeah. The disappointment is that for something Tailscale already understands as "this device's tailnet, this device's split-DNS routes," there's no client-side `tailscale dns add-route sandman 10.206.10.4`. The whole config lives server-side and needs an API token + tailnet admin rights, even when you're a tailnet of one. Practical implications for your case: - For your personal use right now, the lowest-effort unblock is the trailing dot. Annoying, but zero config. - The local-loopback DNS forwarder is the right sandcastle-side fix — it's the only path that works per-device, doesn't need tailnet admin, and doesn't drag the user through API tokens. The "Transient Connection" diagnosis we nailed down means we know exactly what it has to do: bind UDP/53 (or any port + `port` directive in `/etc/resolver/sandman`) on `127.0.0.1`, forward to `10.206.10.4`. ~50 lines of Go using `miekg/dns` or even raw `net`. Want me to build it? I'd add it to `vendor/sandcastle-cli/cmd/dns.go` so `sandcastle dns install` becomes self-sufficient, no Tailscale-admin gymnastics.
+> AGENT
+
+Let me trace what mDNSResponder actually does:
+
+> AGENT
+
+Good idea — let me do a full mDNSResponder restart, not just SIGHUP:
+
+> AGENT
+
+Restoring the resolver file to the original generated form, since the `domain` tweak didn't help:
+
+> AGENT
+
+## What we proved The `domain sandman` / `search_order` tweaks don't change anything — I confirmed that. The actual root cause is the reachability flag: - With `nameserver 10.206.10.4` (over Tailscale `utun4`) → `reach: Reachable, Transient Connection` - With `nameserver 127.0.0.1` (loopback) → `reach: Reachable, Local Address, Directly Reachable` When the per-domain resolver is flagged "Transient Connection", macOS' resolver framework still queries the primary fritz.box resolver in parallel for non-FQDN names, accepts its NXDOMAIN, and returns "Unknown host" before resolver #8 wins. With trailing dot (true FQDN) the search-domain-style parallel query is skipped, so resolver #8 is the only one consulted and it works. ## Real fixes (no good /etc/resolver-only workaround) 1. **Local DNS forwarder on loopback** — sandcastle CLI binds a tiny UDP forwarder on `127.0.0.1:<port>` that relays `.sandman` queries to `10.206.10.4`. `/etc/resolver/sandman` then points at `127.0.0.1` with `port <port>`. The resolver loses the Transient flag and works without the trailing dot. This is the right sandcastle-side fix; it's a moderate Go CLI change. 2. **Tailscale Split DNS** — push `sandman` → `10.206.10.4` via tailnet DNS settings instead of `/etc/resolver/`. Tailscale's macOS integration registers the scoped resolver in a way that doesn't get the transient downgrade. Requires admin access […]
+
+> DEVELOPER
+
+explain Tailscale Split DNS
+
+> AGENT
+
+## Tailscale Split DNS — what it is Tailscale ships its own DNS resolver inside the client. "Split DNS" lets you tell the tailnet: *for queries ending in suffix X, forward to nameserver Y instead of the system's default*. The tailnet's coordination server pushes that config to every device on the tailnet. When enabled, the Tailscale macOS client registers itself with the system as a per-domain resolver — same mechanism `/etc/resolver/sandman` uses, but configured through Tailscale rather than a local file. ## Why it fixes your problem Two reasons the tailnet-managed path doesn't have your "Transient Connection" issue: 1. **The DNS query never leaves loopback.** Tailscale's macOS client runs a local DNS proxy on `100.100.100.100` (the MagicDNS anycast IP) that the OS treats as always-reachable. The proxy receives the query, decides the suffix matches your split-DNS rule, and forwards it over the tunnel to `10.206.10.4`. From macOS' point of view, the resolver IP is local, so no Transient flag. 2. **It's pushed as a Tailscale-managed scoped resolver.** It bypasses the `/etc/resolver/*` plumbing entirely and gets registered through SystemConfiguration with stronger authority than search-domain-driven NXDOMAIN merging. You can already see this on your machine — `tailscale dns status` showed: ``` Split […]
+
+> DEVELOPER
+
+can i set the tailscale dns via cli?
+
+> AGENT
+
+Not via the `tailscale` CLI directly — that one only controls per-device settings (`tailscale set --accept-dns`, `--accept-routes`, etc.). Split DNS lives in the *tailnet* config, which is admin-console / API territory. But you can do it from the shell via the Tailscale REST API. The relevant endpoint: ``` PATCH https://api.tailscale.com/api/v2/tailnet/{tailnet}/dns/split-dns ``` Body is a JSON map of suffix → nameserver list. PATCH merges; PUT replaces. ## Concrete steps 1. Generate an API access token at `login.tailscale.com/admin/settings/keys` (use an OAuth client with `dns` write scope, or a personal API token). 2. Find your tailnet name — for personal accounts it's `-` (literal dash) or your email; for orgs it's the org slug. You already know yours from the MagicDNS suffix `tail61f416.ts.net`, but the tailnet name is separate. Easy way: `curl -u $TOKEN: https://api.tailscale.com/api/v2/tailnet/-/dns/nameservers`. 3. Patch in the route: ```bash TOKEN='tskey-api-...' TAILNET='-' # or your org slug curl -u REDACTED -X PATCH \ "https://api.tailscale.com/api/v2/tailnet/$TAILNET/dns/split-dns" \ -H 'Content-Type: application/json' \ -d '{"sandman": ["10.206.10.4"]}' ``` The suffix is written without leading/trailing dots in the JSON. To remove a route later, PATCH with `{"sandman": []}` (empty array deletes the entry). 4. Verify on this machine after a few seconds: ```bash /Applications/Tailscale.app/Contents/MacOS/Tailscale dns status | grep […]
+
+> DEVELOPER
+
+that sucks!
+
+> AGENT
+
+Yeah. The disappointment is that for something Tailscale already understands as "this device's tailnet, this device's split-DNS routes," there's no client-side `tailscale dns add-route sandman 10.206.10.4`. The whole config lives server-side and needs an API token + tailnet admin rights, even when you're a tailnet of one. Practical implications for your case: - For your personal use right now, the lowest-effort unblock is the trailing dot. Annoying, but zero config. - The local-loopback DNS forwarder is the right sandcastle-side fix — it's the only path that works per-device, doesn't need tailnet admin, and doesn't drag the user through API tokens. The "Transient Connection" diagnosis we nailed down means we know exactly what it has to do: bind UDP/53 (or any port + `port` directive in `/etc/resolver/sandman`) on `127.0.0.1`, forward to `10.206.10.4`. ~50 lines of Go using `miekg/dns` or even raw `net`. Want me to build it? I'd add it to `vendor/sandcastle-cli/cmd/dns.go` so `sandcastle dns install` becomes self-sufficient, no Tailscale-admin gymnastics.

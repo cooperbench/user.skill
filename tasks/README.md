@@ -18,6 +18,9 @@ Each task directory:
 
 Also: `_manifest.json`, `_cohort_meta.json`.
 
+`history.md` turns use markdown blockquote role labels (`> DEVELOPER`, `> AGENT`, …)
+with newline-preserving bodies (tables/fences stay intact).
+
 Developer profiles are **not** baked into tasks. Inject them as Harbor skills at job time:
 
 ```bash

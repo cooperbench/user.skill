@@ -1,17 +1,35 @@
-[DEVELOPER]: 改善案を洗い出して OpenCodeに実装の司令出してCodexでレビューしたい。
+> DEVELOPER
 
-[AGENT]: 改善案を洗い出すために、まずコードベースの現状を把握します。
+改善案を洗い出して OpenCodeに実装の司令出してCodexでレビューしたい。
 
-[AGENT]: コアファイルを読んで現状を把握します。
+> AGENT
 
-[AGENT]: 残りの状況を確認します。
+改善案を洗い出すために、まずコードベースの現状を把握します。
 
-[AGENT]: コードベースを把握しました。小さくクリーンな構成ですが、改善余地を洗い出しました。 ## 改善案の洗い出し（HonoX + MDX スライド） ### A. 品質・CI 基盤（現状ゼロ） 1. **CI ワークフローがない** — push/PR で `typecheck → prettier --check → build` を回す GitHub Actions がない。OpenCode 実装 → Codex レビューのループでも、ビルド壊れの自動検知があると安全。 2. **型チェックが scripts にない** — `tsconfig.json` はあるが `tsc --noEmit` を叩く npm script がない。 3. **lint 不在** — prettier のみ。`format` / `typecheck` / `check` スクリプトが未整備。 ### B. パフォーマンス・依存 4. **highlight.js を CDN からランタイム実行** — `_renderer.tsx` で CDN ロード→クライアントで `highlightAll()`。ビルド時シンタックスハイライト（`rehype-pretty-code` / Shiki）に移せば、CDN 依存・FOUC・実行コストが消える。 5. **外部 CDN 依存が多い**（`fonts.xz.style`、highlight.js CSS/JS、`new.css`）— オフライン/プライバシー/表示安定性の観点で self-host 余地。 6. **スライド分割がランタイム DOM 処理** — 初回描画で全スライドが一瞬見えてから JS で折り畳まれる（FOUC）。最低限 `#slides` を JS 準備完了まで隠す or ビルド時分割。 ### C. 機能 7. **プレゼンターモード不在** — ノートは `{/* */}` で DOM に出ない。発表者用のノート/次スライド/タイマー表示窓がない（登壇用途的に効果大）。 8. **PDF / 印刷エクスポート不在** — 配布用に全スライドを縦並び印刷する CSS や手段がない。 9. **トップの一覧が手書き** — `index.mdx` のデッキ一覧を、各 MDX の frontmatter から自動生成できる。 10. **OGP 画像が手動** — デッキ毎の `imageUrl` を手で指定。自動 OG 画像生成の余地。 ### D. アクセシビリティ・体裁・クリーンアップ 11. **`prefers-reduced-motion` 非対応** — `slide-in` アニメが常時発火。 12. **空の `app/client.tsx`**（1 行・空）— HonoX クライアントアイランド未使用。削除 or 意図明記。 13. **`noscript` フォールバックなし** — JS 無効時は全スライドが素のまま。 14. **未追跡の残骸ディレクトリ** — `slidev-theme-enbu/` `contents/` がディスクに残存（gitignore 済みだが物理削除されていない）。 --- これらから OpenCode に投げる実装バッチを決めたいです。スコープを質問します。
+> AGENT
 
-[AGENT]: 全バッチ採用ですね。指示書を正確に書くため、前提を数点確認します。
+コアファイルを読んで現状を把握します。
 
-[AGENT]: 前提を確認しました（`tsc` は導入済みだが package.json 未記載、prettier は printWidth 70・セミコロンなし、ノートは `{/* */}` 形式が cfdp に 12 箇所）。指示書 2 つを生成します。
+> AGENT
 
-[AGENT]: Codex レビュー用の指示書を生成します。
+残りの状況を確認します。
 
-[AGENT]: 2 つの指示書を生成しました。 ## 成果物 | ファイル | 用途 | |---|---| | `docs/improvements/opencode-brief.md` | OpenCode 向け実装ブリーフ。PR1→PR4 の順、各 PR に作業手順・受け入れ基準・リスクを明記 | | `docs/improvements/codex-review.md` | Codex 向けレビュー観点。PR 別チェック + 横断観点、`ファイル:行/重大度/壊れる点/修正案` 形式を指定 | ## 渡し方 OpenCode に実装させるとき: ``` docs/improvements/opencode-brief.md に従って PR1 から順に実装して ``` Codex でレビューするとき: ``` docs/improvements/codex-review.md の観点で現在の差分をレビューして ``` ## ブリーフの要点（4 PR 構成） - **PR1 CI/品質基盤** — `typecheck`/`format`/`check` scripts、`typescript` を devDep 明示、`ci.yml` 追加。後続のゲート。 - **PR2 ビルド時ハイライト** — highlight.js CDN を撤去し Shiki(`rehype-pretty-code`) へ。`keepBackground:false` で `--slide-code-bg` に委譲。コピーボタン回帰がリスク。 - **PR3 プレゼンターモード** — ノート記法を `{/* */}`→`<aside class="note">` に変更（cfdp の 12 箇所移行が必須）、`p` でプレゼンター窓、`BroadcastChannel` 同期。 - **PR4 印刷 + 一覧自動生成** — `@media print` で 1 枚 1 ページ、`index.mdx`→`index.tsx` + `import.meta.glob` で frontmatter から一覧自動化。 実装前に確認して反映した前提: prettier は printWidth 70・セミコロンなし、`tsc` は導入済みだが package.json 未記載なので明示追加を指示、ノートは現状 `{/* */}` で DOM に残らない→プレゼンター実現に記法変更が必須、という点を各 PR に織り込んでいます。 --- ★ Insight ───────────────────────────────────── - **プレゼンターモードの本質的制約**: `{/* */}` は MDX コンパイル時に消えるため「ノートを後から DOM で読む」ことが原理的に不可能。機能追加が一見 UI 作業に見えて、実はデータ表現（記法）の変更を強制する好例です。 - **ランタイム vs ビルド時**: 現状の slide.js（DOM 分割）も highlight.js（CDN 実行）も「ブラウザでやる」設計。PR2 はこれをビルド時に倒す方向で、CDN 依存・FOUC・実行コストが同時に消えます。 - **CI を先頭 PR に置く意味**: OpenCode 実装→Codex レビューのループでは、機械的な回帰（ビルド壊れ・型エラー）を人/LLM レビューの前に自動で弾く土台があると、レビューが本質的な設計判断に集中できます。 ───────────────────────────────────────────────── このまま 2 ファイルを git にコミットしますか？（指示書なので、コミットしておくと OpenCode / Codex 双方からブランチ上で参照しやすくなります）
+> AGENT
+
+コードベースを把握しました。小さくクリーンな構成ですが、改善余地を洗い出しました。 ## 改善案の洗い出し（HonoX + MDX スライド） ### A. 品質・CI 基盤（現状ゼロ） 1. **CI ワークフローがない** — push/PR で `typecheck → prettier --check → build` を回す GitHub Actions がない。OpenCode 実装 → Codex レビューのループでも、ビルド壊れの自動検知があると安全。 2. **型チェックが scripts にない** — `tsconfig.json` はあるが `tsc --noEmit` を叩く npm script がない。 3. **lint 不在** — prettier のみ。`format` / `typecheck` / `check` スクリプトが未整備。 ### B. パフォーマンス・依存 4. **highlight.js を CDN からランタイム実行** — `_renderer.tsx` で CDN ロード→クライアントで `highlightAll()`。ビルド時シンタックスハイライト（`rehype-pretty-code` / Shiki）に移せば、CDN 依存・FOUC・実行コストが消える。 5. **外部 CDN 依存が多い**（`fonts.xz.style`、highlight.js CSS/JS、`new.css`）— オフライン/プライバシー/表示安定性の観点で self-host 余地。 6. **スライド分割がランタイム DOM 処理** — 初回描画で全スライドが一瞬見えてから JS で折り畳まれる（FOUC）。最低限 `#slides` を JS 準備完了まで隠す or ビルド時分割。 ### C. 機能 7. **プレゼンターモード不在** — ノートは `{/* */}` で DOM に出ない。発表者用のノート/次スライド/タイマー表示窓がない（登壇用途的に効果大）。 8. **PDF / 印刷エクスポート不在** — 配布用に全スライドを縦並び印刷する CSS や手段がない。 9. **トップの一覧が手書き** — `index.mdx` のデッキ一覧を、各 MDX の frontmatter から自動生成できる。 10. **OGP 画像が手動** — デッキ毎の `imageUrl` を手で指定。自動 OG 画像生成の余地。 ### D. アクセシビリティ・体裁・クリーンアップ 11. **`prefers-reduced-motion` 非対応** — `slide-in` アニメが常時発火。 12. **空の `app/client.tsx`**（1 行・空）— HonoX クライアントアイランド未使用。削除 or 意図明記。 13. **`noscript` フォールバックなし** — JS 無効時は全スライドが素のまま。 14. **未追跡の残骸ディレクトリ** — `slidev-theme-enbu/` `contents/` がディスクに残存（gitignore 済みだが物理削除されていない）。 --- これらから OpenCode に投げる実装バッチを決めたいです。スコープを質問します。
+
+> AGENT
+
+全バッチ採用ですね。指示書を正確に書くため、前提を数点確認します。
+
+> AGENT
+
+前提を確認しました（`tsc` は導入済みだが package.json 未記載、prettier は printWidth 70・セミコロンなし、ノートは `{/* */}` 形式が cfdp に 12 箇所）。指示書 2 つを生成します。
+
+> AGENT
+
+Codex レビュー用の指示書を生成します。
+
+> AGENT
+
+2 つの指示書を生成しました。 ## 成果物 | ファイル | 用途 | |---|---| | `docs/improvements/opencode-brief.md` | OpenCode 向け実装ブリーフ。PR1→PR4 の順、各 PR に作業手順・受け入れ基準・リスクを明記 | | `docs/improvements/codex-review.md` | Codex 向けレビュー観点。PR 別チェック + 横断観点、`ファイル:行/重大度/壊れる点/修正案` 形式を指定 | ## 渡し方 OpenCode に実装させるとき: ``` docs/improvements/opencode-brief.md に従って PR1 から順に実装して ``` Codex でレビューするとき: ``` docs/improvements/codex-review.md の観点で現在の差分をレビューして ``` ## ブリーフの要点（4 PR 構成） - **PR1 CI/品質基盤** — `typecheck`/`format`/`check` scripts、`typescript` を devDep 明示、`ci.yml` 追加。後続のゲート。 - **PR2 ビルド時ハイライト** — highlight.js CDN を撤去し Shiki(`rehype-pretty-code`) へ。`keepBackground:false` で `--slide-code-bg` に委譲。コピーボタン回帰がリスク。 - **PR3 プレゼンターモード** — ノート記法を `{/* */}`→`<aside class="note">` に変更（cfdp の 12 箇所移行が必須）、`p` でプレゼンター窓、`BroadcastChannel` 同期。 - **PR4 印刷 + 一覧自動生成** — `@media print` で 1 枚 1 ページ、`index.mdx`→`index.tsx` + `import.meta.glob` で frontmatter から一覧自動化。 実装前に確認して反映した前提: prettier は printWidth 70・セミコロンなし、`tsc` は導入済みだが package.json 未記載なので明示追加を指示、ノートは現状 `{/* */}` で DOM に残らない→プレゼンター実現に記法変更が必須、という点を各 PR に織り込んでいます。 --- ★ Insight ───────────────────────────────────── - **プレゼンターモードの本質的制約**: `{/* */}` は MDX コンパイル時に消えるため「ノートを後から DOM で読む」ことが原理的に不可能。機能追加が一見 UI 作業に見えて、実はデータ表現（記法）の変更を強制する好例です。 - **ランタイム vs ビルド時**: 現状の slide.js（DOM 分割）も highlight.js（CDN 実行）も「ブラウザでやる」設計。PR2 はこれをビルド時に倒す方向で、CDN 依存・FOUC・実行コストが同時に消えます。 - **CI を先頭 PR に置く意味**: OpenCode 実装→Codex レビューのループでは、機械的な回帰（ビルド壊れ・型エラー）を人/LLM レビューの前に自動で弾く土台があると、レビューが本質的な設計判断に集中できます。 ───────────────────────────────────────────────── このまま 2 ファイルを git にコミットしますか？（指示書なので、コミットしておくと OpenCode / Codex 双方からブランチ上で参照しやすくなります）

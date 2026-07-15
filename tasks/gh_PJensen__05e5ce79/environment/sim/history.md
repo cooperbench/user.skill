@@ -1,31 +1,63 @@
-[SYSTEM]: # AGENTS.md instructions for /home/pjensen/Repos/JSHack <INSTRUCTIONS> @/home/pjensen/.codex/RTK.md --- project-doc --- # AGENTS.md - JSHack Field Manual JSHack is a zero-dependency browser roguelike: pure JavaScript, pure ES modules, ECS architecture, Deno tooling. This file is optimized for coding agents. Prefer the commands below over manual spelunking. Deeper docs: - [README.md](README.md) - [SEPARATION_MANIFEST.md](docs/architecture/SEPARATION_MANIFEST.md) - [RUNTIME_TOPOLOGY_DOCTRINE.md](docs/architecture/RUNTIME_TOPOLOGY_DOCTRINE.md) - [TEN_COMMANDMENTS.md](docs/architecture/TEN_COMMANDMENTS.md) - [ecs-js/AGENTS.md](src/lib/ecs-js/AGENTS.md) --- ## Hard Laws - **No build step.** Pure ES modules. No webpack, babel, JSX, TypeScript, or bundling. - **Deno, not Node.** Tests and tools run with Deno. Default test command: `deno test --allow-read`. - **JavaScript only.** Keep source as `.js` / `.mjs`. - **Mobile-first.** Touch is primary; desktop keyboard is secondary. - **Separation is law.** `rules/` never imports `display/` or `bridge/`; `display/` never imports `rules/`; `bridge/` projects read-only rule state. - **No system-to-system calls.** Systems communicate with `world.emit` / `world.on`; scheduler owns ordering. - **New events use concrete event classes.** Any new event contract must define a concrete `EcsEvent` class and emit an instance with `world.emit(new Event(...))`. Do not introduce string-only events or parallel string re-emits for new contracts. - **Touched listener installers use canonical extensions.** Any new listener installer, or any existing listener installer touched during a task, must use `defineExtension(...)` […]
+> SYSTEM
 
-[DEVELOPER]: I was researching norse stuff this morning over breakfast, this is what I came away with. Let's work on these, broadly. VALKARIE — a new class. The only one that belongs at the same ontological level as fighter, mage, etc. Death-aware, fate-oriented, perhaps gains power from nearby deaths, interacts differently with corpses and Draugr. Ratatoskr — one diminutive squirrel, unique outdoor squirrel. Not hostile. Rare encounter. Moves between distant outdoor regions, perhaps carrying rumors, insults, quest state, or items between otherwise disconnected NPCs. 🐿️ ^^ kind of like chicken, but way way way cooler. Use that unicode character too, Landvættir — invisible or dormant spirits attached to particular places. A grove, standing stone, pond, old tree, ruined foundation. The player discovers that the place itself has state and disposition. ^^ We've already made a spirit guide, as well as spirit essence -- I feel like we could make this happen especially around landmarks. Draugr — not generic undead. A specific dead NPC who refuses to leave something: house, chest, grave, weapon, family property. Territorial rather than wandering. 💀 ^ I think it gets angry when the thing it's gaurding is touched. Hamingja — not a creature at all. An inheritable […]
+# AGENTS.md instructions for /home/pjensen/Repos/JSHack <INSTRUCTIONS> @/home/pjensen/.codex/RTK.md --- project-doc --- # AGENTS.md - JSHack Field Manual JSHack is a zero-dependency browser roguelike: pure JavaScript, pure ES modules, ECS architecture, Deno tooling. This file is optimized for coding agents. Prefer the commands below over manual spelunking. Deeper docs: - [README.md](README.md) - [SEPARATION_MANIFEST.md](docs/architecture/SEPARATION_MANIFEST.md) - [RUNTIME_TOPOLOGY_DOCTRINE.md](docs/architecture/RUNTIME_TOPOLOGY_DOCTRINE.md) - [TEN_COMMANDMENTS.md](docs/architecture/TEN_COMMANDMENTS.md) - [ecs-js/AGENTS.md](src/lib/ecs-js/AGENTS.md) --- ## Hard Laws - **No build step.** Pure ES modules. No webpack, babel, JSX, TypeScript, or bundling. - **Deno, not Node.** Tests and tools run with Deno. Default test command: `deno test --allow-read`. - **JavaScript only.** Keep source as `.js` / `.mjs`. - **Mobile-first.** Touch is primary; desktop keyboard is secondary. - **Separation is law.** `rules/` never imports `display/` or `bridge/`; `display/` never imports `rules/`; `bridge/` projects read-only rule state. - **No system-to-system calls.** Systems communicate with `world.emit` / `world.on`; scheduler owns ordering. - **New events use concrete event classes.** Any new event contract must define a concrete `EcsEvent` class and emit an instance with `world.emit(new Event(...))`. Do not introduce string-only events or parallel string re-emits for new contracts. - **Touched listener installers use canonical extensions.** Any new listener installer, or any existing listener installer touched during a task, must use `defineExtension(...)` […]
 
-[AGENT]: I’ll treat this as a content/design implementation pass, starting by inspecting the existing class, monster, landmark, corpse, and chicken patterns so the new Norse pieces fit the current data surfaces instead of adding one-off code.
+> DEVELOPER
 
-[AGENT]: The class registry is plain data, while monsters are registered through content modules at runtime. I found existing tests for chickens, spirit guide, luck, and overworld creatures, so I’m narrowing to those patterns and then I’ll make the content plus focused coverage.
+I was researching norse stuff this morning over breakfast, this is what I came away with. Let's work on these, broadly. VALKARIE — a new class. The only one that belongs at the same ontological level as fighter, mage, etc. Death-aware, fate-oriented, perhaps gains power from nearby deaths, interacts differently with corpses and Draugr. Ratatoskr — one diminutive squirrel, unique outdoor squirrel. Not hostile. Rare encounter. Moves between distant outdoor regions, perhaps carrying rumors, insults, quest state, or items between otherwise disconnected NPCs. 🐿️ ^^ kind of like chicken, but way way way cooler. Use that unicode character too, Landvættir — invisible or dormant spirits attached to particular places. A grove, standing stone, pond, old tree, ruined foundation. The player discovers that the place itself has state and disposition. ^^ We've already made a spirit guide, as well as spirit essence -- I feel like we could make this happen especially around landmarks. Draugr — not generic undead. A specific dead NPC who refuses to leave something: house, chest, grave, weapon, family property. Territorial rather than wandering. 💀 ^ I think it gets angry when the thing it's gaurding is touched. Hamingja — not a creature at all. An inheritable […]
 
-[AGENT]: The least invasive shape is: add Valkyrie as a first-class starter class with authored metadata for future death/fate mechanics, add Ratatoskr and Draugr as catalog monsters, and add Landvaettir/Hamingja as explicit content metadata now rather than inventing new runtime state prematurely. I’m going to keep the behavioral hooks declarative where the engine already supports that, then test the contracts.
+> AGENT
 
-[AGENT]: I’m making scoped data/content edits now: class registry, monster catalog, and a small Norse concept data module for Landvaettir and Hamingja. No scheduler or runtime world state is needed for this first pass, which keeps the future mechanics inspectable without breaking architecture rules.
+I’ll treat this as a content/design implementation pass, starting by inspecting the existing class, monster, landmark, corpse, and chicken patterns so the new Norse pieces fit the current data surfaces instead of adding one-off code.
 
-[AGENT]: Valkyrie is now in the class registry with starter gear, holy/death-facing starter spells, and explicit fate metadata. I’m checking that the spear id exists before I leave that equipment choice in place.
+> AGENT
 
-[AGENT]: There isn’t a plain spear item, so I’m switching Valkyrie to an existing canonical weapon rather than adding a new weapon just to satisfy the class loadout.
+The class registry is plain data, while monsters are registered through content modules at runtime. I found existing tests for chickens, spirit guide, luck, and overworld creatures, so I’m narrowing to those patterns and then I’ll make the content plus focused coverage.
 
-[AGENT]: Next I’m adding Ratatoskr near the chicken content so it inherits the same neutral/passive catalog expectations, but with unique, rare, messenger-oriented metadata and the requested squirrel glyph. Draugr belongs in undead with territorial guard metadata.
+> AGENT
 
-[AGENT]: Ratatoskr and Draugr are authored as content definitions now. I’m adding one small data module for Landvaettir and Hamingja so they are first-class concepts without pretending there is already a save-history/lineage runtime.
+The least invasive shape is: add Valkyrie as a first-class starter class with authored metadata for future death/fate mechanics, add Ratatoskr and Draugr as catalog monsters, and add Landvaettir/Hamingja as explicit content metadata now rather than inventing new runtime state prematurely. I’m going to keep the behavioral hooks declarative where the engine already supports that, then test the contracts.
 
-[AGENT]: I’m updating focused tests next: existing class coverage has an exact class count, and I’m adding a Norse content test that locks down the important authored properties rather than brittle full snapshots.
+> AGENT
 
-[AGENT]: The tests now cover the class and content contracts. I’m running the focused class/content tests first, then I’ll run the relevant content catalog guard if these pass.
+I’m making scoped data/content edits now: class registry, monster catalog, and a small Norse concept data module for Landvaettir and Hamingja. No scheduler or runtime world state is needed for this first pass, which keeps the future mechanics inspectable without breaking architecture rules.
 
-[AGENT]: Focused tests pass. I’m doing a quick diff review and then a broader content catalog test to catch registration/palette issues from the new monster definitions.
+> AGENT
 
-[AGENT]: Content catalog and glyph coverage pass too. I’m checking worktree status and scanning the new names so I can catch any misspellings or missing imports before wrapping.
+Valkyrie is now in the class registry with starter gear, holy/death-facing starter spells, and explicit fate metadata. I’m checking that the spear id exists before I leave that equipment choice in place.
 
-[AGENT]: The architecture/event guard passed. One detail I noticed: I normalized the class name to “Valkyrie” instead of the note’s “Valkarie” spelling, while keeping the requested squirrel Unicode glyph exactly in content.
+> AGENT
 
-[AGENT]: Implemented the Norse content pass. Changed: - Added `valkyrie` class in [classes.js](/home/pjensen/Repos/JSHack/src/rules/data/classes.js) with fate/death-aware metadata. - Added `ratatoskr` in [animals.js](/home/pjensen/Repos/JSHack/src/content/monsters/animals.js) as a unique rare passive outdoor squirrel messenger using `🐿️`. - Added `draugr` in [undead.js](/home/pjensen/Repos/JSHack/src/content/monsters/undead.js) as a rare territorial undead guardian with bound-property anger metadata and `💀`. - Added [norseFate.js](/home/pjensen/Repos/JSHack/src/rules/data/norseFate.js) for Landvaettir site definitions and early Hamingja lineage-luck definition. - Added/updated focused tests in [classes.test.mjs](/home/pjensen/Repos/JSHack/tests/classes.test.mjs) and [norseContent.test.mjs](/home/pjensen/Repos/JSHack/tests/norseContent.test.mjs). Verification run: - `deno test --allow-read tests/classes.test.mjs tests/norseContent.test.mjs tests/chickenCatalog.test.mjs tests/overworldCreatureContent.test.mjs` - `deno test --allow-read tests/contentCatalogCanonical.test.mjs tests/displayGlyphCoverage.test.mjs` - `deno task check` All passed. Note: I normalized “VALKARIE” to the conventional `Valkyrie` for the class name/id.
+There isn’t a plain spear item, so I’m switching Valkyrie to an existing canonical weapon rather than adding a new weapon just to satisfy the class loadout.
+
+> AGENT
+
+Next I’m adding Ratatoskr near the chicken content so it inherits the same neutral/passive catalog expectations, but with unique, rare, messenger-oriented metadata and the requested squirrel glyph. Draugr belongs in undead with territorial guard metadata.
+
+> AGENT
+
+Ratatoskr and Draugr are authored as content definitions now. I’m adding one small data module for Landvaettir and Hamingja so they are first-class concepts without pretending there is already a save-history/lineage runtime.
+
+> AGENT
+
+I’m updating focused tests next: existing class coverage has an exact class count, and I’m adding a Norse content test that locks down the important authored properties rather than brittle full snapshots.
+
+> AGENT
+
+The tests now cover the class and content contracts. I’m running the focused class/content tests first, then I’ll run the relevant content catalog guard if these pass.
+
+> AGENT
+
+Focused tests pass. I’m doing a quick diff review and then a broader content catalog test to catch registration/palette issues from the new monster definitions.
+
+> AGENT
+
+Content catalog and glyph coverage pass too. I’m checking worktree status and scanning the new names so I can catch any misspellings or missing imports before wrapping.
+
+> AGENT
+
+The architecture/event guard passed. One detail I noticed: I normalized the class name to “Valkyrie” instead of the note’s “Valkarie” spelling, while keeping the requested squirrel Unicode glyph exactly in content.
+
+> AGENT
+
+Implemented the Norse content pass. Changed: - Added `valkyrie` class in [classes.js](/home/pjensen/Repos/JSHack/src/rules/data/classes.js) with fate/death-aware metadata. - Added `ratatoskr` in [animals.js](/home/pjensen/Repos/JSHack/src/content/monsters/animals.js) as a unique rare passive outdoor squirrel messenger using `🐿️`. - Added `draugr` in [undead.js](/home/pjensen/Repos/JSHack/src/content/monsters/undead.js) as a rare territorial undead guardian with bound-property anger metadata and `💀`. - Added [norseFate.js](/home/pjensen/Repos/JSHack/src/rules/data/norseFate.js) for Landvaettir site definitions and early Hamingja lineage-luck definition. - Added/updated focused tests in [classes.test.mjs](/home/pjensen/Repos/JSHack/tests/classes.test.mjs) and [norseContent.test.mjs](/home/pjensen/Repos/JSHack/tests/norseContent.test.mjs). Verification run: - `deno test --allow-read tests/classes.test.mjs tests/norseContent.test.mjs tests/chickenCatalog.test.mjs tests/overworldCreatureContent.test.mjs` - `deno test --allow-read tests/contentCatalogCanonical.test.mjs tests/displayGlyphCoverage.test.mjs` - `deno task check` All passed. Note: I normalized “VALKARIE” to the conventional `Valkyrie` for the class name/id.

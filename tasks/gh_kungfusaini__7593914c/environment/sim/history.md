@@ -1,51 +1,389 @@
-[DEVELOPER]: hey man I need a notifications in claude code (macos desktop notifs) reeaserch
+> DEVELOPER
 
-[AGENT]: ## macOS Desktop Notifications in Claude Code Claude Code has a built-in `Notification` hook event designed exactly for this. Here's the rundown: ### The hook Fires when Claude needs your attention — permission prompts, idle/waiting for input, auth events, etc. Use an empty matcher (`""`) to catch them all. ### Native macOS notifs Use `osascript` — no extra tools needed: ```bash osascript -e 'display notification "..." with title "Claude Code"' ``` ### Settings (paste into `~/.claude/settings.json`) ```json { "hooks": { "Notification": [ { "matcher": "", "hooks": [ { "type": "command", "command": "osascript -e 'display notification \"Claude Code needs your attention\" with title \"Claude Code\"'" } ] } ] } } ``` If you've already got hooks, merge `Notification` as a sibling key inside the existing `"hooks"` object. ### ⚠️ The gotcha that gets everyone `osascript` routes notifications through **Script Editor**. If Script Editor doesn't have notification permission, it fails silently — no error, just nothing happens. **One-time fix:** 1. Run `osascript -e 'display notification "test"'` in Terminal 2. Open **System Settings → Notifications** 3. Find **Script Editor**, enable **Allow Notifications** 4. Test again Also check Focus/Do Not Disturb if you're not seeing them. ### Verify - Run `/hooks` inside Claude […]
+hey man I need a notifications in claude code (macos desktop notifs) reeaserch
 
-[DEVELOPER]: Ther is no script editor option
+> AGENT
 
-[AGENT]: Yeah, that's a common gotcha — **Script Editor only shows up in the Notifications list after it's actually fired a notification once.** It's lazy-registered. ### Try this first Run this in your terminal: ```bash osascript -e 'display notification "hello" with title "Claude Code"' ``` Then immediately reopen **System Settings → Notifications** and scroll. Script Editor should appear now. If you got a permission prompt instead — accept it. ### If it still doesn't show On newer macOS (Sequoia/Sonoma), notifications sometimes get attributed to your **terminal app itself** (Ghostty/iTerm/Terminal/Alacritty) rather than Script Editor. Check the Notifications list for *your terminal app name* and make sure it's allowed. ### More reliable alternative: `terminal-notifier` Honestly, `osascript` notifications are flaky on modern macOS. `terminal-notifier` is more dependable: ```bash brew install terminal-notifier ``` Then update your hook: ```json { "hooks": { "Notification": [ { "matcher": "", "hooks": [ { "type": "command", "command": "terminal-notifier -title 'Claude Code' -message 'Needs your attention' -sound default" } ] } ] } } ``` `terminal-notifier` registers itself as its own app in System Settings, so the permission entry shows up immediately and reliably. Which terminal are you running Claude Code in? I can give you a more targeted answer.
+## macOS Desktop Notifications in Claude Code
 
-[DEVELOPER]: ternimal notifer is already working and running
+Claude Code has a built-in `Notification` hook event designed exactly for this. Here's the rundown:
 
-[AGENT]: Sweet, then you're basically done. Drop this into `~/.claude/settings.json`: ```json { "hooks": { "Notification": [ { "matcher": "", "hooks": [ { "type": "command", "command": "terminal-notifier -title 'Claude Code' -message 'Needs your attention' -sound default -group claude-code" } ] } ] } } ``` `-group claude-code` means new notifications replace old ones instead of stacking — change or remove if you want them to pile up. ### Want notifications when long tasks finish too? Add a `Stop` hook (fires when Claude finishes responding): ```json { "hooks": { "Notification": [ { "matcher": "", "hooks": [ { "type": "command", "command": "terminal-notifier -title 'Claude Code' -message 'Needs your attention' -sound default -group claude-code" } ] ], "Stop": [ { "matcher": "", "hooks": [ { "type": "command", "command": "terminal-notifier -title 'Claude Code' -message 'Done' -sound Glass -group claude-code" } ] } ] } } } ``` Run `/hooks` inside Claude Code afterward to confirm both are registered. Want me to apply this to your settings file directly?
+### The hook
+Fires when Claude needs your attention — permission prompts, idle/waiting for input, auth events, etc. Use an empty matcher (`""`) to catch them all.
 
-[DEVELOPER]: no put it needs to tell me the task so I know which window to swtich too
+### Native macOS notifs
+Use `osascript` — no extra tools needed:
 
-[AGENT]: Good thinking. Claude Code passes JSON to the hook on stdin — including `cwd` (project dir) and `message` (what Claude is asking). Parse it with `jq`: ```json { "hooks": { "Notification": [ { "matcher": "", "hooks": [ { "type": "command", "command": "input=$(cat); terminal-notifier -title \"Claude: $(basename \"$(echo \"$input\" | jq -r .cwd)\")\" -message \"$(echo \"$input\" | jq -r .message)\" -sound default -group \"claude-$(echo \"$input\" | jq -r .session_id)\"" } ] } ], "Stop": [ { "matcher": "", "hooks": [ { "type": "command", "command": "input=$(cat); terminal-notifier -title \"Claude: $(basename \"$(echo \"$input\" | jq -r .cwd)\")\" -message 'Done' -sound Glass -group \"claude-$(echo \"$input\" | jq -r .session_id)\"" } ] } ] } } ``` ### What you'll see - **Title:** `Claude: dot-config` (the project folder name) - **Message:** the actual prompt, e.g. `Claude needs your permission to use Bash` `-group` is keyed per session, so each Claude window's notifications replace their own old ones but don't clobber other sessions. ### Cleaner alternative (recommended) Inline `jq` gets ugly fast. Make a small script and call it from the hook: `~/.claude/bin/notify.sh`: ```bash #!/usr/bin/env bash input=$(cat) cwd=$(echo "$input" | jq -r .cwd) msg=$(echo "$input" | jq -r '.message // "Done"') session=$(echo "$input" | jq -r […]
+```bash
+osascript -e 'display notification "..." with title "Claude Code"'
+```
 
-[DEVELOPER]: Yes go for it
+### Settings (paste into `~/.claude/settings.json`)
 
-[AGENT]: Quick snag — I can't find `terminal-notifier` on your PATH. I checked `/opt/homebrew/bin`, `/usr/local/bin`, `~/.nix-profile/bin`, and even mdfind — only license files inside node_modules turn up. Did you maybe confirm `osascript` notifications working instead? Or is `terminal-notifier` installed somewhere unusual?
+```json
+{
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "osascript -e 'display notification \"Claude Code needs your attention\" with title \"Claude Code\"'"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
 
-[AGENT]: Dug thoroughly — `terminal-notifier` is **not installed**. It's not in your nix flake (neither `systemPackages` nor `homebrew.brews`), not in `/nix/store`, not in `/opt/homebrew`, not in `~/.nix-profile/bin`, not in npm/bun globals, and not on any directory in your `$PATH`. The mdfind hits were just license files inside random `node_modules`. You may be thinking of a different tool. Going with `osascript` since it's built-in. Writing the script and wiring it up now.
+If you've already got hooks, merge `Notification` as a sibling key inside the existing `"hooks"` object.
 
-[DEVELOPER]: no man but maytbe it comes with kitty (my terminal) becasue I do see it in the apple settings and I get notificatipons from opencode
+### ⚠️ The gotcha that gets everyone
+`osascript` routes notifications through **Script Editor**. If Script Editor doesn't have notification permission, it fails silently — no error, just nothing happens.
 
-[AGENT]: Ahhh that makes total sense — **kitty has built-in notification support** via `kitten notify` and the OSC 99 escape sequence. That's what opencode is using, and that's why kitty (not Script Editor) shows up in your Notifications settings. Way better than osascript since kitty already has the permission. Let me rewrite the script:
+**One-time fix:**
+1. Run `osascript -e 'display notification "test"'` in Terminal
+2. Open **System Settings → Notifications**
+3. Find **Script Editor**, enable **Allow Notifications**
+4. Test again
 
-[AGENT]: Now update `settings.json` — replacing the bell hook and adding a Stop hook:
+Also check Focus/Do Not Disturb if you're not seeing them.
 
-[AGENT]: Hit a wall — auto mode blocks edits to `~/.claude/settings.json` (treats it as self-modification of agent config). The script is ready, but you'll need to apply the settings change yourself. ### Script is in place `~/.claude/bin/notify.sh` — uses `kitten notify` with title `Claude: <project-dir>` and message = Claude's prompt (or "Done" for Stop). ### Apply this change to `~/.claude/settings.json` Replace the current `Notification` hook block (the one that does `printf '\a'`) with: ```json "hooks": { "Notification": [ { "matcher": "", "hooks": [ { "type": "command", "command": "$HOME/.claude/bin/notify.sh" } ] } ], "Stop": [ { "matcher": "", "hooks": [ { "type": "command", "command": "$HOME/.claude/bin/notify.sh" } ] } ] }, ``` Quickest way — open in your editor: ``` $EDITOR ~/.claude/settings.json ``` Want me to retry the edit now that you're aware? Toggle off auto mode or grant the prompt and I can do it.
+### Verify
+- Run `/hooks` inside Claude […]
 
-[DEVELOPER]: i allow you to do that
+> DEVELOPER
 
-[AGENT]: It's a **hard-block** — the auto mode classifier won't accept your in-chat permission for this one. The block is on the *agent* modifying its own config file, not on you. ### You'll need to edit it yourself Easiest: ``` $EDITOR ~/.claude/settings.json ``` Replace this block: ```json "hooks": { "Notification": [ { "hooks": [ { "type": "command", "command": "printf '\\a'" } ] } ] }, ``` With: ```json "hooks": { "Notification": [ { "matcher": "", "hooks": [ { "type": "command", "command": "$HOME/.claude/bin/notify.sh" } ] } ], "Stop": [ { "matcher": "", "hooks": [ { "type": "command", "command": "$HOME/.claude/bin/notify.sh" } ] } ] }, ``` Once saved, restart Claude Code (or run `/hooks` to verify both are registered). ### Test it ```bash echo '{"cwd":"/Users/sumeet/.dotfiles/dot-config","message":"Test","hook_event_name":"Notification","session_id":"test1"}' | ~/.claude/bin/notify.sh ``` You should see a kitty-attributed notification titled `Claude: dot-config` with body `Test`. Let me know once it's wired up and I'll verify it's all good.
+Ther is no script editor option
 
-[DEVELOPER]: try again
+> AGENT
 
-[AGENT]: Done. Quick test:
+Yeah, that's a common gotcha — **Script Editor only shows up in the Notifications list after it's actually fired a notification once.** It's lazy-registered.
 
-[AGENT]: `kitten notify` failed because hooks run without a controlling terminal — kitty needs a tty to send its OSC escape sequence to. Let me find the parent process's tty and route through that.
+### Try this first
+Run this in your terminal:
+```bash
+osascript -e 'display notification "hello" with title "Claude Code"'
+```
 
-[AGENT]: Exit 0 — did a notification pop up? It should say **`Claude: dot-config`** / **`Hook test`** and be attributed to kitty. If yes, you're all set. The hook is wired up in `~/.claude/settings.json` for both `Notification` (Claude needs you) and `Stop` (response finished). If no, let me know and I'll dig into where it routed (kitten vs osascript fallback).
+Then immediately reopen **System Settings → Notifications** and scroll. Script Editor should appear now. If you got a permission prompt instead — accept it.
 
-[DEVELOPER]: no it didnt
+### If it still doesn't show
+On newer macOS (Sequoia/Sonoma), notifications sometimes get attributed to your **terminal app itself** (Ghostty/iTerm/Terminal/Alacritty) rather than Script Editor. Check the Notifications list for *your terminal app name* and make sure it's allowed.
 
-[AGENT]: Let me add logging so we can see which path it took and what failed.
+### More reliable alternative: `terminal-notifier`
+Honestly, `osascript` notifications are flaky on modern macOS. `terminal-notifier` is more dependable:
 
-[AGENT]: Trigger it once and check the log:
+```bash
+brew install terminal-notifier
+```
 
-[AGENT]: Found both problems: 1. `kitten notify` opens `/dev/tty` itself (not stdin) — redirection doesn't help. It needs an actual controlling terminal which hooks don't have. 2. `osascript` returned 0 but you got nothing — that's the silent Script Editor permission issue. The fix: write the OSC 99 escape sequence **directly** to the kitty pty. That's what `kitten notify` does under the hood, and bypasses the controlling-terminal requirement.
+Then update your hook:
 
-[AGENT]: Did a notification show up this time? It should be **`Claude: dot-config`** / **`OSC99 test`**, attributed to kitty.
+```json
+{
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "terminal-notifier -title 'Claude Code' -message 'Needs your attention' -sound default"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+`terminal-notifier` registers itself as its own app in System Settings, so the permission entry shows up immediately and reliably.
+
+Which terminal are you running Claude Code in? I can give you a more targeted answer.
+
+> DEVELOPER
+
+ternimal notifer is already working and running
+
+> AGENT
+
+Sweet, then you're basically done. Drop this into `~/.claude/settings.json`:
+
+```json
+{
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "terminal-notifier -title 'Claude Code' -message 'Needs your attention' -sound default -group claude-code"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+`-group claude-code` means new notifications replace old ones instead of stacking — change or remove if you want them to pile up.
+
+### Want notifications when long tasks finish too?
+Add a `Stop` hook (fires when Claude finishes responding):
+
+```json
+{
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          { "type": "command", "command": "terminal-notifier -title 'Claude Code' -message 'Needs your attention' -sound default -group claude-code" }
+        ]
+      ],
+      "Stop": [
+        {
+          "matcher": "",
+          "hooks": [
+            { "type": "command", "command": "terminal-notifier -title 'Claude Code' -message 'Done' -sound Glass -group claude-code" }
+          ]
+        }
+      ]
+    }
+  }
+}
+```
+
+Run `/hooks` inside Claude Code afterward to confirm both are registered. Want me to apply this to your settings file directly?
+
+> DEVELOPER
+
+no put it needs to tell me the task so I know which window to swtich too
+
+> AGENT
+
+Good thinking. Claude Code passes JSON to the hook on stdin — including `cwd` (project dir) and `message` (what Claude is asking). Parse it with `jq`:
+
+```json
+{
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "input=$(cat); terminal-notifier -title \"Claude: $(basename \"$(echo \"$input\" | jq -r .cwd)\")\" -message \"$(echo \"$input\" | jq -r .message)\" -sound default -group \"claude-$(echo \"$input\" | jq -r .session_id)\""
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "input=$(cat); terminal-notifier -title \"Claude: $(basename \"$(echo \"$input\" | jq -r .cwd)\")\" -message 'Done' -sound Glass -group \"claude-$(echo \"$input\" | jq -r .session_id)\""
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+### What you'll see
+- **Title:** `Claude: dot-config` (the project folder name)
+- **Message:** the actual prompt, e.g. `Claude needs your permission to use Bash`
+
+`-group` is keyed per session, so each Claude window's notifications replace their own old ones but don't clobber other sessions.
+
+### Cleaner alternative (recommended)
+Inline `jq` gets ugly fast. Make a small script and call it from the hook:
+
+`~/.claude/bin/notify.sh`:
+```bash
+#!/usr/bin/env bash
+input=$(cat)
+cwd=$(echo "$input" | jq -r .cwd)
+msg=$(echo "$input" | jq -r '.message // "Done"')
+session=$(echo "$input" | jq -r […]
+
+> DEVELOPER
+
+Yes go for it
+
+> AGENT
+
+Quick snag — I can't find `terminal-notifier` on your PATH. I checked `/opt/homebrew/bin`, `/usr/local/bin`, `~/.nix-profile/bin`, and even mdfind — only license files inside node_modules turn up.
+
+Did you maybe confirm `osascript` notifications working instead? Or is `terminal-notifier` installed somewhere unusual?
+
+> AGENT
+
+Dug thoroughly — `terminal-notifier` is **not installed**. It's not in your nix flake (neither `systemPackages` nor `homebrew.brews`), not in `/nix/store`, not in `/opt/homebrew`, not in `~/.nix-profile/bin`, not in npm/bun globals, and not on any directory in your `$PATH`. The mdfind hits were just license files inside random `node_modules`. You may be thinking of a different tool.
+
+Going with `osascript` since it's built-in. Writing the script and wiring it up now.
+
+> DEVELOPER
+
+no man but maytbe it comes with kitty (my terminal) becasue I do see it in the apple settings and I get notificatipons from opencode
+
+> AGENT
+
+Ahhh that makes total sense — **kitty has built-in notification support** via `kitten notify` and the OSC 99 escape sequence. That's what opencode is using, and that's why kitty (not Script Editor) shows up in your Notifications settings. Way better than osascript since kitty already has the permission.
+
+Let me rewrite the script:
+
+> AGENT
+
+Now update `settings.json` — replacing the bell hook and adding a Stop hook:
+
+> AGENT
+
+Hit a wall — auto mode blocks edits to `~/.claude/settings.json` (treats it as self-modification of agent config). The script is ready, but you'll need to apply the settings change yourself.
+
+### Script is in place
+`~/.claude/bin/notify.sh` — uses `kitten notify` with title `Claude: <project-dir>` and message = Claude's prompt (or "Done" for Stop).
+
+### Apply this change to `~/.claude/settings.json`
+Replace the current `Notification` hook block (the one that does `printf '\a'`) with:
+
+```json
+"hooks": {
+  "Notification": [
+    {
+      "matcher": "",
+      "hooks": [
+        {
+          "type": "command",
+          "command": "$HOME/.claude/bin/notify.sh"
+        }
+      ]
+    }
+  ],
+  "Stop": [
+    {
+      "matcher": "",
+      "hooks": [
+        {
+          "type": "command",
+          "command": "$HOME/.claude/bin/notify.sh"
+        }
+      ]
+    }
+  ]
+},
+```
+
+Quickest way — open in your editor:
+```
+$EDITOR ~/.claude/settings.json
+```
+
+Want me to retry the edit now that you're aware? Toggle off auto mode or grant the prompt and I can do it.
+
+> DEVELOPER
+
+i allow you to do that
+
+> AGENT
+
+It's a **hard-block** — the auto mode classifier won't accept your in-chat permission for this one. The block is on the *agent* modifying its own config file, not on you.
+
+### You'll need to edit it yourself
+Easiest:
+```
+$EDITOR ~/.claude/settings.json
+```
+
+Replace this block:
+```json
+"hooks": {
+  "Notification": [
+    {
+      "hooks": [
+        { "type": "command", "command": "printf '\\a'" }
+      ]
+    }
+  ]
+},
+```
+
+With:
+```json
+"hooks": {
+  "Notification": [
+    {
+      "matcher": "",
+      "hooks": [
+        { "type": "command", "command": "$HOME/.claude/bin/notify.sh" }
+      ]
+    }
+  ],
+  "Stop": [
+    {
+      "matcher": "",
+      "hooks": [
+        { "type": "command", "command": "$HOME/.claude/bin/notify.sh" }
+      ]
+    }
+  ]
+},
+```
+
+Once saved, restart Claude Code (or run `/hooks` to verify both are registered).
+
+### Test it
+```bash
+echo '{"cwd":"/Users/sumeet/.dotfiles/dot-config","message":"Test","hook_event_name":"Notification","session_id":"test1"}' | ~/.claude/bin/notify.sh
+```
+
+You should see a kitty-attributed notification titled `Claude: dot-config` with body `Test`. Let me know once it's wired up and I'll verify it's all good.
+
+> DEVELOPER
+
+try again
+
+> AGENT
+
+Done. Quick test:
+
+> AGENT
+
+`kitten notify` failed because hooks run without a controlling terminal — kitty needs a tty to send its OSC escape sequence to. Let me find the parent process's tty and route through that.
+
+> AGENT
+
+Exit 0 — did a notification pop up? It should say **`Claude: dot-config`** / **`Hook test`** and be attributed to kitty.
+
+If yes, you're all set. The hook is wired up in `~/.claude/settings.json` for both `Notification` (Claude needs you) and `Stop` (response finished). If no, let me know and I'll dig into where it routed (kitten vs osascript fallback).
+
+> DEVELOPER
+
+no it didnt
+
+> AGENT
+
+Let me add logging so we can see which path it took and what failed.
+
+> AGENT
+
+Trigger it once and check the log:
+
+> AGENT
+
+Found both problems:
+1. `kitten notify` opens `/dev/tty` itself (not stdin) — redirection doesn't help. It needs an actual controlling terminal which hooks don't have.
+2. `osascript` returned 0 but you got nothing — that's the silent Script Editor permission issue.
+
+The fix: write the OSC 99 escape sequence **directly** to the kitty pty. That's what `kitten notify` does under the hood, and bypasses the controlling-terminal requirement.
+
+> AGENT
+
+Did a notification show up this time? It should be **`Claude: dot-config`** / **`OSC99 test`**, attributed to kitty.

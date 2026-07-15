@@ -1,19 +1,39 @@
-[DEVELOPER]: hmm yuta@M2-MacBook-Air  ~/ghq/github.com/yutakobayashidev/dotnix  ↱ main  sudo darwin-rebuild switch --flake .#M2-MacBook-Air building the system configuration... evaluation warning: nix-index-database: flake output `hmModules` has been renamed to `homeModules` evaluation warning: 'system' has been renamed to/replaced by 'stdenv.hostPlatform.system' error: Cannot build '/nix/store/REDACTED.7.0.drv'. Reason: builder failed with exit code 2. Output paths: /nix/store/REDACTED.7.0-dev /nix/store/bmll5nd82crrvp7ib3i65k5y79hrlv31-libplist-2.7.0 /nix/store/REDACTED.7.0-bin Last 25 log lines: > FAIL ostep-comments.test (exit status: 139) > > ============================================================================ > Testsuite summary for libplist 2.7.0 > ============================================================================ > # TOTAL: 41 > # PASS: 34 > # SKIP: 0 > # XFAIL: 0 > # FAIL: 7 > # XPASS: 0 > # ERROR: 0 > ============================================================================ > See test/test-suite.log for debugging. > Some test(s) failed. Please report this to https://github.com/libimobiledevice/libplist/issues, > together with the test-suite.log file (gzipped) and your system > information. Thanks. > ============================================================================ > make[3]: *** [Makefile:913: test-suite.log] Error 1 > make[3]: Leaving directory '/nix/var/nix/builds/nix-95607-1162152347/source/test' > make[2]: *** [Makefile:1048: check-TESTS] Error 2 > make[2]: Leaving directory '/nix/var/nix/builds/nix-95607-1162152347/source/test' > make[1]: *** [Makefile:1113: check-am] Error 2 > make[1]: Leaving directory '/nix/var/nix/builds/nix-95607-1162152347/source/test' > make: *** [Makefile:450: check-recursive] Error 1 For full logs, run: nix log /nix/store/REDACTED.7.0.drv error: Cannot build '/nix/store/is5zna2g9zs94x7x0nzkllaly9hrq2nh-ldid-2.1.5.drv'. Reason: 1 dependency failed. Output paths: /nix/store/3k12pzg5870cl1k7gi883lfanlsyjaar-ldid-2.1.5 error: Cannot build '/nix/store/REDACTED.drv'. Reason: 1 […]
+> DEVELOPER
 
-[DEVELOPER]: hmm yuta@M2-MacBook-Air  ~/ghq/github.com/yutakobayashidev/dotnix  ↱ main  sudo darwin-rebuild switch --flake .#M2-MacBook-Air building the system configuration... evaluation warning: nix-index-database: flake output `hmModules` has been renamed to `homeModules` evaluation warning: 'system' has been renamed to/replaced by 'stdenv.hostPlatform.system' error: Cannot build '/nix/store/REDACTED.7.0.drv'. Reason: builder failed with exit code 2. Output paths: /nix/store/REDACTED.7.0-dev /nix/store/bmll5nd82crrvp7ib3i65k5y79hrlv31-libplist-2.7.0 /nix/store/REDACTED.7.0-bin Last 25 log lines: > FAIL ostep-comments.test (exit status: 139) > > ============================================================================ > Testsuite summary for libplist 2.7.0 > ============================================================================ > # TOTAL: 41 > # PASS: 34 > # SKIP: 0 > # XFAIL: 0 > # FAIL: 7 > # XPASS: 0 > # ERROR: 0 > ============================================================================ > See test/test-suite.log for debugging. > Some test(s) failed. Please report this to https://github.com/libimobiledevice/libplist/issues, > together with the test-suite.log file (gzipped) and your system > information. Thanks. > ============================================================================ > make[3]: *** [Makefile:913: test-suite.log] Error 1 > make[3]: Leaving directory '/nix/var/nix/builds/nix-95607-1162152347/source/test' > make[2]: *** [Makefile:1048: check-TESTS] Error 2 > make[2]: Leaving directory '/nix/var/nix/builds/nix-95607-1162152347/source/test' > make[1]: *** [Makefile:1113: check-am] Error 2 > make[1]: Leaving directory '/nix/var/nix/builds/nix-95607-1162152347/source/test' > make: *** [Makefile:450: check-recursive] Error 1 For full logs, run: nix log /nix/store/REDACTED.7.0.drv error: Cannot build '/nix/store/is5zna2g9zs94x7x0nzkllaly9hrq2nh-ldid-2.1.5.drv'. Reason: 1 dependency failed. Output paths: /nix/store/3k12pzg5870cl1k7gi883lfanlsyjaar-ldid-2.1.5 error: Cannot build '/nix/store/REDACTED.drv'. Reason: 1 […]
+hmm yuta@M2-MacBook-Air  ~/ghq/github.com/yutakobayashidev/dotnix  ↱ main  sudo darwin-rebuild switch --flake .#M2-MacBook-Air building the system configuration... evaluation warning: nix-index-database: flake output `hmModules` has been renamed to `homeModules` evaluation warning: 'system' has been renamed to/replaced by 'stdenv.hostPlatform.system' error: Cannot build '/nix/store/REDACTED.7.0.drv'. Reason: builder failed with exit code 2. Output paths: /nix/store/REDACTED.7.0-dev /nix/store/bmll5nd82crrvp7ib3i65k5y79hrlv31-libplist-2.7.0 /nix/store/REDACTED.7.0-bin Last 25 log lines: > FAIL ostep-comments.test (exit status: 139) > > ============================================================================ > Testsuite summary for libplist 2.7.0 > ============================================================================ > # TOTAL: 41 > # PASS: 34 > # SKIP: 0 > # XFAIL: 0 > # FAIL: 7 > # XPASS: 0 > # ERROR: 0 > ============================================================================ > See test/test-suite.log for debugging. > Some test(s) failed. Please report this to https://github.com/libimobiledevice/libplist/issues, > together with the test-suite.log file (gzipped) and your system > information. Thanks. > ============================================================================ > make[3]: *** [Makefile:913: test-suite.log] Error 1 > make[3]: Leaving directory '/nix/var/nix/builds/nix-95607-1162152347/source/test' > make[2]: *** [Makefile:1048: check-TESTS] Error 2 > make[2]: Leaving directory '/nix/var/nix/builds/nix-95607-1162152347/source/test' > make[1]: *** [Makefile:1113: check-am] Error 2 > make[1]: Leaving directory '/nix/var/nix/builds/nix-95607-1162152347/source/test' > make: *** [Makefile:450: check-recursive] Error 1 For full logs, run: nix log /nix/store/REDACTED.7.0.drv error: Cannot build '/nix/store/is5zna2g9zs94x7x0nzkllaly9hrq2nh-ldid-2.1.5.drv'. Reason: 1 dependency failed. Output paths: /nix/store/3k12pzg5870cl1k7gi883lfanlsyjaar-ldid-2.1.5 error: Cannot build '/nix/store/REDACTED.drv'. Reason: 1 […]
 
-[AGENT]: `libplist-2.7.0` のテストが失敗しており、これが `ldid` の依存関係になっています。最近のコミット `1b4086e` で `ldid` が darwin packages に追加されたのが原因です。 どこで `ldid` が定義されているか確認します。
+> DEVELOPER
 
-[AGENT]: `ldid` の依存関係 `libplist` がテスト失敗でビルドできない状態です。対処法は2つあります： 1. **`ldid` を削除する** — 今すぐ必要でなければ一番シンプル 2. **`libplist` のテストをスキップする overlay を追加する** — `ldid` が必要な場合 `ldid` は実際に使っていますか？不要であれば削除するのが最もシンプルな解決策です。必要であれば `libplist` のテストをスキップする overlay を追加できます。
+hmm yuta@M2-MacBook-Air  ~/ghq/github.com/yutakobayashidev/dotnix  ↱ main  sudo darwin-rebuild switch --flake .#M2-MacBook-Air building the system configuration... evaluation warning: nix-index-database: flake output `hmModules` has been renamed to `homeModules` evaluation warning: 'system' has been renamed to/replaced by 'stdenv.hostPlatform.system' error: Cannot build '/nix/store/REDACTED.7.0.drv'. Reason: builder failed with exit code 2. Output paths: /nix/store/REDACTED.7.0-dev /nix/store/bmll5nd82crrvp7ib3i65k5y79hrlv31-libplist-2.7.0 /nix/store/REDACTED.7.0-bin Last 25 log lines: > FAIL ostep-comments.test (exit status: 139) > > ============================================================================ > Testsuite summary for libplist 2.7.0 > ============================================================================ > # TOTAL: 41 > # PASS: 34 > # SKIP: 0 > # XFAIL: 0 > # FAIL: 7 > # XPASS: 0 > # ERROR: 0 > ============================================================================ > See test/test-suite.log for debugging. > Some test(s) failed. Please report this to https://github.com/libimobiledevice/libplist/issues, > together with the test-suite.log file (gzipped) and your system > information. Thanks. > ============================================================================ > make[3]: *** [Makefile:913: test-suite.log] Error 1 > make[3]: Leaving directory '/nix/var/nix/builds/nix-95607-1162152347/source/test' > make[2]: *** [Makefile:1048: check-TESTS] Error 2 > make[2]: Leaving directory '/nix/var/nix/builds/nix-95607-1162152347/source/test' > make[1]: *** [Makefile:1113: check-am] Error 2 > make[1]: Leaving directory '/nix/var/nix/builds/nix-95607-1162152347/source/test' > make: *** [Makefile:450: check-recursive] Error 1 For full logs, run: nix log /nix/store/REDACTED.7.0.drv error: Cannot build '/nix/store/is5zna2g9zs94x7x0nzkllaly9hrq2nh-ldid-2.1.5.drv'. Reason: 1 dependency failed. Output paths: /nix/store/3k12pzg5870cl1k7gi883lfanlsyjaar-ldid-2.1.5 error: Cannot build '/nix/store/REDACTED.drv'. Reason: 1 […]
 
-[DEVELOPER]: 追加したいな
+> AGENT
 
-[AGENT]: 既存の overlay を参考にして、`libplist` のテストをスキップする overlay を作ります。
+`libplist-2.7.0` のテストが失敗しており、これが `ldid` の依存関係になっています。最近のコミット `1b4086e` で `ldid` が darwin packages に追加されたのが原因です。 どこで `ldid` が定義されているか確認します。
 
-[AGENT]: `libplist` のテストをスキップする overlay を作成します。
+> AGENT
 
-[AGENT]: ビルドを試してみましょう。
+`ldid` の依存関係 `libplist` がテスト失敗でビルドできない状態です。対処法は2つあります： 1. **`ldid` を削除する** — 今すぐ必要でなければ一番シンプル 2. **`libplist` のテストをスキップする overlay を追加する** — `ldid` が必要な場合 `ldid` は実際に使っていますか？不要であれば削除するのが最もシンプルな解決策です。必要であれば `libplist` のテストをスキップする overlay を追加できます。
 
-[AGENT]: Nix store のキャッシュが古いパスを参照しています。flake を使っているので、`git add` してから再ビルドが必要です。
+> DEVELOPER
 
-[AGENT]: No response requested.
+追加したいな
+
+> AGENT
+
+既存の overlay を参考にして、`libplist` のテストをスキップする overlay を作ります。
+
+> AGENT
+
+`libplist` のテストをスキップする overlay を作成します。
+
+> AGENT
+
+ビルドを試してみましょう。
+
+> AGENT
+
+Nix store のキャッシュが古いパスを参照しています。flake を使っているので、`git add` してから再ビルドが必要です。
+
+> AGENT
+
+No response requested.

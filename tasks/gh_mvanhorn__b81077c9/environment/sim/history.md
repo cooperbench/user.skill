@@ -1,3 +1,7 @@
-[DEVELOPER]: give me the description
+> DEVELOPER
 
-[AGENT]: Let me get the PR description for the current branch.
+give me the description
+
+> AGENT
+
+Let me get the PR description for the current branch.

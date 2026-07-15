@@ -1,5 +1,34 @@
-[DEVELOPER]: /brainstorming how do we allow trails to support multiple (potentially stacked) PRs, and hence multiple branches?
+> DEVELOPER
 
-[TOOL]: <command-message>superpowers:brainstorming</command-message> <command-name>/superpowers:brainstorming</command-name> <command-args>how do we allow trails to support multiple (potentially stacked) PRs, and hence multiple branches?</command-args>
+/brainstorming how do we allow trails to support multiple (potentially stacked) PRs, and hence multiple branches?
 
-[AGENT]: Good, I now have a thorough understanding of the current architecture. Let me summarize the relevant starting point: **Current state:** - A trail is 1:1 with a branch (`Branch` + `Base` fields) - Trails track checkpoints made on that branch - No parent-child trail relationships exist - No PR integration yet - Sessions are commit-scoped (shadow branches), not branch-scoped **The gap:** Trails are currently single-branch, single-PR. No way to represent "feature X spans branches A→B→C stacked on each other." --- Let me start with the first clarifying question: **What's the primary user story driving this?** I can think of a few distinct scenarios: 1. **Stacked PRs for a large feature** — User breaks a big feature into PR1 (base changes), PR2 (depends on PR1), PR3 (depends on PR2). Each is a branch. They want a unified trail showing the full feature's progress across all three. 2. **Iterative PRs on the same trail** — User works on branch A, merges PR, then continues on branch B for follow-up work. Same logical trail, but branches change over time sequentially. 3. **Parallel PRs from one trail** — User discovers mid-feature that they need a refactor PR first, so they split work into two […]
+> TOOL
+
+<command-message>superpowers:brainstorming</command-message>
+<command-name>/superpowers:brainstorming</command-name>
+<command-args>how do we allow trails to support multiple (potentially stacked) PRs, and hence multiple branches?</command-args>
+
+> AGENT
+
+Good, I now have a thorough understanding of the current architecture. Let me summarize the relevant starting point:
+
+**Current state:**
+- A trail is 1:1 with a branch (`Branch` + `Base` fields)
+- Trails track checkpoints made on that branch
+- No parent-child trail relationships exist
+- No PR integration yet
+- Sessions are commit-scoped (shadow branches), not branch-scoped
+
+**The gap:** Trails are currently single-branch, single-PR. No way to represent "feature X spans branches A→B→C stacked on each other."
+
+---
+
+Let me start with the first clarifying question:
+
+**What's the primary user story driving this?** I can think of a few distinct scenarios:
+
+1. **Stacked PRs for a large feature** — User breaks a big feature into PR1 (base changes), PR2 (depends on PR1), PR3 (depends on PR2). Each is a branch. They want a unified trail showing the full feature's progress across all three.
+
+2. **Iterative PRs on the same trail** — User works on branch A, merges PR, then continues on branch B for follow-up work. Same logical trail, but branches change over time sequentially.
+
+3. **Parallel PRs from one trail** — User discovers mid-feature that they need a refactor PR first, so they split work into two […]

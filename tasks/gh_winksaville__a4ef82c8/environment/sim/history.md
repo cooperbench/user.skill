@@ -1,9 +1,27 @@
-[DEVELOPER]: reaquaint and let's do todo 3 Exp[lore why zcr-mpsc-2t is faster than zcr-with-2t for that I want to use TProbe & TProbe2 in ../iiac-perf/src/tprobe.rs and tprobe2.rs as appropriate if you think they'll help.
+> DEVELOPER
 
-[AGENT]: Now let me read the ring implementations.
+reaquaint and let's do todo 3 Exp[lore why zcr-mpsc-2t is faster than zcr-with-2t for that I want to use TProbe & TProbe2 in ../iiac-perf/src/tprobe.rs and tprobe2.rs as appropriate if you think they'll help.
 
-[AGENT]: The gap reproduces at 10s: SPSC adjusted mean 131.5 ns vs MPSC 93.9 ns. Now let me check perf counters availability and the CLI's pinning flags.
+> AGENT
 
-[AGENT]: While the perf matrix runs, let me write the TProbe-instrumented bench variants in iiac-perf.
+Now let me read the ring implementations.
 
-[AGENT]: I've stopped — the write of the new bench file into `../iiac-perf/src/benches/` was rejected, so I haven't made any changes to either repo. Where things stand so far (read-only exploration done): - **Gap reproduces at 10s, unpinned**: `zcr-with-2t` adjusted mean 131.5 ns vs `zcr-mpsc-2t` 93.9 ns (core z..n2 means: 122.0 vs 87.1). Same sign and similar magnitude as the recorded 300s numbers. - **perf counters are available**: Zen 2's `ls_refills_from_sys.ls_mabresp_lcl_cache` (demand fills from another core's cache) is a direct cross-core line-transfer counter. A 6-run matrix (both benches × pin 0,1 same-CCX / pin 0,3 cross-CCX / unpinned) just finished in the scratchpad; I haven't analyzed it yet. - **My plan for TProbe/TProbe2**: add `tp-zcr-with-2t` / `tp-zcr-mpsc-2t` benches to iiac-perf, one `TProbe` per protocol phase (main send/recv, worker recv/send, worker probes returned via `JoinHandle`), mirroring the existing `probe-mpsc-2t` + `tp-pc` patterns. I was about to write the first of those files when you interrupted. My take on TProbe2: not a fit here — its record buffer grows unbounded (~70M round-trips × 24 B ≈ multi-GB over a 10s+ run) and its report currently merges all sites into one histogram, so it can't separate phases anyway. How would you like me to […]
+> AGENT
+
+The gap reproduces at 10s: SPSC adjusted mean 131.5 ns vs MPSC 93.9 ns. Now let me check perf counters availability and the CLI's pinning flags.
+
+> AGENT
+
+While the perf matrix runs, let me write the TProbe-instrumented bench variants in iiac-perf.
+
+> AGENT
+
+I've stopped — the write of the new bench file into `../iiac-perf/src/benches/` was rejected, so I haven't made any changes to either repo.
+
+Where things stand so far (read-only exploration done):
+
+- **Gap reproduces at 10s, unpinned**: `zcr-with-2t` adjusted mean 131.5 ns vs `zcr-mpsc-2t` 93.9 ns (core z..n2 means: 122.0 vs 87.1). Same sign and similar magnitude as the recorded 300s numbers.
+- **perf counters are available**: Zen 2's `ls_refills_from_sys.ls_mabresp_lcl_cache` (demand fills from another core's cache) is a direct cross-core line-transfer counter. A 6-run matrix (both benches × pin 0,1 same-CCX / pin 0,3 cross-CCX / unpinned) just finished in the scratchpad; I haven't analyzed it yet.
+- **My plan for TProbe/TProbe2**: add `tp-zcr-with-2t` / `tp-zcr-mpsc-2t` benches to iiac-perf, one `TProbe` per protocol phase (main send/recv, worker recv/send, worker probes returned via `JoinHandle`), mirroring the existing `probe-mpsc-2t` + `tp-pc` patterns. I was about to write the first of those files when you interrupted. My take on TProbe2: not a fit here — its record buffer grows unbounded (~70M round-trips × 24 B ≈ multi-GB over a 10s+ run) and its report currently merges all sites into one histogram, so it can't separate phases anyway.
+
+How would you like me to […]

@@ -1,3 +1,7 @@
-[DEVELOPER]: Hi
+> DEVELOPER
 
-[AGENT]: Hi! How can I help you today?
+Hi
+
+> AGENT
+
+Hi! How can I help you today?

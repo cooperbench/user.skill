@@ -6,7 +6,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 sys.path.insert(0, "/data/claude-crawl")
 from cohort_policy import (
     POLICY_VERSION,
-    is_human_target,
+    is_predictable_human_turn,
     policy_fingerprint,
     scrub_text,
 )
@@ -16,10 +16,49 @@ CTX_WORDS, MAX_PTS, PROFILE_TURNS = 200, 30, 40   # context = ALL prior turns in
 KEY = next(l.split("=",1)[1].strip() for l in open("/data/harbor-adapters-experiments/.env") if l.startswith("GEMINI_API_KEY="))
 MODEL = "gemini-3.5-flash"
 
-def tw(t,n): 
-    w=scrub_text(t or "").split(); return " ".join(w[:n])+(" […]" if len(w)>n else "")
+def tw(t, n):
+    """Truncate to at most `n` words while preserving newlines/spacing.
+
+    Do NOT flatten with split/join — that destroys markdown tables and fences
+    in history.md. Whitespace-only runs are kept; words are counted on \\S+.
+    """
+    text = scrub_text(t or "")
+    if not text:
+        return ""
+    parts = re.findall(r"\S+|\s+", text)
+    count = 0
+    out = []
+    for part in parts:
+        if part.isspace():
+            out.append(part)
+            continue
+        count += 1
+        if count > n:
+            # Trim trailing whitespace before the ellipsis marker.
+            while out and out[-1].isspace():
+                out.pop()
+            out.append(" […]")
+            break
+        out.append(part)
+    return "".join(out)
+
+
+def format_history_turn(role, text):
+    """Role as a markdown blockquote label; body keeps its own newlines."""
+    labels = {
+        "user": "DEVELOPER",
+        "assistant": "AGENT",
+        "system": "SYSTEM",
+        "tool": "TOOL",
+        "metadata": "METADATA",
+    }
+    label = labels.get(role, "METADATA")
+    body = tw(text, CTX_WORDS).rstrip()
+    return f"> {label}\n\n{body}"
+
+
 def is_action(t):
-    return t.get("role")=="user" and is_human_target(t)
+    return is_predictable_human_turn(t)
 
 # Canonical clean index: metadata remains in the trace with system/tool roles,
 # while secrets are already scrubbed and targets are genuine user turns only.
@@ -73,8 +112,7 @@ for u in man:
             if len([p for p in pts])>=MAX_PTS: break
             ctx=turns[:i]   # ALL previous turns in the session up to the tested turn
             prev=next((t["text"] for t in reversed(ctx) if t.get("role")=="assistant"),"")
-            labels={"user":"DEVELOPER","assistant":"AGENT","system":"SYSTEM","tool":"TOOL","metadata":"METADATA"}
-            block="\n\n".join(f"[{labels.get(t.get('role'),'METADATA')}]: {tw(t['text'],CTX_WORDS)}" for t in ctx)
+            block="\n\n".join(format_history_turn(t.get("role"), t.get("text")) for t in ctx)
             pts.append({"point_id":f"{x['sid']}#{i}","repo":x.get("repo") or "?","context":block,
                         "prev_agent":scrub_text(prev),"real":scrub_text(turns[i]["text"])})
         if len(pts)>=MAX_PTS: break

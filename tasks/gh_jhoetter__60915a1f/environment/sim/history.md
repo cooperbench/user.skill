@@ -1,13 +1,40 @@
-[DEVELOPER]: Wave 16 Worker D in /Users/jhoetter/repos/bim-ai. You are not alone in the codebase: other workers and the parent may edit/commit concurrently. Do not revert edits made by others, do not touch unrelated dirty files, stage only your own changes, commit locally when done, and do not push. Base context: HEAD was pushed at 8f2702166 (Schedule wave 16 tracker work). The tracker is spec/bim-integrity-rendering-sketch-methodology-tracker.md. Your ownership is rule suppression/tolerance policy, Advisor grouping/priority, profile presets, audience text, false-positive review workflow, and learning corpus: primary items BIR-A06, BIR-U01, BIR-U02, BIR-U03, BIR-U04, BIR-U05, BIR-U06. Expected work: - Inspect Advisor rule metadata/registry, constructability report, web Advisor grouping, and any tolerance/disposition code. - Add a deterministic rule suppressibility/tolerance policy: owner, expiry, evidence, review-required vs ignorable vs non-suppressible. - Improve grouping/dedup/root-cause and fix priority ordering in a machine-readable way. - Define profile presets and audience-specific text surfaces without losing rule identity. - Add false-positive review workflow data model/contract and, if feasible, learning-corpus fixture hooks. - Add focused backend/frontend tests as appropriate. - Update only your owned tracker rows/evidence notes conservatively. Mark Done only if truly met; otherwise keep Partial and state exact gap. - Run focused tests and include commands/results in your final report. - Commit locally […]
+> DEVELOPER
 
-[AGENT]: I’ll inspect the tracker and the Advisor/reporting code paths first, then make scoped changes only in the areas tied to your assigned rows. I’ll also check git status up front so I can avoid unrelated worktree changes.
+Wave 16 Worker D in /Users/jhoetter/repos/bim-ai. You are not alone in the codebase: other workers and the parent may edit/commit concurrently. Do not revert edits made by others, do not touch unrelated dirty files, stage only your own changes, commit locally when done, and do not push.
 
-[AGENT]: The worktree is already dirty with many files at `HEAD 8f2702166`; I’ll treat those as someone else’s changes unless I directly modify a file for this task. The broad search found the relevant Advisor/constructability paths, plus existing phase disposition and tolerance ledger code in the CLI.
+Base context: HEAD was pushed at 8f2702166 (Schedule wave 16 tracker work). The tracker is spec/bim-integrity-rendering-sketch-methodology-tracker.md. Your ownership is rule suppression/tolerance policy, Advisor grouping/priority, profile presets, audience text, false-positive review workflow, and learning corpus: primary items BIR-A06, BIR-U01, BIR-U02, BIR-U03, BIR-U04, BIR-U05, BIR-U06.
 
-[AGENT]: The current backend already has suppression elements, persisted issues, priority rank fields, and basic UI grouping. The missing parts are mostly policy metadata and contracts: suppressibility, tolerance requirements, richer grouping/root-cause fields, profile/audience surfaces, and false-positive review/corpus hooks.
+Expected work:
+- Inspect Advisor rule metadata/registry, constructability report, web Advisor grouping, and any tolerance/disposition code.
+- Add a deterministic rule suppressibility/tolerance policy: owner, expiry, evidence, review-required vs ignorable vs non-suppressible.
+- Improve grouping/dedup/root-cause and fix priority ordering in a machine-readable way.
+- Define profile presets and audience-specific text surfaces without losing rule identity.
+- Add false-positive review workflow data model/contract and, if feasible, learning-corpus fixture hooks.
+- Add focused backend/frontend tests as appropriate.
+- Update only your owned tracker rows/evidence notes conservatively. Mark Done only if truly met; otherwise keep Partial and state exact gap.
+- Run focused tests and include commands/results in your final report.
+- Commit locally […]
 
-[AGENT]: I have enough context to make a bounded change. I’m going to add a backend rule-policy registry and wire it into constructability reports, then mirror the new machine-readable fields in the web types/grouping tests and tracker evidence notes.
+> AGENT
 
-[AGENT]: The backend contract is now wired into the constructability report and `qa.advisor`; I’m running focused tests next. If formatting or type issues shake out, I’ll fix those before touching git staging.
+I’ll inspect the tracker and the Advisor/reporting code paths first, then make scoped changes only in the areas tied to your assigned rows. I’ll also check git status up front so I can avoid unrelated worktree changes.
 
-[AGENT]: The Python file as a whole is failing because the current workspace is emitting additional site/model-integrity domain findings in constructability reports, which makes older exact-count assertions brittle. I’m tightening only the assertions I added so they look for the owned policy/group fields instead of assuming no concurrent rule families exist.
+> AGENT
+
+The worktree is already dirty with many files at `HEAD 8f2702166`; I’ll treat those as someone else’s changes unless I directly modify a file for this task. The broad search found the relevant Advisor/constructability paths, plus existing phase disposition and tolerance ledger code in the CLI.
+
+> AGENT
+
+The current backend already has suppression elements, persisted issues, priority rank fields, and basic UI grouping. The missing parts are mostly policy metadata and contracts: suppressibility, tolerance requirements, richer grouping/root-cause fields, profile/audience surfaces, and false-positive review/corpus hooks.
+
+> AGENT
+
+I have enough context to make a bounded change. I’m going to add a backend rule-policy registry and wire it into constructability reports, then mirror the new machine-readable fields in the web types/grouping tests and tracker evidence notes.
+
+> AGENT
+
+The backend contract is now wired into the constructability report and `qa.advisor`; I’m running focused tests next. If formatting or type issues shake out, I’ll fix those before touching git staging.
+
+> AGENT
+
+The Python file as a whole is failing because the current workspace is emitting additional site/model-integrity domain findings in constructability reports, which makes older exact-count assertions brittle. I’m tightening only the assertions I added so they look for the owned policy/group fields instead of assuming no concurrent rule families exist.

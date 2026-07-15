@@ -1,3 +1,7 @@
-[DEVELOPER]: claude
+> DEVELOPER
 
-[AGENT]: Ready. What are we working on?
+claude
+
+> AGENT
+
+Ready. What are we working on?
