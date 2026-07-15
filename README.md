@@ -1,109 +1,53 @@
-# User.skill
+# User.skill / SWESimBench
 
-**Distilling real developers from their AI-coding trajectories into role-playable "user folders".**
+Role-playable developer profiles + Harbor eval tasks for simulating real software engineers from public coding-agent traces.
 
-Built on the [SWE-chat dataset](https://huggingface.co/datasets/SALT-NLP/SWE-chat) (5,851 real
-coding sessions). For every user with ≥6 trajectories (99 users, 3,713 sessions), we distill a
-folder of skills and persona files such that a coding agent (e.g. Claude Code) given that folder
-can **role-play the user**: produce the requests, corrections, and pushback the real user would
-have produced.
+**Branch:** `kevin` · **Live site:** https://swesimbench.vercel.app
 
-```
-                ┌────────────────────┐
- SWE-chat   ──> │ 1. prepare_data.py │ ──> data/digests/<user>.json   (train sessions)
- parquet        │    split & digest  │ ──> data/holdout/<user>.json   (held-out test sessions)
-                └────────────────────┘
-                ┌────────────────────┐
- digests    ──> │ 2. distill.py      │ ──> users/<user>/
-                │  /distill-user     │       USER.md PERSONA.md STYLE.md PREFERENCES.md
-                │  (claude -p)       │       PROJECTS.md stats.json skills/*.md
-                └────────────────────┘
-                ┌────────────────────┐
- holdout    ──> │ 3. validate.py     │ ──> results/validation_results.json
- + folders      │  /roleplay-user    │ ──> results/report.html
-                │  (claude -p)       │
-                └────────────────────┘
+## Layout
+
+```text
+tasks/                 Harbor eval packages (2,723 held-out prediction points)
+data-pipelines/        Scrape, cohort, and task-build scripts (no private corpora)
+  claude-crawl/        GitHub .claude/.codex discovery + harvest + cohort_policy
+  swesimbench-v2/      Clean cohort builders, QC, Harbor emitters, templates
+users/                 Distilled developer folders (persona/style/skills) — migrating to Agent Skills
+simulator/             Generic simulator skills (push-back, interrupt, …)
+bench/                 CondAgree / next-action prediction harness + taxonomy
+scripts/               Distill / validate / report drivers
+modal_app/             Modal training + serving for OSim models
+results/               Legacy validation outputs (v0-era demos)
 ```
 
-## The user folder
+Private session corpora, digests, and holdout splits are **not** in git (S3 / Seoul `/data`). See `AGENTS.md`.
 
-`users/<user_slug>/` is structured like a Claude Code project folder for a persona:
-
-| File | Contents |
-|---|---|
-| `USER.md` | Entry point: who this user is + how to role-play them (loaded first, like a CLAUDE.md) |
-| `PERSONA.md` | Background, expertise level, domains, communication style |
-| `STYLE.md` | How they literally type: length, language(s), casing, punctuation, verbatim example prompts |
-| `PREFERENCES.md` | What they correct, reject, or praise; pacing; workflow habits (tests, commits, plans) |
-| `PROJECTS.md` | The repos they work in, with goals and domain context |
-| `skills/*.md` | Recurring behaviors distilled as skills (trigger → behavior), e.g. `terse-iterator.md` |
-| `stats.json` | Quantitative fingerprint (intent/pushback distributions, prompt lengths, languages, repos) |
-
-## Distillation pipeline (is itself a Claude Code skill)
-
-`.claude/skills/distill-user/SKILL.md` defines the whole procedure. Run interactively:
-
-```
-/distill-user data/digests/<user>.json users/<user>/
-```
-
-or batch over all users (8-way parallel `claude -p`):
+## Quick start
 
 ```bash
-python3 scripts/prepare_data.py --swe-chat /path/to/SWE-chat        # build digests + holdout
-python3 scripts/distill.py --all                                    # distill every eligible user
+# Run Harbor eval (profiles optional, as skills)
+harbor run --path tasks --agent <agent> --model <model>
+
+# Distill / validate user folders (needs hydrated data/)
+python3 scripts/prepare_data.py --swe-chat /path/to/SWE-chat
+python3 scripts/distill.py --all
+python3 scripts/validate.py --users 10
 ```
 
-## Validation pipeline
+## Profiles vs tasks
 
-**Task: held-out next-message prediction.** For each held-out session we pick prediction points
-(real user turns ≥2). The role-play agent sees the real conversation up to that point and must
-produce the user's next message. We compare to what the real user actually typed, under three
-conditions:
+Eval tasks contain conversation history only. Developer profiles belong on the **agent harness** and will be Agent Skills–compatible (`SKILL.md` dirs). Inject with Harbor `--skill` / `agents[].skills` — do not bake a withprofile task twin.
 
-| Condition | Folder given to role-play agent |
+## Still missing / next cleanup
+
+| Gap | Why |
 |---|---|
-| `distilled` | the user's own distilled folder |
-| `generic` | none (a generic developer) |
-| `wrong` | a different user's folder (specificity control) |
-
-**Metrics** (per generated vs. real message):
-
-1. **Semantic similarity** — sentence-transformers embedding cosine (`all-MiniLM-L6-v2`),
-   with TF-IDF char/word n-gram cosine as a dependency-free fallback.
-2. **LLM judge** — Claude scores content match and style/voice match (0–100) given the
-   conversation context.
-3. **Style fingerprints** — length ratio and language match (the cheapest tells: a Spanish-language
-   one-liner user should not be simulated by 200-word English paragraphs).
-
-The distillation is validated if `distilled` beats both `generic` (folder adds information) and
-`wrong` (the information is user-specific, not just "how developers talk").
-
-```bash
-python3 scripts/validate.py --users 10 --points-per-session 3
-python3 scripts/report.py            # results/report.html
-```
-
-**Not covered (future work):** response-side validation — re-running the coding agent from the
-repo state at each point and comparing agent responses under simulated vs. real users requires
-checkpointed repo states; SWE-chat's `checkpoints`/`commits` tables make this possible later.
-
-## Repo layout
-
-```
-.claude/skills/distill-user/    the distillation procedure (Claude Code skill)
-.claude/skills/roleplay-user/   the role-play procedure (Claude Code skill)
-scripts/prepare_data.py         SWE-chat -> per-user digests + holdout splits
-scripts/distill.py              batch distillation driver (claude -p)
-scripts/validate.py             next-message prediction + scoring
-scripts/report.py               HTML report from validation results
-data/                           digests + holdout (gitignored; regenerable)
-users/                          distilled user folders (committed)
-results/                        validation outputs (committed)
-```
+| `profiles/` (or skill-format `users/`) | Explicit Agent Skills packaging of per-developer profiles |
+| `docs/` | Park `FINDINGS.md`, taxonomy notes, design write-ups out of root |
+| `jobs/` | Checked-in Harbor job YAMLs (±profile skill injections) |
+| Entire scrape pipeline | Only `claude-crawl` is here; ClickHouse/Entire harvest still Seoul-local (`/data/entire-backfill`) |
+| Slim `results/` | Archive or drop v0 demo HTML/JSON once CondAgree blob is canonical |
+| Path portability | Several `data-pipelines/` scripts still hardcode `/data/...` |
 
 ## Data & ethics
 
-Source data is the public SWE-chat dataset (ODC-BY, PII-redacted by the dataset authors).
-User folders describe public GitHub activity; `user_id`s are public usernames already present
-in the dataset. Honor SWE-chat removal requests by deleting the matching `users/<slug>/` folder.
+Source streams include public SWE-chat (ODC-BY), Entire checkpoint pushes, GitHub session dumps, and DataClaw donors. Honor removal requests by deleting matching `users/<slug>/` and related tasks.

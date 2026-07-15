@@ -5,7 +5,7 @@ import hashlib
 import sys
 from pathlib import Path
 
-sys.path.insert(0, "/data/claude-crawl")
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "claude-crawl"))
 from cohort_policy import (
     EXCLUDED_USERS,
     POLICY_VERSION,
@@ -20,7 +20,10 @@ from build_clean_cohort import (
     record_reconstruction_evidence,
 )
 
+# Private cohort artifacts (clean_sessions, etc.) stay on Seoul/S3 — not in git.
 ROOT = Path("/data/swesimbench-v2-harbor")
+REPO_ROOT = Path(__file__).resolve().parents[2]
+TASKS_DIR = REPO_ROOT / "tasks"
 manifest = json.loads((ROOT / "clean_manifest.json").read_text())
 assert manifest["policy_version"] == POLICY_VERSION
 assert manifest["policy_fingerprint"] == policy_fingerprint()
@@ -128,8 +131,9 @@ if cohort_path.exists() and (ROOT / "cohort.meta.json").exists():
         }
         dataset_point_sets = {}
         stale_datasets = []
-        for dataset_name, condition in (("eval", "noprofile"),):
-            dataset = ROOT / "datasets" / dataset_name
+        for dataset_name, condition, dataset in (
+            ("tasks", "noprofile", TASKS_DIR),
+        ):
             if not dataset.exists():
                 continue
             dataset_meta = json.loads((dataset / "_cohort_meta.json").read_text())
@@ -158,9 +162,12 @@ if cohort_path.exists() and (ROOT / "cohort.meta.json").exists():
                 "skipping stale derived datasets (rebuild make_tasks): "
                 + ", ".join(stale_datasets)
             )
-        assert "withprofile-full" not in {
-            p.name for p in (ROOT / "datasets").iterdir() if p.is_dir()
-        }, "withprofile task twin must not exist; inject profiles via Harbor skills"
+        assert not (REPO_ROOT / "tasks" / "withprofile-full").exists()
+        assert not any(
+            p.name.startswith("withprofile")
+            for p in TASKS_DIR.iterdir()
+            if p.is_dir()
+        ), "withprofile task twin must not exist; inject profiles via Harbor skills"
 sample_meta_path = ROOT / "sample100" / "meta.json"
 if sample_meta_path.exists():
     sample_meta = json.loads(sample_meta_path.read_text())
