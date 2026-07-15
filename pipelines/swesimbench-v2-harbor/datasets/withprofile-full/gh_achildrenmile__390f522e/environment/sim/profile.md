@@ -1,0 +1,40 @@
+- yes, implement both
+- commit this
+- Servus Michael, warum stehen bei der gestrigen Übung in Tirol 8 OE8-Stationen unter ?? Sonstiges?
+- der emham import funktioniert mit dem pdf nicht... es wird nichts erkannt
+- ist in downloads
+- bekomme interner serverfehler beim importieren
+- create release add to footer
+- create release add to footer
+- deploy
+- kurze zusammenfassung über das release 1.1.15 für whatsapp
+- analyze what it means to implement an import of handwritten notes.
+- https://github.com/achildrenmile/bosarsalog/issues/13 but do not entfernung piechart. only add
+- Implement the following plan: # Plan: Bezirks-Heatmap zur Auswertung hinzufügen (Issue #13) ## Context GitHub issue #13 requests a Bezirk heatmap on the Auswertung page: "Österreich Karte mit allen Bezirken und dann auf einer Skala von grün bis rot Heatmap". The pie chart stays (user override). The existing Bundesland map also stays — the Bezirk heatmap is an **addition**. ## […]
+- deploy it
+- not visible
+- not visible https://bosarsalog.oeradio.at/exercises/d3a46728-abf4-42a1-aece-9e7c3ef497a3/reports
+- bezirksheadmap is off. the card does not fit to the bezirke. fix this
+- there are 2 cards. one with the umrisse and another. the umriss card is not overlapping correctly. it is still off
+- all within the border, but the card looks a bit squished
+- not it is smaller does not fit but squished from width
+- in comparsion to the other austria card, this looks off
+- and also title the bezirke with 0 rapports
+- create a new release, add to footer and at the end sum up for a whatsapp message
+- headmap is to stretch in height
+- revert. but why does this card look so much different than the other
+- create new release. whatsapp mesage and footer
+- mesage von v.1.1.6. whatsapp bitte
+- https://github.com/achildrenmile/bosarsalog/issues/12
+- Implement the following plan: # Plan: Designanpassungen (Issue #12) ## Context Issue #12 requests: larger headings, more spacing between blocks, larger text, and better menu accessibility. Bootstrap was suggested but is not recommended — the project already uses Tailwind CSS v4 and switching would require a massive rewrite for no clear benefit. Instead: systematic Tailwind class upgrades across all components. […]
+- deploy to production
+- is it visible. do not see bigger text
+- yes, commit and push and redeploy
+- close issue. new release, footer and whatsapp message
+- the colors in the heatmap should fit the color scheme
+- investigate why teilnehmer and rapporte are different numbers. give sample from the last exercise
+- yes, change it to match the blue scheme
+- deploy to production
+- wien is not visible in the bezirk heatmap. the character for "
+- take latest screenshot
+- screenshot is the latest in screenshot

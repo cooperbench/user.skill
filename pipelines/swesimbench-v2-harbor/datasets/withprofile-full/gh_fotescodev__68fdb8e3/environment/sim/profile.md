@@ -1,0 +1,40 @@
+- in addition, what needs to be implemented so the skill can run the cli internally and actually analyze the output?
+- run /first-time-user
+- commit the audit report
+- Ok, let's try again with first-time user while focusing on: - ucv-cli non-TTY mode still limited - API pricing not mentioned - Manual variant path could use a quick-start guide
+- how can we get to 10 on CLI?
+- yes commit
+- commit
+- run a first-time user flow - be thororough
+- let's fix these issues please and re-run the first time user test: 1. analyze:jd Inline Text Parsing (Low) Issue: When JD is passed inline, company/role extraction can be inaccurate. Example: "Staff Product Manager" parsed as company instead of role. Impact: Low - keywords still extract correctly. Recommendation: Improve regex for inline text or recommend --file usage. 2. redteam False Positive […]
+- yes
+- run a new first-time user end to end test
+- please create mock data for "source-data" directory that we can use with the first-time-user claude code skill so that the end to end user test is realistic ... investigate which format and the diversity of the mock data would work best - include a resume if you want, project descriptions, articles etc..
+- run /first-time-user with mock data we just created
+- run /cv-data-ingestion on the mock data also, I have updated the Anthropic_API_Key you can leverage in this test
+- commit
+- ok, run sprint-sync hardcore
+- let's take care of these: │ ├─ Lazy Load Analytics ⏸️ low priority │ │ ├─ Image Component ⏸️ backlog │ │ └─ Inline Style Refactor ⏸️ 375 occurrences
+- Find and analyze the LikeAnalytics component mentioned as a 505-line admin-only component that could be lazy loaded. Look for: 1. Where LikeAnalytics.tsx is located 2. How it's currently imported 3. Where it's used (which routes/components) 4. If it's already lazy loaded or not 5. Any dependencies it has Report the file paths and current import patterns.
+- Analyze the inline style usage in the codebase (375 occurrences mentioned). Look for: 1. Sample patterns of `style={{...}}` usage in src/components and src/pages 2. What CSS variables already exist in src/styles/globals.css 3. Common inline style patterns that could be extracted to CSS classes 4. Any existing utility classes or patterns Show examples of the most common inline style patterns and […]
+- Analyze how images are currently handled in the portfolio. Look for: 1. Current img tag usage patterns in components 2. Any existing image optimization or lazy loading 3. Where images are used (case studies, blog, profile, etc.) 4. Image paths and public/images directory structure 5. Any performance concerns with current image handling Recommend what an optimized Image component should provide.
+- push commit
+- checkout a new branch - blog fixes
+- can we run a sprint-hardcore + serghei-qa on the blog feature specifically?
+- Explore the blog feature in this codebase. Find all blog-related files including: - Blog components (pages, layouts, cards, etc.) - Blog data/content files - Blog styling - Blog routing/navigation - Any blog-related utilities or helpers Provide a comprehensive overview of the blog architecture and list all relevant file paths. Be very thorough.
+- Search for any existing issues, TODOs, FIXMEs, or known problems in the blog-related code. Also look for: - Comments indicating incomplete work - Hardcoded values that should be dynamic - Any test files for blog functionality - Configuration related to blog features Report all findings with file paths and line numbers.
+- Design an implementation plan to fix the blog feature issues identified in this portfolio codebase. ## Context This is a React/TypeScript portfolio with a blog feature. The blog has these key files: - `src/components/Blog.tsx` (294 lines) - Blog list on homepage - `src/components/BlogPostModal.tsx` (1,157 lines) - Full blog reader modal - `src/pages/BlogPostPage.tsx` - Blog post route page - `src/types/blog.ts` - […]
+- there are multiple issues: more thoughts are repeated - first in the blog area, but then again in the footer area... photo is missing, the table contents overflows into the footer, overall the blog article view is hard to read - doesn't look clean - look at the numbers and tables .. all jumbled up
+- Please run serghei-qa on the blog itself + sprint sync hardcore (only on the blog) then add the results and plan to our implementation plan below: Blog Fixes Plan Summary | # | Issue | Fix | |-----|----------------------------|------------------------------------------------------------| | 1 | Related posts shows only 1 | Add fallback to recent posts when tag matches insufficient | | 2 | […]
+- love the fixes - but why did you change my blog article actual content? That was not part of the scope!
+- '/var/folders/my/5hvgwtgn2d76wbm3r_zlhb1r0000gp/T/TemporaryItems/NSIRD_screencaptureui_Qf3Sza/Screenshot 2025-12-28 at 12.13.47 PM.png'here is the version in PROD now - compare it with the version we have on this branch - why the discrepancy?
+- all content should not have been changed - should match prod - only the code change should make it
+- ' /home/<USER>/Desktop/Screenshot 2025-12-28 at 12.32.40 PM.png' - take a look at the table of contents - it is referencing content that does not exist
+- ' /home/<USER>/Desktop/Screenshot 2025-12-28 at 1.15.19 PM.png' - get rid of the cards in the footer
+- commit these changes
+- push
+- the date on the homepage for when the blog was posted is not on mm/dd/yyyy - but appears to be this: 12.21.24
+- commit this
+- pr and merge
+- There are multiple merge conflicts -review these
+- 1. Main 2.Main 3.Ours 4.main

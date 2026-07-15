@@ -1,0 +1,40 @@
+- mb we should instead modify this to only add a "core" dep to top-level fibers, other than core
+- is there a unit test that ensures this "don't duplicate transitive deps" property?
+- try again
+- lets also test that the json output of the `fiber deps` command is what we expect, given a set of fiber configs
+- extract the core "fiber deps" logic to a function which takes an "environment", whatever that means (presumably containing all the various configs) and just returns a fiber dependency graph, which is then used by the CLI command, and also the tests
+- you broke the non-json command.
+- thats not correct, the previous display format was different
+- no, this is totally wrong. do you not remember what the output format used to be?
+- no, that's totally wrong. here is the actual previous format ❯ bun run src/cli.ts fibers deps Fiber Dependency Diagram: ───────────────────────── ├── 🟢 core │ ├── 🟢 dev │ │ └── 🟢 cloud │ │ ├── 🔴 chainalysis │ │ ├── 🔴 oplabs │ │ └── 🔴 shamanic │ └── 🟢 dotfiles ❯ bun run src/cli.ts fibers deps --detailed Fiber Dependency […]
+- seems like you keep breaking this command; i'd like to protect it with a test. how do you propose we best test it?
+- i like these ideas, especially the snapshot tests. do any of these tests collide with or duplicate any existing ones? and, do they all make sense to do together?
+- i dont like the tests that explicitly check for strings like "├── 🟢 dev", i'd rather just do snapshots. show me an example of what that could look like
+- are snapshots built in to bun test?
+- lets go ahead and write these tests, except with simpler mock environments, and lets add some environment-construction helpers
+- lets try changing the output format to see if that makes the tests fail
+- add a justfile command to update snapshots
+- @synthase take a look at the performance of the `tools get --status` command, i feel like it doesn't have to be taking as long as it is (~50 sec)
+- examine those remaining timeouts, they shouldnt take this long
+- no, i dont want to make exceptions for specific commands/tools
+- looks like the concurrency default and the timeout are set in multiple places, lets reuse a single constant
+- can we optimize this command further?
+- i dont want the skip-tools option. lets just focus on the cache. how will it work, what's the reasoning behind it?
+- ok, that's fine, but what if the user manually uninstalls the tool? or other edge cases; think thru this
+- is there some way we could detect whether the tool might've been uninstalled? i dont like this non-determinism
+- what is "fast verification" and how is it different from the current approach? how might we do that "modification detector"? how would it work?
+- what is resource intensive about the current checks? be specific
+- how many times are the homebrew operations run, and how much of the overall time does this represent? command timeouts are not representative of how much time each one actually takes what option do we have besides process spawning? is 20 concurrent processes really that much? how expensive is file checking, really? none of these things you listed seem to […]
+- ok, so lets look at commands; when are we actually running them and why? this is never a part of status checking afaik
+- is that the question i asked?
+- @synthase give me a report on large files (over ~400 lines)
+- @index.ts why is this file so long? break it down for me, what does it do, what are the logical sections?
+- let go ahead and extract the `get` subcommand into its own file, taking care to not break existing functionality by first documenting it extensively
+- the `fibers get` command outputs fibers out of order; remember that fiber dependencies should always show BEFORE them in the list
+- don't we already have this logic elsewhere? how does the `fibers deps` command handle this?
+- what extra logic is present in `fiber deps` but not `get`?
+- i want these commands to use the SAME logic for computing fiber dependencies. the deps command should then just show it, but the get command provide is as an input to be used for ordering
+- do you not see that oplabs shows up BEFORE the fibers it depends on?
+- lets look at the `fibers get` command; how tightly coupled is the logic for loading/parsing/reading the environment, and actually rendering the data? i want to make sure those things are seperate to maximize reusability
+- document this plan in the `process` dir so i can have a junior engineer implement it
+- no, put that in the @process dir

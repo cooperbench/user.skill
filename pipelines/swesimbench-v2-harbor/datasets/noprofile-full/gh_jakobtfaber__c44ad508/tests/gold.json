@@ -1,0 +1,1 @@
+{"point_id": "370d2d4d-f54b-47a1-9bac-3d06ba51d427#285", "developer": "gh:jakobtfaber", "condition": "noprofile", "real": "here maybe? h17:/data/jfaber/upchan_codetections/", "prev_agent": "h17 is alive (`lxd110h17`), `/data` is the root, but the first regex find returned nothing at depth 4. One targeted probe now that I know it's reachable:", "gold_move": null}

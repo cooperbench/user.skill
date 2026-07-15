@@ -1,0 +1,1 @@
+{"point_id": "749b987f-95f0-4166-9cd2-1cc81fd41086#19", "developer": "gh:KeKs0r", "condition": "withprofile", "real": "update the @.claude/skills/api-testing/SKILL.md to know where the logs are for the api, so it can debug better. its based on the .env var content.", "prev_agent": "No response requested.", "gold_move": null}

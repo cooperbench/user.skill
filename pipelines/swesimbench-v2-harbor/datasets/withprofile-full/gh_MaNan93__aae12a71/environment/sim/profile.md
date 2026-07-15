@@ -1,0 +1,40 @@
+- 就这样吧
+- 似乎无法覆盖这种情况：信号A连到A1，信号B也连到A1，此时由于port都是nc，会导致两次定义A1，就会有语法错误了；
+- 有没有办法指定rule.csv
+- --rule-csv改成--rule吧
+- 语法要支持>=3.6.8
+- 可以的
+- 不用了；接下来我们来调整下代码功能结构；
+- 你先总结下这个模块的功能
+- 分析pciegen.py的功能
+- 调整一下功能顺序：1.先完成需要读取的文件检查，如果有不存在的就报错；2.复制目标文件，构建rtl目录，并提取module_prefix，并打印出来；3.调用ramgen；4.完成文本处理，例如关键字替换，追加port/pin之类的，加上详细注释，例如对某个文件进行文本替换；5.通过rule.csv规则生成文件；
+- 可以
+- 可以的
+- 可以
+- #sym:rewrite_examples_compile_file 这个方法有没有更好的写法？其实我是想把这个关键字的行注释掉
+- pciegen下的模块有些功能可以调用mod_utils.py实现，你帮我分析下哪些可以
+- 先按你说的修改
+- 好的
+- 把添加port的都用modeditor实现
+- 把method删掉，直接调用就行了；删去冗余代码
+- @agent Try Again
+- @agent Try Again
+- 直接调用就行了；删去冗余代码
+- @agent Try Again
+- @agent Try Again
+- @agent Try Again
+- @agent Try Again
+- 检查下pciegen.py，我通过调用modeditor模块代替了module_append_utils.py的功能，检查下是否有错误的地方
+- 251行有问题，应该是module_name = module_info.get("module_name", "")
+- @agent Try Again
+- @agent Try Again
+- 非ansi style，定位最后一个端口信号方法不对；因为有些function/task也会写input；这种情况把插入位置放在module body开头吧
+- @agent Continue: "Continue to iterate?"
+- 要保证插入的port是一行一个，不能和后面的):粘连
+- add-inst-port也有类似问题
+- 给我整理下modeditor的目录，删除重复的python脚本和不必要的
+- 为什么调用utils.py后，add-port还是会出错，例如定位错添加端口信号的位置，);没有保持独立一行
+- 提示unable to locate a module declaration containing ...
+- 253行，analyze_ports返回字典里没有module_name
+- 253行，analyze_ports返回字典里没有module_name，你需要修改一下，跟utils.py的统一一下；还有，pciegen里调用的add-port跟用cli.py调用的add-port不一样，cli的是正确的；
+- pciegen调用的不对啊，跟使用cli的结果不一样；

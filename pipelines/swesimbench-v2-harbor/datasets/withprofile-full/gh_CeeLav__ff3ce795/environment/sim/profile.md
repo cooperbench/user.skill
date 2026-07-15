@@ -1,0 +1,40 @@
+- 编写的时候把 view 的 update 逻辑拆分一下，不要都放在一个函数里@c:\Users\Lavender\.cursor\plans\技能位移表现_32f51d5e.plan.md
+- 继续
+- @c:\Users\Lavender\.cursor\plans\技能位移表现_32f51d5e.plan.md 编写时注意 Update 拆分
+- /Astrum/openspec-proposal 把 ClientLSController 里的 _serverTimeDiff 运算逻辑挪到 TimeInfo 里，把 ServerNow 改为 ClientNow() + _serverTimeDiff
+- /Astrum/openspec-apply
+- movecapability 运算移动的时候，不仅要记录位置，还要记录当前移动的方向，注意不是角色朝向，而是移动的方向，这两者需要分开来。然后表现层的预测移动方向要以这个移动方向为蓝本。然后纠偏时再按照逻辑位置进行偏移
+- /Astrum/enterreserchmode 现在的技能位移体系在出现回滚的时候还是会被拉回，我希望在技能位移结束前不要进入拉回状态，帮我分析一下现状，看下有什么策略
+- 检查一下服务器一个房间在两个人都断线后的处理措施。是直接关房间吗？如果是的，处理一下此时客户端连接上来后的处理逻辑，此时不应该走重连逻辑，比如如果是快速联机，应该正常走快速联机的逻辑，重新匹配。然后客户端也有一个问题要处理，如果连接服务器的时候连不上，超时之后应该重置连接状态，方便用户进行重连
+- 继续
+- 继续
+- 继续
+- @c:\Users\Lavender\.cursor\plans\断线重连逻辑修复_abb3ffa2.plan.md 开始修复文档提到的两个问题
+- 客户端不要用协程来判定超时逻辑，有[18:02:44.769] [Error] TCP error on channel 1698288052: 10061 这个错误就可以重置状态了
+- 继续
+- 我计划后面把 Logic 的部分放到多线程里跑，现在需要先做准备工作。我预计所有写操作都在 logic，而 View 可以读，然后通过双缓冲来解决数据读取可能出现的问题。现在先对当前的 EC 结构进行双缓冲改造，以满足后续的多线程需求
+- Entity 类里面还有其他的字段，这些字段需要也通过双缓冲管理吗
+- 不应该让View 层访问的可否令其访问权限限制在程序集内
+- 我已经拆分好程序集了，只需要把不应该暴露的用 Internal
+- 缓冲区交换时，是否需要component数据拷贝过去？还是用其他方法？
+- 我有一个想法，你看看合不合理。现在的组件架构事实上不能双缓冲，因为里面有很多引用类型，除非用 memorypack，但是这个太重度了，有很多没必要的重复拷贝操作。我想把目前组件中的数据都做成 Internal 的，然后抽出一个 viewreadStruct，每个组件一个，各自实现，这个结构做双缓冲。每次逻辑帧那边更新完毕后，遍历一遍 component，然后它们跑一下这个方法，更新结构体，然后交换缓冲区。还可以配合已有的组件置脏。
+- 先更新plan吧
+- 注意交换缓冲区应该是脏组件做了写操作才交换，如果没有写，不应该交换
+- 只读快照定义到各个Component 内部吧
+- 不要 WorldViewReadSnapshot 这个结构，双缓冲直接保存在组件内部， 给 View 层提供一个方法，让它可以通过 ID 和 组件类型获取对应的 struct，避免直接引用 组件本身
+- /Astrum/openspec-proposal @c:\Users\Lavender\.cursor\plans\ec双缓冲改造_7c6d597d.plan.md 重新先梳理以下整体需求，我 完全 review完毕再开发吧。注意我刚刚提的几点
+- 缓冲存储似乎还是集中存放更好，否则主线程访问的时候碰到 组件增删操作会出问题。但是考虑一下，用什么方式读能避免 object 装拆箱，是不是应该用泛型
+- 描述一下存储的数据结构
+- 改文档
+- ViewReadDoubleBuffer 的内部结构也描述一下
+- 更新 task，本阶段先编写基础结构，然后选几个组件进行修改测试。
+- /Astrum/openspec-apply
+- 现在实际使用的是 @PredictedMovementViewComponent.cs ，修改这个组件
+- 看一下@Astrum/openspec/changes/refactor-ecc-viewread-snapshots/proposal.md @Astrum/openspec/changes/refactor-ecc-viewread-snapshots/design.md @Astrum/openspec/changes/refactor-ecc-viewread-snapshots/tasks.md ，恢复工作状态
+- 移动这块已经测试完毕了，下一个组件是什么，能不能把依赖 MovementComponent 和 @TransViewComponent.cs 的都改好，把这两个组件的字段都改成 Internal 的
+- MEMPACK006: The MemoryPackable object 'TransComponent' constructor's parameter 'position' must match a serialized member name(case-insensitive)
+- EndOfLogicFrame 里这种if枚举不太方便，也不优雅，给我一个优雅方便的方案，先不要实施
+- 注册器和 ViewReadFrameSync 合并吧
+- 实施吧
+- MemoryPack.Generator\MemoryPack.Generator.MemoryPackGenerator\Astrum.LogicCore.Components.ActionComponent.MemoryPackFormatter.g.cs(45,12): error CS0111: Type 'ActionComponent' already defines a member called 'ActionComponent' with the same parameter types 静态类看起来被 memorypack 用了
+- 继续

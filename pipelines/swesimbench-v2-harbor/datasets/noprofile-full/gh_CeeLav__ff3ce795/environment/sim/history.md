@@ -1,0 +1,3 @@
+[DEVELOPER]: 用 mcp 的 readconsole 查看当前 Unity 的日志，看一下哪些是可以删去以减少干扰了
+
+[AGENT]: 查找 MCP readconsole 的使用方式，并检查 Unity 日志配置。 查看 Unity 日志相关代码，查找可减少干扰的日志输出： 查看当前打开的文件和常见的日志输出位置，分析哪些日志可能造成干扰： 查看 ASLogger 的实现和日志级别配置： 查找 ASLogger 的定义，了解日志级别系统： 查看 ASLogger 的实现，了解日志级别系统： 分析代码中的日志输出，识别高频或干扰性日志。先查看 LogicThread 的完整代码： 识别到以下干扰性日志： 1. LogicThread 中每帧输出的“线程循环开始/结束”（高频） 2. 状态变化日志（可能过于频繁） 3. 部分 Info 级别日志过于详细 开始清理这些日志： 继续清理其他干扰性日志： Tool call timed out after 30s Tool call timed out after 25s 继续处理 SinglePlayerGameMode 中的状态变化日志： Cancelled

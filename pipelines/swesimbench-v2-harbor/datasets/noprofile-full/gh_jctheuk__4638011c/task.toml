@@ -1,0 +1,31 @@
+schema_version = "1.1"
+
+[task]
+name = "swesimbench-v2/gh_jctheuk__4638011c"
+description = "Predict the developer's next message given the conversation so far (no profile)."
+authors = []
+keywords = ["swesimbench", "simulate-user", "user-simulation", "noprofile"]
+
+[metadata]
+author_name = "swesimbench-v2"
+category = "user-simulation"
+tags = ["swesimbench", "simulate-user", "noprofile"]
+developer = "gh:jctheuk"
+point_id = "1a460685-88d3-480d-b493-a3023b992dcf#6"
+condition = "noprofile"
+
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 900.0
+user = "agent"
+
+[environment]
+build_timeout_sec = 600.0
+cpus = 1
+memory_mb = 2048
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+mcp_servers = []

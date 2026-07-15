@@ -1,0 +1,11 @@
+[DEVELOPER]: 角色受击时，模型朝向应该面向受击方向，而不是顺着，检查并修复
+
+[AGENT]: <think></think> 我来先了解项目结构，然后检查受击方向相关的代码。 <think></think> 让我继续搜索击退视图组件和受击处理的代码： <think></think> 让我查看 `HitReactionCapability.cs` 中的 `UpdateFacingDirection` 方法以及受击方向处理的完整逻辑： <think></think> 我找到了问题。在 `HitReactionCapability.cs` 第 213 行，`UpdateFacingDirection` 方法中对方向进行了取反： ```csharp direction = direction * (-FP.One); ``` 这意味着角色受击后朝向的是击退方向（背对攻击者），而不是面向攻击者。让我确认一下 `HitDirection` 的定义和设置： <think></think> 让我查看 `DamageEffectHandler.cs` 和 `KnockbackEffectHandler.cs` 中 `hitDirection` 的计算方式： <think></think> 现在我理解了整个逻辑。我发现了问题所在： **问题分析：** 1. `HitReactionCapability.UpdateFacingDirection` 中的逻辑是正确的： - `HitDirection` = 从攻击者指向目标（击退方向） - 代码取反 `direction * (-FP.One)` 后得到从目标指向攻击者的方向 - 这样角色应该面向攻击者 2. **但是**，在 `PredictedMovementViewComponent.ApplyRotationFromLogic` 中，当角色在移动时（包括被动位移/击退），会根据 `_cachedDirLogic`（移动方向）来更新角色的朝向，**覆盖了** `HitReactionCapability` 设置的朝向！ 让我确认这个问题： <think></think> 确认了问题！`ApplyRotationFromLogic` 在每帧都会被调用，当角色在移动时（包括被动位移/击退期间），会根据移动方向更新角色朝向，这会覆盖 `HitReactionCapability` 设置的面向攻击者的朝向。 现在我来修复这个问题： <think></think> 现在让我刷新 Unity 并编译项目来验证修改：
+
+[DEVELOPER]: 确实没按移动方向了，但也没按照受击的方向，需要再更新一下，刷新方向
+
+[AGENT]: 检查逻辑层的旋转数据如何读取，并在被动位移期间同步逻辑层设置的朝向（不从移动方向更新）： 查看 `OnUpdate` 方法中如何使用 `transRead`，确认如何在被动位移期间同步逻辑层的旋转： 修改 `ApplyRotationFromLogic`，在被动位移期间直接同步逻辑层的旋转： 更新 `ApplyRotationFromLogic`，在被动位移期间直接同步逻辑层的旋转： 检查是否有编译错误： Tool call errored or timed out
+
+[DEVELOPER]: Assets\Script\AstrumView\Components\PredictedMovementViewComponent.cs(723,32): error CS0136: A local or parameter named 'currentRotation' cannot be declared in this scope because that name is used in an enclosing local scope to define a local or parameter
+
+[AGENT]: 修复变量名冲突：`currentRotation` 在方法中被重复声明。 修复变量名冲突： 编译错误已修复。 ## 修复总结 已修复角色受击时朝向问题： 1. **问题分析**： - `HitReactionCapability.UpdateFacingDirection` 在逻辑层正确设置了面向攻击者的朝向 - 但 `PredictedMovementViewComponent.ApplyRotationFromLogic` 在被动位移（击退）期间会根据移动方向更新朝向，覆盖了受击朝向 2. **修复方案**： - 在 `ApplyRotationFromLogic` 中添加对被动位移的特殊处理 - 被动位移期间，直接从逻辑层的 `TransComponent.ViewRead` 读取旋转并同步到表现层 - 这样保持了 `HitReactionCapability` 设置的面向攻击者的朝向 3. **代码变更**： - 在被动位移分支中，读取逻辑层旋转并同步到表现层 - 使用 `rotationLerpSpeed * 2f` 加速缓动，确保及时响应 - 修复了变量名冲突（将 `currentRotation` 改为 `currentRot`） 现在角色受击时会面向攻击者，而不是顺着击退方向。请测试验证。

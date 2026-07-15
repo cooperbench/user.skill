@@ -1,0 +1,3 @@
+[DEVELOPER]: in the tmux.conf - when createing a new shell always do in in the currect working dir.
+
+[AGENT]: Updated `images/sandbox/tmux.conf:17-20`. New windows (`prefix c`) and split panes (`prefix "` / `prefix %`) now open in the current pane's working directory via `-c "#{pane_current_path}"`. Note: `home-snap/` and `oidc/` have their own copies (untracked dirs in git status) — let me know if you want those updated too.

@@ -1,0 +1,40 @@
+- cache hit and month 6 is not there!
+- No I mean I dont wanna chage the url that's crazy, maybe we can have that js file not caches but will that slow the website a lot and will it actually work?
+- can you make that chnage please. ???
+- yes commit and push
+- how to do the cf thing?
+- check the deploy
+- Can you check if it's working?
+- still shwos may to me!
+- nope still may and tge file is missing the month 6 as well
+- yeah that one is fine
+- working
+- hey we have a lot of PRs to review. Some of them are quite long, so I'll tell you exactly which ones we should target as they are being reduced. Let's start with 432. You should be familiar witht he code standards by now, please keep them in mind when we are reviewing
+- do you see the code statndards we talk about?
+- Okay so can we fix the anti patterns first. Will it be a lot of work? We can take over the PR to do this
+- Just focus on the anti patterns for now and then we'll tackle the bugs in a separate class.
+- who is merging all that!!!
+- What were the bugs with those reviews and when they got merged did they at least have all the ani patterns cleaned up?
+- on the cleanup PR also fix the bugs please and we need tests for those bugs, is that possible?
+- okay so lets check out the open PRs that are not drafts, can you just pull them so we have a better idea
+- Also pull up things that went in unreviewed
+- So whats gone into dev that doesn't have a reverted PR. Ones that are merged by me are fine, or one that paddy has created and I meregd. Only things created by paddy and merged by paddy are an issue
+- I don't mind aything before 28th of may, just after
+- no Im asking you what chnages went in created and merged by paddy
+- okay, can we check all these PRs for anti-patterns and bugs
+- arrrrrhhhhh more PRs are getting merged as we speak can you check it!!!
+- awesome so it seems like he cleaned up his act now. Please pull all th ereviews taht are not in draft and we can go one by one
+- okay let's do whatever you suggest first
+- wait I'm confised so there is still anti patterns>
+- so he needs to rebaes is that the issue like I dont understand what the issue with the PR is
+- lets rebase and fix the bugs ourselves on this PR itself (dont worry about pushing to his branch )
+- damn so can you give some feedback on that original PR like seems like the patterns were in pr 461 even though they should not ahave been
+- close 461 and then check the new review you made for errors and if it's fine merge it
+- wait wait im so confused is paddy messing with stuff right now that is affecting our work
+- i'm just really confused on the situation now this is not making sense. Can you just conretley tell me what is the current stte and what is missing like i dont ucking know what files are missing ect
+- okay fine. So, why dont we fix the pr we were working on firstm then take it from ther
+- whats next then ?
+- go for it
+- Don't metge by yourself. Lets go to the next one please
+- 439
+- wait what's the current sate plese what is the issue please explain very very simply

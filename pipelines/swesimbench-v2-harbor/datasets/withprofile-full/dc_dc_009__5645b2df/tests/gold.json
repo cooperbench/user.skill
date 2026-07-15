@@ -1,0 +1,1 @@
+{"point_id": "30c8655f-c882-4fe0-bea7-8f5d197e3421#152", "developer": "dc:dc_009", "condition": "withprofile", "real": "check if CI passed", "prev_agent": "That was the test run I already checked \u2014 139 passed. The fix has been pushed and CI should be deploying now.", "gold_move": null}

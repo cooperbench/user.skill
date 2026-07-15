@@ -1,0 +1,31 @@
+schema_version = "1.1"
+
+[task]
+name = "swesimbench-v2/gh_eric2023__55139efe"
+description = "Predict the developer's next message given the conversation so far (no profile)."
+authors = []
+keywords = ["swesimbench", "simulate-user", "user-simulation", "noprofile"]
+
+[metadata]
+author_name = "swesimbench-v2"
+category = "user-simulation"
+tags = ["swesimbench", "simulate-user", "noprofile"]
+developer = "gh:eric2023"
+point_id = "ss:eric2023/dlogcover|2025-07-07_05-10Z-深入分析代码和生成deb包配置.md#34"
+condition = "noprofile"
+
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 900.0
+user = "agent"
+
+[environment]
+build_timeout_sec = 600.0
+cpus = 1
+memory_mb = 2048
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+mcp_servers = []

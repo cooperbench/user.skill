@@ -1,0 +1,40 @@
+- yes do in parallel
+- don't use ollama use omlx which is installed
+- I don't think I have them
+- do the gpg + helm ops in parallel
+- install the shim launchd agent
+- verify ragcode connects via /mcp
+- enable GPG + helm pages, then ship
+- go
+- wire (b) version-tagged images
+- wwhat next?
+- all in parallel
+- REDACTED
+- added, do others in parallel
+- yes go
+- go
+- go
+- yes
+- what's pending apart from timing based email or gif?
+- complete parity gaps , production readiness ops indra, quality in parallel. drop readme gif
+- check
+- wait for it to finish
+- harvest it
+- what's the status? can we drop in replace tinybird in the below usecases, and demo it that we can add add it to it's usp in the website https://www.tinybird.co/docs/use-cases
+- demo dashboards, use apple container to start clickhouse instead of collima or docker in my local machine, on prod server I think docker and compose is there
+- file the deploy bug
+- no deploy it in our dokploy in vps and add a marketing page for the usecases
+- check
+- ssh yourself
+- created
+- ssh -i ~/.ssh/id_ed25519 root@139.84.219.81f
+- also why no timescale db, since clickhouse is olap db we can use timescale db to cache any timescale data for faster returns right? most of these timescale db doesnt change just keeps on appending like WAL
+- yes lets avoid pg for now
+- give me the url
+- why only the json response, why not dashboards or something that is much better looking?
+- it's broken [Image #1] use a good charting foss library
+- its still broken, use the ui library i told you
+- looks good, what else is pending? are we good on benchmarks like p99 etc
+- continue
+- go ship it
+- All of the above, and also check if it is available on homebrew and other package managers.

@@ -1,0 +1,40 @@
+- Approach 1
+- Yes
+- Yes
+- looks good
+- looks good
+- continue
+- 1
+- The UX style is totally different from the app style, please fix it, also why we need to click `Load` for starred project and my repos, shouldn't be automatically loaded?
+- Looks good, commit and push
+- I think we should disallow multiple select while track `Your dependencies` and we should reuse the same UI with `Quick Onboard`
+- Also I think we should have an uniified `Quick Onboard` which contains the previous quick onboard and `Your stars` and `Your Dependencies` how should we arange the ux?
+- Looks good
+- how can we add a system setting that can set language and light theme dark theme?
+- yes
+- A
+- continue
+- continue
+- continue
+- Yes
+- Can you help me preview the dark mode colors?
+- Looks good
+- Yes
+- LOoks good
+- 1
+- With 中文 all the tabs in each page still english like `dashboard`, `quick onboard` and in the dark mode, the card in each page still white as well as button colors looks so weird
+- Implement the following plan: # Fix Dark Mode & i18n Across All Pages ## Context After implementing the settings dialog with theme toggle (light/dark/system) and language selector (EN/ZH), users reported: 1. **Dark mode broken**: Cards, buttons, tables still show white/light backgrounds because components use hardcoded hex colors instead of CSS variables 2. **i18n incomplete**: Only sidebar nav labels are translated […]
+- I see, thanks. Two things: 1. the chinese font is incosistent with english one, 2. in the projects page, if the source with error like failed to poll, the dark mode style is not right
+- The localization for pop up settings like source, subscription etc. still wrong
+- cool, commit and push
+- Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect). /home/runner/work/changelogue/changelogue/web/lib/i18n/context.tsx:35:7 33 | const stored = localStorage.getItem(STORAGE_KEY); 34 | if (stored === "en" || stored === "zh") { > 35 | setLocaleState(stored); | ^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect 36 | document.documentElement.lang = stored; 37 | } 38 | […]
+- Only the projects page have the subtitle like `Tracked projects, releases, and urgency at a glance.` but other pages dont have it
+- The space between tile and subtitles seems incorrect
+- commit and push
+- add CLI support for core functionalities of changelogue
+- remember to update the readme
+- 1
+- cool commit and push
+- can you create a changelog.md and tag an intial version for this project?
+- Sure
+- could you update related docs and push changes?

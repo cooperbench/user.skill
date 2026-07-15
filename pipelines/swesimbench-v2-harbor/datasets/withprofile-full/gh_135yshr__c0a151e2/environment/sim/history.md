@@ -1,0 +1,23 @@
+[DEVELOPER]: あなたは Hugo / SEO / 静的サイト生成 / 技術ドキュメント改善に詳しいエンジニアです。 対象サイトは Hugo で作成されている https://135yshr.github.io/meow/ です。 目的は、Google 検索で Meow Programming Language というキーワードに引っ掛かりやすくすることです。 前提として、今回狙いたいキーワードは Meow Language ではなく Meow Programming Language です。 そのため、サイト全体では Meow Programming Language を正式名称として扱い、Meow Language への置き換えは行わないでください。 ## 目的 以下を実現したいです。 - Meow Programming Language を正式名称としてサイト全体で一貫させる - トップページの title / H1 / meta description を Meow Programming Language に最適化する - cat-themed functional programming language - transpiles .nyan files to Go - compiles to native binaries という特徴が検索エンジンとユーザーの両方に伝わるようにする - Tutorial / Docs / Cookbook / Spec などのサブページにも、自然な形で Meow Programming Language を含める - GitHub README も Meow Programming Language を正式名称として扱うように修正する - Hugo の構成上、問題なく実装できるかを先に調査する - 問題がなければ実装する - 実装後に、変更内容・確認方法・残課題を報告する ## 進め方 いきなり実装せず、まず以下を調査してください。 ### 1. Hugo 構成の調査 以下を確認してください。 - Hugo の設定ファイル - hugo.toml - config.toml - config.yaml - config/_default/* - など、実際に使われている設定ファイル - 使用している theme / layouts - title / description / canonical / OGP / Twitter Card の生成箇所 - トップページの content / layout - 各ページの front matter - sitemap / robots.txt の生成設定 - GitHub Pages 向けの baseURL 設定 - public/ が管理対象か、ビルド成果物か 調査したうえで、どこを修正すべきかを簡潔に説明してください。 ### 2. 実装可否の判断 調査の結果、Hugo の構成上問題なく対応できる場合のみ実装してください。 もし以下のような問題がある場合は、実装前に報告してください。 - title / description がテーマ側で固定されていて修正範囲が大きい - トップページの H1 がテンプレート側で自動生成されている - sitemap / robots.txt が生成されていない、または設定が不明 - baseURL の設定と公開URLが一致していない - 重複ページや canonical の問題がある - SEO改善より先に直すべき構成上の問題がある ## 実装してほしい内容 問題がなければ、以下を実装してください。 ### A. トップページの改善 トップページでは、Meow Programming Language […]
+
+[AGENT]: まずはリポジトリ構造とHugoサイトの構成を調査します。
+
+[AGENT]: Now check sub-page content directories and existing front matter:
+
+[AGENT]: 調査ありがとうございます。既存のサイトはすでに最近のPR #84で大半が"Meow Programming Language"に統一済みのようです。残課題を確認します。
+
+[AGENT]: 調査が完了しました。直近のPR #84で既にサイトの大部分が最適化されています。残りの隙間を埋める追加実装を行います。
+
+[AGENT]: ビルドは通っています。続いて public/index.html の現状を確認します。
+
+[AGENT]: 調査結果を整理しました。PR #84で大半は対応済みです。隙間を埋める追加実装を行います。 実装方針： 1. ヘッダーロゴ・SNSリンクの aria-label を改善（ナビUIは変えない方針に合わせる） 2. 比較ページ `/meow-programming-language-vs-meowlang/` を中立的内容で追加 3. README にドキュメント/Cookbook のリンクを追加（既存に「Documentation」と「Tutorial」はあるが「Cookbook」が抜けている）
+
+[AGENT]: 次に、比較ページを追加します。中立的で事実確認できる範囲のみ記述します。
+
+[AGENT]: 次にREADMEにCookbookへのリンクを追加します。
+
+[AGENT]: Hugoビルドが通るか確認します。
+
+[AGENT]: 全変更が反映されています。最後にgo testも回しておきます（変更はHugoサイトとREADMEのみだが念のため）。
+
+[AGENT]: すべての変更が正常に反映されており、Hugoビルドも問題なく完走しました。最終報告を以下にまとめます。 --- ## 調査結果 - **Hugo の構成**: `website/hugo.toml` をルート設定として、`layouts/_default/baseof.html` をベース、`layouts/index.html` をホーム、`layouts/_default/list.html` / `single.html` をサブページのテンプレートとして使用。テーマは未使用（自前のレイアウト一式）。 - **title / description の生成箇所**: `baseof.html` 内で `<title>` と `<meta description>` を生成し、front matter の `title` / `description`、`hugo.toml` の `params.description` をフォールバックとして使用。OGP/Twitter Card は `partials/ogp.html`、JSON-LD は `partials/jsonld.html` で出力。 - **sitemap / robots.txt の状態**: `layouts/_default/sitemap.xml` と `layouts/robots.txt` で出力。`enableRobotsTXT = true`、`baseURL = "https://135yshr.github.io/meow/"` で公開URLと一致。sitemap には sitemap URL も含む。 - **public/ の扱い**: `website/.gitignore` で `public/` は除外（ビルド成果物）。直接編集はしていない。 - **直近の PR #84 で大半対応済み**: `<title>` / `<h1>` / `<meta description>` / JSON-LD / OGP / footer / 全サブページ front matter が「Meow Programming Language」基準で統一済み。残っている隙間（ヘッダー aria-label、比較ページ、README の Cookbook リンク）のみ補完する判断。 ## 実装内容 - **変更したファイル**: - `website/layouts/partials/header.html` — `nav-logo` / `nav-github` / `nav-share` に `aria-label` と `title` 属性を追加し、SVG に `aria-hidden="true"` を付与（短いUI表記「Meow」のままで補完）。 - `website/content/meow-programming-language-vs-meowlang.md` — 比較ページを新規追加。中立的な内容で、`Meow Programming Language` が `.nyan` を Go にトランスパイルする言語であることを明示。特定プロジェクトを名指しせず、cat-themed esoteric languages 一般との位置付けを記述。 - `README.md` — Cookbook と Language Specification のリンクを冒頭リンク一覧に追加。 - **変更した内容（要点）**: - ナビ・SNS リンクの可視テキストはUIを崩さないため変更せず、`aria-label` / `title` に `Meow Programming Language` を含めて SEO・アクセシビリティの双方を補強。 - 新規 `/meow-programming-language-vs-meowlang/` ページに `description` / `title` を設定。本文末で Tutorial / Spec / Stdlib / Cookbook / Playground / GitHub への内部・外部リンクを配置。 - README は公式サイト導線として Tutorial だけでなく Cookbook / Specification へも誘導。 - **SEO 上の意図**: - `Meow Programming Language` というブランド表記を、不可視のメタ属性（`aria-label` / `title`）にも適切に拡散させ、スクリーンリーダーと検索エンジン双方に補強。 - 「Meow Programming Language vs MeowLang」ページで「Meow Language」「MeowLang」検索流入をキャッチしつつ、本サイトが正式名称として `Meow Programming Language` を扱うことを明確化。 - README […]

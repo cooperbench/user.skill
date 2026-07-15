@@ -1,0 +1,1 @@
+{"point_id": "dcc4edbc-f6cd-48af-8738-db54c6476ff2#10", "developer": "gh:KeKs0r", "condition": "noprofile", "real": "Commit and push all changes", "prev_agent": "Fixed. `chartData.map(...)` \u2192 `visibleData.map(...)` on line 151, so the `Cell` colors now align with the filtered pie data.", "gold_move": null}

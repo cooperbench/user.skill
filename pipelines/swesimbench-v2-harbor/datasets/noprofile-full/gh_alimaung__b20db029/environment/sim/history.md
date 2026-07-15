@@ -1,0 +1,3 @@
+[DEVELOPER]: @film_number_manager.py @sma_service.py can you investigate temp roll behavriour? im specifically interested in Temp roll fields Status (available/used) Exists (yes/no) status is set in register phase, exists should be set once its created. do you see it?
+
+[AGENT]: Investigating temp roll behavior, focusing on `status` and `exists`. Searching for where these fields are set. Reviewing the specific methods where temp rolls are created: Checking where temp rolls are marked as "used" during registration: Checking where `exists` is updated after filming:

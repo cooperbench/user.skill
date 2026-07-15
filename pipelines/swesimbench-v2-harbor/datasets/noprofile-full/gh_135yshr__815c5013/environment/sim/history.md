@@ -1,0 +1,7 @@
+[AGENT]: コミット完了しました。 **コミット**: `d237c75` ✨ feat: add full-Japanese PRD example - `examples/06-japanese-document/README.md` 新規追加 - `examples/06-japanese-document/input.md` 新規追加（450行追加） **次のステップ案**: - `git push -u origin examples/06-japanese-document` でリモートへプッシュ - `output.pdf` を生成してコミットに追加（READMEで言及されているため） - PR作成（`/commit-commands:commit-push-pr` または `gh pr create`） 未追跡の `.claude/`, `.cursor/`, `.entire/`, `.hugo_build.lock`, `public/` はローカル作業ファイルのため、コミットには含めていません。必要なら `.gitignore` への追加を検討してください。
+
+[DEVELOPER]: create pr
+
+[AGENT]: PR作成完了しました。 **PR #27**: ✨ feat: add full-Japanese PRD example (06-japanese-document) 🔗 https://github.com/135yshr/md2pdf/pull/27 未コミットの5ファイル（`.claude/`, `.cursor/`, `.entire/`, `.hugo_build.lock`, `public/`）は警告が出ましたがローカル作業ファイルのため含めていません。必要なら `.gitignore` への追加をご検討ください。
+
+[AGENT]: コミット完了しました。 **コミット**: `52364fe` ✨ feat: add comparison screenshots to README - `README.md` ヒーロー画像と比較セクションを追加 - `docs/images/comparison/` 配下に3枚のスクリーンショット追加（after-md2pdf / before-md-to-pdf / before-pandoc） **次のステップ案**: - `git push -u origin docs/comparison-images` でリモートへプッシュ - PR作成（`/commit-commands:commit-push-pr` または `gh pr create`） - 重複ファイル `docs/images/before-pandoc-japanese.png`（未追跡）は `docs/images/comparison/` 配下に既にコミット済みのため削除を検討 未追跡の `.claude/`, `.cursor/`, `.entire/`, `.hugo_build.lock`, `public/` はローカル作業ファイルのため含めていません。

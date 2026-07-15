@@ -1,0 +1,40 @@
+- Also lets add the description and related tags in the GitHub.
+- Hey I was thinking, while we are still on azure, can we explore few more data sources like - az horizon db, cosmos db, fabric [not sure if it is considered as data souce], Azure Database for PostgreSQL, etc. What do you think?
+- yeah document these in roadmap. And you can exclude cosmos
+- Lets rename the @docs/progress.md to something like _preV1_Completed, and create something like V1_progress Which should capture any remaining, pending, deferred item from the original progress.md, and we fill the rest in a later session with the details from post v1 roadmap. What do you think?
+- If you could add one unrequested, industry-leading feature, what would it be?
+- but this will be only possible if user add an LLM connection. Right?
+- Great. Let's add it to the road map
+- Any other new feature, optimization or update you can suggest based on our privacy focused, vendor neutral, and other themes.
+- Yeah. All are good candidate to be added in the road map. One more thing, we need to have integration with, ServiceNow, PagerDuty, Jira, TestRail, and other similar observability and test management tools. But if it is possible with the vendor neutral alerting approach, that would be a bonus. And can we have a connection with any of the data […]
+- In the data sources part, what do you think we are missing? The major ones, the no brainer ones.
+- Yeah. Add them. Also, do we have a hook to update the progress documentation after a PR? If not, can we add that?
+- Yes. Add the UI suggestions too. They're all good. And the accessibility part is really missing one. We need to think more on those lines.
+- And when we incorporate the data lineage, Maybe we can move to suite first to asset first. What do you think?
+- Yeah. And these details, I'll make necessary adjustments.
+- Yeah. And these details, and make necessary adjustments.
+- hey, is the WEEK8_TODO still needed? Remove if everything is completed. Otherwise, track the pending items in the roadmap and remove it.
+- Let's start planning for one dot x. Consider all the planning documents. Update the @docs/progress.md with weak level task granularity. Let's create new milestones in GitHub. Also, try to utilize the GitHub project `DataQ roadmap`. Few things to consider - The Snowflake subscription is going to end by this week. The Azure subscription is for another three weeks. We have […]
+- yeah, make the changes
+- You can merge the PR once CI is green. Can you check one thing in the meantime - azure mention 1 year trial subcription with 30 days free with credits [of which we already spent 1 week], so after the 30 days are over how will it affect us?
+- Can you check the actual cost we will pay [harness jobs on and off] against the actual skus
+- I logged in using royarijit04, can you ncheck once more
+- Yeah, stop the harness jobs and lets try to wrap it up by 30 days mark
+- can we create a script which will start the resources run the harness jobs and then stop the resoucess [for some adhoc testing requirement we can just call the script]
+- the schedule jobs will run as manual with this script right?
+- all the harness jobs are stopped, right? then lets test out the script now.
+- great, keep a note of this script in the @CLAUDE.md . Also there are few open items in the GitHub project from pre v1, can you check those and close if done, or migrate to post v1 if needed
+- Okay. one last thing before we start. Rename the existing backlog milestone to v1.1 backlog. And map the current backlog issues to appropriate v1.1 milestones
+- I think we are missing a ER/Class diagram of our data model. Can we add one in the @docs/architecture.md ?
+- Anything similar we're missing from the standard or best practice point of view?
+- do all five. The point four i'm thinking more of for major [maybe including some minor] releases not for every PR, what say you?
+- Can you cross the Run lifecycle section in @docs/architecture.md once? it looks odd
+- yes add the note then open the PR
+- merge it
+- Just restating high level working agreement again before staring - One functionality per commit - test coverage for the functionality - docs updation [if required] - agentic code-review on each PR - fix isses in same PR - file issues if defered - full CI gate pass - squash merge to main - on to the next functionality. Now lets […]
+- continue...
+- No. I was thinking dbt as a third orchestration layer. Airflow is already tested, so no need to add anything more on airflow (or do we wanted to explore more on airflow?) And for the hosting part, I see some option on hosting dbt on Snowflake or Databrick side, is that an option? Or should we go with independent cloud […]
+- continue...
+- For the Olivia's PAT do I need to. do az login?
+- Go ahead and deploy the trigger.
+- logged in as Olivia

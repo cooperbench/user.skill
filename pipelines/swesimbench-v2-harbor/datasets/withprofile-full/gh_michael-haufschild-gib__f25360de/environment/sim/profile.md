@@ -1,0 +1,40 @@
+- make the border even brighter also in the first panel of the formsview we only showcase toggle switches but not a classic checkbox. please add
+- what is the value in the footer of the datagrid?
+- 1. the date column does not open our datepicker control 2. add a column that shows time and uses our timepicker column 3. add a color column that shows a color and when clicked opens our colorpicker control to select a different color 4. change the example in formsview to just have a sticky column with just text, then 1 […]
+- good. next please review the css for the datagrid. there seem to be properties that should come from our theme(s)
+- the styling is completely gone. all cells are now listed below each. other without any styling
+- i think you are going into the wrong direction. your changes when i asked you to review the css to make sure we use our theme where possible and not use hardcoded css values broke the complete ui of the datagrid. it looks like the css is not applied at all. i would appreciate if you would revert to the […]
+- the color picker column shows the hex value of the selected color. the text color seems to be hardcoded because it doesn't change when switching the theme
+- are there any other color, border-radius, font-size, spacing values in the css that are hardcoded but should come from the theme instead
+- the scrollbar styles on the datagrid component look hardcoded. they are in dark design even when switching to the light theme
+- wouldn't it be better to make the scrollbar styles part of the theme, and then set the scollbar styles globally and make sure settings are updated whenever switching the theme?
+- the scrollbar styles still do not change to light colors when toggling the theme to light
+- you are going in the wrong direction. it seems that scrollbar styling isn't applied at all. 1. remove all scrollbar styling from any component in /src/u/components/base 2. analyse the scrollbar situation that we have the main scrollbar on the plugin window and scrollbars on individual components, and we want them all to have the same style, the styles for this […]
+- all scrollbars now look unified. however i believe they are now using the default browser style. they do not turn to light colors when switching to the light theme
+- works
+- last step please add documentation for the datagrid to the documentation.md. no fluff, factual and technical: what is it, how to use it, example
+- please do a full review of the ui components and then create a new component TreeView React Tree View Component The criteria aim for near-parity with best-in-class React tree controls such as React-Arborist, MUI X Tree View and react-accessible-treeview, while also embracing the specifics of Figma. https://github.com/brimdata/react-arborist?utm_source=chatgpt.com https://mui.com/x/react-tree-view/?utm_source=chatgpt.com https://www.npmjs.com/package/react-accessible-treeview?utm_source=chatgpt.com example (but not only usecase): represent the layer/node structure of a […]
+- @agent Try Again
+- @agent Try Again
+- @agent Try Again
+- please fix the build errors
+- @agent Try Again
+- fix build errors
+- @agent Continue: "Continue to iterate?"
+- showcase the new treeview control and its capabilities in the src/ui/views/FormViews
+- the treeview component is completely broken, looks like no styles are applied at all
+- @agent Continue: "Continue to iterate?"
+- the positioning of elements in the treeview is messed up. for example some elements are displayed on top of the whole plugin window, indicating that you are using absolute positioning and all positions are not what they should be
+- it got a bit better but still, when looking at the examples everything looks superbroken. take a full review of the component, and come up with a plan to make this is fully functional state of the art treeview component
+- review the treeview and discuss solutions to fix the issues
+- @agent Continue: "Continue to iterate?"
+- the treeview does not display as a tree, its all one entry below another
+- this is still no tree. what i see in the basic implementation the icon for main node 1 in line 1 in line 2 the title of the node then the next line the icon for main node 2 in line 4 the title of the node .... clicking on a node reveals their children, but again every single element […]
+- @agent Continue: "Continue to iterate?"
+- i see Root Node 1 Root Node 2 but clicking does nothing
+- the click handler works now. i see no intendation. the icons are in their own line
+- nothing changed. icons are in their own line. no intendation of any child element. please take a step back and do a root cause analysis why this may happen. take into account that we are in a figma plugin
+- now the icon and the title of the node are in the same line. still children are not indented
+- lets' give up. can you please pull the version from the online repo
+- the online repo is without treeview. i want to rever to fully revert to this version
+- what is the command to completely skip the local version and just download the version in the online repo

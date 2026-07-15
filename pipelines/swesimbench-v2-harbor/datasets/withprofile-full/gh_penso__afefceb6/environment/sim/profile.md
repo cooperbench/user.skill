@@ -1,0 +1,40 @@
+- so the local validate script should run this
+- Add a test to catch that issue https://github.com/moltis-org/moltis/issues/798 then fix it. This should never have been committed at all, such issue is not acceptable
+- commit push create a PR
+- Fix and resolve PR comments
+- Proceed with plan from plans/2026-04-20-plan-self-improving-agent-loop.md
+- proceed with the plan
+- Proceed to phase C then
+- continue improvement this branch
+- anything missing from the original plan?
+- Fix all gaps
+- So plan is now done?
+- what will the wizard include? Can it fit in settings -> memory and onboarding?
+- Add those in existing onboarding and settings -> memory and set enable_self_improvement as default true (event after update moltis from an older version)
+- So plan is now done? anything to improve?
+- Ok proceed improving those two points
+- So plan is now done? anything to improve?
+- commit and push
+- Do you see any tests and e2e tests to add to ensure no regression
+- Do you see any more tests and e2e tests to add to ensure no regression
+- commit and push
+- Fix and resolve PR comments
+- Look at https://github.com/moltis-org/moltis/issues/278 how to add a test to repeat the issue, then fix it for good.
+- commit push create a PR
+- th-ui issues and discussions icons just added are just plain black square
+- commit and push
+- The default node is 20, but it should be 22: command -v nvm || true; command -v fnm || true; command -v volta || true; node -v; npm -v v20.19.4 9.2.0 Install more recent node version in sandboxes and packages when installing Moltis
+- commit push create a PR
+- Fix and resolve PR comments
+- I got some markdown back from the LLM in a session but I see markdown in the web ui, I would have expected to see bold/h1 etc (html version of markdown) instead. This is the whole chat: [system] You are a helpful assistant. You can use tools when needed. Your name is Rex 🤖. ## Soul # SOUL.md - Who […]
+- commit push create a PR
+- do it again
+- Could you find a typescript package to render markdown instead of doing it yourself in renderBlockMarkdown? md is actually complex.
+- kimi k2.6 just released: see this tweet: Meet Kimi K2.6: Advancing Open-Source Coding 🔹Open-source SOTA on HLE w/ tools (54.0), SWE-Bench Pro (58.6), SWE-bench Multilingual (76.7), BrowseComp (83.2), Toolathlon (50.0), Charxiv w/ python(86.7), Math Vision w/ python (93.2) What's new: 🔹Long-horizon coding - 4,000+ tool calls, over 12 hours of continuous execution, with generalization across languages (Rust, Go, Python) and […]
+- commit push and create a PR
+- Implement the following plan: # Fix #796: Sandbox image not exported to Podman store after BuildKit build ## Context **Issue:** [#796](https://github.com/moltis-org/moltis/issues/796) **Environment:** Podman 5.4.2, Debian 13, `backend = "auto"` When Podman delegates `podman build` to BuildKit (via a `buildx_buildkit_default` container), the build exits 0 but the image lands in BuildKit's internal cache — not in the Podman store. Subsequent `podman […]
+- commit push create a PR
+- Fix and resolve PR comments
+- https://github.com/moltis-org/moltis/issues/810 used to work, not anymore. Look at recent changes and add a test to ensure this never fails again
+- commit push create a PR
+- Instead of : // Fireworks Fire Pass router models for Kimi route to Moonshot, // which rejects strict-mode schemas (type arrays, forced // additionalProperties). Issue #810. if self.is_fireworks_kimi_router() { return false; } true Is it better to have that as a struct config boolean for each provider/model if possible?

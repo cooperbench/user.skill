@@ -1,0 +1,40 @@
+- is the syntax correct? for twcc.ai
+- @yolov5scbackbone.sh now based on this create more script as i want to create many experiments, yolov5sc,yolov5mc,yolov5lc on classify_backbone,p3,p4,p5 and each shell file trains v1 to v5
+- check @hyps/ @models/ for the actual model and hyperparameters
+- i want all sethe hyp use defalt
+- can i run the script in parallel or do i need to wait and remove cache to run
+- ill use different containers
+- @2025-10-13_06-01Z-name-the-yolov5sc-backbone-model.md ill use different containers
+- Traceback (most recent call last): File "train.py", line 1011, in <module> main(opt) File "train.py", line 891, in main train(opt.hyp, opt, device, callbacks) File "train.py", line 241, in train model = Model(cfg or ckpt['model'].yaml, ch=3, nc=nc, anchors=hyp.get('anchors')).to(device) # create File "/work/jonchang3909/yolov5test/yolov5c/models/yolo.py", line 242, in __init__ out = forward_once(dummy_input) File "/work/jonchang3909/yolov5test/yolov5c/models/yolo.py", line 327, in forward x = m(x) # run File " […]
+- check all lc if@models/ the channels are correct
+- what is the default hyp for yolov5 s,m,l
+- YOLOv5s (small) → hyp.scratch-low.yaml (低強度數據擴增) YOLOv5m (medium) → hyp.scratch-med.yaml (中等強度數據擴增) YOLOv5l (large) → hyp.scratch-high.yaml (高強度數據擴增) i want the comparison of these three
+- how about in yolov5 original
+- @thesis results/ i want to transfer these data to an excel sheet how could i do that easily
+- l is for large
+- lc large classificaiton
+- why are there failed trainning
+- didnt i already changed the defintion of yolov5withclassfication, it was yolov5withclassfication2
+- check why the batch is not 128
+- check the shell for large first to see what is the commanf
+- @yolov5lc_p3.sh @yolov5lc_p4.sh @yolov5lc_p5.sh @yolov5lcbackbone.sh
+- this is one of the log files
+- 1 GPU + 04 cores + 060GB memory + 030GB share memory this is the setup so i dont think is memory problem, what does this mean
+- this is incorrect
+- and i recall i removed the corrupted image
+- please update@yolov5lc_p3.sh @yolov5lc_p4.sh @yolov5lc_p5.sh @yolov5lcbackbone.sh batch-size to 128
+- check whether the corrupte file is removed from the other datasets
+- @MUTUALLY_EXCLUSIVE_CONSTRAINTS.md i watn to know more about how to implement this
+- create a scipt so that i could copy and paste the commands. for exmaple first line cd /work/jonchang3909/yolov5test/yolov5c/ && sudo apt-get update && sudo apt-get install libgl1 -y && sudo pip install pandas && sudo pip install seaborn && train,,, then second line the same, just for lc backbone p3 p4 p5 v1 to v5
+- i want v1 - v5 all use different containers
+- help me indentify the problem with log file
+- it is correct
+- check all the error in the log file
+- also look at the gpu memory
+- since it looks like it was almost full 31.9/32
+- what if i create a version with a slightly lower width and depth
+- but need to be be bigger than m
+- @WIDTH_DEPTH_MULTIPLE_EXPLAINED.md @yolov5lc_p3_light.yaml i want to know wether if the light version will also face the problem like@yolov5lc_p3.yaml
+- rename the light models to yolov5mlc.yaml which stands for medium large classification
+- please create a shell file for each model, v1-v5
+- --cos lr what does this do, and do i used this in other experiment before, if not dont use it

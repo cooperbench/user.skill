@@ -1,0 +1,40 @@
+- go on
+- Seems like we need to fix all of them, no? WDYT?
+- rayon = "1" lets fix including the minor, so, which issues do we have? enumerate them clearly
+- apply all of them
+- update PR
+- Can't we use a fixed minor version for rayon in Cargo.toml? what about other dependencies? What about the findings? anytihing to fix?
+- We must fix the minor version, this is a bug, must be fixed, fix it to the last stable version
+- I've said minor, not major
+- Again, FIXED minor, not aproxminor
+- update ~/.local/bin
+- Update the PR
+- CI its failing
+- We need to add a deployment option, so we can a. install it locally for linux/mac and include in any CI. Did gthub issue #7 solved that?
+- Maybe, but frame basedon the question i've made
+- Ok, thats what we need, we need to resolve the distribution for local and CI, WDYT? and compare with dry4go dry4clj, how are used in unclebob https://github.com/unclebob/swarm-forge/tree/main/swarmforge and https://github.com/unclebob/experiment-htw-clj-swarm as a hard limit for DRY? do we already have that implemented? or do we need something else to port?
+- Ok, thats what we need, we need to resolve the distribution for local and CI, WDYT? and compare with dry4go dry4clj, how are used in unclebob https://github.com/unclebob/swarm-forge/tree/main/swarmforge and https://github.com/unclebob/experiment-htw-clj-swarm as a hard limit for DRY? do we already have that implemented? or do we need something else to port? so we can add it as a standard CI check
+- ok, but the release must be explicit, not on any marge to main/master
+- Use hash versions, not version general. And lets add a clear release note in AGENTS.md and a clear distribution notes in the README.md
+- Mine question regarding DRY ours implementation vs uncle bob, how can we run it in CI, for example set a 0.1 max target?`## Releasing` TLDR, if we need more documentation create a reference doc and point to it
+- Mine question regarding DRY ours implementation vs uncle bob, how can we run it in CI, for example set a 0.1 max target?`## Releasing` TLDR, if we need more documentation create a reference doc and point to it
+- Mine question regarding DRY ours implementation vs uncle bob, how can we run it in CI, for example set a 0.1 max target?`## Releasing` TLDR, if we need more documentation create a reference doc and point to it
+- Yes
+- Done the login/refresh
+- CI its failing
+- We need to fix it now, no matter that its not ours changre issue
+- still failing
+- python, check local eng prompt
+- Do we need to instal mutmut at all? we will use uv. And why drywall not found? is in /Users/gabadi/.local/bin/drywall
+- What about incremental config?
+- What about incremental config for mutations?
+- ok, but must be clear that we must use the incremental/cached results, not full check each usge
+- be direct, do not explain, like all the prompts here. How does this cache works? make a web reseach to corroborate wihtin a subtask
+- You ae still explaiing what and why does, keep focused
+- commit push all the files
+- copy @swarmforge/swarmforge.conf from ../drywall, do notcommit
+- remove the advisor from all
+- remove the advisor from all, commit and push
+- approve, persist, commit and push
+- [Image #3] 14hs?
+- how do we run the self crap vs crap4js?

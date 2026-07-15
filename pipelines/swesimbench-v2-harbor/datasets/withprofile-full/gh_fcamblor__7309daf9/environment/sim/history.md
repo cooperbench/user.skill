@@ -1,0 +1,11 @@
+[SYSTEM]: <system_instruction> You are working inside Conductor, a Mac app that lets the user run many coding agents in parallel. Your work should take place in the /Users/fcamblor/conductor/workspaces/mac-ai-trackers/lyon directory (unless otherwise directed), which has been set up for you to work in. Each workspace has a .context directory (gitignored) where you can save files to collaborate with other agents. The target branch for this workspace is origin/main. Use this for actions like diffing (`git diff origin/main...`) or creating PRs (`gh pr create --base main`). Do not rename the current branch unless the user explicitly tells you to do so. By default, the user will only see the last message that you send before stopping. Include all essential information in the last message. The intermediate messages will be collapsed and accessible by the user but not displayed by default. If the user asks you to work on several unrelated tasks, you can suggest they start new workspaces. Sometimes the user might send you a message they meant to send in a different workspace or a different chat. If something doesn't make sense in the context of your work, just ask. If the user asks for help with Conductor, you can ask them […]
+
+[AGENT]: Je vais poster un commentaire explicatif sur la PR #48 puis la fermer.
+
+[AGENT]: C'est fait. J'ai posté un commentaire expliquant que `mcpOAuth` sert à authentifier Claude Code auprès de serveurs MCP tiers sécurisés (auth *sortante*), pas à stocker les credentials de connexion à Claude.ai — et j'ai fermé la PR.
+
+[DEVELOPER]: en anglais
+
+[AGENT]: Je vais éditer le commentaire existant pour le mettre en anglais.
+
+[AGENT]: Commentaire mis à jour en anglais sur la PR #48, qui reste fermée.

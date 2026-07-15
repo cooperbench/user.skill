@@ -1,0 +1,1 @@
+{"point_id": "Dezocode/mcp-system|77d096c0-ad21-4043-85d6-e5e498612cf2#33", "developer": "gh:Dezocode", "condition": "withprofile", "real": "intergrtion scripts already exists maybe the workflow needs organizing", "prev_agent": "Now I need to make sure the integration loop also uses the proper mode when calling the quality patcher. Let me update that:", "gold_move": null}

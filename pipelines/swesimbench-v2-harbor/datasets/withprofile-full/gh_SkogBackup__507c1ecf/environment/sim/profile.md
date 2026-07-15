@@ -1,0 +1,40 @@
+- [GAS TOWN] boot <- daemon • 2026-03-01T14:35 • triage Run `gt boot triage` now.
+- [GAS TOWN] boot <- daemon • 2026-03-01T14:38 • triage Run `gt boot triage` now.
+- [GAS TOWN] witness (rig: claude_temp) <- self • 2026-03-01T14:39 • handoff Check your hook and mail, then act on the hook if present: 1. `gt hook` - shows hooked work (if any) 2. `gt mail inbox` - check for messages 3. If work is hooked → execute it immediately 4. If nothing hooked → wait for instructions
+- [GAS TOWN] witness (rig: skogix) <- self • 2026-03-01T14:39 • handoff Check your hook and mail, then act on the hook if present: 1. `gt hook` - shows hooked work (if any) 2. `gt mail inbox` - check for messages 3. If work is hooked → execute it immediately 4. If nothing hooked → wait for instructions
+- [GAS TOWN] boot <- daemon • 2026-03-01T14:41 • triage Run `gt boot triage` now.
+- [GAS TOWN] witness (rig: skogix) <- self • 2026-03-01T14:44 • handoff Check your hook and mail, then act on the hook if present: 1. `gt hook` - shows hooked work (if any) 2. `gt mail inbox` - check for messages 3. If work is hooked → execute it immediately 4. If nothing hooked → wait for instructions
+- [GAS TOWN] boot <- daemon • 2026-03-01T14:44 • triage Run `gt boot triage` now.
+- [GAS TOWN] witness (rig: claude_temp) <- self • 2026-03-01T14:46 • handoff Check your hook and mail, then act on the hook if present: 1. `gt hook` - shows hooked work (if any) 2. `gt mail inbox` - check for messages 3. If work is hooked → execute it immediately 4. If nothing hooked → wait for instructions
+- [GAS TOWN] boot <- daemon • 2026-03-01T14:47 • triage Run `gt boot triage` now.
+- [GAS TOWN] boot <- daemon • 2026-03-01T14:51 • triage Run `gt boot triage` now.
+- [GAS TOWN] boot <- daemon • 2026-03-01T14:54 • triage Run `gt boot triage` now.
+- [GAS TOWN] witness (rig: claude_temp) <- deacon • 2026-03-01T14:54 • patrol Run `gt prime --hook` and begin patrol.
+- [GAS TOWN] witness (rig: skogix) <- deacon • 2026-03-01T14:54 • patrol Run `gt prime --hook` and begin patrol.
+- [GAS TOWN] refinery (rig: skogix) <- deacon • 2026-03-01T14:54 • patrol Run `gt prime --hook` and begin patrol.
+- [GAS TOWN] boot <- daemon • 2026-03-01T14:57 • triage Run `gt boot triage` now.
+- [GAS TOWN] deacon <- daemon • 2026-03-01T14:57 • patrol I am Deacon. Start patrol: run gt deacon heartbeat, then check gt hook. If no hook, create mol-deacon-patrol wisp and execute it.
+- [GAS TOWN] boot <- daemon • 2026-03-01T15:00 • triage Run `gt boot triage` now.
+- [GAS TOWN] boot <- daemon • 2026-03-01T15:03 • triage Run `gt boot triage` now.
+- [GAS TOWN] witness (rig: skogix) <- self • 2026-03-01T15:04 • handoff Check your hook and mail, then act on the hook if present: 1. `gt hook` - shows hooked work (if any) 2. `gt mail inbox` - check for messages 3. If work is hooked → execute it immediately 4. If nothing hooked → wait for instructions
+- [GAS TOWN] witness (rig: skogix) <- self • 2026-03-01T15:06 • handoff Check your hook and mail, then act on the hook if present: 1. `gt hook` - shows hooked work (if any) 2. `gt mail inbox` - check for messages 3. If work is hooked → execute it immediately 4. If nothing hooked → wait for instructions
+- [GAS TOWN] boot <- daemon • 2026-03-01T15:06 • triage Run `gt boot triage` now.
+- [GAS TOWN] witness (rig: skogix) <- self • 2026-03-01T15:08 • handoff Check your hook and mail, then act on the hook if present: 1. `gt hook` - shows hooked work (if any) 2. `gt mail inbox` - check for messages 3. If work is hooked → execute it immediately 4. If nothing hooked → wait for instructions
+- [GAS TOWN] boot <- daemon • 2026-03-01T15:10 • triage Run `gt boot triage` now.
+- [GAS TOWN] witness (rig: skogix) <- self • 2026-03-01T15:10 • handoff Check your hook and mail, then act on the hook if present: 1. `gt hook` - shows hooked work (if any) 2. `gt mail inbox` - check for messages 3. If work is hooked → execute it immediately 4. If nothing hooked → wait for instructions
+- [GAS TOWN] witness (rig: claude_temp) <- self • 2026-03-01T15:11 • handoff Check your hook and mail, then act on the hook if present: 1. `gt hook` - shows hooked work (if any) 2. `gt mail inbox` - check for messages 3. If work is hooked → execute it immediately 4. If nothing hooked → wait for instructions
+- [GAS TOWN] witness (rig: skogix) <- self • 2026-03-01T15:12 • handoff Check your hook and mail, then act on the hook if present: 1. `gt hook` - shows hooked work (if any) 2. `gt mail inbox` - check for messages 3. If work is hooked → execute it immediately 4. If nothing hooked → wait for instructions
+- [GAS TOWN] boot <- daemon • 2026-03-01T15:13 • triage Run `gt boot triage` now.
+- [GAS TOWN] boot <- daemon • 2026-03-01T15:16 • triage Run `gt boot triage` now.
+- [GAS TOWN] boot <- daemon • 2026-03-01T15:19 • triage Run `gt boot triage` now.
+- [GAS TOWN] witness (rig: skogix) <- self • 2026-03-01T15:20 • handoff Check your hook and mail, then act on the hook if present: 1. `gt hook` - shows hooked work (if any) 2. `gt mail inbox` - check for messages 3. If work is hooked → execute it immediately 4. If nothing hooked → wait for instructions
+- [GAS TOWN] boot <- daemon • 2026-03-01T15:22 • triage Run `gt boot triage` now.
+- [GAS TOWN] refinery (rig: skogix) <- deacon • 2026-03-01T15:22 • patrol Run `gt prime --hook` and begin patrol.
+- [GAS TOWN] boot <- daemon • 2026-03-01T15:25 • triage Run `gt boot triage` now.
+- [GAS TOWN] witness (rig: claude_temp) <- deacon • 2026-03-01T15:25 • patrol Run `gt prime --hook` and begin patrol.
+- [GAS TOWN] witness (rig: skogix) <- deacon • 2026-03-01T15:25 • patrol Run `gt prime --hook` and begin patrol.
+- [GAS TOWN] boot <- daemon • 2026-03-01T15:28 • triage Run `gt boot triage` now.
+- [GAS TOWN] boot <- daemon • 2026-03-01T15:32 • triage Run `gt boot triage` now.
+- [GAS TOWN] witness (rig: skogix) <- self • 2026-03-01T15:35 • handoff Check your hook and mail, then act on the hook if present: 1. `gt hook` - shows hooked work (if any) 2. `gt mail inbox` - check for messages 3. If work is hooked → execute it immediately 4. If nothing hooked → wait for instructions
+- [GAS TOWN] boot <- daemon • 2026-03-01T15:35 • triage Run `gt boot triage` now.
+- [GAS TOWN] refinery (rig: skogix) <- deacon • 2026-03-01T15:35 • patrol Run `gt prime --hook` and begin patrol.

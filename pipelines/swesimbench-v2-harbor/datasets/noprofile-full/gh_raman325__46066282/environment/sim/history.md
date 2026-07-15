@@ -1,0 +1,59 @@
+[DEVELOPER]: remove headroom from your mcp settings
+
+[AGENT]: I'll find where the `headroom` MCP server is configured and remove it. Let me locate it first.
+
+[AGENT]: Found it in `~/.claude.json`. Let me inspect how it's configured (it could be global or under a specific project).
+
+[AGENT]: `headroom` is a top-level (global) MCP server in `~/.claude.json`. You explicitly asked to remove it, so I'll delete that one entry, leaving `serena` and everything else untouched. `★ Insight ─────────────────────────────────────` - MCP servers in Claude Code can live at three scopes: top-level in `~/.claude.json` (global, all projects), per-project under `projects.<path>.mcpServers`, or in a project-checked-in `.mcp.json`. `headroom` was global. - The `/doctor` failure ("Executable not found in $PATH") just means the `stdio` command `headroom mcp serve` can't launch — removing the entry stops Claude Code from trying to spawn it each session. - Editing `~/.claude.json` programmatically (not by hand) avoids corrupting this large, frequently-rewritten file. `─────────────────────────────────────────────────`
+
+[AGENT]: Done. Removed the `headroom` MCP server from your global `~/.claude.json`. The top-level `serena` server is preserved, and no project-scoped configs referenced `headroom`. The change takes effect on your next session start (or run `/mcp` to verify the server list no longer includes `headroom`). The `/doctor` warning should be gone since Claude Code will no longer attempt to spawn the missing `headroom` executable.
+
+[DEVELOPER]: does the text entity for pins respect the min and max length as specified in lock capabilities?
+
+[AGENT]: Let me investigate how the PIN text entity is defined and whether it pulls min/max length from lock capabilities.
+
+[AGENT]: The providers clearly expose per-credential `min_length`/`max_length` capabilities. Let me check the credentials model and whether anything validates a PIN against them.
+
+[AGENT]: Now let me check whether the PIN update path or text entity ever consults these capabilities for validation, and whether the text entity's min/max gets updated dynamically.
+
+[AGENT]: Let me confirm where `capability_for` and the per-type length bounds actually get *consumed* (vs. just defined/populated).
+
+[AGENT]: No — the PIN text entity does **not** respect the lock's advertised min/max length. They're hardcoded. ## What the text entity actually does `text.py:49-50`: ```python class LockCodeManagerText(BaseLockCodeManagerEntity, TextEntity): _attr_native_min = 0 _attr_native_max = 9999 ``` These are class-level constants shared by **both** the name and PIN entities (the same class serves `CONF_NAME` and `CONF_PIN`). They're never overridden per-slot, per-lock, or per-credential-type. So the PIN field accepts anything from 0 to 9999 characters regardless of what the bound locks can actually store. `★ Insight ─────────────────────────────────────` - `TextEntity._attr_native_min/max` constrain **string length** (character count), not numeric value — HA's `text` component validates length on `async_set_value` and the frontend renders `minlength`/`maxlength`. So `native_max = 9999` literally means "up to 9999 characters," which is a non-constraint for PINs. - Because one class instance backs both name and PIN, any real length bound would have to be keyed on `self.key`, and PIN bounds would have to be resolved from the slot's bound locks at runtime — neither happens today. `─────────────────────────────────────────────────` ## The capabilities exist but aren't wired to the UI The data model has exactly the right field — `CredentialTypeCapability.min_length` / `max_length` (`credentials.py:246-248`) — and providers populate it: - `zwave_js.py:289-290` → from the lock's reported `pin["min_length"]`/`["max_length"]` […]
+
+[DEVELOPER]: do both
+
+[AGENT]: I'll follow the brainstorming process. Let me set up tracking tasks, then explore the relevant context before asking design questions.
+
+[AGENT]: Now let me explore the relevant context. I need to understand how the text entity reaches bound locks/capabilities, how config writes happen, and how errors surface.
+
+[AGENT]: Now let me see how the sync managers expose locks and capabilities, and how `_write_config_fields` works.
+
+[AGENT]: Now let me understand how a `SlotSyncManager` exposes its lock and capabilities, and what the provider capability interface looks like.
+
+[AGENT]: There's already capability-driven defense around `async_set_credential`. Let me read that — it's directly relevant to the "validate" half.
+
+[AGENT]: Let me understand the runtime data model — how locks are enumerated per config entry and where capabilities could be cached for synchronous access by the text entity.
+
+[AGENT]: Let me check the `CredentialType` enum and whether any length validation already exists in the write seam.
+
+[AGENT]: I have the full picture now. Key findings before I ask design questions: `★ Insight ─────────────────────────────────────` - **The bridge problem:** `TextEntity.native_min/native_max` are read *synchronously* by HA, but capabilities are fetched *async* (`_get_cached_capabilities`) and cached lazily per-provider during `async_setup`. So the entity-bounds half has to source a synchronously-readable snapshot. - **Scope is entry-wide:** `runtime_data.locks: dict[str, BaseLock]` holds every lock for the entry, and every slot syncs to every lock — so a slot's PIN bound is the intersection across *all* entry locks' `CredentialType.PIN` capability. - **No length validation exists today.** The seam only has `_assert_credential_type_supported` (raises `CodeRejectedError`); `min_length`/`max_length` are populated by providers but never read. The natural validation gate is `SlotEntityCoordinator.async_request_pin_update` (async, already the single PIN-write intent surface). `─────────────────────────────────────────────────`
+
+[AGENT]: Three design decisions will shape this. Let me get your calls on them.
+
+[AGENT]: Decisions noted. One implementation detail I need to nail down before presenting the design: the "compute live" approach only updates the frontend when the entity writes state, but capabilities load asynchronously during setup. Let me check whether there's an existing signal when a lock's setup/caps become available, so I can refresh bounds at the right time.
+
+[AGENT]: The base entity already handles lock add/remove. Let me read that section to see the existing hook I can extend.
+
+[AGENT]: `self.locks` is already maintained on every entity. Let me confirm two final things: that I can add a sync accessor for cached capabilities on `BaseLock`, and the ordering of lock-setup (caps probe) vs. the lock-added broadcast to entities.
+
+[AGENT]: Let me verify `async_setup_internal` populates the capability cache (so caps are cached before the lock-added broadcast at line 894).
+
+[AGENT]: Critical nuance found: caps are only probed at setup for **native-user** providers (line 637-638), and a disconnected lock leaves the cache unset. So the synchronously-cached caps are reliably present exactly for the PIN-enforcing locks (zwave/matter) that connected — which is what we want — and absent (→ no constraint) otherwise. Let me confirm how the entity's `self.locks` gets seeded initially.
+
+[AGENT]: I now have a complete, verified picture. `self.locks` is seeded from `runtime_data.locks` at init (entity.py:56) and maintained by add/remove handlers, so the entity always has its bound locks, with caps cached for the connected PIN-enforcing ones.
+
+[AGENT]: Here's the design. I'll present it in sections — tell me if each looks right. ## Design: capability-aware PIN length (entity bounds + coordinator gate) ### 1. Shared primitive — one place to read PIN bounds Add a method to `LockCapabilities` (in `domain/credentials.py`, where the capability value objects already live) so both consumers read bounds identically: ```python def length_bounds(self, credential_type: CredentialType) -> tuple[int, int | None] | None: """Effective (min, max) length for a type; None if unsupported. A non-positive advertised bound means "unbounded" — Matter reports max_pin_length as `... or 0`, which is "unknown", not "zero chars". """ cap = self.capability_for(credential_type) if cap is None: return None return (max(cap.min_length, 0), cap.max_length if cap.max_length > 0 else None) ``` This normalizes the `<= 0` → unbounded trap once, so neither caller re-implements it. ### 2. Provider — synchronous accessor for the cached snapshot Add a read-only property to `BaseLock` (`providers/_base.py`) exposing the already-populated cache **without** triggering a fetch: ```python @property def cached_capabilities(self) -> LockCapabilities | None: """Capabilities if already probed, else None. Never does I/O.""" return self._capabilities_cache ``` Both halves read this. Because the cache is probed during `async_setup_internal` for native-user PIN locks (and stays `None` for disconnected/non-PIN locks), an […]
+
+[DEVELOPER]: ok
+
+[AGENT]: ### 3. Entity bounds — `LockCodeManagerText` (`text.py`) Replace the two class constants with `native_min`/`native_max` properties. The name entity keeps `0`/`9999`; the PIN entity aggregates the **tightest-common** bound across `self.locks`: ```python _DEFAULT_MIN = 0 _DEFAULT_MAX = 9999 @property def native_min(self) -> int: lo, _ = self._pin_bounds() return lo @property def native_max(self) -> int: _, hi = self._pin_bounds() return hi def _pin_bounds(self) -> tuple[int, int]: if self.key != CONF_PIN: return (self._DEFAULT_MIN, self._DEFAULT_MAX) mins, maxes = [], [] for lock in self.locks: if (caps := lock.cached_capabilities) is None: continue if (bounds := caps.length_bounds(CredentialType.PIN)) is None: continue lo, hi = bounds mins.append(lo) if hi is not None: maxes.append(hi) native_min = max(mins) if mins else self._DEFAULT_MIN native_max = min(maxes) if maxes else self._DEFAULT_MAX if native_min > native_max: # empty intersection return (self._DEFAULT_MIN, self._DEFAULT_MAX) return (native_min, native_max) ``` **Refresh trigger:** override `_handle_add_locks`/`_handle_remove_lock` to call `super()` then `self.async_write_ha_state()` (guarded on being added to hass) so the frontend re-reads bounds when the lock set changes. Initial render already has bounds because caps are probed before the lock-added broadcast (`__init__.py:638` precedes `:894`). `★ Insight ─────────────────────────────────────` - `native_min`/`native_max` are the *native-unit* hooks; HA's `TextEntity` derives the public `min`/`max` (and the frontend's `minlength`/`maxlength`) from them. Overriding the properties (not the `_attr_`) […]

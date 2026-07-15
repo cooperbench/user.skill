@@ -1,0 +1,13 @@
+[SYSTEM]: # AGENTS.md instructions for /Users/tanishqpalandurkar/Projects/yyork <INSTRUCTIONS> General instructions: follow these all the time. - whenever you are unaware of what a particular cli option does, refer to the man page or use the --help option to learn its behaviour but never assume based on typical examples of its use. --- project-doc --- # Agent workflow - User will assign one PRD at a time to an agent to implement. All the PRDs are available in the `./prds` dir. - At any time if you think you could do a better job if a CLI tool was available to you and it would take you lesser tokens to do the task in presence of that tool, explicitly ask user to install it. Do not install it directly on your own as there are security related issues regarding this way of installation. </INSTRUCTIONS> <environment_context> <cwd>/Users/tanishqpalandurkar/Projects/yyork</cwd> <shell>zsh</shell> <current_date>2026-06-09</current_date> <timezone>Asia/Kolkata</timezone> <filesystem><workspace_roots><root>/Users/tanishqpalandurkar/Projects/yyork</root></workspace_roots><permission_profile type="disabled"><file_system type="unrestricted" /></permission_profile></filesystem> </environment_context>
+
+[DEVELOPER]: # Context from my IDE setup: ## Active file: package.json ## Open tabs: - package.json: package.json - portless.json: portless.json - dashboard.go: dashboard.go - .gitkeep: cmd/yyork/dashboard/.gitkeep - .gitignore: .gitignore ## My request for Codex: how does codex brings iab into view whenever user/situation demands it
+
+[AGENT]: I’ll trace this from the local Browser plugin and the `yyork` code paths, then separate confirmed source behavior from inference.
+
+[AGENT]: I found the relevant local note: this question has a known pitfall where answers drift into public `browser-use` assumptions. I’m opening the installed bundled Browser plugin files now so the answer is tied to this machine’s actual Codex surface.
+
+[AGENT]: The installed skill gives the key rule directly: automation stays background by default; visibility is explicitly toggled only when the task is to put the page in front of the user or let them watch. I’m checking the capability docs and the runtime entrypoint so I can name the exact call path.
+
+[AGENT]: There are two different “browser” surfaces in play: Codex’s own in-app Browser panel, and `yyork`’s Canvas Browser iframe. I’m checking the `yyork` side too so the boundary is explicit.
+
+[AGENT]: The `browser-client.mjs` bundle is minified, so most runtime internals collapse onto one physical line. The readable contract is the skill plus `docs/api.md`; the bundle still confirms the same symbols: `setupBrowserRuntime`, IAB backend discovery, `agent.browsers.get("iab")`, and browser capability dispatch.

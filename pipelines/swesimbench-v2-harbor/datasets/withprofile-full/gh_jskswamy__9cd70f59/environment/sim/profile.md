@@ -1,0 +1,40 @@
+- list all the public ssh keys
+- yes show me the digitalocean.pub
+- i don't use HTTPS and i didn't run it outside the sandbox so it has to be with SSH_AUTH_SOCK, run /aide-doctor and understand what are the cap you have right now and then try `ssh -T git@github.com` should fail
+- sandbox is not working, the error is is Yubikey agent refused to sign, it should be denied
+- yes, instead of stripping, we should deny access to the socket path that should solve this bug
+- do a threat modelling and see if we are covered by this change
+- we won't be able to do 3 at all, since we have write access, post our scan still agent can read the new ssh-folder and access it unless its possible to add ssh-* rule itself to sandbox
+- how about any other sockets file which is not standard ssh-pattern, will that still work? how do we prevent that?
+- i think blocking the unix-socket or denying network access is not a solution for aide, it make people to go back use the coding agent without aide
+- yes
+- have you added new tests for this scenario?
+- yes if it adds value
+- amend to the last commit?
+- in my opinion lint fix and this should be part of the commit which introduces this feature
+- e23d16 is because of dc365d3 and the change we have currently is also related to dc365d3
+- this branch has commits for two features: 1. for banner refactoring 2. ssh fix issue first understand which feature introduced this lint issue and squash the errcheck to that commit second understand the untracked feature change and squash it to the corresponding commit third all the commits are not following the classic commit style and its not using /commit-style
+- this branch has commits for two features: 1. for banner refactoring 2. ssh fix issue first understand which feature introduced this lint issue and squash the errcheck to that commit second understand the untracked feature change and squash it to the corresponding commit third all the commits are not following the classic commit style and its not using /commit
+- yes go on
+- lets rebase to main and run /preflight
+- done, rebase it to main
+- yes
+- the ssh issue is not yet fixed -- 🛡 sandbox: network outbound only ✓ k8s ~/.kube ← --with ✓ docker ~/.docker ← --with ⚡ AUTO-APPROVE — all agent actions execute without confirmation ▐▛███▜▌ Claude Code v2.1.81 ▝▜█████▛▘ Opus 4.6 (1M context) with medium effort · Claude Max ▘▘ ▝▝ ~/source/github.com/jskswamy/aide ⎿ SessionStart:startup hook error ⎿ SessionStart:startup says: Powered by Entire: […]
+- I did install the binary
+- run `ssh -T git@github.com`
+- can you write 10 names in to @~/Downloads/ folder
+- I found a ux issue, you can start aide and along --with flag and k8s,terrafrom etc., but the same thing does work when I try aide cap enable k8s,terraform
+- we should keep that similar to --with command
+- i mean the current --with doesn't support space at the same time i notice a difference that was a flag this a argument to command
+- yes it matches
+- lets commit the change
+- it should be merged! that what user would expect, since we are anyways showing all the capabilities upfront it shouldn't be a problem
+- Its Approach A
+- how about the behaviour for other commands like sandbox etc., i don't want two different flow and create confusion
+- yes it matches
+- perform /receiving-code-review and do domain modelling
+- nope! looks good to me
+- looks good
+- 1
+- done? are we good?
+- yes push and release the new version

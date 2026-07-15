@@ -1,0 +1,1 @@
+{"point_id": "84d7ea88-3ad7-4b88-ac65-394aed009cde#4", "developer": "gh:thieso2", "condition": "noprofile", "real": "commit", "prev_agent": "Added `-a` to the `new-window` bind so new windows are inserted immediately after the current one. Combined with `renumber-windows on`, the indices stay tidy.", "gold_move": null}

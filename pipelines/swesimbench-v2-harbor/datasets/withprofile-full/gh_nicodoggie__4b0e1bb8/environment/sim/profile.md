@@ -1,0 +1,40 @@
+- I'd always prefer an honest approach please.. Any references in the @Codebase would be good
+- can we find other Nuran personages?
+- yeah, maybe none of them are currently documented. thanks tho
+- Salicy is an island province of Nura, south of its mainlan
+- can you reference names of people ho may have interacted with Edmar Pritchett? if no explicit references are available, you may infer from context, but please label appropriately
+- I did reference some documents. perhaprs a search of those documents may be fruitful
+- I think he must be in @part-3.txt
+- @part-3.txt definitely has his name there.
+- I've attached the file to the context
+- strange, because it's in this line, that I'm specifically attaching to right now. are there context length issues with the model now?
+- can you search for referencs of people who have explicitly interacted with Edmar Pritchett? then also perhaps refer to people who may be inferred to have interacted with him
+- are there references in the document about a hot tub or jacuzzi that involved paula abdul and one of the kincades?
+- I found one reference in line 1062
+- what is the last line you have access to?
+- I tried to do copy paste of the entire file, perhaps this does it properly now
+- how do I add an entire file into the context. simply adding a reference to the file does not seem to work as it used to
+- did this work?
+- I had an issue in a previous chat where I appended a file into context, but chat could not reference any of the information. Now trying this in a new chat. do you see a file that I added into context?
+- I am trying to add the entire file though, not just that. do you have file size limits that I need to be aware of?
+- set to agent mode now. let's see if that worked
+- I'm specifically looking for references to events that relate to a jacuzzi and the kincades and/or paula abdul. I want a list of names of people involved, and a summary of the events that took place in said hot tub
+- did it reference who bit Paula's genitals? was it Edmar Pritchett or the other one? I believe the man's last name was Maxwell..
+- did it mention the death of one or more of the diplomats?
+- I remember that Margaery was sent to Pritchett to guard him as a response to the death of one of the two... I don't remember if it was Max Murray who did the killing...
+- ok. can we get a list of activities that involve the seneran diplomats that are in this document?
+- did Nathan and James have last names in the doc?
+- what can you tell me about this document that I've attached?
+- based on this document alone, what can you infer as to what had happened to need such a treaty
+- doesn't lexinfo have an entity for demonstrative suffixes?
+- can you add or update the "lexicalCategory" field for demonstrative suffixes in the jsonld document. if you're not sure which ones, please check the @_index.md document
+- let's only update those specific entries for demonstratives and nothing else. thanks
+- we don't have to change the ids etc. please search for the existing entries and update them to include the lexicalCategory. if the entry does not yet exist, the id should instead be the written form of the name instead
+- why are you updating other entities? we don't want to replace thagral with thrakel for example. I reverted your changes for now. focus only on the demonstratives.
+- thank you. just to reiterate, find and update demonstratives that have been transcribed into the document. add the lexicalCategory with `lexinfo:Suffix`. If a demonstrative is missing, add a new entry, appending them on the bottom. as an `@id`, prefer to use the suffix itself, for example, `eh:-eth`, unless it conflicts with a different entry. do not remove, rearrange, delete any […]
+- there are some issues with generation, so I moved most of the demonstratives to the very bottom of the document. let's try one more time
+- please just generate entries for the missing demonstratives and append them at the end. let's not do anything else for now anymore
+- 'atelbran is currently categorized as an adverb. but it is used like english before, a temporal coordinator. see @_index.md Temporal Coordination section. should this be a different lexinfo entity?
+- what ontolex-lemon property can be used for example sentences?
+- could these examples be nested within a sense?
+- the @vocab context is basically the base context of a jsonld document right? so if I have my own definitions for properties in this new document format, that should point to my rdf definitions?

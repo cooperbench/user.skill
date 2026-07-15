@@ -1,0 +1,11 @@
+[DEVELOPER]: [Image #1] ye image me strees ka sub parameter ka condition me 1 nhi 10 chahiye like ye condition dalo More than 10 is healthy
+
+[AGENT]: I'll help you update the stress sub-parameters conditions to check for "More than 10 is healthy" instead of the current conditions. Let me first search for where these conditions are defined in the codebase.
+
+[AGENT]: Now I can see the stress parameter conditions. I need to update three sub-parameters: 1. **Arousal Score** - currently `< 1 is normal`, change to `> 10 is healthy` 2. **Relaxation Score** - currently `> 1 is healthy`, change to `> 10 is healthy` 3. **Regeneration (Alpha Modulation)** - currently `> 30% is healthy`, change to `> 10 is healthy` Let me update these thresholds:
+
+[AGENT]: Perfect! I've successfully updated all three stress sub-parameters. Now the conditions are: 1. **Arousal Score**: `> 10 is healthy` (changed from `< 1 is normal`) 2. **Relaxation Score**: `> 10 is healthy` (changed from `> 1 is healthy`) 3. **Regeneration (Alpha Modulation)**: `> 10% is healthy` (changed from `> 30% is healthy`) I also see your message about adding the "Fz > Cz > Pz is normal" condition to Alpha:Theta Balance. Let me check that method - it already has this condition implemented at `server\services\algorithmCalculator.js:332`. The code checks `fzRatio > czRatio && czRatio > pzRatio` and displays "Fz > Cz > Pz (Normal per spec)" when true. Is there a specific change you want me to make to the Alpha:Theta Balance condition, or is the current implementation correct?
+
+[AGENT]: Main theek se samajh gaya! Alpha:Theta Balance ke description me "Fz > Cz > Pz is normal" condition add kar raha hun:
+
+[AGENT]: Perfect! Maine sab changes kar diye hain: ## Updated Conditions: ### Stress Parameter Sub-parameters: 1. **Arousal Score**: `> 10 is healthy` (previously was `< 1 is normal`) 2. **Relaxation Score**: `> 10 is healthy` (previously was `> 1 is healthy`) 3. **Regeneration (Alpha Modulation)**: `> 10% is healthy` (previously was `> 30% is healthy`) ### Alpha:Theta Balance: - Description me ab explicit condition hai: `(Fz > Cz > Pz is normal)` Ab sab conditions "More than 10 is healthy" type ki ho gayi hain aur Alpha:Theta Balance me bhi proper condition text add ho gaya hai!

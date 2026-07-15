@@ -1,0 +1,40 @@
+- Do you think we should mine and then filter or filter and then mine? The idea is to end the process with a very high quality corpus?
+- Review the comments now. Reject or address. Either way, comment and resolve.
+- I see failing linting in the ci. Double check.
+- Use this: '/Users/noahdolevelixir/Code/rune/instructions/repos.md' and this '/Users/noahdolevelixir/Code/rune/libs/model-training/src/model_training/d2l_mining.py' to workout a dataset for training. Consider carefully the sources, the dataset structure and the training plan. I'm about to launch our training project. Interview me until you have 95% confidence about what I actually want rather than what you think I want.
+- 1a. 2. Qwen 3.5 Coder 9B. And to use DeltaCoder LoRa as a starting point. 3. The goal is that a small model can be made to complete complex coding projects successfully using hypernetworks to encode where we are, where we want to be and what we already tried for a particular step so as to conserve context window. We […]
+- 5.a. We have multiple signals. The most important is that the generated adapter helps the base model produce the next correct step in the trajectory. That we ultimately manage to complete the project and that we reliably manage to embed and contextualize the state and trajectory. E.g., how well can the model retrieve where we are, what we tried and […]
+- Wait, what do you mean by stage 1? I think we should use the github mining as our primary training strategy. And 15 steps are fine. 10. I think training pairs is probably best. But I am open to recommendations. 11. The adapters should do well at encoding trajectory independent of the language which is why we want heterogeniety. That […]
+- That matches my understanding. 14.a I think. 15. I leave it to you to decide. 16. We are not trying to embed a 15-step PR trajectory. Each adapter is used for one step. E.g., step 1 could be the project definition and planning. step 2 could be creating the "DAG" step 3 could be one of the subtasks. So we'd […]
+- 18. We probably just need the diff of the final step, rather than each increment. We'll probably want to use an "rtk" style compressor and to do away as much as possible with irrelevant parts of the diff. 19 one training pair. 20. I think we should try to progress from the existing. Minimum changes to best achieve our goals […]
+- 1
+- let's do an end to end test and see if it works. Also, look at the infra repo to see the s3 bucket we have setup.
+- Use the gh cli tool
+- Can use the aws cli to create the bucket (that can be accessed from our devpod)?
+- Prefix approach is good. And set this bucket location to some kind of environment variable or KMS so the path is automatically available from the devpod.
+- I refreshed the sso login.
+- yes, go ahead.
+- It needs to be a PR
+- Alright, so make the PR for rune as well.
+- Look at the CI. There are merge conflicts
+- Now I want to begin to run our mining. Let's do this piecewise with breaks so as not to run into github api rate issues. In the end, we want to save our training data to S3. Go ahead and start the process.
+- It's currently stashed from when I switched to main
+- Go over mypy and CI failures and push corrections
+- Not true, look here: https://github.com/ElixirTrials/rune/pull/20
+- Okay, merged and we are on main. But when I run mypy, I see: scripts/optimization/template_library.py:10: error: Cannot find implementation or library stub for module named "task_pool" [import-not-found] scripts/optimization/scoring.py:15: error: Cannot find implementation or library stub for module named "task_pool" [import-not-found] scripts/experiment_harness.py:78: error: Argument 1 to "__call__" of "_Wrapped" has incompatible type "str"; expected "PreTrainedModel" [arg-type] scripts/experiment_harness.py:115: error: Incompatible types in […]
+- Let's create a branch and PR.
+- In this PR: https://github.com/ElixirTrials/rune/pull/19 we implemented the data mining. Now we need to check our training process to see if we are ready to launch. We are based on: '/Users/noahdolevelixir/Code/rune/instructions/Report_2_LoRA_Fine_Tuning_Strategy.md' and most of the relevant code is here: '/Users/noahdolevelixir/Code/rune/libs/model-training' . Go over this material and check that we are on track to begin our fine tuning.
+- move it to a branch and submit a pr
+- Check the CI and comments
+- Go through them and fix them
+- I merged to main but see some mypy failures: services/lora-server/config.py: error: Duplicate module named "config" (also at "./scripts/eval/config.py") services/lora-server/config.py: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#mapping-file-paths-to-modules for more info services/lora-server/config.py: note: Common resolutions include: a) using `--exclude` to avoid checking one of them, b) adding `__init__.py` somewhere, c) using `--explicit-package-bases` or adjusting MYPYPATH
+- I also see some pytest failures
+- Unknown skill: Bristle
+- 418 passed, 11 xfailed, 3 xpassed, 70 warnings in 14.63s
+- Run "uv run pytest" and look at what comes out
+- Why aren't they failures?
+- Explain the 11 xfailed ?
+- Yes. Why do we even need a full gpu mocking chain? Do those tests have value?
+- Why mock the GPU to test the loader? Let's figure out how to write proper tests. If a test is important and requires a GPU, mark it as requires_gpu, skip it on a cpu machine (and in the ci) and don't mock.
+- run uv run pytest and analyze the results
+- Solve the failures and warnings

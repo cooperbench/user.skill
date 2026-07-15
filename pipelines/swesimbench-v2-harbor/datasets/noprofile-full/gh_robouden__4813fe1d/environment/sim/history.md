@@ -1,0 +1,3 @@
+[DEVELOPER]: Can you make a plan for modifying adding extra features for AnyType Selfhosting to give it the functionaly from GrooveGo? Please add the AnyTpe folder at home/rob/Documents/Safecast/AnyType-VPS and the AnyType repo to the data to be used. What Anytype Still Lacks Compared to Groove 1- Deep trust graph (peer/org/federated) 2- True shared workspace semantics 3- Programmable collaborative tools layer 4- Integrated communication primitives 5- Explicit peer consensus model
+
+[AGENT]: I'll create a plan for adding GrooveGo-like features to AnyType Self-hosting. Let me first explore both the AnyType-VPS folder and refresh my understanding of GrooveGo.

@@ -1,0 +1,3 @@
+[DEVELOPER]: consider optimize @ optimize this content for Claude Code by improving organization, readability, and making it more actionable for AI instances. First read the current content [C:\Users\omarm\.claude\temp\notes\4.md] @temp\notes\4.md to understand the structure better.
+
+[AGENT]: I'll optimize this Six Sigma content for Claude Code by improving its structure, making it more actionable for AI instances, and organizing it for better readability and implementation.

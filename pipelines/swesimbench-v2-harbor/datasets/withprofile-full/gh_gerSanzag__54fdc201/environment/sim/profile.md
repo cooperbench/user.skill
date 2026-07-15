@@ -1,0 +1,40 @@
+- Continua
+- Ok
+- si
+- Continua
+- Si
+- Pregunta: En service no se cambio factory por un service locator, verdad?
+- Explicame antes que quieres decir en la opción 3
+- y como coexistes con las dos opciones sin causar conflicto?
+- Empezemos por hacer un push con un mensaje muy explicito de lo que se ha hecho.
+- Cambia el idioma del mensaje por español
+- Volviendo a la discusion anterior: En el caso de las dos versiones, al final el main solo puede usar una de las dos, habria que hacer dos main o algo asi, no?
+- Olvidalo. Aplica el service locator al servicio, para ver la diferencia y aprender no mas.
+- Ok
+- ServiceFactory ya no le necesitamos, no?
+- Con la version guardada en el ultimo commit, sin modificar factory, los test no deberian fallar, no?
+- Retorna el proyecto al ultimo commit guardado y limpia el resto.
+- Ok, se supone que los test no deberian fallar, lanzalos
+- Cual es la mejor opción?
+- Esta clase donde se crea, en producción?
+- Ok, procede.
+- hagamos un stage. Luego aplica los cambios en los test que lo necesiten antes de lazarlos.
+- Incluye la documentacion de spectory
+- Continua
+- Antes has dicho que habia problemas de logica de negocio, cuales?
+- Cuando dices logica de negocio te refieres a logica dentro de los test, no?
+- Corrige los test. Pregunta: Ya has terminado de actualizar los test con la base?
+- Lanza los test y mira cuales necesitan base. No podrias irlos corrigiento a medida que los lanzas?
+- No hagas commit aun. Ya estan funcionando todos los test?
+- Lanza el index
+- El index de jacoco
+- Revisa el transationOperation que solo tiene un 12% de cobertura
+- Revisa los test de util que estan muy bajos de cobertura
+- Faltan los test del main
+- Continua
+- Que problema tienes con este test?
+- Elimina la clase main
+- Eliminala desde produccion
+- No hagas commits sin mi autorización. Lanza el index
+- por que jacoco sigue viendo la clase Main como si existiera?
+- Haz un push. El mensaje debe estar en español, y debe ser muy explicito de lo que se hizo en producción. Incluye la documentación de spectory.

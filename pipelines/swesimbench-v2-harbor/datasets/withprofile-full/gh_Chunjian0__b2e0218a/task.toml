@@ -1,0 +1,31 @@
+schema_version = "1.1"
+
+[task]
+name = "swesimbench-v2/gh_Chunjian0__b2e0218a"
+description = "Predict the developer's next message given the conversation so far (with developer profile)."
+authors = []
+keywords = ["swesimbench", "simulate-user", "user-simulation", "withprofile"]
+
+[metadata]
+author_name = "swesimbench-v2"
+category = "user-simulation"
+tags = ["swesimbench", "simulate-user", "withprofile"]
+developer = "gh:Chunjian0"
+point_id = "ss:Chunjian0/shoes-website|2025-04-30_20-58-添加产品模板到首页.md#8"
+condition = "withprofile"
+
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 900.0
+user = "agent"
+
+[environment]
+build_timeout_sec = 600.0
+cpus = 1
+memory_mb = 2048
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+mcp_servers = []

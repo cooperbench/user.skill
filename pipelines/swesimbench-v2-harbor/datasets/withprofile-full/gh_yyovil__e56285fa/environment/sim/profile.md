@@ -1,0 +1,40 @@
+- # In app browser: - The user has the in-app browser open. - Current URL: http://127.0.0.1:4217/terminal/%252FUsers%252Ftanishqpalandurkar%252FProjects%252Fyyork%3A6nja7b ## My request for Codex: alright lets get to the URL model that I want.
+- # In app browser: - The user has the in-app browser open. - Current URL: http://127.0.0.1:4217/terminal/%252FUsers%252Ftanishqpalandurkar%252FProjects%252Fyyork%3A6nja7b ## My request for Codex: alright this app doesn't hv browser annotation component though
+- # In app browser: - The user has the in-app browser open. - Current URL: http://127.0.0.1:4217/terminal/%252FUsers%252Ftanishqpalandurkar%252FProjects%252Fyyork%3A6nja7b ## My request for Codex: what should I do so that you stop using 127.0.0.1:xxxx urls? I've got yall agents portless so that we don't face this very particular issue.
+- # In app browser: - The user has the in-app browser open. - Current URL: http://127.0.0.1:4217/terminal/%252FUsers%252Ftanishqpalandurkar%252FProjects%252Fyyork%3A6nja7b ## My request for Codex: alright then why does your in-app browser still using the 127.0.0.1:4217 then?
+- # Selected text: ## Selection 1 Redirect dashboard requests from 127.0.0.1:<port> to https://yyork.localhost. # In app browser: - The user has the in-app browser open. - Current URL: http://127.0.0.1:4217/terminal/%252FUsers%252Ftanishqpalandurkar%252FProjects%252Fyyork%3A6nja7b ## My request for Codex: isn't this wrong because at a time I could be working on multiple web apps locally
+- # In app browser: - The user has the in-app browser open. - Current URL: http://127.0.0.1:4217/terminal/%252FUsers%252Ftanishqpalandurkar%252FProjects%252Fyyork%3A6nja7b ## My request for Codex: hold on won't agent rules would work?
+- <codex_delegation> <source_thread_id>019ea438-4636-7a71-a6de-5e31848db56e</source_thread_id> <input>Design a fresh-context workflow for yyork that continuously tests the app in a loop, with the mindset of continuous penetration testing and continuous product QA. The user is worried about hidden landmines in the codebase and said token budget is unlimited, so be thorough and pragmatic. Goals: - Propose an end-to-end continuous verification system for yyork, not a […]
+- <codex_delegation> <source_thread_id>019ea438-4636-7a71-a6de-5e31848db56e</source_thread_id> <input>Additional user context for the continuous testing / continuous pentesting workflow design: The user clarified the target problem: - Agents introduce many inconsistencies into the codebase. - Some failures are just stale runtime artifacts: the server/browser is running an old binary or stale built asset; rebuild + restart fixes it. The workflow must detect stale-bin/stale-asset situations autonomously before […]
+- <codex_delegation> <source_thread_id>019ea438-4636-7a71-a6de-5e31848db56e</source_thread_id> <input>Visual references for the continuous QA / autonomous landmine discovery workflow: Live captured yyork/Zellij session screenshot: ![yyork Zellij session visual reference](/Users/tanishqpalandurkar/.codex/visual-refs/yyork/continuous-qa-zellij-session.png) Use this image as concrete visual evidence for terminal/session-state checks: MCP startup errors, Codex card rendering, sidebar session list, status bars, Zellij tip overlay, viewport sizing, and whether terminal canvas/panel UI is visually sane. The user also […]
+- I want you to work on the distribution part now. I want my users to be able to use following cmds to install yyork: - `nix profile add github:yyopc/yyork` - `npm i -g @yyopc/yyork` - `go install github.com/yyopc/yyork` for now. I'm not sure if the nix profill add cmd is correct though.
+- Also the binary that we are serving is optimized for end users. right? And we have cross platform support right? Both are very important to nail down.
+- Why does the zellij's statusline looks diff in yyork than vscode?
+- Is that browser glyph rendering issue that we have previously experienced unsolvable? I don't think so bro.
+- lets fix this then and give our users the best experience
+- what did I told you regarding running lil cmds bro? I'm an entrepreneur man. I don't hv time for running this lil cmds bro
+- If we were using the portless pkg we won't have to suffer from this problem specifically. Here's the [why](https://portless.sh/why). Setup [portless](https://portless.sh/) for yyork right now. the web app should be available at http://yyork.localhost.
+- If we were using the portless pkg we won't have to suffer from this problem specifically. Here's the [why](https://portless.sh/why). Setup [portless](https://portless.sh/) for yyork right now. the web app should be available at https://yyork.localhost.
+- This only starts the vite dev server Ig.
+- I would like to hv a subdomain for the api to the backend. something like api.yyork.localhost would be awesome
+- how the fuck is this possible?
+- sometimes I wonder how many landmines are there present in my codebase. I've unlimited budget for tokens. We should design a workflow that test the app continuously in a loop, testing it in every fucking way possible kind of like continuous penetration testing bro. What you say? Lets design it in another thread where we would have a fresh context.
+- Like these. You see there are hell lot of inconsistencies in the code these agents write. Sometimes its just that the server that's running this is a stale bin. A rebuild and restart would fix it. But sometimes its just some edge conditions that the agent didn't considered or kept in mind during the implementation. Sometimes its just some poor […]
+- send this message to that thread
+- also send the images for visual rf
+- you good bro?
+- how do I disable some mcp servers?
+- We are so close to rendering the zellij statusline. It just needs one more push bro. Do you know what needs to be done next?
+- Well I was talking about something else but we will do that too. But before that, take a look at this image and tell me what's up?
+- yo its not clipped. I only took a ss of a small region. here's the full statusline. but the arrow glyph is rendered in gray color. did you notice that?
+- yeah do that and tell me what's the value?
+- alright how you are gonna fix that?
+- hold on! 1st image is the ss of yyork in dark theme, 2nd image is the ss of yyork in light theme. First of all, solve for dark theme. the same problem is observed in the dark theme as well.
+- alright how do I see the preview for the dark theme first of all?
+- what's the reason that yyork.localhost is still serving the stale website?
+- do I need to spawn a new agent session to observe the changes?
+- could you rebuild yyork and restart it
+- could you use the in-app browser use skill to confirm it yourself?
+- # In app browser: - The user has the in-app browser open. - Current URL: https://yyork.localhost/terminal/%252FUsers%252Ftanishqpalandurkar%252FProjects%252Fyyork%3A6nja7b ## My request for Codex: for me the problem still persists. I took this ss from the codex's in app browser btw.
+- # In app browser: - The user has the in-app browser open. - Current URL: https://yyork.localhost/terminal/%252FUsers%252Ftanishqpalandurkar%252FProjects%252Fyyork%3A6nja7b ## My request for Codex: PLEASE IMPLEMENT THIS PLAN: # Fix Dark Zellij Statusline Separators ## Summary - The remaining gray Powerline separator is not from `--terminal-color-15`. - Root cause: Zellij leaves SGR bold active on the statusline, and xterm.js defaults `drawBoldTextInBrightColors` to `true`, […]
+- # In app browser: - The user has the in-app browser open. - Current URL: https://yyork.localhost/terminal/%252FUsers%252Ftanishqpalandurkar%252FProjects%252Fyyork%3A6nja7b ## My request for Codex: awesome bro. I love my codex.

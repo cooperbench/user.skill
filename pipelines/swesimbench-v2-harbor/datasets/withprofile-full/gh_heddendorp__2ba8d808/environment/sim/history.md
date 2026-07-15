@@ -1,0 +1,15 @@
+[SYSTEM]: # AGENTS.md instructions for /Users/hedde/code/evorto <INSTRUCTIONS> # Repository Guidelines ## Context Discipline - Keep repository knowledge in small, relevant files. - Use this file as the map, not the full manual. - Read the nearest applicable guidance before editing: - root product/system context - module-level `AGENTS.md` - local README files - Update context files when reality changes, assumptions are invalidated, or new constraints are discovered. - Prefer small, accurate updates over large stale manuals. ## Root Context Files - `PRODUCT.md` - product goals, personas, core workflows, domain concepts, and product invariants. - `ARCHITECTURE.md` - high-level system shape, architectural boundaries, and where to look first for common changes. - `QUALITY.md` - behavior-focused verification guidance, Browser/Playwright expectations, and done criteria. Keep these files concise. Put implementation-specific guidance in the nearest module-level `AGENTS.md` or README. ## Project Structure - App code: `src/app/**` - Server runtime and APIs: `src/server/**` - Data layer: `src/db/**` - Shared contracts/types/utilities: `src/shared/**` and `src/types/**` - Unit tests: `*.spec.ts` in `src/**` - Playwright tests: `tests/**` - Legacy e2e reference: `e2e/**` - Assets/public: `public/` - Theming: `src/styles.scss` and `_theme-colors.scss` Start with the nearest applicable module guidance: - `src/app/AGENTS.md` - `src/server/AGENTS.md` - `src/db/AGENTS.md` - `tests/AGENTS.md` More specific guidance may exist deeper in […]
+
+[DEVELOPER]: Update our checkout to the latest from remote
+
+[AGENT]: I’ll first check the current branch and worktree state, then use the repo’s conservative update path so we don’t overwrite local work.
+
+[AGENT]: The checkout is on `main`, clean, and behind `origin/main` by one commit. The memory pointer mentions a sync skill, but that local skill path is not present in this checkout, so I’m falling back to direct Git verification and a fast-forward update.
+
+[AGENT]: The fetch succeeded and confirmed remote `main` is the target. I’m checking whether this can be fast-forwarded cleanly, then I’ll apply it.
+
+[AGENT]: `HEAD` is an ancestor of the fetched remote commit, so this is a clean fast-forward. I’m updating `main` now and then I’ll confirm the branch is current.
+
+[AGENT]: The fast-forward completed. I’m doing one final status check and recording the resulting commit so you have the exact state.
+
+[AGENT]: Updated `/Users/hedde/code/evorto` to the latest remote `main`. Current state: - Branch: `main` - Status: clean and aligned with `origin/main` - HEAD: `d1662b419c4 test: harden launch-critical Playwright coverage (#82)` No tests were run because this was a fast-forward-only checkout update with no local edits. <oai-mem-citation> <citation_entries> MEMORY.md:417-417|note=[checked repo sync guidance pointer] </citation_entries> <rollout_ids> </rollout_ids> </oai-mem-citation>

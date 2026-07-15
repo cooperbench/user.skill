@@ -1,0 +1,40 @@
+- Rather I would like for you to tell me which download(s) go ask a demo for?
+- This is a link to their download page. Which downloads from this page do we need? https://www.devexpress.com/products/try/
+- I have the Primary choice installer. If I show it to you would you prefer to install it?
+- Is it just going to install on my Windows device or just inside this repo. I'm not at all certain how this will work.
+- So, during the upgrade the appropriate .dll and other files will be pulled from the installed DevExspress and into this app.
+- I don't know how to get their NuGet.
+- We aren't using VisualStudio. We are using Cursor.
+- The NuGet link on their website is asking for a login to an account. I guess I can create one for this project.
+- Here is the NuGet feed: https://nuget.devexpress.com/XJo1CdGRvWtSb4nUuFtX5HcUgnSaZP4lYzWkKFxVgYMYlRilH6/api/v3/index.json
+- So, when I run NuGet is it going to install the packages we need?
+- Shorten this email by removing any requests to provide documentation, etc.
+- Nice. Question - ansswer yes or no - does that email tell them everything they need to know?
+- Also, with this sentence "We maintain an ASP.NET MVC (.NET Framework) application currently using DevExpress 19.1.6 packages and need to complete a security-driven upgrade." Emphasize we are past the point to have this in production and need to remediate the issues today.
+- Ok - show me the entire email with that sentence revision.
+- Should I include the packages.config file so they can see everything we need?
+- Does this file contain any connection strings or credentials
+- Are there free vulnerability scanners
+- Which one to scan this app
+- Wire this into build.ps1 dependencies first.
+- Let's get a workable list of the vulneralbilities from the easiest to fix in the repo to the hardest. Give clear fixes in an implementation document that you can follow. You will be implementing the fixes.
+- implement all fixes except those related to DevExpress and IgniteUI.
+- What vulnerabilities are associated to IgniteUI components in this repo?
+- do the vendor-advisory cross-check
+- do that
+- We need to use standard methodologies to report resolutoins to vulnerabilities. Where would this evidence reside in the project.
+- please do that.
+- You need to automate the "Next operational step"
+- approve
+- can you create a document of your entire discovery system you created tonight so I deliver it to other Cursor project to exactly duplicate. I guess it could be called a template for your vulnerability system.
+- The template will include how to construct .\build.ps1, correct?
+- drop those in. I approve
+- can you resume before the Cursor crash
+- Do the quickstart
+- Let's get back the DevExpress demo discussion that was in another chat session. On this page https://nuget.devexpress.com/# The following text appears "Note: The packages above do not include demos/sample applications. To obtain DevExpress demos, download our installations, refer to our online help file, or use our online demo apps. " - Does this mean we can't get the demos using […]
+- So using NuGet we can update our current packages?
+- So, using this path for upgrade, will we need to obtain a new license?
+- Can you check that for me?
+- The current DevExpress packages were part of a DevExpress purchase by another company. Since that license is not ours, I assume we would need to purchase a license.
+- Please give me that list.
+- put this in the form of an email to DevExpress Customer Experience team.

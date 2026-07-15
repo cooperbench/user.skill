@@ -1,0 +1,1 @@
+{"point_id": "7505c804-ef06-4be0-a866-480597e6bbc1#44", "developer": "gh:Stark-Industries0417", "condition": "noprofile", "real": "we fail build \ud83d\ude2d", "prev_agent": "Yes \u2014 line 77 reads `If sessionID is non-empty, it is stored as an slog attribute on every log line for filtering.` That was the fix from commit `e06a3602`.", "gold_move": null}

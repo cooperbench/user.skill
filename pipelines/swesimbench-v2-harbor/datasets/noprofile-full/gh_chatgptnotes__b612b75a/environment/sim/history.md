@@ -1,0 +1,5 @@
+[DEVELOPER]: where are the project files located?
+
+[AGENT]: I'll check what's in your current directory to see what project files are present.
+
+[AGENT]: You're currently in your home directory at `C:\Users\Hp`, which contains several project files. I can see: **Main Project Files (current directory):** - Python automation scripts for PLC programming: - `auto_download_plc.py` - `configure_plc_protection.py` - `download_to_plc.py` - `program_motor_startstop.py` - `program_plc_with_vision.py` - `vision_agent.py` - `desktop_ai_agent.py` - Documentation files: - `README.md` - `QUICK_START.txt` - `COMPLETE_WORKFLOW_SUMMARY.md` - `MOTOR_STARTSTOP_README.md` - `WIRING_AND_TESTING_GUIDE.md` - Various vision-related markdown files - Configuration: - `config.json` - `requirements.txt` - Various screenshots (.png files) **Separate Project:** - `pulseofpeoplefrontendonly/` directory (appears to be a frontend project) Is there a specific project you'd like to work on, or would you like me to explore one of these directories in more detail?

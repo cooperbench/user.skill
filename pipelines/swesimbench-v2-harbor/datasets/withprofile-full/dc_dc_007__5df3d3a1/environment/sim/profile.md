@@ -1,0 +1,40 @@
+- is this based on: AGENT: PLEASE READ the strategy and recommendations below the score. They are CUSTOM COACHING tailored to this codebase. Follow them.
+- why do you think you missed that? Could the MEMORY.md on running scan have surfaced it?
+- Add it to SKILLS.md too
+- there's something like that
+- ❯ can you run scan on this codebase and make reocmmendatiosn
+- ❯ can you run scan on this codebase and make reocmmendatiosn
+- Were you acting based on that?
+- what could youa dd to SKILL.md to make sure you did?
+- what about skill.md?
+- yes, and then could you copy that like we say in the README?
+- Is it at the topof the skills?
+- Anything that could be prunted there?
+- but that IS the narrative context! do you need to recopy it? Try to make the overall thing succint adn easy to follow
+- Can you run through all of the open issues one by one. Before you review each one, read the tool philosophjy ib Structure.md. In cases where it's an obvious or most likely win, implement it and ocmment on the issue. If it's ambigious leave a comment on it with your assessment. Continue through them all.
+- See in the phiolosophy section of the README can you resplace the em dashed with -
+- Thankfully, both subjective and objective engineering best practices exist - and, with a little help from agents, they be tracked.
+- remove this 'No lint noise, no guilt — just steady, visible progress.'
+- anythin else that can be trimmed?
+- yeah, remove Every finding is either resolved or dismissed with a reason. and push to gitthub
+- ge
+- can you see the last two downloaded images and videos can can you make a little video where it basically starts with the image example image one then quickly afterwards example image two fades in and then the they're stacked one on top of the other so one is on the top then two is on the bottom and then […]
+- Can you make it stop with the video when the video is fully played? And can you make another video of the same size and it should show one circle that says I am creative control and the other circle that says model creativity and then it should point to put short arrow pointing to the overlap between them that […]
+- For the second video, can you make it so it should be just creative control and then that circle should appear and maybe you have a little noise then model creativity should appear and then just be a noise. And then the using anchor images text should appear. And then the arrow should protrude for that into the middle of […]
+- Can you save the scripts used to generate these videos in a folder called announcement video as well as the actual videos and the inputs?
+- Um, see that new video I dropped in there. Could you rename that to, um, V1 demo?
+- That last video was the V2 demo
+- No sorry I meant the first one is v1 demo and then I put in a new video into the folder and that should be v2 demo.
+- Why would I because you're naming issue seems to cause an issue inside of CapCut where the old video the new video still renders as the old one could you maybe we should just rename the boot something else
+- can you see if we have a bunch of unpushed changes?
+- is there an open pr you can push to?
+- can you push to their branch?
+- create a new pr
+- i'm generating an image from @src/tools/image-generation/components/ImageGenerationForm/ using a style reference and it seems to append text to the endm, can you see ehwy and fix? fsafadsfdas, 3441532070_4_5dfb142e
+- See the way we show variant batches on items in @src/shared/components/MediaGallery/ - that doesn't seem to be showing now until i refresh. Can you investigate and try to understand why? Feel free to put logs, they show wheni refresh
+- Why does this thing in settings now react to the apps colour: To generate locally, you need an API key. Generate Key & Show Instructions
+- should it not react to the music?
+- sorry, dark mode or light mode?
+- when i press save on the 'move' tool for images in medialightbox, it hangs indefinitely. can you try to understand why? Put logs if need be to get to the bottom of it
+- Implement the following plan: # React Query Cleanup: Registry Keys + Invalidation Tightening ## Context The codebase has a solid query key registry (`src/shared/lib/queryKeys/`) and scoped invalidation infrastructure (`src/shared/hooks/invalidation/`). But ~10 ad-hoc query keys bypass the registry, and several invalidation sites are broader than necessary. This cleanup brings stragglers into the registry and tightens over-invalidation where it's safe to do […]
+- Did you find ALL the keyws everywhere?

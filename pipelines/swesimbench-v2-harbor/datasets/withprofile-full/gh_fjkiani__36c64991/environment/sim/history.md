@@ -1,0 +1,3 @@
+[DEVELOPER]: zo
+
+[AGENT]: Here. What should we focus on? I see several audit and status documents open: - Patient Knowledge Base Agent Audit - Orchestrator Profile Handling - Onboarding Audit and Gaps - Implementation status documents I can: - Review and analyze any of these documents - Help implement fixes or improvements - Answer questions about the codebase - Work on specific tasks you have in mind What would you like to tackle?

@@ -1,0 +1,7 @@
+[DEVELOPER]: create new worktree from copying worktree opensandbox-integration, implement new functionality, please write design spec first: remove opensandbox and restore to current container_manager.py to support original docker workflow add direct agent-sandbox support for k8s workload
+
+[AGENT]: I'll start by exploring the project context, especially the opensandbox-integration worktree and the current codebase.
+
+[AGENT]: Let me explore the project context — the opensandbox-integration worktree, current container_manager.py, and existing design docs.
+
+[AGENT]: Good, I now have a thorough understanding of the codebase. Let me start with my first clarifying question. **Context recap**: The opensandbox-integration worktree replaced `ContainerManager` (Docker SDK) with `SandboxManager` (OpenSandbox SDK) and added K8s deployment manifests. You now want to: 1. Remove the OpenSandbox dependency and restore the original Docker workflow 2. Add direct K8s workload support (without OpenSandbox as the intermediary) **Question 1**: For the K8s support, when you say "direct agent-sandbox support for k8s workload" — do you mean the backend should use the Kubernetes Python client (e.g., `kubernetes` library) to directly create/manage Pods or Jobs for the sidecar containers, similar to how `container_manager.py` uses the Docker SDK directly? Or do you have a different K8s integration pattern in mind (e.g., Custom Resource + operator, Knative, etc.)?

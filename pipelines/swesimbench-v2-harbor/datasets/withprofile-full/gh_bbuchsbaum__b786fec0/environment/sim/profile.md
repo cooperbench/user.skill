@@ -1,0 +1,40 @@
+- completely unchanged behavior. so next is for you to uncomment debug line
+- nope, the entire screen is unchanged.
+- in what manner is the optimized shader optimized with respect to the slice_world_space.wgsl ?
+- ok, we the non-optmized version works; we want to be able to swap in the optmized version though. have o3 and gemini look at both and see if we can swap in optiized one and, if not, what changes need to be made.
+- so it's not so easy to swap in the second shader.
+- interesting. could we have some sort of facade or other abstraction to make the swap in more "safe"; I don't want to make changes and then not be able to "swap back" if we run in to trouble.
+- ask o3 and gemini pro what they would do; gie them the deatails and the relevant data so they can make an informed decision. then you weigh in yourself because your no slouch either.
+- don't call it "legacy" though. use more descriptive names. if we go with B can we pretty easily maintain functionaloty of current system? I want to avoid breaking the system.
+- ok, analyze the two shaders and give me your opinion about the specific advantages of the optimzied shader. ultimately we will be showing layers, e.g. anatomical + functional so we want fast overlay rendering with partial transparency.
+- ok, can we implement in such a way as to not break the working code?
+- but we have some compile errors
+- what's next?
+- in core/neuro-intergration-tests we compare cpu to gpu rendering. let's add a thrd comparison; gpu optimized.; add it for the mni viaulization test.
+- can you run the test so it produce the html dashboard?
+- none of the test images actually show brains, although we changed the code somewhat probably after the test was written; I wonder if you can fix by examining how we render images in ui2/ and core generally.
+- make threshold is [0,0] not full data range. otherwise image will be fully transparent.
+- 'can we do a benchmark of standard vs ootimized gpu shader?
+- hang on ; you called " optimized shader placeholder" ; why "placeholder"?
+- ok, obviously we want to do that in this case.
+- how do we know it was really running? and is it faster?
+- are the images in declarative_migration_dashboard the optimized images?
+- isn't it the case that the optimized shader might do better when there is more than one layer?
+- is the shader system documented, e.g. how to swap in one vs the other shader? is it fairly modaular?
+- ok, moving on. in the axial, sagittal, and coronal views in ui2 the 2d slices are placed approximately in the center of the panel, but I'm not sure how exact. moreover, it appears that the brain is not taking up the maximum space, while preserving aspect ratio. it's as if there is extra padding. check both centering -- how is […]
+- tight bounds is not necessary for now, just the initial fix of the extra 20%
+- hmm, still does not appear that brains are using up full real estate. Especially below the brain (excess space a bottom of panel).
+- I don't think that's it. [Image #1] the reason is because there is asymmetric space more so below than above brain.
+- axial, sagitta, and coronal brain are all shifted left with respect to center of panel. this means the slices themselves are not being positioned in the panel correctly. even if geometric center is comouted correctly. these are separate matters.
+- fixed it!
+- now, in layerpanel, we hae a colormap chooser. but only a few of them actually "work". please investigte
+- hmm, still not seeing colormap change from chang eui ui selector; please double check/.
+- terrific. next, when we load an image, we need some progress indicator. We want a consistent indicator mechanism (e.g. for future long-running tassks that may vary); we should choose a style, component, approach. please make a proposal.
+- we have compile errors
+- we til lsee this: Something went wrong Maximum update depth exceeded. This can happen when a component repeatedly calls setState inside componentWillUpdate or componentDidUpdate. React limits the number of nested updates to prevent infinite loops.
+- the progress par is not styled quite right. it appears white on the blue tinted status bar; hard to read the message.
+- ok, the "Test progress task" message has a white background and the font is not very visible above it. A mortypical progress bar might show prgress via aset of green-tinted vertical bars that add bars with progress and font lettering visible above.
+- the styling is such that the progress bar stll has a bright background.
+- let's make sure that Threshold is set be default at the midpoit of the data range, e.g. if min/max is 0/100, then both low and high treshold should be 50.
+- here's some feedback o nthe progress panel: Below is a structured critique drawn from interaction‑design, accessibility, and engineering perspectives. I refer to specific screen‑elements as they appear in your screenshot; please adjust terminology if the underlying component names differ. ⸻ 1. Visual & Interaction Design Element What Works Opportunities for Improvement Panel title (“Progress Tasks”) Clear, prominent, establishes context. Consider […]
+- CONTINUE WITH PLAN
