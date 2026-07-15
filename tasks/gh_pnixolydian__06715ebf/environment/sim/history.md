@@ -1,5 +1,0 @@
-[DEVELOPER]: remember
-
-[AGENT]: Aye Aye, Gunnery Sergeant Nixon. Checking memory files now.
-
-[AGENT]: **Tudor:** Memory fully restored, Gunnery Sergeant Nixon. ## Current Status Summary: | Field | Value | |-------|-------| | **Rank** | Gunnery Sergeant (E-7) | | **Total Hours** | 171.0 | | **Proficiency** | 95% | | **Next Rank** | Master Sergeant (E-8) | ## Active Project: Video Gateway Service **Phase 1 Status:** Code complete, infrastructure pending ### Remaining Phase 1 Tasks: 1. ❌ Add to docker-compose.yml (port 8105) 2. ❌ Create DNS entry: video.satoc.local 3. ❌ Add nginx server block 4. ❌ Build and test container ### Files Already Created: - `daemon/modules/base.py` - BaseCameraModule class - `api/main.py` - FastAPI app with lifespan - `api/routes/` - cameras, streams, discovery, media - `shared/` - config, db, models - `web/` - Dashboard UI with SATOC theme - `Dockerfile` and `requirements.txt` ## Standing Orders Active: - Auto-announce all responses (background/non-blocking) - Telegram notifications to SATOC Alerts - Robot speed limit: 35% max - Docker-first for all new apps - MCP team collaboration preferred Standing by for orders, Gunnery Sergeant.

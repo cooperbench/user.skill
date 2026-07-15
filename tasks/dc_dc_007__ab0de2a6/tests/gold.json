@@ -1,1 +1,0 @@
-{"point_id": "99256385-5d65-4ac9-8bd1-62d0bc463867#17", "developer": "dc:dc_007", "condition": "noprofile", "real": "continue please", "prev_agent": "I'll extract the CSS (lines 143-933) and JS (lines 980-1324) into their own functions to get `build_html()` under the 150 LOC threshold.", "gold_move": null}

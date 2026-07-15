@@ -1,0 +1,1 @@
+{"point_id": "cc9e8aa5-769d-41ea-98ce-ff5a905f2f04#295", "developer": "gh:melagiri", "condition": "noprofile", "real": "! gh pr merge 255 --squash --delete-branch", "prev_agent": "Still open. The merge might be stuck. Try merging via CLI instead:\n\n```\n! gh pr merge 255 --squash --delete-branch\n```", "gold_move": null}

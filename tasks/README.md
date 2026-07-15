@@ -1,6 +1,9 @@
 # SWESimBench v2 Harbor tasks
 
-2,723 held-out prediction points as Harbor packages.
+1,525 held-out prediction points across 68 developers (Opus 4.6 era, ≥2026-02-05).
+
+Sources: Entire (+ SWE-chat), GitHub `.claude`/`.codex` crawl, DataClaw.
+SpecStory excluded. Policy `swesimbench-v2-cohort-policy-2026-07-13.15`.
 
 Each task directory:
 

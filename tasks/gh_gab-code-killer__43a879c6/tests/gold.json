@@ -1,1 +1,0 @@
-{"point_id": "65ae0722-046c-4f29-b199-4e4f8e871a5f#19", "developer": "gh:gab-code-killer", "condition": "noprofile", "real": "sa fonctionne toujours pas et je suis sur le localhost", "prev_agent": "The error is `auth/unauthorized-domain` - the domain where the user is testing is not authorized in Firebase. They're probably testing locally", "gold_move": null}
