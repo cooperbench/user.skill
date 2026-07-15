@@ -12,14 +12,15 @@ Each task directory:
   task.toml
   instruction.md
   environment/Dockerfile
-  environment/sim/history.md
+  environment/history.md
   tests/{gold.json,test.sh,verify.py}
 ```
 
 Also: `_manifest.json`, `_cohort_meta.json`.
 
 `history.md` turns use markdown blockquote role labels (`> DEVELOPER`, `> AGENT`, …)
-with newline-preserving bodies (tables/fences stay intact).
+with newline-preserving bodies (tables/fences stay intact). The Dockerfile copies
+`history.md` into `/sim/history.md` at runtime.
 
 Developer profiles are **not** baked into tasks. Inject them as Harbor skills at job time:
 
