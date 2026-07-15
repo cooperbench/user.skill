@@ -1724,7 +1724,7 @@ Both agents are actively reviewing. Waiting for their reports to come in before 
 
 </details>
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>acc8cf36acdc10892</task-id>
@@ -1771,7 +1771,7 @@ let _ = self
 
 Critic agent is still working through the codebase. Will proceed as soon as it reports back.
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>a036c791877b0d33e</task-id>
@@ -1817,7 +1817,7 @@ Phase 2 agents launched:
 
 Waiting for both to complete...
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>aa348dd4d26461e50</task-id>
@@ -1843,7 +1843,7 @@ I have merged the two reports into a single prioritized list. Where both reviewe
 
 Supervisor has delivered the ruling. Still waiting for the Validator to finish cross-checking findings against the actual code — this will confirm or reject the 3 must-fix items before we proceed.
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>a1056f21b1f24734d</task-id>
@@ -1929,7 +1929,7 @@ Council Phase 1 launched:
 
 Waiting for Phase 1 to complete...
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>a0ab3385e24a58439</task-id>
@@ -1962,7 +1962,7 @@ Waiting for Phase 1 to complete...
 
 Critical Reviewer is done (9 findings, verdict CONDITIONAL). Waiting for Silent Failure Hunter to finish before launching Phase 2.
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>a5be0d8f7c291a6d1</task-id>
@@ -2011,7 +2011,7 @@ Phase 2 launched:
 
 Waiting for both to report back...
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>acdfc369cf57ebe53</task-id>
@@ -2037,7 +2037,7 @@ I have merged the two reports, collapsed overlaps, and ordered by priority.
 
 Supervisor has ruled. Waiting for the Validator to finish confirming findings against actual code before presenting the final report.
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>a8d53686eb81a73d8</task-id>

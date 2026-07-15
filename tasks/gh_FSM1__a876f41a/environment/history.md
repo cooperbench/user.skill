@@ -4,7 +4,8 @@
 
 > TOOL
 
-<bash-stdout></bash-stdout><bash-stderr>fatal: 'feat/fuse-and-winfsp-rust-integration-and-grant-root-awareness' is already used by worktree at '/Users/myankelev/Code/random/cipher-box-phase69' </bash-stderr>
+<bash-stdout></bash-stdout><bash-stderr>fatal: 'feat/fuse-and-winfsp-rust-integration-and-grant-root-awareness' is already used by worktree at '/Users/myankelev/Code/random/cipher-box-phase69'
+</bash-stderr>
 
 > AGENT
 

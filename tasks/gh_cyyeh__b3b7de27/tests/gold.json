@@ -1,1 +1,0 @@
-{"point_id": "746f1091-860f-4e3e-902a-7483b4100547#47", "developer": "gh:cyyeh", "condition": "noprofile", "real": "commit all and push", "prev_agent": "Added a \"gVisor sandbox hardening\" section under Container Isolation with the daemon.json config snippet and added gVisor to the prerequisites list.", "gold_move": null}

@@ -1,0 +1,1 @@
+{"point_id": "95047199-69f0-49a5-9432-18cba428ecec#175", "developer": "gh:alishakawaguchi", "condition": "noprofile", "real": "update to 0.3.0 because some else is going to merge a 0.2.0", "prev_agent": "Committed as `6210dec`. All 6 version fields now at `0.2.0`, and the stale `contextFileName` is gone.", "gold_move": null}

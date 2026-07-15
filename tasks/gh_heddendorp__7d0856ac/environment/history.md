@@ -1,6 +1,34 @@
 > DEVELOPER
 
-<recommended_plugins> Here is a list of plugins that are available but not installed. If the user's query would benefit from one of these plugins, use the `request_plugin_install` tool to suggest that they install it. Pass the parenthesized ID as `plugin_id`. For example, suggest the Google Drive plugin if the query could possibly be better answered with access to Google Drive. - Atlassian Rovo (atlassian-rovo@openai-curated-remote) - Slack (slack@openai-curated-remote) </recommended_plugins> # AGENTS.md instructions for /Users/hedde/.codex/worktrees/06f8/evorto <INSTRUCTIONS> # Repository Guidelines ## Context Discipline - Keep repository knowledge in small, relevant files. - Use this file as the map, not the full manual. - Read the nearest applicable guidance before editing: - root product/system context - module-level `AGENTS.md` - local README files - Update context files when reality changes, assumptions are invalidated, or new constraints are discovered. - Prefer small, accurate updates over large stale manuals. ## Root Context Files - `PRODUCT.md` - product goals, personas, core workflows, domain concepts, and product invariants. - `ARCHITECTURE.md` - high-level system shape, architectural boundaries, and where to look first for common changes. - `QUALITY.md` - behavior-focused verification guidance, Browser/Playwright expectations, and done criteria. Keep these files concise. Put implementation-specific guidance in the nearest module-level `AGENTS.md` or README. […]
+<recommended_plugins>
+Here is a list of plugins that are available but not installed. If the user's query would benefit from one of these plugins, use the `request_plugin_install` tool to suggest that they install it. Pass the parenthesized ID as `plugin_id`. For example, suggest the Google Drive plugin if the query could possibly be better answered with access to Google Drive.
+
+- Atlassian Rovo (atlassian-rovo@openai-curated-remote)
+- Slack (slack@openai-curated-remote)
+</recommended_plugins>
+# AGENTS.md instructions for /Users/hedde/.codex/worktrees/06f8/evorto
+
+<INSTRUCTIONS>
+# Repository Guidelines
+
+## Context Discipline
+
+- Keep repository knowledge in small, relevant files.
+- Use this file as the map, not the full manual.
+- Read the nearest applicable guidance before editing:
+  - root product/system context
+  - module-level `AGENTS.md`
+  - local README files
+- Update context files when reality changes, assumptions are invalidated, or new constraints are discovered.
+- Prefer small, accurate updates over large stale manuals.
+
+## Root Context Files
+
+- `PRODUCT.md` - product goals, personas, core workflows, domain concepts, and product invariants.
+- `ARCHITECTURE.md` - high-level system shape, architectural boundaries, and where to look first for common changes.
+- `QUALITY.md` - behavior-focused verification guidance, Browser/Playwright expectations, and done criteria.
+
+Keep these files concise. Put implementation-specific guidance in the nearest module-level `AGENTS.md` or README. […]
 
 > DEVELOPER
 
@@ -16,4 +44,18 @@ The worktree is clean and already detached, so there is no local work to preserv
 
 > AGENT
 
-Updated to the latest remote `main`. - HEAD: `a6c884815c8f403acf5a168e7d6441cadbe210e4` - Commit: `docs: consolidate application compliance guidance (#85)` - Worktree is clean and detached at `origin/main` - Verified against GitHub’s `main` ref <oai-mem-citation> <citation_entries> MEMORY.md:34-34|note=[proven detached origin main sync command] </citation_entries> <rollout_ids> 019f481f-f81a-7482-b226-8309812698b2 </rollout_ids> </oai-mem-citation>
+Updated to the latest remote `main`.
+
+- HEAD: `a6c884815c8f403acf5a168e7d6441cadbe210e4`
+- Commit: `docs: consolidate application compliance guidance (#85)`
+- Worktree is clean and detached at `origin/main`
+- Verified against GitHub’s `main` ref
+
+<oai-mem-citation>
+<citation_entries>
+MEMORY.md:34-34|note=[proven detached origin main sync command]
+</citation_entries>
+<rollout_ids>
+019f481f-f81a-7482-b226-8309812698b2
+</rollout_ids>
+</oai-mem-citation>

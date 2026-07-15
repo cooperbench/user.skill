@@ -1,8 +1,8 @@
 {
-  "policy_version": "swesimbench-v2-cohort-policy-2026-07-13.15",
-  "policy_fingerprint": "708b346cf6103d6386f87442a5311fcc44f2e3d18fe224d56b219e84869d42f0",
-  "cohort_fingerprint": "70b37af99ceff4a565eb747fc273b667e1132c9e3fef1f4414f5a2bb255b6bc8",
+  "policy_version": "swesimbench-v2-cohort-policy-2026-07-13.18",
+  "policy_fingerprint": "aa35cf434db66068fc8d9bf7617f92b84e1f601383816949fc6d0a395330642f",
+  "cohort_fingerprint": "6ac97b6ab5904cb68e290ccb699c13aa194fce26538ae8e3bf58684fda3111c3",
   "condition": "noprofile",
-  "tasks": 1525,
+  "tasks": 1520,
   "developers": 68
 }

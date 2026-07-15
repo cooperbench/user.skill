@@ -1,6 +1,8 @@
 > DEVELOPER
 
-the contributor hasn't come back on the PR https://github.com/melagiri/code-insights/pull/286 I think we can take over from there and fix it ourself and run a review.. do it
+the contributor hasn't come back on the PR https://github.com/melagiri/code-insights/pull/286 
+
+I think we can take over from there and fix it ourself and run a review.. do it
 
 > AGENT
 

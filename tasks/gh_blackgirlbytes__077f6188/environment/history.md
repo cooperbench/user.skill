@@ -1,7 +1,47 @@
 > DEVELOPER
 
-while we are setting up a db in the codebase for a leader board..i think we need to figure out people entering their names on the leaderboard..how are point scored overall..like each has different levels..will we also account for speed. if someone fails at a level..they should be able to enter their name into a leaderboard..and then if they get to the end successfully of the third level which is the whole game..then they put their name into the leaderboard too..does that make sense..is that right?
+while we are setting up a db in the codebase for a leader board..i think we need to figure out people entering their names on the leaderboard..how are point scored overall..like each has different levels..will we also account for speed.
+
+if someone fails at a level..they should be able to enter their name into a leaderboard..and then if they get to the end successfully of the third level which is the whole game..then they put their name into the leaderboard too..does that make sense..is that right?
 
 > AGENT
 
-Yes, that makes sense, and I think the clean model is: Players submit a leaderboard entry when a **run ends**, whether the run ends by failing or by beating the whole game. Each entry should record: - `name` - `score` - `levelReached` - `completedGame` - `timeElapsed` - maybe `deathLevel` / `failedAt` - timestamp For ranking, I’d separate the meaning a little: 1. **Completed Runs** - Players who beat all 3 levels. - Ranked by total score. - Speed can be a tiebreaker or bonus. 2. **Best Attempts** - Everyone, including players who failed. - A player who reached Level 3 should rank above someone who only reached Level 1, even if the Level 1 player was very fast. - Within the same level, sort by score, then speed. For scoring, I’d avoid making speed the whole thing. Better: ```text totalScore = level completion points + collected/earned points + remaining lives/health bonus + capped speed bonus ``` Speed should probably matter, but as a **bonus or tiebreaker**, not the main determinant. Otherwise players may rush and skip the actual game experience. So yes: if someone fails on Level 2, they can submit “I reached Level 2 with X points.” If they […]
+Yes, that makes sense, and I think the clean model is:
+
+Players submit a leaderboard entry when a **run ends**, whether the run ends by failing or by beating the whole game.
+
+Each entry should record:
+
+- `name`
+- `score`
+- `levelReached`
+- `completedGame`
+- `timeElapsed`
+- maybe `deathLevel` / `failedAt`
+- timestamp
+
+For ranking, I’d separate the meaning a little:
+
+1. **Completed Runs**
+   - Players who beat all 3 levels.
+   - Ranked by total score.
+   - Speed can be a tiebreaker or bonus.
+
+2. **Best Attempts**
+   - Everyone, including players who failed.
+   - A player who reached Level 3 should rank above someone who only reached Level 1, even if the Level 1 player was very fast.
+   - Within the same level, sort by score, then speed.
+
+For scoring, I’d avoid making speed the whole thing. Better:
+
+```text
+totalScore =
+  level completion points
+  + collected/earned points
+  + remaining lives/health bonus
+  + capped speed bonus
+```
+
+Speed should probably matter, but as a **bonus or tiebreaker**, not the main determinant. Otherwise players may rush and skip the actual game experience.
+
+So yes: if someone fails on Level 2, they can submit “I reached Level 2 with X points.” If they […]

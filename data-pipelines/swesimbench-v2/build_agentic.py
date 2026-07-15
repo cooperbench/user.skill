@@ -203,8 +203,8 @@ def emit_point(dataset_dir, dev, cond, p, profile):
     tname = point_task_name(dev, p["point_id"])
     d = os.path.join(dataset_dir, tname)
     shutil.rmtree(d, ignore_errors=True)
-    os.makedirs(os.path.join(d, "environment"))
-    os.makedirs(os.path.join(d, "tests"))
+    os.makedirs(os.path.join(d, "environment"), exist_ok=True)
+    os.makedirs(os.path.join(d, "tests"), exist_ok=True)
     # environment: history file (flattened; Dockerfile copies into /sim/)
     with open(os.path.join(d, "environment", "history.md"), "w") as f:
         f.write(p["context"])

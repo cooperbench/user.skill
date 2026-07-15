@@ -446,7 +446,7 @@ Task 1 complete. The linter flagged `resolveHomeDotfileSymlinks` as unused — l
 
 Task 1 implemented and committed (`022173b`). Both reviewers dispatched in background — spec compliance and code quality. I'll report results when they complete and then move to Task 2.
 
-> TOOL
+> METADATA
 
 <task-notification> <task-id>a9f7c8f88dfcd2f6e</task-id> <tool-use-id>REDACTED</tool-use-id> <output-file>/private/tmp/claude-501/-Users-subramk-source-github-com-jskswamy-aide/5416f57f-9e64-4492-86f9-ec23b7691a66/tasks/a9f7c8f88dfcd2f6e.output</output-file> <status>completed</status> <summary>Agent "Spec review Task 1" completed</summary> <result>Now I have a clear picture. The diff shows the implementation **reverted** the narrow filesystem guard back to a broad one. Let me verify my understanding by checking exactly what the spec requires versus what was implemented. ## Spec Compliance: FAIL ### Issues Found: 1. **Missing requirement: Narrow filesystem paths replaced with broad paths** - Spec says: Filesystem guard should only emit allow rules for: `~/.gitconfig` (literal), `~/.config/git/` (subpath), `~/.cache/` (read-write), `~/Library/Caches/` (read-write), `~/.local/share/aide/` (read-write), `~/.config/aide/` (read-only) - Evidence: The implementation at `/Users/subramk/source/github.com/jskswamy/aide/.claude/worktrees/agent-a9f7c8f8/pkg/seatbelt/guards/guard_filesystem.go` lines 57-80 emits broad subpath allows for `~/.config`, `~/.cache`, `~/.local`, `~/.ssh`, `~/.cargo`, `~/.rustup`, `~/go`, `~/.pyenv`, `~/.rbenv`, `~/.sdkman`, `~/.gradle`, `~/.m2`, `~/.gnupg`, `~/Library/Keychains`, `~/Library/Caches`, `~/Library/Preferences`. This is the opposite of narrowing -- it is the original broad implementation. 2. **Spec requirement violated: Must NOT emit allows for broad paths** - Spec says: Must NOT emit allows for `~/.config/*` (broad), `~/.ssh/*`, `~/.cargo/*`, `~/.rustup/*`, `~/go/*`, `~/.pyenv/*`, `~/.gnupg/*`, `~/.gradle/*`, `~/.m2/*` - Evidence: Every single one of these forbidden broad paths is present in the implementation. Line 62: `~/.config` (broad subpath). Line 66: `~/.ssh`. Line 67: `~/.cargo`. Line 68: `~/.rustup`. Line 69: `~/go`. Line 70: `~/.pyenv`. Line 73: `~/.gradle`. Line 74: `~/.m2`. […]
 
@@ -458,7 +458,7 @@ The spec reviewer ran in an isolated worktree and saw stale code (before the imp
 
 Not logged in · Please run /login
 
-> TOOL
+> METADATA
 
 <task-notification> <task-id>aaaa4fb4521df5e95</task-id> <tool-use-id>REDACTED</tool-use-id> <output-file>/private/tmp/claude-501/-Users-subramk-source-github-com-jskswamy-aide/5416f57f-9e64-4492-86f9-ec23b7691a66/tasks/aaaa4fb4521df5e95.output</output-file> <status>completed</status> <summary>Agent "Quality review Task 1" completed</summary> <result>Not logged in · Please run /login</result> <usage><total_tokens>48</total_tokens><tool_uses>12</tool_uses><duration_ms>58018</duration_ms></usage> </task-notification> Full transcript available at: /private/tmp/claude-501/-Users-subramk-source-github-com-jskswamy-aide/5416f57f-9e64-4492-86f9-ec23b7691a66/tasks/aaaa4fb4521df5e95.output
 

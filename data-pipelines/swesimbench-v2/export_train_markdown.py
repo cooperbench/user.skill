@@ -27,6 +27,7 @@ import argparse
 import json
 import os
 import re
+import shutil
 import sys
 from collections import defaultdict
 
@@ -93,13 +94,9 @@ def main():
                 "start_time": x.get("ts") or "",
             }
 
-    # wipe + recreate
+    # wipe + recreate (tolerate races if another exporter is mid-wipe)
     if os.path.isdir(out):
-        for root, dirs, files in os.walk(out, topdown=False):
-            for f in files:
-                os.remove(os.path.join(root, f))
-            for d in dirs:
-                os.rmdir(os.path.join(root, d))
+        shutil.rmtree(out, ignore_errors=True)
     os.makedirs(out, exist_ok=True)
 
     written = 0

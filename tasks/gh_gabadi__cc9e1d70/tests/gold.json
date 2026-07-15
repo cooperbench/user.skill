@@ -1,0 +1,1 @@
+{"point_id": "2cd14d14-ebf8-4f85-bb3e-3d700ac03c94#143", "developer": "gh:gabadi", "condition": "noprofile", "real": "What about entire checkpoint branch, cant at least keep it private?", "prev_agent": "Already public. Ready to deploy \u2014 cut the release whenever you're ready:\n\n```sh\nuv run bump-my-version bump patch\ngit push && git push --tags\n```", "gold_move": null}

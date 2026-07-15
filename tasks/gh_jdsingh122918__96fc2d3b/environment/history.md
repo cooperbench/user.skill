@@ -489,7 +489,7 @@ The implementation is **faithful to the plan** with a few improvements:
 
 **One housekeeping item**: The `autoresearch/mod.rs` changes should be committed separately — they're unrelated to council integration.
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>adc6ad759dc1b8209</task-id>
@@ -529,7 +529,7 @@ At `/Users/jdsingh/Projects/AI/forge/src/cmd/run.rs`, lines 399-494:
 
 1. The timing setup […]
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>aa2043d3705f83eef</task-id>
@@ -568,7 +568,7 @@ The implementation is well-executed and closely follows the plan. All 1554 libra
 | C1: `resolve_enabled()` with env var | Done | Minor beneficial deviation in implementation |
 | C2: Wire […]
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>a6052520d0af782af</task-id>
@@ -640,7 +640,7 @@ Three agents launched in parallel:
 
 Waiting for all three to complete...
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>a18f6654d9887b82e</task-id>
@@ -657,7 +657,7 @@ Full transcript available at: /private/tmp/claude-501/-Users-jdsingh-Projects-AI
 
 Agent 1 (warning hint) done. Waiting for the other two...
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>a55f02729125c1c81</task-id>
@@ -677,7 +677,7 @@ Full transcript available at: /private/tmp/claude-501/-Users-jdsingh-Projects-AI
 
 Agent 2 (import cleanup) done. Waiting for agent 3...
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>a566a1febfde0b748</task-id>

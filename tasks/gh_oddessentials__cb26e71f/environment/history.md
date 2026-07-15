@@ -854,7 +854,7 @@ The function does `from .persistence.database import DatabaseManager` at runtime
 
 **Fix**: The function's `db: object` parameter + `isinstance` guard is fragile. Better to accept `DatabaseManager` directly and let callers handle the check, […]
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>a6f9ee1cac3cfdda0</task-id>
@@ -882,7 +882,7 @@ Enable the dashboard to display review time metrics (P50 and P90 percentiles) by
 - Add `reviewed_at TEXT` column to `reviewers` table (ISO 8601 timestamp)
 - Add `review_time_minutes REAL` […]
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>a9cec8357ccdc293a</task-id>
@@ -917,7 +917,7 @@ I've completed a detailed analysis of all 35 commits spanning 50,000+ lines of c
 2. **✓ SAFE:** Schema initialization now defaults to v2 (not v1), preventing legacyDB issues
 3. **⚠️ WATCH:** Migration logic in `database.py._apply_migrations()` assumes MIGRATIONS dict is populated before `get_schema_version()` is called. If MIGRATIONS is empty, `pending` will be empty and no error is raised. This is safe (no-op) […]
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>aa471336de253bf5f</task-id>
@@ -964,7 +964,7 @@ earliest_reviewed_at: str | None = result["earliest_reviewed_at"]
 
 **Issue:** The type annotation `str | None` is correct, but `creation_date` can legitimately be NULL in the database (if a PR was created with a corrupted date). The code then passes this to `calculate_review_time_minutes()` which will return None, but there's no explicit handling […]
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>ac8881bf2fc69ed00</task-id>
@@ -1001,7 +1001,7 @@ Runs when relevant files are staged. Fast, selective gates:
 - npm command guard (no `npm ci`/`npm install`)
 - Pagination token […]
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>bu0nj2zsz</task-id>
@@ -1194,7 +1194,7 @@ All clean. Here's the summary of what was done:
 | `test_comments_extraction.py` | Stamp `comments_extracted_at` in "full" coverage fixture |
 | […]
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>b93mue57w</task-id>

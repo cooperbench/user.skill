@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Prepare SWESimBench v2 inputs from the canonical clean cohort artifacts."""
-import json, re, os, sys, time, urllib.request
+import json, re, os, sys, time, urllib.request, gc
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 sys.path.insert(0, "/data/claude-crawl")
@@ -12,6 +12,7 @@ from cohort_policy import (
 )
 
 OUT = "/data/swesimbench-v2-harbor"
+CLEAN_SESSIONS = f"{OUT}/clean_sessions.jsonl"
 CTX_WORDS, MAX_PTS, PROFILE_TURNS = 200, 30, 40   # context = ALL prior turns in the session
 KEY = next(l.split("=",1)[1].strip() for l in open("/data/harbor-adapters-experiments/.env") if l.startswith("GEMINI_API_KEY="))
 MODEL = "gemini-3.5-flash"
@@ -60,12 +61,42 @@ def format_history_turn(role, text):
 def is_action(t):
     return is_predictable_human_turn(t)
 
+
+def build_sid_offsets(path):
+    """Map session_id -> byte offset without json-parsing full tool payloads."""
+    offsets = {}
+    sid_re = re.compile(rb'"session_id"\s*:\s*"((?:\\.|[^"\\])*)"')
+    with open(path, "rb") as handle:
+        while True:
+            offset = handle.tell()
+            line = handle.readline()
+            if not line:
+                break
+            if line.isspace():
+                continue
+            match = sid_re.search(line)
+            if not match:
+                continue
+            try:
+                sid = json.loads(b'"' + match.group(1) + b'"')
+            except Exception:
+                continue
+            offsets[sid] = offset
+    return offsets
+
+
+def load_turns_at(path, offset):
+    with open(path, "rb") as handle:
+        handle.seek(offset)
+        session = json.loads(handle.readline())
+    return session.get("turns") or []
+
+
 # Canonical clean index: metadata remains in the trace with system/tool roles,
 # while secrets are already scrubbed and targets are genuine user turns only.
-IDX={}
-for line in open("/data/swesimbench-v2-harbor/clean_sessions.jsonl"):
-    s=json.loads(line)
-    IDX[s["session_id"]]=s["turns"]
+print("indexing clean_sessions offsets...", flush=True)
+SID_OFFSETS = build_sid_offsets(CLEAN_SESSIONS)
+print(f"indexed {len(SID_OFFSETS)} clean sessions", flush=True)
 clean_manifest=json.load(open("/data/swesimbench-v2-harbor/clean_manifest.json"))
 assert clean_manifest["policy_version"]==POLICY_VERSION
 assert clean_manifest["policy_fingerprint"]==policy_fingerprint()
@@ -96,28 +127,43 @@ def classify(text,prev):
     m=re.search(r'"act"\s*:\s*"(\w+)"',out); a=m.group(1) if m else None
     return a if a in CATS else None
 
-# build per-user profile + points
+# build per-user profile + points (load one session at a time — full-fidelity
+# clean_sessions.jsonl is multi-GB and cannot all reside in MemoryHigh=8G).
 records=[]
-for u in man:
-    train=sorted([x for x in u["train_sessions"] if x["sid"] in IDX], key=lambda x:x["ts"])
-    tp=[tw(t["text"],60) for x in train for t in IDX[x["sid"]] if is_action(t)]
+for user_i, u in enumerate(man, 1):
+    print(f"prepare user {user_i}/{len(man)} {u['user']}", flush=True)
+    train=sorted(
+        [x for x in u["train_sessions"] if x["sid"] in SID_OFFSETS],
+        key=lambda x: x["ts"],
+    )
+    tp=[]
+    for x in train:
+        turns = load_turns_at(CLEAN_SESSIONS, SID_OFFSETS[x["sid"]])
+        tp.extend(tw(t["text"], 60) for t in turns if is_action(t))
+        del turns
     profile="\n".join(f"- {p}" for p in tp[-PROFILE_TURNS:])
-    held=sorted([x for x in u["held_sessions"] if x["sid"] in IDX], key=lambda x:x["ts"])
+    held=sorted(
+        [x for x in u["held_sessions"] if x["sid"] in SID_OFFSETS],
+        key=lambda x: x["ts"],
+    )
     pts=[]
     for x in held:
-        turns=IDX[x["sid"]]
+        turns = load_turns_at(CLEAN_SESSIONS, SID_OFFSETS[x["sid"]])
         idxs=[i for i,t in enumerate(turns) if is_action(t) and any(p.get("role")=="assistant" for p in turns[:i])]
         step=max(1,len(idxs)//3) if len(idxs)>3 else 1
         for i in idxs[::step]:
-            if len([p for p in pts])>=MAX_PTS: break
+            if len(pts)>=MAX_PTS: break
             ctx=turns[:i]   # ALL previous turns in the session up to the tested turn
             prev=next((t["text"] for t in reversed(ctx) if t.get("role")=="assistant"),"")
             block="\n\n".join(format_history_turn(t.get("role"), t.get("text")) for t in ctx)
             pts.append({"point_id":f"{x['sid']}#{i}","repo":x.get("repo") or "?","context":block,
                         "prev_agent":scrub_text(prev),"real":scrub_text(turns[i]["text"])})
+        del turns
         if len(pts)>=MAX_PTS: break
     records.append({"user":u["user"],"train_turns":u["train_turns"],"held_turns":u["held_turns"],
                     "profile":profile,"points":pts})
+    if user_i % 5 == 0:
+        gc.collect()
 
 # classify gold moves in parallel (only if RUN_GOLD=1; else leave null for a later batched pass)
 if os.environ.get("RUN_GOLD")=="1":

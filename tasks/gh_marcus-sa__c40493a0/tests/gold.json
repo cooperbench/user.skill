@@ -1,1 +1,0 @@
-{"point_id": "3c4b420e-7b18-4f7e-910f-a27e0160d6ac#17", "developer": "gh:marcus-sa", "condition": "noprofile", "real": "Commit and push all changes", "prev_agent": "Done. Increased the `waitForIntentStatus` poll timeout from 30s to 60s, and bumped the test's overall timeout from 60s to 120s to accommodate it.", "gold_move": null}

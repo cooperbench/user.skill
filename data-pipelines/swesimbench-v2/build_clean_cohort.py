@@ -5,7 +5,9 @@ from __future__ import annotations
 import glob
 import hashlib
 import json
+import os
 import pickle
+import gc
 import sys
 from collections import defaultdict
 from pathlib import Path
@@ -25,11 +27,18 @@ from cohort_policy import (  # noqa: E402
     ordered_trace_sequence,
     policy_fingerprint,
     reconstructed_session_evidence,
-    specstory_session_id,
-    specstory_timestamp,
     substantial_human_count,
     substantial_user_events,
     transcript_hash,
+)
+from cohort_index import (  # noqa: E402
+    build_or_load_sid_index,
+    candidate_from_session,
+    drop_turns,
+    ensure_turns,
+    load_session_at,
+    normalize_specstory_session,
+    source_for_path,
 )
 
 ROOT = Path("/data/swesimbench-v2-harbor")
@@ -38,6 +47,7 @@ CLEAN_MANIFEST = ROOT / "clean_manifest.json"
 CLEAN_SESSIONS = ROOT / "clean_sessions.jsonl"
 BUILD_REPORT = ROOT / "clean_build_report.json"
 CANDIDATE_CACHE = ROOT / ".clean_candidates.cache.pkl"
+BUILD_LOCK = ROOT / ".clean_build.lock"
 MIN_TRAIN = 400
 MIN_HELD = 100
 # Prefer native full-trace sources over SpecStory markdown exports when aliases collide.
@@ -48,38 +58,60 @@ SOURCE_PRIORITY = {
     "swechat": 2,
     "specstory": 1,
 }
+# Skip writing a multi-GB pickle of full turn text; re-index is cheaper than OOM.
+ENABLE_CANDIDATE_CACHE = False
 
 
-def candidate(session: dict, source: str, owner: str | None = None) -> dict:
-    sid = session.get("session_id")
-    turns = session.get("turns") or []
-    return {
-        "sid": sid,
-        "canonical": canonical_session_id(sid),
-        "source": source,
-        "owner": owner,
-        "repo": session.get("repo") or "?",
-        "ts": str(session.get("created_at") or session.get("start_time") or ""),
-        "turns": turns,
-        "trace_hash": transcript_hash(turns),
-        "sequence": ordered_trace_sequence(turns),
-        "human_turns": human_turn_count(turns),
-        "substantial_human_turns": substantial_human_count(turns),
-        "content_chars": sum(len(turn.get("text") or "") for turn in turns),
-    }
+def acquire_build_lock():
+    """Exclusive lock so parallel agents cannot corrupt the sid index / outputs."""
+    import fcntl
+
+    handle = BUILD_LOCK.open("w")
+    try:
+        fcntl.flock(handle.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except BlockingIOError as exc:
+        raise SystemExit(
+            f"another build_clean_cohort.py holds {BUILD_LOCK}; refusing to run"
+        ) from exc
+    handle.write(f"pid={os.getpid()}\n")
+    handle.flush()
+    return handle
+
+
+def ensure_sequence(record: dict) -> list:
+    sequence = record.get("sequence")
+    if sequence is None:
+        sequence = ordered_trace_sequence(ensure_turns(record))
+        record["sequence"] = sequence
+    return sequence
 
 
 def apply_command_expansion_policy(records: list[dict]) -> tuple[set[str], int]:
-    """Reclassify payloads proven by a slash-command marker in any source copy."""
-    payloads = {
-        payload
-        for record in records
-        for payload in command_expansion_payloads(record["turns"])
-    }
+    """Reclassify payloads proven by a slash-command marker in any source copy.
+
+    Streams one record at a time so full-turn text is not held for every
+    candidate simultaneously (corpora with tool turns are multi-GB).
+    Mutated records keep turns in memory; unchanged disk-backed ones drop
+    back to turns_ref. In-memory-only records (no turns_ref) are left loaded.
+    """
+
+    def release(record: dict) -> None:
+        if record.get("turns_ref"):
+            drop_turns(record)
+
+    payloads: set[str] = set()
+    total = len(records)
+    for index, record in enumerate(records, start=1):
+        payloads.update(command_expansion_payloads(ensure_turns(record)))
+        release(record)
+        if index % 2000 == 0 or index == total:
+            gc.collect()
+            print(f"  command-expansion scan {index}/{total}", flush=True)
     reclassified = 0
-    for record in records:
+    for index, record in enumerate(records, start=1):
+        turns = ensure_turns(record)
         changed = False
-        for turn in record["turns"]:
+        for turn in turns:
             if (
                 turn.get("role") == "user"
                 and normalize_text(turn.get("text") or "") in payloads
@@ -88,19 +120,30 @@ def apply_command_expansion_policy(records: list[dict]) -> tuple[set[str], int]:
                 reclassified += 1
                 changed = True
         if changed:
-            record["trace_hash"] = transcript_hash(record["turns"])
-            record["sequence"] = ordered_trace_sequence(record["turns"])
-            record["human_turns"] = human_turn_count(record["turns"])
-            record["substantial_human_turns"] = substantial_human_count(
-                record["turns"]
+            record["trace_hash"] = transcript_hash(turns)
+            record["sequence"] = None
+            record["human_turns"] = human_turn_count(turns)
+            record["substantial_human_turns"] = substantial_human_count(turns)
+            # Keep mutated turns — disk reload would lose the reclassification.
+        else:
+            release(record)
+        if index % 2000 == 0 or index == total:
+            gc.collect()
+            print(
+                f"  command-expansion apply {index}/{total} "
+                f"(reclassified={reclassified})",
+                flush=True,
             )
     return payloads, reclassified
 
 
 def richness(record: dict) -> tuple:
+    n_turns = record.get("n_turns")
+    if n_turns is None:
+        n_turns = len(ensure_turns(record))
     return (
         record["human_turns"],
-        len(record["turns"]),
+        n_turns,
         record["content_chars"],
         SOURCE_PRIORITY.get(record["source"], 0),
         record["sid"],
@@ -108,8 +151,11 @@ def richness(record: dict) -> tuple:
 
 
 def reconstruction_richness(record: dict) -> tuple:
+    n_turns = record.get("n_turns")
+    if n_turns is None:
+        n_turns = len(ensure_turns(record))
     return (
-        len(record["turns"]),
+        n_turns,
         record["content_chars"],
         record["human_turns"],
         SOURCE_PRIORITY.get(record["source"], 0),
@@ -119,45 +165,57 @@ def reconstruction_richness(record: dict) -> tuple:
 
 def load_candidates(target_ids: set[str], target_canonical: set[str]) -> list[dict]:
     result = []
+    sid_index = build_or_load_sid_index()
 
     def wanted(sid: str | None) -> bool:
-        return bool(sid and (sid in target_ids or canonical_session_id(sid) in target_canonical))
+        return bool(
+            sid and (sid in target_ids or canonical_session_id(sid) in target_canonical)
+        )
 
-    print("indexing Entire candidates...", flush=True)
-    for filename in glob.glob("/data/entire-backfill/corpus/*.jsonl"):
-        with open(filename, errors="replace") as handle:
-            for line in handle:
-                try:
-                    session = json.loads(line)
-                except json.JSONDecodeError:
-                    continue
-                if wanted(session.get("session_id")):
-                    result.append(candidate(session, "entire", "gh:" + session.get("actor", "?")))
+    hit_refs: list[tuple[str, str, int]] = []
+    seen_ref: set[tuple[str, int]] = set()
+    for sid, locs in sid_index.items():
+        if not wanted(sid):
+            continue
+        for path, offset in locs:
+            key = (path, offset)
+            if key in seen_ref:
+                continue
+            seen_ref.add(key)
+            hit_refs.append((sid, path, offset))
 
-    print("indexing Crawl candidates...", flush=True)
-    for filename in glob.glob("/data/claude-crawl/corpus/*.jsonl"):
-        with open(filename, errors="replace") as handle:
-            for line in handle:
-                try:
-                    session = json.loads(line)
-                except json.JSONDecodeError:
-                    continue
-                if wanted(session.get("session_id")):
-                    result.append(candidate(session, "crawl", session.get("user")))
+    print(f"sid index hits: {len(hit_refs)} locations for target set", flush=True)
+    print("loading hit sessions (full parse)...", flush=True)
+    for i, (_sid, path, offset) in enumerate(hit_refs, 1):
+        try:
+            session = load_session_at(path, offset)
+        except Exception:
+            continue
+        source = source_for_path(path)
+        if source == "entire":
+            owner = "gh:" + (session.get("actor") or "?")
+        elif source == "crawl":
+            owner = session.get("user")
+        elif source == "dataclaw":
+            owner = "dc:" + (session.get("donor") or "?")
+        elif source == "specstory":
+            owner = "gh:" + (
+                session.get("owner")
+                or (session.get("repo") or "?").split("/")[0]
+            )
+            session = normalize_specstory_session(session)
+        else:
+            continue
+        if not wanted(session.get("session_id")):
+            continue
+        result.append(
+            candidate_from_session(
+                session, source, owner, turns_ref=(path, offset), keep_turns=False
+            )
+        )
+        if i % 2000 == 0:
+            print(f"  loaded {i}/{len(hit_refs)} hits", flush=True)
 
-    print("indexing DataClaw candidates...", flush=True)
-    dataclaw_path = Path("/data/dataclaw/meta/corpus.jsonl")
-    if dataclaw_path.exists():
-        with dataclaw_path.open(errors="replace") as handle:
-            for line in handle:
-                try:
-                    session = json.loads(line)
-                except json.JSONDecodeError:
-                    continue
-                if wanted(session.get("session_id")):
-                    result.append(candidate(session, "dataclaw", "dc:" + session.get("donor", "?")))
-
-    # Census includes SWE-chat, so preparation must index it as well.
     import pyarrow.parquet as pq
 
     parquet = (
@@ -211,28 +269,19 @@ def load_candidates(target_ids: set[str], target_canonical: set[str]) -> list[di
         if session["start_time"] is not None:
             session["start_time"] = session["start_time"].isoformat()
         session["turns"].sort(key=lambda turn: turn.get("ts") or "")
-        result.append(candidate(session, "swechat", "gh:" + str(session["user_id"] or "?")))
+        result.append(
+            candidate_from_session(
+                session,
+                "swechat",
+                "gh:" + str(session["user_id"] or "?"),
+                turns_ref=None,
+                keep_turns=True,
+            )
+        )
+        session["turns"] = []
 
-    print("indexing SpecStory candidates...", flush=True)
-    specstory_path = Path("/data/specstory/meta/corpus_redacted.jsonl")
-    if specstory_path.exists():
-        with specstory_path.open(errors="replace") as handle:
-            for line in handle:
-                try:
-                    session = json.loads(line)
-                except json.JSONDecodeError:
-                    continue
-                sid = specstory_session_id(session)
-                if not wanted(sid):
-                    continue
-                owner = session.get("owner") or (session.get("repo") or "?").split("/")[0]
-                normalized = {
-                    "session_id": sid,
-                    "repo": session.get("repo") or "?",
-                    "start_time": specstory_timestamp(session),
-                    "turns": session.get("turns") or [],
-                }
-                result.append(candidate(normalized, "specstory", "gh:" + owner))
+    if os.environ.get("SKIP_SPECSTORY", "0") == "1":
+        print("SKIP_SPECSTORY=1 — SpecStory skipped at index build", flush=True)
 
     print(f"indexed {len(result)} candidate records", flush=True)
     return result
@@ -265,6 +314,7 @@ def candidate_cache_key(target_ids: set[str]) -> str:
         "targets": sorted(target_ids),
         "sources": source_state,
         "policy": policy_fingerprint(),
+        "candidate_layout": "lazy-turns-sid-index-v3",
     }
     return hashlib.sha256(
         json.dumps(payload, sort_keys=True, separators=(",", ":")).encode()
@@ -327,6 +377,8 @@ def collapse_content(records: list[dict], developer: str) -> tuple[list[dict], l
         if record["repo"] != "?":
             prefix_groups[(record["repo"], record["ts"])].append(record)
     for group in prefix_groups.values():
+        for record in group:
+            ensure_sequence(record)
         ordered = sorted(group, key=lambda record: (len(record["sequence"]), record["sid"]))
         for index, shorter in enumerate(ordered):
             if shorter["sid"] in removed or shorter["substantial_human_turns"] < 3:
@@ -334,10 +386,11 @@ def collapse_content(records: list[dict], developer: str) -> tuple[list[dict], l
             for longer in ordered[index + 1 :]:
                 if longer["sid"] in removed:
                     continue
-                sequence = shorter["sequence"]
+                sequence = ensure_sequence(shorter)
+                longer_sequence = ensure_sequence(longer)
                 if (
-                    len(sequence) < len(longer["sequence"])
-                    and longer["sequence"][: len(sequence)] == sequence
+                    len(sequence) < len(longer_sequence)
+                    and longer_sequence[: len(sequence)] == sequence
                 ):
                     original_splits = {shorter["split"], longer["split"]}
                     merged = merge_record_metadata(
@@ -362,7 +415,7 @@ def collapse_content(records: list[dict], developer: str) -> tuple[list[dict], l
 
 
 def reconstruction_candidate_pairs(records: list[dict]) -> set[tuple[int, int]]:
-    events = [substantial_user_events(record["turns"]) for record in records]
+    events = [substantial_user_events(ensure_turns(record)) for record in records]
     first_postings: dict[str, list[int]] = defaultdict(list)
     text_postings: dict[str, list[int]] = defaultdict(list)
     timestamp_postings: dict[tuple[str, int], list[int]] = defaultdict(list)
@@ -407,7 +460,7 @@ def reconstruction_candidate_pairs(records: list[dict]) -> set[tuple[int, int]]:
 
 
 def record_reconstruction_evidence(left: dict, right: dict) -> dict | None:
-    evidence = reconstructed_session_evidence(left["turns"], right["turns"])
+    evidence = reconstructed_session_evidence(ensure_turns(left), ensure_turns(right))
     concrete_repos = {
         record["repo"]
         for record in (left, right)
@@ -497,6 +550,7 @@ def collapse_reconstructed_sessions(
 
 
 def main() -> None:
+    lock_handle = acquire_build_lock()
     source_users = json.loads(SOURCE_MANIFEST.read_text())
     users = [user for user in source_users if user["user"] not in EXCLUDED_USERS]
     target_ids = {
@@ -508,7 +562,7 @@ def main() -> None:
     target_canonical = {canonical_session_id(sid) for sid in target_ids}
     cache_key = candidate_cache_key(target_ids)
     candidates = None
-    if CANDIDATE_CACHE.exists():
+    if ENABLE_CANDIDATE_CACHE and CANDIDATE_CACHE.exists():
         try:
             with CANDIDATE_CACHE.open("rb") as handle:
                 cached_key, cached_candidates = pickle.load(handle)
@@ -520,9 +574,12 @@ def main() -> None:
     if candidates is None:
         candidates = load_candidates(target_ids, target_canonical)
         command_payloads, command_turns = apply_command_expansion_policy(candidates)
-        with CANDIDATE_CACHE.open("wb") as handle:
-            pickle.dump((cache_key, candidates), handle, protocol=pickle.HIGHEST_PROTOCOL)
-        print(f"cached {len(candidates)} candidate records", flush=True)
+        if ENABLE_CANDIDATE_CACHE:
+            with CANDIDATE_CACHE.open("wb") as handle:
+                pickle.dump(
+                    (cache_key, candidates), handle, protocol=pickle.HIGHEST_PROTOCOL
+                )
+            print(f"cached {len(candidates)} candidate records", flush=True)
     else:
         command_payloads, command_turns = apply_command_expansion_policy(candidates)
     print(
@@ -536,7 +593,12 @@ def main() -> None:
         by_exact[record["sid"]].append(record)
         by_canonical[record["canonical"]].append(record)
 
-    missing = sorted(sid for sid in target_ids if sid not in by_exact)
+    # Manifest may use reparse|owner|uuid while corpus uses repo|uuid; match on UUID.
+    missing = sorted(
+        sid
+        for sid in target_ids
+        if sid not in by_exact and canonical_session_id(sid) not in by_canonical
+    )
     if missing:
         raise RuntimeError(
             f"{len(missing)} manifest sessions remain missing after SWE-chat indexing; "
@@ -558,20 +620,30 @@ def main() -> None:
     dropped_threshold = []
     dropped_incomplete_dialogue = []
     reconstruction_candidate_pairs_checked = 0
-    for user in users:
+    for user_i, user in enumerate(users, 1):
         dev = user["user"]
+        print(f"processing user {user_i}/{len(users)} {dev}", flush=True)
+        if user_i % 5 == 0:
+            gc.collect()
         grouped: dict[str, list[dict]] = defaultdict(list)
         manifest_entries: dict[str, list[tuple[str, dict]]] = defaultdict(list)
         for split_name, source_key in (("train", "train_sessions"), ("held", "held_sessions")):
             for session in user[source_key]:
                 key = canonical_session_id(session["sid"])
-                grouped[key].extend(by_exact[session["sid"]])
+                matches = by_exact.get(session["sid"]) or by_canonical.get(key) or []
+                grouped[key].extend(matches)
                 manifest_entries[key].append((split_name, session))
 
         records = []
         for key, group in grouped.items():
+            if not group:
+                continue
             entries = manifest_entries[key]
-            selected = dict(choose_candidate(group))
+            selected_orig = choose_candidate(group)
+            selected = dict(selected_orig)
+            for record in group:
+                if record is not selected_orig:
+                    drop_turns(record)
             aliases = sorted(
                 {entry["sid"] for _, entry in entries}
                 | {record["sid"] for record in group}
@@ -607,7 +679,8 @@ def main() -> None:
 
         complete_records = []
         for record in records:
-            if is_incomplete_dialogue(record["turns"]):
+            turns = ensure_turns(record)
+            if is_incomplete_dialogue(turns):
                 dropped_incomplete_dialogue.append(
                     {
                         "user": dev,
@@ -617,7 +690,7 @@ def main() -> None:
                         "human_turns": record["human_turns"],
                         "assistant_turns": sum(
                             1
-                            for turn in record["turns"]
+                            for turn in turns
                             if turn.get("role") == "assistant"
                         ),
                         "reason": "incomplete_dialogue",
@@ -683,7 +756,7 @@ def main() -> None:
         }
         for split_name, output_key in (("train", "train_sessions"), ("held", "held_sessions")):
             for record in sorted(split_records[split_name], key=lambda item: (item["ts"], item["sid"])):
-                clean = [clean_turn(turn) for turn in record["turns"]]
+                clean = [clean_turn(turn) for turn in ensure_turns(record)]
                 stored = {
                     "session_id": record["sid"],
                     "user": dev,
@@ -700,6 +773,7 @@ def main() -> None:
                 if existing and existing["user"] != dev:
                     raise RuntimeError(f"session store collision: {record['sid']}")
                 session_store[record["sid"]] = stored
+                drop_turns(record)
                 manifest_record[output_key].append(
                     {
                         "sid": record["sid"],
@@ -827,7 +901,11 @@ def main() -> None:
             {
                 key: value
                 for key, value in report.items()
-                if key not in {"provenance", "dropped_incomplete_dialogue"}
+                if key
+                not in {
+                    "provenance",
+                    "dropped_incomplete_dialogue",
+                }
             },
             indent=2,
         )

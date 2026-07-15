@@ -1,0 +1,858 @@
+> DEVELOPER
+
+$cleanup-loose-branches
+
+> AGENT
+
+Using `cleanup-loose-branches` for a read-only survey first. I’ll gather worktrees, branches, PR state, stashes, and current checkout status, then stop with recommendations rather than deleting anything.
+
+> AGENT
+
+The current checkout is clean and there’s only one registered worktree so far. I’m fetching/pruning refs now and checking the side locations where this repo’s tooling may leave worktrees.
+
+> TOOL
+
+tool_use exec_command
+```json
+{
+  "cmd": "git rev-parse --is-inside-work-tree && git symbolic-ref refs/remotes/origin/HEAD 2>/dev/null | sed 's@^refs/remotes/origin/@@' || true",
+  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "yield_time_ms": 1000,
+  "max_output_tokens": 2000
+}
+```
+
+> TOOL
+
+tool_result exec_command
+```
+null
+```
+
+> TOOL
+
+tool_use exec_command
+```json
+{
+  "cmd": "git status --porcelain=v1 && git diff --stat && git diff --stat --cached",
+  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "yield_time_ms": 1000,
+  "max_output_tokens": 4000
+}
+```
+
+> TOOL
+
+tool_result exec_command
+```
+null
+```
+
+> TOOL
+
+tool_use exec_command
+```json
+{
+  "cmd": "git worktree list --porcelain",
+  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "yield_time_ms": 1000,
+  "max_output_tokens": 4000
+}
+```
+
+> TOOL
+
+tool_result exec_command
+```
+null
+```
+
+> AGENT
+
+`origin/HEAD` is not set in this clone, so I’ll infer the default branch from local/remotes before classifying. I found one sibling `.megaplan-worktrees` path outside this repo; I’ll verify whether it belongs to this repository or only to that sibling project.
+
+> TOOL
+
+tool_use exec_command
+```json
+{
+  "cmd": "git fetch --all --prune --quiet",
+  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "yield_time_ms": 1000,
+  "max_output_tokens": 2000
+}
+```
+
+> TOOL
+
+tool_result exec_command
+```
+null
+```
+
+> TOOL
+
+tool_use exec_command
+```json
+{
+  "cmd": "git symbolic-ref refs/remotes/origin/HEAD 2>/dev/null | sed 's@^refs/remotes/origin/@@'",
+  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "yield_time_ms": 1000,
+  "max_output_tokens": 1000
+}
+```
+
+> TOOL
+
+tool_result exec_command
+```
+null
+```
+
+> TOOL
+
+tool_use exec_command
+```json
+{
+  "cmd": "ls -d .megaplan-worktrees/* 2>/dev/null",
+  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "yield_time_ms": 1000,
+  "max_output_tokens": 4000
+}
+```
+
+> TOOL
+
+tool_result exec_command
+```
+null
+```
+
+> TOOL
+
+tool_use exec_command
+```json
+{
+  "cmd": "find . -maxdepth 3 -type d -name '.worktrees' 2>/dev/null",
+  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "yield_time_ms": 1000,
+  "max_output_tokens": 4000
+}
+```
+
+> TOOL
+
+tool_result exec_command
+```
+null
+```
+
+> TOOL
+
+tool_use exec_command
+```json
+{
+  "cmd": "ls -d ../*/.megaplan-worktrees/* 2>/dev/null",
+  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "yield_time_ms": 1000,
+  "max_output_tokens": 4000
+}
+```
+
+> TOOL
+
+tool_result exec_command
+```
+null
+```
+
+> AGENT
+
+This repo has four non-main local branches, all with matching remote branches. There are no stashes in this repository, and that sibling worktree belongs to `banodoco-workspace`, so I’m excluding it from this survey.
+
+> TOOL
+
+tool_use exec_command
+```json
+{
+  "cmd": "git branch --format='%(refname:short)'",
+  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "yield_time_ms": 1000,
+  "max_output_tokens": 4000
+}
+```
+
+> TOOL
+
+tool_result exec_command
+```
+null
+```
+
+> TOOL
+
+tool_use exec_command
+```json
+{
+  "cmd": "git branch -r --format='%(refname:short)|%(committerdate:iso8601)|%(committerdate:relative)'",
+  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "yield_time_ms": 1000,
+  "max_output_tokens": 8000
+}
+```
+
+> TOOL
+
+tool_result exec_command
+```
+null
+```
+
+> TOOL
+
+tool_use exec_command
+```json
+{
+  "cmd": "git -C ../banodoco-workspace/.megaplan-worktrees/kimi-2-6-vs-standard-homepage rev-parse --show-toplevel",
+  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "yield_time_ms": 1000,
+  "max_output_tokens": 2000
+}
+```
+
+> TOOL
+
+tool_result exec_command
+```
+null
+```
+
+> TOOL
+
+tool_use exec_command
+```json
+{
+  "cmd": "git for-each-ref --format='%(refname:short)|%(committerdate:iso8601)|%(committerdate:relative)|%(upstream:short)|%(upstream:track)|%(objectname:short)|%(contents:subject)' refs/heads/",
+  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "yield_time_ms": 1000,
+  "max_output_tokens": 12000
+}
+```
+
+> TOOL
+
+tool_result exec_command
+```
+null
+```
+
+> TOOL
+
+tool_use exec_command
+```json
+{
+  "cmd": "git stash list --format='%gd|%cr|%s'",
+  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "yield_time_ms": 1000,
+  "max_output_tokens": 4000
+}
+```
+
+> TOOL
+
+tool_result exec_command
+```
+null
+```
+
+> TOOL
+
+tool_use exec_command
+```json
+{
+  "cmd": "gh repo view --json nameWithOwner -q .nameWithOwner",
+  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "yield_time_ms": 1000,
+  "max_output_tokens": 2000
+}
+```
+
+> TOOL
+
+tool_result exec_command
+```
+null
+```
+
+> AGENT
+
+None of the four loose branch names currently match an open or merged PR head. The branches are recent and still have unique patches versus `main`; I’m doing the cheap per-branch diff/log checks now so the recommendations are more than just age-based.
+
+> TOOL
+
+tool_use exec_command
+```json
+{
+  "cmd": "gh pr list --state all --limit 200 --json number,state,headRefName,baseRefName,title,updatedAt,isDraft,mergedAt,author,url",
+  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "yield_time_ms": 1000,
+  "max_output_tokens": 20000
+}
+```
+
+> TOOL
+
+tool_result exec_command
+```
+null
+```
+
+> TOOL
+
+tool_use exec_command
+```json
+{
+  "cmd": "for b in megaplan/cloud-runtime-correctness-sprint megaplan/per-milestone-robustness-20260503 sandbox-fingerprint tiebreaker-tests; do printf '%s|' \"$b\"; git rev-list --left-right --count main...\"$b\"; done",
+  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "yield_time_ms": 1000,
+  "max_output_tokens": 4000
+}
+```
+
+> TOOL
+
+tool_result exec_command
+```
+null
+```
+
+> TOOL
+
+tool_use exec_command
+```json
+{
+  "cmd": "for b in megaplan/cloud-runtime-correctness-sprint megaplan/per-milestone-robustness-20260503 sandbox-fingerprint tiebreaker-tests; do n=$(git cherry main \"$b\" | grep -c '^+'); printf '%s|cherry_plus=%s\\n' \"$b\" \"$n\"; done",
+  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "yield_time_ms": 1000,
+  "max_output_tokens": 4000
+}
+```
+
+> TOOL
+
+tool_result exec_command
+```
+null
+```
+
+> TOOL
+
+tool_use exec_command
+```json
+{
+  "cmd": "for b in megaplan/cloud-runtime-correctness-sprint megaplan/per-milestone-robustness-20260503 sandbox-fingerprint tiebreaker-tests; do if git merge-base --is-ancestor \"$b\" main; then m=yes; else m=no; fi; printf '%s|merged_ancestor=%s\\n' \"$b\" \"$m\"; done",
+  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "yield_time_ms": 1000,
+  "max_output_tokens": 4000
+}
+```
+
+> TOOL
+
+tool_result exec_command
+```
+null
+```
+
+> TOOL
+
+tool_use exec_command
+```json
+{
+  "cmd": "git reflog --all | head -50",
+  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "yield_time_ms": 1000,
+  "max_output_tokens": 8000
+}
+```
+
+> TOOL
+
+tool_result exec_command
+```
+null
+```
+
+> TOOL
+
+tool_use exec_command
+```json
+{
+  "cmd": "git fsck --unreachable --no-reflogs 2>/dev/null | grep '^unreachable commit' | wc -l | tr -d ' '",
+  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "yield_time_ms": 1000,
+  "max_output_tokens": 1000
+}
+```
+
+> TOOL
+
+tool_result exec_command
+```
+null
+```
+
+> AGENT
+
+Three branches would merge cleanly by `merge-tree`; `per-milestone-robustness-20260503` has conflicts and also looks related to merged PR #28 under a different head branch. I’m checking whether its commits were recovered under different SHAs before I recommend keeping or deleting it.
+
+> TOOL
+
+tool_use exec_command
+```json
+{
+  "cmd": "git log --oneline --decorate --max-count=20 main..megaplan/cloud-runtime-correctness-sprint",
+  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "yield_time_ms": 1000,
+  "max_output_tokens": 4000
+}
+```
+
+> TOOL
+
+tool_result exec_command
+```
+null
+```
+
+> TOOL
+
+tool_use exec_command
+```json
+{
+  "cmd": "git log --oneline --decorate --max-count=30 main..megaplan/per-milestone-robustness-20260503",
+  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "yield_time_ms": 1000,
+  "max_output_tokens": 6000
+}
+```
+
+> TOOL
+
+tool_result exec_command
+```
+null
+```
+
+> TOOL
+
+tool_use exec_command
+```json
+{
+  "cmd": "git log --oneline --decorate --max-count=20 main..sandbox-fingerprint",
+  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "yield_time_ms": 1000,
+  "max_output_tokens": 4000
+}
+```
+
+> TOOL
+
+tool_result exec_command
+```
+null
+```
+
+> TOOL
+
+tool_use exec_command
+```json
+{
+  "cmd": "git log --oneline --decorate --max-count=20 main..tiebreaker-tests",
+  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "yield_time_ms": 1000,
+  "max_output_tokens": 4000
+}
+```
+
+> TOOL
+
+tool_result exec_command
+```
+null
+```
+
+> TOOL
+
+tool_use exec_command
+```json
+{
+  "cmd": "for b in megaplan/cloud-runtime-correctness-sprint megaplan/per-milestone-robustness-20260503 sandbox-fingerprint tiebreaker-tests; do printf '\\n%s\\n' \"$b\"; git diff --stat main...\"$b\"; done",
+  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "yield_time_ms": 1000,
+  "max_output_tokens": 12000
+}
+```
+
+> TOOL
+
+tool_result exec_command
+```
+null
+```
+
+> TOOL
+
+tool_use exec_command
+```json
+{
+  "cmd": "for b in megaplan/cloud-runtime-correctness-sprint megaplan/per-milestone-robustness-20260503 sandbox-fingerprint tiebreaker-tests; do printf '%s|' \"$b\"; git merge-tree $(git merge-base main \"$b\") main \"$b\" 2>/dev/null | grep -c '<<<<<<<'; done",
+  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "yield_time_ms": 1000,
+  "max_output_tokens": 4000
+}
+```
+
+> TOOL
+
+tool_result exec_command
+```
+null
+```
+
+> TOOL
+
+tool_use write_stdin
+```json
+{
+  "session_id": 84242,
+  "chars": "",
+  "yield_time_ms": 1000,
+  "max_output_tokens": 2000
+}
+```
+
+> TOOL
+
+tool_result write_stdin
+```
+null
+```
+
+> AGENT
+
+One new local commit appeared on the current branch while I was surveying: `a84c6480 Make Railway cloud commands non-interactive`. I’ll refresh the current-branch metrics so the table reflects the live repo state and won’t touch or overwrite that work.
+
+> TOOL
+
+tool_use exec_command
+```json
+{
+  "cmd": "git log --all --oneline --grep='files_missing\\|project_dir sandbox\\|Fireworks calls\\|doc-mode output_path\\|per-batch status overlay\\|per-milestone robustness'",
+  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "yield_time_ms": 1000,
+  "max_output_tokens": 12000
+}
+```
+
+> TOOL
+
+tool_result exec_command
+```
+null
+```
+
+> TOOL
+
+tool_use exec_command
+```json
+{
+  "cmd": "git log --oneline --decorate --max-count=20 main -- megaplan/sandbox.py tests/test_sandbox.py megaplan/hermes_worker.py tests/test_hermes_worker_fireworks_streaming.py megaplan/execute/core.py tests/test_scope_drift_doc_mode.py megaplan/receipts/drift.py",
+  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "yield_time_ms": 1000,
+  "max_output_tokens": 12000
+}
+```
+
+> TOOL
+
+tool_result exec_command
+```
+null
+```
+
+> TOOL
+
+tool_use exec_command
+```json
+{
+  "cmd": "git show --stat --oneline --decorate 2a60d147 a0ed9f51 c2bbc729 9d6b981b 6ebbe279 20681671",
+  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "yield_time_ms": 1000,
+  "max_output_tokens": 16000
+}
+```
+
+> TOOL
+
+tool_result exec_command
+```
+null
+```
+
+> TOOL
+
+tool_use exec_command
+```json
+{
+  "cmd": "git branch -a --contains per-milestone-robustness-rebase 2>/dev/null || true",
+  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "yield_time_ms": 1000,
+  "max_output_tokens": 4000
+}
+```
+
+> TOOL
+
+tool_result exec_command
+```
+null
+```
+
+> TOOL
+
+tool_use exec_command
+```json
+{
+  "cmd": "git log --all --oneline --decorate --max-count=20 --branches='*per-milestone*' --remotes='*per-milestone*'",
+  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "yield_time_ms": 1000,
+  "max_output_tokens": 8000
+}
+```
+
+> TOOL
+
+tool_result exec_command
+```
+null
+```
+
+> AGENT
+
+Read-only survey complete. I did not delete anything.
+
+```
+REC      WHERE         BRANCH                              AHEAD/BEHIND  AGE    PR           REASON
+inspect  local+remote  megaplan/per-milestone-rob...       6/61          10d    related #28✓ PR #28 recovered 5 fixes under another branch, but this branch still has 6 cherry-unique commits, 8 merge-tree conflict markers, and local is 5 ahead of its remote
+keep     local+remote  megaplan/cloud-runtime-corr...      4/0           now    none         current checkout, clean, very recent work, merge-tree clean; keep and PR when ready
+keep     local+remote  sandbox-fingerprint                 1/2           34h    none         recent unique patch, merge-tree clean; keep and PR or merge deliberately
+keep     local+remote  tiebreaker-tests                    2/2           34h    none         recent test-recovery work, merge-tree clean; keep and PR or merge deliberately
+```
+
+**Stashes**
+None.
+
+**Prunable Worktrees**
+None registered for this repo. One sibling `.megaplan-worktrees` path exists under `banodoco-workspace`, but it belongs to that repo, not this one.
+
+**Current Checkout**
+Clean. Current branch is `megaplan/cloud-runtime-correctness-sprint`.
+
+**Other Notes**
+`git fsck --unreachable --no-reflogs` reports 136 unreachable commits. I did not enumerate them in the cleanup table; they are reflog/orphan recovery material, not branch refs.
+
+**Counts**
+`0` delete-able / `1` inspect / `3` keep / `0` stashes / `0` prunable worktrees.
+
+Want to walk through these one at a time? I’ll describe each, give my rec and reasoning, and you decide.
+
+> TOOL
+
+tool_use exec_command
+```json
+{
+  "cmd": "git status --porcelain=v1",
+  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "yield_time_ms": 1000,
+  "max_output_tokens": 4000
+}
+```
+
+> TOOL
+
+tool_result exec_command
+```
+null
+```
+
+> TOOL
+
+tool_use exec_command
+```json
+{
+  "cmd": "git for-each-ref --format='%(refname:short)|%(committerdate:iso8601)|%(committerdate:relative)|%(upstream:short)|%(upstream:track)|%(objectname:short)|%(contents:subject)' refs/heads/",
+  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "yield_time_ms": 1000,
+  "max_output_tokens": 12000
+}
+```
+
+> TOOL
+
+tool_result exec_command
+```
+null
+```
+
+> TOOL
+
+tool_use exec_command
+```json
+{
+  "cmd": "for b in megaplan/cloud-runtime-correctness-sprint megaplan/per-milestone-robustness-20260503 sandbox-fingerprint tiebreaker-tests; do printf '%s|' \"$b\"; git rev-list --left-right --count main...\"$b\"; done",
+  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "yield_time_ms": 1000,
+  "max_output_tokens": 4000
+}
+```
+
+> TOOL
+
+tool_result exec_command
+```
+null
+```
+
+> TOOL
+
+tool_use exec_command
+```json
+{
+  "cmd": "for b in megaplan/cloud-runtime-correctness-sprint megaplan/per-milestone-robustness-20260503 sandbox-fingerprint tiebreaker-tests; do n=$(git cherry main \"$b\" | grep -c '^+'); printf '%s|cherry_plus=%s\\n' \"$b\" \"$n\"; done",
+  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "yield_time_ms": 1000,
+  "max_output_tokens": 4000
+}
+```
+
+> TOOL
+
+tool_result exec_command
+```
+null
+```
+
+> TOOL
+
+tool_use exec_command
+```json
+{
+  "cmd": "for b in megaplan/cloud-runtime-correctness-sprint megaplan/per-milestone-robustness-20260503 sandbox-fingerprint tiebreaker-tests; do printf '\\n%s\\n' \"$b\"; git log --oneline --max-count=10 main..\"$b\"; done",
+  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "yield_time_ms": 1000,
+  "max_output_tokens": 8000
+}
+```
+
+> TOOL
+
+tool_result exec_command
+```
+null
+```
+
+> TOOL
+
+tool_use exec_command
+```json
+{
+  "cmd": "for b in megaplan/cloud-runtime-correctness-sprint megaplan/per-milestone-robustness-20260503 sandbox-fingerprint tiebreaker-tests; do printf '%s|' \"$b\"; git merge-tree $(git merge-base main \"$b\") main \"$b\" 2>/dev/null | grep -c '<<<<<<<'; done",
+  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "yield_time_ms": 1000,
+  "max_output_tokens": 4000
+}
+```
+
+> TOOL
+
+tool_result exec_command
+```
+null
+```
+
+> TOOL
+
+tool_use exec_command
+```json
+{
+  "cmd": "git rev-parse megaplan/cloud-runtime-correctness-sprint origin/megaplan/cloud-runtime-correctness-sprint",
+  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "yield_time_ms": 1000,
+  "max_output_tokens": 1000
+}
+```
+
+> TOOL
+
+tool_result exec_command
+```
+null
+```
+
+> TOOL
+
+tool_use exec_command
+```json
+{
+  "cmd": "git status -sb",
+  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "yield_time_ms": 1000,
+  "max_output_tokens": 2000
+}
+```
+
+> TOOL
+
+tool_result exec_command
+```
+null
+```
+
+> TOOL
+
+tool_use exec_command
+```json
+{
+  "cmd": "git branch -vv",
+  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "yield_time_ms": 1000,
+  "max_output_tokens": 4000
+}
+```
+
+> TOOL
+
+tool_result exec_command
+```
+null
+```
+
+> TOOL
+
+tool_use exec_command
+```json
+{
+  "cmd": "git remote -v",
+  "workdir": "/Users/user_c042661f/Documents/megaplan",
+  "yield_time_ms": 1000,
+  "max_output_tokens": 2000
+}
+```
+
+> TOOL
+
+tool_result exec_command
+```
+null
+```
