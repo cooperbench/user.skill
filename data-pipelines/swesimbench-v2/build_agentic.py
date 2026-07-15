@@ -17,13 +17,15 @@ gold_move may be null -> verifier classifies `real` itself with the same judge.
 Reward = 1.0 if move matches else 0.0 -> /logs/verifier/reward.txt.
 
 Usage:
-  build_agentic.py --dataset eval-pilot --devs gh:mvanhorn,dc:dc_000 --per-dev 5
-  build_agentic.py --dataset eval --all
+  build_agentic.py --dataset tasks --all
+  # writes Harbor packages to <repo>/tasks/
 """
 import json, os, shutil, argparse, hashlib, re
+from pathlib import Path
 
-HERE = "/data/swesimbench-v2-harbor"
-COHORT = f"{HERE}/cohort.json"
+HERE = Path(__file__).resolve().parent
+REPO_ROOT = HERE.parents[2]  # data-pipelines/swesimbench-v2 -> repo root
+COHORT = "/data/swesimbench-v2-harbor/cohort.json"  # private artifact; not in git
 
 TASK_TOML = '''schema_version = "1.1"
 
@@ -229,7 +231,11 @@ def emit_point(dataset_dir, dev, cond, p, profile):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--dataset", required=True, help="dataset dir name under /data/swesimbench-v2-harbor/datasets/")
+    ap.add_argument(
+        "--dataset",
+        required=True,
+        help="Output name. Use 'tasks' to write repo-root tasks/; other names write under ./datasets/<name>/",
+    )
     ap.add_argument("--devs", default="", help="comma-separated dev ids (else use --all)")
     ap.add_argument("--per-dev", type=int, default=0, help="cap points per dev (0=all)")
     ap.add_argument("--all", action="store_true")
@@ -241,15 +247,18 @@ def main():
     )
     a = ap.parse_args()
 
-    cohort_meta = json.load(open(os.path.join(HERE, "cohort.meta.json")))
-    clean_meta = json.load(open(os.path.join(HERE, "clean_manifest.json")))
+    cohort_meta = json.load(open(HERE / "cohort.meta.json"))
+    clean_meta = json.load(open("/data/swesimbench-v2-harbor/clean_manifest.json"))
     if cohort_meta.get("cohort_fingerprint") != clean_meta.get("cohort_fingerprint"):
         raise RuntimeError("stale cohort.json: run prepare.py before building datasets")
     if cohort_meta.get("policy_fingerprint") != clean_meta.get("policy_fingerprint"):
         raise RuntimeError("cohort policy mismatch: rebuild clean cohort and prepare.py")
     excluded_users = {"gh:mhaitana"}
     recs = {r["user"]: r for r in json.load(open(COHORT)) if r["user"] not in excluded_users}
-    dataset_dir = os.path.join(HERE, "datasets", a.dataset)
+    if a.dataset == "tasks":
+        dataset_dir = str(REPO_ROOT / "tasks")
+    else:
+        dataset_dir = str(HERE / "datasets" / a.dataset)
     shutil.rmtree(dataset_dir, ignore_errors=True)
     os.makedirs(dataset_dir, exist_ok=True)
 
