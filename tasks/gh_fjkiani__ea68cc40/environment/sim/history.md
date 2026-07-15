@@ -1,3 +1,0 @@
-[DEVELOPER]: add a safety layer - how do can we trust this when put into pridiction - what safety can it present to build further confidence ? - are you saying we can predict which IO would be ideal for a patient? how trusted is our data
-
-[AGENT]: Adding safety layers and documenting limitations. Reviewing what we validated and what we can trust: Adding safety layers and documenting limitations. Creating a safety module: Integrating the safety layer into `apply_io_boost`: Cancelled

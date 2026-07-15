@@ -1,3 +1,0 @@
-[DEVELOPER]: instead of the grey circles background, can we use the pattern thats found on dollar and euro bills? that fine mesh? can you create a visualization and control script? based on the mathematical priciple by guilloche window with preview and Configuration, where i can tweak the parameters to get different outcomes place it here @guilloche/
-
-[AGENT]: Reviewing the current implementation to understand the grey circles background, then creating a guilloche pattern generator with a preview and configuration window. Checking where the grey circles background is drawn: Creating a guilloche pattern generator with a GUI for preview and configuration. Setting up the `guilloche/` directory and implementing the generator and GUI.

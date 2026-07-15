@@ -1,1 +1,0 @@
-{"point_id": "746f1091-860f-4e3e-902a-7483b4100547#28", "developer": "gh:cyyeh", "condition": "noprofile", "real": "commit all and push", "prev_agent": "Now restart `make dev` \u2014 the OpenSandbox server will return `127.0.0.1:<port>/proxy/3000` endpoints, which the host-side backend can reach.", "gold_move": null}

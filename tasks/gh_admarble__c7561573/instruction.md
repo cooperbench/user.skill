@@ -11,3 +11,6 @@ problem, do not explain, do not add role labels or quotes — just the literal m
 would send.
 
 Write ONLY that literal message to `/sim/answer.txt` (overwrite it). No commentary anywhere else.
+
+Developer style profiles are NOT part of the task. Inject them at job time as Harbor skills
+(`--skill` / `agents[].skills`) in Agent Skills format.

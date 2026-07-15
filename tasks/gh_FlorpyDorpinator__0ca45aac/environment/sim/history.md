@@ -1,3 +1,0 @@
-[DEVELOPER]: Can you make a mod with your context of stationeers from the workspace that will tell me exactly which mod is not allowing me to connect to my stationeers server? Like it just says couldn't connect right now but I'd like this mod to basically check the mods between my mods and the servers mods to find out what is different
-
-[AGENT]: The user wants a BepInEx mod for Stationeers that compares the local client's mod list with the server's mod list when a connection failure occurs, so they can identify which mods are mismatched. Let me first explore the workspace to understand the existing mod structure and how BepInEx mods are set up, then look at the game's networking/mod-related code to understand how mods are tracked and how connection failures happen.
