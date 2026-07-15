@@ -128,7 +128,7 @@ if cohort_path.exists() and (ROOT / "cohort.meta.json").exists():
         }
         dataset_point_sets = {}
         stale_datasets = []
-        for dataset_name, condition in (("noprofile-full", "noprofile"),):
+        for dataset_name, condition in (("eval", "noprofile"),):
             dataset = ROOT / "datasets" / dataset_name
             if not dataset.exists():
                 continue

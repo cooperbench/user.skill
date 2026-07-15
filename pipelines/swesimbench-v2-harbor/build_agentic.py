@@ -17,8 +17,8 @@ gold_move may be null -> verifier classifies `real` itself with the same judge.
 Reward = 1.0 if move matches else 0.0 -> /logs/verifier/reward.txt.
 
 Usage:
-  build_agentic.py --dataset swesimbench-v2-noprofile-pilot --devs gh:mvanhorn,dc:dc_000 --per-dev 5
-  build_agentic.py --dataset swesimbench-v2-noprofile-full  --all
+  build_agentic.py --dataset eval-pilot --devs gh:mvanhorn,dc:dc_000 --per-dev 5
+  build_agentic.py --dataset eval --all
 """
 import json, os, shutil, argparse, hashlib, re
 

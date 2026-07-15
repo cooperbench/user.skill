@@ -8,7 +8,7 @@ The canonical cohort, 100-point ATIF sample, and both Harbor datasets are rebuil
 cd /data/swesimbench-v2-harbor
 RUN_GOLD=1 python3 prepare.py
 python3 compute_chance_line.py
-python3 build_agentic.py --dataset noprofile-full --all --cond noprofile
+python3 build_agentic.py --dataset eval --all --cond noprofile
 # Profiles are harness-side (Harbor --skill), not a second task twin.
 ```
 
@@ -28,7 +28,7 @@ The current sample is structurally complete but has `gold_move: null` by design.
 
 Run the standard Harbor job command for each desired model against:
 
-- `pipelines/swesimbench-v2-harbor/datasets/noprofile-full` (profiles via Harbor skills / agent harness, not a withprofile task set)
+- `pipelines/swesimbench-v2-harbor/datasets/eval` (profiles via Harbor skills / agent harness, not a withprofile task set)
 
 Each task's verifier also invokes the pinned judge for the predicted message. Record the resulting job directory, then aggregate with the chance line from the same cohort:
 

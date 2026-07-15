@@ -1,12 +1,10 @@
 # SWESimBench v2 — Harbor task dataset
 
-Canonical Harbor packages for the clean cohort eval (**noprofile** only).
-
 | Dataset | Tasks | Notes |
 |---|---:|---|
-| `noprofile-full/` | 2,723 | Conversation context on disk; no baked-in developer profile |
+| `eval/` | 2,723 | Held-out prediction points; conversation context on disk |
 
-Developer profiles belong in the **agent harness** (e.g. Harbor `--skill` / `agents[].skills`), not in the task image. Do not reintroduce a `withprofile-*` task twin for the same points.
+Developer profiles are **not** part of the task. Inject them at job time as Harbor skills (`--skill` / `agents[].skills`) in Agent Skills format.
 
 Each leaf directory is one Harbor task:
 
@@ -17,7 +15,7 @@ Each leaf directory is one Harbor task:
   environment/
     Dockerfile
     sim/
-      history.md         # conversation so far ([DEVELOPER]/[AGENT]/…)
+      history.md
   tests/
     gold.json
     test.sh / verify.py
@@ -29,11 +27,9 @@ Dataset root also has `_manifest.json` and `_cohort_meta.json`.
 
 ```bash
 harbor run \
-  --path pipelines/swesimbench-v2-harbor/datasets/noprofile-full \
+  --path pipelines/swesimbench-v2-harbor/datasets/eval \
   --agent <your-agent> \
   --model <your-model>
 ```
-
-To supply a developer profile dynamically, inject it as a Harbor skill at job/trial time (see Harbor `--skill` / `environment.skills_dir`), rather than baking `/sim/profile.md` into the task.
 
 Aggregation helpers live one directory up (`aggregate_agentic.py`, `DEFERRED_PAID_WORK.md`).
