@@ -298,31 +298,31 @@ Update the CHANGELOG entry:
 
 Both gaps fixed and pushed to PR #481. Summary of changes: 1. **Field renamed `qaSummary` → `summary`** across 9 files — matches issue spec, no collision since `RunLog.summary` and `PhaseLog.summary` are at different nesting levels 2. **Parser rewritten** to handle all real QA output variations: - **3-column tables** (from `/fullsolve` summaries) - **Emoji prefixes** (`✅ MET`, `❌ NOT_MET`, `⚠️ PARTIAL`) - **`PARTIAL` shorthand** (counted as non-MET) - **Trailing text** (`MET — flat format`) - **None filter hardened** — catches "None found", "None — text", but not "Nonetheless..." - Replaced fragile two-regex cascade with line-by-line cell scan using anchored pattern 3. **15 test cases** covering all format variations including a real QA output sample from issue #478
 
-> TOOL
+> METADATA
 
 <task-notification> <task-id>bn20x4nuf</task-id> <tool-use-id>toolu_019ybFVviM6aEf5yRL1Xaoai</tool-use-id> <output-file>/private/tmp/claude-502/-Users-tony-Projects-sequant/bb7fb4f3-ce49-4dc8-ac9e-4cbfd9e1b1e8/tasks/bn20x4nuf.output</output-file> <status>completed</status> <summary>Background command "Full test suite" completed (exit code 0)</summary> </task-notification>
 
-> TOOL
+> METADATA
 
 <task-notification> <task-id>b5m7nsum2</task-id> <tool-use-id>REDACTED</tool-use-id> <output-file>/private/tmp/claude-502/-Users-tony-Projects-sequant/bb7fb4f3-ce49-4dc8-ac9e-4cbfd9e1b1e8/tasks/b5m7nsum2.output</output-file> <status>completed</status> <summary>Background command "Full test suite" completed (exit code 0)</summary> </task-notification>
 
-> TOOL
+> METADATA
 
 <task-notification> <task-id>bd0q851ay</task-id> <tool-use-id>REDACTED</tool-use-id> <output-file>/private/tmp/claude-502/-Users-tony-Projects-sequant/bb7fb4f3-ce49-4dc8-ac9e-4cbfd9e1b1e8/tasks/bd0q851ay.output</output-file> <status>completed</status> <summary>Background command "Run tests and get summary" completed (exit code 0)</summary> </task-notification>
 
-> TOOL
+> METADATA
 
 <task-notification> <task-id>bx6trbx8i</task-id> <tool-use-id>toolu_01XySF5wwrXUcdXz563meLDy</tool-use-id> <output-file>/private/tmp/claude-502/-Users-tony-Projects-sequant/bb7fb4f3-ce49-4dc8-ac9e-4cbfd9e1b1e8/tasks/bx6trbx8i.output</output-file> <status>completed</status> <summary>Background command "Run full tests" completed (exit code 0)</summary> </task-notification>
 
-> TOOL
+> METADATA
 
 <task-notification> <task-id>boevuh11i</task-id> <tool-use-id>REDACTED</tool-use-id> <output-file>/private/tmp/claude-502/-Users-tony-Projects-sequant/bb7fb4f3-ce49-4dc8-ac9e-4cbfd9e1b1e8/tasks/boevuh11i.output</output-file> <status>completed</status> <summary>Background command "Full test suite" completed (exit code 0)</summary> </task-notification>
 
-> TOOL
+> METADATA
 
 <task-notification> <task-id>bjiriwdhr</task-id> <tool-use-id>REDACTED</tool-use-id> <output-file>/private/tmp/claude-502/-Users-tony-Projects-sequant/bb7fb4f3-ce49-4dc8-ac9e-4cbfd9e1b1e8/tasks/bjiriwdhr.output</output-file> <status>completed</status> <summary>Background command "Run non-integration tests only" completed (exit code 0)</summary> </task-notification>
 
-> TOOL
+> METADATA
 
 <task-notification> <task-id>bfddmwptt</task-id> <tool-use-id>toolu_012EZomZdTmnAYsu24YzKS3D</tool-use-id> <output-file>/private/tmp/claude-502/-Users-tony-Projects-sequant/bb7fb4f3-ce49-4dc8-ac9e-4cbfd9e1b1e8/tasks/bfddmwptt.output</output-file> <status>completed</status> <summary>Background command "Run changed module tests" completed (exit code 0)</summary> </task-notification>
 

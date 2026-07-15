@@ -341,7 +341,7 @@ All 6 agents are running in parallel, each reading the actual source files for t
 
 Each writes to `.context/sections_XX_XX.md`. Once all complete, I'll combine them into `docs/module-walkthrough.md` and run the verification checks from the plan.
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>a475b561e17586d1e</task-id>
@@ -358,7 +358,7 @@ Full transcript available at: /private/tmp/claude-501/-Users-jdsingh-conductor-w
 
 Relaunched as two smaller agents (C1: sections 11–13, C2: sections 14–15) with instructions to be more selective about file reads. Waiting for all agents to finish.
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>aa94cdd27e35d8083</task-id>
@@ -390,7 +390,7 @@ Current status of all agents:
 
 Waiting for completions before combining into `docs/module-walkthrough.md`.
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>adf51bd4bf5b9fe67</task-id>
@@ -419,7 +419,7 @@ Relaunched as F1 (section 24) and F2 (sections 25–26) with stricter file-read 
 | F1 | 24 | Running |
 | F2 | 25–26 | Running |
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>a496f1ae62ae937a9</task-id>
@@ -451,7 +451,7 @@ Relaunched as D1 (sections 16–17) and D2 (sections 18–19). Updated status:
 
 Waiting for completions.
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>a0fd618da10163df5</task-id>
@@ -479,7 +479,7 @@ Full transcript available at: /private/tmp/claude-501/-Users-jdsingh-conductor-w
 
 Resumed F1 with bypass permissions. Waiting on remaining agents.
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>a115488dd8cb8cc6a</task-id>
@@ -503,7 +503,7 @@ Full transcript available at: /private/tmp/claude-501/-Users-jdsingh-conductor-w
 
 Resumed C2 with bypass permissions.
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>a0fd618da10163df5</task-id>
@@ -542,7 +542,7 @@ All 10 agents relaunched targeting `sofia/.context/` for output, using Sonnet fo
 
 Once all complete, I'll combine into `codebase-walkthrough/docs/module-walkthrough.md` and verify coverage.
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>a322893f39242e109</task-id>
@@ -567,7 +567,7 @@ Full transcript available at: /private/tmp/claude-501/-Users-jdsingh-conductor-w
 
 Old E1 agent (from the first relaunch targeting codebase-walkthrough) completed with the same write issue — expected. The new e1r agent targeting `sofia/.context/` is still running and should succeed. Waiting for the new batch to complete.
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>ac6a98abaa1ff9531</task-id>
@@ -584,7 +584,7 @@ Full transcript available at: /private/tmp/claude-501/-Users-jdsingh-conductor-w
 
 Old F2 agent also completed with write issue — expected. New f2r agent is running targeting `sofia/.context/`. Waiting.
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>a90b09f4c70f0e749</task-id>
@@ -603,7 +603,7 @@ Full transcript available at: /private/tmp/claude-501/-Users-jdsingh-conductor-w
 
 Old C1 agent — same write issue. New c1r agent is running targeting correct path.
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>a4c2d72c8506857cc</task-id>
@@ -627,7 +627,7 @@ Could you grant write permission so […]
 
 Old E2 agent — same. New e2r running.
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>ac4097287face9812</task-id>
@@ -646,7 +646,7 @@ Full transcript available at: /private/tmp/claude-501/-Users-jdsingh-conductor-w
 
 Old D2 — same. New d2r running. All old agents now accounted for. Waiting for the 10 new agents writing to `sofia/.context/`.
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>a115488dd8cb8cc6a</task-id>
@@ -665,7 +665,7 @@ Full transcript available at: /private/tmp/claude-501/-Users-jdsingh-conductor-w
 
 Old C2 resume — same issue. New c2r agent is running targeting `sofia/.context/`. All old agents are now done. Just waiting on the 10 new agents.
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>aa501fa581e60b65b</task-id>
@@ -684,7 +684,7 @@ Full transcript available at: /private/tmp/claude-501/-Users-jdsingh-conductor-w
 
 All 31 modules covered, plus `cmd/`, React UI, and all 3 workspace crates. The document is at `docs/module-walkthrough.md` — 1,031 lines across 26 sections covering the entire Forge codebase.
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>ad59827cae543a78e</task-id>
@@ -727,7 +727,7 @@ The walkthrough is already complete and written. The remaining agent notificatio
 
 **Summary**: `docs/module-walkthrough.md` is done — 1,031 lines, 26 sections, all 31 public modules + `cmd/` + React UI + 3 workspace crates verified as covered.
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>abd7cf83c9d36cbab</task-id>
@@ -746,7 +746,7 @@ Full transcript available at: /private/tmp/claude-501/-Users-jdsingh-conductor-w
 
 All done. The walkthrough is complete at `docs/module-walkthrough.md` in the codebase-walkthrough workspace. The remaining agent completions are stragglers from earlier batches — no action needed.
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>afb4318ff593c1f72</task-id>
@@ -777,7 +777,7 @@ Please grant permission to write new files, and I will create the sections file.
 
 Straggler agent — no action needed. The walkthrough is already complete.
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>a72eeb3bfbb9790e9</task-id>
@@ -794,7 +794,7 @@ Full transcript available at: /private/tmp/claude-501/-Users-jdsingh-conductor-w
 
 Straggler — walkthrough already complete.
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>a72032ff3c6230898</task-id>
@@ -821,7 +821,7 @@ Here is a summary of what the file would contain, so nothing is lost:
 
 Straggler — already done.
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>aaf3f24d9455f12cb</task-id>
@@ -845,7 +845,7 @@ Full transcript available at: /private/tmp/claude-501/-Users-jdsingh-conductor-w
 
 All agents have now completed. The walkthrough document is finished at `codebase-walkthrough/docs/module-walkthrough.md`.
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>afab0531a66db4c75</task-id>
@@ -864,7 +864,7 @@ Full transcript available at: /private/tmp/claude-501/-Users-jdsingh-conductor-w
 
 Last straggler. Everything is done.
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>ac87fba9fcc20f306</task-id>
@@ -893,7 +893,7 @@ Here is a summary of what I've researched and am ready to write:
 
 All agents finished. The walkthrough is complete at `docs/module-walkthrough.md`.
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>a1d884bea76a58eb3</task-id>
@@ -939,7 +939,7 @@ Each ID type derives `Copy`, `Hash`, implements `Display`, and is transparent in
 
 Last agent finished. The walkthrough document is complete at `codebase-walkthrough/docs/module-walkthrough.md`.
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>a3196b000173d6654</task-id>
@@ -965,7 +965,7 @@ Full transcript available at: /private/tmp/claude-501/-Users-jdsingh-conductor-w
 
 All agents done. The walkthrough is complete.
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>a8170b2c93d6c2953</task-id>
@@ -1005,7 +1005,7 @@ A Phase is Forge's unit of work. Every `forge run` execution is a sequence of ph
 
 All agents complete. The walkthrough is done at `codebase-walkthrough/docs/module-walkthrough.md` — 1,031 lines, 26 sections, full module coverage verified.
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>a3c0833f2a8299c16</task-id>

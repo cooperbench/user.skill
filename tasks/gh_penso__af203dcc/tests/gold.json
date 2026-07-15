@@ -1,1 +1,0 @@
-{"point_id": "2a7f9e04-d110-431e-bc20-13dda871d6a6#261", "developer": "gh:penso", "condition": "noprofile", "real": "still an issue: https://github.com/moltis-org/moltis/actions/runs/24722960874", "prev_agent": "Already handled \u2014 the push succeeded on the retry. The background task failure was from the first attempt that needed the YubiKey tap.", "gold_move": null}

@@ -1,0 +1,112 @@
+> DEVELOPER
+
+Implement the following plan:
+
+# Plan: Trailing space stability during drag
+
+## Context
+
+When dragging an item to become the last in the timeline, two related bugs cause "jumpiness":
+
+1. **Coordinate system jump on commit** — `fullMax` changes at drag-end because
+   `trailingEffectiveEnd` (a floor computed from committed positions) grows when the last
+   image moves right. On commit, everything rescales — a discrete pixel snap.
+
+2. **Trailing slot appears mid-drag** — `shouldShowTrailingSlot` can flip from false→true
+   mid-drag when the dragged item (which has a video) becomes the live-last image. The
+   `TrailingEndpoint` handle and segment strip slot appear suddenly — a structural jump.
+
+### Why the coordinate system jumps
+
+`trailingEffectiveEnd = max(committed image frames) + trailingDefaultOffset` feeds into
+`getTimelineDimensions` as a pending-frame floor. During drag this floor uses committed
+(pre-drag) positions, so `rawDimensions.fullMax` stays fixed. At commit, `framePositions`
+updates and the floor grows → `fullMax` grows → everything rescales.
+
+Two sub-cases:
+
+**Explicit endpoint** (`TRAILING_ENDPOINT_KEY` in `framePositions`): The endpoint already
+provides `fullMax` directly. The floor is redundant AND harmful — it inflates `fullMax`
+whenever `lastImageFrame + 17 > TRAILING_ENDPOINT_KEY`. Fix: skip the floor when
+`TRAILING_ENDPOINT_KEY` exists.
+
+**No explicit endpoint** (live trailing video only): The floor is the only source of trailing
+space. When […]
+
+> AGENT
+
+Let me read both files to understand the current code before making changes.
+
+> TOOL
+
+tool_use Read
+```json
+reigh/src/tools/travel-between-images/components/Timeline/hooks/useTimelineOrchestrator.ts
+```
+
+> TOOL
+
+tool_use Read
+```json
+reigh/src/tools/travel-between-images/components/Timeline/TimelineContainer/TimelineContainer.tsx
+```
+
+> AGENT
+
+I have a clear picture of both files. Let me make the three changes from the plan.
+
+> TOOL
+
+tool_use Edit
+```json
+reigh/src/tools/travel-between-images/components/Timeline/hooks/useTimelineOrchestrator.ts
+```
+
+> TOOL
+
+tool_use Edit
+```json
+reigh/src/tools/travel-between-images/components/Timeline/hooks/useTimelineOrchestrator.ts
+```
+
+> TOOL
+
+tool_use Edit
+```json
+reigh/src/tools/travel-between-images/components/Timeline/TimelineContainer/TimelineContainer.tsx
+```
+
+> TOOL
+
+tool_use Edit
+```json
+reigh/src/tools/travel-between-images/components/Timeline/TimelineContainer/TimelineContainer.tsx
+```
+
+> AGENT
+
+Now let me verify with `tsc --noEmit`:
+
+> TOOL
+
+tool_use Bash
+```json
+npx tsc --noEmit 2>&1 | head -40
+```
+
+> TOOL
+
+tool_use Bash
+```json
+npx tsc --noEmit 2>&1 | head -40
+```
+
+> AGENT
+
+Zero type errors. All three changes are in:
+
+1. **`useTimelineOrchestrator.ts` ~line 213** — Skip `trailingEffectiveEnd` floor when `TRAILING_ENDPOINT_KEY` exists in `framePositions`. This prevents the redundant floor from inflating `fullMax` and causing a coordinate-system snap on commit.
+
+2. **`useTimelineOrchestrator.ts` ~line 287** — Extend frozen `fullMax` with `currentDragFrame + trailingDefaultOffset` during drag when there's no explicit endpoint but there is a trailing video. This makes the coordinate system grow monotonically during drag instead of snapping on commit.
+
+3. **`TimelineContainer.tsx` ~line 312** — Freeze `shouldShowTrailingSlot` at drag start using a ref. Prevents the trailing endpoint handle and segment strip slot from appearing/disappearing mid-drag when the live-last image changes.

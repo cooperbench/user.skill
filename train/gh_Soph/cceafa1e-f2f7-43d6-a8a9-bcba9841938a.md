@@ -434,7 +434,7 @@ These are intentionally ignored — we don't care about errors from turn-start/t
 
 The lint and CI both ran successfully above. All clean — 0 lint issues and all 47 canary tests passed. Here's the final summary of tests added: **`cmd/entire/cli/agent/capabilities_test.go`** — 5 subtests for `AsPromptExtractor`: - Not implemented (base agent) → false - Built-in agent → true (no capability gating) - CapabilityDeclarer with `TranscriptAnalyzer: true` → true - CapabilityDeclarer with `TranscriptAnalyzer: false` → false (gated) - Nil agent → false **`cmd/entire/cli/lifecycle_test.go`** — 4 tests: - `TestHandleLifecycleTurnStart_WritesPromptContent` — verifies prompt.txt gets content when prompt is provided - `TestHandleLifecycleTurnEnd_BackfillsPromptFromTranscript` — verifies empty prompt.txt gets backfilled via `PromptExtractor` - `REDACTED` — verifies existing prompt.txt is preserved - `TestHandleLifecycleTurnEnd_BackfillUpdatesSessionState` — verifies `LastPrompt` in session state is updated after backfill (post-SaveStep)
 
-> TOOL
+> METADATA
 
 <task-notification> <task-id>birclllt5</task-id> <tool-use-id>toolu_01Tui3tqPfkBWothEmJpKwmZ</tool-use-id> <output-file>/private/tmp/claude-501/-Users-soph-Work-entire-devenv-cli/cceafa1e-f2f7-43d6-a8a9-bcba9841938a/tasks/birclllt5.output</output-file> <status>failed</status> <summary>Background command "Confirm CI result" failed with exit code 1</summary> </task-notification> Read the output file to retrieve the result: /private/tmp/claude-501/-Users-soph-Work-entire-devenv-cli/cceafa1e-f2f7-43d6-a8a9-bcba9841938a/tasks/birclllt5.output
 

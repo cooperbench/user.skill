@@ -1,1 +1,0 @@
-{"point_id": "nathanbooth-konecta/claude-code-backup|f7ea1ee9-7e7e-4ee6-b6a5-80a08439acb8#38", "developer": "gh:nathanbooth-konecta", "condition": "noprofile", "real": "store_prompts_in_spend_logs: true is still missing", "prev_agent": "PR created: https://github.com/konecta-ix-services/kix-services-litellm/pull/57", "gold_move": null}

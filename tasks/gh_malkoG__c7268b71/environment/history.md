@@ -1,7 +1,0 @@
-> DEVELOPER
-
-Add edit button for article detail page
-
-> AGENT
-
-I've explored the code. Here's what I found: - Article detail uses `PostDetailScreen` (it's a `Post` with `typename == "Article"`). `canDelete` already detects ownership via `viewerHandle` vs `actor.handle` in `PostDetailViewModel.kt:82-85`. - The existing topBar action is a `MoreVert` dropdown menu (`PostDetailScreen.kt:309-323`, `405-446`) with only a Delete item. - There is **no** edit-article screen or repository mutation yet. `ComposeArticleScreen` loads `draftId` but not a published article. Before I code: what should the edit button actually do? Two reasonable paths: 1. **Add button + full edit flow** — extend the compose flow to load a published article and wire an `updateArticle` mutation. A single larger change. 2. **Add button + navigate to Compose with articleId** — still needs the compose-side wiring to do anything useful, so essentially the same work. Given the memory note that fine-grained commits must each stay functional, I don't want to land a button that no-ops. Want me to do the full flow (button + load published article in ComposeArticle + publish-as-edit mutation), or should I scope this PR to just UI wiring and leave the mutation for a follow-up?

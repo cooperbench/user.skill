@@ -1,1 +1,0 @@
-{"point_id": "aae0d59c-b2fe-438c-b8d8-f59339162dd9#3", "developer": "gh:Stark-Industries0417", "condition": "noprofile", "real": "fix the want if they dont match with assertions", "prev_agent": "Done! Added a comment explaining that prerelease versions (development builds) are skipped from update notifications since you don't publish prerelease versions.", "gold_move": null}

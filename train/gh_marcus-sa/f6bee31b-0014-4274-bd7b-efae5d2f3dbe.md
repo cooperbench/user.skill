@@ -1,34 +1,151 @@
 > DEVELOPER
 
-write a README.md in each of the modules in server dirs following this format: # Address Labeling Looks up and classifies blockchain addresses via external providers (Arkham, Etherscan, on-chain registries) with forensic provenance tracking. ## The Problem A tax authority examines a blockchain transaction and sees funds moving to address `0x123...`. They need to answer: *"Who controls this address?"* Is it a centralized exchange (reportable), a DeFi protocol (different treatment), or an unknown wallet (requires investigation)? Getting this wrong affects tax treatment. Sending funds to Binance might indicate a disposal. Sending to a bridge is a cross-chain transfer (non-taxable). Sending to an unknown address could be either—or a gift, or a payment. ## What It Does - **Multi-provider address lookup**: Queries Arkham, Etherscan, and other providers for address classification - **Coalescing cache**: Deduplicates concurrent requests for the same address - **Tiered verification**: Maps provider confidence to forensic evidence tiers - **Negative caching**: Remembers when providers don't know an address to avoid repeated lookups - **Provenance tracking**: Stores raw provider responses for audit reconstruction ## Key Concepts | Term | Definition | |------|------------| | **Provider** | External API that classifies addresses (Arkham, Etherscan, ENS) | | **ProviderResult** | Standardized response format with label, category, and verification status | | **AddressCategory** | Classification type: Exchange, DeFi Protocol, Bridge, Contract, Unknown | | **Verification Tier** | Evidence quality: Tier1 (authoritative), Tier2 (verified), Tier3 (investigative) | | **Negative Lookup** | Cached result indicating no provider has classification for an address | | **CoalescingCache** | Mechanism that merges concurrent requests for the same lookup into one | ## Verification Tiers | Provider Result | Maps To | Usage | |-----------------|---------|-------| | `verified=true` | Tier2HighConfidence | External verification, auto-apply with audit flag | | `verified=false` | Tier3Investigative | Requires corroboration before reliance | | (Tier1 reserved) …
+write a README.md in each of the modules in server dirs following this format: 
+# Address Labeling
+
+Looks up and classifies blockchain addresses via external providers (Arkham, Etherscan, on-chain registries) with forensic provenance tracking.
+
+## The Problem
+
+A tax authority examines a blockchain transaction and sees funds moving to address `0x123...`. They need to answer: *"Who controls this address?"* Is it a centralized exchange (reportable), a DeFi protocol (different treatment), or an unknown wallet (requires investigation)?
+
+Getting this wrong affects tax treatment. Sending funds to Binance might indicate a disposal. Sending to a bridge is a cross-chain transfer (non-taxable). Sending to an unknown address could be either—or a gift, or a payment.
+
+## What It Does
+
+- **Multi-provider address lookup**: Queries Arkham, Etherscan, and other providers for address classification
+- **Coalescing cache**: Deduplicates concurrent requests for the same address
+- **Tiered verification**: Maps provider confidence to forensic evidence tiers
+- **Negative caching**: Remembers when providers don't know an address to avoid repeated lookups
+- **Provenance tracking**: Stores raw provider responses for audit reconstruction
+
+## Key Concepts
+
+| Term | Definition |
+|------|------------|
+| **Provider** | External API that classifies addresses (Arkham, Etherscan, ENS) |
+| **ProviderResult** | Standardized response format with label, category, and verification status |
+| **AddressCategory** | Classification type: Exchange, DeFi Protocol, Bridge, Contract, Unknown |
+| **Verification Tier** | Evidence quality: Tier1 (authoritative), Tier2 (verified), Tier3 (investigative) |
+| **Negative Lookup** | Cached result indicating no provider has classification for an address |
+| **CoalescingCache** | Mechanism that merges concurrent requests for the same lookup into one |
+
+## Verification Tiers
+
+| Provider Result | Maps To | Usage |
+|-----------------|---------|-------|
+| `verified=true` | Tier2HighConfidence | External verification, auto-apply with audit flag |
+| `verified=false` | Tier3Investigative | Requires corroboration before reliance |
+| (Tier1 reserved) | Tier1Authoritative | Subpoena responses or taxpayer self-attestation only |
+
+## How It Works
+
+**Example—classifying a withdrawal destination:**
+
+1. **Request arrives**: Transaction analysis needs to know what `0xA9D1...` on Ethereum is
+
+2. **Cache check**: CoalescingCache checks if we already have this result or if another request is in-flight
+
+3. **Database check**: LRU cache miss → check XTDB for stored classification with TTL validation
+
+4. **Provider query**: Cache miss or expired → query registered providers in priority order
+
+5. **Result mapping**: Arkham returns `{ label: "Binance 14", verified: true }` → maps to Tier2HighConfidence
+
+6. **Persistence**: Result stored in XTDB with full provenance (raw response, query timestamp)
+
+7. **Response**: Returns `AddressClassification` with category, label, and verification tier
+
+**Negative lookup scenario:**
+
+If no provider recognizes `0xDEAD...`:
+- Store `NegativeLookup` result with 24-hour TTL
+- Future lookups return "unknown" immediately without hitting providers
+- TTL expiry triggers re-query in case providers added the address
+
+## Edge Cases
+
+| Scenario | Behavior |
+|----------|----------|
+| **Provider timeout** | Return cached value if available; otherwise propagate error |
+| **Rate limited** | Backoff per `retry_after_secs`; try next provider |
+| **All providers fail** | Return error; don't cache failures |
+| **Conflicting labels** | Use highest-verification-tier result; log discrepancy |
+| **Address format mismatch** | Normalize per chain (EVM lowercase, Solana base58) |
+| **Provider data update** | TTL expiry triggers refresh; old classification preserved bitemporally |
+
+## Where It Fits
+
+```text
+┌─────────────────────────────────────────────────────────────────────────┐
+│                      Address Labeling Pipeline                          │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│  Chain Adapters ──► Processing Engine ──► Address Labeling ──► Tax     │
+│  (Transactions)     (Heuristics)          (This crate)         Report  │
+│                           │                                             │
+│                           │ Queries:            Returns:                │
+│                           │ • What is 0x123?    • Exchange (Tier2)      │
+│                           │ • Who owns this?    • Bridge (Tier2)        │
+│                           │                     • Unknown (Tier3)       │
+│                           ▼                                             │
+│             ┌───────────────────────────────┐                           │
+│             │  External Providers           │                           │
+│             │  Arkham │ Etherscan │ ENS     │                           │
+│             └───────────────────────────────┘                           │
+└─────────────────────────────────────────────────────────────────────────┘
+```
+
+**Consumes**:
+- Address lookup requests from processing engine heuristics
+- Chain ID and normalized address format
+
+**Produces**:
+- `AddressClassification`: Category, label, verification tier
+- `ProviderResult`: Raw provider data with provenance
+- Cached results in XTDB for audit trail
+
+## Configuration
+
+| Setting | Description | Default |
+|---------|-------------|---------|
+| `verified_ttl` | TTL for verified classifications | 7 days |
+| `unverified_ttl` | TTL for unverified classifications | 24 hours |
+| `negative_ttl` | TTL for negative lookups | 24 hours |
+| `request_timeout` | Per-provider request timeout | 10 seconds |
+| `max_concurrent` | Maximum concurrent provider requests | 10 |
+
+## File Structure
+
+```text
+crates/address-labeling/
+├── src/
+│   ├── lib.rs           # Module exports and crate documentation
+│   ├── error.rs         # AddressLabelingError, ProviderError types
+│   ├── provider.rs      # AddressLabelingProvider trait, ProviderHealth
+│   ├── providers/
+│   │   ├── mod.rs       # Provider registry
+│   │   └── mock.rs      # MockAddressLabelingProvider for testing
+│   ├── service.rs       # AddressLabelingService, LabelingConfig
+│   └── types.rs         # AddressLookupKey, ProviderResult
+└── README.md            # This file
+```
+
+## Related Docs
+ ADRs, UX, Features, Requirements, etc
 
 > AGENT
 
-Let me explore the server directory structure first.
+27 READMEs created across all server modules (the `surreal/` directory had no TypeScript files so was skipped). Each README follows the format with:
 
-> AGENT
-
-That's 28 server modules. Let me research them all in parallel, then write the READMEs. I'll launch multiple explore agents to cover all modules.
-
-> AGENT
-
-Launched 4 research agents in parallel to explore all 28 server modules. I'll write the READMEs once they report back.
-
-> AGENT
-
-All 4 research agents completed. Let me check the surreal module and a few files I need more detail on.
-
-> AGENT
-
-All research complete. Now I'll write all 27 READMEs in parallel batches. Let me start with the first batch.
-
-> AGENT
-
-All 27 READMEs written. Let me verify the count and check for any remaining modules.
-
-> AGENT
-
-27 READMEs created across all server modules (the `surreal/` directory had no TypeScript files so was skipped). Each README follows the format with: - **Title** — module name and one-line description - **The Problem** — why this module exists - **What It Does** — bullet points of capabilities - **Key Concepts** — terminology table - **How It Works** — concrete example flow - **Edge Cases** — table of scenarios and behaviors (where applicable) - **Where It Fits** — ASCII architecture diagram showing connections - **File Structure** — annotated file listing
+- **Title** — module name and one-line description
+- **The Problem** — why this module exists
+- **What It Does** — bullet points of capabilities
+- **Key Concepts** — terminology table
+- **How It Works** — concrete example flow
+- **Edge Cases** — table of scenarios and behaviors (where applicable)
+- **Where It Fits** — ASCII architecture diagram showing connections
+- **File Structure** — annotated file listing
 
 > DEVELOPER
 

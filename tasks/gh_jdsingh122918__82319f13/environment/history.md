@@ -1497,7 +1497,7 @@ I'll compile the results as they come back.
 The agents are analyzing ~31k lines of new code across 62 files. This may take a few minutes.
 </details>
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>a846f7e84af7184e0</task-id>
@@ -1532,7 +1532,7 @@ The `recover_orphans` and `rebuild_run_graph` functions contain approximately 60
 
 Test coverage analysis is back. Waiting for the remaining 4 agents to complete...
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>adc5331c1a1f1c367</task-id>
@@ -1576,7 +1576,7 @@ The `let _ = tx.send(envelope)` discards the `SendError` without any logging. If
 
 Silent failure analysis is back. 3 agents still running...
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>a8288beb63222ca28</task-id>
@@ -1630,7 +1630,7 @@ let fence = tokio::task::spawn_blocking(move || state_store.latest_seq())
 
 Code review is back. 2 agents still running (type design + comment analysis)...
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>aebe4b1d9703cfaed</task-id>
@@ -1657,7 +1657,7 @@ I analyzed all code comments across the 15 key files in this PR, cross-referenci
 
 Comment analysis is back. 1 agent remaining (type design)...
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>a97c68888ec197c3e</task-id>

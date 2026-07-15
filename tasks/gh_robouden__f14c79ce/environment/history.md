@@ -1,7 +1,0 @@
-> DEVELOPER
-
-Can you make aplan for reorganising the settings menu? I want a simpler version. order by for example: -Display - GPS - Sound - SD card - Wifi - Utilities - debug - factory reset - reset dose - Information of this device. If you have other suggestions, please let me now. Try to keep the same functions, but make the menu/display much more ordered.
-
-> AGENT
-
-I've read through the current settings. Here's a plan. ## Current state The Settings screen [config_mode.cpp:16-30](bgeigiezen_firmware/screens/config_mode.cpp#L16-L30) is a flat list of 13 entries: `View settings · Start Access Point · Start on local · Load from SD · Save to SD · Wipe SD Card · Reset dose · CPM Alert Level · Audio Settings · Dim Brightness · Set Home GPS · Factory reset · Back` Plus, on the main menu [menu_window.cpp:19-30](bgeigiezen_firmware/screens/menu_window.cpp#L19-L30), `Debug info` and `About Zen` live next to operational modes — they're really utility/info screens, not modes. ## Proposed Settings tree ``` Settings ├── Display │ • Dim brightness (existing page) │ • Display unit CPM↔uSv/h (today read-only on "View settings") │ • Dim timeout (today read-only) │ • Off timeout (today read-only) │ • Screensaver on/off (today read-only) │ • Back │ ├── GPS │ • Set Home GPS (existing page) │ • Max DOP (today read-only) │ • Back │ ├── Sound │ • Volume / Clicks / Alarm (existing Audio Settings page, unchanged) │ • CPM alert level (existing — it's the alarm trigger, fits here) │ • Back │ ├── SD card │ • Load config from SD (existing) │ • Save config […]

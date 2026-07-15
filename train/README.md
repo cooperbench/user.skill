@@ -1,7 +1,7 @@
 # SWESimBench v2 — train sessions
 
 Scrubbed **train-split** coding-agent sessions for the Opus-era clean cohort
-(68 developers, 10797 sessions).
+(68 developers, 10774 sessions).
 
 Not Harbor tasks. Held-out prediction points live under `../tasks/`.
 
@@ -34,4 +34,4 @@ Look up `session_id` / `source` / `repo` / `start_time` in `_sessions.jsonl`.
 Turns are **not** word-truncated (eval histories are, for context-window sizing).
 Secrets are already scrubbed by the clean-cohort pipeline.
 
-Policy: `swesimbench-v2-cohort-policy-2026-07-13.15`.
+Policy: `swesimbench-v2-cohort-policy-2026-07-13.18`.

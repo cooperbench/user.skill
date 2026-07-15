@@ -1,11 +1,413 @@
 > DEVELOPER
 
-Workspace: /root/shared-nvme/openbmb. This is MiniCPM-SALA (NOT MoE). Focus on sparse attention path only. Thoroughly explore: - demo-sala/sglang/python/sglang/srt/layers/attention/minicpm_sparse_utils.py - minicpm_sparse_kernels.py (Triton) - minicpm_backend.py (topk, compress, stage1 calls) Find: redundant copies/contiguous/to(dtype), Python overhead chains, places where two kernels could be one (fusion), CUDA Graph hazards. Quote file:line patterns. Return: ranked list of 3-6 concrete optimization ideas with evidence (paths), expected impact (high/med/low), and risk. NO MoE content.
+Workspace: /root/shared-nvme/openbmb. This is MiniCPM-SALA (NOT MoE). Focus on sparse attention path only.
+
+Thoroughly explore:
+- demo-sala/sglang/python/sglang/srt/layers/attention/minicpm_sparse_utils.py
+- minicpm_sparse_kernels.py (Triton)
+- minicpm_backend.py (topk, compress, stage1 calls)
+
+Find: redundant copies/contiguous/to(dtype), Python overhead chains, places where two kernels could be one (fusion), CUDA Graph hazards. Quote file:line patterns.
+
+Return: ranked list of 3-6 concrete optimization ideas with evidence (paths), expected impact (high/med/low), and risk. NO MoE content.
 
 > AGENT
 
 正在系统搜索并阅读稀疏注意力相关文件。
 
+> TOOL
+
+tool_use glob_file_search
+```json
+{
+  "targetDirectory": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers/attention",
+  "globPattern": "**/minicpm_sparse*.py"
+}
+```
+
+> TOOL
+
+tool_result glob_file_search
+```
+null
+```
+
+> TOOL
+
+tool_use ripgrep_raw_search
+```json
+{
+  "pattern": "\\.contiguous\\(|\\.to\\(|clone\\(|copy_",
+  "path": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers/attention",
+  "glob": "*minicpm*sparse*",
+  "caseInsensitive": false
+}
+```
+
+> TOOL
+
+tool_use glob_file_search
+```json
+{
+  "targetDirectory": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers/attention",
+  "globPattern": "**/minicpm_backend.py"
+}
+```
+
+> TOOL
+
+tool_result glob_file_search
+```
+null
+```
+
+> TOOL
+
+tool_use ripgrep_raw_search
+```json
+{
+  "pattern": "contiguous|\\.to\\(|clone|graph|record_stream|synchronize|item\\(\\)|cpu\\(\\)",
+  "path": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers/attention/minicpm_backend.py",
+  "caseInsensitive": false
+}
+```
+
+> TOOL
+
+tool_use ripgrep_raw_search
+```json
+{
+  "pattern": "contiguous|\\.to\\(|clone|graph|record_stream|item\\(|cpu\\(\\)|torch\\.compile",
+  "path": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers/attention/minicpm_sparse_utils.py",
+  "caseInsensitive": false
+}
+```
+
+> TOOL
+
+tool_use read_file_v2
+```json
+{
+  "targetFile": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers/attention/minicpm_backend.py",
+  "limit": 200,
+  "charsLimit": 1000000,
+  "effectiveUri": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers/attention/minicpm_backend.py"
+}
+```
+
+> TOOL
+
+tool_result read_file_v2
+```
+null
+```
+
+> TOOL
+
+tool_use read_file_v2
+```json
+{
+  "targetFile": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers/attention/minicpm_sparse_utils.py",
+  "offset": 430,
+  "limit": 400,
+  "charsLimit": 1000000,
+  "effectiveUri": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers/attention/minicpm_sparse_utils.py"
+}
+```
+
+> TOOL
+
+tool_result read_file_v2
+```
+null
+```
+
+> TOOL
+
+tool_use read_file_v2
+```json
+{
+  "targetFile": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers/attention/minicpm_sparse_kernels.py",
+  "limit": 120,
+  "charsLimit": 1000000,
+  "effectiveUri": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers/attention/minicpm_sparse_kernels.py"
+}
+```
+
+> TOOL
+
+tool_result read_file_v2
+```
+null
+```
+
+> TOOL
+
+tool_use read_file_v2
+```json
+{
+  "targetFile": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers/attention/minicpm_backend.py",
+  "offset": 650,
+  "limit": 450,
+  "charsLimit": 1000000,
+  "effectiveUri": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers/attention/minicpm_backend.py"
+}
+```
+
+> TOOL
+
+tool_result read_file_v2
+```
+null
+```
+
+> TOOL
+
+tool_use ripgrep_raw_search
+```json
+{
+  "pattern": "def allocate_and_compress|def get_compress_k|compress_k_complete|sparse_kernel",
+  "path": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers/attention/minicpm_sparse_utils.py",
+  "caseInsensitive": false
+}
+```
+
+> TOOL
+
+tool_use read_file_v2
+```json
+{
+  "targetFile": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers/attention/minicpm_sparse_utils.py",
+  "offset": 1,
+  "limit": 250,
+  "charsLimit": 1000000,
+  "effectiveUri": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers/attention/minicpm_sparse_utils.py"
+}
+```
+
+> TOOL
+
+tool_result read_file_v2
+```
+null
+```
+
+> TOOL
+
+tool_use read_file_v2
+```json
+{
+  "targetFile": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers/attention/minicpm_sparse_utils.py",
+  "offset": 980,
+  "limit": 500,
+  "charsLimit": 1000000,
+  "effectiveUri": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers/attention/minicpm_sparse_utils.py"
+}
+```
+
+> TOOL
+
+tool_result read_file_v2
+```
+null
+```
+
+> TOOL
+
+tool_use read_file_v2
+```json
+{
+  "targetFile": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers/attention/minicpm_sparse_utils.py",
+  "offset": 320,
+  "limit": 120,
+  "charsLimit": 1000000,
+  "effectiveUri": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers/attention/minicpm_sparse_utils.py"
+}
+```
+
+> TOOL
+
+tool_result read_file_v2
+```
+null
+```
+
+> TOOL
+
+tool_use read_file_v2
+```json
+{
+  "targetFile": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers/attention/minicpm_backend.py",
+  "offset": 1090,
+  "limit": 200,
+  "charsLimit": 1000000,
+  "effectiveUri": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers/attention/minicpm_backend.py"
+}
+```
+
+> TOOL
+
+tool_result read_file_v2
+```
+null
+```
+
+> TOOL
+
+tool_use read_file_v2
+```json
+{
+  "targetFile": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers/attention/minicpm_backend.py",
+  "offset": 1660,
+  "limit": 220,
+  "charsLimit": 1000000,
+  "effectiveUri": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers/attention/minicpm_backend.py"
+}
+```
+
+> TOOL
+
+tool_result read_file_v2
+```
+null
+```
+
+> TOOL
+
+tool_use read_file_v2
+```json
+{
+  "targetFile": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers/attention/minicpm_backend.py",
+  "offset": 380,
+  "limit": 200,
+  "charsLimit": 1000000,
+  "effectiveUri": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers/attention/minicpm_backend.py"
+}
+```
+
+> TOOL
+
+tool_result read_file_v2
+```
+null
+```
+
+> TOOL
+
+tool_use ripgrep_raw_search
+```json
+{
+  "pattern": "@triton\\.jit|def compress",
+  "path": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers/attention/minicpm_sparse_kernels.py",
+  "caseInsensitive": false
+}
+```
+
+> TOOL
+
+tool_use read_file_v2
+```json
+{
+  "targetFile": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers/attention/minicpm_sparse_kernels.py",
+  "offset": 265,
+  "limit": 100,
+  "charsLimit": 1000000,
+  "effectiveUri": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers/attention/minicpm_sparse_kernels.py"
+}
+```
+
+> TOOL
+
+tool_result read_file_v2
+```
+null
+```
+
+> TOOL
+
+tool_use read_file_v2
+```json
+{
+  "targetFile": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers/attention/minicpm_sparse_kernels.py",
+  "offset": 510,
+  "limit": 120,
+  "charsLimit": 1000000,
+  "effectiveUri": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers/attention/minicpm_sparse_kernels.py"
+}
+```
+
+> TOOL
+
+tool_result read_file_v2
+```
+null
+```
+
 > AGENT
 
-下面基于仓库里**稀疏路径**（compress → stage1/topk → block table → sparse FA）的代码阅读结论，给出带路径/行号的证据与优化排序。 --- ## 证据摘要（模式与位置） **冗余 `contiguous` / `permute` / `to` / `clone`** - `compressed_attention`（非 fused）：`q.repeat_interleave` 扩维；`k_grp` 上 `permute(...).contiguous()`；decode 的 `split_stage1` 分支里 `matmul → nan_to_num → softmax → sum → transpose` 多段算子。`topk` 后还有 `sort` + `to(int32)`。 路径：`/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers/attention/minicpm_sparse_utils.py` 约 450–456、488–534。 - `compressed_attention_tilelang`：`q` 的 `view → transpose → reshape → contiguous()`，`k.contiguous()`；fused kernel 之后 `topk_indices.clone()`、mask 大值再 `sort`。 同文件约 592–596、705–711。 - `forward_extend` / `forward_decode`：`q.to(kv_cache_dtype)`（条件）、多处 `q.contiguous().view(...)`；mixed batch 时对子区间 `.clone()` 做 head-group 交织。 `minicpm_backend.py` 约 932–934、952–954、986、1013–1015、1042、1152–1154、1170。 **Python 调用链 / 主机开销** - `get_compress_k_v2`：对同一 `key_cache` **连续两次** `compress_k_core_new`（k1、k2），即两次完整 Triton grid。 `minicpm_sparse_utils.py` 约 134–207。 - Prefill 稀疏：`for sparse_bs_idx in sparse_bs:` 里切片赋值拼出 `compressed_k` / `compressed_k2`，再用 `torch.tensor([...], device=...)` 建 `cu_seqlens`。 `minicpm_backend.py` 约 654–695。 - `SparseMetadataBuilder.build_token_mappings`：`cu_seqlens_q_sparse_bs[-1].item()`，CPU 上双重 `for`，内层 `extend_prefix_lens_sparse[i].item()` 与按行建 `torch.tensor([...])`。 `minicpm_sparse_utils.py` 约 1025–1048。 - `_compute_single_compression_metadata`：`for i in range(bs)` 写 `seqlen_cpu`，再 `max().item()`、`seqlen_cpu.to(device=...)`。 同文件约 1091–1114。 - `init_forward_metadata`：`seq_lens_cpu.max().item()` 等（decode/extend 通用，影响每步元数据）。 `minicpm_backend.py` 约 491、505、448（prefill sparse 的 `max_seqlen_q_adjusted`）。 **“两个 kernel 可合一”的明确注释/结构** - Triton 文件末尾：`cumsum_kernel` + `flatten_and_fill_kernel` 的 **两 kernel** FlashInfer 转换路径；`cumsum_kernel` 内是 **顺序 for 循环**（注释写 TODO parallel scan）。 `minicpm_sparse_kernels.py` 约 528–618。 - k1/k2：两个独立的 `compress_k_complete_kernel_new`（或 padded 版）launch，逻辑对称。 `minicpm_sparse_utils.py` 约 167–206。 **CUDA Graph 相关** - 注释写明 TileLang 路径用 `max_seqlen_q > 1` 等避免图内 `.item()`。 `minicpm_sparse_utils.py` 约 565–567。 - **Replay（图外）**：`wrapper.begin_forward(..., non_blocking=True)` 后 **`torch.cuda.synchronize()`**；随后对 **整块** `compress_k1` / `compress_k2` 视图 `fill_(-inf)`（按 `batch_size * max_context_len // stride` 切片）。 `minicpm_backend.py` 约 1772–1797。 - 图捕获侧：FlashInfer 元数据需预先转换、replay 时 `copy_` 多段 CPU→固定 buffer（大量 `metadata.k1.*.copy_(..._cpu)`）。 同文件约 1736–1873。 --- ## 排序后的 6 条具体优化想法 | 排名 | 想法 | 证据路径 | 预期收益 | 风险 | |------|------|----------|----------|------| | **1** | **减轻 CUDA Graph replay 的硬同步与整段 compress buffer 清零**：评估 `begin_forward` 后是否可用事件/`record_stream` 替代全局 `torch.cuda.synchronize()`；`fill_(-inf)` 是否可改为按 **实际 token 数** 的小范围清零或与 Triton compress 写路径合并（避免每步扫大块）。 | `minicpm_backend.py` 1788–1797（sync + 两段 `fill_`） | **高**（decode 每步、每层前热路径上的主机与带宽） | **中**：FlashInfer/驱动异步语义搞错会偶现错页表或脏压缩缓存 | | **2** | **非 fused 的 `compressed_attention` 链路融合或减少中间张量**：`repeat_interleave`（大分配）能否用广播/`einsum`/单 kernel；`k_grp` 的 `permute+contiguous` 是否与 stage1 输入布局对齐后省掉；`topk(...).indices.sort(-1)` 与 `to(int32)` 能否并入下游或单 kernel（与 `max_pooling_1d_varlen` 输出约定对齐）。 | `minicpm_sparse_utils.py` 450–456、488–534 | **中–高**（prefill 长序列、未开 `fuse_topk` 时） | **中**：数值/索引顺序与 block mask 必须一致 | | **3** | **Prefill 稀疏：去掉 Python for 切片拼装 `compressed_k*`，改为单次索引/`torch.cat` 或让 topk 直接消费 `full_compressed_*` 的连续视图**；`compressed_cu_seqlens` 用 GPU `cumsum` 而非 list→`torch.tensor`。 | `minicpm_backend.py` 654–695 | **中**（sparse_bs 多、chunk 大时 Python+多次 memcpy） | **中**（布局与 `cu_seqlens` 对齐要验） | | **4** | **TileLang fused topk 尾部去掉 `clone`+全量 `sort`**：在 kernel 内输出已排序 topk，或只对有效槽位排序；避免 `topk_for_sort = topk_indices.clone()`。 | `minicpm_sparse_utils.py` 702–711 | **中**（decode 开 `fuse_topk` 时） | **中**（-1 padding 与有序性语义） | | **5** | **元数据构建向量化**：`build_token_mappings` / `_compute_single_compression_metadata` 的 CPU 循环与 `.item()` 改为纯 tensor 索引（GPU 或批量 CPU），减少 `token_to_bs`/`token_pos_in_bs` 的 **CPU 分配 + `.to(cuda)`**（见 `minicpm_backend.py` 408–409 对映射 tensor 的 H2D）。 | `minicpm_sparse_utils.py` 1025–1048、1091–1114；`minicpm_backend.py` 401–409 | **中**（batch 较大时）/ **低**（小 batch） | **低–中**（实现复杂度） […]
+下面基于仓库里**稀疏路径**（compress → stage1/topk → block table → sparse FA）的代码阅读结论，给出带路径/行号的证据与优化排序。
+
+---
+
+## 证据摘要（模式与位置）
+
+**冗余 `contiguous` / `permute` / `to` / `clone`**
+
+- `compressed_attention`（非 fused）：`q.repeat_interleave` 扩维；`k_grp` 上 `permute(...).contiguous()`；decode 的 `split_stage1` 分支里 `matmul → nan_to_num → softmax → sum → transpose` 多段算子。`topk` 后还有 `sort` + `to(int32)`。  
+  路径：`/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers/attention/minicpm_sparse_utils.py` 约 450–456、488–534。  
+- `compressed_attention_tilelang`：`q` 的 `view → transpose → reshape → contiguous()`，`k.contiguous()`；fused kernel 之后 `topk_indices.clone()`、mask 大值再 `sort`。  
+  同文件约 592–596、705–711。  
+- `forward_extend` / `forward_decode`：`q.to(kv_cache_dtype)`（条件）、多处 `q.contiguous().view(...)`；mixed batch 时对子区间 `.clone()` 做 head-group 交织。  
+  `minicpm_backend.py` 约 932–934、952–954、986、1013–1015、1042、1152–1154、1170。
+
+**Python 调用链 / 主机开销**
+
+- `get_compress_k_v2`：对同一 `key_cache` **连续两次** `compress_k_core_new`（k1、k2），即两次完整 Triton grid。  
+  `minicpm_sparse_utils.py` 约 134–207。  
+- Prefill 稀疏：`for sparse_bs_idx in sparse_bs:` 里切片赋值拼出 `compressed_k` / `compressed_k2`，再用 `torch.tensor([...], device=...)` 建 `cu_seqlens`。  
+  `minicpm_backend.py` 约 654–695。  
+- `SparseMetadataBuilder.build_token_mappings`：`cu_seqlens_q_sparse_bs[-1].item()`，CPU 上双重 `for`，内层 `extend_prefix_lens_sparse[i].item()` 与按行建 `torch.tensor([...])`。  
+  `minicpm_sparse_utils.py` 约 1025–1048。  
+- `_compute_single_compression_metadata`：`for i in range(bs)` 写 `seqlen_cpu`，再 `max().item()`、`seqlen_cpu.to(device=...)`。  
+  同文件约 1091–1114。  
+- `init_forward_metadata`：`seq_lens_cpu.max().item()` 等（decode/extend 通用，影响每步元数据）。  
+  `minicpm_backend.py` 约 491、505、448（prefill sparse 的 `max_seqlen_q_adjusted`）。
+
+**“两个 kernel 可合一”的明确注释/结构**
+
+- Triton 文件末尾：`cumsum_kernel` + `flatten_and_fill_kernel` 的 **两 kernel** FlashInfer 转换路径；`cumsum_kernel` 内是 **顺序 for 循环**（注释写 TODO parallel scan）。  
+  `minicpm_sparse_kernels.py` 约 528–618。  
+- k1/k2：两个独立的 `compress_k_complete_kernel_new`（或 padded 版）launch，逻辑对称。  
+  `minicpm_sparse_utils.py` 约 167–206。
+
+**CUDA Graph 相关**
+
+- 注释写明 TileLang 路径用 `max_seqlen_q > 1` 等避免图内 `.item()`。  
+  `minicpm_sparse_utils.py` 约 565–567。  
+- **Replay（图外）**：`wrapper.begin_forward(..., non_blocking=True)` 后 **`torch.cuda.synchronize()`**；随后对 **整块** `compress_k1` / `compress_k2` 视图 `fill_(-inf)`（按 `batch_size * max_context_len // stride` 切片）。  
+  `minicpm_backend.py` 约 1772–1797。  
+- 图捕获侧：FlashInfer 元数据需预先转换、replay 时 `copy_` 多段 CPU→固定 buffer（大量 `metadata.k1.*.copy_(..._cpu)`）。  
+  同文件约 1736–1873。
+
+---
+
+## 排序后的 6 条具体优化想法
+
+| 排名 | 想法 | 证据路径 | 预期收益 | 风险 |
+|------|------|----------|----------|------|
+| **1** | **减轻 CUDA Graph replay 的硬同步与整段 compress buffer 清零**：评估 `begin_forward` 后是否可用事件/`record_stream` 替代全局 `torch.cuda.synchronize()`；`fill_(-inf)` 是否可改为按 **实际 token 数** 的小范围清零或与 Triton compress 写路径合并（避免每步扫大块）。 | `minicpm_backend.py` 1788–1797（sync + 两段 `fill_`） | **高**（decode 每步、每层前热路径上的主机与带宽） | **中**：FlashInfer/驱动异步语义搞错会偶现错页表或脏压缩缓存 |
+| **2** | **非 fused 的 `compressed_attention` 链路融合或减少中间张量**：`repeat_interleave`（大分配）能否用广播/`einsum`/单 kernel；`k_grp` 的 `permute+contiguous` 是否与 stage1 输入布局对齐后省掉；`topk(...).indices.sort(-1)` 与 `to(int32)` 能否并入下游或单 kernel（与 `max_pooling_1d_varlen` 输出约定对齐）。 | `minicpm_sparse_utils.py` 450–456、488–534 | **中–高**（prefill 长序列、未开 `fuse_topk` 时） | **中**：数值/索引顺序与 block mask 必须一致 |
+| **3** | **Prefill 稀疏：去掉 Python for 切片拼装 `compressed_k*`，改为单次索引/`torch.cat` 或让 topk 直接消费 `full_compressed_*` 的连续视图**；`compressed_cu_seqlens` 用 GPU `cumsum` 而非 list→`torch.tensor`。 | `minicpm_backend.py` 654–695 | **中**（sparse_bs 多、chunk 大时 Python+多次 memcpy） | **中**（布局与 `cu_seqlens` 对齐要验） |
+| **4** | **TileLang fused topk 尾部去掉 `clone`+全量 `sort`**：在 kernel 内输出已排序 topk，或只对有效槽位排序；避免 `topk_for_sort = topk_indices.clone()`。 | `minicpm_sparse_utils.py` 702–711 | **中**（decode 开 `fuse_topk` 时） | **中**（-1 padding 与有序性语义） |
+| **5** | **元数据构建向量化**：`build_token_mappings` / `_compute_single_compression_metadata` 的 CPU 循环与 `.item()` 改为纯 tensor 索引（GPU 或批量 CPU），减少 `token_to_bs`/`token_pos_in_bs` 的 **CPU 分配 + `.to(cuda)`**（见 `minicpm_backend.py` 408–409 对映射 tensor 的 H2D）。 | `minicpm_sparse_utils.py` 1025–1048、1091–1114；`minicpm_backend.py` 401–409 | **中**（batch 较大时）/ **低**（小 batch） | **低–中**（实现复杂度） |
+| **6** | **k1/k2 压缩双 launch 重叠**：同一 `key_cache` 上两次 `compress_k_complete_kernel_new`，可用双 stream 或（难度大）单 kernel 双输出，降低串行 launch 间隙。 | `minicpm_sparse_utils.py` 167–206 | **中低**（launch 与读 cache 为主） | **中**（同步与 workspace 布局） |
+
+---
+
+## 补充：CUDA Graph “隐患”归纳（仅稀疏相关）
+
+- **图外** replay 路径依赖 **`synchronize` 保证 wrapper 与后续图内 kernel 顺序**（`minicpm_backend.py` 1698–1702、1788–1789）；若弱化同步，需证明 `begin_forward` 触发的 GPU 工作已全部完成。  
+- **图内**需避免非常量控制流依赖 `.item()`；TileLang 路径已部分规避（`minicpm_sparse_utils.py` 565–567），但 **`init_forward_metadata` 仍有多处 `.item()`**（`minicpm_backend.py` 491、505 等），若将来把稀疏准备挪进 capture 范围需再审计。  
+- **固定 buffer + `copy_`** 模式（`minicpm_backend.py` 1736–1873）正确但主机发起次数多，属于“非 MoE”稀疏路径上除算子外的固定开销源。
+
+以上为只读分析；若要落地改代码，需在 Agent 模式下改并跑 decode/prefill + graph 回归。

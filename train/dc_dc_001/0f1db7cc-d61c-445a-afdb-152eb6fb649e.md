@@ -4,7 +4,9 @@
 
 > TOOL
 
-<command-name>/model</command-name> <command-message>model</command-message> <command-args></command-args>
+<command-name>/model</command-name>
+            <command-message>model</command-message>
+            <command-args></command-args>
 
 > TOOL
 
@@ -14,10 +16,738 @@
 
 你看一看sala这个模型 你认为nextn/mtp解码加速是否有实现可能性？
 
+> TOOL
+
+tool_use Glob
+```json
+{
+  "pattern": "**/config.json",
+  "path": "/user_4813494d/models/openbmb"
+}
+```
+
+> TOOL
+
+tool_result Glob
+```
+/user_4813494d/models/openbmb/MiniCPM-SALA/config.json
+/user_4813494d/models/openbmb/MiniCPM-SALA-NVFP4-calib90/config.json
+/user_4813494d/models/openbmb/MiniCPM-SALA-NVFP4-calib150/config.json
+```
+
+> TOOL
+
+tool_use Glob
+```json
+{
+  "pattern": "**/modeling_minicpm.py",
+  "path": "/user_4813494d/openbmb"
+}
+```
+
+> TOOL
+
+tool_result Glob
+```
+No files found
+```
+
+> TOOL
+
+tool_use Read
+```json
+{
+  "file_path": "/user_4813494d/models/openbmb/MiniCPM-SALA/config.json"
+}
+```
+
+> TOOL
+
+tool_result Read
+```
+1	{
+2	  "_name_or_path": "openbmb/MiniCPM-SALA",
+3	  "architectures": [
+4	    "MiniCPMSALAForCausalLM"
+5	  ],
+6	  "attention_bias": false,
+7	  "attention_dropout": 0.0,
+8	  "attn_use_rope": false,
+9	  "auto_map": {
+10	    "AutoConfig": "configuration_minicpm_sala.MiniCPMSALAConfig",
+11	    "AutoModel": "modeling_minicpm_sala.MiniCPMSALAModel",
+12	    "AutoModelForCausalLM": "modeling_minicpm_sala.MiniCPMSALAForCausalLM",
+13	    "AutoModelForSeq2SeqLM": "modeling_minicpm_sala.MiniCPMSALAForCausalLM",
+14	    "AutoModelForSequenceClassification": "modeling_minicpm_sala.MiniCPMSALAForSequenceClassification"
+15	  },
+16	  "bos_token_id": 1,
+17	  "eos_token_id": [
+18	    2,
+19	    73440
+20	  ],
+21	  "pad_token_id": 2,
+22	  "head_dim": 128,
+23	  "hidden_act": "silu",
+24	  "hidden_size": 4096,
+25	  "initializer_range": 0.1,
+26	  "intermediate_size": 16384,
+27	  "lightning_head_dim": 128,
+28	  "lightning_nh": 32,
+29	  "lightning_nkv": 32,
+30	  "lightning_scale": "1/sqrt(d)",
+31	  "lightning_use_rope": true,
+32	  "max_position_embeddings": 524288,
+33	  "model_type": "minicpm_sala",
+34	  "mixer_types": [
+35	    "minicpm4",
+36	    "lightning-attn",
+37	    "lightning-attn",
+38	    "lightning-attn",
+39	    "lightning-attn",
+40	    "lightning-attn",
+41	    "lightning-attn",
+42	    "lightning-attn",
+43	    "lightning-attn",
+44	    "minicpm4",
+45	    "lightning-attn",
+46	    "lightning-attn",
+47	    "lightning-attn",
+48	    "lightning-attn",
+49	    "lightning-attn",
+50	    "lightning-attn",
+51	    "minicpm4",
+52	    "minicpm4",
+53	    "lightning-attn",
+54	    "lightning-attn",
+55	    "lightning-attn",
+56	    "lightning-attn",
+57	    "minicpm4",
+58	    "lightning-attn",
+59	    "lightning-attn",
+60	    "lightning-attn",
+61	    "lightning-attn",
+62	    "lightning-attn",
+63	    "lightning-attn",
+64	    "minicpm4",
+65	    "minicpm4",
+66	    "minicpm4"
+67	  ],
+68	  "sparse_config": {
+69	    "kernel_size": 32,
+70	    "kernel_stride": 16,
+71	    "init_blocks": 1,
+72	    "block_size": 64,
+73	    "window_size": 2048,
+74	    "topk": 64,
+75	    "use_nope": false,
+76	    "dense_len": 8192
+77	  },
+78	  "num_attention_heads": 32,
+79	  "num_hidden_layers": 32,
+80	  "num_key_value_heads": 2,
+81	  "qk_norm": true,
+82	  "rand_init": false,
+83	  "rms_norm_eps": 1e-06,
+84	  "torch_dtype": "bfloat16",
+85	  "dtype": "bfloat16",
+86	  "transformers_version": "4.56.0",
+87	  "use_cache": true,
+88	  "vocab_size": 73448,
+89	  "rope_theta": 10000.0,
+90	  "scale_emb": 12,
+91	  "scale_depth": 1.4,
+92	  "mup_denominator": 32,
+93	  "dim_model_base": 256,
+94	  "tie_word_embeddings": false,
+95	  "use_output_gate": true,
+96	  "use_output_norm": true,
+97	  "attn_use_output_gate": true
+98	}
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>
+```
+
+> TOOL
+
+tool_use Glob
+```json
+{
+  "pattern": "**/minicpm*.py",
+  "path": "/user_4813494d/openbmb/demo-sala/sglang"
+}
+```
+
+> TOOL
+
+tool_result Glob
+```
+demo-sala/sglang/python/sglang/srt/configs/minicpm.py
+demo-sala/sglang/python/sglang/srt/layers/attention/minicpm_attention_kernels.py
+demo-sala/sglang/python/sglang/srt/layers/attention/minicpm_fuse_kernel.py
+demo-sala/sglang/python/sglang/srt/layers/attention/minicpm_sparse_kernels.py
+demo-sala/sglang/python/sglang/srt/layers/attention/minicpm_sparse_utils.py
+demo-sala/sglang/python/sglang/srt/multimodal/processors/minicpm.py
+demo-sala/sglang/python/sglang/srt/models/minicpm.py
+demo-sala/sglang/python/sglang/srt/models/minicpm3.py
+demo-sala/sglang/python/sglang/srt/models/minicpmo.py
+demo-sala/sglang/python/sglang/srt/models/minicpmv.py
+demo-sala/sglang/python/sglang/srt/layers/attention/minicpm_backend.py
+```
+
+> TOOL
+
+tool_use Read
+```json
+{
+  "file_path": "/user_4813494d/openbmb/demo-sala/sglang/python/sglang/srt/models/minicpm.py",
+  "limit": 100
+}
+```
+
+> TOOL
+
+tool_result Read
+```
+1	# Copyright 2023-2024 SGLang Team
+2	# Licensed under the Apache License, Version 2.0 (the "License");
+3	# you may not use this file except in compliance with the License.
+4	# You may obtain a copy of the License at
+5	#
+6	#     http://www.apache.org/licenses/LICENSE-2.0
+7	#
+8	# Unless required by applicable law or agreed to in writing, software
+9	# distributed under the License is distributed on an "AS IS" BASIS,
+10	# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+11	# See the License for the specific language governing permissions and
+12	# limitations under the License.
+13	# ==============================================================================
+14	"""Inference-only MiniCPM model compatible with HuggingFace weights."""
+15	
+16	import math
+17	from typing import Any, Dict, Iterable, Optional, Tuple
+18	
+19	import torch
+20	import torch.nn.functional as F
+21	from torch import nn
+22	
+23	from sglang.srt.distributed import get_tensor_model_parallel_world_size
+24	from sglang.srt.layers.activation import SiluAndMul
+25	from sglang.srt.layers.attention.hybrid_linear_attn_backend import SimpleGLAAttnBackend
+26	from sglang.srt.layers.attention.minicpm_sparse_utils import (
+27	    SparseBatchAnalyzer,
+28	    SparseConfig,
+29	    SparseMetadata,
+30	    SparseMetadataBuilder,
+31	)
+32	from sglang.srt.layers.layernorm import RMSNorm
+33	from sglang.srt.layers.linear import (
+34	    ColumnParallelLinear,
+35	    MergedColumnParallelLinear,
+36	    QKVParallelLinear,
+37	    RowParallelLinear,
+38	)
+39	from sglang.srt.layers.logits_processor import LogitsProcessor
+40	from sglang.srt.layers.quantization.base_config import QuantizationConfig
+41	from sglang.srt.layers.radix_attention import RadixAttention
+42	from sglang.srt.layers.rotary_embedding import get_rope
+43	from sglang.srt.layers.vocab_parallel_embedding import (
+44	    ParallelLMHead,
+45	    VocabParallelEmbedding,
+46	)
+47	from sglang.srt.model_executor.forward_batch_info import ForwardBatch
+48	from sglang.srt.model_loader.weight_utils import default_weight_loader
+49	from sglang.srt.utils import add_prefix
+50	
+51	
+52	class MiniCPMMLP(nn.Module):
+53	    def __init__(
+54	        self,
+55	        hidden_size: int,
+56	        intermediate_size: int,
+57	        hidden_act: str,
+58	        quant_config: Optional[QuantizationConfig] = None,
+59	        prefix: str = "",
+60	    ) -> None:
+61	        super().__init__()
+62	        self.gate_up_proj = MergedColumnParallelLinear(
+63	            hidden_size,
+64	            [intermediate_size] * 2,
+65	            bias=False,
+66	            quant_config=quant_config,
+67	            prefix=add_prefix("gate_up_proj", prefix),
+68	        )
+69	        self.down_proj = RowParallelLinear(
+70	            intermediate_size,
+71	            hidden_size,
+72	            bias=False,
+73	            quant_config=quant_config,
+74	            prefix=add_prefix("down_proj", prefix),
+75	        )
+76	        if hidden_act != "silu":
+77	            raise ValueError(
+78	                f"Unsupported activation: {hidden_act}. "
+79	                "Only silu is supported for now."
+80	            )
+81	        self.act_fn = SiluAndMul()
+82	
+83	    def forward(self, x):
+84	        gate_up, _ = self.gate_up_proj(x)
+85	        x = self.act_fn(gate_up)
+86	        x, _ = self.down_proj(x)
+87	        return x
+88	
+89	
+90	class MiniCPMAttention(nn.Module):
+91	    def __init__(
+92	        self,
+93	        hidden_size: int,
+94	        num_heads: int,
+95	        num_kv_heads: int,
+96	        layer_id: int = 0,
+97	        rope_theta: float = 10000,
+98	        rope_scaling: Optional[Dict[str, Any]] = None,
+99	        max_position_embeddings: int = 8192,
+100	        quant_config: Optional[QuantizationConfig] = None,
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>
+```
+
+> TOOL
+
+tool_use Grep
+```json
+{
+  "pattern": "forward|generate|decode",
+  "path": "/user_4813494d/openbmb/demo-sala/sglang/python/sglang/srt/models/minicpm.py",
+  "output_mode": "content",
+  "context": 3
+}
+```
+
+> TOOL
+
+tool_result Grep
+```
+44-    ParallelLMHead,
+45-    VocabParallelEmbedding,
+46-)
+47:from sglang.srt.model_executor.forward_batch_info import ForwardBatch
+48-from sglang.srt.model_loader.weight_utils import default_weight_loader
+49-from sglang.srt.utils import add_prefix
+50-
+--
+80-            )
+81-        self.act_fn = SiluAndMul()
+82-
+83:    def forward(self, x):
+84-        gate_up, _ = self.gate_up_proj(x)
+85-        x = self.act_fn(gate_up)
+86-        x, _ = self.down_proj(x)
+--
+173-
+174-        self.layer_id = layer_id
+175-
+176:    def forward(
+177-        self,
+178-        positions: torch.Tensor,
+179-        hidden_states: torch.Tensor,
+180:        forward_batch: ForwardBatch,
+181-    ) -> torch.Tensor:
+182-        qkv, _ = self.qkv_proj(hidden_states)
+183-        q, k, v = qkv.split([self.q_size, self.kv_size, self.kv_size], dim=-1)
+--
+188-            q, k = self.rotary_emb(positions, q, k)
+189-            q, k = q.to(orig_dtype), k.to(orig_dtype)
+190-
+191:        attn_output = self.attn(q, k, v, forward_batch)
+192-
+193-        if self.use_output_gate:
+194-            o_gate_output, _ = self.o_gate(hidden_states)
+--
+308-        self.layer_id = layer_id
+309-        self.state_shape = (self.num_kv_heads, self.head_dim, self.head_dim)
+310-
+311:    def forward(
+312-        self,
+313-        positions: torch.Tensor,
+314-        hidden_states: torch.Tensor,
+315:        forward_batch: ForwardBatch,
+316-    ) -> torch.Tensor:
+317-        qkv, _ = self.qkv_proj(hidden_states)
+318-        q, k, v = qkv.split([self.q_size, self.kv_size, self.kv_size], dim=-1)
+--
+338-        k = k.unsqueeze(0)
+339-        v = v.unsqueeze(0)
+340-
+341:        # Get backend from forward batch
+342:        attn_backend = forward_batch.attn_backend
+343-        if not hasattr(attn_backend, "linear_attn_backend"):
+344-            raise RuntimeError(
+345-                "SimpleGLAAttnBackend requires HybridLinearAttnBackend but got "
+--
+354-            )
+355-
+356-        # Prepare backend inputs
+357:        # Backend expects q, k, v, forward_batch, layer_id
+358-        # It will handle state loading/saving internally
+359:        o = linear_attn_backend.forward(
+360-            q=q,
+361-            k=k,
+362-            v=v,
+363:            forward_batch=forward_batch,
+364-            layer_id=self.layer_id,
+365-            output_attentions=False,
+366-        )
+--
+454-        self.post_attention_layernorm = RMSNorm(
+455-            config.hidden_size, eps=config.rms_norm_eps
+456-        )
+457:    def _compute_topk(self, forward_batch, base_metadata, sparse_metadata):
+458-        """Compute TopK indices for sparse attention.
+459-
+460:        For decode mode, TopK is simple: just use the precomputed sparse_page_table.
+461-        For prefill mode, we need to compute TopK using kernel calls (deferred for now).
+462-
+463-        Args:
+464:            forward_batch: Forward batch
+465-            base_metadata: Base metadata
+466-            sparse_metadata: SparseMetadata to update with topk_indices
+467-        """
+468:        if forward_batch.forward_mode.is_decode_or_idle():
+469-            # Decode path: TopK is just the precomputed page table
+470-            sparse_metadata.topk_indices = base_metadata.sparse_page_table
+471-        else:
+--
+474-            # TODO: Implement full TopK computation in prefill mode
+475-            pass
+476-
+477:    def forward(
+478-        self,
+479-        positions: torch.Tensor,
+480-        hidden_states: torch.Tensor,
+481:        forward_batch: ForwardBatch,
+482-        residual: Optional[torch.Tensor],
+483-    ) -> Tuple[torch.Tensor, torch.Tensor]:
+484-        # Build sparse metadata (model-specific logic!)
+--
+489-        hidden_states = self.self_attn(
+490-            positions=positions,
+491-            hidden_states=hidden_states,
+492:            forward_batch=forward_batch,
+493-        )
+494-        hidden_states = residual + hidden_states * (
+495-            self.config.scale_depth / math.sqrt(self.config.num_hidden_layers)
+--
+536-        )
+537-        self.norm = RMSNorm(config.hidden_size, eps=config.rms_norm_eps)
+538-
+539:    def forward(
+540-        self,
+541-        input_ids: torch.Tensor,
+542-        positions: torch.Tensor,
+543:        forward_batch: ForwardBatch,
+544-        input_embeds: torch.Tensor = None,
+545-    ) -> torch.Tensor:
+546-        if input_embeds is None:
+--
+554-            hidden_states, residual = layer(
+555-                positions,
+556-                hidden_states,
+557:                forward_batch,
+558-                residual,
+559-            )
+560-        hidden_states = self.norm(hidden_states)
+--
+590-        self.logits_processor = LogitsProcessor(config)
+591-
+592-    @torch.no_grad()
+593:    def forward(
+594-        self,
+595-        input_ids: torch.Tensor,
+596-        positions: torch.Tensor,
+597:        forward_batch: ForwardBatch,
+598-        input_embeds: torch.Tensor = None,
+599-    ) -> torch.Tensor:
+600-        if input_embeds is not None:
+601-            input_embeds = input_embeds * self.config.scale_emb
+602:        hidden_states = self.model(input_ids, positions, forward_batch, input_embeds)
+603-        hidden_states = hidden_states / self.scale_width
+604-        if self.config.tie_word_embeddings:
+605-            lm_head = self.model.embed_tokens
+606-        else:
+607-            lm_head = self.lm_head
+608:        return self.logits_processor(input_ids, hidden_states, lm_head, forward_batch)
+609-
+610-    def load_weights(self, weights: Iterable[Tuple[str, torch.Tensor]]):
+611-        stacked_params_mapping = [
+```
+
 > AGENT
 
 让我查看当前的解码策略和benchmark数据：
 
+> TOOL
+
+tool_use Read
+```json
+{
+  "file_path": "/user_4813494d/openbmb/docs"
+}
+```
+
+> TOOL
+
+tool_result Read
+```
+EISDIR: illegal operation on a directory, read '/user_4813494d/openbmb/docs'
+```
+
+> TOOL
+
+tool_use Grep
+```json
+{
+  "pattern": "speculative|eagle|draft|multi.token",
+  "path": "/user_4813494d/openbmb",
+  "output_mode": "files_with_matches"
+}
+```
+
+> TOOL
+
+tool_result Grep
+```
+Found 139 files
+MARLIN_NVFP4_INVESTIGATION.md
+bench/sglang_0330_64_custom.jsonl
+CLAUDE.md
+bench/sglang_0330_16_custom.jsonl
+demo-sala/sglang/python/sglang/srt/layers/attention/minicpm_backend.py
+toolkit/eval_dataset/ultrachat_long_calib.jsonl
+toolkit/eval_dataset/perf_public_set.jsonl
+toolkit/eval_dataset/cnn_dailymail_calib.jsonl
+kernels/infllmv2_cuda_impl/tests/test.py
+toolkit/README_EN.md
+toolkit/README.md
+demo-sala/sglang/python/sglang/test/attention/test_trtllm_mla_backend.py
+demo-sala/sglang/python/sglang/test/lora_utils.py
+demo-sala/sglang/python/sglang/test/nightly_utils.py
+demo-sala/sglang/python/sglang/test/performance_test_runner.py
+demo-sala/sglang/python/sglang/test/runners.py
+demo-sala/sglang/python/sglang/test/server_fixtures/eagle_fixture.py
+demo-sala/sglang/python/sglang/test/speculative/test_spec_utils.py
+demo-sala/sglang/python/sglang/test/test_programs.py
+demo-sala/sglang/python/sglang/test/test_utils.py
+docs/evaluation-guide.md
+demo-sala/sglang/python/sglang/srt/server_args.py
+demo-sala/sglang/python/sglang/srt/speculative/base_spec_worker.py
+demo-sala/sglang/python/sglang/srt/speculative/cpp_ngram/ngram_cache_binding.cpp
+demo-sala/sglang/python/sglang/srt/speculative/cpp_ngram/ngram_cache.py
+demo-sala/sglang/python/sglang/srt/speculative/cpp_ngram/ngram.cpp
+demo-sala/sglang/python/sglang/srt/speculative/cpp_ngram/param.h
+demo-sala/sglang/python/sglang/srt/speculative/draft_utils.py
+demo-sala/sglang/python/sglang/srt/speculative/eagle_draft_cuda_graph_runner.py
+demo-sala/sglang/python/sglang/srt/speculative/eagle_draft_extend_cuda_graph_runner.py
+demo-sala/sglang/python/sglang/srt/speculative/eagle_info_v2.py
+demo-sala/sglang/python/sglang/srt/speculative/eagle_info.py
+demo-sala/sglang/python/sglang/srt/speculative/eagle_utils.py
+demo-sala/sglang/python/sglang/srt/speculative/eagle_worker_v2.py
+demo-sala/sglang/python/sglang/srt/speculative/eagle_worker.py
+demo-sala/sglang/python/sglang/srt/speculative/multi_layer_eagle_draft_extend_cuda_graph_runner.py
+demo-sala/sglang/python/sglang/srt/speculative/multi_layer_eagle_worker_v2.py
+demo-sala/sglang/python/sglang/srt/speculative/multi_layer_eagle_worker.py
+demo-sala/sglang/python/sglang/srt/speculative/ngram_info.py
+demo-sala/sglang/python/sglang/srt/speculative/ngram_worker.py
+demo-sala/sglang/python/sglang/srt/speculative/spec_info.py
+demo-sala/sglang/python/sglang/srt/speculative/spec_utils.py
+demo-sala/sglang/python/sglang/srt/speculative/standalone_worker_v2.py
+demo-sala/sglang/python/sglang/srt/speculative/standalone_worker.py
+demo-sala/sglang/python/sglang/srt/utils/common.py
+demo-sala/sglang/python/sglang/srt/utils/mistral_utils.py
+demo-sala/sglang/python/sglang/srt/utils/weight_checker.py
+demo-sala/sglang/python/sglang/test/attention/test_flashattn_backend.py
+demo-sala/sglang/python/sglang/test/attention/test_flashattn_mla_backend.py
+demo-sala/sglang/python/sglang/srt/mem_cache/cache_init_params.py
+demo-sala/sglang/python/sglang/srt/mem_cache/common.py
+demo-sala/sglang/python/sglang/srt/mem_cache/hiradix_cache.py
+demo-sala/sglang/python/sglang/srt/mem_cache/memory_pool.py
+demo-sala/sglang/python/sglang/srt/mem_cache/radix_cache.py
+demo-sala/sglang/python/sglang/srt/mem_cache/storage/lmcache/lmc_radix_cache.py
+demo-sala/sglang/python/sglang/srt/mem_cache/swa_radix_cache.py
+demo-sala/sglang/python/sglang/srt/mem_cache/utils.py
+demo-sala/sglang/python/sglang/srt/metrics/collector.py
+demo-sala/sglang/python/sglang/srt/model_executor/cpu_graph_runner.py
+demo-sala/sglang/python/sglang/srt/model_executor/cuda_graph_runner.py
+demo-sala/sglang/python/sglang/srt/model_executor/forward_batch_info.py
+demo-sala/sglang/python/sglang/srt/model_executor/model_runner_kv_cache_mixin.py
+demo-sala/sglang/python/sglang/srt/model_executor/model_runner.py
+demo-sala/sglang/python/sglang/srt/model_executor/piecewise_cuda_graph_runner.py
+demo-sala/sglang/python/sglang/srt/model_loader/loader.py
+demo-sala/sglang/python/sglang/srt/layers/sampler.py
+demo-sala/sglang/python/sglang/srt/layers/utils/logprob.py
+demo-sala/sglang/python/sglang/srt/lora/utils.py
+demo-sala/sglang/python/sglang/srt/managers/detokenizer_manager.py
+demo-sala/sglang/python/sglang/srt/managers/io_struct.py
+demo-sala/sglang/python/sglang/srt/managers/mm_utils.py
+demo-sala/sglang/python/sglang/srt/managers/multi_tokenizer_mixin.py
+demo-sala/sglang/python/sglang/srt/managers/overlap_utils.py
+demo-sala/sglang/python/sglang/srt/managers/schedule_batch.py
+demo-sala/sglang/python/sglang/srt/managers/scheduler_metrics_mixin.py
+demo-sala/sglang/python/sglang/srt/managers/scheduler_output_processor_mixin.py
+demo-sala/sglang/python/sglang/srt/managers/scheduler_runtime_checker_mixin.py
+demo-sala/sglang/python/sglang/srt/managers/scheduler_update_weights_mixin.py
+demo-sala/sglang/python/sglang/srt/managers/scheduler.py
+demo-sala/sglang/python/sglang/srt/managers/tokenizer_manager.py
+demo-sala/sglang/python/sglang/srt/managers/tp_worker.py
+demo-sala/sglang/python/sglang/srt/managers/utils.py
+demo-sala/sglang/python/sglang/srt/layers/moe/utils.py
+demo-sala/sglang/python/sglang/srt/layers/attention/nsa_backend.py
+demo-sala/sglang/python/sglang/srt/layers/attention/tbo_backend.py
+demo-sala/sglang/python/sglang/srt/layers/attention/triton_backend.py
+demo-sala/sglang/python/sglang/srt/layers/attention/triton_ops/extend_attention.py
+demo-sala/sglang/python/sglang/srt/layers/attention/trtllm_mha_backend.py
+demo-sala/sglang/python/sglang/srt/layers/attention/trtllm_mla_backend.py
+demo-sala/sglang/python/sglang/srt/layers/attention/wave_backend.py
+demo-sala/sglang/python/sglang/srt/layers/attention/xpu_backend.py
+demo-sala/sglang/python/sglang/srt/layers/communicator.py
+demo-sala/sglang/python/sglang/srt/layers/dp_attention.py
+demo-sala/sglang/python/sglang/srt/layers/logits_processor.py
+demo-sala/sglang/python/sglang/srt/hardware_backend/npu/graph_runner/eagle_draft_extend_npu_graph_runner.py
+demo-sala/sglang/python/sglang/srt/hardware_backend/npu/graph_runner/eagle_draft_npu_graph_runner.py
+demo-sala/sglang/python/sglang/srt/hardware_backend/npu/graph_runner/npu_graph_runner.py
+demo-sala/sglang/python/sglang/srt/hardware_backend/npu/modules/deepseek_v2_attention_mla_npu.py
+demo-sala/sglang/python/sglang/srt/layers/attention/aiter_backend.py
+demo-sala/sglang/python/sglang/srt/layers/attention/attention_registry.py
+demo-sala/sglang/python/sglang/srt/layers/attention/base_attn_backend.py
+demo-sala/sglang/python/sglang/srt/layers/attention/cutlass_mla_backend.py
+demo-sala/sglang/python/sglang/srt/layers/attention/fla/fused_recurrent.py
+demo-sala/sglang/python/sglang/srt/layers/attention/flashattention_backend.py
+demo-sala/sglang/python/sglang/srt/layers/attention/flashinfer_backend.py
+demo-sala/sglang/python/sglang/srt/layers/attention/flashinfer_mla_backend.py
+demo-sala/sglang/python/sglang/srt/layers/attention/flashmla_backend.py
+demo-sala/sglang/python/sglang/srt/layers/attention/hybrid_attn_backend.py
+demo-sala/sglang/python/sglang/srt/layers/attention/hybrid_linear_attn_backend.py
+demo-sala/sglang/python/sglang/srt/layers/attention/mamba/causal_conv1d_triton.py
+demo-sala/sglang/python/sglang/srt/layers/attention/mamba/mamba.py
+demo-sala/sglang/python/sglang/srt/layers/attention/mamba/mamba2_metadata.py
+demo-sala/sglang/python/sglang/srt/layers/attention/mamba/ops/mamba_ssm.py
+demo-sala/sglang/python/sglang/srt/layers/attention/minicpm_sparse_utils.py
+demo-sala/sglang/python/sglang/srt/layers/attention/nsa/nsa_backend_mtp_precompute.py
+demo-sala/sglang/python/sglang/srt/layers/attention/nsa/nsa_indexer.py
+demo-sala/sglang/python/sglang/srt/disaggregation/prefill.py
+demo-sala/sglang/python/sglang/srt/disaggregation/utils.py
+demo-sala/sglang/python/sglang/srt/distributed/parallel_state.py
+demo-sala/sglang/python/sglang/srt/entrypoints/engine.py
+demo-sala/sglang/python/sglang/srt/entrypoints/http_server.py
+demo-sala/sglang/python/sglang/srt/hardware_backend/npu/attention/ascend_backend.py
+demo-sala/sglang/python/sglang/srt/batch_overlap/two_batch_overlap.py
+demo-sala/sglang/python/sglang/srt/compilation/compiler_interface.py
+demo-sala/sglang/python/sglang/srt/configs/load_config.py
+demo-sala/sglang/python/sglang/srt/configs/model_config.py
+demo-sala/sglang/python/sglang/srt/disaggregation/decode_schedule_batch_mixin.py
+demo-sala/sglang/python/sglang/srt/disaggregation/decode.py
+demo-sala/sglang/python/sglang/multimodal_gen/runtime/distributed/parallel_state.py
+demo-sala/data/eval_full.jsonl
+demo-sala/python/sglang/srt/layers/attention/minicpm_sparse_utils.py
+demo-sala/sglang/python/pyproject_cpu.toml
+demo-sala/sglang/python/pyproject_other.toml
+demo-sala/sglang/python/pyproject_xpu.toml
+demo-sala/sglang/python/pyproject.toml
+demo-sala/sglang/python/sglang/bench_one_batch.py
+demo-sala/sglang/python/sglang/lang/backend/openai.py
+demo-sala/sglang/python/sglang/lang/interpreter.py
+demo-sala/data/calib_mcq_niah_qa.jsonl
+```
+
 > AGENT
 
-基于对MiniCPM-SALA架构和当前实现的分析，我来评估**nextn/mtp解码加速的可行性**： ## 核心分析 ### MiniCPM-SALA 的特点 - **架构**：32层，8个标准Attention + 24个Lightning Attention（高效线性注意力） - **配置**：4096 hidden_size，32 heads，GQA (nkv=2)，524K max_position - **稀疏性**：InfLLM-v2稀疏注意力（dense_len=8192） - **当前优化**：NVFP4量化、CUDA图融合、Lightning Attention加速 ### nextn/mtp 的可行性：**困难，不太适用** **根本限制：** 1. **训练层面的问题** - SALA模型按标准自回归方式训练，未针对nextn/mtp优化 - nextn需要模型预测多个未来token，需要在训练时设计特殊的loss函数 - 无法通过推理框架改进来绕过这个限制 2. **架构适配困难** - nextn通常需要多个输出头（每个预测不同位置） - 需要修改或拓展lm_head层结构 - 现有的24个Lightning Attention层本身已经是针对长序列优化的，不需要多token预测 3. **性能收益有限** - **Attention-bound vs Memory-bound**：Lightning Attention已经将Attention从O(n²)优化到O(n)，现在主要瓶颈是： - S1（小批量）：受GEMV操作限制，多token预测可能有帮助 - S8/Smax：已经跑满，KV缓存和batch scheduling才是瓶颈 - 根据CLAUDE.md：fp8 KV cache没有收益原因相同——batch大小是限制因素 --- ## 更实用的替代方案 ### 1. **Speculative Decoding（投机采样）** ⭐ 推荐 代码库中已有完整支持！(`/user_4813494d/openbmb/demo-sala/sglang/python/sglang/srt/speculative/`) **机制**： - 用小草稿模型（如EAGLE或n-gram）快速生成k个token - 主模型并行验证这k个tokens - 若通过验证就commit，否则回滚1个token重新采样 **对SALA的适配：** ```bash # 可以试验： --draft-model-path <eagle_model> \ --num-draft-tokens 4-8 \ # EAGLE3通常4-8个 ``` **预期收益**： - S1：30-50% 加速（草稿模型GEMV成本低） - S8/Smax：可能5-15%（batch大，验证成本相对低） - CLAUDE.md已列为backlog任务 ### 2. **Batch Decoding / Request Overlap 优化** 根据CLAUDE.md，当前配置： - `--max-running-requests 64`（节省内存） - 可以用`--batch-overlap`优化prefill/decode调度 **尝试方向**： - 增大batch size的同时profile内存使用 - 优化prefill和decode的交错（如果有overhead） ### 3. **KV Cache 分层存储** 除了fp8不行，可以试： - KV cache offload到CPU (只适合低吞吐场景) - Quantized KV + 保留某些关键层为FP16（混合精度） - 利用SALA的稀疏性：只缓存sparse topk --- ## 建议优先级 | 方案 | 难度 | 收益 | 优先级 | |------|------|------|--------| | **Speculative Decoding** | 中 | 20-40% (S1) | **1️⃣ 立即尝试** | | nextn/mtp | 高 | 不确定 (架构不适) | ❌ 不推荐 | | Batch overlap | 中 | 5-10% | 2️⃣ 如果还有时间 | | KV混合精度 | 中 | 3-5% | 3️⃣ 备选 | --- **结论**：nextn/mtp不适合SALA，因为它基于标准自回归训练。但**Speculative Decoding（EAGLE3）是更适配的方向**，代码库已有支持，值得优先尝试。需要我帮你集成EAGLE草稿模型吗？
+基于对MiniCPM-SALA架构和当前实现的分析，我来评估**nextn/mtp解码加速的可行性**：
+
+## 核心分析
+
+### MiniCPM-SALA 的特点
+- **架构**：32层，8个标准Attention + 24个Lightning Attention（高效线性注意力）
+- **配置**：4096 hidden_size，32 heads，GQA (nkv=2)，524K max_position
+- **稀疏性**：InfLLM-v2稀疏注意力（dense_len=8192）
+- **当前优化**：NVFP4量化、CUDA图融合、Lightning Attention加速
+
+### nextn/mtp 的可行性：**困难，不太适用**
+
+**根本限制：**
+
+1. **训练层面的问题**
+   - SALA模型按标准自回归方式训练，未针对nextn/mtp优化
+   - nextn需要模型预测多个未来token，需要在训练时设计特殊的loss函数
+   - 无法通过推理框架改进来绕过这个限制
+
+2. **架构适配困难**
+   - nextn通常需要多个输出头（每个预测不同位置）
+   - 需要修改或拓展lm_head层结构
+   - 现有的24个Lightning Attention层本身已经是针对长序列优化的，不需要多token预测
+
+3. **性能收益有限**
+   - **Attention-bound vs Memory-bound**：Lightning Attention已经将Attention从O(n²)优化到O(n)，现在主要瓶颈是：
+     - S1（小批量）：受GEMV操作限制，多token预测可能有帮助
+     - S8/Smax：已经跑满，KV缓存和batch scheduling才是瓶颈
+   - 根据CLAUDE.md：fp8 KV cache没有收益原因相同——batch大小是限制因素
+
+---
+
+## 更实用的替代方案
+
+### 1. **Speculative Decoding（投机采样）** ⭐ 推荐
+
+代码库中已有完整支持！(`/user_4813494d/openbmb/demo-sala/sglang/python/sglang/srt/speculative/`)
+
+**机制**：
+- 用小草稿模型（如EAGLE或n-gram）快速生成k个token
+- 主模型并行验证这k个tokens
+- 若通过验证就commit，否则回滚1个token重新采样
+
+**对SALA的适配：**
+```bash
+# 可以试验：
+--draft-model-path <eagle_model> \
+--num-draft-tokens 4-8 \  # EAGLE3通常4-8个
+```
+
+**预期收益**：
+- S1：30-50% 加速（草稿模型GEMV成本低）
+- S8/Smax：可能5-15%（batch大，验证成本相对低）
+- CLAUDE.md已列为backlog任务
+
+### 2. **Batch Decoding / Request Overlap 优化**
+
+根据CLAUDE.md，当前配置：
+- `--max-running-requests 64`（节省内存）
+- 可以用`--batch-overlap`优化prefill/decode调度
+
+**尝试方向**：
+- 增大batch size的同时profile内存使用
+- 优化prefill和decode的交错（如果有overhead）
+
+### 3. **KV Cache 分层存储**
+
+除了fp8不行，可以试：
+- KV cache offload到CPU (只适合低吞吐场景)
+- Quantized KV + 保留某些关键层为FP16（混合精度）
+- 利用SALA的稀疏性：只缓存sparse topk
+
+---
+
+## 建议优先级
+
+| 方案 | 难度 | 收益 | 优先级 |
+|------|------|------|--------|
+| **Speculative Decoding** | 中 | 20-40% (S1) | **1️⃣ 立即尝试** |
+| nextn/mtp | 高 | 不确定 (架构不适) | ❌ 不推荐 |
+| Batch overlap | 中 | 5-10% | 2️⃣ 如果还有时间 |
+| KV混合精度 | 中 | 3-5% | 3️⃣ 备选 |
+
+---
+
+**结论**：nextn/mtp不适合SALA，因为它基于标准自回归训练。但**Speculative Decoding（EAGLE3）是更适配的方向**，代码库已有支持，值得优先尝试。需要我帮你集成EAGLE草稿模型吗？

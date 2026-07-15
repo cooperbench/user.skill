@@ -567,7 +567,7 @@ npx textlint <対象ファイル>
 
 4つのレビューエージェントをバックグラウンドで起動しました。各5ファイルずつ、計20ファイルを並行してレビュー・自動修正しています。完了次第、結果をまとめて報告します。
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>ab5f1e2e21d59ab6c</task-id>
@@ -690,7 +690,7 @@ Full transcript available at: /private/tmp/claude-501/-Users-135yshr-projects-13
 
 バッチ3（808fbfe6b7db3d.md, 860e12b4a2698a.md, 98473f8e119657.md, b32070e6b12a01.md, c05cf4efcc591f.md）のレビューが完了しました。修正は2件のみで品質良好でした。残り3バッチの完了を待ちます。
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>abb1ba58b06718df0</task-id>
@@ -716,7 +716,7 @@ Full transcript available at: /private/tmp/claude-501/-Users-135yshr-projects-13
 </task-notification>
 Full transcript available at: /private/tmp/claude-501/-Users-135yshr-projects-135yshr-documents/ca1f137e-d8d1-43ed-9e7b-5aeb25acbea5/tasks/abb1ba58b06718df0.output
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>a434a8b8b91bf985c</task-id>
@@ -802,7 +802,7 @@ Full transcript available at: /private/tmp/claude-501/-Users-135yshr-projects-13
 
 バッチ1とバッチ2も完了しました。残りバッチ4を待ちます。
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>a1210fcec2f94a24e</task-id>
@@ -1084,7 +1084,7 @@ To github.com:135yshr/documents.git
 
 3つの修正エージェントをバックグラウンドで実行中です。完了次第、結果をまとめて報告します。
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>a9440b3e1f1175b8c</task-id>

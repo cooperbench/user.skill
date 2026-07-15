@@ -6,6 +6,334 @@ Explore /root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers/quan
 
 正在搜索并阅读 `modelopt_quant.py` 及相关 FP4/FlashInfer 路径。
 
+> TOOL
+
+tool_use read_file_v2
+```json
+{
+  "targetFile": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers/quantization/modelopt_quant.py",
+  "charsLimit": 1000000,
+  "effectiveUri": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers/quantization/modelopt_quant.py"
+}
+```
+
+> TOOL
+
+tool_result read_file_v2
+```
+null
+```
+
+> TOOL
+
+tool_use ripgrep_raw_search
+```json
+{
+  "pattern": "fp4|mm_fp4|pre_quant|modelopt|NVFP4",
+  "path": "/root/shared-nvme/openbmb/demo-sala/sglang",
+  "glob": "*.py",
+  "caseInsensitive": false
+}
+```
+
+> TOOL
+
+tool_use glob_file_search
+```json
+{
+  "targetDirectory": "/root/shared-nvme/openbmb/demo-sala/sglang",
+  "globPattern": "**/*fp4*"
+}
+```
+
+> TOOL
+
+tool_result glob_file_search
+```
+null
+```
+
+> TOOL
+
+tool_use ripgrep_raw_search
+```json
+{
+  "pattern": "Linear|mlp|quant|modelopt",
+  "path": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/models/minicpm.py",
+  "caseInsensitive": false
+}
+```
+
+> TOOL
+
+tool_use ripgrep_raw_search
+```json
+{
+  "pattern": "FLASHINFER_FP4|SGLANG_.*FP4|is_sm120",
+  "path": "/root/shared-nvme/openbmb/demo-sala/sglang",
+  "glob": "*.py",
+  "caseInsensitive": false
+}
+```
+
+> TOOL
+
+tool_use read_file_v2
+```json
+{
+  "targetFile": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/environ.py",
+  "offset": 250,
+  "limit": 250,
+  "charsLimit": 1000000,
+  "effectiveUri": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/environ.py"
+}
+```
+
+> TOOL
+
+tool_result read_file_v2
+```
+null
+```
+
+> TOOL
+
+tool_use read_file_v2
+```json
+{
+  "targetFile": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/models/minicpm.py",
+  "offset": 40,
+  "limit": 120,
+  "charsLimit": 1000000,
+  "effectiveUri": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/models/minicpm.py"
+}
+```
+
+> TOOL
+
+tool_result read_file_v2
+```
+null
+```
+
+> TOOL
+
+tool_use read_file_v2
+```json
+{
+  "targetFile": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/models/minicpm.py",
+  "offset": 400,
+  "limit": 300,
+  "charsLimit": 1000000,
+  "effectiveUri": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/models/minicpm.py"
+}
+```
+
+> TOOL
+
+tool_result read_file_v2
+```
+null
+```
+
+> TOOL
+
+tool_use read_file_v2
+```json
+{
+  "targetFile": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/utils/common.py",
+  "offset": 200,
+  "limit": 80,
+  "charsLimit": 1000000,
+  "effectiveUri": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/utils/common.py"
+}
+```
+
+> TOOL
+
+tool_result read_file_v2
+```
+null
+```
+
+> TOOL
+
+tool_use ripgrep_raw_search
+```json
+{
+  "pattern": "CUTEDSL_MOE_SCALAR",
+  "path": "/root/shared-nvme/openbmb/demo-sala/sglang",
+  "caseInsensitive": false
+}
+```
+
+> TOOL
+
+tool_use ripgrep_raw_search
+```json
+{
+  "pattern": "is_blackwell",
+  "path": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers/quantization/fp8_utils.py",
+  "caseInsensitive": false
+}
+```
+
+> TOOL
+
+tool_use read_file_v2
+```json
+{
+  "targetFile": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers/quantization/utils.py",
+  "limit": 80,
+  "charsLimit": 1000000,
+  "effectiveUri": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers/quantization/utils.py"
+}
+```
+
+> TOOL
+
+tool_result read_file_v2
+```
+null
+```
+
+> TOOL
+
+tool_use ripgrep_raw_search
+```json
+{
+  "pattern": "prepare_static_weights_for_trtllm_fp4_moe|swizzle_blockscale",
+  "path": "/root/shared-nvme/openbmb/demo-sala/sglang",
+  "glob": "*.py",
+  "caseInsensitive": false
+}
+```
+
+> TOOL
+
+tool_use semantic_search_full
+```json
+{
+  "query": "Where does MergedColumnParallelLinear forward call quant_method apply?",
+  "includePattern": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers",
+  "topK": 10,
+  "explanation": ""
+}
+```
+
+> TOOL
+
+tool_result semantic_search_full
+```
+null
+```
+
+> TOOL
+
+tool_use ripgrep_raw_search
+```json
+{
+  "pattern": "class MergedColumnParallelLinear",
+  "path": "/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers/linear.py",
+  "contextAfter": 80,
+  "caseInsensitive": false
+}
+```
+
 > AGENT
 
-以下为只读梳理结论，路径均为仓库内绝对路径。 --- ## 要点（实现 / 冗余 / 路径） - **sm120 / Blackwell 分支** - `fp4_quantize`：仅在 `is_sm120_supported()` 为真时从 `flashinfer` 导入，否则用 `sgl_kernel.scaled_fp4_quant`（`modelopt_quant.py` 约 67–74 行）。 - `mm_fp4`：能导入 `flashinfer.mm_fp4` 则 `enable_flashinfer_fp4_gemm=True`，否则回退 `sgl_kernel.cutlass_scaled_fp4_mm`（约 76–86、120–135 行）。 - `is_sm120_supported` / `is_blackwell_supported` 定义在 `common.py`（约 220–231 行）：Blackwell 含 major 10 与 12；sm120 单独为 major 12 + CUDA≥12.8。 - NVFP4 MoE 构造里用 `fp8_utils.is_blackwell_supported()` 做能力检查（`ModelOptNvFp4FusedMoEMethod.__init__`，约 1287–1294 行），与 FP4 量化源选择的 `is_sm120` 是两套入口，语义都是「新架构」但粒度不同。 - **环境变量 / 开关**（`environ.py` 约 275–290 行；`modelopt_quant.py` 内再读） - `SGLANG_FLASHINFER_FP4_GEMM_BACKEND` → `FLASHINFER_FP4_GEMM_BACKEND`：传给 `flashinfer.mm_fp4` 的 `backend`，空则默认 `"cutlass"`（约 129、1263–1265 行）。 - `FLASHINFER_FP4_GEMM_BACKEND == "trtllm"` 时走 `shuffle_matrix_a` / `shuffle_matrix_sf_a` 权重布局（`ModelOptFp4LinearMethod.process_weights_after_loading`，约 1190–1208 行）。 - `SGLANG_MOE_NVFP4_DISPATCH`（及旧名 `SGLANG_CUTEDSL_MOE_NVFP4_DISPATCH`）：MoE 里与 `input_global_scale`、CutDSL 路径行为相关（约 152、1499–1527、1801–1805 行）。 - `SGLANG_CUTEDSL_MOE_SCALAR_INPUT_SCALE`（默认 `"true"`）：CutDSL MoE 是否把 `w13_input_scale` 收成标量再 broadcast（约 147–148、1471–1483 行）——**改 false 会改变标量策略，有精度/性能权衡**。 - 另见 `SGLANG_NVFP4_CKPT_FP8_GEMM_IN_ATTN`、`SGLANG_NVFP4_CKPT_FP8_NEXTN_MOE`（`environ.py`），主要在 `server_args` 等，与 attention/MoE 的 FP8 捷径相关，非本文件 Linear 主路径。 - **NVFP4 Linear 前向链路（冗余与可融点）** - `ModelOptFp4LinearMethod.apply`（约 1235–1277 行）：可选 `x = x * layer.pre_quant_scale`（逐元素乘，bf16）→ `fp4_quantize(x, layer.input_scale_inv)` → 若 FlashInfer 路径则 **`weight` / `weight_scale_interleaved` 每次 `.T`** → `fp4_gemm`（`mm_fp4` 或 CUTLASS）→ 再 `+ bias`。 - 即：**pre_quant 乘、激活量化、GEMM、bias** 至少 3～4 个 kernel/阶段；`alpha`（`input_scale * weight_scale_2`）在 GEMM 内吸收，但 **pre_quant 仍在 GEMM 外**。 - `process_weights_after_loading` 非 trtllm 时对 `weight_scale` 做 **Python 侧 pad/permute/contiguous**（约 1210–1232 行）——加载期一次成本，但逻辑重、易占启动时间与内存峰值。 - **自定义算子** - `fp4_gemm` 为 `@register_custom_op`（约 118–135 行），便于 compile/graph 捕获；内部再分 FlashInfer / sgl-kernel。 - **较差或易成为瓶颈的实现** - `ModelOptFp8MoEMethod.process_weights_after_loading`（约 551–569 行）：对 **每个 expert** Python 循环做 dequant/requant，大 MoE 时加载与首次准备很慢。 - `ModelOptFp8MoEMethod` 在 FlashInfer TRTLLM 布局下对 `w13` 做 **按 expert 的 list comprehension + `torch.stack`**（约 604–621 行），专家数大时 Python 开销明显。 - NVFP4 MoE `create_weights` 里用 `swizzle_blockscale` 只做 **shape 占位**再 `copy_`（约 1382–1402、1610–1613 行）——多一次分配/拷贝，略冗余但影响小于前两项。 - **MiniCPM 与 Linear 调用形态**（`minicpm.py`） - `MiniCPMMLP`：`MergedColumnParallelLinear`（`gate_up_proj`）+ `SiluAndMul` + `RowParallelLinear`（`down_proj`），均传入同一 `quant_config`（约 52–87 行）→ **每层 MLP 两次** `quant_method.apply`（两次 FP4 量化+GEMM），中间激活为 bf16。 - 标准 Attention：`QKVParallelLinear` 一次 fused GEMM；`o_proj` 一次（约 130–145 行）。 - Lightning：`z_proj`、`o_gate` 等为独立 `ColumnParallelLinear`（约 286–290 行附近，需在文件中再看）→ **更多次** NVFP4 前向。 - `MiniCPMSALAForCausalLM.load_weights`（约 662–664 行）：**跳过不在 `params_dict` 的量化相关权重名**，与 NVFP4 checkpoint 字段对齐有关。 --- ## 3–5 个具体融合/重构方向（风险：精度 vs 性能） 1. **pre_quant_scale 乘入 `fp4_quantize`（或与其单 kernel 融合）** - **做法**：在 FlashInfer 或 sgl-kernel 的量化入口增加可选 `pre_scale`（向量/通道），等价于对输入先缩放再按原 `input_scale_inv` 量化。 - **风险**：需严格对齐现有 AWQ 的逐通道缩放语义；**数值应与** `x * pre_quant_scale` **bit-level 或误差界一致**才算无精度回归。 - **归属**：优先 **FlashInfer / sgl-kernel API 扩展**；若上游不接，则需 **自定义 CUDA/Triton 量化核**。 2. **GEMM epilogue 吸收 `bias`（可选加 residual）** - **做法**：若 `mm_fp4` / CUTLASS 路径支持 bias 或 epilogue fusion，去掉 `out + bias` 独立 kernel。 - **风险**：低（bias 加法是线性的）；需确认后端 layout 与 `out_dtype`。 - **归属**：**FlashInfer `mm_fp4` 或 CUTLASS 封装**若已有参数则接 API；否则 **自定义 epilogue**。 3. **RMSNorm 输出 + 首层 Linear 的融合（仅讨论 MLP/Attn 栈）** - **做法**：`post_attention_layernorm` 与紧随的 `gate_up_proj` 合并为单 kernel（norm scale + 可选 pre_quant + FP4 量化 + GEMM）。 - **风险**：**中高**——融合后数值路径与「先 norm 再乘权重」的舍入顺序可能变，需全量对齐测试。 - **归属**：通常 **自定义融合核** 或 **模型专用插件**；FlashInfer 一般不会直接提供「Norm+NVFP4Linear」通用 API。 4. **加载期权重 scale 重排：减少 Python 大 […]
+以下为只读梳理结论，路径均为仓库内绝对路径。
+
+---
+
+## 要点（实现 / 冗余 / 路径）
+
+- **sm120 / Blackwell 分支**  
+  - `fp4_quantize`：仅在 `is_sm120_supported()` 为真时从 `flashinfer` 导入，否则用 `sgl_kernel.scaled_fp4_quant`（`modelopt_quant.py` 约 67–74 行）。  
+  - `mm_fp4`：能导入 `flashinfer.mm_fp4` 则 `enable_flashinfer_fp4_gemm=True`，否则回退 `sgl_kernel.cutlass_scaled_fp4_mm`（约 76–86、120–135 行）。  
+  - `is_sm120_supported` / `is_blackwell_supported` 定义在 `common.py`（约 220–231 行）：Blackwell 含 major 10 与 12；sm120 单独为 major 12 + CUDA≥12.8。  
+  - NVFP4 MoE 构造里用 `fp8_utils.is_blackwell_supported()` 做能力检查（`ModelOptNvFp4FusedMoEMethod.__init__`，约 1287–1294 行），与 FP4 量化源选择的 `is_sm120` 是两套入口，语义都是「新架构」但粒度不同。
+
+- **环境变量 / 开关**（`environ.py` 约 275–290 行；`modelopt_quant.py` 内再读）  
+  - `SGLANG_FLASHINFER_FP4_GEMM_BACKEND` → `FLASHINFER_FP4_GEMM_BACKEND`：传给 `flashinfer.mm_fp4` 的 `backend`，空则默认 `"cutlass"`（约 129、1263–1265 行）。  
+  - `FLASHINFER_FP4_GEMM_BACKEND == "trtllm"` 时走 `shuffle_matrix_a` / `shuffle_matrix_sf_a` 权重布局（`ModelOptFp4LinearMethod.process_weights_after_loading`，约 1190–1208 行）。  
+  - `SGLANG_MOE_NVFP4_DISPATCH`（及旧名 `SGLANG_CUTEDSL_MOE_NVFP4_DISPATCH`）：MoE 里与 `input_global_scale`、CutDSL 路径行为相关（约 152、1499–1527、1801–1805 行）。  
+  - `SGLANG_CUTEDSL_MOE_SCALAR_INPUT_SCALE`（默认 `"true"`）：CutDSL MoE 是否把 `w13_input_scale` 收成标量再 broadcast（约 147–148、1471–1483 行）——**改 false 会改变标量策略，有精度/性能权衡**。  
+  - 另见 `SGLANG_NVFP4_CKPT_FP8_GEMM_IN_ATTN`、`SGLANG_NVFP4_CKPT_FP8_NEXTN_MOE`（`environ.py`），主要在 `server_args` 等，与 attention/MoE 的 FP8 捷径相关，非本文件 Linear 主路径。
+
+- **NVFP4 Linear 前向链路（冗余与可融点）**  
+  - `ModelOptFp4LinearMethod.apply`（约 1235–1277 行）：可选 `x = x * layer.pre_quant_scale`（逐元素乘，bf16）→ `fp4_quantize(x, layer.input_scale_inv)` → 若 FlashInfer 路径则 **`weight` / `weight_scale_interleaved` 每次 `.T`** → `fp4_gemm`（`mm_fp4` 或 CUTLASS）→ 再 `+ bias`。  
+  - 即：**pre_quant 乘、激活量化、GEMM、bias** 至少 3～4 个 kernel/阶段；`alpha`（`input_scale * weight_scale_2`）在 GEMM 内吸收，但 **pre_quant 仍在 GEMM 外**。  
+  - `process_weights_after_loading` 非 trtllm 时对 `weight_scale` 做 **Python 侧 pad/permute/contiguous**（约 1210–1232 行）——加载期一次成本，但逻辑重、易占启动时间与内存峰值。
+
+- **自定义算子**  
+  - `fp4_gemm` 为 `@register_custom_op`（约 118–135 行），便于 compile/graph 捕获；内部再分 FlashInfer / sgl-kernel。
+
+- **较差或易成为瓶颈的实现**  
+  - `ModelOptFp8MoEMethod.process_weights_after_loading`（约 551–569 行）：对 **每个 expert** Python 循环做 dequant/requant，大 MoE 时加载与首次准备很慢。  
+  - `ModelOptFp8MoEMethod` 在 FlashInfer TRTLLM 布局下对 `w13` 做 **按 expert 的 list comprehension + `torch.stack`**（约 604–621 行），专家数大时 Python 开销明显。  
+  - NVFP4 MoE `create_weights` 里用 `swizzle_blockscale` 只做 **shape 占位**再 `copy_`（约 1382–1402、1610–1613 行）——多一次分配/拷贝，略冗余但影响小于前两项。
+
+- **MiniCPM 与 Linear 调用形态**（`minicpm.py`）  
+  - `MiniCPMMLP`：`MergedColumnParallelLinear`（`gate_up_proj`）+ `SiluAndMul` + `RowParallelLinear`（`down_proj`），均传入同一 `quant_config`（约 52–87 行）→ **每层 MLP 两次** `quant_method.apply`（两次 FP4 量化+GEMM），中间激活为 bf16。  
+  - 标准 Attention：`QKVParallelLinear` 一次 fused GEMM；`o_proj` 一次（约 130–145 行）。  
+  - Lightning：`z_proj`、`o_gate` 等为独立 `ColumnParallelLinear`（约 286–290 行附近，需在文件中再看）→ **更多次** NVFP4 前向。  
+  - `MiniCPMSALAForCausalLM.load_weights`（约 662–664 行）：**跳过不在 `params_dict` 的量化相关权重名**，与 NVFP4 checkpoint 字段对齐有关。
+
+---
+
+## 3–5 个具体融合/重构方向（风险：精度 vs 性能）
+
+1. **pre_quant_scale 乘入 `fp4_quantize`（或与其单 kernel 融合）**  
+   - **做法**：在 FlashInfer 或 sgl-kernel 的量化入口增加可选 `pre_scale`（向量/通道），等价于对输入先缩放再按原 `input_scale_inv` 量化。  
+   - **风险**：需严格对齐现有 AWQ 的逐通道缩放语义；**数值应与** `x * pre_quant_scale` **bit-level 或误差界一致**才算无精度回归。  
+   - **归属**：优先 **FlashInfer / sgl-kernel API 扩展**；若上游不接，则需 **自定义 CUDA/Triton 量化核**。
+
+2. **GEMM epilogue 吸收 `bias`（可选加 residual）**  
+   - **做法**：若 `mm_fp4` / CUTLASS 路径支持 bias 或 epilogue fusion，去掉 `out + bias` 独立 kernel。  
+   - **风险**：低（bias 加法是线性的）；需确认后端 layout 与 `out_dtype`。  
+   - **归属**：**FlashInfer `mm_fp4` 或 CUTLASS 封装**若已有参数则接 API；否则 **自定义 epilogue**。
+
+3. **RMSNorm 输出 + 首层 Linear 的融合（仅讨论 MLP/Attn 栈）**  
+   - **做法**：`post_attention_layernorm` 与紧随的 `gate_up_proj` 合并为单 kernel（norm scale + 可选 pre_quant + FP4 量化 + GEMM）。  
+   - **风险**：**中高**——融合后数值路径与「先 norm 再乘权重」的舍入顺序可能变，需全量对齐测试。  
+   - **归属**：通常 **自定义融合核** 或 **模型专用插件**；FlashInfer 一般不会直接提供「Norm+NVFP4Linear」通用 API。
+
+4. **加载期权重 scale 重排：减少 Python 大 tensor permute**  
+   - **做法**：把 `process_weights_after_loading` 中 pad/permute（约 1216–1231 行）挪到 **C++/CUDA 单次 kernel** 或 FlashInfer 提供的 `shuffle`/layout 工具（trtllm 分支已在用 `shuffle_matrix_a`/`shuffle_matrix_sf_a`）。  
+   - **风险**：低（布局等价即可）。  
+   - **归属**：**自定义一次性转换核** 或 **扩展 FlashInfer 导出与 CUTLASS 相同的 interleave 布局**。
+
+5. **MoE FP8 权重后处理：去掉 per-expert Python 循环**  
+   - **做法**：将 `ModelOptFp8MoEMethod` 里按 expert 的 dequant/requant（约 551–569 行）改为 **批量 batched kernel** 或单次 `torch.vmap`/自定义核。  
+   - **风险**：低到中（数学等价则精度不变）。  
+   - **归属**：**自定义或 sgl-kernel**；与 FlashInfer FP4 Linear 无直接关系。
+
+---
+
+## 自定义核 vs 期望 FlashInfer 提供的能力
+
+| 需求 | 更可能路径 |
+|------|------------|
+| pre_quant（通道）× 激活 + NVFP4 量化一体化 | FlashInfer/sgl **扩展 `fp4_quantize` 签名** 或 **Triton/CUDA 小核** |
+| NVFP4 GEMM + bias / 简单 epilogue | **FlashInfer `mm_fp4` / CUTLASS 封装** 若暴露 epilogue；否则 CUTLASS 侧自定义 |
+| 与 checkpoint 一致的 weight/scale shuffle（trtllm） | 已有 **`shuffle_matrix_a` / `shuffle_matrix_sf_a`**（本文件 77–78、1195–1205 行） |
+| MoE 专家权重重排/融合 | **FlashInfer fused_moe** 系列 + 本仓库 **`prepare_static_weights_for_trtllm_fp4_moe`**（`utils.py`） |
+| RMSNorm + Quant + GEMM | **模型侧自定义融合**，不指望通用 FlashInfer API |
+
+---
+
+## 关键符号速查
+
+| 符号 | 文件 |
+|------|------|
+| `fp4_gemm`, `FLASHINFER_FP4_GEMM_BACKEND` | `/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers/quantization/modelopt_quant.py` |
+| `ModelOptFp4LinearMethod.apply` / `process_weights_after_loading` | 同上 |
+| `ModelOptNvFp4FusedMoEMethod.apply` | 同上 |
+| `ModelOptFp8MoEMethod.process_weights_after_loading` | 同上 |
+| `prepare_static_weights_for_trtllm_fp4_moe`, `swizzle_blockscale` | `/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers/quantization/utils.py` |
+| `MiniCPMMLP`, `MiniCPMDecoderLayer` | `/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/models/minicpm.py` |
+| `is_sm120_supported`, `is_blackwell_supported` | `/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/utils/common.py` |
+| `SGLANG_*` 量化/FlashInfer 相关 | `/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/environ.py` |
+
+当前为 **Ask / 只读** 模式，未改代码、未跑评测。若需要我直接在分支里改 `modelopt_quant.py` 或做 profile 对比，可切换到 Agent 模式。

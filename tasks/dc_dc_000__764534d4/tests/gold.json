@@ -1,1 +1,0 @@
-{"point_id": "019e2c6e-0c5e-7cd1-924b-afbeca893eb7#11", "developer": "dc:dc_000", "condition": "noprofile", "real": "it's clearly confusing", "prev_agent": "`dataclaw export --no-push` is now running. This is the stage that can take a few minutes because it is writing the reviewable dataset file locally.", "gold_move": null}

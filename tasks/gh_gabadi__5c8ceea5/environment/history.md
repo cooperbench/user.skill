@@ -1,7 +1,0 @@
-> DEVELOPER
-
-drywall can be in some where installed and used from pypi/uv? like any python lib?
-
-> AGENT
-
-Currently drywall is distributed only as raw prebuilt binaries via GitHub releases (no PyPI/uv, no crates.io, no Homebrew). It's a pure Rust CLI with no Python bindings at all — there's no `pyproject.toml`, no `maturin`/`pyo3` setup, nothing. That said, it's absolutely feasible to make it `pip install`/`uvx`-able. The standard pattern for shipping a Rust binary through PyPI is a thin wheel that just bundles the compiled executable (no PyO3 bindings needed since drywall is a CLI, not a library API). Common approaches: 1. **`maturin` with `bin` target** — maturin supports packaging a Rust binary crate directly as a Python wheel entry point (no Python/PyO3 code needed). Simplest for a pure-CLI tool. 2. **Manual wheels per-platform** — build a wheel per platform tag that just drops the binary into `scripts/`, similar to how `ruff`, `uv` itself, or `ripgrep`-python wrappers do it. Usually paired with a tiny Python shim that does the multi-platform binary dispatch (like `ruff`'s `pyproject.toml` + `ruff/__main__.py` download-or-bundle trick). 3. **`pip install drywall`** then would just place the right platform binary on PATH; `uvx drywall` would work too since uv reads normal PyPI wheels. Given you already have cross-compiled release artifacts per platform (Linux x86_64 musl, macOS arm64/x86_64) from […]

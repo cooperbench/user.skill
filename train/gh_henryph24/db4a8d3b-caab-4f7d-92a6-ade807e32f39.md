@@ -738,7 +738,7 @@ Multi-horizon is complete — all 36 new files present. The RevIN trajectory is 
 
 Should have everything in ~3-4 more hours. I'll keep monitoring hourly.
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>bovwsg6jg</task-id>
@@ -773,7 +773,7 @@ Reviewer response batch is running. Here's the current status:
 
 Estimated completion: ~2-3 hours. The hourly cron will keep checking.
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>bguakumce</task-id>
@@ -788,7 +788,7 @@ Read the output file to retrieve the result: /private/tmp/claude-501/-Users-hung
 
 That was the original watcher — it never fired because the tier3 shell lingered. Already fixed by launching the reviewer response directly. It's running now on ETTh1.
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>bn1z79c1n</task-id>
@@ -810,7 +810,7 @@ This was the 2-hour background check — confirms everything from Tier 3 is comp
 
 Reviewer response batch (extended FT with 50 epochs/cosine/layer-wise) is now running separately. Next hourly cron check will report its progress.
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>bdc7zl1kx</task-id>
@@ -1299,7 +1299,7 @@ is it complete now
 
 The normalization generalization is the high-value result here. Want me to pull results, update the paper with the normalization generalization finding, and commit?
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>bt46d07e5</task-id>
@@ -1525,7 +1525,7 @@ let design that and run that in race vm now
 
 API Error: Unable to connect to API (ConnectionRefused)
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>bhn0oz5dp</task-id>
@@ -1536,7 +1536,7 @@ API Error: Unable to connect to API (ConnectionRefused)
 </task-notification>
 Read the output file to retrieve the result: /private/tmp/claude-501/-Users-hungpq2412-neuralips26/babd13cc-122e-4583-b952-a91d96fc96b3/tasks/bhn0oz5dp.output
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>bdvi29dio</task-id>
@@ -1601,7 +1601,7 @@ The analysis is definitively complete across 5 documents in `tasks/`. The DLinea
 
 No further analysis files would add value. The next productive action is committing the experiment scripts and moving on to final paper polish.
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>biy9nu4j8</task-id>
@@ -1679,7 +1679,7 @@ let's do that
 
 Pushed `d63c96b`. The 50-epoch adapter result is now in the paper's extended-FT appendix, reinforcing the representation-bottleneck narrative: "more adapter training helps modestly (8-14%) but can't close the gap — the information ceiling is in the frozen backbone, not the adapter."
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>b2v032gcn</task-id>

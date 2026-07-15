@@ -96,7 +96,7 @@ All tasks complete. Here's the summary of what was implemented:
 
 Ready for you to review the changes. Want me to commit these, or would you like to look at the diff first?
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>bgii44ran</task-id>

@@ -2876,7 +2876,7 @@ Task JOB-6 completed. Here's a summary of what was delivered:
 
 **Updated:** `mkdocs.yml` with new navigation entries and Mermaid diagram support
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>aa207f7663deaf031</task-id>
@@ -3593,7 +3593,7 @@ The database exploration agent has completed and confirms my documentation is ac
 - **SYSTEM_MAP.md**: complete codebase map at project root
 - **mkdocs.yml**: updated with new navigation and Mermaid support
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>a62f7b17ee25b4de6</task-id>
@@ -4133,7 +4133,7 @@ Full transcript available at: REDACTED.output
 
 The services and repositories exploration agent has completed. Its findings confirm the accuracy of the documentation I generated. Task JOB-6 is already marked as done - all documentation deliverables have been completed.
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>a551eea4489c1fe1d</task-id>
@@ -4552,7 +4552,7 @@ Full transcript available at: REDACTED.output
 
 API controllers exploration agent completed. Its detailed findings (82 route definitions across 18 controllers) align with my documentation. Task JOB-6 is complete.
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>a1369f150dcb1e284</task-id>
@@ -4815,7 +4815,7 @@ Full transcript available at: REDACTED.output
 
 Infrastructure exploration agent completed. All 5 exploration agents have now finished, and their findings confirm the documentation is comprehensive and accurate. Task JOB-6 is complete.
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>a367fcf0ece263455</task-id>

@@ -1,0 +1,1 @@
+{"point_id": "a0673b1c-7749-40b0-bbcb-c559f23c5cba#65", "developer": "gh:penso", "condition": "noprofile", "real": "commit and push, create a PR", "prev_agent": "Already got those results \u2014 compilation succeeded. The change is ready: `make_provider()` now applies the Kimi router overrides so the integration tests actually validate the #810 fix.", "gold_move": null}

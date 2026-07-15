@@ -6,9 +6,12 @@ import json
 import re
 from datetime import datetime
 from difflib import SequenceMatcher
+from functools import lru_cache
 from typing import Iterable
 
-POLICY_VERSION = "swesimbench-v2-cohort-policy-2026-07-13.12"
+import tiktoken
+
+POLICY_VERSION = "swesimbench-v2-cohort-policy-2026-07-13.18"
 
 RECONSTRUCTION_THRESHOLDS = {
     "minimum_chars": 24,
@@ -37,6 +40,20 @@ FRAGMENTATION_THRESHOLDS = {
 DIALOGUE_THRESHOLDS = {
     "minimum_assistant_turns": 1,
     "minimum_human_turns": 1,
+}
+
+# Skip human-target user turns above this token count when selecting eval /
+# prediction points (prepare.py, ATIF sample builders). Sessions themselves
+# are retained — megapastes may still appear in history context.
+# Tokenizer: OpenAI cl100k_base via tiktoken (same family as GPT-4 / ChatGPT).
+# Motivation (2026-07-14): v2 user turns are typically short; sampled turns near
+# 500 / 1000 / 2000 whitespace-words showed ≥1000 dominated by bulk pastes
+# (IDE context walls, console dumps, kubectl/log spam). Cap is in cl100k tokens
+# (not whitespace words). Do NOT set this near Entire/DataClaw harvest word-caps
+# (~300–400 words) — those measure source truncation, not realism.
+TURN_LENGTH_THRESHOLDS = {
+    "encoding": "cl100k_base",
+    "maximum_human_target_tokens": 1000,
 }
 
 EXCLUDED_USERS = {
@@ -97,9 +114,6 @@ SYSTEM_PREFIXES = (
     "<always_applied_workspace_rules",
 )
 TOOL_PREFIXES = (
-    "<task-notification",
-    "<subagent_notification",
-    "<teammate-message",
     "<bash-stdout",
     "<bash-stderr",
     "<bash-input",
@@ -111,6 +125,12 @@ TOOL_PREFIXES = (
     "<command",
     "<local-command",
     "Caveat:",
+)
+# Synthetic harness pings — not developer text and not real tool_use/tool_result.
+METADATA_PREFIXES = (
+    "<task-notification",
+    "<subagent_notification",
+    "<teammate-message",
 )
 COMMAND_MARKER_PREFIXES = ("<command-message", "<command-name")
 
@@ -178,14 +198,17 @@ def developer_text(text: str) -> str:
 
 
 def canonical_session_id(session_id: str) -> str:
-    """Normalize native UUID, date-prefixed UUID, or reparse wrapper ending in UUID."""
+    """Normalize native UUID, date-prefixed UUID, or pipe-wrapped IDs ending in UUID.
+
+    Handles crawl shapes like ``reparse|owner|uuid`` and ``owner/repo|uuid``.
+    """
     value = (session_id or "").strip()
     if UUID_RE.fullmatch(value):
         return value.lower()
     dated = DATE_PREFIXED_UUID_RE.fullmatch(value)
     if dated:
         return dated.group(2).lower()
-    if value.startswith("reparse|"):
+    if "|" in value:
         final = value.rsplit("|", 1)[-1]
         if UUID_RE.fullmatch(final):
             return final.lower()
@@ -228,6 +251,8 @@ def injected_role(text: str) -> str | None:
         return "system"
     if any(pattern.match(stripped) for pattern in INJECTED_SYSTEM_PATTERNS):
         return "system"
+    if stripped.startswith(METADATA_PREFIXES):
+        return "metadata"
     if stripped.startswith(TOOL_PREFIXES):
         return "tool"
     return None
@@ -334,6 +359,67 @@ def is_incomplete_dialogue(turns: Iterable[dict]) -> bool:
         assistant_turn_count(sequence)
         < DIALOGUE_THRESHOLDS["minimum_assistant_turns"]
         or human_turn_count(sequence) < DIALOGUE_THRESHOLDS["minimum_human_turns"]
+    )
+
+
+@lru_cache(maxsize=1)
+def _turn_length_encoding():
+    return tiktoken.get_encoding(TURN_LENGTH_THRESHOLDS["encoding"])
+
+
+def human_target_token_count(turn: dict) -> int:
+    """cl100k token count of the developer-facing user text."""
+    text = developer_text(turn.get("text") or "")
+    if not text:
+        return 0
+    return len(_turn_length_encoding().encode(text))
+
+
+def is_oversized_human_turn(turn: dict) -> bool:
+    """True when a single human-target user turn exceeds the prediction token cap.
+
+    Uses cheap length short-circuits so multi-megabyte pastes are not fully
+    tokenized.
+    """
+    if turn.get("role") != "user" or not is_human_target(turn):
+        return False
+    text = developer_text(turn.get("text") or "")
+    if not text:
+        return False
+    cap = TURN_LENGTH_THRESHOLDS["maximum_human_target_tokens"]
+    n_chars = len(text)
+    if n_chars <= cap:
+        return False
+    if n_chars >= cap * 16:
+        return True
+    return human_target_token_count(turn) > cap
+
+
+def is_predictable_human_turn(turn: dict) -> bool:
+    """Scorable developer target for eval / prediction point selection."""
+    return (
+        turn.get("role") == "user"
+        and is_human_target(turn)
+        and not is_oversized_human_turn(turn)
+    )
+
+
+def max_human_target_tokens(turns: Iterable[dict]) -> int:
+    """Longest human-target user turn (cl100k tokens) in a session; 0 if none."""
+    longest = 0
+    for turn in turns:
+        if turn.get("role") != "user" or not is_human_target(turn):
+            continue
+        longest = max(longest, human_target_token_count(turn))
+    return longest
+
+
+def has_oversized_human_turn(turns: Iterable[dict]) -> bool:
+    """True when any human-target user turn exceeds the prediction token cap."""
+    return any(
+        is_oversized_human_turn(turn)
+        for turn in turns
+        if turn.get("role") == "user"
     )
 
 
@@ -486,6 +572,7 @@ def policy_fingerprint() -> str:
         "excluded_users": EXCLUDED_USERS,
         "system_prefixes": SYSTEM_PREFIXES,
         "tool_prefixes": TOOL_PREFIXES,
+        "metadata_prefixes": METADATA_PREFIXES,
         "command_marker_prefixes": COMMAND_MARKER_PREFIXES,
         "placeholder_patterns": [pattern.pattern for pattern in PLACEHOLDER_PATTERNS],
         "injected_system_patterns": [
@@ -496,6 +583,7 @@ def policy_fingerprint() -> str:
         "reconstruction_thresholds": RECONSTRUCTION_THRESHOLDS,
         "fragmentation_thresholds": FRAGMENTATION_THRESHOLDS,
         "dialogue_thresholds": DIALOGUE_THRESHOLDS,
+        "turn_length_thresholds": TURN_LENGTH_THRESHOLDS,
         "uuid_canonicalization": {
             "uuid": UUID_RE.pattern,
             "date_prefixed_uuid": DATE_PREFIXED_UUID_RE.pattern,

@@ -2,38 +2,279 @@
 
 how do the ci tests work? and does it test windows?
 
+> TOOL
+
+tool_use Bash
+id: toolu_01MoyWYeevNeh2R78pWfuwFG
+```json
+{
+  "command": "ls -la /Users/alisha/Projects/wt/external-agents/kiro-windows-bug/.github/workflows/ 2>/dev/null && echo \"---\" && ls /Users/alisha/Projects/wt/external-agents/kiro-windows-bug/",
+  "description": "List workflow files"
+}
+```
+
+> TOOL
+
+tool_result
+id: toolu_01MoyWYeevNeh2R78pWfuwFG
+```
+total 32
+drwxr-xr-x@ 6 alisha  staff   192 Apr 28 15:26 .
+drwxr-xr-x@ 3 alisha  staff    96 Apr 28 15:26 ..
+-rw-r--r--@ 1 alisha  staff  1555 Apr 28 15:26 ci.yml
+-rw-r--r--@ 1 alisha  staff   241 Apr 28 15:26 license-check.yml
+-rw-r--r--@ 1 alisha  staff  2586 Apr 28 15:26 lint.yml
+-rw-r--r--@ 1 alisha  staff  1717 Apr 28 15:26 protocol-compliance.yml
+---
+AGENTS.md
+README.md
+agents
+doc
+e2e
+mise-tasks
+mise.toml
+tests
+```
+
+> TOOL
+
+tool_use Read
+id: toolu_01VJT4o4J5xcVdHj91YThWY2
+```json
+{
+  "file_path": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/.github/workflows/ci.yml"
+}
+```
+
+> TOOL
+
+tool_result
+id: toolu_01VJT4o4J5xcVdHj91YThWY2
+```
+1	name: CI
+2	
+3	on:
+4	  workflow_dispatch:
+5	  pull_request:
+6	  push:
+7	    branches:
+8	      - main
+9	
+10	permissions:
+11	  contents: read
+12	
+13	jobs:
+14	  discover-agents:
+15	    runs-on: ubuntu-latest
+16	    outputs:
+17	      count: ${{ steps.discover.outputs.count }}
+18	      matrix: ${{ steps.discover.outputs.matrix }}
+19	    steps:
+20	      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+21	
+22	      - id: discover
+23	        shell: bash
+24	        run: |
+25	          count=0
+26	          entries=""
+27	
+28	          while IFS= read -r dir; do
+29	            name="$(basename "$dir")"
+30	            if [[ -n "$entries" ]]; then
+31	              entries="${entries},"
+32	            fi
+33	            entries="${entries}{\"name\":\"${name}\",\"dir\":\"${dir}\"}"
+34	            count=$((count + 1))
+35	          done < <(find agents -mindepth 1 -maxdepth 1 -type d -name 'entire-agent-*' | sort)
+36	
+37	          echo "count=${count}" >> "$GITHUB_OUTPUT"
+38	          echo "matrix={\"include\":[${entries}]}" >> "$GITHUB_OUTPUT"
+39	
+40	  test-agents:
+41	    name: test-agents (${{ matrix.name }})
+42	    needs: discover-agents
+43	    if: ${{ needs.discover-agents.outputs.count != '0' }}
+44	    runs-on: ubuntu-latest
+45	    strategy:
+46	      fail-fast: false
+47	      matrix: ${{ fromJson(needs.discover-agents.outputs.matrix) }}
+48	    steps:
+49	      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+50	
+51	      - uses: jdx/mise-action@c37c93293d6b742fc901e1406b8f764f6fb19dac # v2.4.4
+52	
+53	      - name: Unit tests
+54	        run: mise run test "${{ matrix.dir }}"
+55	
+56	      - name: Build
+57	        run: mise run build "${{ matrix.dir }}"
+58	
+```
+
+> TOOL
+
+tool_use Read
+id: toolu_017nCezZvSdWm9Q5geWrJ5j2
+```json
+{
+  "file_path": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/.github/workflows/protocol-compliance.yml"
+}
+```
+
+> TOOL
+
+tool_result
+id: toolu_017nCezZvSdWm9Q5geWrJ5j2
+```
+1	name: Protocol Compliance
+2	
+3	on:
+4	  pull_request:
+5	  push:
+6	    branches:
+7	      - main
+8	
+9	permissions:
+10	  contents: read
+11	
+12	jobs:
+13	  discover-agents:
+14	    runs-on: ubuntu-latest
+15	    outputs:
+16	      count: ${{ steps.discover.outputs.count }}
+17	      matrix: ${{ steps.discover.outputs.matrix }}
+18	    steps:
+19	      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+20	
+21	      - id: discover
+22	        shell: bash
+23	        run: |
+24	          count=0
+25	          entries=""
+26	
+27	          while IFS= read -r dir; do
+28	            name="$(basename "$dir")"
+29	            if [[ -n "$entries" ]]; then
+30	              entries="${entries},"
+31	            fi
+32	            entries="${entries}{\"name\":\"${name}\",\"dir\":\"${dir}\",\"binary\":\"${dir}/${name}\"}"
+33	            count=$((count + 1))
+34	          done < <(find agents -mindepth 1 -maxdepth 1 -type d -name 'entire-agent-*' | sort)
+35	
+36	          echo "count=${count}" >> "$GITHUB_OUTPUT"
+37	          echo "matrix={\"include\":[${entries}]}" >> "$GITHUB_OUTPUT"
+38	
+39	  test-agents:
+40	    name: test-agents (${{ matrix.name }})
+41	    needs: discover-agents
+42	    if: ${{ needs.discover-agents.outputs.count != '0' }}
+43	    runs-on: ubuntu-latest
+44	    strategy:
+45	      fail-fast: false
+46	      matrix: ${{ fromJson(needs.discover-agents.outputs.matrix) }}
+47	    steps:
+48	      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+49	
+50	      - uses: jdx/mise-action@c37c93293d6b742fc901e1406b8f764f6fb19dac # v2.4.4
+51	
+52	      - name: Build agent binary
+53	        run: mise run build "${{ matrix.dir }}"
+54	
+55	      - name: Run protocol compliance suite
+56	        uses: entireio/external-agents-tests@3220ca8cc7ba2fbfc5a951ce4a5937ca1a5ca26e # main
+57	        with: […]
+
+> TOOL
+
+tool_use Read
+id: toolu_01P7q4Z2jsNFhVtVgi6vc7Ui
+```json
+{
+  "file_path": "/Users/alisha/Projects/wt/external-agents/kiro-windows-bug/.github/workflows/lint.yml"
+}
+```
+
+> TOOL
+
+tool_result
+id: toolu_01P7q4Z2jsNFhVtVgi6vc7Ui
+```
+1	name: Lint
+2	
+3	on:
+4	  workflow_dispatch:
+5	  pull_request:
+6	  push:
+7	    branches:
+8	      - main
+9	
+10	permissions:
+11	  contents: read
+12	
+13	jobs:
+14	  fmt:
+15	    runs-on: ubuntu-latest
+16	    steps:
+17	      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+18	
+19	      - uses: actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c # v6.4.0
+20	        with:
+21	          go-version: "stable"
+22	
+23	      - name: Check formatting
+24	        run: |
+25	          unformatted=$(gofmt -l .)
+26	          if [ -n "$unformatted" ]; then
+27	            echo "The following files are not formatted:"
+28	            echo "$unformatted"
+29	            exit 1
+30	          fi
+31	
+32	  discover-agents:
+33	    runs-on: ubuntu-latest
+34	    outputs:
+35	      count: ${{ steps.discover.outputs.count }}
+36	      matrix: ${{ steps.discover.outputs.matrix }}
+37	    steps:
+38	      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+39	
+40	      - id: discover
+41	        shell: bash
+42	        run: |
+43	          count=0
+44	          entries=""
+45	
+46	          while IFS= read -r dir; do
+47	            if [[ -n "$entries" ]]; then
+48	              entries="${entries},"
+49	            fi
+50	            entries="${entries}{\"dir\":\"${dir}\"}"
+51	            count=$((count + 1))
+52	          done < <(find agents -mindepth 1 -maxdepth 1 -type d -name 'entire-agent-*' | sort)
+53	
+54	          echo "count=${count}" >> "$GITHUB_OUTPUT"
+55	          echo "matrix={\"include\":[${entries}]}" >> "$GITHUB_OUTPUT"
+56	
+57	  lint-agents:
+58	    name: lint-agents (${{ matrix.dir }})
+59	    needs: discover-agents
+60	    if: ${{ needs.discover-agents.outputs.count != […]
+
 > AGENT
 
-Here's how CI works in this repo and the answer on Windows: ## CI workflows Four workflows, all on PRs and pushes to `main`, all running on `ubuntu-latest`: - **`ci.yml`** — discovers each `agents/entire-agent-*` directory, then for each agent runs `mise run test <dir>` (unit tests) and `mise run build <dir>`. The matrix fans out one job per agent with `fail-fast: false`. - **`protocol-compliance.yml`** — same agent discovery, builds each agent binary, then runs the shared `entireio/external-agents-tests` reusable action against the built binary (the cross-agent black-box protocol suite). - **`lint.yml`** — `gofmt -l .` check, plus `golangci-lint` (v2.11.3) per agent dir and on `e2e/`. - **`license-check.yml`** — license header / dependency check. ## Windows? **No.** Every job pins `runs-on: ubuntu-latest`. There's no Windows (or macOS) runner in any workflow, no `os` matrix, and the protocol-compliance suite is invoked only on Linux. Given the branch name `kiro-windows-bug`, that's almost certainly the gap you're looking at — a Windows-specific bug wouldn't be caught by current CI. If you want, I can sketch what adding a Windows matrix leg would look like (likely `runs-on: ${{ matrix.os }}` with `[ubuntu-latest, windows-latest]` on `ci.yml` and `protocol-compliance.yml`).
+Here's how CI works in this repo and the answer on Windows:
 
-> DEVELOPER
+## CI workflows
 
-are these real e2e tests? so it actual tests running the agents
+Four workflows, all on PRs and pushes to `main`, all running on `ubuntu-latest`:
 
-> AGENT
+- **`ci.yml`** — discovers each `agents/entire-agent-*` directory, then for each agent runs `mise run test <dir>` (unit tests) and `mise run build <dir>`. The matrix fans out one job per agent with `fail-fast: false`.
+- **`protocol-compliance.yml`** — same agent discovery, builds each agent binary, then runs the shared `entireio/external-agents-tests` reusable action against the built binary (the cross-agent black-box protocol suite).
+- **`lint.yml`** — `gofmt -l .` check, plus `golangci-lint` (v2.11.3) per agent dir and on `e2e/`.
+- **`license-check.yml`** — license header / dependency check.
 
-Mixed — there are real e2e tests, but **CI does not run them.** ## What CI actually runs | Workflow | What it does | Runs the agent? | |---|---|---| | `ci.yml` → `mise run test <dir>` | Per-agent Go unit tests (`go test ./...` inside each `agents/entire-agent-*`) | No | | `protocol-compliance.yml` | Builds the agent binary, then drives it via the shared `entireio/external-agents-tests` action — black-box protocol test (sends protocol messages, asserts responses) | Partial — exercises the binary's protocol surface, not a full agent session | | `lint.yml` | `gofmt` + `golangci-lint` | No | | `license-check.yml` | License headers / deps | No | ## The real e2e tests exist, but only locally `e2e/lifecycle_test.go` is the real deal — `//go:build e2e`, gated behind `mise run test:e2e:lifecycle`. It actually: - Builds the agent binary - Spins up a temp git repo, runs `entire enable` - Drives the agent through real prompts ("Create a file called hello.txt…") via `s.RunPrompt` and even tmux interactive sessions (`TestLifecycle_InteractiveSession`) - Verifies side effects: file created, git commit lands, checkpoint trailer appears, shadow-branch rewind works, session JSON written to `.entire/tmp/`, hooks installed via `are-hooks-installed` These cover Kiro and the other agents (`testutil.ForEachAgent`). But […]
+## Windows?
 
-> DEVELOPER
+**No.** Every job pins `runs-on: ubuntu-latest`. There's no Windows (or macOS) runner in any workflow, no `os` matrix, and the protocol-compliance suite is invoked only on Linux. Given the branch name `kiro-windows-bug`, that's almost certainly the gap you're looking at — a Windows-specific bug wouldn't be caught by current CI.
 
-can we set it up so its run on demand. not on every pr
-
-> AGENT
-
-Yes, easy — add a separate workflow gated on `workflow_dispatch` (and optionally a label or `/test-e2e` PR comment) so it never fires on normal PRs. Before I write it, two quick questions so I get the trigger and matrix right: 1. **Trigger style** — pick one (or combine): - `workflow_dispatch` only — run from the GitHub Actions UI / `gh workflow run e2e.yml` - `+ pull_request` filtered by a label (e.g. `run-e2e`) — anyone can opt a PR in by adding the label - `+ issue_comment` triggered on `/test-e2e` in a PR comment 2. **Secrets / API keys** — the lifecycle tests actually drive Kiro (and friends) end-to-end. Do those agents need API keys to run? If so, which env vars, and are they already in repo secrets? If not, the workflow needs them added before it'll pass. 3. **OS matrix** — Linux only for now, or do you want me to add `windows-latest` too while we're here (given the branch name)? Note `tmux` isn't available on Windows so `TestLifecycle_InteractiveSession` would need to skip there. My default if you just say "go": `workflow_dispatch` only, Linux only, assume no extra secrets needed and let it fail loudly if they are.
-
-> DEVELOPER
-
-trigger style + + issue_comment triggered on /test-e2e in a PR comment. add linux and windows-latest. need to figure out something thats like tmux but for windows
-
-> AGENT
-
-Here's the lay of the land — `e2e/agents/tmux.go` is a `tmux`-specific wrapper used by `Pi.StartSession` and `Kiro.StartSession`. It hides behind a `Session` interface (`agents/agent.go:53`) with `Send` / `SendKeys` / `WaitFor` / `Capture` / `IsPaneDead` / `Close`. Whatever we put on Windows has to implement that same interface. ## Windows tmux equivalents (ranked) 1. **ConPTY** (Windows Pseudo Console, Win10 1809+) — the actual native answer. It's the OS-level pseudo-terminal API. Go wrappers: - `github.com/UserExistsError/conpty` — most popular, actively used, MIT - `github.com/photostorm/pty` — fork of `creack/pty` with Windows support This is the right long-term answer. **But ConPTY is lower-level than tmux**: no built-in scrollback buffer, no named "Enter"/"C-c" keys — we'd have to write the buffer accumulator and key-name translator ourselves (~150 LOC of Go). It's a real chunk of work. 2. **MSYS2 / Cygwin tmux via scoop** — `scoop install tmux` works on the runner, but MSYS2 tmux is flaky around ConPTY apps and you're not really testing "native Windows" anymore. 3. **WinPTY** — predecessor to ConPTY, deprecated. Skip. 4. **WSL2 tmux on the runner** — kills the point of Windows CI. ## My recommendation: ship in two PRs **PR 1 (this one) — get the workflow + 6/7 tests […]
-
-> DEVELOPER
-
-what is PowerShell and can we use it
-
-> AGENT
-
-**PowerShell** is Microsoft's scripting shell — Windows' rough equivalent of bash/zsh. Two flavors: **Windows PowerShell 5.1** (pre-installed, .NET Framework, Windows-only) and **PowerShell 7+ / `pwsh`** (cross-platform, .NET). It's great at task automation, scripting, and orchestrating commands. **For our case: no, it can't replace tmux.** Different category of tool. The reason tmux is used on Linux isn't because we need a shell — we need a **pseudo-terminal**. Kiro and Pi check `isatty()` and switch off interactive TUI mode when they don't see a real terminal on stdin/stdout. tmux gives them one. PowerShell does not — it's a *client* of the terminal, not a terminal provider. If you do `Start-Process kiro -RedirectStandardInput`, Kiro will see a pipe (not a TTY) and behave like a non-interactive batch process. The interactive prompt-pattern matching the test relies on (`s.WaitFor(t, session, s.Agent.PromptPattern(), ...)`) won't work. The only thing on Windows that creates a real pseudo-terminal is **ConPTY**. PowerShell can call ConPTY via P/Invoke, but at that point you've just written a worse, slower wrapper around the same ConPTY APIs the Go libs already wrap. No advantage. **Where PowerShell does fit in our setup**: as the `shell: pwsh` for individual workflow steps on `windows-latest` (running `mise`, copying […]
+If you want, I can sketch what adding a Windows matrix leg would look like (likely `runs-on: ${{ matrix.os }}` with `[ubuntu-latest, windows-latest]` on `ci.yml` and `protocol-compliance.yml`).

@@ -1471,7 +1471,7 @@ Requirements SHARE-01 through SHARE-05 marked Complete.
 
 ───────────────────────────────────────────────────────────────
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>b533812</task-id>

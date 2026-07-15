@@ -1,7 +1,0 @@
-> DEVELOPER
-
-check if host-node-01 docker containers are ready
-
-> AGENT
-
-All 30 containers running. Looks like fresh restart (~13-14s uptime). Most healthy, few still in `health: starting`: | Container | Status | |-----------|--------| | weltherrblick | health: starting | | meshmap-db | health: starting | | commonhall-nginx | health: starting | | commonhall-api | health: starting | | commonhall-elasticsearch | health: starting | | crisp | health: starting | | uptime-kuma | health: starting | These likely need few more seconds to pass health checks. No containers down or restarting. `bosarsalog` healthy on port 3416.

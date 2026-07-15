@@ -1724,7 +1724,7 @@ Both agents are actively reviewing. Waiting for their reports to come in before 
 
 </details>
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>acc8cf36acdc10892</task-id>
@@ -1771,7 +1771,7 @@ let _ = self
 
 Critic agent is still working through the codebase. Will proceed as soon as it reports back.
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>a036c791877b0d33e</task-id>
@@ -1817,7 +1817,7 @@ Phase 2 agents launched:
 
 Waiting for both to complete...
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>aa348dd4d26461e50</task-id>
@@ -1843,7 +1843,7 @@ I have merged the two reports into a single prioritized list. Where both reviewe
 
 Supervisor has delivered the ruling. Still waiting for the Validator to finish cross-checking findings against the actual code — this will confirm or reject the 3 must-fix items before we proceed.
 
-> TOOL
+> METADATA
 
 <task-notification>
 <task-id>a1056f21b1f24734d</task-id>

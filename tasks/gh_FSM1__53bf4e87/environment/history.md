@@ -4,7 +4,55 @@
 
 > TOOL
 
-<bash-stdout>Switched to branch 'main' Your branch is behind 'origin/main' by 1 commit, and can be fast-forwarded. (use "git pull" to update your local branch) Updating 7356707db..d5486e586 Fast-forward .planning/ROADMAP.md | 41 +- .planning/STATE.md | 30 +- .planning/debug/macos-first-publish-timeout.md | 337 +++ .planning/debug/rotation-crash-safety-depth3.md | 97 + .planning/debug/scope-exit-part-a-fail.md | 591 +++++ .../70.1-01-PLAN.md | 158 ++ .../70.1-01-SUMMARY.md | 125 ++ .../70.1-02-PLAN.md | 163 ++ .../70.1-02-SUMMARY.md | 205 ++ .../70.1-03-PLAN.md | 167 ++ .../70.1-03-SUMMARY.md | 160 ++ .../70.1-04-PLAN.md | 130 ++ .../70.1-04-SUMMARY.md | 134 ++ .../70.1-05-PLAN.md | 149 ++ .../70.1-05-SUMMARY.md | 193 ++ .../70.1-06-PLAN.md | 128 ++ .../70.1-06-SUMMARY.md | 133 ++ .../70.1-07-PLAN.md | 150 ++ .../70.1-07-SUMMARY.md | 125 ++ .../70.1-08-PLAN.md | 143 ++ .../70.1-08-SUMMARY.md | 181 ++ .../70.1-09-PLAN.md | 171 ++ .../70.1-09-SUMMARY.md | 181 ++ .../70.1-10-PLAN.md | 106 + .../70.1-10-SUMMARY.md | 167 ++ .../70.1-11-PLAN.md | 142 ++ .../70.1-11-SUMMARY.md | 167 ++ .../70.1-12-PLAN.md | 140 ++ .../70.1-12-SUMMARY.md | 161 ++ .../70.1-13-PLAN.md | 120 + .../70.1-13-SUMMARY.md | 199 ++ .../70.1-CONTEXT.md | 165 ++ .../70.1-DISCUSSION-LOG.md | 75 + .../70.1-LEARNINGS.md | 143 ++ .../70.1-PATTERNS.md | 243 +++ .../70.1-RESEARCH.md | 789 +++++++ .../70.1-SECURITY.md | 110 + .../70.1-VALIDATION.md | 96 + .../70.1-VERIFICATION.md | 94 + ...-fuse-shared-scope-exit-rotation-live-wiring.md | 2 + ...8-rotation-crash-resume-depth2-soundness-gap.md | 0 ...8-desktop-query-grants-rooted-at-remint-noop.md | 43 + .../2026-07-08-winfsp-d15d-gate-ordering-parity.md | 56 + ...rotation-refreshes-only-grant-root-inode-key.md | […]
+<bash-stdout>Switched to branch 'main'
+Your branch is behind 'origin/main' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+Updating 7356707db..d5486e586
+Fast-forward
+ .planning/ROADMAP.md                               |   41 +-
+ .planning/STATE.md                                 |   30 +-
+ .planning/debug/macos-first-publish-timeout.md     |  337 +++
+ .planning/debug/rotation-crash-safety-depth3.md    |   97 +
+ .planning/debug/scope-exit-part-a-fail.md          |  591 +++++
+ .../70.1-01-PLAN.md                                |  158 ++
+ .../70.1-01-SUMMARY.md                             |  125 ++
+ .../70.1-02-PLAN.md                                |  163 ++
+ .../70.1-02-SUMMARY.md                             |  205 ++
+ .../70.1-03-PLAN.md                                |  167 ++
+ .../70.1-03-SUMMARY.md                             |  160 ++
+ .../70.1-04-PLAN.md                                |  130 ++
+ .../70.1-04-SUMMARY.md                             |  134 ++
+ .../70.1-05-PLAN.md                                |  149 ++
+ .../70.1-05-SUMMARY.md                             |  193 ++
+ .../70.1-06-PLAN.md                                |  128 ++
+ .../70.1-06-SUMMARY.md                             |  133 ++
+ .../70.1-07-PLAN.md                                |  150 ++
+ .../70.1-07-SUMMARY.md                             |  125 ++
+ .../70.1-08-PLAN.md                                |  143 ++
+ .../70.1-08-SUMMARY.md                             |  181 ++
+ .../70.1-09-PLAN.md                                |  171 ++
+ .../70.1-09-SUMMARY.md                             |  181 ++
+ .../70.1-10-PLAN.md                                |  106 +
+ .../70.1-10-SUMMARY.md                             |  167 ++
+ .../70.1-11-PLAN.md                                |  142 ++
+ .../70.1-11-SUMMARY.md                             |  167 ++
+ .../70.1-12-PLAN.md                                |  140 ++
+ .../70.1-12-SUMMARY.md                             |  161 ++
+ .../70.1-13-PLAN.md                                |  120 +
+ .../70.1-13-SUMMARY.md                             |  199 ++
+ .../70.1-CONTEXT.md                                |  165 ++
+ .../70.1-DISCUSSION-LOG.md                         |   75 +
+ .../70.1-LEARNINGS.md                              |  143 ++
+ .../70.1-PATTERNS.md                               |  243 +++
+ .../70.1-RESEARCH.md                               |  789 +++++++
+ .../70.1-SECURITY.md                               |  110 +
+ .../70.1-VALIDATION.md                             |   96 +
+ .../70.1-VERIFICATION.md                           |   94 +
+ ...-fuse-shared-scope-exit-rotation-live-wiring.md |    2 +
+ ...8-rotation-crash-resume-depth2-soundness-gap.md |    0
+ ...8-desktop-query-grants-rooted-at-remint-noop.md |   43 +
+ .../2026-07-08-winfsp-d15d-gate-ordering-parity.md |   56 +
+ ...rotation-refreshes-only-grant-root-inode-key.md | […]
 
 > AGENT
 

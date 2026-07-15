@@ -1672,7 +1672,7 @@ The PM agent is now running. It will:
 
 I'm standing by as orchestrator — I'll spawn the dev agent when PM requests it and relay any questions that come up.
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="pm-agent" color="blue">
 {"type":"idle_notification","from":"pm-agent","timestamp":"2026-03-29T05:36:16.109Z","idleReason":"available","summary":"[to orchestrator] SPAWN_REQUEST: dev-agent for insights CLI command"}
@@ -1694,7 +1694,7 @@ The dev agent will follow the TDD cycle:
 
 I'm standing by as orchestrator. I'll relay any questions and trigger `/start-review` when the PR is ready.
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="pm-agent" color="blue">
 {"type":"idle_notification","from":"pm-agent","timestamp":"2026-03-29T05:36:28.636Z","idleReason":"available","summary":"[to pm-agent] Task 1 already completed, no action needed"}
@@ -1708,7 +1708,7 @@ I'm standing by as orchestrator. I'll relay any questions and trigger `/start-re
 
 PM is idle and monitoring — that's expected. Dev agent is actively working through the handoff. Standing by.
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="dev-agent" color="green">
 {"type":"idle_notification","from":"dev-agent","timestamp":"2026-03-29T05:46:50.953Z","idleReason":"available","summary":"[to pm-agent] PR #247 created — insights CLI command complete"}
@@ -1761,7 +1761,7 @@ Classify each changed file into a domain based on file patterns:
 
 You've hit your limit · resets 1:30pm (Asia/Calcutta)
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="pm-agent" color="blue">
 {"type":"idle_notification","from":"pm-agent","timestamp":"2026-03-29T05:47:09.387Z","idleReason":"available"}
@@ -1807,7 +1807,7 @@ You've hit your limit · resets 1:30pm (Asia/Calcutta)
 
 You've hit your limit · resets 1:30pm (Asia/Calcutta)
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="sql-specialist" color="orange">
 {"type":"idle_notification","from":"sql-specialist","timestamp":"2026-03-29T05:48:18.055Z","idleReason":"available"}
@@ -1819,7 +1819,7 @@ Got it — we're in the middle of the **triple-layer code review** for PR #247.
 
 **Status:** All 3 reviewers (TA Insider, Node/CLI Specialist, SQL/DB Specialist) completed their reviews. I just sent messages requesting their outputs so I can feed them into the TA Synthesis step. Waiting for responses now.
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="cli-specialist" color="purple" summary="Node/CLI Specialist review for PR #247">
 ## Node/CLI Specialist Review: feat(cli): insights command — Round 1
@@ -1852,7 +1852,7 @@ Got it — we're in the middle of the **triple-layer code review** for PR #247.
 
 Got the CLI specialist review — 1 FIX NOW (migration ordering), rest are suggestions/notes. Waiting for TA and SQL specialist.
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="ta-reviewer" color="yellow" summary="Phase 1 Insider review for PR #247">
 ## TA Review (Phase 1 - Insider): feat(cli): insights command with --native, --hook, --force modes — Round 1
@@ -1875,7 +1875,7 @@ Got the CLI specialist review — 1 FIX NOW (migration ordering), rest are sugge
 
 Good — TA found 2 FIX NOW items. The server-side clobber issue (#2) is a significant catch. Still waiting for the SQL specialist.
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="sql-specialist" color="orange" summary="SQL/Database Specialist Review PR #247 Round 1">
 ## SQL/Database Specialist Review: feat(cli): insights command — Round 1
@@ -1901,7 +1901,7 @@ The review has 3 independent reviewers (no bias) followed by a TA synthesis pass
 
 Waiting for the TA synthesis to complete...
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="ta-synthesizer" color="pink" summary="TA Synthesis Phase 2 complete for PR #247">
 ## TA Synthesis (Phase 2): feat(cli): insights command — Round 1
@@ -1948,7 +1948,7 @@ The TA identified that after V8 ships, if a user re-analyzes a session from the 
 
 **My recommendation:** Option 1 (companion PR) — keeps this PR focused on CLI scope, and the degradation is harmless in the meantime. What's your call?
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="dev-agent" color="green">
 {"type":"idle_notification","from":"dev-agent","timestamp":"2026-03-29T10:42:28.541Z","idleReason":"available","summary":"[to pm-agent] Review fix applied — PR #247 updated, addressal comment posted"}
@@ -1991,7 +1991,7 @@ The TA identified that after V8 ships, if a user re-analyzes a session from the 
 
 When you're ready, merge the PR and I'll clean up the worktree and team.
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="pm-agent" color="blue">
 {"type":"idle_notification","from":"pm-agent","timestamp":"2026-03-29T10:43:23.798Z","idleReason":"available"}
@@ -2094,7 +2094,7 @@ Fix with Option C for this PR and complete the review again.. once i merge, we s
 
 Memory updated. Waiting for dev to push the ON CONFLICT fix...
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="dev-agent" color="green">
 {"type":"idle_notification","from":"dev-agent","timestamp":"2026-03-29T11:01:53.520Z","idleReason":"available","summary":"[to pm-agent] Review fixes complete, PR #247 updated"}
@@ -2155,7 +2155,7 @@ In the meantime — here's the summary:
 
 **Next up:** You mentioned taking up **Option A** immediately — moving `analysis-usage-db.ts` and `analysis-db.ts` from server to CLI to eliminate the inline duplicate writers. Want me to start that now?
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="system">
 {"type":"teammate_terminated","message":"pm-agent has shut down."}
@@ -2278,7 +2278,7 @@ PM agent is running. It will create the GitHub issue, prepare the handoff with t
 
 Standing by as orchestrator — will spawn dev when PM is ready.
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="pm-agent" color="blue">
 {"type":"idle_notification","from":"pm-agent","timestamp":"2026-03-29T11:14:16.595Z","idleReason":"available","summary":"[to orchestrator] SPAWN_REQUEST: dev-agent for Option A refactor"}
@@ -2295,7 +2295,7 @@ Dev agent is working. Team status:
 
 Standing by as orchestrator.
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="pm-agent" color="blue">
 {"type":"idle_notification","from":"pm-agent","timestamp":"2026-03-29T11:14:32.252Z","idleReason":"available","summary":"[to orchestrator] PM task #1 already done, dev spawn still needed"}
@@ -2305,7 +2305,7 @@ Standing by as orchestrator.
 
 PM confirming it's done — dev is already spawned and running. All good.
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="dev-agent" color="green">
 {"type":"idle_notification","from":"dev-agent","timestamp":"2026-03-29T11:25:12.256Z","idleReason":"available","summary":"[to pm-agent] PR #249 created, ready for review"}
@@ -2321,7 +2321,7 @@ All 3 reviewers launched in parallel. Waiting for their independent reviews befo
 | Node/CLI Specialist | ESM resolution, re-exports, imports | Running |
 | SQL/DB Specialist | Query preservation, SQL safety | Running |
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="dev-agent" color="green">
 {"type":"idle_notification","from":"dev-agent","timestamp":"2026-03-29T11:25:23.433Z","idleReason":"available"}
@@ -2347,7 +2347,7 @@ All 3 reviewers launched in parallel. Waiting for their independent reviews befo
 
 Review is already in progress — 3 reviewers running. PM and dev are idle and monitoring, which is expected. Standing by for review results.
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="ta-reviewer" color="yellow" summary="TA Phase 1 insider review complete — APPROVED">
 ## TA Phase 1 Insider Review: PR #249 — APPROVED
@@ -2373,7 +2373,7 @@ Server re-exports are complete (10 exports from analysis-db, 4 from analysis-usa
 
 TA approved — all 6 plan adjustments verified. Waiting for the two domain specialists.
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="ta-reviewer" color="yellow">
 {"type":"idle_notification","from":"ta-reviewer","timestamp":"2026-03-29T11:28:32.974Z","idleReason":"available"}
@@ -2383,7 +2383,7 @@ TA approved — all 6 plan adjustments verified. Waiting for the two domain spec
 
 Waiting for CLI and SQL specialists...
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="sql-specialist" color="orange" summary="SQL/DB specialist review for PR #249">
 ## SQL/Database Specialist Review: Move analysis DB helpers from server to CLI — Round 1
@@ -2410,7 +2410,7 @@ Queries are preserved with the following intentional convergences:
 
 SQL specialist found a real issue — the `session_message_count` clobber is back! Good catch. The `COALESCE` fix is elegant. Waiting for CLI specialist to complete, then synthesis.
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="cli-specialist" color="purple" summary="Node/CLI Specialist Review of PR #249 Round 1">
 ## Node/CLI Specialist Review: refactor: move analysis DB helpers from server to CLI — Round 1
@@ -2443,7 +2443,7 @@ The `convertPQToInsightRow as convertPromptQualityToInsightRow` alias correctly 
 
 Waiting for TA synthesis...
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="ta-synthesizer" color="pink" summary="TA Synthesis Phase 2 complete for PR #249">
 ## TA Synthesis (Phase 2): refactor: move analysis DB helpers from server to CLI — Round 1
@@ -2490,7 +2490,7 @@ When multiple writers share the same upsert function but provide different colum
 
 Dev is working on the fix. This should be quick — one SQL line change + one regression test.
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="dev-agent" color="green">
 {"type":"idle_notification","from":"dev-agent","timestamp":"2026-03-29T12:10:48.731Z","idleReason":"available","summary":"[to pm-agent] Review fix applied to PR #249"}
@@ -2518,7 +2518,7 @@ Dev is working on the fix. This should be quick — one SQL line change + one re
 
 Ready for your merge when you're satisfied.
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="pm-agent" color="blue">
 {"type":"idle_notification","from":"pm-agent","timestamp":"2026-03-29T12:10:55.417Z","idleReason":"available","summary":"[to orchestrator] PR #249 fix applied, ready for review synthesis"}
@@ -2584,7 +2584,7 @@ Both PRs are on master. The `analysis_usage` table now has a unified writer with
 
 **Phase 12 progress (Issue #240 done, #248 done):** Issues 4-6 remain (hook installation update, backfill check, dashboard/docs updates).
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="system">
 {"type":"teammate_terminated","message":"ta-reviewer has shut down."}
@@ -2724,7 +2724,7 @@ The `insights --hook` command reads `session_id` and `transcript_path` from stdi
 The existing `Stop` hook works for sync because `Stop` fires "when Claude finishes responding" — but `Stop` may fire multiple times per session (every response), while we want analysis to run once at session end. This is a subtle but important distinction.
 `─────────────────────────────────────────────────`
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="pm-agent" color="blue">
 {"type":"idle_notification","from":"pm-agent","timestamp":"2026-03-29T15:16:01.966Z","idleReason":"available","summary":"[to orchestrator] SPAWN_REQUEST: dev-agent for install-hook #241"}
@@ -2741,7 +2741,7 @@ Dev agent is active. Team status:
 
 The dev will first research the correct event name, report findings, then proceed with TDD implementation. Standing by.
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="pm-agent" color="blue">
 {"type":"idle_notification","from":"pm-agent","timestamp":"2026-03-29T15:16:05.596Z","idleReason":"available"}
@@ -2751,7 +2751,7 @@ The dev will first research the correct event name, report findings, then procee
 
 PM idle and monitoring — expected. Waiting for dev to complete the hook event verification.
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="pm-agent" color="blue">
 {"type":"idle_notification","from":"pm-agent","timestamp":"2026-03-29T15:17:48.449Z","idleReason":"available"}
@@ -2761,7 +2761,7 @@ PM idle and monitoring — expected. Waiting for dev to complete the hook event 
 
 Standing by — dev is working through the verification and implementation.
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="dev-agent" color="green">
 {"type":"idle_notification","from":"dev-agent","timestamp":"2026-03-29T15:23:05.290Z","idleReason":"available","summary":"[to pm-agent] PR #250 created for Issue #241"}
@@ -2771,7 +2771,7 @@ Standing by — dev is working through the verification and implementation.
 
 Two reviewers launched (TA + CLI specialist). No SQL specialist needed — this PR has no database changes. Waiting for reviews.
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="pm-agent" color="blue">
 {"type":"idle_notification","from":"pm-agent","timestamp":"2026-03-29T15:23:11.900Z","idleReason":"available","summary":"[to orchestrator] SPAWN_REQUEST: triple-layer review for PR #250"}
@@ -2797,7 +2797,7 @@ Two reviewers launched (TA + CLI specialist). No SQL specialist needed — this 
 
 Review already in progress — PM and dev are idle and monitoring. Waiting for TA and CLI specialist results.
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="cli-specialist" color="purple" summary="Node/CLI Specialist Review for PR #250 — Round 1">
 ## Node/CLI Specialist Review: Update install-hook for SessionEnd analysis hook — Round 1
@@ -2820,7 +2820,7 @@ Review already in progress — PM and dev are idle and monitoring. Waiting for T
 
 CLI specialist found 1 FIX NOW — `--sync-only` + `--analysis-only` mutual exclusion bug. Waiting for TA.
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="ta-reviewer" color="yellow" summary="Phase 1 insider review of PR #250 complete">
 ## TA Review (Phase 1 - Insider): PR #250 — Round 1 Complete
@@ -2852,7 +2852,7 @@ Ready for domain specialist review. The FIX NOW is a small guard — should be q
 
 Waiting for dev to push the fix and synthesis to complete.
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="ta-synthesizer" color="orange" summary="TA Synthesis for PR #250 posted">
 TA Synthesis (Phase 2) for PR #250 is posted as a PR comment.
@@ -2872,7 +2872,7 @@ All other findings are pre-existing concerns (non-atomic write, process.argv pat
 
 Synthesis confirms: 1 FIX NOW, already sent to dev. Waiting for the fix push.
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="dev-agent" color="green">
 {"type":"idle_notification","from":"dev-agent","timestamp":"2026-03-29T15:27:36.851Z","idleReason":"available","summary":"[to pm-agent] Review fix implemented — PR #250 updated"}
@@ -2902,7 +2902,7 @@ Synthesis confirms: 1 FIX NOW, already sent to dev. Waiting for the fix push.
 
 Ready for your merge.
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="pm-agent" color="blue">
 {"type":"idle_notification","from":"pm-agent","timestamp":"2026-03-29T15:27:54.543Z","idleReason":"available","summary":"[to orchestrator] PR #250 ready for founder merge"}
@@ -2924,7 +2924,7 @@ another round of review with claude experts please
 
 Round 2 launched — both TA and CLI specialist doing a fresh pass on the full diff plus fix verification. Waiting for results.
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="cli-reviewer-r2" color="pink" summary="Node/CLI Specialist Review PR #250 Round 2">
 ## Node/CLI Specialist Review: PR #250 — Round 2
@@ -2955,7 +2955,7 @@ The Round 1 issue (`--sync-only` + `--analysis-only` mutual exclusion) has been 
 
 CLI specialist Round 2: **APPROVE**. Fix verified, fresh pass clean. Waiting for TA Round 2.
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="cli-reviewer-r2" color="pink">
 {"type":"idle_notification","from":"cli-reviewer-r2","timestamp":"2026-03-30T01:12:44.261Z","idleReason":"available"}
@@ -2965,7 +2965,7 @@ CLI specialist Round 2: **APPROVE**. Fix verified, fresh pass clean. Waiting for
 
 Waiting for TA Round 2...
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="ta-reviewer-r2" color="cyan" summary="TA Phase 1 Insider Review PR #250 Round 2">
 ## TA Review (Phase 1 - Insider): PR #250 — Round 2
@@ -3036,7 +3036,7 @@ Dev has all 4 items queued:
 
 Items 3 and 4 are the meatier changes — especially the test isolation and CLI path resolution. Waiting for dev to implement all four and push.
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="pm-agent" color="blue">
 {"type":"idle_notification","from":"pm-agent","timestamp":"2026-03-30T01:14:59.822Z","idleReason":"available"}
@@ -3050,7 +3050,7 @@ Items 3 and 4 are the meatier changes — especially the test isolation and CLI 
 
 Dev is working on items 3 and 4. These are the more substantial changes — replacing `process.argv[1]` with `import.meta.url` resolution and isolating tests from real `~/.claude/settings.json`. Waiting for the push.
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="pm-agent" color="blue">
 {"type":"idle_notification","from":"pm-agent","timestamp":"2026-03-30T01:18:09.464Z","idleReason":"available"}
@@ -3082,7 +3082,7 @@ All 4 reviewer suggestions implemented on top of the original feature + mutual e
 
 Ready for your merge.
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="dev-agent" color="green" summary="Items 3 and 4 already implemented in commit bd054ae">
 Items 3 and 4 were already implemented in commit `bd054ae` (pushed ~30 minutes ago). The team-lead message appears to have been based on a stale view of the PR.
@@ -3200,7 +3200,7 @@ I'll delete the team once agents confirm shutdown.
 
 Next up is […]
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="system">
 {"type":"teammate_terminated","message":"pm-agent has shut down."}
@@ -3316,7 +3316,7 @@ The native analysis hook (#241) fires on `SessionEnd` — but what about session
 
 PM is scoping. Standing by to spawn dev when ready.
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="pm-agent" color="blue">
 {"type":"idle_notification","from":"pm-agent","timestamp":"2026-03-30T01:28:52.409Z","idleReason":"available","summary":"[to orchestrator] SPAWN_REQUEST: dev for insights check feature"}
@@ -3331,7 +3331,7 @@ Dev is active — reading the handoff and existing code. Standing by.
 | **PM** | Idle, monitoring | Handoff complete (Issue #242) |
 | **Dev** | Active | Task #2 — reading handoff + existing `insightsCheckCommand` |
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="pm-agent" color="blue">
 {"type":"idle_notification","from":"pm-agent","timestamp":"2026-03-30T01:29:02.346Z","idleReason":"available"}
@@ -3345,7 +3345,7 @@ Dev is active — reading the handoff and existing code. Standing by.
 
 PM idle and monitoring — expected. Dev is working through the implementation.
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="dev-agent" color="green">
 {"type":"idle_notification","from":"dev-agent","timestamp":"2026-03-30T01:37:03.585Z","idleReason":"available","summary":"[to pm-agent] PR #252 created for Issue #242"}
@@ -3355,7 +3355,7 @@ PM idle and monitoring — expected. Dev is working through the implementation.
 
 Two reviewers launched in parallel (TA + CLI specialist). Waiting for results.
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="dev-agent" color="green">
 {"type":"idle_notification","from":"dev-agent","timestamp":"2026-03-30T01:37:14.062Z","idleReason":"available","summary":"[to pm-agent] All dev tasks already complete, PR #252 created"}
@@ -3385,7 +3385,7 @@ Two reviewers launched in parallel (TA + CLI specialist). Waiting for results.
 
 Review already in progress — PM and dev are idle, which is expected. Waiting for TA and CLI specialist.
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="pm-agent" color="blue">
 {"type":"idle_notification","from":"pm-agent","timestamp":"2026-03-30T01:37:59.238Z","idleReason":"available"}
@@ -3399,7 +3399,7 @@ Review already in progress — PM and dev are idle, which is expected. Waiting f
 
 Standing by for reviews.
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="cli-specialist" color="purple" summary="Node/CLI Specialist Review for PR #252">
 ## Node/CLI Specialist Review: insights check -- count-based behavior + --analyze flag — Round 1
@@ -3426,7 +3426,7 @@ Standing by for reviews.
 
 CLI specialist: **APPROVE** — zero FIX NOW items. Waiting for TA.
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="ta-reviewer" color="yellow" summary="Phase 1 insider review complete, PR approved">
 Phase 1 insider review of PR #252 is complete and posted as a PR comment.
@@ -3469,7 +3469,7 @@ Ready for Phase 2 synthesis once domain specialist reviews are in.
 
 Ready for your merge.
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="ta-reviewer" color="yellow">
 {"type":"idle_notification","from":"ta-reviewer","timestamp":"2026-03-30T01:39:46.338Z","idleReason":"available"}
@@ -3509,7 +3509,7 @@ The last issue (#6) is **Dashboard + Docs** — update the `LlmNudgeBanner` CTA,
 
 Want to continue with #6, or wrap up here?
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="system">
 {"type":"teammate_terminated","message":"ta-reviewer has shut down."}
@@ -3595,7 +3595,7 @@ yes, take up Items 1-4 and create a feature branch to make the changes.. follow 
 
 PM agent is running. It will scope Issue #243, prepare handoff context, and message me when it needs the dev agent spawned. I'll relay progress as it comes in.
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="pm-agent" color="blue">
 {"type":"idle_notification","from":"pm-agent","timestamp":"2026-03-31T01:11:08.875Z","idleReason":"available","summary":"[to orchestrator] SPAWN_REQUEST: dev-agent for Issue #243"}
@@ -3610,7 +3610,7 @@ Dev agent is now running. It will:
 
 I'll relay progress as it comes in.
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="pm-agent" color="blue">
 {"type":"idle_notification","from":"pm-agent","timestamp":"2026-03-31T01:11:17.802Z","idleReason":"available"}
@@ -3620,7 +3620,7 @@ I'll relay progress as it comes in.
 
 PM is idle after completing its handoff — expected. It'll stay available for coordination if dev has questions.
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="dev-agent" color="green">
 {"type":"idle_notification","from":"dev-agent","timestamp":"2026-03-31T01:16:48.809Z","idleReason":"available","summary":"[to pm-agent] PR #253 created for Phase 12 dashboard+docs"}
@@ -3630,7 +3630,7 @@ PM is idle after completing its handoff — expected. It'll stay available for c
 
 Both reviewers are running in parallel — TA Insider and React/Frontend Specialist. I'll synthesize their findings once both complete.
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="dev-agent" color="green">
 {"type":"idle_notification","from":"dev-agent","timestamp":"2026-03-31T01:16:57.219Z","idleReason":"available"}
@@ -3652,7 +3652,7 @@ Both reviewers are running in parallel — TA Insider and React/Frontend Special
 
 Dev and PM are idle — expected. Review is already running (I launched it directly). Waiting for TA and React specialist to complete.
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="react-specialist" color="purple" summary="React/Frontend Specialist Review PR #253 Round 1">
 ## React/Frontend Specialist Review: PR #253 — Round 1
@@ -3681,7 +3681,7 @@ The new `AnalysisCostLine` native branch returns […]
 
 Waiting for TA synthesis to complete.
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="ta-reviewer" color="yellow">
 {"type":"idle_notification","from":"ta-reviewer","timestamp":"2026-03-31T01:19:46.442Z","idleReason":"available","summary":"[to pm-agent] Task #7 already completed — review posted"}
@@ -3691,7 +3691,7 @@ Waiting for TA synthesis to complete.
 
 TA reviewer confirming its earlier work is done. Still waiting for the synthesis agent to finish.
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="pm-agent" color="blue">
 {"type":"idle_notification","from":"pm-agent","timestamp":"2026-03-31T01:20:38.327Z","idleReason":"available","summary":"[to orchestrator] PR #253 approved, ready for founder merge"}
@@ -3701,7 +3701,7 @@ TA reviewer confirming its earlier work is done. Still waiting for the synthesis
 
 PM is reporting approval — let me wait for the TA synthesis to complete before posting the final summary.
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="ta-synthesizer" color="orange" summary="PR #253 synthesis complete — PASS">
 Phase 2 Synthesis for PR #253 is complete and posted as a PR comment.
@@ -3752,7 +3752,7 @@ This PR cleanly reuses the existing `allOllama` detection pattern for the new `a
 
 The worktree at `../code-insights-dashboard-docs-phase12/` is still live — I'll clean it up after you merge.
 
-> TOOL
+> METADATA
 
 <teammate-message teammate_id="ta-reviewer" color="yellow">
 {"type":"idle_notification","from":"ta-reviewer","timestamp":"2026-03-31T01:21:27.664Z","idleReason":"available"}

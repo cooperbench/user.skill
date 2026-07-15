@@ -1,10 +1,10 @@
 {
-  "policy_version": "swesimbench-v2-cohort-policy-2026-07-13.15",
-  "policy_fingerprint": "708b346cf6103d6386f87442a5311fcc44f2e3d18fe224d56b219e84869d42f0",
-  "cohort_fingerprint": "70b37af99ceff4a565eb747fc273b667e1132c9e3fef1f4414f5a2bb255b6bc8",
+  "policy_version": "swesimbench-v2-cohort-policy-2026-07-13.18",
+  "policy_fingerprint": "aa35cf434db66068fc8d9bf7617f92b84e1f601383816949fc6d0a395330642f",
+  "cohort_fingerprint": "6ac97b6ab5904cb68e290ccb699c13aa194fce26538ae8e3bf58684fda3111c3",
   "split": "train",
   "developers": 68,
-  "sessions": 10797,
+  "sessions": 10774,
   "format": "markdown-blockquote-turns",
   "layout": "train/<developer_slug>/<session_id>.md",
   "metadata": "train/_sessions.jsonl",
@@ -12,22 +12,22 @@
     {
       "developer": "dc:dc_000",
       "slug": "dc_dc_000",
-      "train_sessions": 3355,
-      "train_turns": 16698,
+      "train_sessions": 3347,
+      "train_turns": 16584,
       "sources": [
         "dataclaw"
       ],
-      "files": 3355
+      "files": 3347
     },
     {
       "developer": "dc:dc_001",
       "slug": "dc_dc_001",
-      "train_sessions": 749,
-      "train_turns": 13169,
+      "train_sessions": 733,
+      "train_turns": 11897,
       "sources": [
         "dataclaw"
       ],
-      "files": 749
+      "files": 733
     },
     {
       "developer": "dc:dc_004",
@@ -393,7 +393,7 @@
       "developer": "gh:jeevanpillay",
       "slug": "gh_jeevanpillay",
       "train_sessions": 251,
-      "train_turns": 1282,
+      "train_turns": 1271,
       "sources": [
         "entire",
         "swechat"
@@ -475,12 +475,12 @@
     {
       "developer": "gh:kohaku500",
       "slug": "gh_kohaku500",
-      "train_sessions": 411,
+      "train_sessions": 412,
       "train_turns": 2783,
       "sources": [
         "crawl"
       ],
-      "files": 411
+      "files": 412
     },
     {
       "developer": "gh:kungfusaini",
@@ -685,7 +685,7 @@
       "developer": "gh:winksaville",
       "slug": "gh_winksaville",
       "train_sessions": 202,
-      "train_turns": 6638,
+      "train_turns": 6688,
       "sources": [
         "crawl"
       ],
