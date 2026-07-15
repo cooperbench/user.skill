@@ -7,7 +7,8 @@ Role-playable developer profiles + Harbor eval tasks for simulating real softwar
 ## Layout
 
 ```text
-tasks/                 Harbor eval packages (2,723 held-out prediction points)
+tasks/                 Harbor eval packages (1,525 held-out prediction points)
+train/                 Scrubbed train-split sessions as markdown (10,797 sessions / 68 devs)
 data-pipelines/        Scrape, cohort, and task-build scripts (no private corpora)
   claude-crawl/        GitHub .claude/.codex discovery + harvest + cohort_policy
   swesimbench-v2/      Clean cohort builders, QC, Harbor emitters, templates
@@ -19,7 +20,9 @@ modal_app/             Modal training + serving for OSim models
 results/               Legacy validation outputs (v0-era demos)
 ```
 
-Private session corpora, digests, and holdout splits are **not** in git (S3 / Seoul `/data`). See `AGENTS.md`.
+`train/` holds scrubbed clean-cohort **train** sessions (markdown blockquotes, same turn
+format as eval `history.md`, not Harbor-packaged). Raw scrapes, digests, and other private
+blobs remain in S3 / Seoul `/data`. See `AGENTS.md`.
 
 ## Quick start
 
