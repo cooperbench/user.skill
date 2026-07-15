@@ -1,14 +1,3 @@
----
-session_id: "lyston11/Codex_Bundles|019d4eb4-96e4-7a60-a933-3fd456918c5c"
-developer: "gh:lyston11"
-split: train
-source: crawl
-repo: lyston11/Codex_Bundles
-start_time: "2026-04-02T15:02:07.156Z"
-n_turns: 78
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 以工程伦理的理论和实践为主题，可以结合本专业领域实际，可以结合具体工程案例或理论，进行深入探讨。不少于4000字的一篇学术论文。

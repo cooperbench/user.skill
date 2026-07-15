@@ -1,14 +1,3 @@
----
-session_id: "48c0a8c3-46cc-45a7-bd10-a1f5384ca2fc:subagents"
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-04-15T10:43:29.559Z"
-n_turns: 6
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Read the following files in full and report their contents back to me verbatim (or summarize key sections with line numbers): 1. /Users/user_c042661f/Documents/megaplan/megaplan/types.py 2. /Users/user_c042661f/Documents/megaplan/megaplan/_core/workflow.py 3. /Users/user_c042661f/Documents/megaplan/megaplan/auto.py (especially lines 1-50 and 180-210) 4. /Users/user_c042661f/Documents/megaplan/megaplan/schemas.py (especially schema definitions for plan.json, revise.json, review.json criteria pass enum, critique.json flags category enum) 5. /Users/user_c042661f/Documents/megaplan/pyproject.toml (version line) 6. /Users/user_c042661f/Documents/megaplan/CHANGELOG.md (first 30 lines) 7. /Users/user_c042661f/Documents/megaplan/megaplan/handlers.py lines 1-30 (imports) and the DEFAULT_AGENT_ROUTING constant if it exists I need the exact content to make precise edits. Focus on giving me exact line numbers and content for the areas I'll need to modify.

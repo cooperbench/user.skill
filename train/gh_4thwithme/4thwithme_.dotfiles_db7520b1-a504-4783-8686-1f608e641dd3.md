@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|db7520b1-a504-4783-8686-1f608e641dd3"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-04-15T22:31:24.029Z"
-n_turns: 118
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 hey bro check @docs/ what was done? what is next for implementation

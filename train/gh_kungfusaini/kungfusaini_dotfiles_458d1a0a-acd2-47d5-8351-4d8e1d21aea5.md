@@ -1,14 +1,3 @@
----
-session_id: "kungfusaini/dotfiles|458d1a0a-acd2-47d5-8351-4d8e1d21aea5"
-developer: "gh:kungfusaini"
-split: train
-source: crawl
-repo: kungfusaini/dotfiles
-start_time: "2026-05-09T18:49:49.926Z"
-n_turns: 333
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Hey man so check the most recent chat with ashlyn and argus. It kida fucked up the ticket creation and I still dont think it's in the right place, invesitgage please

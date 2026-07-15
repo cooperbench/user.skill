@@ -9,15 +9,15 @@ Not Harbor tasks. Held-out prediction points live under `../tasks/`.
 
 ```text
 train/
-  _manifest.json
+  _manifest.json      # cohort summary
+  _sessions.jsonl     # per-session metadata (source, repo, start_time, path, …)
   <developer_slug>/
-    <session_id>.md
+    <session_id>.md   # pure conversation markdown
 ```
 
 ## File format
 
-YAML frontmatter (`session_id`, `developer`, `source`, `repo`, `start_time`, …)
-then the full conversation in the same markdown turn format as eval `history.md`:
+Session `.md` files match eval `history.md` turn formatting — no YAML frontmatter:
 
 ```markdown
 > DEVELOPER
@@ -28,6 +28,8 @@ then the full conversation in the same markdown turn format as eval `history.md`
 
 …
 ```
+
+Look up `session_id` / `source` / `repo` / `start_time` in `_sessions.jsonl`.
 
 Turns are **not** word-truncated (eval histories are, for context-window sizing).
 Secrets are already scrubbed by the clean-cohort pipeline.

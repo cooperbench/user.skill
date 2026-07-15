@@ -1,14 +1,3 @@
----
-session_id: "lyston11/Codex_Bundles|f1772b01-ba9a-4163-8525-90a908658eed"
-developer: "gh:lyston11"
-split: train
-source: crawl
-repo: lyston11/Codex_Bundles
-start_time: "2026-04-28T02:19:00.674Z"
-n_turns: 464
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 查看hermes-webui项目，部署运行

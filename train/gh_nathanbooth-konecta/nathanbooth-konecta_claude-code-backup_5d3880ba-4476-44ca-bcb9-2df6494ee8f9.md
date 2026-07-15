@@ -1,14 +1,3 @@
----
-session_id: "nathanbooth-konecta/claude-code-backup|5d3880ba-4476-44ca-bcb9-2df6494ee8f9"
-developer: "gh:nathanbooth-konecta"
-split: train
-source: crawl
-repo: nathanbooth-konecta/claude-code-backup
-start_time: "2026-02-06T14:33:14.002Z"
-n_turns: 24
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Using plan mode, i have an external registry with container images on, i need to securily (with supplied credentials) automatically pull down the images and tag them for storage in Google Artifact repository, whats the best solution to achieve this with the least chance of failure and using cloud native capabilities. the documentation is here http://enterprise-docs.crewai.com/configuration/private-registry

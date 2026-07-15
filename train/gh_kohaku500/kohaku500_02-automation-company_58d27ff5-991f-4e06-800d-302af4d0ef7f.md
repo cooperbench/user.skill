@@ -1,14 +1,3 @@
----
-session_id: "kohaku500/02-automation-company|58d27ff5-991f-4e06-800d-302af4d0ef7f"
-developer: "gh:kohaku500"
-split: train
-source: crawl
-repo: kohaku500/02-automation-company
-start_time: "2026-04-18T06:39:56.583Z"
-n_turns: 17
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > AGENT
 
 売上データをCSVに保存してからHTMLレポートを生成します。

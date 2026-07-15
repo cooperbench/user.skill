@@ -1,14 +1,3 @@
----
-session_id: "kohaku500/02-automation-company|5c3727fe-62ee-4f16-8ea8-38638ed31de5"
-developer: "gh:kohaku500"
-split: train
-source: crawl
-repo: kohaku500/02-automation-company
-start_time: "2026-04-27T07:03:04.005Z"
-n_turns: 2
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 あなたは情報発信部・BoltSense担当です。今この瞬間に最も価値ある仕事を行ってください。

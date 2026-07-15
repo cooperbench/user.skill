@@ -1,14 +1,3 @@
----
-session_id: "75c53ef6-e051-4b7e-b8d7-bd1fa170d44e:subagents"
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-05-02T21:13:10.625Z"
-n_turns: 369
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 I'm trimming the root SKILL.md of the ArtAgents repo (at /Users/user_c042661f/Documents/reigh-workspace/ArtAgents) and want to verify nothing critical was dropped. Investigate two questions: 1) **Is there a streamlined "happy path" for making video timelines?** Look at the hype orchestrator (`artagents/orchestrators/hype/`), the `render` executor, the `cut` executor, the `examples/` directory (especially `hype.timeline.json`, `hype.assets.json`, `hype.metadata.json`), and `bin/render_remotion.py`. Trace what a typical agent flow looks like end-to-end from "user wants a video" → "rendered MP4". Is it a single one-shot orchestrator command, or a multi-step process? What's the canonical command? 2) **What contracts/rules exist about timelines that an agent would need to know but couldn't derive by inspecting tools?** Look at `docs/architecture.md`, `docs/reigh-artagents-timeline-safety-plan.md`, `docs/creating-tools.md`, and any per-tool SKILL.md files for hype/cut/render. I'm specifically looking for rules like "Reigh-facing JSON must round-trip through existing helpers", "source-cut timelines preserve clipType=text overlays", "pure-generative timelines can use extended clipType values", element resolution order, frame math conventions, etc. Anything that an agent making timeline edits would step on if they didn't know it. Report back with: (a) the streamlined timeline workflow as a short numbered list with the canonical command(s); (b) a tight list of timeline-related rules/contracts that should live in the root SKILL.md (so the agent knows the rule before they decide which tool to invoke), distinguished from rules that belong inside individual per-tool SKILL.md files. Keep it under 400 words.

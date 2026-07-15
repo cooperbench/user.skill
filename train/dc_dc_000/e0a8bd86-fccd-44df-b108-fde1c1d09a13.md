@@ -1,14 +1,3 @@
----
-session_id: e0a8bd86-fccd-44df-b108-fde1c1d09a13
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-03-08T23:19:31.102Z"
-n_turns: 42
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 I need to understand WHY triage mode gets triggered/entered in the desloppify tool. The hypothesis is that subjective review items leaking into the queue (due to a now-fixed bug in commit 3b3c4d9) caused triage to activate. Search thoroughly for: 1. What conditions trigger triage mode / insert triage stages into the queue? Look for where triage stages (triage::observe, triage::reflect, etc.) get added to the plan/queue. 2. Specifically look at `sync_triage.py`, `auto_cluster_sync.py`, `sync_dimensions.py`, and any reconcile logic 3. Look for the logic that decides "triage is needed" - what are the criteria? Is it based on presence of subjective items in the queue? 4. Look at the plan.json state - the plan_start_scores show objective at 95.1 (very high), so why would triage be needed? 5. Check `lifecycle.py` for endgame/triage gating logic 6. Look at the fix in commit 3b3c4d9 to understand what the "stale subjective items surfacing mid-queue" bug was Key directories: desloppify/engine/_plan/, desloppify/engine/policy/ Key files: sync_triage.py, auto_cluster_sync.py, lifecycle.py, sync_dimensions.py

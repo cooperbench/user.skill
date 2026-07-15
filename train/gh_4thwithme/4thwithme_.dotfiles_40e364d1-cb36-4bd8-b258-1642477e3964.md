@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|40e364d1-cb36-4bd8-b258-1642477e3964"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-04-02T11:32:12.807Z"
-n_turns: 54
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 write me a js scripy i will run it in console in browser to download files with 1 sec interval https://www.gamereplays.org/cnczerohour/replays.php?game=2&show=download&&id=369445 i will provide range of ids e.g from 1 to 10000 and it should download it

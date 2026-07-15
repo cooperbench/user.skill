@@ -1,14 +1,3 @@
----
-session_id: f2f0caeb-54ff-4f82-8daf-f1311df5cdda
-developer: "gh:thieso2"
-split: train
-source: entire
-repo: thieso2/Sandcastle
-start_time: "2026-03-06T16:11:48.863237Z"
-n_turns: 221
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 add a button "logs" that does "docker logs <sandcastle>" for a sandcastle that i own or am an admin

@@ -1,14 +1,3 @@
----
-session_id: f04ebaed-f5fb-400a-ab5c-e03edebe612a
-developer: "gh:marcus-sa"
-split: train
-source: entire
-repo: marcus-sa/brain
-start_time: "2026-03-16T12:10:55.817921Z"
-n_turns: 80
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > SYSTEM
 
 <system_instruction> You are working inside Conductor, a Mac app that lets the user run many coding agents in parallel. Your work should take place in the /Users/marcus/conductor/workspaces/brain-v1/london directory (unless otherwise directed), which has been set up for you to work in. Each workspace has a .context directory (gitignored) where you can save files to collaborate with other agents. The target branch for this workspace is main. Use this for actions like creating new PRs, bisecting, etc., unless you're told otherwise. If the user asks you to work on several unrelated tasks in parallel, you can suggest they start new workspaces. If the user asks for help with Conductor, ask them to email [humans@conductor.build](mailto:humans@conductor.build) or click on the comment icon in the bottom left to send feedback. </system_instruction> <system_instruction> The user has attached these files. Read them before proceeding. - /Users/marcus/conductor/workspaces/brain-v1/london/.context/attachments/acceptance-tests__cli-proxy-setup__67213702695.log (58.3 KB) </system_instruction> Fix the failing CI actions. I've attached the failure logs.

@@ -1,14 +1,3 @@
----
-session_id: 5cb21b1c-afdb-420f-afac-b2f5b0563aee
-developer: "gh:cyyeh"
-split: train
-source: swechat
-repo: "?"
-start_time: "2026-02-27T13:17:34.774000+00:00"
-n_turns: 31
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 for CONTAINER_MAX_LIFETIME_SECONDS in sidecar container, does it mean it will be deleted even if user is still interacting with the container?

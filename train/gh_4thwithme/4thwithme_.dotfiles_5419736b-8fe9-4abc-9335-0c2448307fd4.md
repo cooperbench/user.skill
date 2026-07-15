@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|5419736b-8fe9-4abc-9335-0c2448307fd4"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-04-03T10:29:37.012Z"
-n_turns: 602
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 how to run clui?

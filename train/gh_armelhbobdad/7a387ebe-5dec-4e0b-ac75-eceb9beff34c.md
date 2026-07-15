@@ -1,14 +1,3 @@
----
-session_id: 7a387ebe-5dec-4e0b-ac75-eceb9beff34c
-developer: "gh:armelhbobdad"
-split: train
-source: entire
-repo: armelhbobdad/bmad-module-skill-forge
-start_time: "2026-05-24T13:28:44.82932511Z"
-n_turns: 43
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > AGENT
 
 I'll start by reading the improvement-queue to understand what issues actually exist before planning any fixes. Let me investigate.

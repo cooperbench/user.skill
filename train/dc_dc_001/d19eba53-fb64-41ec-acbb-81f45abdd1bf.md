@@ -1,14 +1,3 @@
----
-session_id: d19eba53-fb64-41ec-acbb-81f45abdd1bf
-developer: "dc:dc_001"
-split: train
-source: dataclaw
-repo: Quaxicron/dataclaw-zhiyaowang
-start_time: "2026-03-27T15:42:27.725Z"
-n_turns: 10
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 解压shared-nvme/openbmb/konoe-cac-env.tar.gz 并且移动到 ~/.cac/envs/konoe

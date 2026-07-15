@@ -1,14 +1,3 @@
----
-session_id: 019de0f8-c56e-7ac3-bcc8-ad5f7acb36c5
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-05-01T00:41:13.243Z"
-n_turns: 167
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 can you get this bot up and running ASAP please?

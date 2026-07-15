@@ -1,14 +1,3 @@
----
-session_id: 6c049bba-ca1e-45ff-8d40-6a4cb0ad0fbc
-developer: "gh:marcus-sa"
-split: train
-source: entire
-repo: marcus-sa/brain
-start_time: "2026-03-28T12:59:33.567778Z"
-n_turns: 26
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 write one or more linkedin articles about what we've been building the last 2 weeks

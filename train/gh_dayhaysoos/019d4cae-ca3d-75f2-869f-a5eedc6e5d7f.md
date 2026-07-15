@@ -1,14 +1,3 @@
----
-session_id: 019d4cae-ca3d-75f2-869f-a5eedc6e5d7f
-developer: "gh:dayhaysoos"
-split: train
-source: entire
-repo: dayhaysoos/nimbus
-start_time: "2026-04-02T06:04:50.442331Z"
-n_turns: 7
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 list

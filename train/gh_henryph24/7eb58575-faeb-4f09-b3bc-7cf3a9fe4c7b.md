@@ -1,14 +1,3 @@
----
-session_id: 7eb58575-faeb-4f09-b3bc-7cf3a9fe4c7b
-developer: "gh:henryph24"
-split: train
-source: entire
-repo: henryph24/neuralips26
-start_time: "2026-05-02T09:35:17.024296Z"
-n_turns: 16
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 review this feedback:"""This is a sharp question and it cuts at something the paper doesn't fully defend. Let me work through it carefully because there's a real argument here, but also a counter-argument that the paper's evidence partially addresses. ## The argument you're making (steel-manned) The logic chain: 1. **Why MoE adapters in the first place?** The paper's motivation is that "real time series are not so uniform: ETTh1 mixes quiet baseline segments with sharp seasonal excursions, and a single adapter topology cannot be optimal for every input window." 2. **What does RevIN do?** It removes per-window mean and variance, mapping every window to roughly the same scale and offset. 3. **Implication:** After RevIN, the diversity that MoE was supposed to handle has *already been homogenized away* by the time hidden states are produced. The encoder sees normalized shapes, not raw heterogeneous windows. 4. **Conclusion:** A single adapter on those normalized hidden states should suffice. The need for per-window expert selection only existed because of pre-normalization heterogeneity, which the normalization eliminated. This is a coherent argument. It implies the paper is solving a problem partially of its own making — proposing a mixture of experts to handle diversity that the backbone has already removed. ## Why the paper would push back The paper has implicit answers, though not in one place: **Answer 1: Hidden state heterogeneity persists despite normalization.** Even if RevIN normalizes the *input*, the *hidden states* H still carry information that varies across windows. Patch positions, attention patterns, and learned features all encode regime-specific structure that survives normalization. A "quiet baseline" window and a "seasonal excursion" window produce different H even after RevIN, because the *shape* differs even when scale doesn't. The fixed-adapter baselines (linear, attention, conv) all operate on these same hidden states, and they perform substantially …

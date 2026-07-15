@@ -1,14 +1,3 @@
----
-session_id: 0bdd6503-e9f7-4e3b-bd15-a2bd205bbbfa
-developer: "gh:admarble"
-split: train
-source: entire
-repo: sequant-io/sequant
-start_time: "2026-04-05T16:47:23.070428Z"
-n_turns: 31
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 should we add Add branch verification check to fullsolve skill (verify git branch --show-current before commit)?\ \ can you research?

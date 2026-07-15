@@ -1,14 +1,3 @@
----
-session_id: "lyston11/Codex_Bundles|e4389337-5dbf-466b-9bf4-51235f59354c"
-developer: "gh:lyston11"
-split: train
-source: crawl
-repo: lyston11/Codex_Bundles
-start_time: "2026-04-08T01:08:39.595Z"
-n_turns: 42
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 https://github.com/cita-777/metapi.git 

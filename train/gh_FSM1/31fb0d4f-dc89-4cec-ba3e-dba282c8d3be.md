@@ -1,14 +1,3 @@
----
-session_id: 31fb0d4f-dc89-4cec-ba3e-dba282c8d3be
-developer: "gh:FSM1"
-split: train
-source: entire
-repo: FSM1/cipher-box
-start_time: "2026-06-13T12:08:56.019881Z"
-n_turns: 190
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > AGENT
 
 Prior context loaded. Now scouting the unpin code path to ground the gray areas.

@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|2988e39f-3de9-461d-be38-a56a7c4fabac"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-04-06T15:27:51.958Z"
-n_turns: 13
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 why i see this shet??

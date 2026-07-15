@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|b5953340-a6f0-4bc6-b26b-7625459f406d"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-04-09T21:07:22.209Z"
-n_turns: 139
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 do you see scripts for analyzing replays and get  metadata from them ?

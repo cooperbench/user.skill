@@ -1,14 +1,3 @@
----
-session_id: "672122aa-3ced-4cae-b70a-f1b404edd0bb:subagents"
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-04-15T10:47:08.373Z"
-n_turns: 19
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 I need to verify specific claims in a plan for a megaplan tiebreaker subcommand. Check these things in /Users/user_c042661f/Documents/megaplan: 1. In `megaplan/cli.py`: Find `build_parser()` and how chain/auto commands are registered. What line numbers? How does `main()` dispatch them (lines ~1037-1049)? 2. In `megaplan/workers.py`: Find `run_step_with_worker()` around line 1477. What's its signature? What args does it take? Find `STEP_SCHEMA_FILENAMES` around line 51. What step names are registered? 3. In `megaplan/types.py`: Find `DEFAULT_AGENT_ROUTING` around line 267. What keys exist? 4. In `megaplan/schemas.py`: Find the `SCHEMAS` dict starting around line 8. What schemas exist? 5. In `megaplan/prompts/__init__.py`: Check if `_CLAUDE_PROMPT_BUILDERS` and `_CODEX_PROMPT_BUILDERS` exist. 6. In `megaplan/_core/io.py`: Check for `atomic_write_json`. 7. Check `tests/test_schemas.py` around line 33 for `test_schema_registry_matches_5_step_workflow`. Report exact line numbers and signatures. Be thorough - read the actual code.

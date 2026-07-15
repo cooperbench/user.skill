@@ -1,14 +1,3 @@
----
-session_id: "nathanbooth-konecta/claude-code-backup|6b0de081-215e-4c21-811c-ceb526efd461"
-developer: "gh:nathanbooth-konecta"
-split: train
-source: crawl
-repo: nathanbooth-konecta/claude-code-backup
-start_time: "2026-02-07T14:20:07.193Z"
-n_turns: 463
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > AGENT
 
 I'll run a comprehensive PR review on your current branch. Let me first get the diff and changed files, then launch the specialized review agents.

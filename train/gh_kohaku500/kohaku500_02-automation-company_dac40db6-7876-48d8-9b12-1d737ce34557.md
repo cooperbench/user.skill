@@ -1,14 +1,3 @@
----
-session_id: "kohaku500/02-automation-company|dac40db6-7876-48d8-9b12-1d737ce34557"
-developer: "gh:kohaku500"
-split: train
-source: crawl
-repo: kohaku500/02-automation-company
-start_time: "2026-04-27T22:53:08.004Z"
-n_turns: 2
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 あなたは音響診断アプリチームの研究担当です。今この瞬間に最も価値ある仕事を行ってください。

@@ -1,14 +1,3 @@
----
-session_id: faf8d6a2-6deb-494a-911e-8cbb11fca70a
-developer: "gh:robouden"
-split: train
-source: entire
-repo: Safecast/safecast-new-map
-start_time: "2026-02-21T11:52:45.263187166Z"
-n_turns: 219
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Can you check why the global search on the track upload page does not work?

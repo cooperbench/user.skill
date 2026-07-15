@@ -1,14 +1,3 @@
----
-session_id: "kungfusaini/dotfiles|285df006-48f1-48ae-bf23-b8e58892ad0e"
-developer: "gh:kungfusaini"
-split: train
-source: crawl
-repo: kungfusaini/dotfiles
-start_time: "2026-05-09T10:01:14.670Z"
-n_turns: 77
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 hey can you please check out dev_sprint @ docs/plans/audits/dev-sprint-to-dev-capability-diff-2026-05-08.md. There should be some ticks on the stuff we can implement over from dev sprint to dev

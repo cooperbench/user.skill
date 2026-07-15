@@ -1,14 +1,3 @@
----
-session_id: e3aefffc-1f9f-4c9d-bb64-1431e5fe808d
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-03-04T20:55:43.598Z"
-n_turns: 14
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 I need to understand how desloppify's review batch system creates batches. The user ran `review --prepare` which produced 9 "investigation batches", then `--dry-run` expanded those into 46 prompt files. The user expected one batch per dimension. Search the codebase for: 1. How batches are created/split in the review batch system — look in `desloppify/app/commands/review/batch/` 2. How dimensions map to batches — is there grouping logic that combines dimensions? 3. What causes sub-batch splitting (the 9 → 46 expansion) 4. The "Full Codebase Sweep" batch type specifically — why would there be 20 of those? Focus on files in: - `desloppify/app/commands/review/batch/` - `desloppify/app/commands/review/prepare.py` - Any dimension/scope related files Report back the key functions and logic that control batch creation and splitting.

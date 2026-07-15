@@ -1,14 +1,3 @@
----
-session_id: 99f00f8e-1ebb-42e9-8fb3-ccbaf250ddad
-developer: "gh:armelhbobdad"
-split: train
-source: entire
-repo: armelhbobdad/bmad-module-skill-forge
-start_time: "2026-04-24T23:08:22.576881697Z"
-n_turns: 11
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > AGENT
 
 Hi Armel — Workflow & Skill Builder ready. What would you like to do? 1. **Build new** — design a new workflow or skill from scratch 2. **Convert** — convert an existing skill (path or URL) into a lean, BMad-compliant version with a before/after report 3. **Analyze / Edit / Rebuild** — point me at an existing skill and I'll ask which mode 4. **Quality check** — run analysis on an existing skill for over-specification and structural issues Reply with a number, or describe what you have in mind (e.g., "build a skill that does X" or paste a path/URL). Add `--headless` to skip interactive discovery.

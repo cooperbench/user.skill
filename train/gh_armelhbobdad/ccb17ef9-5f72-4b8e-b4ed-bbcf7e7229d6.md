@@ -1,14 +1,3 @@
----
-session_id: ccb17ef9-5f72-4b8e-b4ed-bbcf7e7229d6
-developer: "gh:armelhbobdad"
-split: train
-source: entire
-repo: armelhbobdad/bmad-module-skill-forge
-start_time: "2026-05-07T08:30:55.342404436Z"
-n_turns: 53
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > AGENT
 
 Welcome to the Workflow & Skill Builder. I can help you build outcome-driven skills and workflows that trust the LLM's judgment rather than drowning it in procedures. What would you like to do? 1. **Build new** — design a workflow or skill from scratch through conversational discovery 2. **Analyze existing** — quality-check an existing skill for over-specification and enhancement opportunities 3. **Edit existing** — modify specific behavior in an existing skill 4. **Rebuild existing** — rethink an existing skill from its core outcomes 5. **Convert** — one-shot convert an existing skill (local path or URL) into a lean BMad-compliant equivalent with a before/after report If you pick 2–5, share the path or URL to the skill. For option 1, a rough description of what you want to build is enough to get started.

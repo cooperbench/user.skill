@@ -1,14 +1,3 @@
----
-session_id: e5acb311-07dd-42ac-80c7-45af1ed3baab
-developer: "gh:cyyeh"
-split: train
-source: entire
-repo: cyyeh/duckdb-data-agent
-start_time: "2026-03-01T14:31:12.347789Z"
-n_turns: 47
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 conversations list is the same as loaded table, every new page(refresh) is a new list

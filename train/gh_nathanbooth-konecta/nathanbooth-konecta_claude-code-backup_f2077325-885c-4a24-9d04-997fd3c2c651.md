@@ -1,14 +1,3 @@
----
-session_id: "nathanbooth-konecta/claude-code-backup|f2077325-885c-4a24-9d04-997fd3c2c651"
-developer: "gh:nathanbooth-konecta"
-split: train
-source: crawl
-repo: nathanbooth-konecta/claude-code-backup
-start_time: "2026-02-10T09:39:13.373Z"
-n_turns: 55
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 can you integrate this documentation as a new feature branch into the documentation, it should have a new sidebar top level entry called Application Migration, logically break up the documents and advise if there are gaps

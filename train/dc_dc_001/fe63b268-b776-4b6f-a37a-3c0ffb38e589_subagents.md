@@ -1,14 +1,3 @@
----
-session_id: "fe63b268-b776-4b6f-a37a-3c0ffb38e589:subagents"
-developer: "dc:dc_001"
-split: train
-source: dataclaw
-repo: Quaxicron/dataclaw-zhiyaowang
-start_time: "2026-04-21T17:07:43.779Z"
-n_turns: 77
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 在 /user_4813494d/openbmb 下调研 NVFP4 KV cache 量化的实现可行性。背景： - 项目是 OpenBMB/MiniCPM-SALA（32 层混合：8 standard attention + 24 lightning attention/GLA） - 硬件 RTX 6000D (sm_120, Blackwell)，FlashInfer 0.6.8.post1[cu13]，PyTorch 2.11+cu130 - 当前生产配置：target 用 NVFP4 权重，KV cache 刚开 `--kv-cache-dtype fp8_e5m2`（e5m2） - 标准 attention backend 是自定义的 `minicpm_flashinfer`，代码在 `/user_4813494d/openbmb/demo-sala/sglang/python/sglang/srt/` - 老文档 `docs/quantization.md` 第 89 行说 "NVFP4 KV 不可行：trtllm_batch_decode_with_kv_cache 未传 kv_block_scales，4 处 TODO；唯一实现在 trtllm_mla (DeepSeek 专属)"，但这是 cu12 时代结论 **调查内容**（只读不要改代码）： 1. 定位 `minicpm_flashinfer` backend 的文件，梳理它的 KV cache 写入/读取路径，特别是 decode kernel 调用点（是不是 `trtllm_batch_decode_with_kv_cache`、`BatchDecodeWithPagedKVCacheWrapper` 还是其它） 2. 查 FlashInfer 0.6.8 python wheel 里有没有 NVFP4 KV cache decode kernel（grep `nvfp4`, `fp4`, `mxfp4`, `kv_scale`, `block_scale` 等关键字）。路径：`/opt/SGLang-MiniCPM-SALA/sglang_minicpm_sala_env/lib/python3.10/site-packages/flashinfer/` 3. 上游 sgl-kernel 和 SGLang 的 trtllm_batch_decode 是否在 cu13/新版已经加上 kv_block_scales 支持？搜 `kv_block_scales`, `k_scale`, `v_scale`, `fp4_kv` 关键字 4. 标准 attention layer id = [0, 9, 16, 17, 22, 29, 30, 31]，看 forward 时 KV cache 的形状/dtype 绑定点，FP8→FP4 改动涉及几处 5. GLA/lightning attention 的 recurrent state 存储方式（是走 KV pool 还是独立 buffer？能否也量化？） **输出要求**： - 列出 decode KV 读取的具体代码路径（file:line） - 判断 NVFP4 KV cache 实现是 a) stock flashinfer 已支持，调用一下就行；b) 需要写 custom kernel；c) 不可行 - 如果 b，估计工作量 - 如果 c，给明确阻塞点 在 400 字内给出调研报告。

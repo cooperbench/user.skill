@@ -1,14 +1,3 @@
----
-session_id: "lyston11/Codex_Bundles|019e259b-6a80-7a83-a71f-eb27056287f3"
-developer: "gh:lyston11"
-split: train
-source: crawl
-repo: lyston11/Codex_Bundles
-start_time: "2026-05-14T08:30:08.789Z"
-n_turns: 14
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 【紧急安全通知】Hermes Agent 依赖包 mistralai 2.4.6 被投毒，立即自查！

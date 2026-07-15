@@ -1,14 +1,3 @@
----
-session_id: dc1d702a-ddd0-4cc9-9deb-503b6da82c4f
-developer: "gh:dcambria"
-split: train
-source: entire
-repo: Bureau-IT/concertacaoamazonia
-start_time: "2026-05-22T05:22:30.542464Z"
-n_turns: 652
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 [Image #1] analise porque prod perdeu o css

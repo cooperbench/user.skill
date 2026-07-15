@@ -1,14 +1,3 @@
----
-session_id: b12f8cba-d892-44d3-94d2-fdfff9ebcf3e
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-03-07T01:17:08.138Z"
-n_turns: 18
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 I need to find exactly how the subjective review process launches parallel codex subprocesses. Specifically: 1. How does the review runner build prompts and launch parallel codex batches? 2. What does the codex subprocess actually DO — does it run CLI commands, or just write output? 3. How does the output get captured? Search in `/Users/user_c042661f/Documents/desloppify/desloppify/app/commands/review/` for the review runner pipeline. I need to understand the full flow from prompt building through to parallel execution and output capture. Key files to check: - runner_parallel.py (already seen — the execute_batches function) - runner_process.py (the codex_batch_command / run_codex_batch) - Any file that builds the review prompts for codex batches - The main review command entrypoint that orchestrates the batch flow Focus on: what does each codex subprocess actually do? Does it run desloppify CLI commands? Or does it just analyze and write structured output? How is the prompt structured?

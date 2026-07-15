@@ -1,14 +1,3 @@
----
-session_id: "kungfusaini/dotfiles|098af7d6-7f44-4fb3-b86a-705122bb3879"
-developer: "gh:kungfusaini"
-split: train
-source: crawl
-repo: kungfusaini/dotfiles
-start_time: "2026-05-12T14:46:27.398Z"
-n_turns: 87
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 how big is this codebase?

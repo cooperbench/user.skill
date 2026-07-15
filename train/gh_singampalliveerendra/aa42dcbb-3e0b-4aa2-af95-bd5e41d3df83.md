@@ -1,14 +1,3 @@
----
-session_id: aa42dcbb-3e0b-4aa2-af95-bd5e41d3df83
-developer: "gh:singampalliveerendra"
-split: train
-source: entire
-repo: singampalliveerendra/your_family_farmer
-start_time: "2026-05-19T20:21:58.534626411Z"
-n_turns: 18
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 client said now concentrate on security of our apllication . the razor pay only work when we have high security of our project right ?

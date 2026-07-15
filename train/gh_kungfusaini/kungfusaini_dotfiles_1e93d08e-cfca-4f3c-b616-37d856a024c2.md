@@ -1,14 +1,3 @@
----
-session_id: "kungfusaini/dotfiles|1e93d08e-cfca-4f3c-b616-37d856a024c2"
-developer: "gh:kungfusaini"
-split: train
-source: crawl
-repo: kungfusaini/dotfiles
-start_time: "2026-05-10T15:07:19.188Z"
-n_turns: 45
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 hey man so I want you to check out my opencode instace. Right now it's so fucking slow and IDK why. I really wanna port the claude code experience into opencode in terms of how well it works etc. Let's talk abou tthe key differnces. The speed is the main issue for now

@@ -1,14 +1,3 @@
----
-session_id: "cjrfoto/claude-config|8a9f7576-49bc-4319-9142-9ac1a5d8e1e4"
-developer: "gh:cjrfoto"
-split: train
-source: crawl
-repo: cjrfoto/claude-config
-start_time: "2026-04-06T22:55:01.441Z"
-n_turns: 15
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > AGENT
 
 Let me check what's already set up in your Claude configuration and look for any CLAUDE.md files on your system.

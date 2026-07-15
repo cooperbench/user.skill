@@ -1,14 +1,3 @@
----
-session_id: "kungfusaini/dotfiles|c23d48ea-f034-4906-af0d-78c48c84dd31"
-developer: "gh:kungfusaini"
-split: train
-source: crawl
-repo: kungfusaini/dotfiles
-start_time: "2026-06-05T08:16:49.953Z"
-n_turns: 124
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 hey we have a lot of PRs to review. Some of them are quite long, so I'll tell you exactly which ones we should target as they are being reduced. Let's start with 432. You should be familiar witht he code standards by now, please keep them in mind when we are reviewing

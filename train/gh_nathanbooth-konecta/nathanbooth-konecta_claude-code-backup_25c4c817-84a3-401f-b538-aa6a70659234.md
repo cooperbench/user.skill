@@ -1,14 +1,3 @@
----
-session_id: "nathanbooth-konecta/claude-code-backup|25c4c817-84a3-401f-b538-aa6a70659234"
-developer: "gh:nathanbooth-konecta"
-split: train
-source: crawl
-repo: nathanbooth-konecta/claude-code-backup
-start_time: "2026-02-12T11:20:08.960Z"
-n_turns: 24
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 where in this helm chart is the secret key base initialised

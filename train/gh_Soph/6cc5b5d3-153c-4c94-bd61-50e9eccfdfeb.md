@@ -1,14 +1,3 @@
----
-session_id: 6cc5b5d3-153c-4c94-bd61-50e9eccfdfeb
-developer: "gh:Soph"
-split: train
-source: entire
-repo: entireio/cli
-start_time: "2026-02-26T20:55:21.830278Z"
-n_turns: 53
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 can you review the changes in this branch again, is this only changing the paths for the git hooks?

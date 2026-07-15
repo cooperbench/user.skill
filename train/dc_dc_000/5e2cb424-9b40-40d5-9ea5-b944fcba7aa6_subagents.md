@@ -1,14 +1,3 @@
----
-session_id: "5e2cb424-9b40-40d5-9ea5-b944fcba7aa6:subagents"
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-04-13T12:38:03.269Z"
-n_turns: 19
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 I need to mark 2 tasks as scoring_exhausted in the iteration 021 task manifest for the hermes-agent project at /Users/user_c042661f/Documents/hermes-agent. The tasks are: matplotlib__matplotlib-22865 and pylint-dev__pylint-7277 These tasks have patches but scoring infrastructure failed, and check_false_negatives confirmed they are NOT false negatives (genuine failures). Per the runbook at auto_improve/CRON_RUNBOOK.md, tasks with <90% similarity should be resolved as FAIL with category: scoring_exhausted. Look at the manifest file at results/auto-improve/iteration-021/_task_manifest.json to understand the data structure, then update those 2 task entries to mark them as resolved failures with category scoring_exhausted and reviewed_by human. Also check if there's a helper script or standard way to do this in the codebase before manually editing JSON.

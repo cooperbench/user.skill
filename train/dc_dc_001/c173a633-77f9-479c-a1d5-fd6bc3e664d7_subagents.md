@@ -1,14 +1,3 @@
----
-session_id: "c173a633-77f9-479c-a1d5-fd6bc3e664d7:subagents"
-developer: "dc:dc_001"
-split: train
-source: dataclaw
-repo: Quaxicron/dataclaw-zhiyaowang
-start_time: "2026-04-27T21:12:44.363Z"
-n_turns: 29
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 我们要在 SGLang fork 上实现"按 running batch size 动态切换推测解码模式"，需要你详细梳理代码： **上下文**： - 工作目录 `/user_4813494d/openbmb`，SGLang fork 在 `demo-sala/sglang/python/sglang/` - 当前用 EAGLE-3 chain verify，启动脚本 `eval/start_eagle.sh`：`spec_steps=2, topk=2, dtn=5` - 已落地 MARS verify（θ=0.85），改动在 `sgl-kernel/csrc/speculative/eagle_utils.cu` 和 `demo-sala/sglang/.../eagle_utils.py` - `SGLANG_ENABLE_SPEC_V2=0` 当前关闭，使用 v1 路径（`eagle_worker.py`），v2 入口在 `eagle_worker_v2.py` **目标方案**： - bs > 32：整 batch 全部走 no-spec（关 EAGLE，普通 decode） - 1 < bs ≤ 32：MARS tree，θ=0.85，topk=2，draft=2（dtn=5） - bs = 1：MARS tree，θ=0.85，topk=2，draft=3（dtn=7） - 关键约束：**全体样本切**，不是只对新样本。bs 增长穿过阈值时，正在运行的所有请求都要立即跟着切 **请回答以下问题**（按重要性排序，每个问题都要给具体文件+行号）： 1. **batch 调度入口**：scheduler 哪里决定一个 step 的 running batch（哪个文件、哪个函数）？running batch 的 size 在何处可读？例如 `scheduler.py` 的 event loop、`get_next_batch_to_run` 等。`spec v1` 和 `spec v2 overlap` 的入口有什么差别？ 2. **EAGLE worker 入口**：`eagle_worker.py` 和 `eagle_worker_v2.py` 中 `forward_batch_generation` 或同类函数。draft → verify 的主循环是什么样？`spec_steps`、`topk`、`num_draft_tokens` 在哪里被消费？是 worker 初始化时就固定，还是每 step 可读？ 3. **CUDA graph 与 spec 形状的绑定**： - draft model 的 graph capture 在哪里？是否对 `topk × spec_steps` 形状做了 capture？ - target verify 的 graph 是否对 `dtn` 形状 capture？capture 的 batch size 列表是什么？ - 如果运行时 dtn 在 5 ↔ 7 之间切换，graph 是否要重新 capture？SGLang 是否支持多 graph（按 dtn 分桶）？ - `--cuda-graph-bs` 之类的参数怎么设置（看 `server_args.py`）？ 4. **no-spec 切换可能性**： - 同一 worker 实例能否在 step-level 切换 "走 EAGLE" vs "走普通 decode"？看是否存在 fallback 路径（例如 spec 失败时回退）。 - `forward_batch_generation` 是否 hard-coded 走 spec_info 路径？是否有 enable/disable spec 的开关？ - 如果切到 no-spec，draft KV / verify state 怎么处理？是否需要 flush？ 5. **dtn 动态调整**： - `speculative_num_steps` / `speculative_eagle_topk` / `speculative_num_draft_tokens` 在哪些数据结构中被持有？是 `ServerArgs` 一处常量，还是每个 batch 都重新读？ - 如果不重启 server，是否能把 dtn 在 5 ↔ 7 之间切？draft tree 形状（mask、parent、position）怎么生成的？ - 看一下 `eagle_utils.py` 里 build draft tree / decode_tree_mask 的逻辑 6. **现有钩子**： - `start_eagle.sh` 有 `EAGLE_FORCE_NO_ACCEPT` 环境变量，看它是怎么实现的（grep 一下），这是不是一个潜在的"批量绕过 spec"钩子？ - `EAGLE_MARS_THETA` 怎么传到 verify kernel？是 step-level 读还是 worker init 时读？ - 是否还有其他"per-step 动态参数"通道？ 7. **scheduler 视角拿到 running bs**： - scheduler.py 的 event loop（v1 / v2 overlap 两条路径）在 forward 之前，是否已经把 running batch 准备好？bs 在哪个变量里？ - 在 forward 之前能否调用 worker 上的"set spec mode"接口？ **输出格式**： - 每个问题独立小节，给出关键代码段（带文件:行号）+ 简短结论 - 末尾给"切换可行性快评"，明确指出哪些可做、哪些是大坑（例如：CUDA graph 必须重 capture 是否成立？dtn 切换会不会破坏 draft 内部 buffer？spec → no-spec 转换时正在 verify 的请求怎么处理？） 不要给实现代码，只做调研。预算 thorough。

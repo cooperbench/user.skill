@@ -1,14 +1,3 @@
----
-session_id: f4dbe4bc-e7cc-4e1a-a9d7-881fe8f116bf
-developer: "gh:FSM1"
-split: train
-source: entire
-repo: FSM1/cipher-box
-start_time: "2026-06-27T00:41:51.810755Z"
-n_turns: 90
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > AGENT
 
 I'll start by reading the execute-phase workflow to understand the full process.

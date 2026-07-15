@@ -1,14 +1,3 @@
----
-session_id: 0b2962b4-fafa-4824-bed2-d57d9cecdab7
-developer: "gh:manderson240"
-split: train
-source: entire
-repo: manderson240/cohezion
-start_time: "2026-02-20T05:48:07.135799483Z"
-n_turns: 61
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 open

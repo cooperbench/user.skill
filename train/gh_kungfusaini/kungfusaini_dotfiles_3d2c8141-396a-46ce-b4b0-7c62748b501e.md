@@ -1,14 +1,3 @@
----
-session_id: "kungfusaini/dotfiles|3d2c8141-396a-46ce-b4b0-7c62748b501e"
-developer: "gh:kungfusaini"
-split: train
-source: crawl
-repo: kungfusaini/dotfiles
-start_time: "2026-05-08T14:34:31.718Z"
-n_turns: 214
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 hey man where were we?

@@ -1,14 +1,3 @@
----
-session_id: 4cfca9ed-4a40-4ce3-a9c6-ad13bc6065df
-developer: "gh:Stark-Industries0417"
-split: train
-source: entire
-repo: Stark-Industries0417/cli
-start_time: "2026-02-16T16:34:27.331135Z"
-n_turns: 101
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 when I did "go run cmd/entire/main.go resume soph/agent-refactor" I got 61 sessions listed... that doesn't feel right, can you investigate?

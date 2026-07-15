@@ -1,14 +1,3 @@
----
-session_id: "kungfusaini/dotfiles|3ac7e961-870a-4643-8d71-3455b6f40a1f"
-developer: "gh:kungfusaini"
-split: train
-source: crawl
-repo: kungfusaini/dotfiles
-start_time: "2026-05-28T12:01:21.629Z"
-n_turns: 181
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 hey man my cousin is an actor, his name is yash khanna. I was tasked to create a website for him so that he can use it as a portfolio. It needs to have CMS so that his parents can edit stuff and put stuff on there because they are non-tehcnical. I jsut need a simple but professional protifoliio actor site. Can you do some research and make a plan?

@@ -1,14 +1,3 @@
----
-session_id: 5b7edadb-348b-4a2f-9e2a-5c5fcdce84c7
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-04-27T21:52:06.285Z"
-n_turns: 191
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 can you chekc this task? def430ec-cbec-4bb9-9580-6286cb1eca5e Why's it not processing?

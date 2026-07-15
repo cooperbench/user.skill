@@ -1,14 +1,3 @@
----
-session_id: e81bfb45-bf84-4f47-acdb-d3bd3ebad036
-developer: "gh:yutakobayashidev"
-split: train
-source: entire
-repo: yutakobayashidev/dotnix
-start_time: "2026-02-24T08:36:08.635693Z"
-n_turns: 15
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 今azookey使ってるんだけど、karabinerの設定があってない気がするので直したい

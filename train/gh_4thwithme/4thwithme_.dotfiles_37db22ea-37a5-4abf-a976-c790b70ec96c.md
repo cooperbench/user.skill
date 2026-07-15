@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|37db22ea-37a5-4abf-a976-c790b70ec96c"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-04-13T22:36:22.505Z"
-n_turns: 14
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 do we have context7 here as plugin skill? on PC for user, or in the repo?

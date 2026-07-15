@@ -1,14 +1,3 @@
----
-session_id: c86f213c-9cb6-4afe-8b13-f4affdef8ebf
-developer: "gh:ababushkin"
-split: train
-source: entire
-repo: ababushkin/drain-cycle
-start_time: "2026-06-01T11:42:51.884027Z"
-n_turns: 11
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 # `docs/design-decisions.md` §1 superseded: verifier-gated Done contract documented ## What A new numbered section is added to `docs/design-decisions.md` documenting the verifier-gated Done contract (trigger condition, what the verifier checks, pass path, fail path). §1 is marked as superseded by the new section. ## Why The old contract — worker self-asserts Done — is being replaced. The replacement must be in the artefact before the new behaviour ships; otherwise future agents operating from stale §1 will continue to self-assert Done, defeating the initiative's core purpose. ## Assumptions * `docs/design-decisions.md` follows the existing numbered-section ADR format already present in the repo. ## Key Risks * If the new decision is ambiguous about what "fail" means (which verdicts halt vs warn), future agents will interpret the contract inconsistently. * If §1 is not clearly marked superseded, the two contracts will coexist and conflict. ## Definition of Done * `docs/design-decisions.md` has a new section capturing: trigger condition (verify label), what the verifier checks (diff vs AC), pass path (Done in Linear), fail path (halt, worktree intact, halt reason logged). * §1 has a "superseded by §N" note. * The new section reads consistently with the rest of the file's conventions. --- Execution instructions: - Working directory: /Users/anton/src/drain-cycle/.worktrees/ABA-323 - Base branch: main - Completion sequence for issue ABA-323 (run in this order, before marking Done): 1. Run `/code-review-and-quality` against the working-tree changes. 2. Fix any Critical or Required findings. Lower-severity findings are at your discretion. 3. Commit and push to main. 4. Post a short review-summary comment on the Linear issue via `mcp__claude_ai_Linear__save_comment` (count of findings by severity, fixed vs deferred). 5. Transition issue to Done via `mcp__claude_ai_Linear__save_issue` (state: "Done"). before marking Done: run /code-review-and-quality on the working-tree changes, fix Critical/Required findings, commit + push, then post a review-summary comment on the issue and transition …

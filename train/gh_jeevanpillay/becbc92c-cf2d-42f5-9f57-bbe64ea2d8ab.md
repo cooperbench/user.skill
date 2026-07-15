@@ -1,14 +1,3 @@
----
-session_id: becbc92c-cf2d-42f5-9f57-bbe64ea2d8ab
-developer: "gh:jeevanpillay"
-split: train
-source: entire
-repo: jeevanpillay/dual
-start_time: "2026-02-16T01:31:12.882611Z"
-n_turns: 32
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > AGENT
 
 I'll read the plan and all referenced source files to understand the current state before implementing.

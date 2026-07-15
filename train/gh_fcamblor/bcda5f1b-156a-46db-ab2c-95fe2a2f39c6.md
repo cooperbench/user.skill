@@ -1,14 +1,3 @@
----
-session_id: bcda5f1b-156a-46db-ab2c-95fe2a2f39c6
-developer: "gh:fcamblor"
-split: train
-source: entire
-repo: fcamblor/mac-ai-trackers
-start_time: "2026-04-18T06:49:48.929544Z"
-n_turns: 14
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 il semblerait que suite à une 429, tu as ENCORE supprimé le contenu du noeuds metrics d'un account Il ne faut pas faire ça ! Quand tu as une 429, tu stockes l'erreur dans lastError, mais tu n'altères pas les données qui étaient dans metrics !! Fais des tests pour enforcer cette regle, et corrige le problème

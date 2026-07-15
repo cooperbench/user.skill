@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|36c995e7-57ec-4b4a-8e16-af106c40c731"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-04-10T11:15:01.658Z"
-n_turns: 22
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 hey bro, do i understand it right, when i turn off orb stack, my index in elastic dissappear?

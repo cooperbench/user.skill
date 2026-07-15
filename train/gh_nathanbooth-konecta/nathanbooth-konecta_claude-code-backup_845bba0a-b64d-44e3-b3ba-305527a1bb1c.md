@@ -1,14 +1,3 @@
----
-session_id: "nathanbooth-konecta/claude-code-backup|845bba0a-b64d-44e3-b3ba-305527a1bb1c"
-developer: "gh:nathanbooth-konecta"
-split: train
-source: crawl
-repo: nathanbooth-konecta/claude-code-backup
-start_time: "2026-02-05T10:18:13.940Z"
-n_turns: 228
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > AGENT
 
 Let me review the current configuration and related Terraform code first, then enter plan mode.

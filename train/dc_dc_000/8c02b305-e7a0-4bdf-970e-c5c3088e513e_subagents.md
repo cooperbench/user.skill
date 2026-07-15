@@ -1,14 +1,3 @@
----
-session_id: "8c02b305-e7a0-4bdf-970e-c5c3088e513e:subagents"
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-04-13T22:55:00.886Z"
-n_turns: 73
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 In this workspace, the user has a UI where clicking into a "shot" should already know whether it will be "batch" or "timeline" mode. I need to find: 1. How shots are fetched (look for fetch/query related to shots, batches, timelines) 2. Any logic that determines whether a shot is batch vs timeline 3. The component(s) that handle clicking into a shot Search thoroughly across all repos/packages in /Users/user_c042661f/Documents/reigh-workspace. Look for keywords like "batch", "timeline", "shot", "mode" in combination. Check for React components, API routes, fetch calls, queries, etc. Report file paths and relevant code snippets.

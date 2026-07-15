@@ -1,14 +1,3 @@
----
-session_id: "kohaku500/02-automation-company|eb9269da-9d84-4bda-8b7e-12f7f00112bf"
-developer: "gh:kohaku500"
-split: train
-source: crawl
-repo: kohaku500/02-automation-company
-start_time: "2026-04-27T21:57:03.901Z"
-n_turns: 2
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 あなたは全プロジェクト横断の振り返り担当です。今この瞬間の最新状況を把握して進捗ダッシュボードを更新してください。

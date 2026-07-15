@@ -1,14 +1,3 @@
----
-session_id: "889e98bc-f90c-4936-b175-266d2afc5a2c:subagents"
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-04-14T00:13:57.727Z"
-n_turns: 56
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 In the reigh-workspace codebase (/Users/user_c042661f/Documents/reigh-workspace), investigate how "lauras" (likely LoRAs — Low-Rank Adaptation model weights, or possibly a domain concept) are persisted at the shot level, and how the default laura is set for a new shot or a shot that hasn't been opened yet. I want to understand: 1. Where/how lauras are stored per shot (data model, DB schema, file format, state location) 2. How the default laura is assigned when a shot is freshly created or hasn't been opened 3. Whether the flow for "new shot" vs "existing-but-unopened shot" vs "opened shot" is consistent, or if there are inconsistencies/bugs in the structure 4. Any code smells: divergent default sources, race conditions, places where the default is computed in multiple spots, missing fallbacks, etc. Please do a "very thorough" investigation. Report back with: - File paths and line numbers for the key persistence + default-setting code - A clear description of the flow - Your assessment of any inconsistencies or likely bug sources Note: "laura" might be a typo/nickname for "lora" — search for both spellings. Report under ~600 words.

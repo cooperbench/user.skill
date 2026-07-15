@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|fad99911-5d84-44bb-a7c1-043f15b19b19"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-04-06T13:59:31.828Z"
-n_turns: 6
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 gimme list of explanations of these http error codes 400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416,

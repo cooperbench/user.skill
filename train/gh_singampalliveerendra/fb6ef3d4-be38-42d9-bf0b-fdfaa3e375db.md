@@ -1,14 +1,3 @@
----
-session_id: fb6ef3d4-be38-42d9-bf0b-fdfaa3e375db
-developer: "gh:singampalliveerendra"
-split: train
-source: entire
-repo: singampalliveerendra/your_family_farmer
-start_time: "2026-06-21T15:45:46.589174661Z"
-n_turns: 61
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 whata he last prompt that i sent to you my laptop crashed in sudden

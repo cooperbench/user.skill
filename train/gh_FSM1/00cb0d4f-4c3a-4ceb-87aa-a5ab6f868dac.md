@@ -1,14 +1,3 @@
----
-session_id: 00cb0d4f-4c3a-4ceb-87aa-a5ab6f868dac
-developer: "gh:FSM1"
-split: train
-source: swechat
-repo: "?"
-start_time: "2026-02-24T16:07:47.878087Z"
-n_turns: 31
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 **Route F: Between milestones (ROADMAP.md missing, PROJECT.md exists)**

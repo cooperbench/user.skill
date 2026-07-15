@@ -1,14 +1,3 @@
----
-session_id: dd75aa91-bd7d-49bf-b1b3-1ea0c9f1c6cf
-developer: "gh:ababushkin"
-split: train
-source: entire
-repo: ababushkin/agent-skills-shaper
-start_time: "2026-05-20T09:41:48.002082Z"
-n_turns: 62
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 i want to change the workflow governance of how i work in this repo, this will also cascade down to other projects - ~/src/stock-review, ~/src/agent-skills, ~/src/nestl and ~/src/adyen-onboarding today i have a separate project in linear for each repo this method is not scaling, as i typically work on multiple initiatives at once spanning multiple repos and its hard to keep track of it what i now do is use "cycles" in linear to prioritize specific work across multiple initiatives, but each initiative should have a specific set of goals i want to accomplish - that way my features/bug fixes/etc are all scoped around those goals what i'm thinking now is that i'll use projects to create initiatives that has a specific set of goals and when i'm scoping that work i'm doing it separately. then when it comes to cycle planning i'll plan in those initiatives into my cycle - usually i'll take on 3 initiatives over 3 - 4 days before replanning (1 day of planning) do thinking, research and give me a critique of this new approach i'm thinking about you can look through existing cycles/projects to get a feel for what i mean if need be

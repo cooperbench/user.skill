@@ -1,14 +1,3 @@
----
-session_id: "kungfusaini/dotfiles|2bd0090d-e25d-4fbf-822a-c24018d0f957"
-developer: "gh:kungfusaini"
-split: train
-source: crawl
-repo: kungfusaini/dotfiles
-start_time: "2026-05-10T11:28:39.084Z"
-n_turns: 274
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Hey man, so I've noticed some problems with the current Argus system. If you see we've got a Cloud.md and a context.md, but there's a lot of overlap in terms of like you say in the Clode MD or check the context file for the routing table, but you also have routing in the Cloud.md, why don't we just put it all together into one file and just the Cloud.md? What do you think?

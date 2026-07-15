@@ -1,14 +1,3 @@
----
-session_id: 86c38a2b-dd7e-41b8-b11f-ea6dd10bffe2
-developer: "gh:robouden"
-split: train
-source: entire
-repo: Safecast/safecast-new-map
-start_time: "2026-04-02T07:34:33.38694975Z"
-n_turns: 202
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 can we make the defaul setting to be uSv/h for radation units onthe map?

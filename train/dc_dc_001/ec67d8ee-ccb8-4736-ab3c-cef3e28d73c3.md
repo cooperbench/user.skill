@@ -1,14 +1,3 @@
----
-session_id: ec67d8ee-ccb8-4736-ab3c-cef3e28d73c3
-developer: "dc:dc_001"
-split: train
-source: dataclaw
-repo: Quaxicron/dataclaw-zhiyaowang
-start_time: "2026-03-26T14:33:27.320Z"
-n_turns: 4
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 请仔细阅读以下文件，提取所有关键修改内容和实现细节： 1. /root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers/quantization/modelopt_quant.py - 重点：NVFP4_AWQ 命名处理、pre_quant_scale 的完整实现（from_config, create_weights, process_weights_after_loading, apply 四处）、ModelOptFp4Config 和 ModelOptFp4LinearMethod 的关键字段 2. /root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/models/minicpm.py - 重点：load_weights 里跳过未知 tensor 的修改 3. /root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers/attention/minicpm_sparse_utils.py - 重点：infllm_v2 的导入方式（硬导入还是 try/except）、compressed_attention 函数的关键调用链 4. /root/shared-nvme/openbmb/demo-sala/prepare_env.sh 完整内容 5. /root/shared-nvme/openbmb/demo-sala/prepare_model.sh 完整内容 6. /root/shared-nvme/openbmb/demo-sala/preprocess_model.py 完整内容 对每个文件，请给出： - 文件总行数 - 关键修改的具体代码片段（带行号） - 是否有 TODO 或未完成的内容 请返回完整的代码片段，不要省略。

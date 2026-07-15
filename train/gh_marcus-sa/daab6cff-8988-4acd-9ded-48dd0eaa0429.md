@@ -1,14 +1,3 @@
----
-session_id: daab6cff-8988-4acd-9ded-48dd0eaa0429
-developer: "gh:marcus-sa"
-split: train
-source: swechat
-repo: "?"
-start_time: "2026-03-15T13:59:14.017000+00:00"
-n_turns: 11
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > SYSTEM
 
 <system_instruction>

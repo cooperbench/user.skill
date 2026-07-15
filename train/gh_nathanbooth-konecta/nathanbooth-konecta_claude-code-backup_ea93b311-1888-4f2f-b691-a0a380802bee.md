@@ -1,14 +1,3 @@
----
-session_id: "nathanbooth-konecta/claude-code-backup|ea93b311-1888-4f2f-b691-a0a380802bee"
-developer: "gh:nathanbooth-konecta"
-split: train
-source: crawl
-repo: nathanbooth-konecta/claude-code-backup
-start_time: "2026-02-05T12:00:57.037Z"
-n_turns: 7
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 can you make me a Jira Ticket for Billing rights Role: Billing User (terraformiac@kd-ix-eur-shr-bootstrap.iam.gserviceaccount.com)

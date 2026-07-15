@@ -1,14 +1,3 @@
----
-session_id: "d91da9e4-b166-43c7-a56b-de338262e43d:subagents"
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-04-23T18:27:12.816Z"
-n_turns: 13
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Explore the megaplan codebase at /Users/user_c042661f/Documents/megaplan to gather information needed to plan a new model-profile feature. Report in under 500 words, focused on concrete file paths and line references. Specifically find: 1. **CLI surface** (`megaplan/cli.py`): - Which subcommand parsers currently add `--phase-model` and `--hermes` (expected: init, step, loop-init, loop-run, chain, tiebreaker). Report the exact function/block names and approximate line numbers. - Pattern used for adding arguments (shared helper? repeated code?). - Existing `config` subcommand structure if any (for `config profiles list/show`). 2. **DEFAULT_AGENT_ROUTING** in workers.py or elsewhere — list all the phase keys including tiebreaker sub-phases (tiebreaker_orchestrator, tiebreaker_challenger, tiebreaker_researcher, tiebreaker_synthesis). Confirm the canonical list. 3. **parse_agent_spec** — file path and how it parses "hermes:model/name" strings. 4. **load_config** — where it reads TOML/YAML config, what format, what keys. This is relevant because we need to understand the existing config pattern. 5. **state.py** — confirm structure of `state["config"]` and where it's populated at plan-init time. Look for functions that snapshot CLI args into config. 6. **Existing TOML/tomllib usage** — does the project already use tomllib or another parser? Check pyproject.toml / imports. 7. **Test layout** — where are tests? `tests/` directory? What test framework (pytest)? Report a pattern for a new test file. 8. **The hermes vendor plan dependency** — check if `megaplan/hermes_worker.py` or similar has recently been split or is in flux. Look at git log for any in-progress vendor work. Do NOT read anything under `.megaplan/` (prior plan artifacts). Focus on source, tests, pyproject.toml, and top-level README if needed for config locations. Do NOT go exploring ops/docs directories. Return paths with line numbers where possible.

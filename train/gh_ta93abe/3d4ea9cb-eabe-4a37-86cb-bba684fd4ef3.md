@@ -1,14 +1,3 @@
----
-session_id: 3d4ea9cb-eabe-4a37-86cb-bba684fd4ef3
-developer: "gh:ta93abe"
-split: train
-source: entire
-repo: ta93abe/slides
-start_time: "2026-05-12T11:07:26.020999Z"
-n_turns: 73
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 r2 sql のスライドでwrangler のコード例はあるけど、http api の例も欲しい。

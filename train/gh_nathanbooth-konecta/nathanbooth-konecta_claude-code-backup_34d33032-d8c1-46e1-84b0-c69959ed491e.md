@@ -1,14 +1,3 @@
----
-session_id: "nathanbooth-konecta/claude-code-backup|34d33032-d8c1-46e1-84b0-c69959ed491e"
-developer: "gh:nathanbooth-konecta"
-split: train
-source: crawl
-repo: nathanbooth-konecta/claude-code-backup
-start_time: "2026-02-10T19:40:50.329Z"
-n_turns: 132
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > AGENT
 
 I'll break this task into phases and use multiple specialized agents to provide an objective analysis. Let me start by gathering information from ArgoCD and the codebase.

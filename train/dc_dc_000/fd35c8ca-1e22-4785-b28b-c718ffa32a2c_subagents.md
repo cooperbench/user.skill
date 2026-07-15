@@ -1,14 +1,3 @@
----
-session_id: "fd35c8ca-1e22-4785-b28b-c718ffa32a2c:subagents"
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-05-11T16:23:01.230Z"
-n_turns: 65
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Launch a megaplan run for the tickets MVP feature. Treat this as a long-running execution job — your role is to start it, monitor it, and report back what happened. ## The exact command to run From `/Users/user_c042661f/Documents/megaplan`, run: ``` PYENV_VERSION=3.11.11 megaplan init \ --project-dir /Users/user_c042661f/Documents/megaplan \ --name tickets-mvp \ --idea-file docs/tickets-sprint-brief.md \ --profile thoughtful \ --auto-start ``` Do not modify the command. The `PYENV_VERSION` prefix is required because `megaplan` is only installed on Python 3.11.11. ## Context - This is megaplan running on its own repo. `docs/tickets-sprint-brief.md` is the sprint brief (already written); it references `docs/tickets.md` as the design doc. - The `thoughtful` profile uses Claude Opus on plan/critique/revise/review and DeepSeek on prep/gate/finalize/execute. `--auto-start` runs all phases through to completion without prompting. - Expected runtime: long (potentially hours). Expected cost: ~$10-30. The user authorized this; do not stop to ask for confirmation again. ## What to do 1. Run the command. Capture its output. It will likely run for a long time — that is expected. 2. If it asks interactive questions (it should not, with `--auto-start`), capture the prompt and stop, reporting the question. Do not answer interactive prompts on your own. 3. If it errors at startup (within the first ~60 seconds), capture the error and stop. Do not retry blindly — surface the error so the user can adjust the brief or invocation. 4. If it runs to completion or errors mid-run, capture the final state: what phases completed, where the plan/state files were written, what the last few lines of output were, and the exit status. ## What to report back A concise summary (under 300 words) covering: - Whether the run completed, errored, or is still in progress when you finish. - The plan ID / project name megaplan assigned (look in output or in `.megaplan/` under the project dir). - Which phases ran and their results, if visible. - Any file changes made (run `git status` to see). - Final exit status and the last meaningful output lines (errors, summaries). ## What NOT to do - Do not modify the sprint brief or design doc. - Do not edit code yourself — the megaplan run is doing that. - Do not retry the command if it fails — surface the failure. - Do not run additional megaplan commands beyond the one specified, unless needed to inspect state (e.g. `megaplan status`).

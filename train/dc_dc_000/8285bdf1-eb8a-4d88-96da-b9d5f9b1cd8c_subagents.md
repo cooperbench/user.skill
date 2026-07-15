@@ -1,14 +1,3 @@
----
-session_id: "8285bdf1-eb8a-4d88-96da-b9d5f9b1cd8c:subagents"
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-05-13T14:03:42.005Z"
-n_turns: 11
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 In /Users/user_c042661f/Documents/Veas, find how the bot's hot context / system prompt is built — specifically for the Tante Rosi / pregnancy coach persona. I need to know: 1. Where is the hot context assembled? (likely `hot_context.py` based on recent commits) 2. Does it include any information about whether the user's partner has given permission to share their content/distillations? 3. Where is "partner share" or sharing permission stored (likely a column on partner_links or a settings table)? 4. Is there any code path that injects "[REDACTED] has shared X with you" or similar into the system prompt when the partner has opted into sharing? I'm trying to figure out why the bot keeps saying "I can't share what [REDACTED] has said privately" even when the partner has explicitly given permission to share. Likely the permission is recorded in the DB but never surfaced into the system prompt / hot context. Report file paths and line numbers. Quote the most relevant snippets. Under 400 words.

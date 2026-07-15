@@ -1,14 +1,3 @@
----
-session_id: eaf2abbd-6ba1-43d1-988b-aacb9f025ce4
-developer: "gh:hutusi"
-split: train
-source: entire
-repo: hutusi/monecraft
-start_time: "2026-06-13T06:32:54.13299Z"
-n_turns: 221
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Let's add more features! What do you think about these ideas? 1. Mob Loot & Drops: Mobs drop items on death (wool, feathers, bones, rotten flesh, leather), giving combat a resource payoff. 2. Farming & Food: Plantable crops that grow over time and more food types to create a survival loop beyond mining. 3. Day & Night Cycle: Adding beds to skip the night. 4. What other features do you recommend?

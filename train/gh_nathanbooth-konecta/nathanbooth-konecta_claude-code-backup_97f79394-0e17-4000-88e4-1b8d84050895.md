@@ -1,14 +1,3 @@
----
-session_id: "nathanbooth-konecta/claude-code-backup|97f79394-0e17-4000-88e4-1b8d84050895"
-developer: "gh:nathanbooth-konecta"
-split: train
-source: crawl
-repo: nathanbooth-konecta/claude-code-backup
-start_time: "2026-02-16T10:07:05.542Z"
-n_turns: 42
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 can you take this into account from the current dev environment, and tune this new dev environment accordingly 

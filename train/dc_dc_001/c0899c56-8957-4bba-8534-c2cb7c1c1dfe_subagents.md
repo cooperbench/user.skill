@@ -1,14 +1,3 @@
----
-session_id: "c0899c56-8957-4bba-8534-c2cb7c1c1dfe:subagents"
-developer: "dc:dc_001"
-split: train
-source: dataclaw
-repo: Quaxicron/dataclaw-zhiyaowang
-start_time: "2026-04-20T11:46:24.595Z"
-n_turns: 149
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 在 /user_4813494d/openbmb 这个 SOAR 比赛项目里，目标是把运行时从 CUDA 12.8 升级到 CUDA 13。请精确列出所有会被影响的依赖锁点，供升级决策用。 具体调查： 1. `demo-sala/prepare_env.sh` 和 `demo-sala/prepare_model.sh` 里所有 pip/uv install 的包，哪些是版本锁死、哪些有 cu12 特定 wheel 后缀（`+cu128`/`--index-url ...cu128` 之类） 2. `demo-sala/sglang/` 下 custom SGLang 的 setup.py / pyproject.toml / requirements — 它依赖的 torch/flashinfer/triton/sgl-kernel 具体版本 3. 搜 `cu128`/`cu12`/`--index-url` 关键词，列出所有硬编码 cu12 的地方 4. `common_ops.abi3.so` 文件在哪些路径（可能在 demo-sala/ 下），和是否有对应源码 / 编译脚本 5. Triton 自写 kernel 的位置和依赖（`minicpm_attention_kernels.py`, GLA 直写 kernel 等）—它们用到的 triton API 特性 6. DeepGemm、llmcompressor、compressed-tensors、accelerate 这些的版本锁 输出：一份"cu13 升级受影响清单"，每项写清 (文件:行, 当前版本/锁定形式, 是否需要改)。控制在 400 字以内。不用写修复方案，只列清单。

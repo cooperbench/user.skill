@@ -1,14 +1,3 @@
----
-session_id: ee5c333e-c930-416a-bbba-e1bcbccf3794
-developer: "gh:Stark-Industries0417"
-split: train
-source: entire
-repo: Stark-Industries0417/cli
-start_time: "2026-02-14T14:59:43.384394Z"
-n_turns: 35
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Implement the following plan: # E2E Testing Framework with Real Agent Calls ## Summary Create a Go-based E2E testing framework that invokes real agent CLIs (Claude Code with haiku, potentially Gemini CLI later) to test the Entire CLI's checkpoint system. This replaces the bash script `scripts/test-attribution-e2e.sh` with proper Go tests. **Key insight**: The CLI already has multi-agent support via the `agent.Agent` interface (see `cmd/entire/cli/agent/agent.go`). The e2e framework should follow this pattern with an `AgentRunner` interface. ## Directory Structure ``` cmd/entire/cli/e2e_test/ ├── setup_test.go # TestMain: builds binary, checks agent availability ├── testenv.go # E2ETestEnv: standalone env with AgentRunner ├── agent_runner.go # AgentRunner interface + ClaudeCodeRunner impl ├── prompts.go # Deterministic prompt templates ├── assertions.go # Verification helpers ├── scenario_basic_workflow_test.go # P0: Basic prompt→changes→commit ├── scenario_checkpoint_test.go # P0: Checkpoint metadata verification ├── scenario_rewind_test.go # P0: Rewind functionality └── scenario_agent_commit_test.go # P1: Agent commits during turn ``` ## Key Components ### 1. AgentRunner Interface (`agent_runner.go`) Multi-agent design following the existing `agent.Agent` pattern: ```go // AgentRunner abstracts invoking a coding agent for e2e tests type AgentRunner interface { // Name returns the agent name (e.g., "claude-code", "gemini-cli") Name() string // IsAvailable checks if the agent CLI is installed and authenticated IsAvailable() (bool, error) // RunPrompt executes a prompt and returns the result RunPrompt(ctx context.Context, prompt string) (*AgentResult, error) // RunPromptWithTools executes with specific allowed tools RunPromptWithTools(ctx context.Context, prompt string, tools []string) (*AgentResult, error) } // AgentResult holds the result of an agent invocation type AgentResult struct { Stdout string Stderr string ExitCode int Duration time.Duration } ``` ### 2. ClaudeCodeRunner (implements AgentRunner) ```go type ClaudeCodeRunner struct { RepoDir string Model string // Default: "haiku" Timeout time.Duration // Default: 2m AllowedTools []string // Default: ["Edit", "Read", "Write", "Bash"] T *testing.T } func (r *ClaudeCodeRunner) IsAvailable() (bool, error) { // Check: claude CLI in PATH if …

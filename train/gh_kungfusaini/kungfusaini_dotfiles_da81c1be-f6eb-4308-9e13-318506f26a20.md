@@ -1,14 +1,3 @@
----
-session_id: "kungfusaini/dotfiles|da81c1be-f6eb-4308-9e13-318506f26a20"
-developer: "gh:kungfusaini"
-split: train
-source: crawl
-repo: kungfusaini/dotfiles
-start_time: "2026-05-10T09:47:30.110Z"
-n_turns: 23
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Hey man, I'm trying to make a very very extremely basic example of how we can use API calls to interact with LLM. So what I want you to do is create a very very very very very very very very very very very very basic Python script that uses my nano GPT subscription and uses let's say Kimi K two point six and just you know send some information and get some information back. in this example I also want you to demonstrate the usage of a system prompt and the difference between a system prompt and a user prompt. Please make that Python file for me, test it to make sure it works, and then thank you for that.

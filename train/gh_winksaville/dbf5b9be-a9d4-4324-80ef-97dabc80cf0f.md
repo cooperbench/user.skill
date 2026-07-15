@@ -1,14 +1,3 @@
----
-session_id: dbf5b9be-a9d4-4324-80ef-97dabc80cf0f
-developer: "gh:winksaville"
-split: train
-source: crawl
-repo: winksaville
-start_time: "2026-04-21T15:41:16.715Z"
-n_turns: 166
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 reaquaint

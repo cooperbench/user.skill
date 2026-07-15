@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|b6711bdf-3353-46f1-adc7-3c73239abd71"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-04-11T22:10:16.065Z"
-n_turns: 18
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > TOOL
 
 <bash-input>ls</bash-input>

@@ -1,14 +1,3 @@
----
-session_id: 1edb1cbc-dc3c-4eae-a9f0-7be5013bb581
-developer: "gh:cyyeh"
-split: train
-source: entire
-repo: cyyeh/duckdb-data-agent
-start_time: "2026-02-25T16:20:04.122511Z"
-n_turns: 22
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 new feature alert, please write design doc: create a new branch to re-implement "sql generation" and "chart generation" using subagents instead of tools

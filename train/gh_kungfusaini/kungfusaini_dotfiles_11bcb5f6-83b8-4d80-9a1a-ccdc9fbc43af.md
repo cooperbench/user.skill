@@ -1,14 +1,3 @@
----
-session_id: "kungfusaini/dotfiles|11bcb5f6-83b8-4d80-9a1a-ccdc9fbc43af"
-developer: "gh:kungfusaini"
-split: train
-source: crawl
-repo: kungfusaini/dotfiles
-start_time: "2026-05-10T22:18:51.381Z"
-n_turns: 85
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 hey, what is this project about ?

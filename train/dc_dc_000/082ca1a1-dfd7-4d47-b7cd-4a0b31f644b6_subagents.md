@@ -1,14 +1,3 @@
----
-session_id: "082ca1a1-dfd7-4d47-b7cd-4a0b31f644b6:subagents"
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-04-15T11:06:30.023Z"
-n_turns: 11
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 I need to understand the current state of several files in /Users/user_c042661f/Documents/megaplan for a plan review. Please gather the following information concisely: 1. megaplan/types.py — What states exist (STATE_* constants)? What does FlagRecord look like? What does PlanConfig look like? Line numbers for each. 2. megaplan/schemas.py — Find the gate.json schema, especially the recommendation enum and properties. Line numbers. 3. megaplan/handlers.py — Find `_apply_gate_outcome` and `handle_gate`. What recommendations does _apply_gate_outcome handle? Line numbers. How does handle_gate call _apply_gate_outcome? 4. megaplan/_core/workflow.py — What does the WORKFLOW dict look like? What transitions exist? Line numbers. 5. megaplan/_core/registries.py — Find `_jaccard_similarity` and `_concern_word_set`. Are they private? Line numbers. What do they do? 6. megaplan/prompts/gate.py — Find `_gate_prompt`. What's the structure? Line numbers for the Requirements section and the debt block. 7. megaplan/prompts/critique.py — Find `_critique_context` and `_build_critique_prompt` and `_revise_prompt`. Line numbers. 8. megaplan/tiebreaker.py — What functions/classes exist? Is there a `_run_tiebreaker` function? What does `build_tiebreaker_parser` look like? Line numbers. 9. megaplan/cli.py — How is tiebreaker integrated? Line numbers. 10. megaplan/auto.py — How does the auto runner dispatch handlers? Does it use workflow transitions? Report file paths, line numbers, and brief descriptions. Be thorough — I need to verify plan accuracy.

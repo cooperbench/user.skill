@@ -1,14 +1,3 @@
----
-session_id: f6bee31b-0014-4274-bd7b-efae5d2f3dbe
-developer: "gh:marcus-sa"
-split: train
-source: entire
-repo: marcus-sa/brain
-start_time: "2026-03-16T07:36:30.15272Z"
-n_turns: 10
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 write a README.md in each of the modules in server dirs following this format: # Address Labeling Looks up and classifies blockchain addresses via external providers (Arkham, Etherscan, on-chain registries) with forensic provenance tracking. ## The Problem A tax authority examines a blockchain transaction and sees funds moving to address `0x123...`. They need to answer: *"Who controls this address?"* Is it a centralized exchange (reportable), a DeFi protocol (different treatment), or an unknown wallet (requires investigation)? Getting this wrong affects tax treatment. Sending funds to Binance might indicate a disposal. Sending to a bridge is a cross-chain transfer (non-taxable). Sending to an unknown address could be either—or a gift, or a payment. ## What It Does - **Multi-provider address lookup**: Queries Arkham, Etherscan, and other providers for address classification - **Coalescing cache**: Deduplicates concurrent requests for the same address - **Tiered verification**: Maps provider confidence to forensic evidence tiers - **Negative caching**: Remembers when providers don't know an address to avoid repeated lookups - **Provenance tracking**: Stores raw provider responses for audit reconstruction ## Key Concepts | Term | Definition | |------|------------| | **Provider** | External API that classifies addresses (Arkham, Etherscan, ENS) | | **ProviderResult** | Standardized response format with label, category, and verification status | | **AddressCategory** | Classification type: Exchange, DeFi Protocol, Bridge, Contract, Unknown | | **Verification Tier** | Evidence quality: Tier1 (authoritative), Tier2 (verified), Tier3 (investigative) | | **Negative Lookup** | Cached result indicating no provider has classification for an address | | **CoalescingCache** | Mechanism that merges concurrent requests for the same lookup into one | ## Verification Tiers | Provider Result | Maps To | Usage | |-----------------|---------|-------| | `verified=true` | Tier2HighConfidence | External verification, auto-apply with audit flag | | `verified=false` | Tier3Investigative | Requires corroboration before reliance | | (Tier1 reserved) …

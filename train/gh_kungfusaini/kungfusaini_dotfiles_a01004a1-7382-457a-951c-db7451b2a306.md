@@ -1,14 +1,3 @@
----
-session_id: "kungfusaini/dotfiles|a01004a1-7382-457a-951c-db7451b2a306"
-developer: "gh:kungfusaini"
-split: train
-source: crawl
-repo: kungfusaini/dotfiles
-start_time: "2026-05-22T13:23:52.748Z"
-n_turns: 22
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 ehck out this pr and checkfor BS https://github.com/elijahintelligence/elijah/pull/343/

@@ -1,14 +1,3 @@
----
-session_id: "nathanbooth-konecta/claude-code-backup|0b1f2f8a-a474-48c3-bd8b-72c69318448c"
-developer: "gh:nathanbooth-konecta"
-split: train
-source: crawl
-repo: nathanbooth-konecta/claude-code-backup
-start_time: "2026-02-16T15:11:11.022Z"
-n_turns: 216
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > AGENT
 
 Let me first read the open file to understand what the `standard-pipeline.yaml` should contain.

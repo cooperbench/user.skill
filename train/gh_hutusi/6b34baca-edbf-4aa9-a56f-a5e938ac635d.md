@@ -1,14 +1,3 @@
----
-session_id: 6b34baca-edbf-4aa9-a56f-a5e938ac635d
-developer: "gh:hutusi"
-split: train
-source: entire
-repo: ainaive/agentcenter-nuxt
-start_time: "2026-06-07T22:55:09.013453Z"
-n_turns: 240
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Currently, I need to design a management and approval mechanism. Extensions are categorized into Official and Unofficial. When a user uploads an extension, it is designated as Unofficial by default. Elevating an extension to "Official" status requires an approval process. There are two tiers of official status: Product-Line Level and Company Level. Approval administrators are designated based on the functional category for each tier. Users will select their target tier (Product-Line Level or Company Level) and category for their application, which will then be reviewed by the specific administrator assigned to that combination. The administrator matrix must be fully configurable.

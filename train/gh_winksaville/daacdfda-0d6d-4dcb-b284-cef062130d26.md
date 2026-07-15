@@ -1,14 +1,3 @@
----
-session_id: daacdfda-0d6d-4dcb-b284-cef062130d26
-developer: "gh:winksaville"
-split: train
-source: crawl
-repo: winksaville
-start_time: "2026-04-25T17:37:02.743Z"
-n_turns: 40
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 I'm getting this error:

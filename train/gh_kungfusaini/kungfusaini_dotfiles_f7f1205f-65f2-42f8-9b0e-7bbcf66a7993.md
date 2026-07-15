@@ -1,14 +1,3 @@
----
-session_id: "kungfusaini/dotfiles|f7f1205f-65f2-42f8-9b0e-7bbcf66a7993"
-developer: "gh:kungfusaini"
-split: train
-source: crawl
-repo: kungfusaini/dotfiles
-start_time: "2026-05-12T08:44:27.687Z"
-n_turns: 13
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 hey man so I upgrade my system using nixrspwn command and look at this. Don't fix just investigaet how to fi x  nixrspwn

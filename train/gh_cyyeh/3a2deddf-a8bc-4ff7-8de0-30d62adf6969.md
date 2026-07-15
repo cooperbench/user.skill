@@ -1,14 +1,3 @@
----
-session_id: 3a2deddf-a8bc-4ff7-8de0-30d62adf6969
-developer: "gh:cyyeh"
-split: train
-source: entire
-repo: cyyeh/duckdb-data-agent
-start_time: "2026-02-21T09:30:14.039228Z"
-n_turns: 47
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 complex feature alert! write a design doc first: add dark/light icon button to the left of agent mode/editor mode button, default: dark, and should save the user preference in browser cache so next time users open the website could still apply the same setting

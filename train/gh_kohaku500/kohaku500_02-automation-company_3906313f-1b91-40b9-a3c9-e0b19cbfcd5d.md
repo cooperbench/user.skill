@@ -1,14 +1,3 @@
----
-session_id: "kohaku500/02-automation-company|3906313f-1b91-40b9-a3c9-e0b19cbfcd5d"
-developer: "gh:kohaku500"
-split: train
-source: crawl
-repo: kohaku500/02-automation-company
-start_time: "2026-04-26T21:00:04.267Z"
-n_turns: 7
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 あなたは秘書室です。オーナーの右腕として、今この瞬間に最も価値ある仕事を行ってください。

@@ -1,14 +1,3 @@
----
-session_id: ca783cfb-a0bb-4bc0-be10-ab623ad4351d
-developer: "gh:135yshr"
-split: train
-source: swechat
-repo: "?"
-start_time: "2026-03-10T07:07:01.257000+00:00"
-n_turns: 24
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 ### 📊 総評

@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|c30b951e-d3e7-409a-9ce7-4127b5b78345"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-04-02T11:40:48.108Z"
-n_turns: 56
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 ok .... you have a separate task... you need to write a scrapper and navigate through this pages https://www.gamereplays.org/cnczerohour/replays.php?game=2&show=search_submit&&army_1=all&army_2=all&map=all&version=all&event=all&matchup_type=all&sort_by=last_comment&st=60 https://www.gamereplays.org/cnczerohour/replays.php?game=2&show=search_submit&&army_1=all&army_2=all&map=all&version=all&event=all&matchup_type=all&sort_by=last_comment&st=90 etc... the last is 35970

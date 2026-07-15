@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|61765dbb-ef66-4fd0-8a1c-07967389f9ca"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-04-14T15:10:40.160Z"
-n_turns: 7
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 how to delete mcp new relic from the user and repo?

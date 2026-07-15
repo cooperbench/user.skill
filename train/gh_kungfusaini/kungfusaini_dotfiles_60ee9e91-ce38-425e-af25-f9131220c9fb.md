@@ -1,14 +1,3 @@
----
-session_id: "kungfusaini/dotfiles|60ee9e91-ce38-425e-af25-f9131220c9fb"
-developer: "gh:kungfusaini"
-split: train
-source: crawl
-repo: kungfusaini/dotfiles
-start_time: "2026-05-21T07:24:52.356Z"
-n_turns: 24
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 do you see the lookout.md in the fodler above? read it

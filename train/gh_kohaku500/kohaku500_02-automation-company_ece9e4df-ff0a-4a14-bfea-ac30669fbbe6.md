@@ -1,14 +1,3 @@
----
-session_id: "kohaku500/02-automation-company|ece9e4df-ff0a-4a14-bfea-ac30669fbbe6"
-developer: "gh:kohaku500"
-split: train
-source: crawl
-repo: kohaku500/02-automation-company
-start_time: "2026-04-28T01:45:04.041Z"
-n_turns: 6
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 あなたは編集部です。記事・投稿文の品質向上とQiitaトレンド調査を担当します。今この瞬間に最も価値ある仕事を行ってください。

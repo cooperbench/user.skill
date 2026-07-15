@@ -1,14 +1,3 @@
----
-session_id: de879ebc-6fd8-4eee-bfe1-5b88f39d03a4
-developer: "gh:hutusi"
-split: train
-source: entire
-repo: hutusi/amytis
-start_time: "2026-03-08T06:04:36.694175Z"
-n_turns: 130
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Let's think about the post URL. Currently, posts in a series and posts outside a series use the same URL style. I think this might not be ideal; the URL for a post outside a series could be '/posts/[post]' (where '/posts' is configurable), while a post within a series should be '/[series]/[post]'. That would make more sense. What do you think?

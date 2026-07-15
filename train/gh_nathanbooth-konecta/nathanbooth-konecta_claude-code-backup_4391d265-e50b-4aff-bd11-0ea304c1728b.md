@@ -1,14 +1,3 @@
----
-session_id: "nathanbooth-konecta/claude-code-backup|4391d265-e50b-4aff-bd11-0ea304c1728b"
-developer: "gh:nathanbooth-konecta"
-split: train
-source: crawl
-repo: nathanbooth-konecta/claude-code-backup
-start_time: "2026-02-16T09:49:48.980Z"
-n_turns: 8
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 https://console.cloud.google.com/kubernetes/clusters/details/europe-west1/crewai-cluster/observability review the metadata about this cluster, and recommend a machine instance type optimisation

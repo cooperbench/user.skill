@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|168b96ec-285c-4aeb-9957-2b4c37ea373e"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-03-25T15:57:28.675Z"
-n_turns: 9
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 bro

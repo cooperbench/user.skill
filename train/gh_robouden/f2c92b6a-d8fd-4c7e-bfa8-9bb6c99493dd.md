@@ -1,14 +1,3 @@
----
-session_id: f2c92b6a-d8fd-4c7e-bfa8-9bb6c99493dd
-developer: "gh:robouden"
-split: train
-source: entire
-repo: Safecast/safecast-new-map
-start_time: "2026-03-13T02:03:11.667416718Z"
-n_turns: 161
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Can we setup logging of the questions asked in the widget and the web-chat to be entered in the analitics.duckdb? I like to get those question to be in that database with as much info as possible. Time, IP, loction, user, mobile or desktop., OS.. etc.. Can you make a plan?

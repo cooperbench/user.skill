@@ -1,14 +1,3 @@
----
-session_id: cd58a64f-c035-4714-abdd-d1ffcd9be7fd
-developer: "gh:FSM1"
-split: train
-source: entire
-repo: FSM1/cipher-box
-start_time: "2026-03-04T20:34:37.708568Z"
-n_turns: 39
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > AGENT
 
 Let me identify the PR and fetch unresolved review threads.

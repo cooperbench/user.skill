@@ -1,14 +1,3 @@
----
-session_id: b7f5cae9-7a77-46fa-adf9-fd7e566ca66a
-developer: "gh:armelhbobdad"
-split: train
-source: entire
-repo: armelhbobdad/bmad-module-skill-forge
-start_time: "2026-05-26T19:23:09.460232529Z"
-n_turns: 15
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Execute the story-automator review workflow for story 3.5. READ this skill first: .claude/skills/bmad-story-automator-review/SKILL.md READ this workflow file next: .claude/skills/bmad-story-automator-review/workflow.yaml Then read: .claude/skills/bmad-story-automator-review/instructions.xml Validate with: .claude/skills/bmad-story-automator-review/checklist.md Story file: _bmad-output/implementation-artifacts/3-5-*.md Review implementation, find issues, fix them automatically. auto-fix all issues without prompting

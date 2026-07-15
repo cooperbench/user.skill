@@ -1,14 +1,3 @@
----
-session_id: "cjrfoto/claude-config|1e9b074f-3170-4d36-a9e0-931175a08048"
-developer: "gh:cjrfoto"
-split: train
-source: crawl
-repo: cjrfoto/claude-config
-start_time: "2026-04-03T12:47:28.592Z"
-n_turns: 6
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 is it connected to my claude pro plan

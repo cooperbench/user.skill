@@ -1,14 +1,3 @@
----
-session_id: abc0b1d7-b597-47f5-8c2a-fbffce4d853a
-developer: "gh:Stark-Industries0417"
-split: train
-source: entire
-repo: Stark-Industries0417/cli
-start_time: "2026-02-05T10:40:43.556056Z"
-n_turns: 12
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 I want to talk about AWS and other secrets. Can you generate me a list of plausible-looking API tokens for: - slack webhook - aws secret keys - postgres database env vars? I'll be using them for my documentation.

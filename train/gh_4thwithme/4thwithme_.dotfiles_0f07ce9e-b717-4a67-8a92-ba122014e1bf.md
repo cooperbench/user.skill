@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|0f07ce9e-b717-4a67-8a92-ba122014e1bf"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-04-09T14:19:29.738Z"
-n_turns: 43
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 hey bro check https://customink.atlassian.net/browse/RECO-778 task.. we need to improve acceessibility

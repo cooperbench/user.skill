@@ -1,14 +1,3 @@
----
-session_id: 7e5d7df5-d5cd-4aca-aa52-1e71a11c1ac1
-developer: "gh:jeevanpillay"
-split: train
-source: swechat
-repo: "?"
-start_time: "2026-04-14T09:37:24.00253Z"
-n_turns: 5
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 /create_plan @thoughts/shared/research/2026-04-14-marketing-integrations-page.md

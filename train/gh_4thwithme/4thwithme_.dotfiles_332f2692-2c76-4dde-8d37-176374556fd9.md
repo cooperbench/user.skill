@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|332f2692-2c76-4dde-8d37-176374556fd9"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-03-22T13:41:32.764Z"
-n_turns: 2
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 how to navigate in ghosty in vim mode through the window? i mean just moce cursor and copy-paste things...i tried Ctrl+Shift+Space but it doest work

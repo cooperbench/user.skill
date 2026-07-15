@@ -1,14 +1,3 @@
----
-session_id: ffe9ecd3-e9a2-4c9c-bcfb-25cb69f3d29f
-developer: "gh:penso"
-split: train
-source: entire
-repo: moltis-org/moltis
-start_time: "2026-03-10T20:04:09.850346Z"
-n_turns: 137
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Implement the following plan: # Fix: STT test 401 during onboarding (#378) ## Context During first-time onboarding, the STT "Test" button fails with `401 AUTH_NOT_AUTHENTICATED`. All voice config operations use WebSocket RPC (which bypasses auth via the public `/ws` path), but `transcribeAudio()` uniquely uses HTTP fetch (`POST /api/sessions/{key}/upload`) which goes through `auth_gate`. After the auth setup step, `is_setup_complete()=true` and `check_auth()` requires a valid session cookie. If the cookie fails (Docker networking, cookie domain, browser behavior), the request gets 401. The fix: in `auth_gate`'s `Unauthorized` branch, allow local API requests through with `Loopback` identity when onboarding hasn't completed yet (`.onboarded` sentinel file absent). ## Changes ### 1. `crates/service-traits/src/lib.rs` — Update NoopOnboardingService Change `NoopOnboardingService::wizard_status()` to return `"onboarded": true`: ```rust // Line 808: change from Ok(serde_json::json!({ "active": false })) // to Ok(serde_json::json!({ "active": false, "onboarded": true })) ``` **Why:** The noop service is used in tests and when no real onboarding is configured. In both cases, onboarding is effectively "done." Without this, the new bypass would activate in all existing tests that use `start_auth_server()` (bound to `127.0.0.1` = local), breaking tests like `unauthenticated_returns_401`. ### 2. `crates/gateway/src/auth_middleware.rs` — Add onboarding bypass In `auth_gate()`, add a `tracing::debug` import and insert an onboarding bypass at the start of the `Unauthorized` branch (before the existing API/WS check): ```rust AuthResult::Unauthorized => { // NEW: During onboarding, local API/WS requests may lack a valid // session cookie. Allow them through with Loopback identity. if is_local && (path.starts_with("/api/") || path.starts_with("/ws/")) { let onboarded = state .gateway .services .onboarding .wizard_status() .await .ok() .and_then(|v| v.get("onboarded").and_then(|v| v.as_bool())) .unwrap_or(false); if !onboarded { debug!(path, remote = %addr, "auth bypass: local request during onboarding"); request.extensions_mut().insert(AuthIdentity { method: AuthMethod::Loopback, }); return next.run(request).await; } } // ... existing Unauthorized handling unchanged } ``` The `wizard_status()` call only executes when `is_local=true` AND the path is `/api/*` or `/ws/*` AND …

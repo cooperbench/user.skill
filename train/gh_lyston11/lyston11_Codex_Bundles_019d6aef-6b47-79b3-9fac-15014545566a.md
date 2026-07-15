@@ -1,14 +1,3 @@
----
-session_id: "lyston11/Codex_Bundles|019d6aef-6b47-79b3-9fac-15014545566a"
-developer: "gh:lyston11"
-split: train
-source: crawl
-repo: lyston11/Codex_Bundles
-start_time: "2026-04-08T02:33:14.055Z"
-n_turns: 276
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 我想要将gitlab的一些仓库拉到我本地的raap目录下

@@ -1,14 +1,3 @@
----
-session_id: "9fd97409-fb03-495b-934a-1b5f5cffbd0a:subagents"
-developer: "dc:dc_001"
-split: train
-source: dataclaw
-repo: Quaxicron/dataclaw-zhiyaowang
-start_time: "2026-05-12T07:19:22.791Z"
-n_turns: 38
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 调查 EAGLE 系列 speculative decoding 在 2025-2026 的最新进展。我们当前生产配置是 EAGLE-3 chain verify（spec_steps=3, topk=2, dtn=7），跑在 SGLang fork 上，单卡 RTX 6000D（sm_120 Blackwell, 84GB）。draft 是 v2mix_20k_s3500_ood757 自训 NVFP4 QAT 模型，吃 target 的 layer 0 / mid / last hidden 拼接做输入。target 是 MiniCPM-SALA（32 层混合 attention，8 standard + 24 GLA，hidden=4096，vocab=73448）。 **调查范围**（用 WebSearch + WebFetch，覆盖 arXiv / GitHub / 大厂博客）： 1. EAGLE-3 之后的官方/作者衍生：还有 EAGLE-4？有没有新版 EAGLE 训练 recipe？ 2. 第三方对 EAGLE-3 的改进论文（搜 "EAGLE speculative decoding 2025"、"EAGLE-3 improve"、"hidden state speculative" 等） 3. 工业级实现的演进：SGLang / vLLM / TensorRT-LLM 自带的 EAGLE 实现在 2025 年里有哪些关键改动（accept rate、kernel 融合、tree shape） 4. 与 EAGLE 同源的 hidden-state-driven 方法变体（HASS、EAGLE-X、Glide-with-Cape 等） **对每个方法回答**： - 一句话核心创新 - 相对 EAGLE-3 报告的速度/accept-rate 改进数字（如果有） - 是否依赖外部条件（多卡、特殊 vocab、必须重训 draft、必须改 target 等） - 给我们的可借鉴度（高/中/低 + 一句话理由）：考虑我们是单卡、target 已经 NVFP4、draft 已经 NVFP4 QAT、SGLang 自定 fork、target 是混合 attention（24 层 GLA + InfLLM-v2 稀疏） **返回格式**：一份分点 markdown 报告，每个方法独立段落，最后给一个"值得深入跟进 top 3"的排序清单。不要凑数，没找到就说没找到。预算 400 词以内。

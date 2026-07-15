@@ -1,14 +1,3 @@
----
-session_id: "lyston11/Codex_Bundles|019e0a87-115d-7f10-acee-acc0936ed947"
-developer: "gh:lyston11"
-split: train
-source: crawl
-repo: lyston11/Codex_Bundles
-start_time: "2026-05-09T02:19:01.549Z"
-n_turns: 24
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 矢量数据库milvus、qdrant、chroma各个的知识点

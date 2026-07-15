@@ -1,14 +1,3 @@
----
-session_id: "kungfusaini/dotfiles|9c3e95f9-c33a-4481-9657-187c7d42b2a1"
-developer: "gh:kungfusaini"
-split: train
-source: crawl
-repo: kungfusaini/dotfiles
-start_time: "2026-05-11T14:17:36.270Z"
-n_turns: 86
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 hey man so I need you to find the diff report, the most latest one. It sbould be in the plans folder on dev-sprint. Make sure you do a pull first

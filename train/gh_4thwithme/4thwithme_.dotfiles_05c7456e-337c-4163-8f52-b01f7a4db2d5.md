@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|05c7456e-337c-4163-8f52-b01f7a4db2d5"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-04-03T11:38:38.374Z"
-n_turns: 11
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 where claude code buddy lives in the local machine

@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|504912d1-4125-47c2-a420-51c1bf5e7bc6"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-03-22T23:01:35.068Z"
-n_turns: 13
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 check current docker setup and fix coz right now it doesnt load images

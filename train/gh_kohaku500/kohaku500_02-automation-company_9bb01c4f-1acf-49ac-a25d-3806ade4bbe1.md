@@ -1,14 +1,3 @@
----
-session_id: "kohaku500/02-automation-company|9bb01c4f-1acf-49ac-a25d-3806ade4bbe1"
-developer: "gh:kohaku500"
-split: train
-source: crawl
-repo: kohaku500/02-automation-company
-start_time: "2026-04-22T07:25:33.743Z"
-n_turns: 478
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 今自動設計を進めていますが、SKILSを作るのはどう思いますか？

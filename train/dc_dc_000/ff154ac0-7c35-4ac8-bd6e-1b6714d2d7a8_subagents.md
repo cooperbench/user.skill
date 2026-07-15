@@ -1,14 +1,3 @@
----
-session_id: "ff154ac0-7c35-4ac8-bd6e-1b6714d2d7a8:subagents"
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-04-14T00:18:49.398Z"
-n_turns: 50
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 In /Users/user_c042661f/Documents/reigh-workspace/reigh-app, the user's video editor UI is no longer showing a shot (shot_id 1b5c2eb0) even though the shot row and its shot_generations entries still exist in the database. Background facts already confirmed: - The shot has 3 rows in `shot_generations`: two images (timeline_frame 0, 50) and one video parent generation with timeline_frame=NULL and location=NULL. - The video parent generation row (id 9c052f69) has `location: NULL`, `tasks: NULL`, `type: 'video'`. - A travel_segment task completed and its output was intended to be added as a variant to another child generation (314fcf6d), but the parent generation's `tasks[]` and `updated_at` never changed — appears the variant write silently failed/no-op'd. Find the filtering logic that would cause the **shot itself** to disappear from the video editor's shot list / timeline. Specifically trace: 1. How `useShots()` in `src/shared/contexts/ShotsContext.tsx` (or wherever it lives) queries shots — does it filter by any condition like `type`, `visible`, having at least one valid generation, generation.location IS NOT NULL, etc.? 2. How the video editor (src/tools/video-editor/) consumes shots — does it skip shots whose parent video generation has null location, or skip if no children, or skip if a variant is in some incomplete state? 3. Any filter in `shot_generations_with_computed_position` view usage or in the editor's data-provider layer that would drop a shot when the video generation is a placeholder with no location. Report back with the specific file:line references and the exact filter condition that would exclude this shot. Keep response under 300 words.

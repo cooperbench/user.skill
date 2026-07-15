@@ -1,14 +1,3 @@
----
-session_id: d2fe852a-ff0e-4e0c-bf6e-86a7fda940df
-developer: "gh:mvanhorn"
-split: train
-source: entire
-repo: mvanhorn/cli
-start_time: "2026-02-19T17:24:33.753177Z"
-n_turns: 87
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 is Agent.GetHookConfigPath used anywhere?

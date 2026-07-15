@@ -1,14 +1,3 @@
----
-session_id: "kungfusaini/dotfiles|d73085ce-2fef-4241-be6a-558efb8c3a2c"
-developer: "gh:kungfusaini"
-split: train
-source: crawl
-repo: kungfusaini/dotfiles
-start_time: "2026-05-19T13:52:17.439Z"
-n_turns: 61
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 wtf is this https://github.com/elijahintelligence/elijah/pull/271/

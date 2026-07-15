@@ -1,14 +1,3 @@
----
-session_id: f4cb4e7d-399d-47e9-a84c-ecac65cb7b8c
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-04-13T23:32:51.583Z"
-n_turns: 25
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 See the timeline agent chatbox thing, can you make that NOT show on the home-page?

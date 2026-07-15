@@ -1,14 +1,3 @@
----
-session_id: 3cc920fe-75c8-4bfa-b181-2e5debc3ec3e
-developer: "dc:dc_001"
-split: train
-source: dataclaw
-repo: Quaxicron/dataclaw-zhiyaowang
-start_time: "2026-05-20T19:57:40.699Z"
-n_turns: 20
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 通读 docs 文档和代码 多委派 subagent 旧文档、冗余文档、文档清理、合并 哪些是不存在的？ 哪些已经在生产中启用了？ 现在文档区太混乱了 请开始做这个工作

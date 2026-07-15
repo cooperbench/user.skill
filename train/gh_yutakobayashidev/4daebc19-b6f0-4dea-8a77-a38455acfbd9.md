@@ -1,14 +1,3 @@
----
-session_id: 4daebc19-b6f0-4dea-8a77-a38455acfbd9
-developer: "gh:yutakobayashidev"
-split: train
-source: entire
-repo: yutakobayashidev/repiq
-start_time: "2026-02-24T23:43:13.555332197Z"
-n_turns: 38
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Recommended Epics,mcp消して関連する記載も消して

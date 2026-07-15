@@ -1,14 +1,3 @@
----
-session_id: "cedd9fbf-8579-44cd-8880-55fd3aea4bb5:subagents"
-developer: "dc:dc_001"
-split: train
-source: dataclaw
-repo: Quaxicron/dataclaw-zhiyaowang
-start_time: "2026-05-04T11:45:57.722Z"
-n_turns: 53
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 用多模态读图模式仔细查看 PDF 文件 /Users/user_0a329be7/Downloads/graduate/docs/thesis/HUSTthesis.pdf 的第 1-12 页（用 Read 工具的 pages 参数，分批 1-5、6-10、11-12 读）。 **只关注图（figure）和表（table），不要评论文字表达。** 论文是中文研究生学位论文。 对每个图/表检查： 1. **渲染问题**：文字溢出/截断、坐标轴标签重叠、图例遮挡数据、字号过小看不清、分辨率模糊、中英文混杂、颜色对比不足、子图布局错位 2. **可读性问题**：缺标题/caption、caption 与图内容不符、单位缺失、坐标轴未标注、图例不清楚、配色不友好（如纯红绿对色盲不友好） 3. **可优化**：可以合并/拆分、信息密度过高或过低、与正文呼应不强 4. **缺失**：这一段叙述明显需要图/表但没有的位置 输出格式：每个问题一条，标注 **页码 + 图/表编号 + 问题类型 + 简短描述**。最后给一个优先级 Top 5 修复清单。中文回复，不超过 600 字。

@@ -1,14 +1,3 @@
----
-session_id: "kohaku500/02-automation-company|9a3994dd-7e3f-40b2-829f-039da6bd087b"
-developer: "gh:kohaku500"
-split: train
-source: crawl
-repo: kohaku500/02-automation-company
-start_time: "2026-04-20T08:43:35.422Z"
-n_turns: 2
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 sonnet4.5に変更してください

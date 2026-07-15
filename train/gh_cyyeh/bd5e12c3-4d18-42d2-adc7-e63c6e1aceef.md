@@ -1,14 +1,3 @@
----
-session_id: bd5e12c3-4d18-42d2-adc7-e63c6e1aceef
-developer: "gh:cyyeh"
-split: train
-source: entire
-repo: cyyeh/duckdb-data-agent
-start_time: "2026-02-25T02:38:17.960807Z"
-n_turns: 37
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 in subprocess mode, ask_user_question is stuck, doesn't show options in ui

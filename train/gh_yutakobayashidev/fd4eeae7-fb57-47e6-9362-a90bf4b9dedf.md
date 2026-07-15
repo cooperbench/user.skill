@@ -1,14 +1,3 @@
----
-session_id: fd4eeae7-fb57-47e6-9362-a90bf4b9dedf
-developer: "gh:yutakobayashidev"
-split: train
-source: entire
-repo: yutakobayashidev/dotnix
-start_time: "2026-02-23T00:03:41.992664204Z"
-n_turns: 23
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 今のリポジトリで使われているようなpinactの使い方を書いたskillを追加してほしい

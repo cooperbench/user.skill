@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|b85273b7-2eed-4b9b-bb49-fea21511846b"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-04-13T07:42:41.252Z"
-n_turns: 40
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 ok lets create a plan for the next features and add describtion about our application and details to the docs and specific files. I'll dictate basic description, but your task will be ask axilioury questions about it then save to the specific files, that will be 

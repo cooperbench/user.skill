@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|7e92b7d5-8f6a-4f03-a42f-45708fa4bc9a"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-04-01T22:35:40.160Z"
-n_turns: 36
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 hey bro i have question.. in my storage not many gb left free i know we have a lot of gbs in the orb stack ..and i bet there dead images or spaces

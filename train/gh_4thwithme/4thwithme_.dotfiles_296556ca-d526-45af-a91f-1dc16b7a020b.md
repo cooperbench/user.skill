@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|296556ca-d526-45af-a91f-1dc16b7a020b"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-04-14T15:26:01.066Z"
-n_turns: 2
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 does new relic mcp work?

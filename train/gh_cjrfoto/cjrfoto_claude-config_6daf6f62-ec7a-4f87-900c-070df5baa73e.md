@@ -1,14 +1,3 @@
----
-session_id: "cjrfoto/claude-config|6daf6f62-ec7a-4f87-900c-070df5baa73e"
-developer: "gh:cjrfoto"
-split: train
-source: crawl
-repo: cjrfoto/claude-config
-start_time: "2026-04-11T17:27:09.829Z"
-n_turns: 274
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 before we continue with the carrdI have a nother niche I worked in. go to the folder 7 farmers in downloads

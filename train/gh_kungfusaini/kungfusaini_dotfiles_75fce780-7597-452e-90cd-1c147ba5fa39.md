@@ -1,14 +1,3 @@
----
-session_id: "kungfusaini/dotfiles|75fce780-7597-452e-90cd-1c147ba5fa39"
-developer: "gh:kungfusaini"
-split: train
-source: crawl
-repo: kungfusaini/dotfiles
-start_time: "2026-05-11T15:25:32.451Z"
-n_turns: 142
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 kick off the lane 4 work that needs to be done from the liear epic, understaood?

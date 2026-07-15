@@ -1,14 +1,3 @@
----
-session_id: d3d91abd-7d91-41de-8fff-89c77eecde39
-developer: "gh:gabadi"
-split: train
-source: entire
-repo: gabadi/gabadi-tetris
-start_time: "2026-06-10T21:19:00.937672Z"
-n_turns: 35
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 <swarmforge_agent_context role="cleaner">

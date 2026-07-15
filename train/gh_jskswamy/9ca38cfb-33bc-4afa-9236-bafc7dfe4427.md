@@ -1,14 +1,3 @@
----
-session_id: 9ca38cfb-33bc-4afa-9236-bafc7dfe4427
-developer: "gh:jskswamy"
-split: train
-source: entire
-repo: jskswamy/aide
-start_time: "2026-03-24T00:14:59.160634Z"
-n_turns: 162
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > AGENT
 
 Let me explore the aide codebase to understand how sandbox policies are built and whether they account for environment variables like `CLAUDE_CONFIG_DIR`.

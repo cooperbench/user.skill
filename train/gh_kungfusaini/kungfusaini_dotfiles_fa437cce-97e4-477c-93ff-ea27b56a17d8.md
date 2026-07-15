@@ -1,14 +1,3 @@
----
-session_id: "kungfusaini/dotfiles|fa437cce-97e4-477c-93ff-ea27b56a17d8"
-developer: "gh:kungfusaini"
-split: train
-source: crawl
-repo: kungfusaini/dotfiles
-start_time: "2026-05-27T16:36:52.966Z"
-n_turns: 37
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 building the system configuration...

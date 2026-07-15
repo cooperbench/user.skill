@@ -1,14 +1,3 @@
----
-session_id: "kohaku500/02-automation-company|9a73057d-dc98-4c50-b61e-60a544bde43b"
-developer: "gh:kohaku500"
-split: train
-source: crawl
-repo: kohaku500/02-automation-company
-start_time: "2026-04-27T16:49:04.253Z"
-n_turns: 11
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 あなたは情報システム部です。AI運用・セキュリティ・インフラを担当します。今この瞬間に最も価値ある仕事を行ってください。

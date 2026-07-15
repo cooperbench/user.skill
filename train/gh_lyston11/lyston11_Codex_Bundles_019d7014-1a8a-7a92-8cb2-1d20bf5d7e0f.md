@@ -1,14 +1,3 @@
----
-session_id: "lyston11/Codex_Bundles|019d7014-1a8a-7a92-8cb2-1d20bf5d7e0f"
-developer: "gh:lyston11"
-split: train
-source: crawl
-repo: lyston11/Codex_Bundles
-start_time: "2026-04-09T02:31:03.945Z"
-n_turns: 488
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > SYSTEM
 
 # AGENTS.md instructions for /Users/lyston/PycharmProjects/cherry-studio-v2

@@ -1,14 +1,3 @@
----
-session_id: "cjrfoto/claude-config|7620a202-ec00-4966-a9f6-0f6f92e2c8a8"
-developer: "gh:cjrfoto"
-split: train
-source: crawl
-repo: cjrfoto/claude-config
-start_time: "2026-04-03T23:34:59.991Z"
-n_turns: 24
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > AGENT
 
 I'm not familiar with "Nano Banana 2." Could you clarify what it is? For example:

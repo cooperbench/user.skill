@@ -1,14 +1,3 @@
----
-session_id: "lyston11/Codex_Bundles|019e1f23-57e7-7110-ba2c-c18698f4f8ec"
-developer: "gh:lyston11"
-split: train
-source: crawl
-repo: lyston11/Codex_Bundles
-start_time: "2026-05-13T02:22:27.705Z"
-n_turns: 242
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 帮我到github上搜索关于写剧本的skills，特别是创意剧本

@@ -1,14 +1,3 @@
----
-session_id: 73f2b818-ddfe-47ae-a4ee-be7ee371eb91
-developer: "gh:yutakobayashidev"
-split: train
-source: entire
-repo: yutakobayashidev/dotnix
-start_time: "2026-02-23T16:12:34.1632Z"
-n_turns: 89
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 差分見てほしいんだけど、cask移動してるんだよね、できれば元のままがいいんだけど、一部applicationsの要求があったりするので、段階的に戻してみてほしい

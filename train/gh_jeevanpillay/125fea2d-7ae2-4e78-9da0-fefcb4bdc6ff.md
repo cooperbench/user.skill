@@ -1,14 +1,3 @@
----
-session_id: 125fea2d-7ae2-4e78-9da0-fefcb4bdc6ff
-developer: "gh:jeevanpillay"
-split: train
-source: entire
-repo: lightfastai/lightfast
-start_time: "2026-04-19T04:47:23.920057Z"
-n_turns: 60
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > AGENT
 
 Starting Phase 1. Let me first verify the consumer files and the encryption source.

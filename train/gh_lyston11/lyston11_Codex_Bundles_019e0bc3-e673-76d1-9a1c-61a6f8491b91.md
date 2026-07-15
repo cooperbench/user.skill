@@ -1,14 +1,3 @@
----
-session_id: "lyston11/Codex_Bundles|019e0bc3-e673-76d1-9a1c-61a6f8491b91"
-developer: "gh:lyston11"
-split: train
-source: crawl
-repo: lyston11/Codex_Bundles
-start_time: "2026-05-09T08:04:57.989Z"
-n_turns: 14
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 019e0b92-825b-7740-91e0-aa6699a44a83为什么这个会话一直卡住了？将他生成的图片的剧本、分镜脚本生成给我

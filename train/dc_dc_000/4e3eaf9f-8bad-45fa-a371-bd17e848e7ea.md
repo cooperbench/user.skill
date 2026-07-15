@@ -1,14 +1,3 @@
----
-session_id: 4e3eaf9f-8bad-45fa-a371-bd17e848e7ea
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-03-12T13:03:04.563Z"
-n_turns: 52
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 I need to understand how subjective/LLM-based review works in this codebase. Find: 1. Where subjective reviewers are defined and how they run 2. What prompts are sent to the LLM during review 3. How review state is persisted (state files, findings format) 4. How the review queue works — what gets reviewed and when 5. The `Finding` type and how review results are stored Focus on: `desloppify/engine/review/`, `desloppify/intelligence/`, and any files related to "subjective" or "llm" review. Also check `desloppify/state.py` for state persistence. Be thorough — read the actual prompt templates and review orchestration code.

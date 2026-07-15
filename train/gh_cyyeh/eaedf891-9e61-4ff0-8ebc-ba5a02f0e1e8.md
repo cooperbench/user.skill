@@ -1,14 +1,3 @@
----
-session_id: eaedf891-9e61-4ff0-8ebc-ba5a02f0e1e8
-developer: "gh:cyyeh"
-split: train
-source: entire
-repo: cyyeh/duckdb-data-agent
-start_time: "2026-02-20T07:07:33.9528Z"
-n_turns: 4
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 commit the latest changes

@@ -1,14 +1,3 @@
----
-session_id: dd8cfcbd-53fb-4928-8e07-6bb439bff5eb
-developer: "gh:alishakawaguchi"
-split: train
-source: entire
-repo: entireio/cli
-start_time: "2026-03-03T22:33:54.84404Z"
-n_turns: 19
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Implement the following plan: # Fix: Kiro IDE hooks hang on stdin read ## Context When Kiro IDE runs hook commands (e.g., `entire hooks kiro user-prompt-submit`), the process hangs and eventually times out with "no output captured." The root cause is that `io.ReadAll(stdin)` in `ReadAndParseHookInput()` blocks indefinitely because Kiro IDE keeps stdin open (the pipe never closes/sends EOF). The Kiro agent's `readHookInputOrEmpty()` fallback for empty stdin never triggers because `io.ReadAll` never returns. Tests pass because `strings.NewReader("")` returns EOF immediately, but real IDE pipes do not. ## Fix Add an internal stdin read timeout to `ReadAndParseHookInput` in `cmd/entire/cli/agent/event.go`. No signature change — all ~40 callers across 6 agents remain untouched. ### Files to modify 1. **`cmd/entire/cli/agent/event.go`** (~line 114) - Inside `ReadAndParseHookInput`, replace the bare `io.ReadAll(stdin)` with a goroutine that races against a 500ms timer - If the timer fires first, return `ErrEmptyHookInput` (same error the function already returns for empty data) - If data arrives first, proceed as before (unmarshal JSON) - 500ms is generous — piped stdin data is available immediately; this only triggers when the IDE keeps the pipe open with no data ```go type readResult struct { data []byte err error } ch := make(chan readResult, 1) go func() { data, err := io.ReadAll(stdin) ch <- readResult{data, err} }() var data []byte select { case res := <-ch: if res.err != nil { return nil, fmt.Errorf("failed to read hook input: %w", res.err) } data = res.data case <-time.After(500 * time.Millisecond): return nil, ErrEmptyHookInput } ``` No other files need modification — the function signature stays the same. ## Verification 1. `mise run fmt && mise run lint && mise run test:ci` — all pass 2. Manual test in the Kiro IDE test repo: - Rebuild binary: `go build -o /Users/alisha/Projects/test-repos/kiro-ide/entire ./cmd/entire` - Update hook paths to absolute path …

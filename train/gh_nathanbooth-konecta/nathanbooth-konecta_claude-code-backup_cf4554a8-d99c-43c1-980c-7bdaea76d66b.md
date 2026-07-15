@@ -1,14 +1,3 @@
----
-session_id: "nathanbooth-konecta/claude-code-backup|cf4554a8-d99c-43c1-980c-7bdaea76d66b"
-developer: "gh:nathanbooth-konecta"
-split: train
-source: crawl
-repo: nathanbooth-konecta/claude-code-backup
-start_time: "2026-02-17T07:54:00.639Z"
-n_turns: 50
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 review the backlog here, https://github.com/orgs/konecta-ix-applications/projects/7 and link any items bidirectionally between that board and this board https://github.com/orgs/konecta-ix-workloads/projects/1/views/1 that are relevant

@@ -1,14 +1,3 @@
----
-session_id: 019dcc06-3fcd-7db3-a491-d3dece3bdffe
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-04-26T23:00:56.865Z"
-n_turns: 14
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 You are one of several workers auditing poetry pair data. You are not alone in the codebase; do not revert or touch edits made by others. Own only this output file: prompt-adapters/projects/poetry-clean-corpus/pair_style_audit_v2/decisions/decisions_shard_02.jsonl. Read the brief at prompt-adapters/projects/poetry-clean-corpus/pair_style_audit_v2/WORKER_BRIEF.md and input shard prompt-adapters/projects/poetry-clean-corpus/pair_style_audit_v2/shards/pairs_v5_7_train_style_shard_02.jsonl. Write exactly one JSONL decision row per input row, same order, following the brief. Be strict: keep only clean pairs with medium-to-strong distinctive writing style; delete weak/generic or dirty pairs; edit only for small trims. When done, report counts by decision/style_strength/cleanliness and the file path changed.

@@ -1,14 +1,3 @@
----
-session_id: "nathanbooth-konecta/claude-code-backup|22d6bfc2-da33-4542-827a-ea8554b3b562"
-developer: "gh:nathanbooth-konecta"
-split: train
-source: crawl
-repo: nathanbooth-konecta/claude-code-backup
-start_time: "2026-02-11T08:08:30.911Z"
-n_turns: 292
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 how do i fix this ? The workflow is not valid. .github/workflows/terraform-drift-detection.yml (Line: 25, Col: 3): Error calling workflow 'konecta-ix-services/.github-private/.github/workflows/terraform-plan.yml@main'. The workflow is requesting 'pull-requests: write', but is only allowed 'pull-requests: none'.

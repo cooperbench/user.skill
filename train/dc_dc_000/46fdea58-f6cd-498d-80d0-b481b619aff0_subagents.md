@@ -1,14 +1,3 @@
----
-session_id: "46fdea58-f6cd-498d-80d0-b481b619aff0:subagents"
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-04-15T10:29:35.549Z"
-n_turns: 30
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Explore the megaplan project at /Users/user_c042661f/Documents/megaplan. I need to understand: 1. Overall file structure (ls the top-level and key subdirectories) 2. The gate/review system - how gates work, how criteria are evaluated, how reviews happen 3. The milestone/step model - data structures for milestones, steps, criteria 4. The YAML schema for plans - what fields exist on milestones/steps/criteria 5. Any existing "verify" or "verif" patterns 6. The CHANGELOG.md current state (just the top few entries) 7. The version number and where it's defined Focus on: megaplan/*.py files, tests/, any YAML schema definitions, CHANGELOG.md. Skip .megaplan/ directory and idea-*.txt files. Be thorough - read key files in full, especially anything related to gates, criteria, review, and the data model.

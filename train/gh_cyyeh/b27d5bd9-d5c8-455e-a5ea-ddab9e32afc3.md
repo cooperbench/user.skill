@@ -1,14 +1,3 @@
----
-session_id: b27d5bd9-d5c8-455e-a5ea-ddab9e32afc3
-developer: "gh:cyyeh"
-split: train
-source: entire
-repo: cyyeh/duckdb-data-agent
-start_time: "2026-02-20T14:50:13.825633Z"
-n_turns: 9
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 allow upload multiple csv files at once, total size should not be greater than 500mb, also change text in i18n

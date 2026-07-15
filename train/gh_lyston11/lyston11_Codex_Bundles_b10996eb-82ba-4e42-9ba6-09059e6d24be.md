@@ -1,14 +1,3 @@
----
-session_id: "lyston11/Codex_Bundles|b10996eb-82ba-4e42-9ba6-09059e6d24be"
-developer: "gh:lyston11"
-split: train
-source: crawl
-repo: lyston11/Codex_Bundles
-start_time: "2026-04-24T06:56:30.696Z"
-n_turns: 34
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 我是一个ai视频生成agent的开发工程师，但是我不知道业务方有什么需求，我需要去可业务方对齐，他们给我们提需求对齐我们需要完成的任务

@@ -1,14 +1,3 @@
----
-session_id: "nathanbooth-konecta/claude-code-backup|e9d8a8a6-bd1f-47e8-8582-e701d4274280"
-developer: "gh:nathanbooth-konecta"
-split: train
-source: crawl
-repo: nathanbooth-konecta/claude-code-backup
-start_time: "2026-02-18T08:46:35.402Z"
-n_turns: 259
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > AGENT
 
 Let me first understand the database setup and which environment we're working with.

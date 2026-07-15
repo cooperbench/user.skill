@@ -1,14 +1,3 @@
----
-session_id: "kohaku500/02-automation-company|e9714fd7-9c8e-4a9e-a8fe-8d1ebdd3dff6"
-developer: "gh:kohaku500"
-split: train
-source: crawl
-repo: kohaku500/02-automation-company
-start_time: "2026-04-13T02:20:55.224Z"
-n_turns: 22
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 soneet 4.5に切り替わりましたか？

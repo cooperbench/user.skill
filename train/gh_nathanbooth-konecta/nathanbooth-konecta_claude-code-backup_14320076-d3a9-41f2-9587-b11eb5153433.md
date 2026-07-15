@@ -1,14 +1,3 @@
----
-session_id: "nathanbooth-konecta/claude-code-backup|14320076-d3a9-41f2-9587-b11eb5153433"
-developer: "gh:nathanbooth-konecta"
-split: train
-source: crawl
-repo: nathanbooth-konecta/claude-code-backup
-start_time: "2026-02-18T17:01:53.330Z"
-n_turns: 6
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > AGENT
 
 Let me read the workflow file to understand how the discovery step works.

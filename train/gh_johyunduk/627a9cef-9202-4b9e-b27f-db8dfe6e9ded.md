@@ -1,14 +1,3 @@
----
-session_id: 627a9cef-9202-4b9e-b27f-db8dfe6e9ded
-developer: "gh:johyunduk"
-split: train
-source: entire
-repo: johyunduk/ddong-avoid-game
-start_time: "2026-05-15T07:36:20.624283Z"
-n_turns: 47
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 랭킹 보드에 플레이했던 캐릭터를 저장은 하고 있었는데 점수 제출시 근데 랭킹에 표시는 아직 안해주고 있었거든. 이거 표시해 줄 수 있니? 어떤 캐릭터를 플레이 했는지?

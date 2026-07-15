@@ -1,14 +1,3 @@
----
-session_id: cad3cdc9-7f8b-4b3f-8a49-597feaaf0d65
-developer: "gh:hutusi"
-split: train
-source: entire
-repo: hutusi/ovid-app
-start_time: "2026-03-15T22:44:07.467702Z"
-n_turns: 175
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Please refine the Remediation section and Phase 8 of the roadmap. Make them concise and essential by removing unimportant parts. Let's focus on the core pain points and value-driven requirements.

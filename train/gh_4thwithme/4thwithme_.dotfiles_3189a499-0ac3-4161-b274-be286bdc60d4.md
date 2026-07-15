@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|3189a499-0ac3-4161-b274-be286bdc60d4"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-03-22T13:58:27.680Z"
-n_turns: 8
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 bro check zellij config we are using theme with transparent theme in our therminal and zellij supports it and it works, but on the top of the screen where I see tabs, backgtound is dark violet....can we havve  transparent there as well?

@@ -1,14 +1,3 @@
----
-session_id: "kungfusaini/dotfiles|d9f4ecf0-27a8-48f7-9ec4-0bff24868d78"
-developer: "gh:kungfusaini"
-split: train
-source: crawl
-repo: kungfusaini/dotfiles
-start_time: "2026-05-28T12:28:03.852Z"
-n_turns: 1495
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 hey man so I wanna create a platform that helps me learn punjabi. I am really interested in improaivng my reading, but my issue with the ucrrrent apps is one of two things. Either they are all scripture based which means I have to cover my head and clean my device before opening them, or they are just bullhsit storeis like stephen went to work ect. I wanna learn about how rich punjabi is and read the janamsakhis of the gurus, I wanna read famous poetry I wanna read classic novels and really understand deeply about the culture. My reading level is not that good so `i want a few things. The punjabi text obiously, with english translations. I want romanised punjabi too. I wanna vbe able to hover over words and see detailed break downs (like parmatma, parm being god and atma meaning soul) and then deep dives nto the sub words as well. I think we can source the storeis ourselfves just at the begigneing focusing on extracting convtent from online sources and getting transaltions there as well. I wanna have a spoken word thing as well that I can click a word and it speaks it to you

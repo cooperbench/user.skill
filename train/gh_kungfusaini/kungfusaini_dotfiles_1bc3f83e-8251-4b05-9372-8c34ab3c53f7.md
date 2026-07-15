@@ -1,14 +1,3 @@
----
-session_id: "kungfusaini/dotfiles|1bc3f83e-8251-4b05-9372-8c34ab3c53f7"
-developer: "gh:kungfusaini"
-split: train
-source: crawl
-repo: kungfusaini/dotfiles
-start_time: "2026-05-27T10:51:57.452Z"
-n_turns: 43
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 hey man can you see /Users/sumeet/matrix/web/projects/project-writeups? itr's basically my project writeuops

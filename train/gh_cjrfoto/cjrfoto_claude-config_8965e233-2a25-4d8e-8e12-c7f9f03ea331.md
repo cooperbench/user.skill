@@ -1,14 +1,3 @@
----
-session_id: "cjrfoto/claude-config|8965e233-2a25-4d8e-8e12-c7f9f03ea331"
-developer: "gh:cjrfoto"
-split: train
-source: crawl
-repo: cjrfoto/claude-config
-start_time: "2026-04-07T00:48:49.597Z"
-n_turns: 6
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 tmux attsch - claude

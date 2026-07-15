@@ -1,14 +1,3 @@
----
-session_id: f3ec64bf-e3c2-493c-baa2-daff53277df0
-developer: "gh:marcus-sa"
-split: train
-source: swechat
-repo: "?"
-start_time: "2026-03-25T08:48:04.997551Z"
-n_turns: 2
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 What is the difference between a mutex and a semaphore?

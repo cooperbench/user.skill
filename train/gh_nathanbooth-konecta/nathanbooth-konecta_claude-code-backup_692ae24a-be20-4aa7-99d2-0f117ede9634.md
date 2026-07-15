@@ -1,14 +1,3 @@
----
-session_id: "nathanbooth-konecta/claude-code-backup|692ae24a-be20-4aa7-99d2-0f117ede9634"
-developer: "gh:nathanbooth-konecta"
-split: train
-source: crawl
-repo: nathanbooth-konecta/claude-code-backup
-start_time: "2026-02-12T20:30:23.611Z"
-n_turns: 7
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 can you see if the replicated pod takes an auth token

@@ -1,14 +1,3 @@
----
-session_id: cbe7a7b4-b0f8-4b0f-bf7b-d6dc311b8d1e
-developer: "gh:mvanhorn"
-split: train
-source: entire
-repo: mvanhorn/cli
-start_time: "2026-02-24T13:28:00.008398Z"
-n_turns: 14
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Implement the following plan: # Test: Skip transcript flush wait for idle/ended sessions ## Context We fixed a performance bug where `waitForTranscriptFlush` (3s timeout) was called during prepare-commit-msg and post-commit hooks for sessions that had already flushed their transcript (IDLE/ENDED phase). The fix guards `PrepareTranscript` calls with `state.Phase.IsActive()`. We need a test that verifies: when a session is IDLE or ENDED and PostCommit runs, it completes quickly without hitting the 3s sentinel timeout. ## Approach Add a timing-based test to `phase_postcommit_test.go` that: 1. Sets up a session with a checkpoint and a `TranscriptPath` pointing to a real transcript file (important — without `TranscriptPath` set, the `PrepareTranscript` code path is never reached) 2. Sets the session `AgentType` to `claude-code` (triggers the sentinel wait in `PrepareTranscript`) 3. Sets phase to IDLE 4. Runs `PostCommit()` 5. Asserts it completes in **under 2 seconds** (well under the 3s sentinel timeout) This is a regression test: before the fix, this test would take ~3s+ per session due to sentinel timeouts. After the fix, it completes in milliseconds. Also add a parallel test for ENDED phase to cover both non-active states. ### Why timing assertion works here The sentinel timeout is 3s. Normal PostCommit for these tests runs in <500ms (git operations only). A 2s threshold gives generous headroom while still catching the 3s timeout regression. This is not a flaky pattern because the difference is 10-50x (milliseconds vs seconds). ## Files to modify - `cmd/entire/cli/strategy/phase_postcommit_test.go` — add new test ## Test structure ```go func TestPostCommit_IdleSession_SkipsSentinelWait(t *testing.T) { // Setup: git repo, session with checkpoint, transcript file, AgentType=claude-code // Set phase to IDLE, set TranscriptPath to transcript file // Time PostCommit() — assert < 2s // Also verify condensation still happened correctly } func TestPostCommit_EndedSession_SkipsSentinelWait(t *testing.T) { // Same but with phase=ENDED and FilesTouched set } …

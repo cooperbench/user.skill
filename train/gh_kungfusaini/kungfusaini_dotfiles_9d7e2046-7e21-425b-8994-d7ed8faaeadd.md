@@ -1,14 +1,3 @@
----
-session_id: "kungfusaini/dotfiles|9d7e2046-7e21-425b-8994-d7ed8faaeadd"
-developer: "gh:kungfusaini"
-split: train
-source: crawl
-repo: kungfusaini/dotfiles
-start_time: "2026-05-29T11:24:07.798Z"
-n_turns: 11
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 hey there are two arudio file sI need transcribed here> i should have parakeet v3 installed on my system if that's usefukl via the handy appliaion

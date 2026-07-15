@@ -1,14 +1,3 @@
----
-session_id: "lyston11/Codex_Bundles|019db93e-274d-75b1-a7fe-db1b60f99f43"
-developer: "gh:lyston11"
-split: train
-source: crawl
-repo: lyston11/Codex_Bundles
-start_time: "2026-04-23T07:29:22.587Z"
-n_turns: 19
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 帮我上网搜一下hermes agent是很么

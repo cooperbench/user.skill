@@ -1,14 +1,3 @@
----
-session_id: "lyston11/Codex_Bundles|019df1ea-6a23-7382-bd5c-ad5694530407"
-developer: "gh:lyston11"
-split: train
-source: crawl
-repo: lyston11/Codex_Bundles
-start_time: "2026-05-04T07:36:28.539Z"
-n_turns: 120
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 digitalocean开一个2核2g的服务器怎么开？

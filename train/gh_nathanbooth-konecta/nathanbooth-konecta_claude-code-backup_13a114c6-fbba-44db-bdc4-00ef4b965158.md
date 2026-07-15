@@ -1,14 +1,3 @@
----
-session_id: "nathanbooth-konecta/claude-code-backup|13a114c6-fbba-44db-bdc4-00ef4b965158"
-developer: "gh:nathanbooth-konecta"
-split: train
-source: crawl
-repo: nathanbooth-konecta/claude-code-backup
-start_time: "2026-02-13T13:21:37.837Z"
-n_turns: 5
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 can you push this repo to git@github.com:konecta-ix-crews/prompt-optimizer-test.git

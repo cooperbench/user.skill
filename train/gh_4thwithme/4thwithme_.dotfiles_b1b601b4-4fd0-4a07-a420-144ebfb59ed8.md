@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|b1b601b4-4fd0-4a07-a420-144ebfb59ed8"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-04-15T12:50:44.565Z"
-n_turns: 118
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 hey bro we just merged to the branch main 2-3 month old and we have broken logic need to fix some of it

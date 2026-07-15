@@ -1,14 +1,3 @@
----
-session_id: "kohaku500/02-automation-company|a50748c5-5abf-4544-b00d-09d2107623a6"
-developer: "gh:kohaku500"
-split: train
-source: crawl
-repo: kohaku500/02-automation-company
-start_time: "2026-05-02T08:49:38.641Z"
-n_turns: 373
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 これは何？今までの履歴も消えた？

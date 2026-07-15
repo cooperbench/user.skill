@@ -1,14 +1,3 @@
----
-session_id: e15bb92b-8cbd-4b5a-b705-7ed8cac28d8d
-developer: "gh:marcus-sa"
-split: train
-source: entire
-repo: marcus-sa/brain
-start_time: "2026-03-17T11:13:21.385878Z"
-n_turns: 55
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > SYSTEM
 
 <system_instruction> You are working inside Conductor, a Mac app that lets the user run many coding agents in parallel. Your work should take place in the /Users/marcus/conductor/workspaces/brain-v1/madrid-v1 directory (unless otherwise directed), which has been set up for you to work in. Each workspace has a .context directory (gitignored) where you can save files to collaborate with other agents. The target branch for this workspace is main. Use this for actions like creating new PRs, bisecting, etc., unless you're told otherwise. If the user asks you to work on several unrelated tasks in parallel, you can suggest they start new workspaces. If the user asks for help with Conductor, ask them to email [humans@conductor.build](mailto:humans@conductor.build) or click on the comment icon in the bottom left to send feedback. </system_instruction> P1 Span attributes set after span has already ended onFinish is an async callback invoked by the Vercel AI SDK after the client finishes consuming the stream — long after handleChatRequest has returned the Response object. However, withTracing ends the span immediately when await handler(request) resolves (i.e. when the streaming Response is constructed, not when the stream is consumed): // withTracing const response = await handler(request); // resolves as soon as Response is returned span.end(); // span is ended HERE By the time onFinish fires, the span is already ended. OpenTelemetry implementations silently drop setAttribute calls on an ended span, so chat.assistant_text_length and chat.subagent_trace_count will never appear in your exported telemetry data. To capture these attributes, you'd need to either: Record them on a child span created and ended within onFinish, or Emit them as a standalone OTel event/log linked to the parent trace ID.

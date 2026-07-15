@@ -1,14 +1,3 @@
----
-session_id: 5a80dd7f-7afc-4ec4-8f0a-ce92dc25a29e
-developer: "gh:admarble"
-split: train
-source: entire
-repo: sequant-io/sequant
-start_time: "2026-04-18T22:28:24.243544Z"
-n_turns: 34
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 noticing a big regression in our sequant run cli logging. It doesnt look user friendly or porfessional. npx sequant run 528 529 530 531 -q SEQUANT WORKFLOW Stack generic Preparing worktrees from main... Worktrees: 4 created, 0 reused ▸ #528 exec ▸ #529 spec ▸ #530 spec ✔ #528 exec 3m 38s ▸ #528 qa ✔ #529 spec 4m 9s ▸ #529 exec ✔ #530 spec 5m 9s ▸ #530 exec ✔ #529 exec 3m 4s ▸ #529 qa ✔ #530 exec 2m 57s ▸ #530 qa ✔ #529 qa 1m 3s ✔ Branch rebased onto origin/main ! PR creation failed: pull request create failed: GraphQL: No commits between main and feature/529-feat-qa-enforce-manual-test-acs-are-executed-or-ma (createPullRequest) ▸ #531 exec ✖ #530 qa ▸ #530 loop ✔ #530 loop 36s ▸ #530 exec ✔ #531 exec 2m 14s ▸ #531 qa ✖ #528 qa ▸ #528 loop

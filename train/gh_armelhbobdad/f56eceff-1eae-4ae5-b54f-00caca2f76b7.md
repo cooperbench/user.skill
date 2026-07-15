@@ -1,14 +1,3 @@
----
-session_id: f56eceff-1eae-4ae5-b54f-00caca2f76b7
-developer: "gh:armelhbobdad"
-split: train
-source: entire
-repo: armelhbobdad/bmad-module-skill-forge
-start_time: "2026-04-23T15:34:12.593582226Z"
-n_turns: 18
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > AGENT
 
 Story 3.5 loaded. Status `ready-for-dev`, 8 tasks. The goal is to refactor `release.yaml`'s Wait step to poll `/commits/:sha/check-runs` directly instead of `gh pr checks` (issue #202). Let me check memory, context, and start with recon per Task 1.

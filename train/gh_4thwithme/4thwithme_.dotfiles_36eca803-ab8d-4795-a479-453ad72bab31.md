@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|36eca803-ab8d-4795-a479-453ad72bab31"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-03-22T14:23:09.330Z"
-n_turns: 2
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 how to clean history in terminal in tmux? like cntrl+k

@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|19c0aace-b4f9-47cb-9b67-d8495be80c57"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-04-14T12:52:53.045Z"
-n_turns: 11
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 hey bto check src/scripts/rollbar-monitor/newrelic-client.ts it fails lint

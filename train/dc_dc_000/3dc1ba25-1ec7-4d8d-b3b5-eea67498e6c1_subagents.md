@@ -1,14 +1,3 @@
----
-session_id: "3dc1ba25-1ec7-4d8d-b3b5-eea67498e6c1:subagents"
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-05-12T21:51:55.520Z"
-n_turns: 19
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 I'm planning a reusable prebuilt RunPod/VibeComfy validation environment to skip the slow ~46min uv sync + 21min VibeComfy install on every live test. Survey these repos/dirs under `/Users/user_c042661f/Documents/reigh-workspace/`: 1. **reigh-worker/** — find the live-test harness/CLI that spins up a RunPod and runs VibeComfy workflows. I need to know: - The entry-point script(s), e.g. `live_test`, `vibecomfy_live_test`, etc. - Where it uses `runpod-lifecycle` to provision pods - Where it does `uv sync --extra cuda124` and the VibeComfy/ComfyUI/custom-node install (which scripts on the pod, which bootstrap code) - How it currently configures `disk_size_gb`, image, env, branch/ref selection - Model-cache/reconciliation logic and node-schema validation hooks 2. **vibecomfy/** — find: - The install/bootstrap path on a RunPod (which script installs ComfyUI + custom nodes) - The version-pinning / requirements files - The `ready_templates` dir layout briefly 3. **runpod-lifecycle/** — find the public API for creating/terminating pods and any existing snapshot/image/network-volume support. 4. **docs/** (only files directly tied to live-test or migration validation, e.g. `migration-vibecomfy*.md`, `sprint-12-route-inventory.md`) — quote any existing notes on env contracts or prebuilt environments. Skip everything else in docs/. 5. **Skills** — check `.claude/` or any agent-discovery file that documents how future agents should run live tests (CLAUDE.md, skill manifests). Just list paths and one-line purpose. Report ~400 words. For each repo give: top-level layout (just relevant subpaths), the 3-6 key files with absolute paths and line numbers of the install/bootstrap commands, and any existing notion of caching/prebuilt images. Do NOT browse `.megaplan/` or unrelated docs. Stop once you have the touch points.

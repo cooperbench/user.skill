@@ -1,14 +1,3 @@
----
-session_id: "461601dd-e2bd-438b-9751-a6b91c5fdafe:subagents"
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-05-02T23:13:58.759Z"
-n_turns: 11
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Explore /Users/user_c042661f/Documents/megaplan to map out how the "make a plan" process works. I want to understand the discrete steps in the planning pipeline (e.g. plan generation, critique, revise, review, etc.) and how they're composed today. Focus on: 1. The top-level pipeline orchestrator — what file/function runs `megaplan plan` end-to-end? Look in megaplan/cli.py, megaplan/chain.py, megaplan/handlers/, megaplan/agent/. 2. The discrete steps in the pipeline — identify each one (planner, critic, reviser, reviewer, judge, tiebreaker, etc.). For each, note: what file it lives in, what its inputs and outputs are (data shapes / artifacts), and how it's currently invoked. 3. How critiques work specifically — look at megaplan/parallel_critique.py and any review/ folder. What does a critique produce? How is it consumed downstream? 4. How the steps are wired together right now — is it a hardcoded sequence, a graph, configurable via profiles? Look at megaplan/profiles and megaplan/chain.py. 5. Robustness levels — how do different robustness/quality levels change which steps run? Quick mention only. 6. What "composability" obstacles exist today — e.g. shared state passed implicitly, steps that assume specific predecessors, types that aren't unified, hardcoded ordering. Return a structured report (under 600 words) with: (a) the list of primitive steps and their I/O, (b) where the orchestration logic lives, (c) the top 3-5 things that block free composition of these steps into arbitrary workflows. This is research only — no code changes.

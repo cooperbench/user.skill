@@ -1,14 +1,3 @@
----
-session_id: ab618a0e-ea92-4b6f-bafe-c387ff9ec7b8
-developer: "gh:jobinlawrance"
-split: train
-source: entire
-repo: ravencloak-org/Raven
-start_time: "2026-04-10T18:17:24.313338Z"
-n_turns: 130
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 what are the tools available for indexing installed here?

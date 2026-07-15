@@ -1,14 +1,3 @@
----
-session_id: a1cc2ac9-9f74-4f5d-b5bd-ae21b5cb83ec
-developer: "gh:manderson240"
-split: train
-source: entire
-repo: manderson240/cohezion
-start_time: "2026-03-17T09:32:34.178525297Z"
-n_turns: 201
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Implement the following plan: # Top-10 All Three Leaderboards: Realistic Sprint Plan ## Context After 15+ phases across 4 agent teams (Claude, Gemini 19 MLA variants, Kimi 12 MoE variants, Infinity team), we've exhausted Python-level API optimizations. Current standings: | Kernel | Our Best | Leader | Gap | Top 10 Est. | Rank | |--------|----------|--------|-----|-------------|------| | **GEMM** | ~12.9us | 9.7us | 1.33x | ~11-12us | ~15th | | **MoE** | ~157us (prod) / ~152.8us (best variant) | ~145us | 1.08x | ~150us | ~13th | | **MLA** | ~69.5us ranked | 4.3us | 16x | ~50-55us | ~20th | **Key constraint**: Triton kernels are CONFIRMED slower than CK ASM for both GEMM (1.34x) and MLA (9-127x). Custom Triton is a dead end. All 4 agent teams independently confirmed this. Helion/FlyDSL is also dead — Session 71 confirmed JIT crash on MI355X. **Working directory**: All sprint work in `research/challenges/luma_amd_speedrun/sprint/` — isolate probes and experiments from the 249+ existing submission variants. **Submission OPSEC**: Only `submission.py` is uploaded to the leaderboard. Use opaque names for local variants (`sprint_a1.py`, not `submission_splitk_forced.py`). Strip detailed phase history from production docstrings before leaderboard submission. **Token budget**: 70% consumed, 4 days remaining. Delegate probe/sweep submissions to local models (Ollama deepseek-r1:70b or qwen3-coder:30b) or background tasks. Reserve Opus tokens for architecture decisions, code review, and kernel correctness analysis. ## Delegation Strategy | Task Type | Who | Why | |-----------|-----|-----| | Write probe submissions (diagnostic stderr output) | Local model or background agent | Boilerplate code, no architecture decisions | | Parse probe results, decide optimal configs | Opus | Requires cross-shape geomean analysis | | Write/modify HIP C++ kernels | Opus | Correctness-critical, hardware-specific | | Submit to Popcorn CLI | Background task | Long-running (~5-10 min per submission) | | OPSEC cleanup (rename files, strip …

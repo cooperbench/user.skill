@@ -1,14 +1,3 @@
----
-session_id: def6a66a-af8f-4f33-8f83-80cddd0da7f5
-developer: "gh:jdsingh122918"
-split: train
-source: entire
-repo: jdsingh122918/forge
-start_time: "2026-03-10T14:20:02.268472Z"
-n_turns: 35
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 /Users/jdsingh/Library/Application\ Support/Claude/local-agent-mode-sessions/761816a7-837d-4864-8aa8-faa8499e6aef/a93f257c-027e-4b3c-9ae1-97aba2fe0035/local_ff5d85f8-b376-45da-a6c9-bd86226d1ee7/outputs/gsd-claude-code Using the above in context, lets add the following feature to the application: - ability to see the 4 agents embedded in the system in detail with context

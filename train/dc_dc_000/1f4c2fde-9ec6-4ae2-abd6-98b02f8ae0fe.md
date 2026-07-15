@@ -1,14 +1,3 @@
----
-session_id: 1f4c2fde-9ec6-4ae2-abd6-98b02f8ae0fe
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-03-11T18:45:16.497Z"
-n_turns: 11
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 I need to find: 1. The "skill" documentation that gets appended to by an "upstate" function — this is likely related to the desloppify tool's output that gets appended to agent-specific documents 2. Any function called "upstate" or similar that appends to skill/agent documents 3. Any instructions about cloning repos, pushing PRs, or pushing issues in the context of agent workflows Search thoroughly across the codebase for: - "upstate" function or similar naming - Skill doc templates or agent instruction documents - References to cloning repos, pushing PRs/issues in agent contexts - Any markdown or text templates that get appended to agent documents Start with searching for "upstate" in all files, then look for skill-related document generation.

@@ -1,14 +1,3 @@
----
-session_id: 2baef4f6-d50f-4c8f-aed3-9add809d08c5
-developer: "gh:FSM1"
-split: train
-source: entire
-repo: FSM1/cipher-box
-start_time: "2026-06-27T01:21:33.27957Z"
-n_turns: 26
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 which version of gsd does this project use?

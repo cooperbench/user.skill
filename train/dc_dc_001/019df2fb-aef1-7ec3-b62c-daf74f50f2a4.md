@@ -1,14 +1,3 @@
----
-session_id: 019df2fb-aef1-7ec3-b62c-daf74f50f2a4
-developer: "dc:dc_001"
-split: train
-source: dataclaw
-repo: Quaxicron/dataclaw-zhiyaowang
-start_time: "2026-05-04T12:35:04.753Z"
-n_turns: 275
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 多 sonnet agent 仔细读论文(用读图模式读图片 多模态) 这部分 找出渲染有问题/表达不清晰/可以优化/需要添加的图/表 只读图片 文本不管

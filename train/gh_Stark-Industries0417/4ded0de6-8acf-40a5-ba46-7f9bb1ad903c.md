@@ -1,14 +1,3 @@
----
-session_id: 4ded0de6-8acf-40a5-ba46-7f9bb1ad903c
-developer: "gh:Stark-Industries0417"
-split: train
-source: entire
-repo: Stark-Industries0417/cli
-start_time: "2026-02-16T14:08:40.425993Z"
-n_turns: 35
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 based on scripts/test-attribution-e2e-second-session.sh can you do another script that would: - do a session 1, generate local changes through that prompt, do not commit but validate that there is shadow branch - do a git restore (removing all changes) - do a session 2, generate changes through a prompt - do a commit and validate that only the last session is part of the commit, line attribution matches only session 2

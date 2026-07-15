@@ -1,14 +1,3 @@
----
-session_id: adbfa907-f36a-449b-a3e6-2d60fedf31bf
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-03-05T12:17:04.461Z"
-n_turns: 4
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Find all import statements that reference `engine.planning.scorecard_projection` or `engine/planning/scorecard_projection` across the codebase under /Users/user_c042661f/Documents/desloppify/desloppify. Show full file paths and line content. Also check if `app/planning/` directory exists. Also check if any engine-layer file (under engine/) imports from scorecard_projection (excluding scorecard_projection.py itself).

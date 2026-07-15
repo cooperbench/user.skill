@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|7b6fc75c-3f05-429e-912d-a80af7ed7a6c"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-04-14T15:40:35.444Z"
-n_turns: 18
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 help me setup new relic locally https://docs.newrelic.com/docs/agentic-ai/mcp/setup/#claude-code

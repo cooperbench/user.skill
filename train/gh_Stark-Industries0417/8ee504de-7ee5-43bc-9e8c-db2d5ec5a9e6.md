@@ -1,14 +1,3 @@
----
-session_id: 8ee504de-7ee5-43bc-9e8c-db2d5ec5a9e6
-developer: "gh:Stark-Industries0417"
-split: train
-source: entire
-repo: Stark-Industries0417/cli
-start_time: "2026-02-16T14:08:30.919049Z"
-n_turns: 16
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 when running mise run test:ci I get failures, can you check?

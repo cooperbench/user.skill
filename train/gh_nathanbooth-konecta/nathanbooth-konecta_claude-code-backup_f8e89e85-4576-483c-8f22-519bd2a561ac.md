@@ -1,14 +1,3 @@
----
-session_id: "nathanbooth-konecta/claude-code-backup|f8e89e85-4576-483c-8f22-519bd2a561ac"
-developer: "gh:nathanbooth-konecta"
-split: train
-source: crawl
-repo: nathanbooth-konecta/claude-code-backup
-start_time: "2026-02-05T12:58:39.258Z"
-n_turns: 3
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 can you give me a least priviledge list of permissions needed to successfully run the terraform script

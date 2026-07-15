@@ -1,14 +1,3 @@
----
-session_id: "nathanbooth-konecta/claude-code-backup|01a42a92-8961-481f-b93c-b2e13847d4df"
-developer: "gh:nathanbooth-konecta"
-split: train
-source: crawl
-repo: nathanbooth-konecta/claude-code-backup
-start_time: "2026-02-11T20:06:38.580Z"
-n_turns: 12
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > AGENT
 
 I can't add `bitnami/kubectl:latest` because this repository requires explicit version pins — no floating tags like `latest`, `main`, or `stable` are allowed.

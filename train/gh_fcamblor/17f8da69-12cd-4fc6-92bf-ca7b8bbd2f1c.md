@@ -1,14 +1,3 @@
----
-session_id: 17f8da69-12cd-4fc6-92bf-ca7b8bbd2f1c
-developer: "gh:fcamblor"
-split: train
-source: entire
-repo: fcamblor/mac-ai-trackers
-start_time: "2026-04-18T21:52:14.603328Z"
-n_turns: 25
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 # resolve-tech-debt — IMPLEMENT Session FRAÎCHE — tu n'as AUCUNE mémoire des itérations précédentes. Lis l'état depuis le disque. **Requête initiale** : REDACTED **Feedback de l'itération précédente échouée (le cas échéant)** : ## Discipline des commits Tu commites AU FIL de ton implémentation, **un commit par bloc logique**, AVANT que le gate déterministe ou l'utilisateur ne valide quoi que ce soit. **LANGUE — règle absolue : tous les messages de commit (sujet ET body) sont rédigés en anglais.** ## Outillage Privilégie **Serena** (`mcp__serena__*`) si disponible, sinon Grep / Glob / Read. ## Setup ```bash PLAN_FILE=$(ls tech-debt/*/plan.md 2>/dev/null | head -1) [ -n "$PLAN_FILE" ] || { echo 'ERREUR : aucun tech-debt/*/plan.md'; exit 1; } DEBT_DIR=$(dirname "$PLAN_FILE") echo "=== $DEBT_DIR/debt.md ===" cat "$DEBT_DIR/debt.md" echo "=== $PLAN_FILE ===" cat "$PLAN_FILE" git log --oneline -20 git status ``` Lis `CLAUDE.md`. Si la dette concerne du code Swift, **lis en plus les cinq docs listées sous "Swift code quality (mandatory)" dans `CLAUDE.md`** — elles sont obligatoires avant toute modif Swift. ## Ta mission cette itération 1. Identifie ce qui est déjà implémenté (via `git log`) vs ce qui reste dans le plan. Itérer est OK — tu n'es pas obligé de tout faire en une passe. 2. Implémente le prochain bloc logique. 3. Écris des **tests solides** : cas nominal + cas limites + cas d'erreur. N'attends pas qu'une review aval te rattrape : tu possèdes la qualité de couverture ICI. 4. Commit AU FIL, un commit par bloc logique : ```bash git add <fichiers> git commit -m "<type>: <subject in English>" \ -m "<WHY — retained trade-offs, discarded alternatives, technical decisions>" ``` Types : `feat:`, `test:`, `refactor:`, `fix:`, `chore:`. NE DÉCRIS JAMAIS le QUOI dans le body (le `git diff` s'en charge) — toujours le POURQUOI. 5. Avant de te déclarer prêt, lance …

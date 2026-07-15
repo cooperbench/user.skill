@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|246fb47f-92eb-440b-8b68-64b3a2114337"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-04-01T09:51:25.557Z"
-n_turns: 4
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 hey i need to to tell devops guys what we need for opensearch setup... we have added it in this branch locally, but now we need to spin up it in aws...tell me the parameters i have right now and what features do i use

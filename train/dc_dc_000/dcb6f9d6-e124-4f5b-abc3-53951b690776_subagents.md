@@ -1,14 +1,3 @@
----
-session_id: "dcb6f9d6-e124-4f5b-abc3-53951b690776:subagents"
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-05-05T00:31:30.136Z"
-n_turns: 26
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Working dir: /Users/user_c042661f/Documents/reigh-workspace/.megaplan-worktrees/sequence-reuse-20260505/all-claude I'm planning to extract shared modules from the effects AI codegen pipeline so the same plumbing can be reused for a new sequence-component pipeline. I need a precise reuse map. Please read and report (with file:line citations) on the following — be thorough but concise (under 600 words): 1. **Effects compile + registry plumbing** under `src/tools/video-editor/`: - `runtime-components/compileEffect.tsx` — full structure, especially the Sucrase init and the `new Function` harness with the globals tuple. Identify the exact globals list and the IIFE/exports pickoff. - `runtime-components/DynamicEffectRegistry.ts` — full structure: subscribe/getSnapshot, register/registerAsync, batch, normalize-name, the `compileEffect` import sites. - Where is the registry instantiated and what is `builtIn` populated with? - Is there an existing `runtime-components/index.ts` or related folder structure? 2. **Effects edge function** `supabase/functions/ai-generate-effect/index.ts`: - How long is it (rough LOC) and what are the boundaries: auth, rate-limit, Anthropic streaming `callAnthropic`, retry self-invoke (`_retryDepth`/`_retryFailedCode`), structured response. - Any `_shared/` directory siblings already? What's in there? - The `templates.ts` file: `extractEffectCodeAndMeta`, `validateExtractedEffectCode`, `stripMarkdownFences`, `KNOWN_TYPOS`, system prompt sections. 3. **Sequences side**: - `src/tools/video-editor/` — find `SEQUENCE_COMPONENT_REGISTRY`, `SEQUENCE_CLIP_CAPABILITY_REGISTRY`, capability builders. Where are sequences listed/registered? - The `SequenceCreator` / `SequenceCreatorPanel` files — file paths and rough role. - `SequenceParamEditor` location. - `useResources.ts` — `ResourceType` union, `isResourceType`, `EffectMetadata`, `useListResources`, file location/line numbers. - `vendor/timeline-theme-2rp/` — sequence components like `ImageJumpSequence.tsx` location, schema.json patterns. 4. **Existing classifier-style or routing patterns** in the AI generate flows, if any (front-end hooks that decide JSON vs code paths). 5. The current `useEffectResources` hook (path) — model for `useSequenceResources`. Just file paths + line numbers + 1-line descriptions. Don't propose changes.

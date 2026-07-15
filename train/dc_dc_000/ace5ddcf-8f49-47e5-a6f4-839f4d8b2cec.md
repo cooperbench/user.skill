@@ -1,14 +1,3 @@
----
-session_id: ace5ddcf-8f49-47e5-a6f4-839f4d8b2cec
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-03-12T15:26:34.426Z"
-n_turns: 43
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 I need to find how the holistic/subjective review scoring works in this codebase. Specifically, I'm looking for: 1. The prompt template that tells reviewers how to score holistically 2. Any instructions about considering positive aspects vs issues 3. How the holistic judgment is framed Search in these areas: - desloppify/app/commands/review/ (especially prompt_template.py, external.py) - desloppify/intelligence/review/ (especially holistic.py, prepare_holistic_orchestration.py) - Any prompt or template files related to review scoring Be thorough - read the full content of relevant files, especially prompt templates and holistic scoring instructions.

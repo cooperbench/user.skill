@@ -1,14 +1,3 @@
----
-session_id: "c8ebbf36-134f-4b90-86d9-40ad9b6def27:subagents"
-developer: "dc:dc_001"
-split: train
-source: dataclaw
-repo: Quaxicron/dataclaw-zhiyaowang
-start_time: "2026-05-24T16:10:38.163Z"
-n_turns: 238
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 在 /user_4813494d/openbmb 仓库（SGLang fork 用于 MiniCPM-SALA 推理）里，docs/prefill/current.md §2.14c 和 §2 Stage1 lever 表声称三件事在生产配置默认启用，要你从代码确认或证伪 — 不要相信文档，只信代码现状。 需要查明： A. **EAGLE context-tail guard**（文档断言：当 `seq_len >= context_len - 256` 时强制 NO_SPEC + 跳过 draft KV 更新，line91 距 context_len=524288 只剩 ~105 tokens 时会触发）。 - 找：`demo-sala/sglang/python/sglang/srt/` 下 eagle / speculative 相关文件（试 `speculative/eagle_worker.py`、`speculative/eagle_utils.py`、`models/llama_eagle3.py`、`speculative/spec_info.py` 等） - 搜关键字：`context_len`, `max_context_len`, `context-tail`, `NO_SPEC`, `256`, `context_len -`, `near_context`, `tail_guard` - 确认：是否真的有 `seq_len + something >= context_len - 256` → 强制 NO_SPEC 的分支；是不是硬编码 256；是不是默认 ON（不需要 env 开关）；line91 prompt 524183 tokens + context_len 524288 实际剩 105 tokens 是否会命中 - 报告：精确文件路径 + 行号 + 触发条件代码片段；env gate（如有）；commit 引用是 `ef6e3a7` 的"finished spec_info 过滤"或 `67295fc`「fix: guard eagle near context limit」吗？ B. **stage1 Lever 1（kBlockN=16 lock-in）**（文档断言：kbn=64→16 已 lock-in，nsys 显示运行时 kernel 是 `flash_fwd_splitkv_stage1_kernel<128,16,16,1,...>`，env `INFLLM_V2_STAGE1_KBLOCKN={16,32,64,128}` 仅作回退）。 - 找：infllm_v2 stage1 launch template，可能在 `demo-sala/sglang/...` 之外的某处 sparse_kernel_extension / `flash_api.cpp` / `launch_template` 头文件 — 用 `grep -rn` 全仓搜 `INFLLM_V2_STAGE1_KBLOCKN` / `kBlockN` / `flash_fwd_splitkv_stage1` - 确认：launch_template 里默认 kbn 是不是 16；env 不设的情况下走哪条分支 - 报告：精确路径 + 行号 + 默认值 C. **stage1 Lever 31（pass-1 elimination）**（文档断言：`INFLLM_V2_STAGE1_SKIP_PASS1` 默认 1 = 跳过 pass-1，仅在 `=0` 时回退两遍）。 - 同 B 同位置搜 `INFLLM_V2_STAGE1_SKIP_PASS1` - 确认：默认值真的是 1（跳过 pass-1）吗？kernel 里 pass-1 是不是用 `getenv("INFLLM_V2_STAGE1_SKIP_PASS1", "1")` 之类的方式 gate - 报告：精确路径 + 行号 + 默认行为 要求： - 只读，不要改动任何文件 - 每条结论必须给出 file:line + 5-15 行代码上下文 - 对每条 A/B/C 给出："文档断言一致" / "文档断言错" / "无法在代码里证明" 三选一 - 报告控制在 500 字以内

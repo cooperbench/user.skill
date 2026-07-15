@@ -1,14 +1,3 @@
----
-session_id: b0f62a6a-56fa-4f7a-ba9d-c86ee85e5fc8
-developer: "gh:jeevanpillay"
-split: train
-source: swechat
-repo: "?"
-start_time: "2026-04-14T12:10:08.956836Z"
-n_turns: 15
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 /create_plan i've noticed a couple things we dont need from @apps/www/src/app/(app)/(marketing)/(content)/blog/[slug]/page.tsx 

@@ -1,14 +1,3 @@
----
-session_id: "nathanbooth-konecta/claude-code-backup|5f7ce46d-5398-46aa-a544-527c4e05fa3a"
-developer: "gh:nathanbooth-konecta"
-split: train
-source: crawl
-repo: nathanbooth-konecta/claude-code-backup
-start_time: "2026-02-19T08:15:15.806Z"
-n_turns: 379
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > AGENT
 
 Let me check the current state of the repo first.

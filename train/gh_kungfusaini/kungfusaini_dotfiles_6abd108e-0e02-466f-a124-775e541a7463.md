@@ -1,14 +1,3 @@
----
-session_id: "kungfusaini/dotfiles|6abd108e-0e02-466f-a124-775e541a7463"
-developer: "gh:kungfusaini"
-split: train
-source: crawl
-repo: kungfusaini/dotfiles
-start_time: "2026-05-15T08:17:29.733Z"
-n_turns: 856
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 hey man so I wanna add some comprehensive financial management to argus. Right now I feel swamped becasue I don't have a good handle on my finances. First, I need you to find an API that can pull all my financial information. I have debit accounts with nationwide, santander and revolute. I have credit accoutns with barclaycard, aqua and amex. I have a bit of money in a trading212 cash ISA and a bit of money in a HL lifetime isa. Do some research!

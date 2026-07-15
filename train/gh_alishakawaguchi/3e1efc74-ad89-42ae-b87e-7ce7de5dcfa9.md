@@ -1,14 +1,3 @@
----
-session_id: 3e1efc74-ad89-42ae-b87e-7ce7de5dcfa9
-developer: "gh:alishakawaguchi"
-split: train
-source: entire
-repo: entireio/cli
-start_time: "2026-02-28T00:11:18.056358Z"
-n_turns: 11
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Implement the following plan: # Plan: Add Commit Steps to Agent Integration Skill ## Context The agent-integration skill runs three phases (research, write-tests, implement) but never commits code. All changes pile up uncommitted, making it harder to review, revert, or understand progress. Adding commits at each phase boundary and after each E2E tier creates clean, reviewable checkpoints. ## Changes ### 1. `.claude/skills/agent-integration/SKILL.md` Add commit instructions after each phase section: - After **Phase 1** output: commit AGENT.md + test script - After **Phase 2** output: commit E2E runner - After **Phase 3** output: no additional commit needed (implementer already commits at each milestone) Use `/commit` skill for the commits (follows project conventions). ### 2. `.claude/skills/agent-integration/researcher.md` Add a new section **"Phase 6: Commit"** at the end of the procedure, after Phase 5 (Implementation One-Pager). Stage and commit `cmd/entire/cli/agent/$AGENT_PACKAGE/AGENT.md` and `scripts/test-$AGENT_SLUG-agent-integration.sh`. ### 3. `.claude/skills/agent-integration/test-writer.md` Add a **"Step 7: Commit"** section after Step 6 (Verify). Stage and commit the E2E runner file `e2e/agents/$AGENT_SLUG.go` and any `e2e/testutil/repo.go` changes from Step 5. ### 4. `.claude/skills/agent-integration/implementer.md` Add a commit instruction block after each milestone step. The pattern is: after `mise run fmt && mise run lint` passes, stage and commit all modified agent files. Specific commit points: | After Step | Commit message pattern | What's staged | |---|---|---| | Step 3 (stubs compile) | `$AGENT_NAME: scaffold agent package` | `cmd/entire/cli/agent/$AGENT_PACKAGE/`, `cmd/entire/cli/hooks_cmd.go`, `cmd/entire/cli/agent/registry.go` | | Step 4 (Tier 1 passes) | `$AGENT_NAME: implement hook installation and basic event parsing` | `cmd/entire/cli/agent/$AGENT_PACKAGE/` | | Step 5 (Tier 2 passes) | `$AGENT_NAME: implement full lifecycle and transcript support` | `cmd/entire/cli/agent/$AGENT_PACKAGE/` | | Step 6 (Tier 2b passes) | `$AGENT_NAME: fix transcript metadata validation` | `cmd/entire/cli/agent/$AGENT_PACKAGE/` | | Step 7 (Tier 3 passes) | `$AGENT_NAME: support agent commit-in-turn` | `cmd/entire/cli/agent/$AGENT_PACKAGE/` | | Step 8 (Tier 4 passes) | `$AGENT_NAME: support …

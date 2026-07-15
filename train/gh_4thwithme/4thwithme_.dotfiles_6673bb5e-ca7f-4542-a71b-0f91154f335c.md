@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|6673bb5e-ca7f-4542-a71b-0f91154f335c"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-03-26T21:59:53.878Z"
-n_turns: 44
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 https://customink.atlassian.net/browse/RECO-753 using new /ai-monkey implement this task... additional context we alredy did it a few times example https://github.com/customink/recommendations-service/pull/440

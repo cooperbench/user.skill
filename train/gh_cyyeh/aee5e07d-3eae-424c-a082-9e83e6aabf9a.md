@@ -1,14 +1,3 @@
----
-session_id: aee5e07d-3eae-424c-a082-9e83e6aabf9a
-developer: "gh:cyyeh"
-split: train
-source: entire
-repo: cyyeh/duckdb-data-agent
-start_time: "2026-02-20T20:00:22.756702Z"
-n_turns: 6
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 refine readme to specify CLAUDE_CODE_OAUTH_TOKEN

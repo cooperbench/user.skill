@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|d47ca00b-68dc-473a-9ef9-e560450c0993"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-04-06T14:44:05.962Z"
-n_turns: 6
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 hey bro, does jira have JIRA cli?

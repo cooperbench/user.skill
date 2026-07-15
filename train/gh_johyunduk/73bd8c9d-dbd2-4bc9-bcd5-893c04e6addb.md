@@ -1,14 +1,3 @@
----
-session_id: 73bd8c9d-dbd2-4bc9-bcd5-893c04e6addb
-developer: "gh:johyunduk"
-split: train
-source: entire
-repo: johyunduk/ddong-avoid-game
-start_time: "2026-04-20T14:47:15.055635Z"
-n_turns: 68
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 매화 x 매화 시너지에 500점마다 전체 똥 없애는 효과 추가해줘.

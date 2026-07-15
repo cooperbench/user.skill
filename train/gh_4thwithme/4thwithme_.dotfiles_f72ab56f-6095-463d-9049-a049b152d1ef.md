@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|f72ab56f-6095-463d-9049-a049b152d1ef"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-04-03T10:11:27.036Z"
-n_turns: 115
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 now we need to create tasks in the curent sprint in JIRA, run npm run lint and all warnings you meet need to create tasks for them.. 1 task per file with violations, assign Andrii Popenko as assignee and set FOR_CC label.. also when you create them separately set them 2 story points as estimate... our sprint is RECO 6

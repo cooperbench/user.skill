@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|8f102ab5-f5c4-46b0-8e9d-90b6b6d64e24"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-03-24T17:43:07.627Z"
-n_turns: 232
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 recommend automations for this project /claude-automation-recommender

@@ -1,14 +1,3 @@
----
-session_id: f114cd15-f7cf-4efd-ac6b-c54c87db98e0
-developer: "gh:Poytr1"
-split: train
-source: entire
-repo: sentioxyz/changelogue
-start_time: "2026-02-26T02:41:57.563213Z"
-n_turns: 25
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 In the release page, we sould be able to see the release notes(if any) and have the link to the provider like dockerhub and github page

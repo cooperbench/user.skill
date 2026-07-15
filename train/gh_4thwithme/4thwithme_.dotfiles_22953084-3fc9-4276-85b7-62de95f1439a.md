@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|22953084-3fc9-4276-85b7-62de95f1439a"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-04-08T14:35:53.046Z"
-n_turns: 8
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 what gpt model do we use for neural search?

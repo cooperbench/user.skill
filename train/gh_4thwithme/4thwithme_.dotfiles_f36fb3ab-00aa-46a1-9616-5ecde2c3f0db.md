@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|f36fb3ab-00aa-46a1-9616-5ecde2c3f0db"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-03-22T14:08:27.361Z"
-n_turns: 33
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 how to create tmux new pane

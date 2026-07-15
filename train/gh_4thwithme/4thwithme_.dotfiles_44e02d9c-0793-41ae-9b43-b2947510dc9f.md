@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|44e02d9c-0793-41ae-9b43-b2947510dc9f"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-04-13T22:29:52.953Z"
-n_turns: 39
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 ok check @docs/ @docs/superpowers/plans/ @CLAUDE.md 

@@ -1,14 +1,3 @@
----
-session_id: 3dbed806-c8c9-42f1-aa58-f7a5adce7fe0
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-03-03T14:03:45.395Z"
-n_turns: 95
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Very thoroughly explore the `dead_function` detector implementation. I need to understand: 1. Where is it defined? Look in desloppify/lang/typescript/ and desloppify/detectors/ and similar paths 2. How does it detect dead functions? Does it do cross-file analysis or just single-file? 3. How does it check for references/usages? 4. What patterns could cause the 97% false positive rate described in the issue (functions called within same file, exported functions, callback references) Search for "dead_function", "dead function", "unused function" across the codebase. Also look at how TypeScript smell detection works in general.

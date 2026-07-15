@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|05e5d024-34e7-40e3-9e29-8e12689dff38"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-04-09T21:15:23.001Z"
-n_turns: 114
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 add command+a as autoselect all text in the input.... not to prevent selection of all tab in the terminal.. is it possible?

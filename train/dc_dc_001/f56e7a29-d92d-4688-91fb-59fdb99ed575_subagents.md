@@ -1,14 +1,3 @@
----
-session_id: "f56e7a29-d92d-4688-91fb-59fdb99ed575:subagents"
-developer: "dc:dc_001"
-split: train
-source: dataclaw
-repo: Quaxicron/dataclaw-zhiyaowang
-start_time: "2026-05-11T11:31:40.713Z"
-n_turns: 8
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 在 /user_4813494d/openbmb 项目中调研当前 Marlin NVFP4 kernel 的精度模式。背景：项目使用 SGLang fork + custom sgl-kernel 的 Marlin FP4 路径做 decode。我需要搞清楚： 1. **当前 Marlin 是 NVFP4 A16 还是 A8**？也就是 activation 是 fp16/bf16 还是 fp8/int8。重点查： - `demo-sala/sglang/python/sglang/srt/layers/quantization/` 下的 marlin / fp4 相关文件 - `marlin_utils_fp4.py` 之类 - `modelopt_quant.py` 里 hybrid Marlin 选择逻辑 - sgl-kernel Marlin FP4 entry（gemm 函数签名 / dtype 参数） - `docs/gemm/marlin.md` 和 `docs/quant/` 里的相关结论 2. **是否存在 NVFP4 A8 Marlin kernel 的支持**？查 sgl-kernel 上游、CUTLASS、有没有 a8 variant 的入口或 todo 注释；docs/gemm 里有没有提到 a8 的讨论或 dead-end。 3. **当前 decode shape 下 Marlin 的实测速度** — 看 docs/gemm/sol_table.md / current.md / changelog.md，找最新的 Marlin 在小 M (decode) 的吞吐 vs roof。 请精读上述 docs 和关键代码文件后给我一个 300 字以内的总结：当前模式确认、a8 可行性、目前 marlin 瓶颈数字。不要列文件清单，给结论 + 关键引用（file:line）。

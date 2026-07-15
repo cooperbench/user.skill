@@ -1,14 +1,3 @@
----
-session_id: "7b9f394b-302d-42b7-9a58-44ca3dde5f1a:subagents"
-developer: "dc:dc_001"
-split: train
-source: dataclaw
-repo: Quaxicron/dataclaw-zhiyaowang
-start_time: "2026-04-27T11:55:57.691Z"
-n_turns: 300
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 深入调查 Eagle-3 (EAGLE-3) speculative decoding 的架构设计和改进点。需要做两件事： 1. **本地代码调查**：仔细阅读 /user_4813494d/openbmb 仓库中所有 Eagle 相关代码和文档，重点关注： - demo-sala/sglang/python/sglang/srt/speculative/ 目录下所有文件 - docs/eagle/ 目录下所有文档 - eagle/ 目录下的训练和数据管线 - 当前生产配置：spec_steps=2, topk=2, dtn=5 - draft model 的架构（eagle_draft/config.json） - tree verify 的实现细节 - CUDA graph capture 对 spec 的支持 2. **在线调研**：搜索 Eagle-3 / EAGLE speculative decoding 的最新论文和实现，重点关注： - EAGLE-3 vs EAGLE-2 vs EAGLE-1 的核心区别 - tree structure / draft chain 的设计改进 - fused GLA 在 draft model 中的应用 - acceptance rate 优化的最新方法 - SGLang 对 EAGLE 的适配细节 输出要求：用简体中文，详细列出发现，按"本地代码发现"和"在线调研发现"分别组织。每个发现点要包含具体文件路径和行号（本地）或来源链接（在线）。

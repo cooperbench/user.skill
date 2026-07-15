@@ -1,14 +1,3 @@
----
-session_id: "004c24ec-4bdf-4132-bbdb-365b804a4869:subagents"
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-05-08T14:21:56.107Z"
-n_turns: 9
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 I need real numbers for a visualization comparing Irish media coverage of the Tigray war (2020-2022) vs the Gaza war (2023-present), plus death tolls and populations. Today's date is 2026-05-08. ## Primary task: Irish media story counts **Preferred source: Media Cloud (search.mediacloud.org)** — requires free signup. If you cannot complete signup (email verification etc.), fall back to GDELT. **Fallback: GDELT explorer (https://api.gdeltproject.org/api/v2/doc/doc — the "GDELT 2.0 DOC API" — or https://gdelt.github.io)** — no login. Use `sourcecountry:IE` filter and TIMELINEVOL or ARTLIST mode. Run these four searches against Irish national media (RTÉ, Irish Times, Irish Independent, Irish Examiner — Media Cloud has an "Ireland - National" collection; on GDELT use sourcecountry:IE): 1. Query: `Tigray` — Date: 2020-11-03 to 2022-11-03 2. Query: `Gaza OR Israel` — Date: 2023-10-07 to 2026-05-08 3. Query: `Gaza OR Israel` — Date: 2020-11-03 to 2022-11-03 (baseline) 4. Query: `Tigray` — Date: 2023-10-07 to 2026-05-08 Record the total story count for each, the exact date range queried, and which source/collection list you used. ## Secondary: death tolls and populations Use WebSearch / WebFetch for these. Cite each figure with the source name and ideally a URL: - Tigray war total death toll — get *multiple* estimates: (a) peer-reviewed Ghent University study, (b) figure cited by AU mediator Olusegun Obasanjo, (c) UCL / LSHTM study if there is one. Include the range (excess deaths, direct conflict deaths) and the time period each estimate covers. - Gaza war total death toll — (a) Gaza Health Ministry latest reported figure (with the report date), (b) Lancet study estimate (Khatib et al. or any newer Lancet piece). - Population of Ethiopia, latest available (World Bank or UN, 2024 or 2025). - Population of Israel, latest available (World Bank or CBS Israel, 2024 or 2025). ## Deliverable format A single short table or set of bullet blocks, under one page. Include: - Story counts per query (with date range + which outlets/collection) - Death tolls (each with source citation) - Populations (with source + year) - One sentence on methodology caveats — specifically how Media Cloud (or GDELT) counts a "match", whether duplicates/syndicated copies are counted, and any signup or access limitation you hit. Just raw numbers and sources. No commentary, no analysis, no recommendations about the visualization. If Media Cloud signup is not possible from your environment, say so explicitly and use GDELT for all four queries — do not silently substitute. […]

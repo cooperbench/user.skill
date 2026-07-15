@@ -1,14 +1,3 @@
----
-session_id: "a58a58ba-4c1e-4921-9ff1-ffafec323af0:subagents"
-developer: "dc:dc_001"
-split: train
-source: dataclaw
-repo: Quaxicron/dataclaw-zhiyaowang
-start_time: "2026-04-11T20:13:22.647Z"
-n_turns: 82
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 我需要彻底调查一个"本地量化精度与平台提交精度不一致"的问题。请帮我全面了解提交流程。 重点关注： 1. `demo-sala/prepare_model.sh` — 平台上执行的量化入口脚本，看它具体做了什么 2. `demo-sala/preprocess_model.py` — 实际量化逻辑，和根目录的版本有什么区别 3. `demo-sala/prepare_env.sh` — 环境准备，看是否有影响量化的环境变量 4. `demo-sala/data/` 目录下有哪些校准数据文件 5. 根目录下的 `preprocess_model.py`（如果存在）和 demo-sala 里的有什么区别 请完整读取以上文件内容，不要省略。特别注意： - 校准数据路径是写死的还是相对的 - 随机种子是否固定 - max_length 参数 - FourOverSix 是否启用 - dense-as-sparse 相关配置 - 任何可能导致不同机器上产出不同结果的因素 Thoroughness: very thorough

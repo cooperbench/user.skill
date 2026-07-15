@@ -1,14 +1,3 @@
----
-session_id: aa4bfd5d-c6b3-4f32-ac00-4dca6460bfe2
-developer: "gh:winksaville"
-split: train
-source: crawl
-repo: winksaville
-start_time: "2026-06-21T05:16:52.077Z"
-n_turns: 250
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Write a simple program in rust and reads the read rate from a VN-100

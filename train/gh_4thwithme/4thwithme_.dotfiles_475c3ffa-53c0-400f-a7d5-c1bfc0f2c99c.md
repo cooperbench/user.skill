@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|475c3ffa-53c0-400f-a7d5-c1bfc0f2c99c"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-03-24T15:59:56.957Z"
-n_turns: 14
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > AGENT
 
 The CLAUDE.md is already very detailed. Let me ask a few targeted questions about gaps the code can't answer.

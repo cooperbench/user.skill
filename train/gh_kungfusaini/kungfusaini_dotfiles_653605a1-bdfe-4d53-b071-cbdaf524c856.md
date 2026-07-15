@@ -1,14 +1,3 @@
----
-session_id: "kungfusaini/dotfiles|653605a1-bdfe-4d53-b071-cbdaf524c856"
-developer: "gh:kungfusaini"
-split: train
-source: crawl
-repo: kungfusaini/dotfiles
-start_time: "2026-05-06T18:18:07.560Z"
-n_turns: 291
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 hey man I've been tasked with cleaning up all branches except main, dev, dev sprint and branches that have on open PR. Can you just check what those branches are in teh repo?

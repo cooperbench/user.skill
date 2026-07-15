@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|10be6cfa-5f3b-43a8-8707-ffa1efc9f43b"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-04-14T18:31:21.586Z"
-n_turns: 31
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 hey bro check CV i mean whole repo

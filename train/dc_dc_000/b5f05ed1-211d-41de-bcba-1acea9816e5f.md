@@ -1,14 +1,3 @@
----
-session_id: b5f05ed1-211d-41de-bcba-1acea9816e5f
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-03-10T16:44:17.096Z"
-n_turns: 16
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Read and understand these files, then make the changes for Step 1 of the plan: 1. Read `desloppify/engine/_plan/plan_public_exports.py` - this should be deleted 2. Read `desloppify/engine/_plan/__init__.py` - remove references to plan_public_exports and engine.plan shim 3. Verify no other files import from plan_public_exports Changes: - Delete `desloppify/engine/_plan/plan_public_exports.py` - Edit `desloppify/engine/_plan/__init__.py` to remove references to the deleted file After making changes, run: `python -m pytest desloppify/tests/engine/ -q`

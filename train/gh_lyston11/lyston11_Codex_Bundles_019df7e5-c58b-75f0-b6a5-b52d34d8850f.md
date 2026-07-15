@@ -1,14 +1,3 @@
----
-session_id: "lyston11/Codex_Bundles|019df7e5-c58b-75f0-b6a5-b52d34d8850f"
-developer: "gh:lyston11"
-split: train
-source: crawl
-repo: lyston11/Codex_Bundles
-start_time: "2026-05-05T11:29:00.396Z"
-n_turns: 22
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 有个working文件夹，你分析一下里面的东西

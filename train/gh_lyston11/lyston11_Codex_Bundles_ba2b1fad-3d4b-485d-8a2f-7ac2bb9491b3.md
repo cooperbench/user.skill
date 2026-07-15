@@ -1,14 +1,3 @@
----
-session_id: "lyston11/Codex_Bundles|ba2b1fad-3d4b-485d-8a2f-7ac2bb9491b3"
-developer: "gh:lyston11"
-split: train
-source: crawl
-repo: lyston11/Codex_Bundles
-start_time: "2026-04-24T07:32:36.984Z"
-n_turns: 7
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 # Files mentioned by the user:

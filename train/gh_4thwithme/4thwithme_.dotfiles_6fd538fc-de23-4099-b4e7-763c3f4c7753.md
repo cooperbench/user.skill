@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|6fd538fc-de23-4099-b4e7-763c3f4c7753"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-03-21T09:41:43.933Z"
-n_turns: 22
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > AGENT
 
 This is an early-stage monorepo skeleton. Here's the CLAUDE.md based on what's confirmed:

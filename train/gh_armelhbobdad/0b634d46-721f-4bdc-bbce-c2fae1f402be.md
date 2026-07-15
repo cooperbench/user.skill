@@ -1,14 +1,3 @@
----
-session_id: 0b634d46-721f-4bdc-bbce-c2fae1f402be
-developer: "gh:armelhbobdad"
-split: train
-source: entire
-repo: armelhbobdad/bmad-module-skill-forge
-start_time: "2026-03-21T14:50:52.86533466Z"
-n_turns: 45
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 the mermaid diagram from @docs/architecture.md is not rendered in the astro @website/ . Please use https://github.com/joesaby/astro-mermaid to fix

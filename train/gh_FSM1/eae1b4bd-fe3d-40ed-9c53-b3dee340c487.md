@@ -1,14 +1,3 @@
----
-session_id: eae1b4bd-fe3d-40ed-9c53-b3dee340c487
-developer: "gh:FSM1"
-split: train
-source: entire
-repo: FSM1/cipher-box
-start_time: "2026-06-14T01:36:23.042113Z"
-n_turns: 172
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > TOOL
 
 <bash-input>git switch main && git pull</bash-input>

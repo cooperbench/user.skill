@@ -1,14 +1,3 @@
----
-session_id: "ac88abda-1811-4493-ab01-daeb56895fec:subagents"
-developer: "dc:dc_001"
-split: train
-source: dataclaw
-repo: Quaxicron/dataclaw-zhiyaowang
-start_time: "2026-03-29T18:20:47.582Z"
-n_turns: 17
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Research the current state (as of early 2026) of Clash-compatible proxy clients for Linux x86_64 CLI (no GUI). Focus on: 1. **Mihomo (Clash Meta)** - https://github.com/MetaCubeX/mihomo - current status, latest release, features vs original Clash 2. **sing-box** - https://github.com/SagerNet/sing-box - comparison with Mihomo, subscription compatibility 3. **Original Clash** - is it still maintained? (it was removed/archived) Key use case requirements: - Linux x86_64, Ubuntu 24.04, CLI only (no GUI/desktop) - Must support `relay` proxy chains (chaining proxies) - Must accept Clash-format subscription URLs - Must support SOCKS5 outbound proxies (for chaining with existing SOCKS5) - Must support rule-based routing (domain-suffix rules) - Trojan protocol support For each option evaluate: - Active maintenance status (last commit, release date) - relay/proxy chain support - SOCKS5 outbound support - Clash subscription format compatibility - Memory/CPU footprint - Installation method on Ubuntu Do web searches to get current information. Return a clear comparison with a final recommendation.

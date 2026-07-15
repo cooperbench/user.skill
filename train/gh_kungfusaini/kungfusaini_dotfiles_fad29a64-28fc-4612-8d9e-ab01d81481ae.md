@@ -1,14 +1,3 @@
----
-session_id: "kungfusaini/dotfiles|fad29a64-28fc-4612-8d9e-ab01d81481ae"
-developer: "gh:kungfusaini"
-split: train
-source: crawl
-repo: kungfusaini/dotfiles
-start_time: "2026-05-27T17:44:58.698Z"
-n_turns: 6
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 analyse this paper. what's it about and any cool insight? https://arxiv.org/abs/2605.22391

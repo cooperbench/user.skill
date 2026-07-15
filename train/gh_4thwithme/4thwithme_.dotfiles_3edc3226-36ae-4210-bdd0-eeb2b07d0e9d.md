@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|3edc3226-36ae-4210-bdd0-eeb2b07d0e9d"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-03-16T12:23:54.166Z"
-n_turns: 40
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 hey bro using /fix-eslint-workflow need to check file @src/utils/formatting.util.ts and fix eslint warnings. ticket - https://customink.atlassian.net/browse/RECO-687

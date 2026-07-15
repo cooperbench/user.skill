@@ -1,14 +1,3 @@
----
-session_id: "cjrfoto/claude-config|b7e8c85d-94ac-41e8-a7e6-325f1515fba0"
-developer: "gh:cjrfoto"
-split: train
-source: crawl
-repo: cjrfoto/claude-config
-start_time: "2026-04-04T12:43:08.649Z"
-n_turns: 373
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > AGENT
 
 It looks like you pasted some feature highlights for **Barrier** (the open-source KVM software). Did you have a specific question or task related to it, or was this an accidental paste?

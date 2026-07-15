@@ -1,14 +1,3 @@
----
-session_id: "kungfusaini/dotfiles|5c519836-42a5-4a10-b863-5ec89ccb5d19"
-developer: "gh:kungfusaini"
-split: train
-source: crawl
-repo: kungfusaini/dotfiles
-start_time: "2026-05-19T07:38:32.097Z"
-n_turns: 156
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 hey man we gotta start looking at 243 on linera. Pulll it up

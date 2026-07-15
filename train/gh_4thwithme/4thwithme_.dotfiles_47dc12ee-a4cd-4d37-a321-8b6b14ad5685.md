@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|47dc12ee-a4cd-4d37-a321-8b6b14ad5685"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-04-10T11:49:03.564Z"
-n_turns: 33
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 lets create new skill in the repo folder

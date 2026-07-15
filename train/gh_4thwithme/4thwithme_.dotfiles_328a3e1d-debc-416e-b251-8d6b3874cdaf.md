@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|328a3e1d-debc-416e-b251-8d6b3874cdaf"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-04-13T10:47:20.316Z"
-n_turns: 63
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > TOOL
 
 <bash-input>zed ./</bash-input>

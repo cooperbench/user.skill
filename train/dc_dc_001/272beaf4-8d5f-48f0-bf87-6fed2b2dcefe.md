@@ -1,14 +1,3 @@
----
-session_id: 272beaf4-8d5f-48f0-bf87-6fed2b2dcefe
-developer: "dc:dc_001"
-split: train
-source: dataclaw
-repo: Quaxicron/dataclaw-zhiyaowang
-start_time: "2026-03-27T11:10:22.454Z"
-n_turns: 3
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Workspace: /root/shared-nvme/openbmb. This is MiniCPM-SALA (NOT MoE). Focus on sparse attention path only. Thoroughly explore: - demo-sala/sglang/python/sglang/srt/layers/attention/minicpm_sparse_utils.py - minicpm_sparse_kernels.py (Triton) - minicpm_backend.py (topk, compress, stage1 calls) Find: redundant copies/contiguous/to(dtype), Python overhead chains, places where two kernels could be one (fusion), CUDA Graph hazards. Quote file:line patterns. Return: ranked list of 3-6 concrete optimization ideas with evidence (paths), expected impact (high/med/low), and risk. NO MoE content.

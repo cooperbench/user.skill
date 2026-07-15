@@ -1,14 +1,3 @@
----
-session_id: 9c14bd03-caa6-4fed-8fd2-b2c13cc20b8e
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-03-12T00:55:04.644Z"
-n_turns: 217
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Research task — do NOT make any code changes. Investigate whether PR #362's bug report is still present in the current codebase. The bug: when a mechanical dimension disappears between scans (e.g., scan path narrows, language changes, detector removed), `_materialize_dimension_scores()` in `state_integration.py` carries forward the stale dimension indefinitely. `_aggregate_scores()` then includes these ghost dimensions in `compute_health_score()`, permanently depressing `overall_score`. The `carried_forward: True` flag exists but is never checked/filtered. Look at: 1. `desloppify/engine/_scoring/state_integration.py` — find `_materialize_dimension_scores` and `_aggregate_scores` 2. Check if ghost/stale dimensions are filtered out anywhere 3. Check if `carried_forward` flag is used to exclude stale dimensions Report: is the bug still present? If so, what's the minimal fix?

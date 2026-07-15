@@ -1,14 +1,3 @@
----
-session_id: b449ad2c-564f-4bad-ab35-e02f4dece6b1
-developer: "gh:admarble"
-split: train
-source: entire
-repo: sequant-io/sequant
-start_time: "2026-04-02T23:55:04.625705Z"
-n_turns: 2
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 what skills do you have from sequant?

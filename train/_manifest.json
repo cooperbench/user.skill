@@ -7,6 +7,7 @@
   "sessions": 10797,
   "format": "markdown-blockquote-turns",
   "layout": "train/<developer_slug>/<session_id>.md",
+  "metadata": "train/_sessions.jsonl",
   "users": [
     {
       "developer": "dc:dc_000",

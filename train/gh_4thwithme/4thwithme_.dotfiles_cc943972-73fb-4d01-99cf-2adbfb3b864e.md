@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|cc943972-73fb-4d01-99cf-2adbfb3b864e"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-04-07T13:32:44.772Z"
-n_turns: 93
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > SYSTEM
 
 <system_instruction>

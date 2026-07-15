@@ -1,14 +1,3 @@
----
-session_id: "cjrfoto/claude-config|0864dda5-15f3-4938-8c13-e0b8f1ab41c1"
-developer: "gh:cjrfoto"
-split: train
-source: crawl
-repo: cjrfoto/claude-config
-start_time: "2026-04-07T00:10:24.565Z"
-n_turns: 47
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > AGENT
 
 This is about **Claude Code Remote Control** — a feature that lets you continue a Claude Code session from another device (phone/web browser) without losing context.

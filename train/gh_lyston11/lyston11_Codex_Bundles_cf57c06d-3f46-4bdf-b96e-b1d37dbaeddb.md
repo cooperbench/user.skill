@@ -1,14 +1,3 @@
----
-session_id: "lyston11/Codex_Bundles|cf57c06d-3f46-4bdf-b96e-b1d37dbaeddb"
-developer: "gh:lyston11"
-split: train
-source: crawl
-repo: lyston11/Codex_Bundles
-start_time: "2026-04-14T05:42:49.585Z"
-n_turns: 151
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 git@github.com:lyston11/GenericAgent.git拉下来

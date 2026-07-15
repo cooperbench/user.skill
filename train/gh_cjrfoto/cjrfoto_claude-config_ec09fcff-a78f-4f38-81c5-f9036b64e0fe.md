@@ -1,14 +1,3 @@
----
-session_id: "cjrfoto/claude-config|ec09fcff-a78f-4f38-81c5-f9036b64e0fe"
-developer: "gh:cjrfoto"
-split: train
-source: crawl
-repo: cjrfoto/claude-config
-start_time: "2026-04-02T23:43:02.604Z"
-n_turns: 49
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 help start and do something productive

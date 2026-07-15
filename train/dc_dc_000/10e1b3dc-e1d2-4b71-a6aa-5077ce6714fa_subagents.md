@@ -1,14 +1,3 @@
----
-session_id: "10e1b3dc-e1d2-4b71-a6aa-5077ce6714fa:subagents"
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-05-13T09:50:31.307Z"
-n_turns: 5
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Read the YouTube auto-caption transcript at `/tmp/ostris-ltx/transcript.txt`. It's Ostris's tutorial "How to Train a LTX-2.3 Character LoRA with AI Toolkit" — he trains a character LoRA of himself on LTX 2.3, and this is also the recipe behind his George Costanza / Seinfeld LoRA. Extract every concrete training setting, parameter, value, and recommendation he gives. Auto-captions have no punctuation and may mangle technical terms (e.g. "Lora" "rank" "learning rate" "ARA" "AI toolkit" "Comfy") — use judgment. Produce a tight markdown report with these sections: 1. **Dataset** — clip count, length, resolution, captioning approach, any prep steps 2. **Model / base** — exact model name, where to download 3. **Training config** — rank, alpha, learning rate, scheduler, optimizer, steps, batch size, gradient accumulation, timestep schedule, anything else numerical 4. **Hardware / runtime** — GPU, VRAM, training time, memory tricks (ARA, quantization, caching) 5. **Sampling during training** — sample prompts/cadence, what to look for 6. **Inference** — how he generates with the trained LoRA (ComfyUI workflow, weight, etc.) 7. **Tips / gotchas he calls out** — anything he explicitly warns about For every value, quote the surrounding phrase so I can sanity-check. If a section has no info, write "not covered." Be terse — no preamble, no "great question," just the report. Under 600 words.

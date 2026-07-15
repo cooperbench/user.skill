@@ -1,14 +1,3 @@
----
-session_id: a74cbf2d-24be-4caf-93f5-f6ae7886aa9a
-developer: "gh:hutusi"
-split: train
-source: entire
-repo: hutusi/amytis
-start_time: "2026-03-08T09:46:54.055278Z"
-n_turns: 61
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 I have config a redirectFrom for @content/posts/2026-01-12-the-art-of-algorithms.mdx but when I locate the redirect from url, it shows: Error: Page "/[slug]/page" is missing param "/[slug]" in "generateStaticParams()", which is required with "output: export" config. at ignore-listed frames { page: '/this-is-a-test-redirect-for-the-art-of-algorithms' }

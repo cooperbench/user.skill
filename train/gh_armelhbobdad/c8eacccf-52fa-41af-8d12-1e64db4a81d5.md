@@ -1,14 +1,3 @@
----
-session_id: c8eacccf-52fa-41af-8d12-1e64db4a81d5
-developer: "gh:armelhbobdad"
-split: train
-source: entire
-repo: armelhbobdad/bmad-module-skill-forge
-start_time: "2026-03-08T17:08:43.702206606Z"
-n_turns: 31
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 can we publish our package to npm? You can use the memory plugin to see what works in the past.

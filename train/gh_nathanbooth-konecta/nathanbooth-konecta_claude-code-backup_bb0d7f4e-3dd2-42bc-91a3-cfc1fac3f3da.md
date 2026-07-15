@@ -1,14 +1,3 @@
----
-session_id: "nathanbooth-konecta/claude-code-backup|bb0d7f4e-3dd2-42bc-91a3-cfc1fac3f3da"
-developer: "gh:nathanbooth-konecta"
-split: train
-source: crawl
-repo: nathanbooth-konecta/claude-code-backup
-start_time: "2026-02-13T16:12:03.088Z"
-n_turns: 5
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > AGENT
 
 Looking at the project [CLAUDE.md](CLAUDE.md), here's what I'd flag:

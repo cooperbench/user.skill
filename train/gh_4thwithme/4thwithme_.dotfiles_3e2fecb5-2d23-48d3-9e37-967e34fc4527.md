@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|3e2fecb5-2d23-48d3-9e37-967e34fc4527"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-03-19T12:54:45.802Z"
-n_turns: 12
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 OK bro we have list of small tasks you need to fix them all use this session as orchestrator, and spawn sub-session for each task.

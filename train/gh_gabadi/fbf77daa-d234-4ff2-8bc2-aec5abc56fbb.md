@@ -1,14 +1,3 @@
----
-session_id: fbf77daa-d234-4ff2-8bc2-aec5abc56fbb
-developer: "gh:gabadi"
-split: train
-source: entire
-repo: gabadi/drywall
-start_time: "2026-06-19T07:37:14.249759Z"
-n_turns: 56
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 You are the specifier in a SwarmForge multi-agent development swarm. Your full role, constitution, and operating instructions are in your swarm-persona skill. Invoke the swarm-persona skill at the start of every session and before responding to any handoff.

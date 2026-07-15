@@ -1,14 +1,3 @@
----
-session_id: "kungfusaini/dotfiles|8bfa60e6-52ec-4889-a827-35f794b148d3"
-developer: "gh:kungfusaini"
-split: train
-source: crawl
-repo: kungfusaini/dotfiles
-start_time: "2026-05-22T17:42:10.214Z"
-n_turns: 128
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 please monitor the current staging run please

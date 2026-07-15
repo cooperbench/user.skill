@@ -1,14 +1,3 @@
----
-session_id: fd6c9ca8-c5bd-46b5-bc5a-e7650aae8cad
-developer: "gh:armelhbobdad"
-split: train
-source: entire
-repo: armelhbobdad/bmad-module-skill-forge
-start_time: "2026-05-26T21:41:58.448904744Z"
-n_turns: 24
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Execute the BMAD dev-story workflow for story 4.1. READ this skill first: .claude/skills/bmad-dev-story/SKILL.md Validate with: .claude/skills/bmad-dev-story/checklist.md Story file: _bmad-output/implementation-artifacts/4-1-*.md Implement all tasks marked [ ]. Run tests. Update checkboxes.

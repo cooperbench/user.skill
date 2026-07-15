@@ -1,14 +1,3 @@
----
-session_id: "lyston11/Codex_Bundles|63d3e573-b6be-472a-baea-d5ae065548a1"
-developer: "gh:lyston11"
-split: train
-source: crawl
-repo: lyston11/Codex_Bundles
-start_time: "2026-04-25T12:25:39.732Z"
-n_turns: 56
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 git@github.com:lyston11/anything-analyzer.git拉下这个项目代码

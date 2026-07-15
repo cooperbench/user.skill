@@ -1,14 +1,3 @@
----
-session_id: de3bea8c-4fec-4ee0-9c93-dccc2a29ff56
-developer: "gh:wildlily1021"
-split: train
-source: crawl
-repo: wildlily1021
-start_time: "2026-05-15T03:40:12.175Z"
-n_turns: 20
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Lane B: 前端 UI 审计问题全量修复

@@ -1,14 +1,3 @@
----
-session_id: "b16cfbe4-a4cf-4ffe-8ad9-83be7788d514:subagents"
-developer: "dc:dc_001"
-split: train
-source: dataclaw
-repo: Quaxicron/dataclaw-zhiyaowang
-start_time: "2026-05-22T20:36:28.798Z"
-n_turns: 163
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 调查 InfLLM-v2 stage1 kernel 实际在 sm_120 RTX 6000D 上跑的是哪个 arch SASS。 背景： - 我看到 cuobjdump 显示 `/opt/SGLang-MiniCPM-SALA/sglang_minicpm_sala_env/lib/python3.10/site-packages/infllm_v2/C.cpython-310-x86_64-linux-gnu.so` 含有 `flash_fwd_splitkv_stage1_kernel` 的多个 SASS sections (sm_80, sm_90, sm_120 都有) - nsys profile 出来 stage1 kernel name 不带 sm 标记，runtime CUDA driver 应该自动选最匹配 arch - 但我担心：(a) cubin 包含 sm_120 binary, 但实际跑的是 sm_80 fatbinary fallback 因为驱动/编译器问题；(b) sm_120 binary 跟 sm_80 binary 是同一份 source 编出来的，所以没用 Blackwell-specific instructions（TMA / wgmma / 5th-gen tensor core），只是 sm_80 source 在 sm_120 上重编译 - 这关系到下一步优化：如果跑的就是 sm_80 SASS（在 sm_120 上 JIT 兼容跑），重编译 sm_120 native 可能有 1.5-2x speedup；如果已经 sm_120 native，那架构差异不大 请回答三个问题： 1. 实际加载/执行的是哪个 SASS arch？验证手段：cuobjdump 看 fatbinary entries；用 cuda-gdb 或 ncu 看实际 kernel function 执行时的 dispatched arch。 2. sm_120 binary 跟 sm_80 binary 比，是否有 Hopper/Blackwell 新指令（mma.sync.x.y.z 用 m16n16 还是 m16n128/wgmma；ldmatrix vs TMA）？可以用 `nvdisasm` 或 `cuobjdump --dump-sass <so>` 抽 sm_120 section SASS 看 instruction set 3. 给定 source code 在 `/user_4813494d/openbmb/kernels/infllmv2_cuda_impl/csrc/flash_attn/`，是否用了 cute / cutlass 3.x 的 sm_90+ specific 路径？还是纯 cute / cutlass 2.x sm_80 风格？ 只看不动文件。报告 <300 词，重点结论 + 实证证据（命令 + 输出关键片段）。

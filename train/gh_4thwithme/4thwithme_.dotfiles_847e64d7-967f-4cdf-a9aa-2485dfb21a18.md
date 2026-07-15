@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|847e64d7-967f-4cdf-a9aa-2485dfb21a18"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-03-19T12:01:58.943Z"
-n_turns: 24
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 OK bro we have list of small tasks you need to fix them all 

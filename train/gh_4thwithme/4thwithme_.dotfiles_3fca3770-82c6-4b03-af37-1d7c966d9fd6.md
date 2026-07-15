@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|3fca3770-82c6-4b03-af37-1d7c966d9fd6"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-03-27T13:28:03.026Z"
-n_turns: 8
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 we have and issue... we ahve @src/modules/cli/commands/sync-source-styles.command.ts that syncs products from mms to our DB and to algolia.... 1 product 1673300 is present in db but absent in algolia...a need to undersnand why

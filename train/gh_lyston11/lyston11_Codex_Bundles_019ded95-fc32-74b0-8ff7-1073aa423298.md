@@ -1,14 +1,3 @@
----
-session_id: "lyston11/Codex_Bundles|019ded95-fc32-74b0-8ff7-1073aa423298"
-developer: "gh:lyston11"
-split: train
-source: crawl
-repo: lyston11/Codex_Bundles
-start_time: "2026-05-03T11:25:42.353Z"
-n_turns: 48
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 你知道chorme上的油猴脚本插件吗

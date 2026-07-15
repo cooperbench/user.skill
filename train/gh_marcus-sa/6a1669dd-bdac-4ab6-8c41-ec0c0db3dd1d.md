@@ -1,14 +1,3 @@
----
-session_id: 6a1669dd-bdac-4ab6-8c41-ec0c0db3dd1d
-developer: "gh:marcus-sa"
-split: train
-source: entire
-repo: marcus-sa/brain
-start_time: "2026-03-19T07:39:35.285618Z"
-n_turns: 71
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Implement the following plan: # Observation Deduplication ## Context Observations are created by 10+ callers (proxy, observer, chat tools, MCP, webhooks, orchestrator) with zero dedup logic. The proxy policy evaluator has a process-level `Set` that resets on restart, causing identical "No LLM proxy policies configured" observations to accumulate. The core `createObservation()` always creates a new record. ## Design **Embedding-based dedup inside `createObservation()`**: Before creating, KNN search for similar open observations (same workspace + same source_agent). If similarity > 0.95, merge into existing (increment count, update timestamp). Otherwise create new. **Key behaviors:** - Dedup scope: open/acknowledged only (resolved observations can be re-raised) - Agent scope: same source_agent only (different agents can independently observe the same issue) - Embedding generation: `createObservation()` generates embedding from text if caller doesn't provide one - On match: increment `occurrence_count`, update `last_seen_at`, return existing record ID - On no match: create new with `occurrence_count: 1` ## Steps ### 1. Schema migration `0060_observation_dedup_fields.surql` ```sql BEGIN TRANSACTION; DEFINE FIELD OVERWRITE occurrence_count ON observation TYPE int DEFAULT 1; DEFINE FIELD OVERWRITE last_seen_at ON observation TYPE datetime; UPDATE observation SET occurrence_count = 1, last_seen_at = created_at WHERE occurrence_count IS NONE; COMMIT TRANSACTION; ``` ### 2. Update `schema/surreal-schema.surql` base schema Add `occurrence_count` and `last_seen_at` field definitions to the observation table. ### 3. Add dedup logic to `observation/queries.ts` **New function `findSimilarOpenObservation()`**: - Two-step KNN pattern (per CLAUDE.md — avoids SurrealDB v3.0 HNSW+WHERE bug): ```sql LET $candidates = SELECT id, occurrence_count, workspace, source_agent, status, vector::similarity::cosine(embedding, $vec) AS similarity FROM observation WHERE embedding <|10, COSINE|> $vec; SELECT * FROM $candidates WHERE workspace = $ws AND source_agent = $agent AND status IN ['open', 'acknowledged'] AND similarity > 0.95 ORDER BY similarity DESC LIMIT 1; ``` **Modify `createObservation()` signature:** - Add optional `embeddingModel` and `embeddingDimension` params (for auto-generating embeddings) - Flow: 1. If no `embedding` provided but …

@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|d2ecfa3f-eb7d-4fe1-810c-b3bf09cbfc0d"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-03-12T11:48:33.431Z"
-n_turns: 18
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Unknown skill: effort

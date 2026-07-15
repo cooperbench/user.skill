@@ -1,14 +1,3 @@
----
-session_id: ae06af1e-811a-4eeb-bba0-b19ccff57aec
-developer: "gh:marcus-sa"
-split: train
-source: entire
-repo: marcus-sa/brain
-start_time: "2026-03-17T12:40:33.033572Z"
-n_turns: 44
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 would it make sense to extend https://github.com/marcus-sa/brain/issues/127 with features from https://github.com/dtkav/agent-creds ? particularly preventing secrets leakage. we're already limiting agent blast radius with oauth 2.1 rar + dpop

@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|1ac1075b-fa77-439f-b139-dbe38fa1ee28"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-03-24T10:58:57.569Z"
-n_turns: 11
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 FAIL  test/rest/process-style.service.e2e-spec.ts

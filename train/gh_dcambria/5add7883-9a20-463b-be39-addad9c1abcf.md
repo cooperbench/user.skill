@@ -1,14 +1,3 @@
----
-session_id: 5add7883-9a20-463b-be39-addad9c1abcf
-developer: "gh:dcambria"
-split: train
-source: entire
-repo: Bureau-IT/concertacaoamazonia
-start_time: "2026-03-16T06:27:28.820535Z"
-n_turns: 17
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Implement the following plan: # Plano: mu-plugin bit-dropdown-btn ## Contexto O componente "Download dropdown" da página /publicacoes/ tem seu CSS embutido na `style.css` do child theme (seção 11, linhas ~285-430). Não há PHP específico para ele em `functions.php` — é puramente CSS + HTML widget do Elementor. O objetivo é isolar esse componente num mu-plugin independente, seguindo o padrão Bureau IT. **CSS variables** usadas pelo componente estão no `:root` do child theme e ficam lá: - `--btn-normal-*` — cores do botão - `--ucpa-icon-download` — SVG data URI do ícone (linha 228 do style.css) - `--e-global-typography-text-font-family` — Elementor Kit ## Arquivos a criar ### 1. `bit-dropdown-btn.php` Caminho: `sites/concertacao/wordpress/wp-content/mu-plugins/bit-dropdown-btn.php` ```php <?php /** * Plugin Name: BIT Dropdown Button * Description: Componente dropdown button para a página de Publicações. * CSS isolado do child theme — depende das variáveis --btn-normal-* * e --ucpa-icon-download definidas no child theme (style.css :root). * HTML via widget HTML Elementor: div.dropdown-btn-wrapper > * div.dropdown-btn-container > button.dropdown-btn-toggle + * div.dropdown-btn-menu. * Version: 1.0.0 * Author: Bureau IT * Network: true */ if ( ! defined( 'ABSPATH' ) ) { exit; } add_action( 'wp_enqueue_scripts', function () { wp_enqueue_style( 'bit-dropdown-btn', WPMU_PLUGIN_URL . '/bit-dropdown-btn.css', [ 'hello-elementor-child' ], filemtime( WPMU_PLUGIN_DIR . '/bit-dropdown-btn.css' ) ); } ); ``` **Notas:** - `Network: true` — padrão de todos os mu-plugins do projeto - Dependência `hello-elementor-child` — garante que as CSS vars do `:root` já estão carregadas - `filemtime()` — cache-busting automático (padrão do projeto) - `WPMU_PLUGIN_URL`/`WPMU_PLUGIN_DIR` — corretos para mu-plugins (não `plugin_dir_url()`) ### 2. `bit-dropdown-btn.css` Caminho: `sites/concertacao/wordpress/wp-content/mu-plugins/bit-dropdown-btn.css` CSS extraído byte-a-byte da seção 11 do child theme (linhas 284-430 do style.css HML): ```css /** * BIT Dropdown Button — Estilos * Versão: 1.0.0 * * Requer variáveis do child theme (style.css :root): * --btn-normal-bg, --btn-normal-txt, --btn-normal-bdr * --btn-normal-bg-hv, --btn-normal-border-hv, --btn-normal-txt-hv * --btn-normal-icn, --btn-normal-icon-hv * --ucpa-icon-download (linha 228 …

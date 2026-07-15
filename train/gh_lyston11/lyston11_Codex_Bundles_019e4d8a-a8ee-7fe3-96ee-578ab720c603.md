@@ -1,14 +1,3 @@
----
-session_id: "lyston11/Codex_Bundles|019e4d8a-a8ee-7fe3-96ee-578ab720c603"
-developer: "gh:lyston11"
-split: train
-source: crawl
-repo: lyston11/Codex_Bundles
-start_time: "2026-05-22T02:36:33.837Z"
-n_turns: 18
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 已购买/已入手型：

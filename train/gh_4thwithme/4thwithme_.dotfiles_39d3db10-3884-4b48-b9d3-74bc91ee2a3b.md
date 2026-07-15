@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|39d3db10-3884-4b48-b9d3-74bc91ee2a3b"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-04-14T17:11:15.239Z"
-n_turns: 11
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 33 vulnerabilities (10 moderate, 23 high) npm audit fix doent help..what is the best strategy to get rif of it?

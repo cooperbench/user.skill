@@ -1,14 +1,3 @@
----
-session_id: a22e27bd-7ce5-4bdb-b1b8-083a9eedbb19
-developer: "gh:scottdensmore"
-split: train
-source: entire
-repo: scottdensmore/contactmanager
-start_time: "2026-05-31T19:11:33.906893Z"
-n_turns: 559
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 I want to keep working on this app and make it more modern. Eventually getting it to look like a native macOS Tahoe app. We should add features to make it a better contant manager app.

@@ -1,14 +1,3 @@
----
-session_id: "fe050260-faa5-4aa2-bcf6-492e1648e9c0:subagents"
-developer: "dc:dc_001"
-split: train
-source: dataclaw
-repo: Quaxicron/dataclaw-zhiyaowang
-start_time: "2026-04-13T14:07:32.629Z"
-n_turns: 37
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Thoroughly explore the EAGLE-3 training pipeline in this repo. I need to understand: 1. All files in eagle/ directory - read each one fully 2. The docs: docs/eagle3_research.md, docs/eagle3-pipeline.md, docs/eagle3-accept-rate-fix.md 3. The medusa/ directory for comparison (collect_data.py, train.py) 4. demo-sala/sglang/python/sglang/srt/speculative/eagle_worker.py and medusa_worker.py For each file, provide: - Full content summary - Key parameters and configurations - How files connect to each other in the pipeline Be very thorough - read every file completely.

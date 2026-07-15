@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|3190ee6c-f60a-4a32-b4bf-dd77c9f97c0a"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-03-22T15:06:59.068Z"
-n_turns: 235
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 have you heard that tokens on non-working hours for claude code x2 right now? check in internet

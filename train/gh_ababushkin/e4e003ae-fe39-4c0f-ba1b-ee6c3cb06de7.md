@@ -1,14 +1,3 @@
----
-session_id: e4e003ae-fe39-4c0f-ba1b-ee6c3cb06de7
-developer: "gh:ababushkin"
-split: train
-source: entire
-repo: ababushkin/drain-cycle
-start_time: "2026-06-15T12:00:45.480138Z"
-n_turns: 25
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 [Image #1] i'm re-thinking the architecture for this project and this is my rough idea that i'm going through at the moment. review it, critique it and lets collaboratively design something better one idea i had was that this project effectively could have been a set of claude skills, eg: /execute-project or /execute-cycle and then it will create a precrafted prompt and go through a workflow to create a "team of agents" in claude. i don't think it has to be this way necessarily as this feature is not cross-portable between different agent paradigms but i still like this way of encapsulating the implementation. overall i need to have a clearer understanding of what the "orchestator" and all the code that's been written is for and what the control plane should look like

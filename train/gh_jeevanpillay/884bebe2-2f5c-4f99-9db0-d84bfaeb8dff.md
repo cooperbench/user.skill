@@ -1,14 +1,3 @@
----
-session_id: 884bebe2-2f5c-4f99-9db0-d84bfaeb8dff
-developer: "gh:jeevanpillay"
-split: train
-source: swechat
-repo: "?"
-start_time: "2026-04-05T07:57:11.717000+00:00"
-n_turns: 8
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 /create_plan @thoughts/shared/research/2026-04-05-trpc-client-error-propagation-next-step.md for both apps/platform and apps/app

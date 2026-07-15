@@ -1,14 +1,3 @@
----
-session_id: fee4fe38-85cb-4e15-a8b5-b4c55daddfa6
-developer: "dc:dc_001"
-split: train
-source: dataclaw
-repo: Quaxicron/dataclaw-zhiyaowang
-start_time: "2026-04-30T21:18:49.711Z"
-n_turns: 4
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 npx @cometix/ccursor@latest install 看一下安装了怎么启动

@@ -1,14 +1,3 @@
----
-session_id: 93b60db2-ca53-4efb-aa50-af8fccb6710b
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-05-12T16:20:21.953Z"
-n_turns: 48
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Can you see the feedback thing we have in Megaplan? And see where we have the flag for the prep stage, so I think it's like with prep or something like that. Can you also add a figure out what we need to do to add a dash with feedback step or flag that also adds a feedback step after the review process that like basically we just run this command and then fill out this thing. Can you just think and look through that for these next book?

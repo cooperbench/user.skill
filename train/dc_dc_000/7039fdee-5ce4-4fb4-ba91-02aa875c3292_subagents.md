@@ -1,14 +1,3 @@
----
-session_id: "7039fdee-5ce4-4fb4-ba91-02aa875c3292:subagents"
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-05-05T00:55:52.377Z"
-n_turns: 11
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 I need to plan an implementation that wires "local-only" generations (storage_mode='local', stored as FileSystemFileHandle in IndexedDB) through to worker tasks as inputs. The worker can't reach the browser, so we need a per-input resolver at task-create time. Please explore the repo at `/Users/user_c042661f/Documents/reigh-workspace/.megaplan-worktrees/worker-local-input-20260505/all-claude/` and report on: 1. **Unified task-creation entry point** in `src/shared/lib/tasks/`. Where does the final create-task call happen? Is there a single function (`createTask`, `useCreateTask`, etc.) that all task types funnel through? Show me the exact file/line where params get sent to the edge function. 2. **Local file handle plumbing**: - `src/shared/lib/media/createGenerationFromFile.ts` — what fields does a local generation have (`storage_mode`, `local_handle_id`, etc.)? - How do you read a FileSystemFileHandle back from IndexedDB given a `local_handle_id`? Find the helper. - `src/shared/lib/media/imageUploader.ts` — what's the upload helper signature? 3. **Per-task params builders**: - `src/shared/lib/tasks/travelBetweenImages/segmentImages.ts` - `src/shared/lib/tasks/imageEditing/buildMaskedEditTaskParams.ts` - List the inputs they emit (URLs vs file paths). Do they accept generation IDs and resolve to URLs internally, or does the caller pass URLs? 4. **Worker side**: - `reigh-worker/source/utils/download_utils.py` (around line 60) — does it handle `file://` URLs? - `reigh-worker/source/runtime/worker/server.py` — is there a /health endpoint? What port does the worker listen on? - Wait — is reigh-worker in this repo at all, or in a separate one? Check if `reigh-worker/` exists. 5. **complete_task edge function lifecycle**: - Look in `supabase/functions/complete-task/` (or similar) for the post-completion flow. Where would a cleanup hook fit? 6. **Existing test patterns**: - `src/shared/lib/tasks/__tests__/` — what test files exist? 7. **Generation table fields**: - Any DB types referencing `storage_mode`, `local_handle_id`, `materialized_location`, or `location`? Show the type/interface. 8. **All callers of the unified task-creation path**: - List the tools/hooks that create tasks. Just file paths is fine. 9. **Sub-doc**: Read `docs/structure_detail/unified_task_creation.md` and summarize where to plug in the resolver. Report concisely with exact file:line references. No need to read whole files — show the relevant snippets only. Aim for under 400 words.

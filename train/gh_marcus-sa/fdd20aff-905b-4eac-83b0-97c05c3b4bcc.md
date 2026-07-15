@@ -1,14 +1,3 @@
----
-session_id: fdd20aff-905b-4eac-83b0-97c05c3b4bcc
-developer: "gh:marcus-sa"
-split: train
-source: swechat
-repo: "?"
-start_time: "2026-03-12T16:22:02.557000+00:00"
-n_turns: 11
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > SYSTEM
 
 Tool loaded.

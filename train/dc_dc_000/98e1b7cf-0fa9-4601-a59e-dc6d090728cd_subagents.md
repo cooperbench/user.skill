@@ -1,14 +1,3 @@
----
-session_id: "98e1b7cf-0fa9-4601-a59e-dc6d090728cd:subagents"
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-05-11T10:32:13.171Z"
-n_turns: 714
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 I need to understand the architecture of this codebase (/Users/user_c042661f/Documents/Veas) to figure out what's needed to add a NEW agent/bot alongside the existing one. It looks like a Python-based "mediator bot" project. Please investigate and report (concisely, ~400 words): 1. What is the existing bot/agent? Where is its identity defined (name, persona, system prompt)? 2. Where is the system prompt assembled? (app/services/prompts.py looks relevant) 3. Where are tools defined and registered? (tool_schemas.py, app/services/tools/) 4. How are tools selected / which ones are exposed to the model? Is there a registry, a manifest, allowlist? 5. What's the entry point — how does a message come in, get routed to "the bot", and produce a reply? Look at app/ structure. 6. Is there any existing notion of "agent type", "persona", "bot id" — i.e. does the code already imagine multiple agents, or is it hardcoded to one? 7. Database/storage: are messages/conversations stored per-bot or globally? Look at migrations/ and any model definitions. 8. Configuration: where do env vars / config live for "the bot" (API keys, name, etc.)? 9. The mediator-bot-spec.md file — what does it say at a high level? Report file paths and key functions. Goal is to plan how to add a second agent with: different name, different system prompt, same tools available but a curated subset advertised in the system prompt, runs through a "different bot" (probably a different chat/messaging surface). Do not propose a solution — just map the territory.

@@ -1,14 +1,3 @@
----
-session_id: db4a8d3b-caab-4f7d-92a6-ade807e32f39
-developer: "gh:henryph24"
-split: train
-source: swechat
-repo: "?"
-start_time: "2026-04-07T17:10:28.793000+00:00"
-n_turns: 117
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 /loop notify me progress every 1 hour

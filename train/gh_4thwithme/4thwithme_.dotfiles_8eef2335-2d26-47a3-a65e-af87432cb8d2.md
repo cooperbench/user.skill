@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|8eef2335-2d26-47a3-a65e-af87432cb8d2"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-04-11T09:01:07.872Z"
-n_turns: 39
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 hey bro. I have a task. I will have performance review call in a few days and I need to fill in some I know answer some questions and your task will be paraphrase or translate my root language into a corporate way. Got it?

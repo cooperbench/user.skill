@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|cbe99975-f961-4c1a-98f9-a8f7e9bd0e6e"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-03-24T12:31:58.887Z"
-n_turns: 23
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 jHey, bro. I just copy pasted new skill to the repository. Can you please check is it valid skill data structure or not really? Because I see rules directory. I'm not sure it is like cool.

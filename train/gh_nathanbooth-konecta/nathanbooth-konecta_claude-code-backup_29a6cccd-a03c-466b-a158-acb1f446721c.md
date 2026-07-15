@@ -1,14 +1,3 @@
----
-session_id: "nathanbooth-konecta/claude-code-backup|29a6cccd-a03c-466b-a158-acb1f446721c"
-developer: "gh:nathanbooth-konecta"
-split: train
-source: crawl
-repo: nathanbooth-konecta/claude-code-backup
-start_time: "2026-02-10T09:41:52.926Z"
-n_turns: 64
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 can you check if this is being blocked by the WAF /api/v1/applications/crewai-dev/operation?appNamespace=argocd:1  Failed to load resource: the server responded with a status of 403 ()

@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|a66d3cc7-9f98-4c4b-bd9b-7e71161accb9"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-04-11T16:48:51.979Z"
-n_turns: 26
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 shift + option + arrows doesnt select text word by word

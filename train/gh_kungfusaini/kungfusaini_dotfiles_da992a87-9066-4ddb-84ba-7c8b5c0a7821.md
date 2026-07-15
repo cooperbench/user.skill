@@ -1,14 +1,3 @@
----
-session_id: "kungfusaini/dotfiles|da992a87-9066-4ddb-84ba-7c8b5c0a7821"
-developer: "gh:kungfusaini"
-split: train
-source: crawl
-repo: kungfusaini/dotfiles
-start_time: "2026-05-22T07:08:45.349Z"
-n_turns: 27
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 fix conficts on https://github.com/elijahintelligence/elijah/pull/337

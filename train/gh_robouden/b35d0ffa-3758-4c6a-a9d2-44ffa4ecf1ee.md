@@ -1,14 +1,3 @@
----
-session_id: b35d0ffa-3758-4c6a-a9d2-44ffa4ecf1ee
-developer: "gh:robouden"
-split: train
-source: entire
-repo: Safecast/safecast-map-MCP
-start_time: "2026-02-20T09:19:37.133430424Z"
-n_turns: 34
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > SYSTEM
 
 <ide_opened_file>The user opened the file /temp/readonly/command (25elc3) in the IDE. This may or may not be related to the current task.</ide_opened_file> After we made the move of the MCP server I can not login and password reset does also not work?

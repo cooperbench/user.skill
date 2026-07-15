@@ -1,14 +1,3 @@
----
-session_id: eb35d8bf-ebc6-4c6c-8eb9-acfcee60f19c
-developer: "gh:penso"
-split: train
-source: entire
-repo: moltis-org/moltis
-start_time: "2026-03-28T00:18:08.165876Z"
-n_turns: 167
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Push a new release but make sure it will not trigger an update, I want to build it but only to try myself

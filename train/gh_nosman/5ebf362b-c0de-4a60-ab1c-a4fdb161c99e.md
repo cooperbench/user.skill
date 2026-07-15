@@ -1,14 +1,3 @@
----
-session_id: 5ebf362b-c0de-4a60-ab1c-a4fdb161c99e
-developer: "gh:nosman"
-split: train
-source: swechat
-repo: "?"
-start_time: "2026-03-22T00:15:00.966000+00:00"
-n_turns: 3
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 resume

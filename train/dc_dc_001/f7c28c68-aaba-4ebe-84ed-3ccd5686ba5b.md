@@ -1,14 +1,3 @@
----
-session_id: f7c28c68-aaba-4ebe-84ed-3ccd5686ba5b
-developer: "dc:dc_001"
-split: train
-source: dataclaw
-repo: Quaxicron/dataclaw-zhiyaowang
-start_time: "2026-03-25T14:02:55.690Z"
-n_turns: 10
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 看一下目前cpu和内存占用情况

@@ -1,14 +1,3 @@
----
-session_id: ce0649e8-af63-4e6c-a2da-dbdb7d0fc4e1
-developer: "gh:FSM1"
-split: train
-source: swechat
-repo: "?"
-start_time: "2026-02-22T00:59:16.379833Z"
-n_turns: 21
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 ### Step 10: Summary

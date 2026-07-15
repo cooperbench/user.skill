@@ -1,14 +1,3 @@
----
-session_id: "kungfusaini/dotfiles|8fbdab51-13f4-488f-8be4-40ed858539c8"
-developer: "gh:kungfusaini"
-split: train
-source: crawl
-repo: kungfusaini/dotfiles
-start_time: "2026-05-26T14:00:22.291Z"
-n_turns: 521
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 hey man check out the smash folder, do you see the worked example folder?

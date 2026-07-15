@@ -1,14 +1,3 @@
----
-session_id: "kungfusaini/dotfiles|310bf3a9-14aa-4f9b-9fb1-b82210fb5420"
-developer: "gh:kungfusaini"
-split: train
-source: crawl
-repo: kungfusaini/dotfiles
-start_time: "2026-06-03T11:52:00.284Z"
-n_turns: 30
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Hey man, for some reason when I view the Smeath Sany website using NPN rundev on my local machine, it shows the June now update on the shape and on the simple version as well. However, I've committed it and I deployed it, and on the main website, I'm just seeing that the simple version has been updated for June, not the 3D shape version for the now file. So I just want you to have a look at this. You can use the GitHub CLI and you can inspect the GitHub history and the Git history as well for the Smeath Sany website and Ether as a website as well. Ether is my like deploy where it holds everything, so just have a look.Don't make any changes, just investigate.

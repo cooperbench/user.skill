@@ -1,14 +1,3 @@
----
-session_id: "lyston11/Codex_Bundles|ea5d333f-5a27-4a0c-b9c1-79d5526879fe"
-developer: "gh:lyston11"
-split: train
-source: crawl
-repo: lyston11/Codex_Bundles
-start_time: "2026-04-04T11:38:18.609Z"
-n_turns: 9
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 codex resume 019d582f-e8f4-7ce3-9948-c0406b4faaf2

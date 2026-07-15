@@ -1,14 +1,3 @@
----
-session_id: "nathanbooth-konecta/claude-code-backup|d7e176d3-2196-4644-a263-45ac9d496c11"
-developer: "gh:nathanbooth-konecta"
-split: train
-source: crawl
-repo: nathanbooth-konecta/claude-code-backup
-start_time: "2026-02-12T22:32:13.774Z"
-n_turns: 100
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > AGENT
 
 This error indicates the Replicated SDK pod cannot reach the Kubernetes API server (`10.20.0.1:443`) - it's timing out on the connection. Given the recent network policy refactoring commits, this is likely a network policy blocking egress to the K8s API.

@@ -1,14 +1,3 @@
----
-session_id: 5cebd4c6-e1fc-46fe-88f3-5a6caeeb8778
-developer: "gh:wildlily1021"
-split: train
-source: crawl
-repo: wildlily1021
-start_time: "2026-05-11T01:15:25.254Z"
-n_turns: 35
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 对话 1：task-real 修复 + 验收

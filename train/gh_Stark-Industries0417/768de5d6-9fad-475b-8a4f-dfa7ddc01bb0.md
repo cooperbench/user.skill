@@ -1,14 +1,3 @@
----
-session_id: 768de5d6-9fad-475b-8a4f-dfa7ddc01bb0
-developer: "gh:Stark-Industries0417"
-split: train
-source: entire
-repo: Stark-Industries0417/cli
-start_time: "2026-02-06T10:09:02.199863Z"
-n_turns: 17
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Please fix my unit test issue

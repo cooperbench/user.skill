@@ -1,14 +1,3 @@
----
-session_id: aad3d0cd-48f6-4af3-9b60-affa54da190f
-developer: "gh:barbogast"
-split: train
-source: entire
-repo: barbogast/paper-scan-processor
-start_time: "2026-06-17T08:39:24.061219Z"
-n_turns: 168
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 add detailPanel to MergeMode

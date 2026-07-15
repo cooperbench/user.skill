@@ -1,14 +1,3 @@
----
-session_id: "kungfusaini/dotfiles|ff5fcc9f-ed4e-4673-a76c-007e1298fcfc"
-developer: "gh:kungfusaini"
-split: train
-source: crawl
-repo: kungfusaini/dotfiles
-start_time: "2026-05-27T13:41:49.468Z"
-n_turns: 2
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 hey man so I pushe dto the project-writeups a new project called stleath ai startup. But how comes vulkan is not servingit (vulkan.sumeetsaini.com/projects) when the webhook delivery form the project0writeups repo went fi,e? Access-Control-Allow-Origin: *

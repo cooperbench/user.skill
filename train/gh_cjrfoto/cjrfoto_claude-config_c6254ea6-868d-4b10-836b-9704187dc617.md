@@ -1,14 +1,3 @@
----
-session_id: "cjrfoto/claude-config|c6254ea6-868d-4b10-836b-9704187dc617"
-developer: "gh:cjrfoto"
-split: train
-source: crawl
-repo: cjrfoto/claude-config
-start_time: "2026-04-03T17:25:44.353Z"
-n_turns: 31
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > AGENT
 
 Let me scrape the Instagram profile now.

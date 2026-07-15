@@ -1,14 +1,3 @@
----
-session_id: 6ed19ca9-a4de-4ddf-89bf-134cbda9f1cd
-developer: "gh:penso"
-split: train
-source: swechat
-repo: "?"
-start_time: "2026-04-16T19:54:25.700067Z"
-n_turns: 20
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Looking at https://github.com/moltis-org/moltis/issues/739 would it make sense to have a "brain" option next to the provider/llm in the web-ui, enabled when the model has a thinking mode (low/medium/high etc)? How many models do we support which have thinking mode, with different thinking mode?

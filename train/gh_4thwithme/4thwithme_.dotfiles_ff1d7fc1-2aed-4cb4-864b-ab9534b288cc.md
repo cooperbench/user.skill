@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|ff1d7fc1-2aed-4cb4-864b-ab9534b288cc"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-03-31T23:13:07.559Z"
-n_turns: 85
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 bro check out plans in the repo @plans/ and readme ..go for plan 3 implementation

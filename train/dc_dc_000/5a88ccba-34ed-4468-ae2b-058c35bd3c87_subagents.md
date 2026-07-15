@@ -1,14 +1,3 @@
----
-session_id: "5a88ccba-34ed-4468-ae2b-058c35bd3c87:subagents"
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-04-15T08:05:07.836Z"
-n_turns: 14
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Read the following files in /Users/user_c042661f/Documents/megaplan and report their full contents: 1. megaplan/prompts/prep.py 2. megaplan/prompts/execute.py 3. megaplan/prompts/review.py 4. megaplan/prompts/__init__.py 5. megaplan/prompts/finalize.py Also check if there's a megaplan/prompts/_shared.py or similar shared helpers file. Report all contents.

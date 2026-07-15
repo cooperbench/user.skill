@@ -1,14 +1,3 @@
----
-session_id: "kohaku500/02-automation-company|26565096-9870-46eb-a42c-cb7e12659d5c"
-developer: "gh:kohaku500"
-split: train
-source: crawl
-repo: kohaku500/02-automation-company
-start_time: "2026-04-26T20:41:04.449Z"
-n_turns: 9
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 あなたは知的財産部です。IP管理・特許調査・発信内容の審査を担当します。今この瞬間に最も価値ある仕事を行ってください。

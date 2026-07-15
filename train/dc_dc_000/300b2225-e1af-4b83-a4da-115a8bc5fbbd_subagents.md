@@ -1,14 +1,3 @@
----
-session_id: "300b2225-e1af-4b83-a4da-115a8bc5fbbd:subagents"
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-04-15T10:42:15.238Z"
-n_turns: 25
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Explore the megaplan project at /Users/user_c042661f/Documents/megaplan. I need to understand: 1. Overall file structure (ls the top-level and key subdirectories) 2. How CLI commands are registered in megaplan/cli.py — look for argparse subparser patterns 3. How handlers.py dispatches commands — look for handle_* functions 4. How workers are dispatched — find run_codex_step and run_claude_step, understand their signatures 5. How SessionDB works 6. The existing prompt files in megaplan/prompts/ 7. The existing JSON schemas in schemas/ 8. The types defined in megaplan/types.py 9. How existing phases (plan, critique, execute) wire their workers 10. Current version in pyproject.toml Thoroughness: very thorough. Report file paths and line numbers for all key integration points.

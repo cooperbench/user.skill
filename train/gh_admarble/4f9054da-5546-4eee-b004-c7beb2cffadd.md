@@ -1,14 +1,3 @@
----
-session_id: 4f9054da-5546-4eee-b004-c7beb2cffadd
-developer: "gh:admarble"
-split: train
-source: entire
-repo: sequant-io/sequant
-start_time: "2026-03-11T22:21:27.602066Z"
-n_turns: 62
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 what PR should we qa next?

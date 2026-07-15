@@ -1,14 +1,3 @@
----
-session_id: "cjrfoto/claude-config|907b3c73-62f3-41b1-b47d-84014841e0d0"
-developer: "gh:cjrfoto"
-split: train
-source: crawl
-repo: cjrfoto/claude-config
-start_time: "2026-04-03T12:57:55.674Z"
-n_turns: 111
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 @image_processor.py Audit this code specifically for macOS. Are the font paths correct for a Mac Mini, and will it correctly create the 'Input_Images' and 'Output_Images' folders if they don't exist yet?

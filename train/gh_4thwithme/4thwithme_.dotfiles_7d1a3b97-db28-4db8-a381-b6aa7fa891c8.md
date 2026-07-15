@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|7d1a3b97-db28-4db8-a381-b6aa7fa891c8"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-03-25T16:00:47.868Z"
-n_turns: 149
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 hey bro we want create new advanced skill that will involve a few other skills and agents... we want create tool that will work as infinite loop as web developer who monitor JIRA board, pick-up tickets, creates

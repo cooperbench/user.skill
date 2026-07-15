@@ -1,14 +1,3 @@
----
-session_id: "kungfusaini/dotfiles|1bc629c9-3d66-45f4-8496-a5db222582d0"
-developer: "gh:kungfusaini"
-split: train
-source: crawl
-repo: kungfusaini/dotfiles
-start_time: "2026-05-21T11:38:56.943Z"
-n_turns: 19
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 hey it seems like the tooltip is not  working well for the nodes hovering but it workd sfor the edges can you invesitgate. for nodes it just has placehomlser values

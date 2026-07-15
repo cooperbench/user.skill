@@ -1,14 +1,3 @@
----
-session_id: 3b0ce6fc-beba-47c2-ac8e-dfbae68a630d
-developer: "gh:jeevanpillay"
-split: train
-source: swechat
-repo: "?"
-start_time: "2026-04-06T07:26:18.532976Z"
-n_turns: 12
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 delete @.agents/skills/seo/ @.agents/skills/blog-writer/ @.agents/skills/changelog-writer/ @.claude/skills/react-doctor @.agents/skills/vercel-react-best-practices/

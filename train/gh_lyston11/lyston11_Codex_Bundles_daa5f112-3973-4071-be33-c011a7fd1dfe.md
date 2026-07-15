@@ -1,14 +1,3 @@
----
-session_id: "lyston11/Codex_Bundles|daa5f112-3973-4071-be33-c011a7fd1dfe"
-developer: "gh:lyston11"
-split: train
-source: crawl
-repo: lyston11/Codex_Bundles
-start_time: "2026-04-17T00:46:33.825Z"
-n_turns: 582
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 我想要基于

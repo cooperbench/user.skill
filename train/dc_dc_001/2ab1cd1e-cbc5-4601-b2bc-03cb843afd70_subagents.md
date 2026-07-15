@@ -1,14 +1,3 @@
----
-session_id: "2ab1cd1e-cbc5-4601-b2bc-03cb843afd70:subagents"
-developer: "dc:dc_001"
-split: train
-source: dataclaw
-repo: Quaxicron/dataclaw-zhiyaowang
-start_time: "2026-04-25T16:30:31.336Z"
-n_turns: 64
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 背景：我们的 SGLang fork（在 /user_4813494d/openbmb/demo-sala/sglang/python/sglang/）跑 EAGLE-3 chain verify 推测解码（spec_steps=2, topk=2, draft_token_num=5）。线上观察到偶发性"accept rate 坍缩到 0 且无法恢复"——日志中每个 decode step 严格 accept_len=1.00、accept_rate=0.00 持续几十步直到请求结束，gen throughput 从正常 150+ tok/s 掉到 99 tok/s。该现象在多个 draft model 权重（v2、v3、不同 ckpt epoch）下都复现，所以不是单一 ckpt 的问题，而是 spec decode runtime 路径上的稳态 bug。 请彻底调研以下问题（thoroughness=very thorough），不要写代码，只需返回精准的调研报告： 1. **EAGLE-3 chain verify 的执行路径** - 在 SGLang fork 中找 spec verify 的入口函数（很可能在 srt/speculative/ 或 srt/managers/scheduler 下），列出 draft step + verify + accept 的完整调用链。 - chain verify 的接受/拒绝逻辑在哪里（greedy 比较 token id？sampling 比较概率？）。 - accept_len、accept_rate 这两个指标具体是怎么算的、在哪里写入 log。 2. **Draft model 的状态依赖** - llama_eagle3.py 里 forward 接收哪些输入（aux_hidden_states 来自 target 哪几层？hidden 还是 logits？） - draft model 的 KV cache 与 target KV cache 是怎么同步的（reject 时如何 rewind？） - lm_head + d2t 映射的应用点（draft 输出的 32000 vocab token 怎么映射回 target 73448 vocab） - hot_token_id / draft_vocab_size 相关代码 3. **CUDA graph 的捕获范围** - EAGLE3 path 是否在 cuda graph 里捕获 draft forward / verify？ - 如果 graph 捕获了带状态的 buffer（mamba/GLA conv state、scratch），是否存在 capture 时的状态在 replay 时不一致的风险？ - bench/kill_sglang.sh、demo-sala/sglang patches 里有没有相关 graph 修复（特别是 minicpm_backend.py 里 CUDA graph fix） 4. **混合架构（standard attn + GLA）下的 spec decode** - GLA layer 的 chunk/recurrent 状态在 spec verify reject 时如何回滚？ - 8 个 standard attn layers 走 InfLLM-v2 sparse 时（虽然这个 case 还没到 dense_len 8192）spec decode 的 path 兼容性 5. **现有可观测性** - 当前有哪些 spec decode 相关的统计指标（除了 accept_len/accept_rate） - 是否有 logits dump、token-level mismatch dump、divergence position 之类的钩子？ - 失败状态有没有 fallback / self-heal（譬如 N 步 accept_rate=0 后回退到 no-spec） 6. **可能的稳态坍缩根因猜想验证** - 在代码里寻找以下风险点是否真实存在： a) draft KV 和 target KV 长度不同步（一个 reject path 漏掉 rewind） b) aux_hidden_states 的索引在长上下文下越界 / 取错位置 c) d2t 表加载或 set_embed 后没有同步更新到 graph buffer d) FP4 数值进入饱和区，draft 输出永远是某个常量 token e) chain verify 树构造里某个 path 的 attention mask / position id 错位 f) "set_embed" 把 target embedding 拷给 draft 之后是否需要重新 capture cuda graph g) sampling 路径：target 用 multinomial 采样 / draft 用 greedy → 永远 mismatch 请按以上 6 个分区返回结构化报告，每个发现都给出 file:line 引用。重点找代码事实，不是猜测。报告控制在 ~600 词。

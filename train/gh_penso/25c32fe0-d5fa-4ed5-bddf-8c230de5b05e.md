@@ -1,14 +1,3 @@
----
-session_id: 25c32fe0-d5fa-4ed5-bddf-8c230de5b05e
-developer: "gh:penso"
-split: train
-source: entire
-repo: moltis-org/moltis
-start_time: "2026-04-08T14:00:05.426533Z"
-n_turns: 25
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 All channels have a bunch of commands like /new /compact etc. I think Matrix does not, plan to add all those commands in Matrix too.

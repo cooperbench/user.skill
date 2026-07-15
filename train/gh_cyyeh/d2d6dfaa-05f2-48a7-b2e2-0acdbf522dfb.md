@@ -1,14 +1,3 @@
----
-session_id: d2d6dfaa-05f2-48a7-b2e2-0acdbf522dfb
-developer: "gh:cyyeh"
-split: train
-source: entire
-repo: cyyeh/duckdb-data-agent
-start_time: "2026-02-27T05:56:46.73003Z"
-n_turns: 10
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 link color is hard to read in dark mode

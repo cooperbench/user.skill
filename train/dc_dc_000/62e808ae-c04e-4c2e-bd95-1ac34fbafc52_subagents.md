@@ -1,14 +1,3 @@
----
-session_id: "62e808ae-c04e-4c2e-bd95-1ac34fbafc52:subagents"
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-04-06T19:55:14.775Z"
-n_turns: 180
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Read the file at /Users/user_c042661f/Documents/desloppify/dev/review/prompts/1-review-orchestrator.md and execute it. Important context: - You are in /Users/user_c042661f/Documents/desloppify - The repo remote is peteromallet/desloppify (NOT user_c042661f) - You're on branch 0.9.15 (release branch) — prerequisite met - Skip the "working tree must be clean" and "tests must pass" prerequisites — the user has approved proceeding without them - There are already many result files in dev/review/results/ from a prior run. The pipeline is idempotent — skip items that already have result files. - The new items that need processing (no existing result files) are: - Issues: 514, 517, 518, 519, 520, 521, 522, 523, 524, 525, 527, 528, 530, 531 - PRs: 515, 526, 529 - When launching sub-agents, use the paths dev/review/prompts/1-review-agent.md and dev/review/schema.json (relative to project root) - The orchestrator prompt says to batch issues (3-6 per agent) since they're lighter. PRs get one agent each. - After all agents finish, run validation: python dev/review/validate.py --stage 1

@@ -1,14 +1,3 @@
----
-session_id: 019dc5ea-a84c-7bd1-be60-dce258ef0bba
-developer: "dc:dc_001"
-split: train
-source: dataclaw
-repo: Quaxicron/dataclaw-zhiyaowang
-start_time: "2026-04-25T18:33:03.333Z"
-n_turns: 8
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 你在 /user_4813494d/openbmb 仓库中工作。请只读审阅 EAGLE 推理主流程，不考虑训练，不改文件。仓库关键约束：先区分 demo-sala 正式提交路径；server 停机只能用 bench/kill_sglang.sh；工作树很脏，不能回滚用户改动。重点看 demo-sala/sglang/python/sglang/srt/speculative/eagle_worker.py、eagle_info.py、demo-sala/sglang/python/sglang/srt/models/minicpm.py、llama_eagle3.py，以及 draft model 配置。请输出：1) 关键代码路径和行号；2) 低并发提升吞吐或 accepted length 的具体建议；3) 高并发提升吞吐或 accepted length 的具体建议；4) 风险和需要验证的指标。建议必须能落地，避免泛泛而谈。

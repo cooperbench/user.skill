@@ -1,14 +1,3 @@
----
-session_id: 19a42aef-2c92-4b1c-90ff-bcafca0b942c
-developer: "gh:singampalliveerendra"
-split: train
-source: entire
-repo: singampalliveerendra/your_family_farmer
-start_time: "2026-04-22T03:31:26.639970527Z"
-n_turns: 29
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Update name from Yadagiri to Kapil Korlepara. Also only list following products for now : Papaya Bananas Tomatoes Ladies Finger. Also let’s give a flexibility to upload what he wants. And default page to products this is my client needed to update for now

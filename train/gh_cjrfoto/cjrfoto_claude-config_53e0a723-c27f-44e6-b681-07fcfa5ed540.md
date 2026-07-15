@@ -1,14 +1,3 @@
----
-session_id: "cjrfoto/claude-config|53e0a723-c27f-44e6-b681-07fcfa5ed540"
-developer: "gh:cjrfoto"
-split: train
-source: crawl
-repo: cjrfoto/claude-config
-start_time: "2026-04-05T14:44:43.222Z"
-n_turns: 41
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > AGENT
 
 Here's how to set up Claude Code + VS Code on your Surface 3 (Windows) to match your Mac mini:

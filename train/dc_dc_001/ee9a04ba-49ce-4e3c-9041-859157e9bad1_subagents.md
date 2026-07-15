@@ -1,14 +1,3 @@
----
-session_id: "ee9a04ba-49ce-4e3c-9041-859157e9bad1:subagents"
-developer: "dc:dc_001"
-split: train
-source: dataclaw
-repo: Quaxicron/dataclaw-zhiyaowang
-start_time: "2026-04-24T16:26:07.176Z"
-n_turns: 85
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 我在调查 /user_4813494d/openbmb 项目中 Marlin GEMM kernel 的 tile 配置调优空间，用于对比 b12x backend。请你做彻底的调查，用"very thorough"模式。 背景： - 项目是 OpenBMB MiniCPM-SALA 推理优化（SOAR 比赛工作区） - 量化方案：NVFP4 + FourOverSix - Decode kernel 派发当前是 b12x 2-tier：Marlin小M（M ≤ SGLANG_MARLIN_DECODE_THRESHOLD=48）/ b12x 全 M / 3 点 CUTLASS override - MiniCPM-SALA 关键 linear 形状：hidden=4096, intermediate=16384 - q_proj: K=4096, N=4096 - kv_proj: K=4096, N=512 (nkv=2, head_dim=128, k/v 合并可能不同) - o_proj: K=4096, N=4096 - gate_up_proj: K=4096, N=16384*2 (gate+up 合并) 或分离 - down_proj: K=16384, N=4096 - 常见 decode M 值：1 (greedy), spec_steps=2 topk=2 → tree verify 下 M 可能 8~16 请查清楚以下问题，每点都给出具体文件路径和行号证据： ## 1. Marlin NVFP4 的 tile 选择入口在哪？ - `demo-sala/sglang/python/sglang/srt/layers/quantization/marlin_utils_fp4.py` 和 `marlin_utils.py` - Python 层有没有暴露 thread_k / thread_n / num_threads / pipe_stages 等参数？ - 入口函数 `gptq_marlin_gemm` 是否接受 exec_config 类参数？ - 真正的 tile 决策在哪——Python 侧 `determine_exec_config` 还是 sgl-kernel 的 C++ 里？ - 查 `demo-sala/sglang/python/sgl_kernel/` 和 `demo-sala/sglang/sgl-kernel/` 如果存在 ## 2. 我们是否有 sgl-kernel 的 C++ 源码可改？ - 项目说 "sgl-kernel 0.3.20 + 本仓库 common_ops.abi3.so 替换（Marlin FP4 scale bug fix）" - 查 `common_ops.abi3.so` 在哪，以及附近有没有对应的 C++ 源码、patch、构建脚本 - 搜 `*.cu`、`*.cuh` 看看 Marlin kernel 源码是否在项目内可编辑 - 查 `demo-sala/patches/` 里有没有与 Marlin tile 相关的 patch - 查 `bench/kernels/marlin/` 和 `kernels/` 有没有 Marlin 相关实验 ## 3. b12x 实际覆盖了哪些 M、哪些形状？ - `demo-sala/sglang/python/sglang/srt/layers/quantization/b12x/` 和 `b12x_fp4.py` - b12x 的 tile 配置文件在哪（CLAUDE.md 说 "6 shapes × 58 tile configs"） - b12x 在 M ≤ 48 时是否完全让位 Marlin，还是有重叠区间 - 3 点 CUTLASS override 具体是哪三个形状 ## 4. 有没有 Marlin vs b12x 的现成 bench 脚本？ - `bench/kernels/marlin/` 下都有什么 - `bench/kernels/fp4/bench_fp4_all_backends.py` 是否覆盖 Marlin - 有没有可以直接复用的 microbench ## 5. Marlin 的兜底分支现在到底跑没跑 / 跑多少？ - 在 `modelopt_quant.py` 里找 Marlin 调用入口 - 是不是只在小 M 才走 Marlin？小 M 实际占 decode 总耗时多少的 GEMM？ 只做调查，不改代码。给我一份 800 字以内的结构化 report，每条结论附文件:行号。如果有与我认知矛盾的发现（比如 tile config 其实可以从 Python 调），一定高亮出来。

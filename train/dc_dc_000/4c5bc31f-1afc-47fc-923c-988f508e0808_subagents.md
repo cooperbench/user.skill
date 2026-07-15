@@ -1,14 +1,3 @@
----
-session_id: "4c5bc31f-1afc-47fc-923c-988f508e0808:subagents"
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-04-15T07:42:49.279Z"
-n_turns: 4
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Explore the megaplan repository at /Users/user_c042661f/Documents/megaplan. I need to understand: 1. The overall file structure (main modules, entry points) 2. How the current pipeline works (plan → execute → review flow) 3. Key files: megaplan.sh, any Python modules, prompt templates, config files 4. How steps are currently executed and reviewed 5. What "modes" or step types currently exist Focus on src/ or the main code directory. Be thorough but skip .megaplan/ artifacts, docs/, and ops/ unless they contain core code. Report file paths and line numbers for [REDACTED]

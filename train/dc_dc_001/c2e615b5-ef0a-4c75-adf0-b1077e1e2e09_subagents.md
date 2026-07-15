@@ -1,14 +1,3 @@
----
-session_id: "c2e615b5-ef0a-4c75-adf0-b1077e1e2e09:subagents"
-developer: "dc:dc_001"
-split: train
-source: dataclaw
-repo: Quaxicron/dataclaw-zhiyaowang
-start_time: "2026-04-28T19:52:43.153Z"
-n_turns: 455
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 你是一个 AI 推理优化研究员，需要深入调研 LLM prefill 阶段 sparse attention 的加速方案。 ## 我们的场景 **模型**：32层混合架构（8层标准Attention + 24层GLA Lightning Attention），NVFP4量化 **硬件**：NVIDIA RTX 6000D（sm_120 Blackwell，84GB VRAM），CUDA 13.2，FlashInfer 0.6.8 **Prefill 瓶颈**： - `extend_sparse_fa` 占 prefill 总时间 **26%**（最大热点） - 当前实现：InfLLM-v2 稀疏 attention（stage1 用 block_score topk 筛块 + stage2 用 FlashInfer paged sparse FA） - chunked_prefill_size=8192，每 128K prompt 约 16 个 chunk - sparse 配置：topk=96 blocks，block_size=64，window_size=32，dense_len=8192（8K以内用 dense FA） - stage2 当前路径：topk_idx → gather/sparse_page_table → FlashInfer BatchDecodeWithPagedKVCacheWrapper（plan() 有 CPU overhead，已做 layer/chunk 间复用优化） - page_size=1（FlashInfer paged KV），与 infllmv2 原生 blockmask 路径不兼容（该路径要求 page_block_size ≥ 256） **已排除**： - FA3（sm_120 不支持，只支持 sm_90） - trtllm-gen（sm_120 不支持） - VariableBlockSparseAttentionWrapper（4× 更慢） - infllmv2 原生 blockmask（page_size=1 不兼容，除非改 kernel） - b12x（已废弃） ## 调研任务 请深入研究以下几个方向，搜索 2024-2026 年最新论文（arXiv 优先），对每个方向给出可行性分析： ### 方向 A：动态/自适应稀疏率 sparse attention - **FlashPrefill**（α-threshold 替代固定 topk）：论文细节，α-threshold 如何决定每层/每头的 topk，训练-推理稀疏率 mismatch 风险，accuracy 影响的实证数据 - **Quest / QuestA**（Query-Aware Sparsity）：核心机制，能否迁移到我们的 InfLLM-v2 block-scoring 路径上 - **MInference**（Microsoft，动态稀疏 prefill）：三种 pattern（A-shape/vertical-slash/diamond），能否与我们的 block_score 结合 - **NSA**（DeepSeek Native Sparse Attention）：structured block-sparse，prefill 优化，greedy/T=0 兼容性 ### 方向 B：替换 stage2 sparse FA 的 Triton/原生实现 - 有没有能处理 topk block 索引 + paged KV（page_size=1）的高效 Triton 稀疏 FA kernel？ - Triton-based block-sparse attention 在 sm_120/Blackwell 上的性能预期 - 和当前 FlashInfer paged 路径相比有多大理论收益（核心：消除 plan() CPU overhead 和 gather 开销） ### 方向 C：page_size=1 稀疏 FA kernel 改造可行性 - infllmv2 原生 blockmask 路径要求 page_block_size≥256，我们是 page_size=1。修改 flash_fwd_kernel.h 让其支持 page_size=1 paged KV（每个 token 单独 pointer lookup）的代价有多大？参考已有的 paged KV FA 实现（vLLM PagedAttention, FlashInfer paged） - 或者是否有 token-by-token pointer 查表的 Triton FA 实现 请深入搜索论文，给出： 1. 每个方案的核心机制和关键数字（speedup、accuracy loss） 2. 在我们场景下的可行性（sm_120 兼容性、page_size=1 兼容性、greedy T=0 兼容性） 3. 实现工作量估计 4. **推荐优先级排序**，并说明哪个方向在我们场景下投入产出比最高 输出要具体，引用论文数字，不要泛泛而谈。

@@ -1,14 +1,3 @@
----
-session_id: 3a76b183-d4fd-45e1-a3a4-aba583fbfedc
-developer: "gh:penso"
-split: train
-source: entire
-repo: moltis-org/moltis
-start_time: "2026-04-17T09:08:53.541597Z"
-n_turns: 39
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Look at https://github.com/moltis-org/moltis/issues/758 and plan for a fix

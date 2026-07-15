@@ -1,14 +1,3 @@
----
-session_id: "lyston11/Codex_Bundles|019e05bb-a291-71c3-b02d-ef19780adf54"
-developer: "gh:lyston11"
-split: train
-source: crawl
-repo: lyston11/Codex_Bundles
-start_time: "2026-05-08T03:57:27.554Z"
-n_turns: 65
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 https://github.com/Haleclipse/CodexDesktop-Rebuild.git把这个项目拉下来

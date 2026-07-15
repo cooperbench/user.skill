@@ -1,14 +1,3 @@
----
-session_id: 5e98cdb4-1b98-49ff-ad6c-e4fb5d897bdf
-developer: "gh:thieso2"
-split: train
-source: entire
-repo: thieso2/Sandcastle
-start_time: "2026-02-14T07:59:53.456406Z"
-n_turns: 34
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 ## Summary Add Google Chrome and the Claude Code Chrome extension to sandbox containers, with browser-based VNC access for users to interact with Chrome GUI. ## Motivation - Enable users to run browser automation and testing in sandboxes - Provide Claude Code Chrome extension for enhanced development workflows - Allow visual interaction with Chrome through web-based VNC ## Proposed Implementation ### 1. Sandbox Image Updates - Install Chrome (stable) in `images/sandbox/Dockerfile` - Install Xvfb (virtual display) - Install x11vnc or similar VNC server - Consider Chrome headless mode as alternative for some use cases ### 2. VNC Access Options **Recommended: noVNC** (similar to WeTTY architecture) - Sidecar container: `sc-vnc-{user}-{sandbox}` - Connect to sandbox's VNC server - Traefik routing: `/vnc/{sandbox_id}` or subdomain - ForwardAuth middleware for authentication - Resolution: configurable (default 1920x1080) **Alternative: Apache Guacamole** (more features, heavier) ### 3. Chrome Extension Installation - Pre-install Claude Code extension in sandbox image - Mount extension data to persistent user home: `/data/users/{name}/.config/google-chrome` - Document extension setup in guide ### 4. Service Layer New `VncManager` service class: - `#open(sandbox)` - Start VNC sidecar, generate Traefik config - `#close(sandbox)` - Stop VNC sidecar, cleanup config - Similar to `TerminalManager` pattern ### 5. UI Integration - "Open Browser" button next to "Open Terminal" on sandbox show page - Display resolution selector - VNC connection status indicator ## Technical Considerations - **Display:** Xvfb :99 (virtual X server) - **VNC Port:** Expose internally, not on host (noVNC container connects) - **Authentication:** Same ForwardAuth pattern as WeTTY - **Performance:** Consider websockify compression settings - **Network:** Use `sandcastle-web` network for noVNC sidecars - **Cleanup:** Background job to kill stale VNC sessions ## Security Notes - VNC traffic stays within Docker network (not exposed to host) - Authentication required via Traefik forwardAuth - Consider view-only mode option - Rate limit VNC …

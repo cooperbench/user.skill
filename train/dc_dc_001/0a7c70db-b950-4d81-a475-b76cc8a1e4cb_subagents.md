@@ -1,14 +1,3 @@
----
-session_id: "0a7c70db-b950-4d81-a475-b76cc8a1e4cb:subagents"
-developer: "dc:dc_001"
-split: train
-source: dataclaw
-repo: Quaxicron/dataclaw-zhiyaowang
-start_time: "2026-04-30T20:41:06.897Z"
-n_turns: 30
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 请深入分析 /user_4813494d/openbmb/kernels/infllmv2_cuda_impl 目录下的所有代码，寻找潜在的性能优化点。 背景： - 这是 InfLLM-v2 稀疏注意力的 CUDA 实现，用于 MiniCPM-SALA 的长上下文推理 - 硬件：NVIDIA RTX 6000D（sm_120, Blackwell, 84 GB VRAM） - CUDA toolkit 13.2，PyTorch 2.11.0+cu130，FlashInfer 0.6.8.post1 - standard Attention 层超过 dense_len=8192 时走 InfLLM-v2 稀疏（compress_k → stage1 block_score → stage2 top-K sparse FA） 请完整阅读： 1. 所有 .cu / .cuh / .cpp / .py 文件 2. 任何 CMakeLists.txt 或 setup.py 3. 头文件和接口定义 分析维度： 1. **算法层面**：计算流程是否有冗余？block_score 计算、top-K 选取、sparse FA 是否可以 fuse？ 2. **内存访问**：global memory 访问模式是否 coalesced？有无不必要的 host↔device 拷贝？shared memory 利用率？ 3. **并行度**：grid/block 配置是否合理？有无序列化的 bottleneck（如 atomics、synchronization）？ 4. **sm_120 特性**：是否利用了 Blackwell 的 warp-group MMA、async copy、TMA？有无可以升级的旧接口？ 5. **Python 绑定层**：有无可以消除的 Python overhead 或 tensor 拷贝？ 6. **与 FlashInfer 的交互**：是否完全利用了 FlashInfer 的稀疏 attention API？有无绕路的地方？ 请给出： - 目录结构概览 - 每个优化点的：位置（文件:行号）、问题描述、预期收益（高/中/低） - 最值得动手的前 3 个优化点（按 ROI 排序） 请尽量详细，搜索范围要 very thorough。

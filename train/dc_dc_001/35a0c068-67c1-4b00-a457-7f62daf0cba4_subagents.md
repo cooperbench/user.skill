@@ -1,14 +1,3 @@
----
-session_id: "35a0c068-67c1-4b00-a457-7f62daf0cba4:subagents"
-developer: "dc:dc_001"
-split: train
-source: dataclaw
-repo: Quaxicron/dataclaw-zhiyaowang
-start_time: "2026-04-25T14:39:45.073Z"
-n_turns: 96
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 背景：我在优化 OpenBMB/MiniCPM-SALA 的推理（仓库 /user_4813494d/openbmb），用 fork 的 SGLang。当前生产配置：EAGLE-3 chain verify，`spec_steps=2, topk=2, dtn=5`。draft model 在 `eagle/sglang_model/`（NVFP4 量化）。SGLang fork 在 `demo-sala/sglang/python/sglang/srt/`。 任务：把 EAGLE-3 在 SGLang 中的**完整推理路径**梳理一遍，目标是后续找优化点。请聚焦 thoroughness=very thorough。 具体要找的东西： 1. **入口与调度**：spec decoding 的入口（`speculative/` 目录），调度循环里 draft forward / target forward / verify 的顺序，每一步的 Python 调用栈 2. **Draft forward 路径**：draft model 怎么被调用，几步（spec_steps=2 意味着多少次 forward？），每次输入是什么，输出 token 数是多少（topk=2 怎么扩展） 3. **Target forward 路径**：target verify 时一次进来多少 token（draft tree 的叶子数？），怎么打包成 batch，attention 的 causal mask 怎么处理 tree 结构 4. **CUDA graph / piecewise 状态**：哪些步骤被 capture 了，哪些是 eager 的，graph replay 的边界在哪里 5. **同步点**：Python 层和 GPU 之间的 sync 点（`torch.cuda.synchronize`、`.item()`、`.cpu()`），特别是 spec 决策（accept 多少）需不需要 host-device 同步 请给出 file_path:line_number 引用，画一个调用顺序图（一次 spec step 内的完整事件序列）。**重点找出可能的串行瓶颈**：哪些步骤本可以并行/重叠却被串起来了。 不要写代码，不要修改任何文件。在 600 字内汇报核心发现。

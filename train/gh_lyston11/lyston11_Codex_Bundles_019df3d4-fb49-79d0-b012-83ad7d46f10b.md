@@ -1,14 +1,3 @@
----
-session_id: "lyston11/Codex_Bundles|019df3d4-fb49-79d0-b012-83ad7d46f10b"
-developer: "gh:lyston11"
-split: train
-source: crawl
-repo: lyston11/Codex_Bundles
-start_time: "2026-05-04T16:32:26.851Z"
-n_turns: 9
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 [$codex-md-docs](/Users/lyston/.codex/skills/codex-md-docs/SKILL.md) 优化这个skill

@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|27bf7cbd-a3dd-4f9d-8783-f942a3069c3d"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-03-25T08:12:47.712Z"
-n_turns: 6
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 find session in a history where we worked on logs shrinking we had to verbose logs and we were thinking about log sampling

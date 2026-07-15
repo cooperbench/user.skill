@@ -1,14 +1,3 @@
----
-session_id: "kungfusaini/dotfiles|1544c7ff-ebe1-40ae-975c-cbc64f13c2bd"
-developer: "gh:kungfusaini"
-split: train
-source: crawl
-repo: kungfusaini/dotfiles
-start_time: "2026-05-26T18:40:15.771Z"
-n_turns: 222
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 hey can you find the opencode session most recent related to sumeetsainmi_com

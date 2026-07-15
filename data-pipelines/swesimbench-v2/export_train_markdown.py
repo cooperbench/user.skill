@@ -4,11 +4,12 @@
 Layout (NOT Harbor tasks):
   <out>/
     README.md
-    _manifest.json
+    _manifest.json          # cohort summary
+    _sessions.jsonl         # one JSON record per session (metadata + path)
     <dev_slug>/
-      <session_id>.md
+      <session_id>.md       # pure conversation markdown (no frontmatter)
 
-Each session file has YAML frontmatter + full scrubbed turns as:
+Each session file is only:
 
   > DEVELOPER
 
@@ -56,32 +57,9 @@ def format_turn(role: str, text: str) -> str:
     return f"> {label}\n\n{body}"
 
 
-def yaml_escape(s: str) -> str:
-    s = s or ""
-    if re.search(r'[:#{}[\],&*?|>!%@`]|^\s|\s$|\n|"', s):
-        return '"' + s.replace("\\", "\\\\").replace('"', '\\"') + '"'
-    return s or '""'
-
-
-def render_session(meta: dict, turns: list) -> str:
-    lines = [
-        "---",
-        f"session_id: {yaml_escape(meta['session_id'])}",
-        f"developer: {yaml_escape(meta['user'])}",
-        f"split: train",
-        f"source: {yaml_escape(meta.get('source') or '')}",
-        f"repo: {yaml_escape(meta.get('repo') or '')}",
-        f"start_time: {yaml_escape(meta.get('start_time') or '')}",
-        f"n_turns: {len(turns)}",
-        f"policy_version: {yaml_escape(POLICY_VERSION)}",
-        "---",
-        "",
-    ]
+def render_session(turns: list) -> str:
     body = "\n\n".join(format_turn(t.get("role"), t.get("text")) for t in turns)
-    lines.append(body)
-    if not body.endswith("\n"):
-        lines.append("")
-    return "\n".join(lines)
+    return body + ("\n" if body and not body.endswith("\n") else "")
 
 
 def main():
@@ -125,9 +103,10 @@ def main():
     os.makedirs(out, exist_ok=True)
 
     written = 0
-    missing = 0
-    by_dev_files = defaultdict(list)
+    by_dev_files = defaultdict(int)
     seen = set()
+    sessions_path = os.path.join(out, "_sessions.jsonl")
+    sessions_f = open(sessions_path, "w")
 
     for line in open(os.path.join(HERE, "clean_sessions.jsonl")):
         s = json.loads(line)
@@ -136,23 +115,30 @@ def main():
             continue
         seen.add(sid)
         m = train_meta[sid]
-        meta = {
+        turns = s.get("turns") or []
+        rel = f"{slug(m['user'])}/{safe_sid(sid)}.md"
+        path = os.path.join(out, rel)
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        with open(path, "w") as f:
+            f.write(render_session(turns))
+        rec = {
             "session_id": sid,
-            "user": m["user"],
+            "developer": m["user"],
+            "slug": slug(m["user"]),
+            "split": "train",
             "source": s.get("source") or "",
             "repo": s.get("repo") or m.get("repo") or "",
             "start_time": s.get("start_time") or m.get("start_time") or "",
+            "n_turns": len(turns),
+            "path": rel,
         }
-        dev_dir = os.path.join(out, slug(m["user"]))
-        os.makedirs(dev_dir, exist_ok=True)
-        path = os.path.join(dev_dir, f"{safe_sid(sid)}.md")
-        with open(path, "w") as f:
-            f.write(render_session(meta, s.get("turns") or []))
-        by_dev_files[m["user"]].append(os.path.relpath(path, out))
+        sessions_f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+        by_dev_files[m["user"]] += 1
         written += 1
         if written % 1000 == 0:
             print(f"wrote {written}/{len(train_meta)}", flush=True)
 
+    sessions_f.close()
     missing = len(train_meta) - len(seen)
     if missing:
         print(f"WARNING: {missing} train sids missing from clean_sessions.jsonl", flush=True)
@@ -166,11 +152,12 @@ def main():
         "sessions": written,
         "format": "markdown-blockquote-turns",
         "layout": "train/<developer_slug>/<session_id>.md",
+        "metadata": "train/_sessions.jsonl",
         "users": sorted(
             [
                 {
                     **per_user[u],
-                    "files": len(by_dev_files[u]),
+                    "files": by_dev_files[u],
                 }
                 for u in per_user
             ],
@@ -190,15 +177,15 @@ Not Harbor tasks. Held-out prediction points live under `../tasks/`.
 
 ```text
 train/
-  _manifest.json
+  _manifest.json      # cohort summary
+  _sessions.jsonl     # per-session metadata (source, repo, start_time, path, …)
   <developer_slug>/
-    <session_id>.md
+    <session_id>.md   # pure conversation markdown
 ```
 
 ## File format
 
-YAML frontmatter (`session_id`, `developer`, `source`, `repo`, `start_time`, …)
-then the full conversation in the same markdown turn format as eval `history.md`:
+Session `.md` files match eval `history.md` turn formatting — no YAML frontmatter:
 
 ```markdown
 > DEVELOPER
@@ -209,6 +196,8 @@ then the full conversation in the same markdown turn format as eval `history.md`
 
 …
 ```
+
+Look up `session_id` / `source` / `repo` / `start_time` in `_sessions.jsonl`.
 
 Turns are **not** word-truncated (eval histories are, for context-window sizing).
 Secrets are already scrubbed by the clean-cohort pipeline.

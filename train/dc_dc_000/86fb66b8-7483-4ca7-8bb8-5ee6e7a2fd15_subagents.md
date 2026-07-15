@@ -1,14 +1,3 @@
----
-session_id: "86fb66b8-7483-4ca7-8bb8-5ee6e7a2fd15:subagents"
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-04-21T22:57:07.810Z"
-n_turns: 38
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 I need to understand how hermes-agent is set up to work with megaplan. Both projects exist at: - /Users/user_c042661f/Documents/hermes-agent/ - /Users/user_c042661f/Documents/megaplan/ Research thoroughness: medium. Please investigate: 1. How does hermes-agent reference or invoke megaplan? Search hermes-agent for any mentions of "megaplan", imports, subprocess calls, config references, etc. 2. How does megaplan reference or invoke hermes? Search megaplan for any mentions of "hermes". 3. Are there any shared config files, adapters, or integration points (e.g. in acp_adapter/, agent/, cli.py, README.md, AGENTS.md)? 4. What specific commands or workflows connect them? (e.g. does hermes call `megaplan ...` as a subprocess, does megaplan output something hermes consumes, is there a shared artifact format?) 5. Look at hermes-agent's README.md and AGENTS.md to understand hermes's role, and megaplan's README and CLAUDE.md to understand what it expects from callers. Report back: - A concrete picture of how they work together (who calls who, what data flows, what format) - The specific files/entrypoints that connect them - Any config the user needs to have in place for the integration to work - Anything surprising or non-obvious Keep the report under ~500 words but include file paths and line numbers for the key integration points so I can verify or dig deeper.

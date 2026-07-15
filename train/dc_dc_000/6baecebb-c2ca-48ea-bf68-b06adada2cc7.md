@@ -1,14 +1,3 @@
----
-session_id: 6baecebb-c2ca-48ea-bf68-b06adada2cc7
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-03-13T00:20:00.127Z"
-n_turns: 18
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 I need to understand the current issue/finding semantics in this codebase to review a redesign plan. Please find and summarize: 1. The current Issue/Finding type definitions (likely in state.py or schema files) 2. How NON_OBJECTIVE_DETECTORS is defined and used 3. How detector strings like "review", "concerns", "subjective_review" are used as semantic switches throughout the code 4. How ID prefixes (like "review::", "concerns::") are used for semantic inference 5. The current subjective_assessments storage 6. How the queue/work queue currently classifies items 7. The current concern generation and persistence model Be thorough - check engine/, app/, and intelligence/ directories. I need to understand the scattered heuristics the plan aims to replace.

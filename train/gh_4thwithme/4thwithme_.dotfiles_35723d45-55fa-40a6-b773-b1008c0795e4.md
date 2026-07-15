@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|35723d45-55fa-40a6-b773-b1008c0795e4"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-04-02T22:01:59.148Z"
-n_turns: 57
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 is it hard to create TUI agentic dev environment?

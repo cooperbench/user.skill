@@ -1,14 +1,3 @@
----
-session_id: "a2dba67b-d697-445e-9a4a-f24d6b85443a:subagents"
-developer: "dc:dc_001"
-split: train
-source: dataclaw
-repo: Quaxicron/dataclaw-zhiyaowang
-start_time: "2026-04-05T16:44:55.540Z"
-n_turns: 30
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 分析 /user_4813494d/openbmb/bench/data 目录下的数据文件，统计除代码题（task=code 或类似）以外其他任务类型和语言的分布。 1. 先列出目录下所有文件 2. 选择相关的 jsonl 文件读取 3. 统计每个文件的： - task 字段分布（排除 code/coding 相关任务） - language 字段分布（如有） - 每种任务+语言组合的数量 输出简洁的统计表格，不需要写代码文件，直接给出统计结果。

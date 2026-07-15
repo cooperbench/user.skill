@@ -1,14 +1,3 @@
----
-session_id: "lyston11/Codex_Bundles|c8af3d79-241f-4e44-a342-dacef482a158"
-developer: "gh:lyston11"
-split: train
-source: crawl
-repo: lyston11/Codex_Bundles
-start_time: "2026-04-27T07:40:48.463Z"
-n_turns: 56
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 是的，**Claude Skills 社区里已经有不少“视频生成/视频制作”相关 Skills**。不过要分清两类：

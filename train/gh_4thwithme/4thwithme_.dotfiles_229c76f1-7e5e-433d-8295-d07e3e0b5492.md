@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|229c76f1-7e5e-433d-8295-d07e3e0b5492"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-03-27T12:01:13.975Z"
-n_turns: 40
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 bro can you check if this enpoint returns specific product... you nee to iterate through the https://mms.in.customink.com/mms/api/reco/styles.json?page=${page}&per_page=${perPage} and find product id 1673300

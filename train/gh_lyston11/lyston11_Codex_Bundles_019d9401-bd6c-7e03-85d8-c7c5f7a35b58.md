@@ -1,14 +1,3 @@
----
-session_id: "lyston11/Codex_Bundles|019d9401-bd6c-7e03-85d8-c7c5f7a35b58"
-developer: "gh:lyston11"
-split: train
-source: crawl
-repo: lyston11/Codex_Bundles
-start_time: "2026-04-16T01:58:01.546Z"
-n_turns: 118
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 1	妈妈班活动	孕妈福利来了，快来薅羊毛⚠️	"美素妈妈班活动23日倒计时

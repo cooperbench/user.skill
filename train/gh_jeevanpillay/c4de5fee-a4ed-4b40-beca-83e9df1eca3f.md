@@ -1,14 +1,3 @@
----
-session_id: c4de5fee-a4ed-4b40-beca-83e9df1eca3f
-developer: "gh:jeevanpillay"
-split: train
-source: swechat
-repo: "?"
-start_time: "2026-04-18T13:53:22.669604Z"
-n_turns: 11
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 /implement_plan @thoughts/shared/plans/2026-04-18-dotlightfast-unit-tests.md

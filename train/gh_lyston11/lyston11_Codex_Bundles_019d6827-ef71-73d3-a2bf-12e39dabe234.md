@@ -1,14 +1,3 @@
----
-session_id: "lyston11/Codex_Bundles|019d6827-ef71-73d3-a2bf-12e39dabe234"
-developer: "gh:lyston11"
-split: train
-source: crawl
-repo: lyston11/Codex_Bundles
-start_time: "2026-04-07T13:36:32.504Z"
-n_turns: 58
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 我是人工智能专业的，这个项目下我我们课程的汇报 ppt，我们的课程是自然辩证法

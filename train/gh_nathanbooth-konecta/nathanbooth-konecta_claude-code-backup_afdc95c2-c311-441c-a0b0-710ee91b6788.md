@@ -1,14 +1,3 @@
----
-session_id: "nathanbooth-konecta/claude-code-backup|afdc95c2-c311-441c-a0b0-710ee91b6788"
-developer: "gh:nathanbooth-konecta"
-split: train
-source: crawl
-repo: nathanbooth-konecta/claude-code-backup
-start_time: "2026-02-08T16:35:39.217Z"
-n_turns: 178
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Implement the following plan:

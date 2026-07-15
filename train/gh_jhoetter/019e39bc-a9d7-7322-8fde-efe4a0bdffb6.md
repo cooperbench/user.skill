@@ -1,14 +1,3 @@
----
-session_id: 019e39bc-a9d7-7322-8fde-efe4a0bdffb6
-developer: "gh:jhoetter"
-split: train
-source: entire
-repo: jhoetter/bim-ai
-start_time: "2026-05-18T06:54:11.281574Z"
-n_turns: 9
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Implement Wave 33 WP-D. Read and follow `/Users/jhoetter/repos/bim-ai/spec/revit-parity/agent-prompts/WAVE33-WP-D.md`. You own parity tracker cleanup only, primarily `spec/revit-parity/revit2026-parity-tracker.md`. Do not edit product code. You are not alone in the codebase; do not revert edits from other agents. Edit files directly in your workspace and in your final report list changed file paths and verification commands/results.

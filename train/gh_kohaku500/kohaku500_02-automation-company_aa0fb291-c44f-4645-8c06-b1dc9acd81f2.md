@@ -1,14 +1,3 @@
----
-session_id: "kohaku500/02-automation-company|aa0fb291-c44f-4645-8c06-b1dc9acd81f2"
-developer: "gh:kohaku500"
-split: train
-source: crawl
-repo: kohaku500/02-automation-company
-start_time: "2026-04-27T04:33:04.626Z"
-n_turns: 10
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 あなたは技術部・ばね計算アプリ担当です。今この瞬間に最も価値ある仕事を行ってください。

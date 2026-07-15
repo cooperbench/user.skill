@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|01fb2ebe-da7b-4532-8704-3e52b17aedd5"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-03-26T08:12:05.873Z"
-n_turns: 34
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 read task https://customink.atlassian.net/browse/RECO-738

@@ -1,14 +1,3 @@
----
-session_id: "lyston11/Codex_Bundles|4deac62a-c7a9-47b4-bc00-a99f95bbabc3"
-developer: "gh:lyston11"
-split: train
-source: crawl
-repo: lyston11/Codex_Bundles
-start_time: "2026-04-13T01:18:37.817Z"
-n_turns: 26
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 git clone https://github.com/chxcodepro/model-check.git

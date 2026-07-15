@@ -1,14 +1,3 @@
----
-session_id: "f4cb4e7d-399d-47e9-a84c-ecac65cb7b8c:subagents"
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-04-13T23:32:58.282Z"
-n_turns: 10
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Find the "timeline agent chatbox" component in this codebase. I need to know: 1) What component renders it, 2) Where it's used on the home page, 3) How routing/pages work so we can conditionally hide it on the home page. Search for keywords like "timeline", "chatbox", "agent chat", "AgentChat", "TimelineChat" etc. Look at the home page component. Report file paths and line numbers.

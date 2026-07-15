@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|780e867f-8438-45f0-87bf-44285e027d73"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-04-07T00:36:05.954Z"
-n_turns: 251
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 here..you task is to rewrite it to the rust

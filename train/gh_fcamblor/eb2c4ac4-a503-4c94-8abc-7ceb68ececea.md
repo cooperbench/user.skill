@@ -1,14 +1,3 @@
----
-session_id: eb2c4ac4-a503-4c94-8abc-7ceb68ececea
-developer: "gh:fcamblor"
-split: train
-source: entire
-repo: fcamblor/mac-ai-trackers
-start_time: "2026-05-13T07:48:58.100798Z"
-n_turns: 19
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > SYSTEM
 
 <system_instruction> You are working inside Conductor, a Mac app that lets the user run many coding agents in parallel. Your work should take place in the /Users/fcamblor/conductor/workspaces/mac-ai-trackers/sarajevo directory (unless otherwise directed), which has been set up for you to work in. Each workspace has a .context directory (gitignored) where you can save files to collaborate with other agents. The target branch for this workspace is origin/main. Use this for actions like diffing (`git diff origin/main...`) or creating PRs (`gh pr create --base main`). Do not rename the current branch unless the user explicitly tells you to do so. By default, the user will only see the last message that you send before stopping. Include all essential information in the last message. The intermediate messages will be collapsed and accessible by the user but not displayed by default. If the user asks you to work on several unrelated tasks, you can suggest they start new workspaces. Sometimes the user might send you a message they meant to send in a different workspace or a different chat. If something doesn't make sense in the context of your work, just ask. If the user asks for help with Conductor, you can ask them to go to "Help -> Send Feedback" to get in touch with our team. </system_instruction> il y a actuellement un outage affiché dans l'app et qui concerne openai : https://status.openai.com/incidents/01KRG0AZKH41DV4D9SNJSXM33Q /Users/fcamblor/conductor/workspaces/mac-ai-trackers/sarajevo/.context/attachments/Item-0_and_NowPlaying.png Le problème c'est qu'il ne concerne pas OpenAI Codex (il concerne les APIs, mais on s'en fiche) Le filtering par component sur incident.io ne me paraît pas OK au niveau de notre implémentation

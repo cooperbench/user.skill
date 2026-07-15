@@ -1,14 +1,3 @@
----
-session_id: "kungfusaini/dotfiles|e1ab2707-7afb-4223-818a-e5cbd849384e"
-developer: "gh:kungfusaini"
-split: train
-source: crawl
-repo: kungfusaini/dotfiles
-start_time: "2026-05-22T14:46:40.709Z"
-n_turns: 2
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 let's check out https://github.com/elijahintelligence/elijah/pull/341/changes and fix the merge confllicts

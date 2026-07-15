@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|27455a67-0960-4e13-8517-1ebd6b2d2e5a"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-04-11T22:49:53.114Z"
-n_turns: 143
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 ❯ then, we need to reuse logger we have in the @../recommendations-service/                                                                                                                                                                                              

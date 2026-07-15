@@ -1,14 +1,3 @@
----
-session_id: "lyston11/Codex_Bundles|019d6c22-41ca-7e21-a23d-dabf38f3d996"
-developer: "gh:lyston11"
-split: train
-source: crawl
-repo: lyston11/Codex_Bundles
-start_time: "2026-04-08T08:08:29.568Z"
-n_turns: 49
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 母婴奶粉行业

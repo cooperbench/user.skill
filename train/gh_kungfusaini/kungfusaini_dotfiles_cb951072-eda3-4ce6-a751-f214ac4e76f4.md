@@ -1,14 +1,3 @@
----
-session_id: "kungfusaini/dotfiles|cb951072-eda3-4ce6-a751-f214ac4e76f4"
-developer: "gh:kungfusaini"
-split: train
-source: crawl
-repo: kungfusaini/dotfiles
-start_time: "2026-04-24T13:02:04.784Z"
-n_turns: 1667
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Hey man so I tried to get an agent system running on my vps (ssh argus) but it just ended up really quite shite. Right now, you can ssh onto the box and also check out the repo in my github to let me know what the current state of the project is. Thanks

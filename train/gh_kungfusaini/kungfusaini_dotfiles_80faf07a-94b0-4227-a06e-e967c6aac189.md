@@ -1,14 +1,3 @@
----
-session_id: "kungfusaini/dotfiles|80faf07a-94b0-4227-a06e-e967c6aac189"
-developer: "gh:kungfusaini"
-split: train
-source: crawl
-repo: kungfusaini/dotfiles
-start_time: "2026-05-22T06:54:29.464Z"
-n_turns: 25
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 hey man can you plese check out what graphs are on the prod environments database

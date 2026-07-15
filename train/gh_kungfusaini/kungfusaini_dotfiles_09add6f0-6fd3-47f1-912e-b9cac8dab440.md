@@ -1,14 +1,3 @@
----
-session_id: "kungfusaini/dotfiles|09add6f0-6fd3-47f1-912e-b9cac8dab440"
-developer: "gh:kungfusaini"
-split: train
-source: crawl
-repo: kungfusaini/dotfiles
-start_time: "2026-05-27T13:55:51.099Z"
-n_turns: 658
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 hey man, I need you to see my resume and also vulkan.sumeetsaini.com/projects to see what my skillset is. Can you do that for me?

@@ -1,14 +1,3 @@
----
-session_id: a86cad4e-ef33-4c8d-97df-fe773a25c7ea
-developer: "gh:FSM1"
-split: train
-source: entire
-repo: FSM1/cipher-box
-start_time: "2026-06-23T18:31:33.597962Z"
-n_turns: 76
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 in the last few session when I asked to create a todo, these were noted down in the repo issues rather than utilizing the `/gsd:capture --todo` workflow. is there any reason for this sudden change in behavior?

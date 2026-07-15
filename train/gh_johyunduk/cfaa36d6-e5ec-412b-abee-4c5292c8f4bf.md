@@ -1,14 +1,3 @@
----
-session_id: cfaa36d6-e5ec-412b-abee-4c5292c8f4bf
-developer: "gh:johyunduk"
-split: train
-source: entire
-repo: johyunduk/ddong-avoid-game
-start_time: "2026-03-15T05:48:39.903294Z"
-n_turns: 128
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Implement the following plan: # 배경화면 시스템 구현 플랜 ## Context 게임에 배경화면 수집/선택 시스템을 추가한다. 가챠로 배경화면을 획득하고, CharacterSelectScene 내 탭에서 창고를 관리하며, 선택한 배경화면이 인게임에 적용된다. 기존 캐릭터 시스템의 패턴(localStorage djb2 서명 + Supabase 동기화)을 그대로 따른다. --- ## 요구사항 정리 - 획득: 가챠로만 (이후 게임플레이 해금도 가능하지만 지금은 가챠만) - 적용 범위: 인게임 배경만 (ModeSelectScene 배경은 유지) - UI 접근: CharacterSelectScene 내 탭 ([캐릭터] | [배경]) --- ## 구현 단계 ### Phase 1: 기반 시스템 — `src/utils/wallpaper.ts` 신규 생성 **`BackgroundDef` 인터페이스 + `WALLPAPERS` 배열 + localStorage 관리 함수** ```typescript export interface BackgroundDef { id: string; name: string; grade: 'R' | 'SR' | 'UR'; gradeColor: string; thumbKey: string; // 카드 UI 썸네일용 thumbPath: string; bgKey: string; // 인게임 배경용 bgPath: string; description: string; } ``` 등급 체계: R(~80%) / SR(~19%) / UR(~1%) — 캐릭터와 동일 팔레트 색상 사용 배경 에셋은 `public/assets/wallpapers/` 신규 폴더에 추가. 기존 `backgrounds/*.webp`는 기본 배경으로 유지 (가챠 풀에 넣지 않음). localStorage 키 구조 (character.ts 패턴 복제): ``` ownedWallpapers / ownedWallpapersSig (djb2 서명, signing.ts의 djb2 사용) selectedWallpaper (서명 없음) ``` 주요 함수: - `getOwnedWallpapers()` — 서명 검증, 변조 시 `[]` 초기화 (캐릭터와 달리 기본값 강제 없음) - `addOwnedWallpaper(id)` — 가챠 직후 즉시 저장 - `setOwnedWallpapers(list)` — 서버 동기화 시 덮어쓰기 - `getSelectedWallpaper()` → `string | null` — null이면 기본 배경 사용 - `setSelectedWallpaper(id: string | null)` - `getSafeSelectedWallpaper()` — 미보유 선택 방지 - `getWallpaperDef(id)` → `BackgroundDef | undefined` ### Phase 2: Supabase 테이블 + Edge Function 확장 **DB 테이블 생성:** ```sql CREATE TABLE public.user_wallpapers ( user_id UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE, wallpaper_id TEXT NOT NULL, acquired_at TIMESTAMPTZ NOT NULL DEFAULT NOW(), PRIMARY KEY (user_id, wallpaper_id) ); ALTER TABLE public.user_wallpapers ENABLE ROW LEVEL SECURITY; CREATE POLICY "users can view own wallpapers" ON public.user_wallpapers FOR SELECT USING (auth.uid() = user_id); ``` **`gacha-pull/index.ts` 수정:** - 배경화면 …

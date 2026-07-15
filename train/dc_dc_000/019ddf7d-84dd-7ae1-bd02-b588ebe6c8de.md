@@ -1,14 +1,3 @@
----
-session_id: 019ddf7d-84dd-7ae1-bd02-b588ebe6c8de
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-04-30T17:44:18.821Z"
-n_turns: 309
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 can you check this code and functionality vs. this doc? Are you done?mediator-bot-spec.md

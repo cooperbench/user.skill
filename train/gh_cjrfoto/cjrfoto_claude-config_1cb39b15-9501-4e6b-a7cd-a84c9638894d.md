@@ -1,14 +1,3 @@
----
-session_id: "cjrfoto/claude-config|1cb39b15-9501-4e6b-a7cd-a84c9638894d"
-developer: "gh:cjrfoto"
-split: train
-source: crawl
-repo: cjrfoto/claude-config
-start_time: "2026-04-11T16:33:45.420Z"
-n_turns: 21
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > AGENT
 
 Based on your CLAUDE.md, the Carrd portfolio page is your next priority. The copy is written — you just need to build it on carrd.co.

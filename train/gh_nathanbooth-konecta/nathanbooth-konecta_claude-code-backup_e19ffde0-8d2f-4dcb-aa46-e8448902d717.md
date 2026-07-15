@@ -1,14 +1,3 @@
----
-session_id: "nathanbooth-konecta/claude-code-backup|e19ffde0-8d2f-4dcb-aa46-e8448902d717"
-developer: "gh:nathanbooth-konecta"
-split: train
-source: crawl
-repo: nathanbooth-konecta/claude-code-backup
-start_time: "2026-02-12T22:13:47.534Z"
-n_turns: 4
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 does replicated have an optional field for instance id

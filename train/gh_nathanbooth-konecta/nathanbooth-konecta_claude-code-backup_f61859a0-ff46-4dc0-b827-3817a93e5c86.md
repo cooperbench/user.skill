@@ -1,14 +1,3 @@
----
-session_id: "nathanbooth-konecta/claude-code-backup|f61859a0-ff46-4dc0-b827-3817a93e5c86"
-developer: "gh:nathanbooth-konecta"
-split: train
-source: crawl
-repo: nathanbooth-konecta/claude-code-backup
-start_time: "2026-02-16T20:09:57.758Z"
-n_turns: 310
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > AGENT
 
 This is a classic Terraform race condition. The secret-manager IAM bindings are being created before the `google_service_account.crewai_platform` resource finishes propagating in GCP. Looking at the timeline, the IAM members start creating in parallel with the SA, and some fail because the SA isn't visible cross-project yet.

@@ -1,14 +1,3 @@
----
-session_id: 8e1cd8df-d63f-4298-b30e-bd6fced8cd48
-developer: "gh:gabadi"
-split: train
-source: entire
-repo: gabadi/gabadi-tetris
-start_time: "2026-06-09T06:15:48.079963Z"
-n_turns: 35
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 <swarmforge_agent_context role="cleaner"> <instructions> This prompt bundle is pre-resolved. Do not open or re-read any swarmforge/*.prompt files — all relevant instructions are already included below. </instructions> <file path="swarmforge/constitution.prompt"> # SwarmForge Constitution This file takes precedence over subordinate files. Read and obey the following subordinate documents in order. 1. `swarmforge/constitution/project.prompt` 2. `swarmforge/constitution/engineering.prompt` 3. `swarmforge/constitution/workflow.prompt` - Before relying on an unfamiliar command, inspect local help or project documentation. </file> <file path="swarmforge/constitution/workflow.prompt"> # Workflow Rules - At startup, discover and remember the branch or worktree assigned to your role. - If your assigned worktree is `master`, work in the main project checkout on its current branch; do not expect or create a `.worktrees/<role>` directory for that role. - Work only in your assigned branch or worktree. - Do not inspect, diff, merge, or base work on another branch unless that branch is specifically named in a handoff or explicit user instruction. - Use `./tmp/` in your assigned worktree for temporary files; do not use `/tmp`. - For every handoff, write the complete handoff message to `./tmp/<target-role>-handoff.txt` before sending. Do not pass multiline handoff messages directly as shell arguments. - Start every handoff message with: `Re-read your role and constitution.` - The specifier invents a short, stable handoff name for each accepted specification handoff. - Every later handoff for that work must include the specifier handoff name. - Handoffs must report only essential state, not prescribe process. After the opening line, include exactly these fields and no other prose: sender role, specifier handoff name, branch name, and 10-character commit hash. - Do not tell the receiving role how to do its job, repeat your process, or ask it to continue sender-owned responsibilities. The normal request is: `Apply your own role rules to this state.` - After receiving a handoff, merge the sender branch state identified …

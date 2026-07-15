@@ -1,14 +1,3 @@
----
-session_id: "b4f4718e-9789-4373-aafd-b7416fee3bdf:subagents"
-developer: "dc:dc_001"
-split: train
-source: dataclaw
-repo: Quaxicron/dataclaw-zhiyaowang
-start_time: "2026-05-17T10:16:17.353Z"
-n_turns: 233
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 在 /user_4813494d/openbmb/demo-sala/sglang/python/sglang/srt/ 下查找 EAGLE-3 draft model 的实现细节。背景：draft model 是 LlamaForCausalLMEagle3，1 个 attention layer，head_dim=128，num_attention_heads=32，num_key_value_heads=2。它在 prefill 和 decode 时都跑 attention，写自己独立的 KV cache。 我要搞清楚的核心问题（按重要性排序）： 1. **Draft model 的 forward 在哪个文件 / class 里？它的 attention 调用具体是怎么写的？** 找到 attention forward 的实际入口，看它如何调用 attention backend (`forward_extend` / `forward_decode`)。 2. **Draft 用的 attention backend 是什么？** 启动配置是 `--speculative-draft-attention-backend flashinfer`，找到 FlashInfer draft backend 实现，看 plan / forward 接口签名。 3. **Draft 的 KV cache 是独立 pool 还是和 target 共享？** 找到 draft model_runner 怎么初始化它的 token_to_kv_pool / req_to_token_pool。 4. **现有 SGLang 是否已经支持 sliding window attention？** 搜 `sliding_window` / `window_size` / `local_attention` / `swa_` 关键字。如果支持，看它怎么在 attention plan 或 mask 里实现。Gemma-2 的 hybrid local/global attention 可能是参考。 5. **Chunked prefill 时 draft 的 token positions 和 page table 怎么构造？** 看 `prepare_for_extend` 类的函数，draft 输入的 sequence positions 是相对还是绝对，KV cache 写入的 slot 索引怎么算。 6. **EAGLE-3 draft 的输入是 target hidden_states**，看是从哪一层取的（aux_hidden_state）、维度多少（应该是 hidden_size×3）、在 draft attention 之前怎么经过 fc / norm 处理。 请按这 6 个问题分点回答，每点给出 file_path:line_number 引用 + 关键代码片段（≤10 行），不超过 800 字总长。不要给方案建议，只要事实和定位。

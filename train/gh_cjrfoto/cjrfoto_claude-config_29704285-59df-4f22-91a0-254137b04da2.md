@@ -1,14 +1,3 @@
----
-session_id: "cjrfoto/claude-config|29704285-59df-4f22-91a0-254137b04da2"
-developer: "gh:cjrfoto"
-split: train
-source: crawl
-repo: cjrfoto/claude-config
-start_time: "2026-04-08T12:07:26.164Z"
-n_turns: 9
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > AGENT
 
 Replied to your Telegram message.

@@ -1,14 +1,3 @@
----
-session_id: f577eda0-2b69-4f4b-a6dc-bca4070c2edf
-developer: "gh:ababushkin"
-split: train
-source: entire
-repo: ababushkin/dotfiles
-start_time: "2026-04-29T14:56:48.837054Z"
-n_turns: 2
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Brewfile is my main source of truth - i recently installed some extra packages using brew, that are no longer in my Brewfile - is there a way to find what they are and uninstall them

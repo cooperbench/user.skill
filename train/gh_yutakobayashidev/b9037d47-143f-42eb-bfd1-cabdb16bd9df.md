@@ -1,14 +1,3 @@
----
-session_id: b9037d47-143f-42eb-bfd1-cabdb16bd9df
-developer: "gh:yutakobayashidev"
-split: train
-source: entire
-repo: yutakobayashidev/dotnix
-start_time: "2026-02-24T16:20:16.829258503Z"
-n_turns: 32
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 UM790 Pro,nameをUM790-Proにしてください,hostsなど全般rename

@@ -1,14 +1,3 @@
----
-session_id: ses_24f179c9affeCfEr6OH61vYeUc
-developer: "gh:bradleygibsongit"
-split: train
-source: entire
-repo: vFactor-io/vfactor-desktop
-start_time: "2026-04-25T08:36:25.670651Z"
-n_turns: 28
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 We have a command menu when users press "/" in the chat I dont like what it looks like, I dont like the rounding on the active item please rework this to look better but keep it minimal

@@ -1,14 +1,3 @@
----
-session_id: fe359f94-fb7f-4d6d-a2a4-a96ca6bb9fac
-developer: "gh:jobinlawrance"
-split: train
-source: entire
-repo: ravencloak-org/Raven
-start_time: "2026-04-07T09:48:52.393108Z"
-n_turns: 44
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 let's get started with the Edge Optimization tasks with parallel agents and superpower skilss

@@ -1,14 +1,3 @@
----
-session_id: 562589bd-5a9f-4bdf-8aed-cbfce44490ba
-developer: "gh:Stark-Industries0417"
-split: train
-source: entire
-repo: Stark-Industries0417/cli
-start_time: "2026-02-16T14:08:40.796633Z"
-n_turns: 19
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 can you address the open comments and fix the tests

@@ -1,14 +1,3 @@
----
-session_id: bb6dacc8-a41c-4cc0-8cbb-d9b6f376a0b7
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-05-13T10:02:38.477Z"
-n_turns: 6
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 can you see the /codex-subagent skill - i want to add deepseek 4 pro (official api version - see the profile) and kimi k 2.5 (via megaplan agent) and claude (Via claude code) to this and make it into a general subagent skill. Can you can you run through these and figure out how to do it and test it? And then basically add it to that document, update the documents to include all of them, then rename it please.

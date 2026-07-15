@@ -1,14 +1,3 @@
----
-session_id: "lyston11/Codex_Bundles|019e063e-cbe4-74c2-8279-0dd360bc103c"
-developer: "gh:lyston11"
-split: train
-source: crawl
-repo: lyston11/Codex_Bundles
-start_time: "2026-05-08T06:20:54.434Z"
-n_turns: 71
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 我想要开发一个智能文件管理系统/Agent，现在的文件越来越多导致很乱，但是更本没有办法做到一个很好的管理，而且随意整理一下也根本不能满足使用者平时的使用习惯

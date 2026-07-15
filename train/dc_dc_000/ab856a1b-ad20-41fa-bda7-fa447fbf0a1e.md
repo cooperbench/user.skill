@@ -1,14 +1,3 @@
----
-session_id: ab856a1b-ad20-41fa-bda7-fa447fbf0a1e
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-05-12T21:08:49.544Z"
-n_turns: 7
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Can you see the megaplan ticket skill? Can you mention that if no decision has been made to capture the potential options that were discussed?

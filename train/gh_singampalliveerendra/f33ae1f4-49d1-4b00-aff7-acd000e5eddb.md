@@ -1,14 +1,3 @@
----
-session_id: f33ae1f4-49d1-4b00-aff7-acd000e5eddb
-developer: "gh:singampalliveerendra"
-split: train
-source: entire
-repo: singampalliveerendra/your_family_farmer
-start_time: "2026-06-03T10:19:24.434493477Z"
-n_turns: 104
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 what are the remaining features that we have to in moderator page

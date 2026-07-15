@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|09f53495-c8da-45ac-b258-347aa5bc4c44"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-03-24T15:55:03.783Z"
-n_turns: 8
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 CLAUDE_CODE_NEW_INIT=true

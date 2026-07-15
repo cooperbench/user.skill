@@ -1,14 +1,3 @@
----
-session_id: "cjrfoto/claude-config|fbf2bb99-7bf1-4230-b7e9-58d8f1e2ce49"
-developer: "gh:cjrfoto"
-split: train
-source: crawl
-repo: cjrfoto/claude-config
-start_time: "2026-04-08T22:34:12.144Z"
-n_turns: 3
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > AGENT
 
 **Claude Console** (console.anthropic.com) is Anthropic's web dashboard for developers. It's where you:

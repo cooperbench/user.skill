@@ -1,14 +1,3 @@
----
-session_id: "kohaku500/02-automation-company|e3ddbde9-b490-41d7-bf30-23d9158bd147"
-developer: "gh:kohaku500"
-split: train
-source: crawl
-repo: kohaku500/02-automation-company
-start_time: "2026-04-13T02:15:14.501Z"
-n_turns: 8
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 作業を再開してください

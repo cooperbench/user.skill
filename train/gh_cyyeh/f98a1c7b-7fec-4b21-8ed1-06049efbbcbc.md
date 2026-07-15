@@ -1,14 +1,3 @@
----
-session_id: f98a1c7b-7fec-4b21-8ed1-06049efbbcbc
-developer: "gh:cyyeh"
-split: train
-source: entire
-repo: cyyeh/duckdb-data-agent
-start_time: "2026-02-26T14:52:54.679572Z"
-n_turns: 19
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 how to make sure openai model is connected

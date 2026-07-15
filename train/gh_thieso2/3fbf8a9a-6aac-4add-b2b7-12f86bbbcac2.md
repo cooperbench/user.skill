@@ -1,14 +1,3 @@
----
-session_id: 3fbf8a9a-6aac-4add-b2b7-12f86bbbcac2
-developer: "gh:thieso2"
-split: train
-source: entire
-repo: thieso2/Sandcastle
-start_time: "2026-02-22T14:22:04.234664Z"
-n_turns: 42
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 (it works right now! - logged in to tailscale) uninstall / install still breaks tailscale: use echo "yes" | ssh sandman "sudo ./installer.sh uninstall" ssh sandman "sudo ./installer.sh install" to test. debug and fix.

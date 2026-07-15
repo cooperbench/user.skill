@@ -1,14 +1,3 @@
----
-session_id: "lyston11/Codex_Bundles|019e4db9-5c1b-79c3-9b89-baa090b93375"
-developer: "gh:lyston11"
-split: train
-source: crawl
-repo: lyston11/Codex_Bundles
-start_time: "2026-05-22T03:27:34.297Z"
-n_turns: 2
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 {"人设":"变种人妈妈二代","任务":"a2产品","字数":"评论-短","业务规则":"a2产品","扰动规则":"a2产品","评论切角":"产品切角-儿童奶粉-带引流","生文输出格式":"生文输出格式-评论"}

@@ -1,14 +1,3 @@
----
-session_id: "76f3fa2c-f12e-4e32-8a58-71a3688d03ea:subagents"
-developer: "dc:dc_001"
-split: train
-source: dataclaw
-repo: Quaxicron/dataclaw-zhiyaowang
-start_time: "2026-04-29T12:55:30.254Z"
-n_turns: 32
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 深度调查 /user_4813494d/openbmb 仓库中 EAGLE-3 推测解码相关的技术创新。 重点阅读： 1. docs/eagle/README.md - 完整阅读 2. docs/eagle/experiments-log.md - 完整阅读（rope_theta、MARS、Phased Verify 三个方向的实验日志） 3. docs/eagle/collapse-analysis.md - 完整阅读 4. docs/eagle/training-v2.md 和 training-v3.md - 关键点 5. demo-sala/sglang/python/sglang/srt/speculative/eagle_worker.py - 关键修改 6. demo-sala/sglang/python/sglang/srt/layers/attention/hybrid_linear_attn_backend.py 或类似文件 - GLA fused kernel 同时 git log 查看 EAGLE 相关的提交细节： ``` git -C /user_4813494d/openbmb log --oneline | head -50 git -C /user_4813494d/openbmb show 87a8bb1 --stat git -C /user_4813494d/openbmb show b7a839e --stat git -C /user_4813494d/openbmb show 8cf5f57 --stat 2>/dev/null || true ``` 我需要你给出： 1. 每个技术创新点的具体内容（不是概括，是实质） 2. 每个创新的量化收益（数字） 3. 哪些是我们独有的、竞争对手大概率没有做的 4. 哪些技术方向是已验证落地 vs 仍在实验 请尽量完整，这是为了写技术博客选题用的。

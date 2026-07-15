@@ -1,14 +1,3 @@
----
-session_id: d1c5ac78-ccf8-414a-b8dd-87a2eb60d2ae
-developer: "gh:cyyeh"
-split: train
-source: entire
-repo: cyyeh/duckdb-data-agent
-start_time: "2026-02-28T06:57:51.771437Z"
-n_turns: 11
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Why Claude models work but OpenAI models don't The Claude Agent SDK's conversation loop ends when the model produces a text-only response (no tool_use blocks). This is by design — text-only means "I'm done." Claude models naturally support mixing text blocks and tool_use blocks in a single response. When the old prompt said "write narrative text, then start the next chart", Claude interpreted this as: Response: [text: "Chart 1 shows..."] + [tool_use: execute_sql(...)] Both text AND tool call in one turn → SDK sees tool calls → continues the loop → second chart gets created. OpenAI models (via Bifrost translation) tend to treat text and tool calls as separate turns. When told "STOP making tool calls, write narrative text", OpenAI produces: Response: [text: "Chart 1 shows..."] (no tool calls) Text-only response → SDK treats it as fina loop ends → second chart never starts. is it possible openai model supports mixing text blocks and tool_use blocks in a single response so Both text AND tool call in one turn → SDK sees tool calls → continue the loop...

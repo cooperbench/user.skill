@@ -1,14 +1,3 @@
----
-session_id: c7abdcec-a9eb-4326-acff-41aeab8ffe7d
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-03-04T04:09:54.492Z"
-n_turns: 87
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 I need to understand why running `desloppify plan` auto-resolves the `workflow::create-plan` queue item in the desloppify tool. The tool is installed somewhere under the user's system (it's a Python CLI at /Users/user_c042661f/.pyenv/shims/desloppify). But the source code should be at /Users/user_c042661f/Documents/desloppify. I need to find: 1. The source code for the `desloppify plan` command 2. How `workflow::create-plan` queue items work 3. Why running `desloppify plan` would auto-resolve the `workflow::create-plan` step from the queue Be very thorough - search for "create-plan", "workflow::", "score-checkpoint", and the plan command handler. Look at both the CLI entry point and the plan/queue logic.

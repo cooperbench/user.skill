@@ -1,14 +1,3 @@
----
-session_id: 717b7daf-8ef9-4e2c-bcea-2224c3aa8abb
-developer: "gh:ababushkin"
-split: train
-source: entire
-repo: ababushkin/agent-skills-shaper
-start_time: "2026-05-20T23:52:49.835417Z"
-n_turns: 7
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Work on Linear issue ABA-169: <issue identifier="ABA-169"> <title>Slice 2 — Type taxonomy scaffold</title> <description> ## Description Create `references/initiative-types.md` with the 6 type definitions (one paragraph each, no full playbooks yet). Add Step 2.5 to `SKILL.md`: "Probe project type". Populates the Project type field in the artefact template. No KR-mix branching yet. ## Acceptance criteria * `references/initiative-types.md` exists with 6 type headers + one-paragraph descriptions from research Section 1.1 * `SKILL.md` Step 2.5 asks for type 1–6 * References section in `SKILL.md` lists the new references file * Project type field populated from probe ## Verification * Run the skill on any new initiative; confirm it asks the type question and tags the output. ## Dependencies Slice 1. ## Files * `skills/initiative-shape/SKILL.md` * `references/initiative-types.md` (new) ## Scope S </description> <team name="Personal"/> <project name="Initiative quality - type-aware OKRs with KRs">Improve /initiative-shape so it produces type-aware OKR-shaped Linear initiatives with 3 KRs each (baseline+target+window+source), a kill condition, and a project type tag — verifiable by system inspection.</project> <issue-relations> <blocking><issue-ref identifier="ABA-170" title="Slice 3 — Type 1 (methodology) playbook + branched KR probe"/></blocking> <blocked-by><issue-ref identifier="ABA-168" title="Slice 1 — Template fields + KR discipline"/></blocked-by> </issue-relations> </issue>

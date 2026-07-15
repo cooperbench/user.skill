@@ -1,14 +1,3 @@
----
-session_id: "kungfusaini/dotfiles|b669b10c-438e-4c07-b62d-f853aad9d508"
-developer: "gh:kungfusaini"
-split: train
-source: crawl
-repo: kungfusaini/dotfiles
-start_time: "2026-05-19T16:37:40.313Z"
-n_turns: 5
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 I have a video call tomorrow with a potential investor — a former Google Head of Fintech UK who now runs a UK VC firm. The call is an intro conversation. My co-founder will demo the product and explain the methodology and Bayesian forecasting approach. My role on the call is specifically to answer questions about infrastructure, architecture, security, devops, and production engineering.

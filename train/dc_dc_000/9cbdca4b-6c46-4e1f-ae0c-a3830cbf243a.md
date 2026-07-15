@@ -1,14 +1,3 @@
----
-session_id: 9cbdca4b-6c46-4e1f-ae0c-a3830cbf243a
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-03-02T18:45:30.774Z"
-n_turns: 102
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 I need you to update two test files to remove tier-based queue ordering tests. The production code has already been changed: 1. `QueueBuildOptions` no longer has `tier`, `no_tier_fallback` fields 2. `build_work_queue` return dict no longer has `tier_counts`, `requested_tier`, `selected_tier`, `fallback_reason`, `available_tiers` fields 3. `tier_counts()` and `choose_fallback_tier()` functions have been deleted from ranking.py 4. `_item_matches_tier()` has been deleted from core.py 5. Items no longer have `effective_tier` set by `build_finding_items()` 6. The helper `build_work_queue(state, tier=4, count=None, no_tier_fallback=True)` style doesn't work — use `build_work_queue(state, options=QueueBuildOptions(count=None))` Please update these two test files: **File 1: `/Users/user_c042661f/Documents/desloppify/desloppify/tests/review/test_work_queue.py`** - Remove `test_no_tier_fallback_returns_empty_with_reason` test - Remove any tests that reference `tier_counts`, `choose_fallback_tier`, `tier=`, `no_tier_fallback`, `available_tiers`, `requested_tier`, `selected_tier`, `fallback_reason`, `effective_tier` in the queue result - In `test_queue_build_options_defaults`, remove assertions about `tier` and `no_tier_fallback` - In sort order tests, update assertions that check `effective_tier` — the sort key no longer uses tier - Keep all other tests intact **File 2: `/Users/user_c042661f/Documents/desloppify/desloppify/tests/review/integration/test_work_queue.py`** - Same changes as above - Remove `test_no_tier_fallback_returns_empty_with_reason` - Remove any tier-filtering tests - In `test_queue_build_options_defaults`, remove tier/no_tier_fallback assertions Read both files first, then make the changes. Only edit what's necessary — don't rewrite entire files.

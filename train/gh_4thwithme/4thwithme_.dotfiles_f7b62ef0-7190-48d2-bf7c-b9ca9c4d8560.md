@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|f7b62ef0-7190-48d2-bf7c-b9ca9c4d8560"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-04-14T16:42:59.169Z"
-n_turns: 15
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 do you know what is CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING for claude?

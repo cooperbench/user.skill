@@ -1,14 +1,3 @@
----
-session_id: eca65bbc-e672-4fea-b6ec-3d08ff0e054f
-developer: "gh:winksaville"
-split: train
-source: crawl
-repo: winksaville
-start_time: "2026-02-16T18:30:33.435Z"
-n_turns: 92
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Implement the following plan:

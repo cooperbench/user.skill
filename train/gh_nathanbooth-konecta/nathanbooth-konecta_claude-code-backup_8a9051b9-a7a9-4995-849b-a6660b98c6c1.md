@@ -1,14 +1,3 @@
----
-session_id: "nathanbooth-konecta/claude-code-backup|8a9051b9-a7a9-4995-849b-a6660b98c6c1"
-developer: "gh:nathanbooth-konecta"
-split: train
-source: crawl
-repo: nathanbooth-konecta/claude-code-backup
-start_time: "2026-02-05T20:59:08.521Z"
-n_turns: 8
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 how can i debug this error Failed to load target state: failed to generate manifest for source 1 of 2: rpc error: code = Unknown desc = error fetching chart: failed to fetch chart: failed to get command args to log: `helm pull --destination /tmp/86d0cb35-1d97-4cf0-ac3b-a7102930cfaa --version 0.3.10 --repo oci://registry.crewai.com/crewai/stable/crewai-platform crewai-platform` failed exit status 1: Error: looks like "oci://registry.crewai.com/crewai/stable/crewai-platform" is not a valid chart repository or cannot be reached: object required

@@ -1,14 +1,3 @@
----
-session_id: "684008ca-b2bd-4ab7-bca6-1ef64457b28b:subagents"
-developer: "dc:dc_001"
-split: train
-source: dataclaw
-repo: Quaxicron/dataclaw-zhiyaowang
-start_time: "2026-05-25T01:40:39.293Z"
-n_turns: 22
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 用户问：Claude 在 Mac 上有没有 computer use（操控笔记本）的能力？ 需要梳理截至 2026-05 的现状，区分这几个不同的"Claude 操控 Mac"路径，并说明各自能做什么、不能做什么、官方还是社区： 1. Anthropic 官方 Claude API 的 computer use tool（2024-10 发布的 beta）——它能直接装到 macOS 操控本机吗？还是只能跑在 Anthropic 提供的 Docker reference 容器里？ 2. Claude for Chrome 扩展（2025 年发的浏览器扩展）——它能不能操作 Chrome 之外的东西？ 3. Claude Desktop App（claude.ai 的 Mac 桌面应用）——内置 computer use 了吗？ 4. Claude Code（CLI，本对话工具）——它有没有 computer use 工具？通过 MCP 间接操控 Mac（osascript / cliclick / hammerspoon 等）算不算？ 5. 社区开源方案（trycua/cua、claude-computer-use-macos、ClaudeMind 等）——简要列名字 + GitHub 链接，说明这些是社区 wrapper，把 computer use API 接到真实 macOS 的 Accessibility/CGEvent。 6. 这个用户的 Claude Code 里已经看到加载了 MCP 服务器 `Claude_in_Chrome`（含 computer/navigate/click/find/javascript_tool 等工具）和 `Claude_Preview`（含 preview_click/preview_screenshot/preview_eval 等）—— 这两个是什么？Anthropic 官方还是第三方？ 报告控制在 350 字以内，结构化输出（每条一行结论 + 一行细节）。如果不确定就标"不确定"，不要编造。用中文回答。

@@ -1,14 +1,3 @@
----
-session_id: ab76d8a4-f2db-4edf-b0d8-3db49c023fa3
-developer: "gh:armelhbobdad"
-split: train
-source: entire
-repo: armelhbobdad/bmad-module-skill-forge
-start_time: "2026-03-12T22:09:21.785000+00:00"
-n_turns: 50
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > AGENT
 
 Now let me load the configuration file.

@@ -1,14 +1,3 @@
----
-session_id: ses_24ed87991ffej3LRScRNiXHm9S
-developer: "gh:bradleygibsongit"
-split: train
-source: entire
-repo: vFactor-io/vfactor-desktop
-start_time: "2026-04-25T08:36:25.064637Z"
-n_turns: 3
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 please make our ququed messages thingy in the chat input look better, the design feels inconsistent

@@ -1,14 +1,3 @@
----
-session_id: "lyston11/Codex_Bundles|019d5cc8-cd9a-7392-af29-eb1d29339759"
-developer: "gh:lyston11"
-split: train
-source: crawl
-repo: lyston11/Codex_Bundles
-start_time: "2026-04-05T08:36:21.922Z"
-n_turns: 1226
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 你分析一下这个项目，这个项目主要的是代码部分

@@ -1,14 +1,3 @@
----
-session_id: "nathanbooth-konecta/claude-code-backup|49808df3-7221-4a8c-b9df-e46f80df222c"
-developer: "gh:nathanbooth-konecta"
-split: train
-source: crawl
-repo: nathanbooth-konecta/claude-code-backup
-start_time: "2026-02-13T10:15:35.079Z"
-n_turns: 5
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > AGENT
 
 Prompt is too long

@@ -1,14 +1,3 @@
----
-session_id: 8accabcd-ba9b-4c13-bdb5-e58cc0f59251
-developer: "gh:cyyeh"
-split: train
-source: entire
-repo: cyyeh/duckdb-data-agent
-start_time: "2026-02-24T15:11:16.47153Z"
-n_turns: 36
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 fix chart empty issue

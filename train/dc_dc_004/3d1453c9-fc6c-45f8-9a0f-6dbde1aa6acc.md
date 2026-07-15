@@ -1,14 +1,3 @@
----
-session_id: 3d1453c9-fc6c-45f8-9a0f-6dbde1aa6acc
-developer: "dc:dc_004"
-split: train
-source: dataclaw
-repo: misterkerns/my-personal-claude-code-data
-start_time: "2026-02-13T21:02:47.544Z"
-n_turns: 52
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Can you look into this feedback? What's the best way to run multiple directies? RyanOnTheInside — 19:58 stand by let me run it on somethign vibier what would be sick for this is to be able to do per module/subdirectory score, for teams with different responsibilities, and also git ignore. In all of my real projects i have an ignored notes directory filled with references and garbage prior to this tool, i had an mcp tool that just returned a prompt with vague instructions like 'ay look at this is it bad is there dead code'... so this is amazing RyanOnTheInside — 20:07 just shared with the rest of the engineering team at livepeer pom — 20:30 oh interesting! i hadn't thought of this you could actually just run it on different directories as is RyanOnTheInside — 20:32 i think it still computes the score for the whole project, thats what claude told me anyways pom — 20:32 Oh interesting, let me check

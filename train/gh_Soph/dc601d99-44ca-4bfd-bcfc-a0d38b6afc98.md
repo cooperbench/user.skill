@@ -1,14 +1,3 @@
----
-session_id: dc601d99-44ca-4bfd-bcfc-a0d38b6afc98
-developer: "gh:Soph"
-split: train
-source: entire
-repo: entireio/cli
-start_time: "2026-03-06T14:34:52.828173Z"
-n_turns: 15
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 can you take a look at this failure for the copilot e2e test === Failed === FAIL: e2e/tests TestRapidSequentialCommits/copilot-cli (42.56s) edge_cases_test.go:141: expected at least 3 new commit(s), got 2 after 20s === FAIL: e2e/tests TestRapidSequentialCommits (42.56s)

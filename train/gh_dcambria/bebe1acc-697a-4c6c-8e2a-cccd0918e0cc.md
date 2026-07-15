@@ -1,14 +1,3 @@
----
-session_id: bebe1acc-697a-4c6c-8e2a-cccd0918e0cc
-developer: "gh:dcambria"
-split: train
-source: entire
-repo: Bureau-IT/concertacaoamazonia
-start_time: "2026-05-29T23:25:34.804694Z"
-n_turns: 239
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 resolva essa atividade https://app.clickup.com/t/86ahm90z4

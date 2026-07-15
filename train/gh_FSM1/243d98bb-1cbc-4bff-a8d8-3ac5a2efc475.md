@@ -1,14 +1,3 @@
----
-session_id: 243d98bb-1cbc-4bff-a8d8-3ac5a2efc475
-developer: "gh:FSM1"
-split: train
-source: entire
-repo: FSM1/cipher-box
-start_time: "2026-06-22T00:30:41.363002Z"
-n_turns: 82
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > AGENT
 
 I'll initialize the manager dashboard.

@@ -1,14 +1,3 @@
----
-session_id: ee5df1fa-9ae1-4f7f-aeab-d136b1a3681e
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-05-14T01:13:22.085Z"
-n_turns: 2
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Read the full megaplan phase prompt from this file and follow it exactly: /Users/user_c042661f/Documents/megaplan/.megaplan/plans/shannon-all-claude-light-stress-20260514/finalize_shannon_prompt.txt. Your final response must satisfy the structured output contract in that file. Do not summarize the file; execute its instructions.

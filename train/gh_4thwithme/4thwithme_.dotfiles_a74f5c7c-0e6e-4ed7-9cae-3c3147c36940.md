@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|a74f5c7c-0e6e-4ed7-9cae-3c3147c36940"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-04-03T09:57:09.966Z"
-n_turns: 26
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 bro using /ai-monkey do task https://customink.atlassian.net/browse/RECO-651

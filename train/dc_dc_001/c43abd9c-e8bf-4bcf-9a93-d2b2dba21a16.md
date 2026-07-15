@@ -1,14 +1,3 @@
----
-session_id: c43abd9c-e8bf-4bcf-9a93-d2b2dba21a16
-developer: "dc:dc_001"
-split: train
-source: dataclaw
-repo: Quaxicron/dataclaw-zhiyaowang
-start_time: "2026-03-08T04:41:33.013Z"
-n_turns: 3
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 /root/shared-nvme/translate/outputs/baseline_v1 打包成zip

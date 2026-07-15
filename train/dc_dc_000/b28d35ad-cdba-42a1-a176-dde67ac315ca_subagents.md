@@ -1,14 +1,3 @@
----
-session_id: "b28d35ad-cdba-42a1-a176-dde67ac315ca:subagents"
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-04-21T10:46:17.551Z"
-n_turns: 15
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 I'm planning an implementation in the megaplan repo at /Users/user_c042661f/Documents/megaplan. I need to understand the current code shape to write an accurate plan. Please report back (under 400 words) with file paths and key line numbers for the following: 1. `megaplan/cli.py` — where is the `init` subparser defined, and what args does it currently take? Is there an `--output` flag and a `--project-dir` flag, and where is `--mode doc` handled? 2. `megaplan/handlers.py` — where is `handle_init` defined? Show me the shape of its validation for `--output` (the absolute/.. rejection logic). What does it return on invalid_args vs success? How does it populate `state.config` and `state['meta']`? 3. `megaplan/doc_assembly.py` — does this file exist? If yes, what functions does it expose? If no, where would a new `doc_assembly.py` file logically belong? 4. `megaplan/evaluation.py` — find the existing `settled_decisions` / `SettledDecision` concept. What's the TypedDict shape? Where are SettledDecisions produced by gate/critique? 5. `megaplan/types.py` — show the existing TypedDict definitions especially for success criteria (must/should/info) and any `SettledDecision` type. 6. `megaplan/data/instructions.md` — confirm it exists, note which sections already document init flags. 7. Where does the doc-mode execute worker prompt live? Search for "doc" in `megaplan/data/prompts/` or similar. 8. `tests/test_handle_init_doc_mode.py` — does it exist? If yes, what test style does it use (pytest? any fixtures)? 9. `tests/test_doc_assembly.py` — does it exist? 10. Is `PYENV_VERSION=3.11.11` the norm? Any pytest.ini or conftest.py I should know about? Please give exact file paths and line numbers. Do not read .megaplan/ directory. Focus only on what I asked.

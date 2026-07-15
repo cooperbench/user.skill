@@ -1,14 +1,3 @@
----
-session_id: "cjrfoto/claude-config|4a9e1fa5-6ca6-46ef-8e47-cff69ac2184a"
-developer: "gh:cjrfoto"
-split: train
-source: crawl
-repo: cjrfoto/claude-config
-start_time: "2026-04-07T00:47:16.536Z"
-n_turns: 11
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > METADATA
 
 Testing

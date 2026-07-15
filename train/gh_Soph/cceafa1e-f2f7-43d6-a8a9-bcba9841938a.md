@@ -1,14 +1,3 @@
----
-session_id: cceafa1e-f2f7-43d6-a8a9-bcba9841938a
-developer: "gh:Soph"
-split: train
-source: entire
-repo: entireio/cli
-start_time: "2026-03-16T17:52:56.322539Z"
-n_turns: 111
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 can you check https://github.com/entireio/cli/actions/runs/23152176039 for the failures in E2E tests

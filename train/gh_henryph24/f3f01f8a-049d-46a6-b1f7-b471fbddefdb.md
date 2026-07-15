@@ -1,14 +1,3 @@
----
-session_id: f3f01f8a-049d-46a6-b1f7-b471fbddefdb
-developer: "gh:henryph24"
-split: train
-source: entire
-repo: henryph24/neuralips26
-start_time: "2026-04-06T11:00:45.813128Z"
-n_turns: 143
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 ultrathink perform extended thinking on our paper. Act like a NeuralIPS reviewer and score the paper

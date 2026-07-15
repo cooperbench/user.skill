@@ -1,14 +1,3 @@
----
-session_id: "kungfusaini/dotfiles|9e3b5bea-80f9-4db4-9deb-05eeaa3cb2cb"
-developer: "gh:kungfusaini"
-split: train
-source: crawl
-repo: kungfusaini/dotfiles
-start_time: "2026-05-18T10:30:11.424Z"
-n_turns: 8
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 hey man can you have a look at https://github.com/elijahintelligence/elijah/pull/237/changes please. We need to add that for sumeet I need to add peroper user account (go from login to pirvate runs for that user and controls on them ect) there are a few related teickets alrady in the linear have a look

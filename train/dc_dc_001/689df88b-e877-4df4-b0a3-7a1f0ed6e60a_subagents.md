@@ -1,14 +1,3 @@
----
-session_id: "689df88b-e877-4df4-b0a3-7a1f0ed6e60a:subagents"
-developer: "dc:dc_001"
-split: train
-source: dataclaw
-repo: Quaxicron/dataclaw-zhiyaowang
-start_time: "2026-03-29T15:29:27.393Z"
-n_turns: 8730
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > METADATA
 
 test

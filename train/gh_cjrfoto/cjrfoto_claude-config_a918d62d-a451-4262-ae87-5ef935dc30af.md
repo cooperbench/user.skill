@@ -1,14 +1,3 @@
----
-session_id: "cjrfoto/claude-config|a918d62d-a451-4262-ae87-5ef935dc30af"
-developer: "gh:cjrfoto"
-split: train
-source: crawl
-repo: cjrfoto/claude-config
-start_time: "2026-04-06T15:56:03.217Z"
-n_turns: 6
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > AGENT
 
 Here's a practical breakdown:

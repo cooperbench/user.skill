@@ -1,14 +1,3 @@
----
-session_id: abd57e07-acd4-4a3b-9c1f-1941fce2a5ab
-developer: "gh:wildlily1021"
-split: train
-source: crawl
-repo: wildlily1021
-start_time: "2026-05-19T10:33:18.553Z"
-n_turns: 22
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 /mnt/d/code/frontend/dongfanghong/.sessions/2026-05-19-integration-testing/conversation-plan.md 对话4

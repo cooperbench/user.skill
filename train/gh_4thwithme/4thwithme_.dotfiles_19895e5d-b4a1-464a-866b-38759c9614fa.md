@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|19895e5d-b4a1-464a-866b-38759c9614fa"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-04-02T09:20:24.349Z"
-n_turns: 160
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 ok bro ,check our @plans/plan-2 and @scripts/scrape_replays.py and related files we are scraping once at 21 sec..coz we want to avoid ban by IP...any chance to fake our IP and run in parallel it in 5-10 threads?

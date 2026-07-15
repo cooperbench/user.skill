@@ -1,14 +1,3 @@
----
-session_id: cda0ffe2-fc04-492e-8e9b-dbe92b5cc893
-developer: "gh:hutusi"
-split: train
-source: entire
-repo: ainaive/agentcenter-nuxt
-start_time: "2026-05-19T13:53:36.427572Z"
-n_turns: 122
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 let's think about the MCP panorama, make it to be more elegant. first, we need make some improvements, the software tool in PDT may have one or more MCP, like CodeCheck, it may have two MCPs, calls: molint-mcp and codecheck-mcp. so please try to improve the panorama.

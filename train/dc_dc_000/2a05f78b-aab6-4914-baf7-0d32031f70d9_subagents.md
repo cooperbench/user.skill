@@ -1,14 +1,3 @@
----
-session_id: "2a05f78b-aab6-4914-baf7-0d32031f70d9:subagents"
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-04-15T08:47:39.142Z"
-n_turns: 20
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 I need to understand the test patterns in this project to write doc-mode tests. Please find: 1. Look at tests/ directory - what test files exist, what patterns do they use (pytest fixtures, tmp_path, mocking, etc.) 2. Read tests/test_config.py to understand how handle_init is tested 3. Read tests/test_schemas.py to understand schema testing patterns 4. Look at any test that tests _write_finalize_artifacts or execution_timeout functions 5. Check how validate_execution_evidence is tested Focus on: fixture patterns, how state dicts are constructed, how handlers are called in tests. Give me file paths and key snippets.

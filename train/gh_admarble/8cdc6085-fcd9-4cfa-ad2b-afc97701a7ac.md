@@ -1,14 +1,3 @@
----
-session_id: 8cdc6085-fcd9-4cfa-ad2b-afc97701a7ac
-developer: "gh:admarble"
-split: train
-source: entire
-repo: sequant-io/sequant
-start_time: "2026-04-19T00:32:03.63567Z"
-n_turns: 18
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 release

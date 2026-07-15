@@ -1,14 +1,3 @@
----
-session_id: "nathanbooth-konecta/claude-code-backup|ded7857e-603c-4a23-8cb0-da2abbd55749"
-developer: "gh:nathanbooth-konecta"
-split: train
-source: crawl
-repo: nathanbooth-konecta/claude-code-backup
-start_time: "2026-02-05T19:06:08.645Z"
-n_turns: 51
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > AGENT
 
 Let me check the ArgoCD application files across all environments.

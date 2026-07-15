@@ -1,14 +1,3 @@
----
-session_id: "3cc920fe-75c8-4bfa-b181-2e5debc3ec3e:subagents"
-developer: "dc:dc_001"
-split: train
-source: dataclaw
-repo: Quaxicron/dataclaw-zhiyaowang
-start_time: "2026-05-20T19:58:38.871Z"
-n_turns: 137
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 背景：你在 /user_4813494d/openbmb（SOAR MiniCPM-SALA 推理优化工作区）。先读 /user_4813494d/openbmb/CLAUDE.md 了解当前生产配置（NVFP4 + 自定义 SGLang + EAGLE-3 + b12x decode kernel）。 任务：审计 docs/platform/ 目录和 docs/handover.md 这两个文档，对比代码现状，识别需要清理的内容。 需要审计的文档： - docs/handover.md - docs/platform/README.md - docs/platform/cu13-stack.md - docs/platform/eval-vs-dev-environment-audit.md - docs/platform/trtllm-utils-aot-fix.md 对每个文档分析（用 grep / Read 实际验证）： 1. **Phantom（幻影）**：文档提到的脚本/路径/.so/函数在代码里是否还存在？比如 `prepare_env.sh`、`probe-sala/` 内文件、`common_ops.abi3.so` 替换等 2. **Stale（陈旧）**：文档把某事描述为"调研中/待验证"，但 git log 或代码显示已落产 / 已被否决 3. **Redundant（冗余）**：和 handover.md 或 CLAUDE.md 是否重复？和其他文档重叠多少？ 4. **trtllm-utils-aot-fix 是不是一次性故障记录？** 是否还有意义？ handover.md 是项目接续指南，需要特别检查它和 CLAUDE.md 之间是否重复了配置信息，以及它的 "下一步候选" 部分是不是已经过时。 报告格式（中文，每个文档一节）： - 文件路径 - 当前状态判定：保留 / 重写 / 合并到 X / 删除 - 具体证据（grep / 代码引用 / git log） - 如果建议合并，目标是哪个文档 最后给一个简短的总建议（< 200 字）：platform 这块整体应该怎么整理。

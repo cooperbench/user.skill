@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|24e5ac0d-d544-4330-86f6-84f6c04c1f59"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-04-02T21:57:07.157Z"
-n_turns: 25
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 check replay file...can you extract from replay data about type game fraction, and length? @replays/examples/swg_vs_tox_domi_vs_scuba__[GameReplays.org].rep

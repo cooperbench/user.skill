@@ -1,14 +1,3 @@
----
-session_id: "lyston11/Codex_Bundles|019e14c2-4aa6-7031-a222-fd5f4704834c"
-developer: "gh:lyston11"
-split: train
-source: crawl
-repo: lyston11/Codex_Bundles
-start_time: "2026-05-11T01:59:16.375Z"
-n_turns: 22
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 019e0b92-825b-7740-91e0-aa6699a44a83这个会话中产生的图片等内容保存在哪

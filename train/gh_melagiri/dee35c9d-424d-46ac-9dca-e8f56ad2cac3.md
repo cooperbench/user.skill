@@ -1,14 +1,3 @@
----
-session_id: dee35c9d-424d-46ac-9dca-e8f56ad2cac3
-developer: "gh:melagiri"
-split: train
-source: entire
-repo: melagiri/code-insights
-start_time: "2026-03-02T02:44:02.004841Z"
-n_turns: 15
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 I have had 1 or 2 codex cli sessions, but i think, they are not being parsed properly on sync command. below is the log: code-insights stats --source codex-cli --period 30d ✔ 481 sessions CODE INSIGHTS Last 30 days ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── No sessions in the last 30 days. → Run stats --period 30d to expand the time range investigate this

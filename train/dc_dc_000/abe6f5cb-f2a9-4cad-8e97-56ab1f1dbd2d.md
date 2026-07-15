@@ -1,14 +1,3 @@
----
-session_id: abe6f5cb-f2a9-4cad-8e97-56ab1f1dbd2d
-developer: "dc:dc_000"
-split: train
-source: dataclaw
-repo: peteromallet/my-dataclaw-data
-start_time: "2026-03-02T18:23:55.800Z"
-n_turns: 16
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 I need to understand the T1-T4 tier-based queue ordering system in this codebase. The user wants to remove tier as a hard queue-order control. Key areas to investigate: 1. Any `ranking.py` files - especially lines around L91, L105, L134 that sort by tier 2. `desloppify/engine/_work_queue/core.py` - especially around L417 for tier filtering 3. `desloppify/engine/_work_queue/helpers.py` - around L248 for subjective queue generation 4. Any other files in `desloppify/engine/_work_queue/` that reference tier-based sorting For each file, read the relevant sections and provide the full context of how tiers affect queue ordering. I need to understand what code enforces "T1 before T2 before T3" ordering and "subjective forced behind mechanical".

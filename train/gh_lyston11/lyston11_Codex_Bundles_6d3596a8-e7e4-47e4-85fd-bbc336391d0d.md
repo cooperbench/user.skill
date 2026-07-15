@@ -1,14 +1,3 @@
----
-session_id: "lyston11/Codex_Bundles|6d3596a8-e7e4-47e4-85fd-bbc336391d0d"
-developer: "gh:lyston11"
-split: train
-source: crawl
-repo: lyston11/Codex_Bundles
-start_time: "2026-04-25T09:31:15.283Z"
-n_turns: 143
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 有个新的项目文件夹grok，帮我配置好虚拟环境安装好依赖

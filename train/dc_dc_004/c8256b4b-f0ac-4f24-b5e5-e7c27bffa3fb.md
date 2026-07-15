@@ -1,14 +1,3 @@
----
-session_id: c8256b4b-f0ac-4f24-b5e5-e7c27bffa3fb
-developer: "dc:dc_004"
-split: train
-source: dataclaw
-repo: misterkerns/my-personal-claude-code-data
-start_time: "2026-02-09T21:29:09.128Z"
-n_turns: 11
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 can you look through all the different kinds of edit tasks for videos and images and look at how the video regenerate type on media light box look at how it basically optimistically submits the task then shows a placeholder until it persists and instantly shows a response Can you do that for all the other types of tasks including fill edges with AI which doesn't have any kind of button response right now?

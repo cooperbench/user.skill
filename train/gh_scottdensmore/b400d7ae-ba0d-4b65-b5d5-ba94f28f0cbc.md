@@ -1,14 +1,3 @@
----
-session_id: b400d7ae-ba0d-4b65-b5d5-ba94f28f0cbc
-developer: "gh:scottdensmore"
-split: train
-source: entire
-repo: scottdensmore/contactmanager
-start_time: "2026-06-07T00:55:56.804096Z"
-n_turns: 36
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 In ContactManager (SwiftUI + SwiftData macOS app), year-less birthdays (imported from vCard `--MMDD` or a Contacts card with no birth year) are stored as a `Date` anchored to a sentinel year via the `Birthday` helper in `ContactManager/Support/Birthday.swift` (`Birthday.omittedYear`, currently 9996). The contact detail editor in `ContactManager/Views/ContactDetailView.swift` (Birthday section, ~line 53-58) shows a standard `DatePicker` with `displayedComponents: .date`, which exposes the sentinel year to the user — misleading, and easy to accidentally "confirm" a fake year. Task: render year-less birthdays without exposing the sentinel year. Options: a month/day-only control (two pickers or a custom view) shown when `Birthday.fields(of:).year == nil`, falling back to the normal DatePicker when a real year is present; and a way to toggle "include year" on/off. Use `Birthday.fields(of:)` / `Birthday.date(year:month:day:)` to read/write so the UTC convention and sentinel handling stay centralized. Add coverage where practical (the pure logic lives in `Birthday`). Run `make check` before opening the PR, and follow the repo's focused-PR + Copilot-review workflow (see CLAUDE.md).

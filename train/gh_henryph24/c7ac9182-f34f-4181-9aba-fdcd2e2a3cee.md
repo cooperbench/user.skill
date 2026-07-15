@@ -1,14 +1,3 @@
----
-session_id: c7ac9182-f34f-4181-9aba-fdcd2e2a3cee
-developer: "gh:henryph24"
-split: train
-source: entire
-repo: henryph24/neuralips26
-start_time: "2026-05-05T08:40:36.593451Z"
-n_turns: 10
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 review the abstract a little, I find it too detailed now. Propose minimal fixes to cut down length

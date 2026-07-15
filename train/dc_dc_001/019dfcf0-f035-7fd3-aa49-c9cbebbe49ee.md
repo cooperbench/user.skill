@@ -1,14 +1,3 @@
----
-session_id: 019dfcf0-f035-7fd3-aa49-c9cbebbe49ee
-developer: "dc:dc_001"
-split: train
-source: dataclaw
-repo: Quaxicron/dataclaw-zhiyaowang
-start_time: "2026-05-06T10:59:02.053Z"
-n_turns: 3
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 第1轮只读审查：全文 docs/thesis/generated/sections 和 docs/thesis/generated/tables。视角：叙事结构和闭环。重点看“网格扫描→PSO→防护开启动态RL→IMU观测边界→姿态补充监测”是否顺畅，是否还有跳跃或像补洞。不要修改文件，列出必须修位置。

@@ -1,14 +1,3 @@
----
-session_id: 40deeb4a-c3d0-4fec-888a-cc649360baba
-developer: "gh:mvanhorn"
-split: train
-source: entire
-repo: mvanhorn/cli
-start_time: "2026-02-21T00:25:05.986786Z"
-n_turns: 22
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 let's add in tests to benchmark against main to show differences. Let's add it in our mise.toml file

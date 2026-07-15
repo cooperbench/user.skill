@@ -1,14 +1,3 @@
----
-session_id: "nathanbooth-konecta/claude-code-backup|6fa6e684-a666-4c30-8e4f-da8c43dfec83"
-developer: "gh:nathanbooth-konecta"
-split: train
-source: crawl
-repo: nathanbooth-konecta/claude-code-backup
-start_time: "2026-02-12T11:27:16.996Z"
-n_turns: 275
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 can you put the secret_key_base generation back, but make sure it replicates this

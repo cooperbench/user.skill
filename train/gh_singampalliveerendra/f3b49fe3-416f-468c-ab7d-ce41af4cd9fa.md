@@ -1,14 +1,3 @@
----
-session_id: f3b49fe3-416f-468c-ab7d-ce41af4cd9fa
-developer: "gh:singampalliveerendra"
-split: train
-source: entire
-repo: singampalliveerendra/your_family_farmer
-start_time: "2026-06-18T09:27:04.685067428Z"
-n_turns: 76
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 read the whole code and tell about this project and read annd take all files

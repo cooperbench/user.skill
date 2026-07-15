@@ -1,14 +1,3 @@
----
-session_id: "nathanbooth-konecta/claude-code-backup|bb7d51cf-6bf2-49da-8e91-2a49600f221c"
-developer: "gh:nathanbooth-konecta"
-split: train
-source: crawl
-repo: nathanbooth-konecta/claude-code-backup
-start_time: "2026-02-07T14:11:34.395Z"
-n_turns: 14
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 can you implement the recommendations from here system wide /home/nathan_booth/.claude/usage-data/report.html

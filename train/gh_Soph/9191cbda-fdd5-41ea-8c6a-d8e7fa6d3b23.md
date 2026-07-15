@@ -1,14 +1,3 @@
----
-session_id: 9191cbda-fdd5-41ea-8c6a-d8e7fa6d3b23
-developer: "gh:Soph"
-split: train
-source: entire
-repo: entireio/cli
-start_time: "2026-03-12T14:51:47.842877Z"
-n_turns: 34
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 what is the setting I need to add to .entire/settings.json to enable this remote: git@github.com:entireio/cli-checkpoints.git

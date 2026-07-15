@@ -1,14 +1,3 @@
----
-session_id: "nathanbooth-konecta/claude-code-backup|c4d82a3e-d919-4c3b-ad8a-817aac3a673d"
-developer: "gh:nathanbooth-konecta"
-split: train
-source: crawl
-repo: nathanbooth-konecta/claude-code-backup
-start_time: "2026-02-09T08:54:22.915Z"
-n_turns: 32
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 it looks like this project tried to change lots of things in the kix-platform-modules code that it shouldnt have needed to, can you review the code in the develop branch of that repo, and ensure that you are consuming the modules from there as is without changes, then verify that the updates to the code here reflect those, but also still function as expected, let me know if there are any misalignments

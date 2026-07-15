@@ -1,14 +1,3 @@
----
-session_id: "lyston11/Codex_Bundles|019e0bb1-bb9a-7ae1-9b8b-b043eea1ec51"
-developer: "gh:lyston11"
-split: train
-source: crawl
-repo: lyston11/Codex_Bundles
-start_time: "2026-05-09T07:44:32.871Z"
-n_turns: 68
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 https://github.com/zy-zmc/tianming-novel-ai-writer.git把这个项目拉下来看看

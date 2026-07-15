@@ -1,14 +1,3 @@
----
-session_id: "nathanbooth-konecta/claude-code-backup|32bce6ee-2984-44ba-a427-e67dffcf3022"
-developer: "gh:nathanbooth-konecta"
-split: train
-source: crawl
-repo: nathanbooth-konecta/claude-code-backup
-start_time: "2026-02-07T10:05:06.322Z"
-n_turns: 120
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 this repository contains lots of applications, they currently mostly run on GCP cloudrun, working as a team with security, architecture, k8s design and other relevant subagents produce a simple yet secure architecture blueprint for moving them to the kix-insfrastructure platform as hosted applications using helm charts, secure docker builds with a pipeline on GitHub on argocd

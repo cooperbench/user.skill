@@ -1,14 +1,3 @@
----
-session_id: 99fd37cf-9dfa-4a2d-b1f8-17dc7da61d9d
-developer: "gh:blackgirlbytes"
-split: train
-source: entire
-repo: blackgirlbytes/planetfall-seed-signalkit
-start_time: "2026-06-03T05:47:15.396071Z"
-n_turns: 6
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Continue building the `signalkit` library (read the existing code first). Add a small feature: a function `fetch_frames(url, **kwargs)` in `signalkit/client.py` that calls the existing `fetch(url, **kwargs)` and then `parse_frame` on the result, returning the parsed dict. Also add a tiny CLI in `signalkit/__main__.py` so `python3 -m signalkit <url>` prints the parsed frame. Add tests for `fetch_frames`. Keep using only the standard library, keep retry behavior unchanged. Run the tests and make sure all pass, then commit it yourself with git and a clear message.

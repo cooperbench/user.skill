@@ -1,14 +1,3 @@
----
-session_id: "kungfusaini/dotfiles|2830e21d-d291-423f-97e1-6e08c72ef4e9"
-developer: "gh:kungfusaini"
-split: train
-source: crawl
-repo: kungfusaini/dotfiles
-start_time: "2026-05-12T15:13:00.702Z"
-n_turns: 26
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 I keep getting this error in vesitage please Status    Job    Annotations

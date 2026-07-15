@@ -1,14 +1,3 @@
----
-session_id: b3f36cdd-96d3-41ac-bf54-58e7fbf6a2ee
-developer: "gh:ET-NoahDolev"
-split: train
-source: entire
-repo: ElixirTrials/medgemma-hackathon
-start_time: "2026-02-24T20:36:29.784278Z"
-n_turns: 34
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 I am not seeing the trace logging in Mlflow can you do a root cause analysis and diagnose the problem. Query MLFlow and see what was recorded in the last run - only api calls.

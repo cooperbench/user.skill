@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|2e47c433-7bd4-4b48-96b0-32e09c282c25"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-03-21T10:30:51.014Z"
-n_turns: 27
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 @backend/CLAUDE.md and @CLAUDE.md need to update them according to the files changes... check @../recommendations-service/CLAUDE.md for inspire also update @backend/README.md

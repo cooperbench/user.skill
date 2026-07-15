@@ -1,14 +1,3 @@
----
-session_id: "fee15f70-ec3d-4b24-b6b5-ac94153fa937:subagents"
-developer: "dc:dc_001"
-split: train
-source: dataclaw
-repo: Quaxicron/dataclaw-zhiyaowang
-start_time: "2026-05-20T10:03:07.078Z"
-n_turns: 28
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 深度 review `/user_4813494d/openbmb/demo-sala/sglang/python/sglang/srt/models/minicpm.py` 的未提交修改（+154 行）。 这是 SOAR 比赛的提交包核心文件——custom SGLang fork 里的 MiniCPM-SALA 模型实现。改动很大很危险，必须看懂每一行的意图、风险与正确性。 请： 1. 跑 `git -C /user_4813494d/openbmb diff demo-sala/sglang/python/sglang/srt/models/minicpm.py` 把完整 diff 看清楚（不要 truncate） 2. 跑 `git -C /user_4813494d/openbmb log -10 -- demo-sala/sglang/python/sglang/srt/models/minicpm.py` 看历史 commit 上下文 3. 对照前后文（必要时 `Read` 整个文件附近段落）确认每块改动的语义 4. 重点判断： - 改动属于哪类：prefill/decode/attention/InfLLM-v2/EAGLE draft/sliding-window/量化分发/CUDA graph？ - 是否涉及 `docs/prefill/current.md` 中提到的危险点（`fi_convert` 跨层缓存、`compressed_max_seqlen_k` 等）？ - 是否影响 standard layers (0,9,16,17,22,29,30,31) vs GLA layers 的派发？ - 有没有可能与最近 commit `c87538d` (draft sliding-window attention kv_indices clip) / `1d8533b` (sliding-window draft prefill CLI flag) 相关？ - 是否为可独立提交的逻辑单元？还是必须和其它文件一起提？ 5. 列出每块逻辑的潜在风险（正确性、性能、与 EAGLE-3 verify 路径的耦合） CLAUDE.md 关键背景：32 layers 混合（8 standard + 24 GLA），dense_len=8192，超过走 InfLLM-v2 稀疏；EAGLE-3 chain verify 是当前生产 spec 路径。 输出格式： - 改动分块总览（按代码逻辑而不是按 diff hunk） - 每块意图（一句话）+ 风险评估（绿/黄/红） - 整体提交策略建议（一个 commit 还是拆分） - 控制在 600 字内

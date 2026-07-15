@@ -1,14 +1,3 @@
----
-session_id: a2a9d3ef-aad2-47de-aa0b-9b48defd5d69
-developer: "gh:johyunduk"
-split: train
-source: entire
-repo: johyunduk/ddong-avoid-game
-start_time: "2026-03-07T13:31:01.894086Z"
-n_turns: 57
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 전체적으로 안티치트나 부정행위 방지 코드쪽 살펴봐줘. 매번 그런건 아니지만 가끔씩 정상적인 플레이인데도 점수 제출에서 실패가 되거나 raf 조작 됐다는 문구들이 뜨고 있어

@@ -1,14 +1,3 @@
----
-session_id: "f1023609-b1cd-44e0-9d29-85fe7cd94dee:subagents"
-developer: "dc:dc_001"
-split: train
-source: dataclaw
-repo: Quaxicron/dataclaw-zhiyaowang
-start_time: "2026-04-23T16:37:07.988Z"
-n_turns: 44
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Research how EAGLE-3 (the speculative decoding paper by the EAGLE team) selects which layers to use as auxiliary hidden states ("aux layers"). Context: EAGLE-3 uses hidden states from multiple intermediate layers of the target model as input to the draft model. The draft model concatenates these hidden states and projects them via an fc layer. The question is: how does the EAGLE-3 paper recommend choosing WHICH layers to use? Search for: 1. The EAGLE-3 paper (likely on arxiv, by authors associated with EAGLE/EAGLE-2 speculative decoding, possibly from Peking University or related groups) 2. Specifically look for their methodology on selecting auxiliary layers - do they use linear probes? Mutual information? Some other criterion? 3. How many aux layers do they recommend? Is there a scaling relationship? 4. Any ablation studies on layer selection Also check EAGLE-2 if EAGLE-3 doesn't have this detail - the aux layer concept may have been introduced earlier. Report findings concisely - the key method and any specific recommendations.

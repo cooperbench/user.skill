@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|405b664d-8f7f-46bf-89b9-7373873345bd"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-04-02T23:19:42.042Z"
-n_turns: 62
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 lets implement clui

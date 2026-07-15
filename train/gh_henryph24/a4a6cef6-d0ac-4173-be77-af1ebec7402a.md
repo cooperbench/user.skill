@@ -1,14 +1,3 @@
----
-session_id: a4a6cef6-d0ac-4173-be77-af1ebec7402a
-developer: "gh:henryph24"
-split: train
-source: entire
-repo: henryph24/neuralips26
-start_time: "2026-05-01T13:40:20.836512Z"
-n_turns: 18
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 are we having this exact sentence: ""﻿Today, every public TSFM benchmark uses a single static head ""

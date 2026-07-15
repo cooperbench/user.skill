@@ -1,14 +1,3 @@
----
-session_id: 019e63a4-f6cf-7bc3-9a88-ade3c0bfa6cf
-developer: "gh:yyovil"
-split: train
-source: entire
-repo: yyopc/yyork
-start_time: "2026-05-31T04:21:29.34586Z"
-n_turns: 54
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > SYSTEM
 
 # AGENTS.md instructions for /Users/tanishqpalandurkar/Projects/better-ao <INSTRUCTIONS> General instructions: follow these all the time. - whenever you are unaware of what a particular cli option does, refer to the man page or use the --help option to learn its behaviour but never assume based on typical examples of its use. --- project-doc --- # Agent workflow User will assign one PRD at a time to an agent to implement. All the PRDs are available in the `./prds` dir. </INSTRUCTIONS> <environment_context> <cwd>/Users/tanishqpalandurkar/Projects/better-ao</cwd> <shell>zsh</shell> <current_date>2026-05-26</current_date> <timezone>Asia/Kolkata</timezone> </environment_context>

@@ -1,14 +1,3 @@
----
-session_id: c5b3d2bd-c81b-487f-94a7-8fcb42d2abcb
-developer: "gh:alishakawaguchi"
-split: train
-source: entire
-repo: entireio/skills
-start_time: "2026-04-10T23:37:50.35107Z"
-n_turns: 21
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 I think something like this is miising from out opencode installation? https://github.com/obra/superpowers/blob/main/.opencode/plugins/superpowers.js

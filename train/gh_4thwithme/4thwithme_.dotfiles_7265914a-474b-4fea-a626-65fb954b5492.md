@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|7265914a-474b-4fea-a626-65fb954b5492"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-03-17T14:49:35.183Z"
-n_turns: 86
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 hey bro we have a task to migrate a trending-products-widget to the design system library from consumer repo.

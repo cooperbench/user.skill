@@ -1,14 +1,3 @@
----
-session_id: "kohaku500/02-automation-company|19733316-76ca-47f5-ad04-16e5303daf49"
-developer: "gh:kohaku500"
-split: train
-source: crawl
-repo: kohaku500/02-automation-company
-start_time: "2026-04-20T23:17:18.240Z"
-n_turns: 591
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 締付トルクアプリ再開します

@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|8b04b0c0-5b3a-490d-a47a-6535f9363b71"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-04-14T14:48:12.061Z"
-n_turns: 52
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Okay, bro, we need to create GitHub action that runs daily every day at the same time. This GitHub Action script should automatically monitor new relic using API key. It should monitor last twenty-four hours in terms of new errors. Also analyze other metrics such as throughput, such as CPU, event loop etc. are they healty or not really., did we have spikes or not, did we have long queries or downtimes...also need to build chart where we compare metrics from releases from the last day with average values during last month to analyze did we improve or decreased our metrics there... make it similar to other GHA script we have for rollbar in terms of setup @docs/rollbar-monitor.md @src/scripts/rollbar-monitor/ @newrelic.js @src/modules/newrelic/ /documentation-skill /nestjs-skill @.github/workflows/rollbar-monitor.yml

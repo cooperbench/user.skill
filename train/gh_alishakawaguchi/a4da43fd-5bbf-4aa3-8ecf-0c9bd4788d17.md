@@ -1,14 +1,3 @@
----
-session_id: a4da43fd-5bbf-4aa3-8ecf-0c9bd4788d17
-developer: "gh:alishakawaguchi"
-split: train
-source: entire
-repo: entireio/cli
-start_time: "2026-03-05T20:15:40.415097Z"
-n_turns: 30
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Implement the following plan: # Fix: Switch Kiro E2E to `--no-interactive` mode ## Context Kiro E2E tests fail in CI with "You are not logged in" because kiro-cli's **interactive TUI doesn't support SIGV4 env-var auth**. The `setup-kiro-action` reference confirms SIGV4 is designed for `--no-interactive` only — all CI examples use it. **Verified:** `--no-interactive` **fires hooks** (the comment at `kiro.go:127` was wrong): ``` ✓ 1 of 1 hooks finished in 0.09 s (×3 hooks) ``` ## Changes ### File: `e2e/agents/kiro.go` (only file modified) #### 1. Rewrite `RunPrompt` — pipe-based `--no-interactive` (no tmux) Model after Claude's `RunPrompt` (`e2e/agents/claude.go:113-170`). Uses `exec.CommandContext` with stdout/stderr pipes. Env vars (SIGV4) propagate naturally — no `env` wrapper needed. ```go func (k *Kiro) RunPrompt(ctx context.Context, dir string, prompt string, opts ...Option) (Output, error) { // ...config setup... args := []string{"chat", "--no-interactive", "--trust-all-tools", "--agent", "entire", prompt} cmd := exec.CommandContext(cmdCtx, k.Binary(), args...) cmd.Dir = dir cmd.Stdout = &stdout cmd.Stderr = &stderr err := cmd.Run() // ...collect exit code and return Output... } ``` **Open questions to verify during implementation:** - Exact flag: `--trust-all-tools` (from error message) — check `kiro-cli chat --help` - Prompt passing: positional arg (user's test) vs `-p` flag #### 2. Rewrite `StartSession` — sequential `--no-interactive` commands Since interactive mode doesn't work with SIGV4, implement `Session` as a wrapper that runs a new `--no-interactive` command per `Send()`. This is the same approach the `setup-kiro-action` uses (all examples are single-shot `--no-interactive` calls). ```go type KiroSession struct { kiro *Kiro dir string ctx context.Context lastOutput string // captured output from most recent Send } func (k *Kiro) StartSession(ctx context.Context, dir string) (Session, error) { return &KiroSession{kiro: k, dir: dir, ctx: ctx}, nil } func (s *KiroSession) Send(input string) error { out, err := s.kiro.RunPrompt(s.ctx, s.dir, input) s.lastOutput = out.Stdout + out.Stderr return err } func (s *KiroSession) WaitFor(_ string, _ …

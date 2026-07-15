@@ -1,14 +1,3 @@
----
-session_id: c61a02de-82bb-41a9-bfd2-fadceed88f6d
-developer: "gh:armelhbobdad"
-split: train
-source: entire
-repo: armelhbobdad/bmad-module-skill-forge
-start_time: "2026-04-11T16:09:14.142905891Z"
-n_turns: 11
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 In @docs/how-it-works.md , rephrase this section BMad works because it turns big, fuzzy work into repeatable workflows. Each workflow is broken into small steps with clear instructions, so the AI follows the same path every time. It also uses a shared knowledge base (standards and patterns) so outputs are consistent, not random. In short: structured steps + shared standards = reliable results.

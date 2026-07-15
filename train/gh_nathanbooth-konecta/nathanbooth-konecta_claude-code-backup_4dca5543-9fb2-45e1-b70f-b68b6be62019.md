@@ -1,14 +1,3 @@
----
-session_id: "nathanbooth-konecta/claude-code-backup|4dca5543-9fb2-45e1-b70f-b68b6be62019"
-developer: "gh:nathanbooth-konecta"
-split: train
-source: crawl
-repo: nathanbooth-konecta/claude-code-backup
-start_time: "2026-02-10T10:01:33.430Z"
-n_turns: 404
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 the database config isn't runing in pre-sync before crewai-dev-pre-upgrade-migration

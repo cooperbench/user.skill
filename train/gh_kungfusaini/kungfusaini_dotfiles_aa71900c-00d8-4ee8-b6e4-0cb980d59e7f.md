@@ -1,14 +1,3 @@
----
-session_id: "kungfusaini/dotfiles|aa71900c-00d8-4ee8-b6e4-0cb980d59e7f"
-developer: "gh:kungfusaini"
-split: train
-source: crawl
-repo: kungfusaini/dotfiles
-start_time: "2026-05-21T10:05:47.082Z"
-n_turns: 28
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 hey man so I want you to check out the staging database which should have a graph for an nvidia question, can you find it? if you do, what I wanna check out is how that graph looks in the wireframe just for local dev, can you helo me test it just to see what that graph looks like in the wireframe?

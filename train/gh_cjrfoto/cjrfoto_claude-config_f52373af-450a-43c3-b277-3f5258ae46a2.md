@@ -1,14 +1,3 @@
----
-session_id: "cjrfoto/claude-config|f52373af-450a-43c3-b277-3f5258ae46a2"
-developer: "gh:cjrfoto"
-split: train
-source: crawl
-repo: cjrfoto/claude-config
-start_time: "2026-04-06T15:17:45.197Z"
-n_turns: 11
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > AGENT
 
 Short answer: **not directly** — Claude Code (VS Code) and Claude Desktop are separate applications with different architectures.

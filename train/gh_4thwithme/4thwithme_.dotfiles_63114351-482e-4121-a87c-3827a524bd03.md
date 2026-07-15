@@ -1,14 +1,3 @@
----
-session_id: "4thwithme/.dotfiles|63114351-482e-4121-a87c-3827a524bd03"
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme/.dotfiles
-start_time: "2026-04-09T15:07:53.743Z"
-n_turns: 32
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 bro how to trigger github action for rollbar monitoring manually? @src/scripts/rollbar-monitor/

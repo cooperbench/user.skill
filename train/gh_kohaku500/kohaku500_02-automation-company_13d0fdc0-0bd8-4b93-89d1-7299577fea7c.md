@@ -1,14 +1,3 @@
----
-session_id: "kohaku500/02-automation-company|13d0fdc0-0bd8-4b93-89d1-7299577fea7c"
-developer: "gh:kohaku500"
-split: train
-source: crawl
-repo: kohaku500/02-automation-company
-start_time: "2026-04-24T23:43:12.599Z"
-n_turns: 4
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 今日の日付を確認してください。

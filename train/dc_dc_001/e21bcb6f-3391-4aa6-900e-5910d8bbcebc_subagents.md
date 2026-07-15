@@ -1,14 +1,3 @@
----
-session_id: "e21bcb6f-3391-4aa6-900e-5910d8bbcebc:subagents"
-developer: "dc:dc_001"
-split: train
-source: dataclaw
-repo: Quaxicron/dataclaw-zhiyaowang
-start_time: "2026-04-25T14:59:59.659Z"
-n_turns: 94
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 我在仔细审计这个项目的 Phase 5 强化学习实现。背景：用户在 CARLA 上做自动驾驶定位攻击的 RL 研究，目标是让一个时序策略学会"最小风险 + 最大攻击效果"的动态攻击。当前情况是：纯端到端 PPO 训练完全学不出失败（eval hard-failure 0/49），但用规则诊断 profile 可以 49/49 全打坏；后来加了 behavior cloning 和 curriculum，把 lower policy 训成模仿 expert 的形式才达到 49/49 训练成功，但 upper policy 端到端训练仍然失败（policy eval 0/49）。用户怀疑后面用的"candidate selector + logistic 边界模型"是在验证集上自圆其说，不是真正把 RL 打通。 请以"非常细致"的程度调查以下内容并给我一份 ≤400 字的报告： 1. RL 训练主路径在哪里？看 `src/graduate_phase1/experiment/phase5_hierarchical.py` 和 `src/graduate_phase1/experiment/phase5_rl.py`： - upper policy 和 lower policy 的网络结构和动作空间是什么？ - reward 函数的具体形式（特别是 5.5 节提到的 `min_risk_max_effect` score 和 `multiobjective_score`） - PPO 的具体实现细节：是不是自己写的 PPO-lite？有没有 GAE、value baseline、entropy bonus、advantage normalization？ - surrogate 环境的状态空间、动作空间、终止条件、最大步数 2. 失败模式定位。看 `outputs/phase5_hierarchical_v2_multiobjective_rocm/20260425-191626` 和 `20260425-192137` 两个 run 的 metadata/summary/update_rows： - `upper_loss / actor_loss / critic_loss / entropy` 的轨迹是什么样 - 为什么训练时 imitation 阶段能成功但 policy-prior 切换后归零 - `policy` 和 `diagnostic` prior 的实际差别（看 `phase5_hierarchical.py` 里 prior_mode 的实现） 3. surrogate 环境是不是真的能让 policy 学到东西。看 `src/graduate_phase1/experiment/phase5_rl.py` 里的 surrogate dynamics： - 它的"失败"是怎么定义的（比如 lateral error 阈值、route progress 阈值） - 攻击动作是怎么进入 EKF 的（直接加偏置 vs 经过观测模型） - 状态对动作是否有梯度可学习的因果链 4. 找出"真正阻止 RL 学到失败"的根因，给一个排序的猜测列表（top 3 可能的根因）。 报告里请包含具体文件:行号引用。不要堆砌结论，要有证据指向。

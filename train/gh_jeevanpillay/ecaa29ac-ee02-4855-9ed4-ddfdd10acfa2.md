@@ -1,14 +1,3 @@
----
-session_id: ecaa29ac-ee02-4855-9ed4-ddfdd10acfa2
-developer: "gh:jeevanpillay"
-split: train
-source: entire
-repo: lightfastai/lightfast
-start_time: "2026-04-18T09:07:54.342375Z"
-n_turns: 42
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > AGENT
 
 I'll research the codebase to understand the current changelog and blog infrastructure before creating the plan.

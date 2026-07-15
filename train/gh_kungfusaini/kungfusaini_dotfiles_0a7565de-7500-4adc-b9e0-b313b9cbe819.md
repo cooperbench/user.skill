@@ -1,14 +1,3 @@
----
-session_id: "kungfusaini/dotfiles|0a7565de-7500-4adc-b9e0-b313b9cbe819"
-developer: "gh:kungfusaini"
-split: train
-source: crawl
-repo: kungfusaini/dotfiles
-start_time: "2026-05-09T18:52:01.882Z"
-n_turns: 9
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 hey man so can we talk about something. Becasue me and my gf will be colaborating on projecg pyari, I want a shared notes vailt wheere we can write stuff like for exmaple our financial plan. I want evyething to be in markdown, backed up by git and also editable and brosable in a web viier. I don't care what bu what is the best way to do this?

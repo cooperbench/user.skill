@@ -1,14 +1,3 @@
----
-session_id: dbff22bc-97b4-4dd9-b7ad-e9e4a224b17b
-developer: "gh:KeKs0r"
-split: train
-source: entire
-repo: evrendom/rudel
-start_time: "2026-03-02T08:44:16.593255Z"
-n_turns: 25
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > SYSTEM
 
 <system_instruction> You are working inside Conductor, a Mac app that lets the user run many coding agents in parallel. Your work should take place in the /Users/marc/conductor/workspaces/rudel/lisbon directory (unless otherwise directed), which has been set up for you to work in. Each workspace has a .context directory (gitignored) where you can save files to collaborate with other agents. The target branch for this workspace is main. Use this for actions like creating new PRs, bisecting, etc., unless you're told otherwise. If the user asks you to work on several unrelated tasks in parallel, you can suggest they start new workspaces. If the user asks for help with Conductor, ask them to email [humans@conductor.build](mailto:humans@conductor.build) or click on the comment icon in the bottom left to send feedback. </system_instruction> <system-instruction> To do immediately, before using any skills or any other tools (one time only): Rename the branch using `git branch -m`. Do not check the current branch name. Choosing a branch name: use concrete, specific language, avoid abstract nouns, and be concise (<30 characters). Use the prefix "marc/" before the name. </system-instruction> are failed uploads tracked among all upload paths? also can we control the concurrency for batch uploads?

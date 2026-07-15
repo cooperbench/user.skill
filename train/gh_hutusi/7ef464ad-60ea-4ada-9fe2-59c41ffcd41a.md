@@ -1,14 +1,3 @@
----
-session_id: 7ef464ad-60ea-4ada-9fe2-59c41ffcd41a
-developer: "gh:hutusi"
-split: train
-source: entire
-repo: ainaive/agentcenter-nuxt
-start_time: "2026-05-24T11:46:16.629166Z"
-n_turns: 11
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 let's take a look at the home page, try to refine it. 1, I think the slogan fonts seems too big, may be small is better. 2. the number of "x skills, cureated for your team" is not right, I think it should show the totoal number of this site 3. do you think we need add some other extensions in the homepage, like MCP. what do you think of these?

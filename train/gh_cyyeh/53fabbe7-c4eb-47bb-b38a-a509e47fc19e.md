@@ -1,14 +1,3 @@
----
-session_id: 53fabbe7-c4eb-47bb-b38a-a509e47fc19e
-developer: "gh:cyyeh"
-split: train
-source: entire
-repo: cyyeh/duckdb-data-agent
-start_time: "2026-03-01T15:24:10.383752Z"
-n_turns: 60
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 add memories tab to the right of skills, and allow listing current preferences remembered and user could click to open a modal to view details, and a trashcan in list, also add to i18n

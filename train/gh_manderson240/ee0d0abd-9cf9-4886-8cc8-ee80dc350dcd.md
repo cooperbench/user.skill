@@ -1,14 +1,3 @@
----
-session_id: ee0d0abd-9cf9-4886-8cc8-ee80dc350dcd
-developer: "gh:manderson240"
-split: train
-source: entire
-repo: manderson240/cohezion
-start_time: "2026-02-19T19:34:06.18471752Z"
-n_turns: 92
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 Unknown skill: specs

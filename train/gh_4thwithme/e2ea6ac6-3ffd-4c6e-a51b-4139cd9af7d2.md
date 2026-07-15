@@ -1,14 +1,3 @@
----
-session_id: e2ea6ac6-3ffd-4c6e-a51b-4139cd9af7d2
-developer: "gh:4thwithme"
-split: train
-source: crawl
-repo: 4thwithme
-start_time: "2026-04-03T15:46:54.275Z"
-n_turns: 2
-policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
----
-
 > DEVELOPER
 
 sdfsdf sdfs fsd
