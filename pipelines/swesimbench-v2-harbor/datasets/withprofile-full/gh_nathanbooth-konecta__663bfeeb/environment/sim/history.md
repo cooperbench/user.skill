@@ -1,1 +1,0 @@
-[AGENT]: Got it. You've enabled `method_enforcement` in the dev Cloud Armor configuration. Since `preview` is still `true`, this will log violations without actually blocking requests - a safe way to validate the rule before enforcing it. Do you need anything else with this change, such as committing it or reviewing the full Cloud Armor config?

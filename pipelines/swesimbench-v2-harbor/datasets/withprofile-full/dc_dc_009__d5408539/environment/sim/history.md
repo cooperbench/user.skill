@@ -1,3 +1,0 @@
-[DEVELOPER]: what does "gh run watch" do?
-
-[AGENT]: `gh run watch` is a GitHub CLI command that watches a GitHub Actions workflow run in real-time. It displays live status updates of the run's jobs and steps in your terminal, polling periodically until the run completes (or fails). **Basic usage:** - `gh run watch` — interactively select a recent run to watch - `gh run watch <run-id>` — watch a specific run by ID - `gh run watch --exit-status` — exits with a non-zero code if the run fails (useful in scripts) It's handy for monitoring a CI/CD pipeline after pushing code without needing to open the GitHub web UI.

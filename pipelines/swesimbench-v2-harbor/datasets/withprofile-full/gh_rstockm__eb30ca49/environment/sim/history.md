@@ -1,3 +1,0 @@
-[DEVELOPER]: starte im projektverzeichnis einen lokalen macos python Webserver
-
-[AGENT]: <think></think> Ich starte den lokalen Python-HTTP-Server im Projektverzeichnis und lasse ihn im Hintergrund laufen. Ich antworte auf Deutsch wie bevorzugt [[memory:6176310]]. Tool use: **run_terminal_cmd** ```bash cd " /home/<USER>/Documents/GitHub/fedipol" && python3 -m http.server 8000 ``` - Server läuft im Hintergrund auf Port 8000. - Öffne im Browser: `http://localhost:8000/` Wenn du einen anderen Port möchtest, sag mir die Nummer.

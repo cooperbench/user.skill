@@ -1,3 +1,0 @@
-[DEVELOPER]: Can you use the gitnexus MCP server now?
-
-[AGENT]: No — there's no `gitnexus` MCP server available in this session. The MCP servers I currently have access to are: - claude.ai Blues - claude.ai Gmail - claude.ai Google Calendar - claude.ai Google Drive - claude.ai Motherduck - claude.ai Safecast_MCP - claude.ai Slack If you've just added gitnexus, you'll likely need to restart Claude Code (or reconnect the MCP server) for it to show up. Want me to help check your MCP configuration?

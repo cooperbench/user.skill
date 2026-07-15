@@ -1,1 +1,0 @@
-{"point_id": "6e1e2a08-9361-4b1d-a5da-21ac3c8638cc#7", "developer": "gh:TheurgicDuke771", "condition": "withprofile", "real": "okay, lets commit and merge these changes", "prev_agent": "Both docs now specify posting `/code-review` findings to the PR via inline comments (`--comment` flag), keeping CLAUDE.md \u00a76 and CONTRIBUTING.md rule 1c consistent.", "gold_move": null}

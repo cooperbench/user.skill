@@ -9,7 +9,7 @@ cd /data/swesimbench-v2-harbor
 RUN_GOLD=1 python3 prepare.py
 python3 compute_chance_line.py
 python3 build_agentic.py --dataset noprofile-full --all --cond noprofile
-python3 build_agentic.py --dataset withprofile-full --all --cond withprofile
+# Profiles are harness-side (Harbor --skill), not a second task twin.
 ```
 
 `RUN_GOLD=1` makes one pinned Gemini judge classification per current evaluation point. Rebuilding the Harbor datasets afterward embeds those labels in each hidden `gold.json`. Use the micro or macro-developer chance value from `chance_line.json` explicitly when aggregating; `aggregate_agentic.py` no longer accepts the stale 0.489 default.
@@ -28,15 +28,14 @@ The current sample is structurally complete but has `gold_move: null` by design.
 
 Run the standard Harbor job command for each desired model against:
 
-- `/data/swesimbench-v2-harbor/datasets/noprofile-full`
-- `/data/swesimbench-v2-harbor/datasets/withprofile-full`
+- `pipelines/swesimbench-v2-harbor/datasets/noprofile-full` (profiles via Harbor skills / agent harness, not a withprofile task set)
 
 Each task's verifier also invokes the pinned judge for the predicted message. Record the resulting job directory, then aggregate with the chance line from the same cohort:
 
 ```bash
 python3 aggregate_agentic.py <job-dir> <dataset-dir> \
   --chance <value-from-chance_line.json> \
-  --condition <noprofile-or-withprofile>
+  --condition noprofile
 ```
 
 Do not aggregate the old `datasets/noprofile-pilot`; it is explicitly marked stale.

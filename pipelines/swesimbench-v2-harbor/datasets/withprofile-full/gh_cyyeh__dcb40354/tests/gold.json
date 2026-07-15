@@ -1,1 +1,0 @@
-{"point_id": "e8bf05ea-c8a5-41f0-a1cb-439907ebf6d8#51", "developer": "gh:cyyeh", "condition": "withprofile", "real": "k8s-delete should also remove agent-sandbox", "prev_agent": "Now it polls until pods appear in the namespace, then waits for all pods to be Ready (up to 120s).", "gold_move": null}

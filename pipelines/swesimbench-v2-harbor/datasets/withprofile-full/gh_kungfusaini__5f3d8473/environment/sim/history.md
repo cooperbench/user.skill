@@ -1,5 +1,0 @@
-[DEVELOPER]: hey man so I wanna make my brother a website for his music studio bang bang studios. I need to have some kind of cms set. Ideally I would host everything here and not use netlify or anything. I want it to be very cool and I have heard about a couple of claude skills that could help with the ui (https://impeccable.style/, https://www.tasteskill.dev/, https://emilkowal.ski/skill). The main thing I want is that one the hero element we have a music visualiser from an mp3 that we choose in the cms and it needs to look fucking cool I dont really have any design refrences but I would like for you to compile some for me and then I can pcik the aethetic of the stime
-
-[AGENT]: Cool project. Before I dive in, let me peek at your existing setup and ask a couple of questions so I send you down the right path.
-
-[AGENT]: You've already got a docker-compose VPS setup at `aether` with a static-site pattern (`sumeetsaini_com` with a `content/` folder). I can drop a `bangbang_studios` service alongside it. Two quick questions before I start compiling references:

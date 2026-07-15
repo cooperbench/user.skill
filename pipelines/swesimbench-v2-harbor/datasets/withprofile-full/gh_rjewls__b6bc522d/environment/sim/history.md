@@ -1,3 +1,0 @@
-[DEVELOPER]: ~\Desktop\projects\chrome-extension Error Could not load icon 'images/icon-16.png' specified in 'icons'. Could not load manifest. just remove the icon settings from manifest json
-
-[AGENT]: ``` ``` The icon settings have been removed from `manifest.json`. The extension should now load without the icon-related error. If you need to add icons later, you can include them in the manifest again.

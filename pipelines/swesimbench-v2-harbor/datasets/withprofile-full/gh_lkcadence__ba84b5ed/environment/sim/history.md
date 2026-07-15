@@ -1,3 +1,0 @@
-[DEVELOPER]: On the ApplicationList page we need to add a button to the left of the Approved checkbox. The button needs to be titled "Edit" and it needs to link to our new Edit Address form. When the Edit button is clicked the edit address form will show the data for the Department.
-
-[AGENT]: <think></think> Searching the codebase for the ApplicationList page, the Approved checkbox, and any Edit Address form. Timed out after 25s Timed out after 25s <think></think> <think></think> <think></think> Checking the list view model for AddressId and how UserPartyAddressAdmin Edit is invoked: File not found <think></think> <think></think> Checking the UserPartyAddressAdmin Edit action signature for required parameters: <think></think> Creating the plan.

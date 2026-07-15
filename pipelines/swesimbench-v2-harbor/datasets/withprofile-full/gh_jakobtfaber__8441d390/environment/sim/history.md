@@ -1,3 +1,0 @@
-[DEVELOPER]: how do you know the conversations are active?
-
-[AGENT]: I haven't — nothing in this session tells me any conversations are active. Context was just cleared, so I have no such claim to back up. What are you referring to? Options I can check: - Background agents/tasks (`/agents`, TaskList) - Past conversations (`conversation-search` skill — searches Codex/Claude/Gemini history) - A status line / hook showing counts (the SessionStart banner showed `9 today · 0 due · 68 stale · 0 PRs` — that's issues/PRs, not conversations) Point me at what you saw and I'll trace where it comes from.
