@@ -1,0 +1,38 @@
+---
+session_id: "4c1ad4ee-f65d-452b-be70-43f54c910928:subagents"
+developer: "dc:dc_000"
+split: train
+source: dataclaw
+repo: peteromallet/my-dataclaw-data
+start_time: "2026-05-06T16:24:20.574Z"
+n_turns: 7
+policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
+---
+
+> DEVELOPER
+
+You're doing a deep large-file survey on a Mac to find disk-cleanup candidates beyond the obvious `node_modules` / `.venv` / `target` bloat (those have already been cleared). **Goal:** find and categorize large files lying around — especially generated files, trained model weights, datasets, large media, large PDFs/docs — so the user can decide what to delete. Read-only. Do NOT delete anything. **Context — what's already been done in this session:** - Docker pruned (~26 GiB recovered; `Docker.raw` still 16 GiB awaiting compaction). - `.megaplan-worktrees` under `~/Documents/reigh-workspace/` cleared. - node_modules / .venv / target removed across most repos EXCEPT `~/Documents/reigh-workspace/ArtAgents/` and `~/Documents/banodoco-workspace/banodoco-website/`. - Superwhisper recordings cleared. Slack cache cleared. - Disk now: 53 GiB free of 228 GiB total. $HOME is ~135 GiB. **Scope — where to look:** - `~/Documents/**` (the dev repo workspace, ~135 GiB earlier) - `~/.cache/**` (Hugging Face, torch, etc.) - `~/.ollama/**` if it exists - `~/Library/Application Support/**` for app-managed model dirs (ComfyUI, LM Studio, etc.) - `~/Movies`, `~/Pictures` only at a high level (size totals + obvious oddities) — these are user data, light touch - Skip `~/Library/Mail`, `~/Library/Messages`, `~/Library/Photos` (user data, not for cleanup) - Skip `.git/objects/pack/*.pack` and `.git/lfs/objects/**` (load-bearing) **What to look for specifically:** 1. **Model weights** — `.safetensors`, `.ckpt`, `.pt`, `.pth`, `.bin`, `.gguf`, `.onnx`, `.h5`, `.tflite`, `.mlmodel`, `.pkl` (if huge). Note path, size, and which repo/tool likely owns it. 2. **Generated outputs sitting in repos** — folders like `outputs/`, `output/`, `generated/`, `samples/`, `runs/`, `checkpoints/`, `wandb/`, `tensorboard/`, `lightning_logs/`, `mlruns/`, `tmp/`, `.tmp/`, `cache/`, `_cache/`. 3. **Datasets** — large `.parquet`, `.arrow`, `.feather`, `.h5`, `.hdf5`, `.tar`, `.tar.gz`, `.zip`, `.npy`, `.npz` files inside repos. 4. **Large media inside repos** (not the user's general Movies folder) — `.mp4`, `.mov`, `.mkv`, `.webm`, `.wav`, `.flac`, `.aiff` over ~50 MB, especially under `assets/`, `media/`, `samples/`, `examples/`, `test_data/`, or root of small-looking repos. 5. **Large images inside repos** — uncompressed PNGs / TIFFs / RAW (`.dng`, `.raw`, `.cr2`, `.nef`, `.arw`, `.psd`) over 20 MB. 6. **Large docs / PDFs** — `.pdf`, `.epub`, `.mobi` over 50 MB. 7. **Logs / archives** — `*.log` over 100 MB, `*.zip` / `*.tar.gz` / `*.dmg` / `*.iso` anywhere big. 8. **Hugging Face / torch / ollama caches** — total size and top model names. 9. **ComfyUI models** — usually under `ComfyUI/models/` (checkpoints, VAEs, LoRAs, controlnets) — these are huge but often intentionally kept; just surface the total + biggest entries so the user can decide. **Method:** - Start with […]
+
+> AGENT
+
+I'll start by orienting on the disk usage, then drill into specific categories.
+
+> AGENT
+
+Good signal. Let me dig into the high-value targets.
+
+> AGENT
+
+The find commands for size don't seem to be outputting. Let me retry with different syntax.
+
+> AGENT
+
+Find with -size +50M is silently failing earlier. Let me try without sort piping.
+
+> AGENT
+
+Interesting — only one >50M non-skipped file. Most "bloat" is many smaller files. Let me check more dirs.
+
+> AGENT
+
+I have enough data. Final report. --- # Disk Cleanup Survey — Beyond the Obvious ## 1. Model weights & checkpoints **Surprisingly clean — total ~2 MB.** Searched `~/Documents` for `.safetensors`, `.ckpt`, `.pt`, `.pth`, `.bin`, `.gguf`, `.onnx`, `.h5` >50 MB → **zero hits**. Only tiny artifacts (e.g., `~/Documents/hunyuan/ComfyUI-HunyuanVideoWrapper/hunyuan_empty_prompt_embeds_dict.pt` 2 MB). No model weights to reclaim here. ## 2. HF / torch / ollama / ComfyUI caches - `~/.cache/uv` — **6.2 GB** (Python wheel cache; safe — `uv cache clean`) - `~/.cache/huggingface`, `~/.ollama`, `~/Library/Application Support/comfyui` — **don't exist / empty** (148 KB sqlite only) - No system-wide HF/ollama caches found. No ComfyUI model dirs found locally — workflows run on RunPod via vibecomfy. ## 3. Generated outputs / runs in repos - `/Users/user_c042661f/Documents/reigh-workspace/ArtAgents/runs/foley_map` — **799 MB** (`deepsea_loop/tiles` 432 MB of mp4 tiles + `deepsea_loop/audio` 71 MB + `deepsea` 241 MB) — pipeline outputs - `/Users/user_c042661f/Documents/next-evals-oss/results` — **210 MB** (eval run outputs across `gemini-3.1-pro-preview` 72 MB, `cursor-composer-1.5--agents-md` 29 MB, etc.) - `/Users/user_c042661f/Documents/reigh-workspace/prompt-adapters/experiments` — **145 MB** (3 dirs at 36 MB each: `2026-05-text-009/011/012` look like superseded runs vs newer dated ones) - `/Users/user_c042661f/Documents/reigh-workspace/vibecomfy/out/runpod_artifacts` — **117 MB** (RunPod execution artifacts) - `/Users/user_c042661f/Documents/hermes-agent/logs/run_evaluation` — **50 MB** - `/Users/user_c042661f/Documents/reigh-workspace/reigh-app/dist` — **285 MB** (build artifact, regenerable) ## 4. Datasets in repos - `/Users/user_c042661f/Documents/reigh-workspace/text-ip-adapter/data` — **1.0 GB** (poetry corpora + pairs; multiple versioned candidates v9–v13 at 30 MB each, plus `raw` 215 MB and a 50 MB `corpus.jsonl`) - `/Users/user_c042661f/Documents/training/in_scene/datasets` — **73 MB** - `/Users/user_c042661f/Documents/training/structure_and_style` — **104 MB** (`style_ref` 52 MB + duplicate zip+unzipped `training_pairs.zip`/`training_pairs` 52 MB combined) - `/Users/user_c042661f/Documents/growing_plant_data` — **439 MB** total: `attenborough` 260 MB of CleanShot mp4 reference clips, plus 3 dupes `final.zip` / `final` / `final 2` at 32 MB each ## 5. Large media inside repos - `/Users/user_c042661f/Documents/banodoco-workspace/banodoco-website` — **1.1 GB** in `dist` (545 MB) + `public` (542 MB) **mirroring each other** (`dist/8zCN-chunks` 84 MB ≡ `public/8zCN-chunks` 84 MB; `dist/events` 53 MB ≡ `public/events` 53 MB; same for `media_d516fd93.mp4` 39 MB, `hero-part2.mp4` 27 MB, etc.). `dist` is a regenerable build of `public` — ~545 MB redundant. - `/Users/user_c042661f/Documents/reigh-workspace/reigh-app-cloud-chain/public` — 202 MB - `/Users/user_c042661f/Documents/banodoco-workspace/ados/src/assets` — 342 MB (10+ mp4s 12–19 MB each, `originals` 90 MB) - `/Users/user_c042661f/Documents/banodoco-workspace/ados/public/videos` — 109 MB - `/Users/user_c042661f/Documents/banodoco-workspace/artcompute/public` — 84 MB - `/Users/user_c042661f/Documents/banodoco-workspace/arca-gidan/public` — 163 MB - `/Users/user_c042661f/Documents/insight_extractor/segments` — 90 MB ## 6. Large PDFs / docs None found >50 MB anywhere in `~/Documents` or `~/Downloads`. ## 7. Stray archives / logs / DMGs - `/Users/user_c042661f/Documents/growing_plant_data/final.zip` — 32 MB (unzipped […]

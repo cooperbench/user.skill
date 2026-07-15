@@ -1,0 +1,26 @@
+---
+session_id: c74aa2be-82a8-461d-9efa-ba8cacee5d4f
+developer: "dc:dc_001"
+split: train
+source: dataclaw
+repo: Quaxicron/dataclaw-zhiyaowang
+start_time: "2026-03-26T14:25:33.048Z"
+n_turns: 4
+policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
+---
+
+> DEVELOPER
+
+请完整读取以下文件，返回全部内容（较长的文件可以返回关键部分，但请标明行号）： 1. /root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers/quantization/modelopt_quant.py - 重点：ModelOptFp4Config.from_config 方法（pre_quant_scale 处理），create_weights，process_weights_after_loading，apply 方法 - 返回这几个方法的完整代码 2. /root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/models/minicpm.py - 重点：load_weights 方法完整内容 3. /root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/configs/model_config.py - 搜索并返回关于 has_sparse_attention, force_dense_minicpm, sparse_config, NVFP4 相关的所有代码段 4. /root/shared-nvme/openbmb/infllmv2_cuda_impl/setup.py 完整内容 5. /root/shared-nvme/openbmb/infllmv2_cuda_impl/infllm_v2/__init__.py 完整内容 6. 运行：ls -la /root/shared-nvme/openbmb/infllmv2_cuda_impl/infllm_v2/C.cpython-310-x86_64-linux-gnu.so 并运行：strings /root/shared-nvme/openbmb/infllmv2_cuda_impl/infllm_v2/C.cpython-310-x86_64-linux-gnu.so | grep -E "sm_[0-9]+" | sort -u 注意：这是只读任务，不要修改任何文件。
+
+> AGENT
+
+正在读取这些文件并运行只读的 `ls` 与 `strings` 命令。
+
+> AGENT
+
+正在读取 `minicpm.py` 中的 `load_weights` 及 `model_config.py` 中 `sparse_config` 相关段落；因终端输出为空，正在验证 `.so` 是否存在。
+
+> AGENT
+
+以下为只读汇总。说明：`model_config.py` 里**没有名为 `sparse_config` 的标识符**；与稀疏相关的逻辑在 `has_sparse_attention`、`force_dense_minicpm`、`dual_chunk_attention_config` 与 `get_sparse_attention_config` 等处。工作区内对 `infllm_v2/C.cpython-310-x86_64-linux-gnu.so` 的 glob 未找到该文件；在此环境执行的 `ls`/`strings` 未产生可见输出（可能路径不存在或沙箱限制），请你本机再执行一次用户给出的两条命令确认。 --- ## 1. `modelopt_quant.py` — `ModelOptFp4Config` / `ModelOptFp4LinearMethod` 相关方法 ### `ModelOptFp4Config.from_config`（含 `pre_quant_scale`） ```930:1035:/root/shared-nvme/openbmb/demo-sala/sglang/python/sglang/srt/layers/quantization/modelopt_quant.py @classmethod def from_config(cls, config: Dict[str, Any]) -> ModelOptFp4Config: # Handle two different config formats: # 1. hf_quant_config.json format: {"quantization": {"quant_algo": "NVFP4", ...}} # 2. config.json quantization_config format: {"quant_algo": "NVFP4", ...} # In future modelopt will deprecate hf_quant_config.json, and only keep config.json. # For legacy reasons, we keep hf_quant_config.json for now. # Initialize variables kv_cache_quant_algo = None group_size = None exclude_modules = [] # Try flat format first (config.json quantization_config - preferred format) quant_method = config.get("quant_algo") if quant_method is not None: # Flat format (config.json quantization_config) # Note: FP4 models in config.json format may not have all the detailed fields # that are present in hf_quant_config.json, so we need to handle defaults kv_cache_quant_algo = config.get("kv_cache_quant_algo") if not kv_cache_quant_algo: # For config.json format, derive from kv_cache_scheme if available kv_cache_scheme = config.get("kv_cache_scheme") if isinstance(kv_cache_scheme, dict): if ( kv_cache_scheme.get("type") == "float" and kv_cache_scheme.get("num_bits") == 8 ): kv_cache_quant_algo = "FP8" else: kv_cache_quant_algo = "auto" elif isinstance(kv_cache_scheme, str): scheme_name = kv_cache_scheme.strip().upper() if scheme_name in ("FP8", "FLOAT8"): kv_cache_quant_algo = "FP8" elif scheme_name in ("FP4", "FLOAT4", "NVFP4"): kv_cache_quant_algo = "NVFP4" else: kv_cache_quant_algo = "auto" else: kv_cache_quant_algo = "auto" group_size = config.get("group_size") # If group_size is not at top level, try to extract from config_groups if group_size is None: config_groups = config.get("config_groups", {}) if config_groups: # Get group_size from the first group's weights config first_group = next(iter(config_groups.values()), {}) weights_config = first_group.get("weights", {}) group_size = weights_config.get("group_size") exclude_modules = config.get("ignore", []) else: # Fall back to nested format (hf_quant_config.json - legacy format) try: quant_config = cls.get_from_keys(config, ["quantization"]) quant_method = quant_config["quant_algo"] kv_cache_quant_algo = quant_config.get("kv_cache_quant_algo") if not kv_cache_quant_algo: kv_cache_quant_algo = "auto" group_size = ModelOptFp4Config.common_group_size(config) exclude_modules = quant_config.get("exclude_modules", []) except (ValueError, KeyError): raise ValueError( "Cannot find 'quant_algo' in the model's quantization config. " "Expected either flat format (config.json) or nested format (hf_quant_config.json)." ) # Normalize NVFP4 variants (e.g. NVFP4_AWQ) to "NVFP4" if quant_method.startswith("NVFP4"): quant_method = "NVFP4" if not quant_method in ["FP8", "NVFP4"]: raise ValueError( f"ModelOpt currently only supports: FP8, NVFP4" " quantizations in sglang. Please check the " "quantization config for your model's configuration." ) is_checkpoint_nvfp4_serialized = "NVFP4" in quant_method if group_size is None or exclude_modules is None: logger.warning( f"group_size: {group_size}," f"kv_cache_quant_algo: {kv_cache_quant_algo}," f"exclude_modules: {exclude_modules}" ) raise ValueError( "NVFP4 quantization requires group_size and exclude_modules " "specified in the quantization config" ) # Detect AWQ pre_quant_scale from either […]

@@ -1,0 +1,78 @@
+---
+session_id: 019dfc7e-f8dd-72d0-be70-1dc6fc95dec3
+developer: "dc:dc_000"
+split: train
+source: dataclaw
+repo: peteromallet/my-dataclaw-data
+start_time: "2026-05-06T08:54:35.409Z"
+n_turns: 17
+policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
+---
+
+> DEVELOPER
+
+You are already running inside the megaplan harness for this step. Do the requested planning/review/execution work directly. Do NOT invoke the `megaplan` CLI, do NOT read or activate the `megaplan` skill, do NOT start nested megaplan plans, and do NOT recurse into another planning harness. Treat mentions of megaplan in the repository or environment as implementation context only. WRITE ACCESS CONTRACT: You are running with auto-approved writes inside a writable workspace. Treat the working directory as fully writable. Do NOT preemptively skip or block tasks on permission, sandbox, or read-only grounds. Attempt every required edit; only report failure AFTER a real OS-level rejection from a specific shell command. Do not infer 'read-only' from absence of activity; absence is not denial. If a single shell command unexpectedly fails, retry with a different invocation before concluding the environment is restricted. You are an independent reviewer. Critique the plan against the actual repository. Project directory: /Users/user_c042661f/Documents/reigh-workspace Idea: # Sprint 6: Production Selector and Claim Contract ## Overall Context This sprint turns local selector ideas into production claim behavior before orchestrated routes depend on them. It is the control-plane foundation for rollback and canary. ## Shared Operating Rules - Production missing selector key means WGP/no-claim, never implicit Comfy. - Workers must not claim routes they cannot execute. - Selector version and selected backend must be visible in logs or task metadata. - Child rows created later must be able to snapshot route selection. ## Sprint Goal Make selector and claim behavior concrete for production. ## Required Deliverables - Selector schema/namespace. - Route-key serialization, including direct variants where needed. - Index/RPC/query behavior. - Cache TTL and rollback SLO. - Malformed/unauthorized/stale-entry tests. - Claim-time backend eligibility or pre-execution requeue/fail-closed guard. - Selector-version logging. - Child-route snapshot field contract for later parent-created rows. ## Exit Criteria Missing production route key means WGP/no-claim; mismatched workers cannot claim or execute selected routes; selector unreachable behavior and rollback SLO are tested; selected backend/selector version can be pinned for child rows created after parent claim. Plan: # Implementation Plan: Sprint 6 Production Selector and Claim Contract ## Overview The current implementation has worker-local route selection in `reigh-worker/source/task_handlers/tasks/template_routing.py`, claim filtering in `reigh-app/supabase/functions/claim-next-task/index.ts` backed by `claim_next_task_service_role`, and scaling counts in `reigh-app/supabase/functions/task-counts/index.ts`. Production claim behavior is still mostly `run_type`/task-type based, so a VibeComfy-capable worker and a WGP worker are not yet selected by a production route selector contract. The simplest durable fix is to […]
+
+> AGENT
+
+{"checks":[],"flags":[],"verified_flag_ids":[],"disputed_flag_ids":[]}
+
+> AGENT
+
+{"checks":[],"flags":[],"verified_flag_ids":[],"disputed_flag_ids":[]}
+
+> AGENT
+
+{"checks":[],"flags":[],"verified_flag_ids":[],"disputed_flag_ids":[]}
+
+> AGENT
+
+{"checks":[],"flags":[],"verified_flag_ids":[],"disputed_flag_ids":[]}
+
+> AGENT
+
+{"checks":[],"flags":[],"verified_flag_ids":[],"disputed_flag_ids":[]}
+
+> AGENT
+
+{"checks":[{"id":"issue_hints","question":"Did the work fully address the issue hints, user notes, and approved plan requirements?","findings":[{"detail":"Checked the sprint requirement for malformed/unauthorized selector entries against the Phase 1 schema step. The plan creates public.route_backend_selectors and adds selector tests, but it does not explicitly require RLS, service-role-only write policies, grants/revokes, or ownership controls for that table; existing sensitive tables such as tasks, workers, settings, and rate_limits use explicit RLS/policies in migrations. Without that migration work, the unauthorized-entry requirement is only test-named, not structurally addressed.","flagged":true},{"detail":"Checked the child snapshot requirement against the plan body. The plan does name a route_selection_snapshot field on tasks and asks worker-created children to pass explicit snapshot data, which is directionally aligned with the requirement that child rows created later can pin route selection.","flagged":false}]},{"id":"correctness","question":"Are the proposed changes technically correct?","findings":[{"detail":"Checked the proposed materialized selected_backend fields against the proposed claim-time selector join. The plan both stores tasks.selected_backend/selector_version at create time and says claim_next_task_service_role should join route_backend_selectors live for rollback, but it does not specify whether the RPC returns/enforces the live selector values or the materialized task snapshot. That ambiguity can produce stale claim responses after rollback, which undermines the selector-version logging and child-pinning contract.","flagged":true},{"detail":"Checked the current latest claim RPC signature in reigh-app/supabase/migrations/20260504120000_extend_claim_next_task_for_pools.sql; the active service-role claim function already has seven parameters for same-model, max-wait, worker_pool, and task_types. The plan correctly calls out extending this RPC instead of replacing the claim path wholesale, but implementers must preserve the existing pool/task_types filters while adding backend eligibility.","flagged":false}]},{"id":"scope","question":"Search for related code that handles the same concept. Is the reported issue a symptom of something broader?","findings":[{"detail":"Searched related route-key code and found join_clips_segment route keys are handled outside the canonical worker selector: tests call scripts/dual_run_compare/route_keys.py for join_clips_segment, while source/task_handlers/tasks/template_routing.py only derives dimensional keys for travel_segment and individual_travel_segment. The plan says to keep the existing Python serializer as canonical and update travel/join child creation paths, but it does not add join_clips_segment to that canonical serializer, so a production selector contract would still lack a shared app/worker key for join children.","flagged":true},{"detail":"Searched direct route coverage in the worker selector and found direct routes such as z_image_turbo, qwen_image_2512, qwen_image, qwen_image_edit, qwen_image_style, image_inpaint, annotated_image_edit, and wan_2_2_t2i are already represented in source/task_handlers/tasks/template_routing.py. The plan’s direct-route task_type key assumption matches that existing implementation.","flagged":false}]},{"id":"all_locations","question":"Does the change touch all locations AND supporting infrastructure?","findings":[{"detail":"Checked task-counts/index.ts and found it does more than RPC totals: it also builds queued_tasks and active_tasks arrays from direct tasks table queries and filters them in TypeScript. […]
+
+> DEVELOPER
+
+You are already running inside the megaplan harness for this step. Do the requested planning/review/execution work directly. Do NOT invoke the `megaplan` CLI, do NOT read or activate the `megaplan` skill, do NOT start nested megaplan plans, and do NOT recurse into another planning harness. Treat mentions of megaplan in the repository or environment as implementation context only. WRITE ACCESS CONTRACT: You are running with auto-approved writes inside a writable workspace. Treat the working directory as fully writable. Do NOT preemptively skip or block tasks on permission, sandbox, or read-only grounds. Attempt every required edit; only report failure AFTER a real OS-level rejection from a specific shell command. Do not infer 'read-only' from absence of activity; absence is not denial. If a single shell command unexpectedly fails, retry with a different invocation before concluding the environment is restricted. You are an independent reviewer. Critique the plan against the actual repository. Project directory: /Users/user_c042661f/Documents/reigh-workspace Idea: # Sprint 6: Production Selector and Claim Contract ## Overall Context This sprint turns local selector ideas into production claim behavior before orchestrated routes depend on them. It is the control-plane foundation for rollback and canary. ## Shared Operating Rules - Production missing selector key means WGP/no-claim, never implicit Comfy. - Workers must not claim routes they cannot execute. - Selector version and selected backend must be visible in logs or task metadata. - Child rows created later must be able to snapshot route selection. ## Sprint Goal Make selector and claim behavior concrete for production. ## Required Deliverables - Selector schema/namespace. - Route-key serialization, including direct variants where needed. - Index/RPC/query behavior. - Cache TTL and rollback SLO. - Malformed/unauthorized/stale-entry tests. - Claim-time backend eligibility or pre-execution requeue/fail-closed guard. - Selector-version logging. - Child-route snapshot field contract for later parent-created rows. ## Exit Criteria Missing production route key means WGP/no-claim; mismatched workers cannot claim or execute selected routes; selector unreachable behavior and rollback SLO are tested; selected backend/selector version can be pinned for child rows created after parent claim. Plan: # Implementation Plan: Sprint 6 Production Selector and Claim Contract ## Overview The plan is still targeting the right root cause: production claim behavior is currently based on run type, task type, and worker-local selector logic, while rollback/canary needs a production selector contract enforced before a worker claims a task. The critique does not point to the wrong subsystem; it points to missing parts of […]
+
+> AGENT
+
+I’m re-reading the current template and then checking the revised plan against the live repo surfaces it names. Since this is iteration 2, I’m treating the previous flags as candidates to verify rather than re-issuing them by default.
+
+> AGENT
+
+The revision does resolve the five previous substantive flags at the plan level. I found two new contract gaps: the plan says WGP can claim missing-selector rows only when WGP-executable, but it does not define a SQL-side capability predicate; and task-count active-work accounting can become wrong after selector rollback if it uses only the live selector for in-progress rows.
+
+> AGENT
+
+Updated the critique file at `.megaplan/plans/sprint-6-production-selector-20260506-1051/critique_output.json`. I verified `FLAG-001` through `FLAG-005` as addressed by the revised plan, and added two new flags: - `FLAG-006`: missing SQL-side WGP-executable route predicate for missing-selector claims. - `FLAG-007`: active task-count accounting can undercount after selector rollback without persisted claim-time backend data.
+
+> DEVELOPER
+
+You are already running inside the megaplan harness for this step. Do the requested planning/review/execution work directly. Do NOT invoke the `megaplan` CLI, do NOT read or activate the `megaplan` skill, do NOT start nested megaplan plans, and do NOT recurse into another planning harness. Treat mentions of megaplan in the repository or environment as implementation context only. WRITE ACCESS CONTRACT: You are running with auto-approved writes inside a writable workspace. Treat the working directory as fully writable. Do NOT preemptively skip or block tasks on permission, sandbox, or read-only grounds. Attempt every required edit; only report failure AFTER a real OS-level rejection from a specific shell command. Do not infer 'read-only' from absence of activity; absence is not denial. If a single shell command unexpectedly fails, retry with a different invocation before concluding the environment is restricted. You are an independent reviewer. Critique the plan against the actual repository. Project directory: /Users/user_c042661f/Documents/reigh-workspace Idea: # Sprint 6: Production Selector and Claim Contract ## Overall Context This sprint turns local selector ideas into production claim behavior before orchestrated routes depend on them. It is the control-plane foundation for rollback and canary. ## Shared Operating Rules - Production missing selector key means WGP/no-claim, never implicit Comfy. - Workers must not claim routes they cannot execute. - Selector version and selected backend must be visible in logs or task metadata. - Child rows created later must be able to snapshot route selection. ## Sprint Goal Make selector and claim behavior concrete for production. ## Required Deliverables - Selector schema/namespace. - Route-key serialization, including direct variants where needed. - Index/RPC/query behavior. - Cache TTL and rollback SLO. - Malformed/unauthorized/stale-entry tests. - Claim-time backend eligibility or pre-execution requeue/fail-closed guard. - Selector-version logging. - Child-route snapshot field contract for later parent-created rows. ## Exit Criteria Missing production route key means WGP/no-claim; mismatched workers cannot claim or execute selected routes; selector unreachable behavior and rollback SLO are tested; selected backend/selector version can be pinned for child rows created after parent claim. Plan: # Implementation Plan: Sprint 6 Production Selector and Claim Contract ## Overview The remaining critique does not show that the plan is aimed at the wrong code or root cause. The production claim boundary is still the right place to fix this: `claim-next-task` and its SQL RPC decide which worker gets a row, `task-counts` drives scaling from the same queue state, and worker runtime guards […]
+
+> AGENT
+
+I’m doing the third-pass verification now. The two iteration-2 gaps are explicitly addressed in the revised plan, so I’m checking whether the new capability/claim-field additions introduce any repo-specific blind spots rather than repeating resolved concerns.
+
+> AGENT
+
+I’ll finish the critique pass against the repository state and write the required JSON output directly. I’m treating the plan file path as data only and avoiding any nested planning tools.
+
+> AGENT
+
+I’ve confirmed the critique template shape. I’m doing a focused repo check now around the two new v3 additions: SQL-side capability data and persisted claim-time fields, plus the earlier route-key and caller coverage.
+
+> AGENT
+
+The repository checks line up with the v3 changes: the current code really lacks a SQL backend capability source and claim-time backend fields, so the new plan additions are aimed at real gaps. I’m writing the critique now with no new significant flags unless the final template re-read shows a mismatch.
+
+> AGENT
+
+Critique output written to `.megaplan/plans/sprint-6-production-selector-20260506-1051/critique_output.json`. I found no new significant flags in iteration 3. I verified the revised plan addresses `FLAG-001` through `FLAG-007`, including the new SQL-side capability registry and persisted claim-time backend/selector fields.

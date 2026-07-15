@@ -1,0 +1,34 @@
+---
+session_id: 019efad9-bed0-7a40-8cde-cc5d1e25a4b2
+developer: "gh:jakobtfaber"
+split: train
+source: entire
+repo: jakobtfaber/dsa110-FLITS
+start_time: "2026-06-24T18:30:58.944215Z"
+n_turns: 6
+policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
+---
+
+> SYSTEM
+
+# AGENTS.md instructions for /private/tmp/claude-501/-Users-jakobfaber-Developer-repos-github-com-jakobtfaber-dsa110-FLITS/370d2d4d-f54b-47a1-9bac-3d06ba51d427/scratchpad/wt-wire <INSTRUCTIONS> # Codex Configuration ## Learned User Preferences - When the user asks about Codex, interpret that as Codex CLI/configuration specifically; do not answer from Cursor MCP or Cursor IDE state unless explicitly asked. - For cross-agent plan review, use Codex with GPT-5.5 medium effort, Claude Code with Opus 4.8 xhigh effort, and Antigravity through the `agy` CLI when available. - Be conservative about durable memory: capture recurring corrections and stable workspace facts only, not one-off runtime details or transient command output. - For chezmoi-managed dotfiles, edit source under `~/Developer/repos/github.com/jakobtfaber/dotfiles/home/`; restore live drift (e.g. tool-injected shell hooks) with `chezmoi apply --force` on the target file, not direct edits to `~/.*`. - When adding core Homebrew tooling, promote packages into `home/dot_Brewfile.tmpl` (e.g. `dotfiles local promote brew <pkg>`) instead of only running `brew install`. - Maintain Mac-local agent and observability inventories in `~/Obsidian/LLMs/agents/registry/` (`Agent Registry`, `Agent Observability Registry`, inactive-tools log) alongside chezmoi/dotfiles memory—not only in `AGENTS.md`. - Keep `wolfbook.mcpEnabled: false` in Cursor and VS Code so the Wolfbook extension does not rewrite Antigravity/Gemini MCP configs on disk. - Orchestrate Claude Code from Cursor via `claude -p --resume` from the session's project cwd; do not run parallel iTerm sessions on the same Claude session ID. - Trigger prompt-guided context compaction when the chat context window reaches ~40%. ## Learned Workspace Facts - Dotfiles are chezmoi-managed from `~/Developer/repos/github.com/jakobtfaber/dotfiles/home/`; `~/.zshrc` maps to `dot_zshrc.tmpl`. - Interactive agent work runs in Cursor; Claude Code shells use iTerm (`claude -p --resume` from project cwd). cmux was removed Jun 2026 (SwiftUI terminal-panel teardown crashes). - Devin shell integration injects `MANAGED DEVIN BLOCK` (`devin shell init zsh`) into live `~/.zshrc`, re-wrapping sessions as `devin shell run zsh`; the chezmoi template has no Devin hooks — disable with `chezmoi apply --force ~/.zshrc`, restart terminals, and optionally …
+
+> DEVELOPER
+
+You are reviewing a single-commit feature branch in a FLITS (FRB scattering/scintillation) repo. CONTEXT: PRs #54 (pipeline wiring) and #55 (ACF revalidation: compare_lorentzian_components) are now MERGED to origin/main. This branch feat/scint-multicomponent-select is rebased to a CLEAN single commit on top of current origin/main. Its full diff is below. The change wires revalidation.compare_lorentzian_components (BIC ΔBIC>6 AND nested F-test, p<0.05) into scintillation/scint_analysis/analysis.py::analyze_scintillation_from_acfs so the pipeline auto-selects the statistically-justified Lorentzian component count per sub-band, aggregates by plurality, and when >1 extracts each component (ordered by ascending Δν) into the existing per-component power-law path. Replaces a dead 2c/3c-in-name heuristic. Gated on a Lorentzian-family best model; gauss/power/lor_gen stay single-component. The full committed diff: ---8<--- commit 662ba4cb6a884c0a426602b5404100a6044aecee Author: Jakob Faber <jfaber@caltech.edu> Date: Wed Jun 24 11:10:27 2026 -0700 feat(scint): pipeline auto-selects Lorentzian component count (BIC+F-test) Wires compare_lorentzian_components into analyze_scintillation_from_acfs: for a Lorentzian-family best model, determine the statistically-justified component count per sub-band (BIC ΔBIC>6 AND nested F-test) and aggregate by plurality; when >1, extract each component (ordered by ascending Δν = same screen across sub-bands) into the existing per-component power-law path. Replaces the dead 2c/3c-in-name heuristic. Reports n_components + per-sub-band counts in final_results. Gauss/power/lor_gen stay single-component. Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com> Claude-Session: https://claude.ai/code/session_01Nkd8kUhDoc6ZZnviUsvVon diff --git a/scintillation/scint_analysis/analysis.py b/scintillation/scint_analysis/analysis.py index 00e969ab..31434156 100644 --- a/scintillation/scint_analysis/analysis.py +++ b/scintillation/scint_analysis/analysis.py @@ -1298,6 +1298,77 @@ def _select_overall_best_model(all_subband_fits): return best_model +def _determine_n_components(acf_results, max_components=3): + """Burst-level Lorentzian component count from the BIC + nested-F-test selector + (``revalidation.compare_lorentzian_components``) run on each sub-band ACF and + aggregated by plurality (ties → fewer components, the conservative default). + + The pipeline feeds its OWN ACFs (``calculate_acf``) to the selector, so this does + not compromise the cross-check independence of the revalidation ACF estimator — + only the model-selection statistic is shared. Returns ``(n_components, per_subband)``. + """ + from .revalidation import compare_lorentzian_components + + per = [] + …
+
+> AGENT
+
+I’m using the `review` skill because this is explicitly a branch/diff review. I’ll keep this to the two requested outputs and avoid widening beyond the provided commit.
+
+> AGENT
+
+I’m checking only the parts that can affect the verdict: the model-name registry, the preexisting component-output path, and the selector return shape. That’s enough to avoid reviewing from commit text alone.
+
+> AGENT
+
+The checked code confirms the new helpers are present on the branch. I’m doing one narrower pass for the model keys and the downstream component contract, since those are the places a silent mismatch would show up.
+
+> AGENT
+
+So far I see no sign that the new path forks the canonical physics kernel; this is scintillation model-selection wiring. One possible issue remains: the exact suffix gate depends on the generated model labels, so I’m verifying those labels directly.

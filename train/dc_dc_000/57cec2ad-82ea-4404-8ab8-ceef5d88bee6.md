@@ -1,0 +1,18 @@
+---
+session_id: 57cec2ad-82ea-4404-8ab8-ceef5d88bee6
+developer: "dc:dc_000"
+split: train
+source: dataclaw
+repo: peteromallet/my-dataclaw-data
+start_time: "2026-05-12T22:36:17.640Z"
+n_turns: 2
+policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
+---
+
+> DEVELOPER
+
+You are already running inside the megaplan harness for this step. Do the requested planning/review/execution work directly. Do NOT invoke the `megaplan` CLI, do NOT read or activate the `megaplan` skill, do NOT start nested megaplan plans, and do NOT recurse into another planning harness. Treat mentions of megaplan in the repository or environment as implementation context only. WRITE ACCESS CONTRACT: You are running with auto-approved writes inside a writable workspace. Treat the working directory as fully writable. Do NOT preemptively skip or block tasks on permission, sandbox, or read-only grounds. Attempt every required edit; only report failure AFTER a real OS-level rejection from a specific shell command. Do not infer 'read-only' from absence of activity; absence is not denial. If a single shell command unexpectedly fails, retry with a different invocation before concluding the environment is restricted. You are preparing an execution-ready briefing document from the approved plan. Project directory: /Users/user_c042661f/Documents/reigh-workspace Idea: Build a reusable prebuilt RunPod/VibeComfy validation environment for Reigh parity work. Context: we are validating Reigh worker VibeComfy parity with Wan2GP across all app capabilities. The current fresh RunPod live-test path spends ~46 minutes in reigh-worker uv sync --extra cuda124 and ~21 minutes installing VibeComfy/ComfyUI/custom nodes before it can run a single workflow. That makes workflow debugging slow, expensive, and noisy. We need a well-engineered solution, not a local hack. Research and implement the right abstraction across the workspace repos as needed (reigh-worker, vibecomfy, runpod-lifecycle, docs/skills). Desired outcome: a reusable validation environment path that can be launched for live tests without reinstalling the CUDA/PyTorch/ComfyUI/VibeComfy/custom-node stack each time, while staying branch-flexible enough to test arbitrary reigh-worker and vibecomfy refs. It should have explicit environment contracts, version metadata, dependency/model/cache preflight, and clear invalidation rules. It should not constrain workflow authoring to one approach or add brittle manual steps. It must improve observability: install/bootstrap phases should expose progress/logs and fail with actionable diagnostics. It must integrate cleanly with the existing live-test harness, RunPod lifecycle tools, workflow contracts, model reconciliation, node-schema validation, and documentation/skill guidance. Think through image vs network-volume cache vs warm persistent pod vs hybrid; pick the pragmatic path and implement it. Validation requirements: local tests for harness behavior, dry-run or unit coverage for selecting prebuilt environment, and at least one actual RunPod validation proving the new path reaches workflow execution materially faster than the cold fresh path and still terminates only pods it owns. Also document how future […]
+
+> AGENT
+
+Finalize document produced: 18 tasks (T1–T18) covering all 14 plan steps plus a mandatory final verification, 1 user_action (U1) for the real-RunPod validation, 18 sense checks, and 14 watch items capturing the highest-risk pitfalls (preserving existing PodGuard, python_version end-to-end flow, HF_HOME env threading into the worker subprocess dict, regex case convention, scope-limit on variant_update.py, etc.). All 14 plan steps map to tasks/user_actions with `coverage_complete: true`.

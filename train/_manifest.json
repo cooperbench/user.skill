@@ -1,0 +1,714 @@
+{
+  "policy_version": "swesimbench-v2-cohort-policy-2026-07-13.15",
+  "policy_fingerprint": "708b346cf6103d6386f87442a5311fcc44f2e3d18fe224d56b219e84869d42f0",
+  "cohort_fingerprint": "70b37af99ceff4a565eb747fc273b667e1132c9e3fef1f4414f5a2bb255b6bc8",
+  "split": "train",
+  "developers": 68,
+  "sessions": 10797,
+  "format": "markdown-blockquote-turns",
+  "layout": "train/<developer_slug>/<session_id>.md",
+  "users": [
+    {
+      "developer": "dc:dc_000",
+      "slug": "dc_dc_000",
+      "train_sessions": 3355,
+      "train_turns": 16698,
+      "sources": [
+        "dataclaw"
+      ],
+      "files": 3355
+    },
+    {
+      "developer": "dc:dc_001",
+      "slug": "dc_dc_001",
+      "train_sessions": 749,
+      "train_turns": 13169,
+      "sources": [
+        "dataclaw"
+      ],
+      "files": 749
+    },
+    {
+      "developer": "dc:dc_004",
+      "slug": "dc_dc_004",
+      "train_sessions": 202,
+      "train_turns": 1983,
+      "sources": [
+        "dataclaw"
+      ],
+      "files": 202
+    },
+    {
+      "developer": "dc:dc_010",
+      "slug": "dc_dc_010",
+      "train_sessions": 101,
+      "train_turns": 1211,
+      "sources": [
+        "dataclaw"
+      ],
+      "files": 101
+    },
+    {
+      "developer": "gh:135yshr",
+      "slug": "gh_135yshr",
+      "train_sessions": 68,
+      "train_turns": 656,
+      "sources": [
+        "entire",
+        "swechat"
+      ],
+      "files": 68
+    },
+    {
+      "developer": "gh:4thwithme",
+      "slug": "gh_4thwithme",
+      "train_sessions": 139,
+      "train_turns": 1355,
+      "sources": [
+        "crawl"
+      ],
+      "files": 139
+    },
+    {
+      "developer": "gh:ET-NoahDolev",
+      "slug": "gh_ET-NoahDolev",
+      "train_sessions": 87,
+      "train_turns": 493,
+      "sources": [
+        "entire"
+      ],
+      "files": 87
+    },
+    {
+      "developer": "gh:FSM1",
+      "slug": "gh_FSM1",
+      "train_sessions": 278,
+      "train_turns": 2565,
+      "sources": [
+        "entire",
+        "swechat"
+      ],
+      "files": 278
+    },
+    {
+      "developer": "gh:KeKs0r",
+      "slug": "gh_KeKs0r",
+      "train_sessions": 120,
+      "train_turns": 453,
+      "sources": [
+        "entire",
+        "swechat"
+      ],
+      "files": 120
+    },
+    {
+      "developer": "gh:MohammedMqat",
+      "slug": "gh_MohammedMqat",
+      "train_sessions": 20,
+      "train_turns": 411,
+      "sources": [
+        "entire"
+      ],
+      "files": 20
+    },
+    {
+      "developer": "gh:PJensen",
+      "slug": "gh_PJensen",
+      "train_sessions": 81,
+      "train_turns": 415,
+      "sources": [
+        "entire"
+      ],
+      "files": 81
+    },
+    {
+      "developer": "gh:Poytr1",
+      "slug": "gh_Poytr1",
+      "train_sessions": 98,
+      "train_turns": 620,
+      "sources": [
+        "entire"
+      ],
+      "files": 98
+    },
+    {
+      "developer": "gh:Soph",
+      "slug": "gh_Soph",
+      "train_sessions": 112,
+      "train_turns": 1225,
+      "sources": [
+        "entire",
+        "swechat"
+      ],
+      "files": 112
+    },
+    {
+      "developer": "gh:Stark-Industries0417",
+      "slug": "gh_Stark-Industries0417",
+      "train_sessions": 157,
+      "train_turns": 1278,
+      "sources": [
+        "entire"
+      ],
+      "files": 157
+    },
+    {
+      "developer": "gh:TheurgicDuke771",
+      "slug": "gh_TheurgicDuke771",
+      "train_sessions": 36,
+      "train_turns": 819,
+      "sources": [
+        "entire"
+      ],
+      "files": 36
+    },
+    {
+      "developer": "gh:ababushkin",
+      "slug": "gh_ababushkin",
+      "train_sessions": 156,
+      "train_turns": 672,
+      "sources": [
+        "entire"
+      ],
+      "files": 156
+    },
+    {
+      "developer": "gh:achildrenmile",
+      "slug": "gh_achildrenmile",
+      "train_sessions": 30,
+      "train_turns": 524,
+      "sources": [
+        "entire"
+      ],
+      "files": 30
+    },
+    {
+      "developer": "gh:admarble",
+      "slug": "gh_admarble",
+      "train_sessions": 152,
+      "train_turns": 764,
+      "sources": [
+        "entire"
+      ],
+      "files": 152
+    },
+    {
+      "developer": "gh:alishakawaguchi",
+      "slug": "gh_alishakawaguchi",
+      "train_sessions": 163,
+      "train_turns": 553,
+      "sources": [
+        "entire",
+        "swechat"
+      ],
+      "files": 163
+    },
+    {
+      "developer": "gh:armelhbobdad",
+      "slug": "gh_armelhbobdad",
+      "train_sessions": 235,
+      "train_turns": 2180,
+      "sources": [
+        "entire",
+        "swechat"
+      ],
+      "files": 235
+    },
+    {
+      "developer": "gh:barbogast",
+      "slug": "gh_barbogast",
+      "train_sessions": 22,
+      "train_turns": 418,
+      "sources": [
+        "entire"
+      ],
+      "files": 22
+    },
+    {
+      "developer": "gh:blackgirlbytes",
+      "slug": "gh_blackgirlbytes",
+      "train_sessions": 62,
+      "train_turns": 918,
+      "sources": [
+        "entire"
+      ],
+      "files": 62
+    },
+    {
+      "developer": "gh:bradleygibsongit",
+      "slug": "gh_bradleygibsongit",
+      "train_sessions": 37,
+      "train_turns": 588,
+      "sources": [
+        "entire"
+      ],
+      "files": 37
+    },
+    {
+      "developer": "gh:christso",
+      "slug": "gh_christso",
+      "train_sessions": 25,
+      "train_turns": 459,
+      "sources": [
+        "entire"
+      ],
+      "files": 25
+    },
+    {
+      "developer": "gh:cjrfoto",
+      "slug": "gh_cjrfoto",
+      "train_sessions": 34,
+      "train_turns": 879,
+      "sources": [
+        "crawl"
+      ],
+      "files": 34
+    },
+    {
+      "developer": "gh:cyyeh",
+      "slug": "gh_cyyeh",
+      "train_sessions": 262,
+      "train_turns": 1066,
+      "sources": [
+        "entire",
+        "swechat"
+      ],
+      "files": 262
+    },
+    {
+      "developer": "gh:dayhaysoos",
+      "slug": "gh_dayhaysoos",
+      "train_sessions": 65,
+      "train_turns": 577,
+      "sources": [
+        "entire"
+      ],
+      "files": 65
+    },
+    {
+      "developer": "gh:dcambria",
+      "slug": "gh_dcambria",
+      "train_sessions": 69,
+      "train_turns": 1185,
+      "sources": [
+        "entire"
+      ],
+      "files": 69
+    },
+    {
+      "developer": "gh:fcamblor",
+      "slug": "gh_fcamblor",
+      "train_sessions": 192,
+      "train_turns": 501,
+      "sources": [
+        "entire"
+      ],
+      "files": 192
+    },
+    {
+      "developer": "gh:fogodev",
+      "slug": "gh_fogodev",
+      "train_sessions": 74,
+      "train_turns": 714,
+      "sources": [
+        "entire"
+      ],
+      "files": 74
+    },
+    {
+      "developer": "gh:gabadi",
+      "slug": "gh_gabadi",
+      "train_sessions": 137,
+      "train_turns": 774,
+      "sources": [
+        "entire"
+      ],
+      "files": 137
+    },
+    {
+      "developer": "gh:gopeace88",
+      "slug": "gh_gopeace88",
+      "train_sessions": 7,
+      "train_turns": 521,
+      "sources": [
+        "entire"
+      ],
+      "files": 7
+    },
+    {
+      "developer": "gh:heddendorp",
+      "slug": "gh_heddendorp",
+      "train_sessions": 11,
+      "train_turns": 540,
+      "sources": [
+        "entire"
+      ],
+      "files": 11
+    },
+    {
+      "developer": "gh:henryph24",
+      "slug": "gh_henryph24",
+      "train_sessions": 80,
+      "train_turns": 1479,
+      "sources": [
+        "entire",
+        "swechat"
+      ],
+      "files": 80
+    },
+    {
+      "developer": "gh:hutusi",
+      "slug": "gh_hutusi",
+      "train_sessions": 99,
+      "train_turns": 1694,
+      "sources": [
+        "entire",
+        "swechat"
+      ],
+      "files": 99
+    },
+    {
+      "developer": "gh:jakobtfaber",
+      "slug": "gh_jakobtfaber",
+      "train_sessions": 38,
+      "train_turns": 446,
+      "sources": [
+        "entire"
+      ],
+      "files": 38
+    },
+    {
+      "developer": "gh:jdsingh122918",
+      "slug": "gh_jdsingh122918",
+      "train_sessions": 27,
+      "train_turns": 481,
+      "sources": [
+        "entire",
+        "swechat"
+      ],
+      "files": 27
+    },
+    {
+      "developer": "gh:jeevanpillay",
+      "slug": "gh_jeevanpillay",
+      "train_sessions": 251,
+      "train_turns": 1282,
+      "sources": [
+        "entire",
+        "swechat"
+      ],
+      "files": 251
+    },
+    {
+      "developer": "gh:jhoetter",
+      "slug": "gh_jhoetter",
+      "train_sessions": 232,
+      "train_turns": 791,
+      "sources": [
+        "entire"
+      ],
+      "files": 232
+    },
+    {
+      "developer": "gh:jobinlawrance",
+      "slug": "gh_jobinlawrance",
+      "train_sessions": 55,
+      "train_turns": 1657,
+      "sources": [
+        "entire",
+        "swechat"
+      ],
+      "files": 55
+    },
+    {
+      "developer": "gh:johyunduk",
+      "slug": "gh_johyunduk",
+      "train_sessions": 52,
+      "train_turns": 1134,
+      "sources": [
+        "entire"
+      ],
+      "files": 52
+    },
+    {
+      "developer": "gh:jskswamy",
+      "slug": "gh_jskswamy",
+      "train_sessions": 24,
+      "train_turns": 722,
+      "sources": [
+        "entire"
+      ],
+      "files": 24
+    },
+    {
+      "developer": "gh:junaid-appointy",
+      "slug": "gh_junaid-appointy",
+      "train_sessions": 31,
+      "train_turns": 526,
+      "sources": [
+        "entire"
+      ],
+      "files": 31
+    },
+    {
+      "developer": "gh:khaong",
+      "slug": "gh_khaong",
+      "train_sessions": 45,
+      "train_turns": 700,
+      "sources": [
+        "entire",
+        "swechat"
+      ],
+      "files": 45
+    },
+    {
+      "developer": "gh:kmiki0",
+      "slug": "gh_kmiki0",
+      "train_sessions": 15,
+      "train_turns": 702,
+      "sources": [
+        "entire"
+      ],
+      "files": 15
+    },
+    {
+      "developer": "gh:kohaku500",
+      "slug": "gh_kohaku500",
+      "train_sessions": 411,
+      "train_turns": 2783,
+      "sources": [
+        "crawl"
+      ],
+      "files": 411
+    },
+    {
+      "developer": "gh:kungfusaini",
+      "slug": "gh_kungfusaini",
+      "train_sessions": 46,
+      "train_turns": 2978,
+      "sources": [
+        "crawl"
+      ],
+      "files": 46
+    },
+    {
+      "developer": "gh:lyston11",
+      "slug": "gh_lyston11",
+      "train_sessions": 55,
+      "train_turns": 994,
+      "sources": [
+        "crawl"
+      ],
+      "files": 55
+    },
+    {
+      "developer": "gh:malkoG",
+      "slug": "gh_malkoG",
+      "train_sessions": 33,
+      "train_turns": 439,
+      "sources": [
+        "entire",
+        "swechat"
+      ],
+      "files": 33
+    },
+    {
+      "developer": "gh:manderson240",
+      "slug": "gh_manderson240",
+      "train_sessions": 133,
+      "train_turns": 956,
+      "sources": [
+        "entire"
+      ],
+      "files": 133
+    },
+    {
+      "developer": "gh:marcus-sa",
+      "slug": "gh_marcus-sa",
+      "train_sessions": 345,
+      "train_turns": 2387,
+      "sources": [
+        "entire",
+        "swechat"
+      ],
+      "files": 345
+    },
+    {
+      "developer": "gh:melagiri",
+      "slug": "gh_melagiri",
+      "train_sessions": 71,
+      "train_turns": 1890,
+      "sources": [
+        "entire",
+        "swechat"
+      ],
+      "files": 71
+    },
+    {
+      "developer": "gh:mvanhorn",
+      "slug": "gh_mvanhorn",
+      "train_sessions": 88,
+      "train_turns": 605,
+      "sources": [
+        "entire"
+      ],
+      "files": 88
+    },
+    {
+      "developer": "gh:nathanbooth-konecta",
+      "slug": "gh_nathanbooth-konecta",
+      "train_sessions": 49,
+      "train_turns": 888,
+      "sources": [
+        "crawl"
+      ],
+      "files": 49
+    },
+    {
+      "developer": "gh:nosman",
+      "slug": "gh_nosman",
+      "train_sessions": 40,
+      "train_turns": 528,
+      "sources": [
+        "entire",
+        "swechat"
+      ],
+      "files": 40
+    },
+    {
+      "developer": "gh:oddessentials",
+      "slug": "gh_oddessentials",
+      "train_sessions": 30,
+      "train_turns": 1043,
+      "sources": [
+        "entire",
+        "swechat"
+      ],
+      "files": 30
+    },
+    {
+      "developer": "gh:penso",
+      "slug": "gh_penso",
+      "train_sessions": 184,
+      "train_turns": 1323,
+      "sources": [
+        "entire",
+        "swechat"
+      ],
+      "files": 184
+    },
+    {
+      "developer": "gh:raman325",
+      "slug": "gh_raman325",
+      "train_sessions": 27,
+      "train_turns": 1723,
+      "sources": [
+        "entire",
+        "swechat"
+      ],
+      "files": 27
+    },
+    {
+      "developer": "gh:robouden",
+      "slug": "gh_robouden",
+      "train_sessions": 81,
+      "train_turns": 1044,
+      "sources": [
+        "entire",
+        "swechat"
+      ],
+      "files": 81
+    },
+    {
+      "developer": "gh:scottdensmore",
+      "slug": "gh_scottdensmore",
+      "train_sessions": 10,
+      "train_turns": 427,
+      "sources": [
+        "entire"
+      ],
+      "files": 10
+    },
+    {
+      "developer": "gh:singampalliveerendra",
+      "slug": "gh_singampalliveerendra",
+      "train_sessions": 79,
+      "train_turns": 742,
+      "sources": [
+        "entire"
+      ],
+      "files": 79
+    },
+    {
+      "developer": "gh:ta93abe",
+      "slug": "gh_ta93abe",
+      "train_sessions": 40,
+      "train_turns": 895,
+      "sources": [
+        "entire",
+        "swechat"
+      ],
+      "files": 40
+    },
+    {
+      "developer": "gh:thieso2",
+      "slug": "gh_thieso2",
+      "train_sessions": 140,
+      "train_turns": 1121,
+      "sources": [
+        "entire"
+      ],
+      "files": 140
+    },
+    {
+      "developer": "gh:toyamarinyon",
+      "slug": "gh_toyamarinyon",
+      "train_sessions": 85,
+      "train_turns": 1230,
+      "sources": [
+        "entire"
+      ],
+      "files": 85
+    },
+    {
+      "developer": "gh:wildlily1021",
+      "slug": "gh_wildlily1021",
+      "train_sessions": 131,
+      "train_turns": 675,
+      "sources": [
+        "crawl"
+      ],
+      "files": 131
+    },
+    {
+      "developer": "gh:winksaville",
+      "slug": "gh_winksaville",
+      "train_sessions": 202,
+      "train_turns": 6638,
+      "sources": [
+        "crawl"
+      ],
+      "files": 202
+    },
+    {
+      "developer": "gh:yutakobayashidev",
+      "slug": "gh_yutakobayashidev",
+      "train_sessions": 127,
+      "train_turns": 1139,
+      "sources": [
+        "entire"
+      ],
+      "files": 127
+    },
+    {
+      "developer": "gh:yyovil",
+      "slug": "gh_yyovil",
+      "train_sessions": 105,
+      "train_turns": 545,
+      "sources": [
+        "entire"
+      ],
+      "files": 105
+    }
+  ]
+}

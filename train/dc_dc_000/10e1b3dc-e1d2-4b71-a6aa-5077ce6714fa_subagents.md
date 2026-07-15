@@ -1,0 +1,30 @@
+---
+session_id: "10e1b3dc-e1d2-4b71-a6aa-5077ce6714fa:subagents"
+developer: "dc:dc_000"
+split: train
+source: dataclaw
+repo: peteromallet/my-dataclaw-data
+start_time: "2026-05-13T09:50:31.307Z"
+n_turns: 5
+policy_version: swesimbench-v2-cohort-policy-2026-07-13.15
+---
+
+> DEVELOPER
+
+Read the YouTube auto-caption transcript at `/tmp/ostris-ltx/transcript.txt`. It's Ostris's tutorial "How to Train a LTX-2.3 Character LoRA with AI Toolkit" — he trains a character LoRA of himself on LTX 2.3, and this is also the recipe behind his George Costanza / Seinfeld LoRA. Extract every concrete training setting, parameter, value, and recommendation he gives. Auto-captions have no punctuation and may mangle technical terms (e.g. "Lora" "rank" "learning rate" "ARA" "AI toolkit" "Comfy") — use judgment. Produce a tight markdown report with these sections: 1. **Dataset** — clip count, length, resolution, captioning approach, any prep steps 2. **Model / base** — exact model name, where to download 3. **Training config** — rank, alpha, learning rate, scheduler, optimizer, steps, batch size, gradient accumulation, timestep schedule, anything else numerical 4. **Hardware / runtime** — GPU, VRAM, training time, memory tricks (ARA, quantization, caching) 5. **Sampling during training** — sample prompts/cadence, what to look for 6. **Inference** — how he generates with the trained LoRA (ComfyUI workflow, weight, etc.) 7. **Tips / gotchas he calls out** — anything he explicitly warns about For every value, quote the surrounding phrase so I can sanity-check. If a section has no info, write "not covered." Be terse — no preamble, no "great question," just the report. Under 600 words.
+
+> AGENT
+
+The file has no newlines (single huge line). Let me read in chunks.
+
+> AGENT
+
+The transcript is triplicated (each line appears 3x). Let me deduplicate and read the rest.
+
+> AGENT
+
+Not relevant to this read-and-summarize task. Continuing.
+
+> AGENT
+
+I have all the information. Let me write the report. # LTX 2.3 Character LoRA — Ostris Tutorial Notes ## 1. Dataset - **19 clips**, mostly ~5s, range 2–8.5s. "We have 19 videos... the pieces are in between, you know, two 3 seconds up to about 8, eight and a half." Try to target ~5s; "I try to do all around five." - Source recorded at **1440p** webcam, 16:9. "This was recorded at 1440." "I have a 1080p webcam, but honestly, it doesn't get the 1080p." - Cut in **Kdenlive** (open source); render selected zone with audio. - Cut at natural sentence boundaries: "We want to do it where I'm not midway through a word." - **Manual captions**, no auto-caption. Format: `ostress says, "<the spoken words>"`. Lowercase trigger, prefer real name over synthetic token: "since they're used to natural language... if you do like trigger words, it doesn't seem to work as well." Caption verbatim — don't normalize "gonna" to "going to": "don't correct the way you speak." - Caption deviations only (point-at-face, hand waves, mid-sentence chops): "he points at his face with both hands and says." Capitalize at paragraph start, not mid-sentence continuations. - Single scene to **burn in** scene/clothes/background; do NOT describe what you want burned in. ## 2. Model / base - **LTX 2.3** (base, not turbo/distilled). Selected from AI Toolkit's model dropdown. "I find it works really good if you train on the base model and then actually use the turbo model to generate." ## 3. Training config - **Quantization**: float8 ("I'm going to leave all this on float 8 for now"). - **LoRA**: Linear, **rank 32**. "Linear rank 32. That should be plenty." (No alpha mentioned.) - **Steps**: started at 30,000, sampled every 2,000, **stopped at 5,000** ("we'll go to 5,000. That should be good"). At 3,000 was already "looking pretty good"; at 2,000 "actually looking pretty good." - **Timestep schedule**: start on **high noise** then switch to **balanced** for fine detail. "LTX has a pretty heavy shift... set this on high noise. If you want it to train faster, set it on high noise... switch this to balanced at the end... don't want to go to low noise because it'll break down your high noise." - **Cache text embeddings**: ON (deletes text encoder). "We want to cache the text embeddings... get rid of that text encoder completely." - **Cache latents**: ON, default for 2.3. […]
