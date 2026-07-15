@@ -5,6 +5,6 @@ RUN useradd --create-home --shell /bin/bash agent \
  && mkdir -p /sim && chown -R agent:agent /sim
 
 WORKDIR /sim
-COPY --chown=agent:agent sim/history.md /sim/history.md
+COPY --chown=agent:agent history.md /sim/history.md
 # Seed an empty answer file the agent will overwrite.
 RUN touch /sim/answer.txt && chown agent:agent /sim/answer.txt

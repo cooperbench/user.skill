@@ -5,8 +5,8 @@ Layout (canonical Harbor schema, see harbor/models/task/task.py):
   <dataset>/<task_name>/
     task.toml
     instruction.md              # the agent's task (passed via --task)
-    environment/Dockerfile      # COPYs sim/history.md into /sim/
-    environment/sim/history.md  # the point's `context` verbatim (agent reads this file)
+    environment/Dockerfile      # COPYs history.md into /sim/
+    environment/history.md      # the point's `context` verbatim (agent reads this file)
     tests/test.sh               # verifier: classify answer.txt vs gold with pinned judge
     tests/verify.py             # the actual scoring logic
     tests/gold.json             # HIDDEN: {real, prev_agent, gold_move} for this point
@@ -85,7 +85,7 @@ RUN useradd --create-home --shell /bin/bash agent \\
  && mkdir -p /sim && chown -R agent:agent /sim
 
 WORKDIR /sim
-COPY --chown=agent:agent sim/history.md /sim/history.md
+COPY --chown=agent:agent history.md /sim/history.md
 # Seed an empty answer file the agent will overwrite.
 RUN touch /sim/answer.txt && chown agent:agent /sim/answer.txt
 '''
@@ -203,10 +203,10 @@ def emit_point(dataset_dir, dev, cond, p, profile):
     tname = point_task_name(dev, p["point_id"])
     d = os.path.join(dataset_dir, tname)
     shutil.rmtree(d, ignore_errors=True)
-    os.makedirs(os.path.join(d, "environment", "sim"))
+    os.makedirs(os.path.join(d, "environment"))
     os.makedirs(os.path.join(d, "tests"))
-    # environment: history file
-    with open(os.path.join(d, "environment", "sim", "history.md"), "w") as f:
+    # environment: history file (flattened; Dockerfile copies into /sim/)
+    with open(os.path.join(d, "environment", "history.md"), "w") as f:
         f.write(p["context"])
     open(os.path.join(d, "environment", "Dockerfile"), "w").write(DOCKERFILE)
     # task.toml + instruction
